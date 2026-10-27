@@ -50,3 +50,8 @@ RESUME: build = `Unity.exe -batchmode -quit -projectPath <proj> -executeMethod H
 - CHARACTERS: Figma file https://www.figma.com/design/9J9nqsjyg38lIZVMeLXRYC (session e8b0b6d3-fa87-4e19-9c6d-b6f61d04b44f).
   8 portraits generated (text prompts only), saved Assets/Art/Characters/Source/portrait_N.jpg (N = order in Docs/CHARACTER_DESIGN.md).
   Sheet: QA_SCREENSHOTS/portrait_sheet.png. WAITING for student approval before full-body poses + animation rig.
+- PORTRAITS APPROVED. Redo: Ate Bato-Bato Pik (ponytail) KEPT as portrait_2. Tito Silya redo REJECTED (looked too young); original kept.
+- FULL-BODY POSES DONE (Figma, text only): Source/body_N.jpg -> chroma-keyed by Tools/key_bodies.py -> Assets/Art/Characters/Keyed/body_N.png
+  (1024 tall, feet on bottom edge). Sheet: QA_SCREENSHOTS/body_sheet.png.
+- IN PROGRESS / NEXT: scripted animation rig (split parts, idle/walk/suntok/hit/dizzy/fall/win + effects), rename internal keys,
+  then Umaga/Hapon recolors + Oras selector, screen backgrounds, UI redo, QA, SUBMISSION. No more Figma needed unless art is redone.

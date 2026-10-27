@@ -19,7 +19,7 @@ Only ONE agent works on the repo at a time. Full detail: `HANDOFF.md`, `BUG_LOG.
 ## Next steps (status kept current in HANDOFF.md)
 | Step | Needs Figma/image tool? |
 |---|---|
-| Full-body base poses for 8 characters (`Assets/Art/Characters/Source/body_N.png`) | YES (Figma file https://www.figma.com/design/9J9nqsjyg38lIZVMeLXRYC) |
+| Full-body base poses (DONE: Assets/Art/Characters/Keyed/body_N.png) | done |
 | Any regenerated character art / new expression heads | YES |
 | Split bodies into parts + scripted animation (idle, walk, suntok, hit, dizzy, fall, win) + effects | No (Codex can do) |
 | Umaga/Hapon recolors (script), Oras selector, screen backgrounds by script | No |
