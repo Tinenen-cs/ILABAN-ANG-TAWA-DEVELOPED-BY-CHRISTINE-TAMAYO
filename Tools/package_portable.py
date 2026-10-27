@@ -1,10 +1,10 @@
 from pathlib import Path
-import os, shutil, zipfile, hashlib, json, subprocess, time
+import os, shutil, zipfile, hashlib, json, subprocess, time, tempfile
 
 root=Path(__file__).resolve().parents[1]
 title='ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO'
 source=Path(os.environ.get('ILABAN_PROJECT',os.path.join(os.environ['TEMP'],'Ilaban-Phase2-Validation')))/'Builds/Windows'
-submission=root/'SUBMISSION'; package=submission/title
+submission=root/'SUBMISSION'; package=Path(tempfile.mkdtemp(prefix='Ilaban-Package-'))/title
 if source.resolve()!=(root/'Builds/Windows').resolve():shutil.copytree(source,root/'Builds/Windows',dirs_exist_ok=True)
 shutil.copytree(source,package,dirs_exist_ok=True)
 (package/'BASAHIN_MUNA.txt').write_text('''ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO
@@ -36,7 +36,7 @@ for name in ['CREDITS.md','AUDIO_LIST.md']:
 archive=submission/(title+'.zip')
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
     for file in sorted(package.rglob('*')):
-        if file.is_file():z.write(file,file.relative_to(submission))
+        if file.is_file():z.write(file,Path(title)/file.relative_to(package))
 extract=Path(os.environ['TEMP'])/('Ilaban-Extracted-'+time.strftime('%Y%m%d-%H%M%S'))
 with zipfile.ZipFile(archive) as z:
     assert z.testzip() is None
