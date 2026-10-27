@@ -185,8 +185,8 @@
       "Expanded EditMode XML reports 9/9 passed, including all map/time and rig resources."
     ],
     [
-      "p",
-      "Latest PlayMode rerun and build lifecycle verification in progress; previous checkpoint passed 4/4."
+      "x",
+      "Rebuilt from clean clone of real commit 3979522; build passed 65 assertions, EditMode 9/9 and graphics-enabled PlayMode 4/4."
     ],
     [
       "x",
