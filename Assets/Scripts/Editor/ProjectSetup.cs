@@ -83,7 +83,7 @@ namespace Hexbound.Editor
             Require(Resources.LoadAll<AudioClip>("Ilaban/Audio").Length==30,"30 original clips");
             var bank=new ReactionBank();Require(bank.Mode==LanguageMode.Pormal,"formal build default");
             foreach(var categories in new[]{bank.Data.Pormal,bank.Data.GenZ}) {Require(categories.Length==6,"six reaction categories");foreach(var category in categories)Require(category.lines.Length>=6&&category.lines.Length<=10,"reaction pool size");}
-            var font=Resources.Load<Font>("UI/Tiny5");Require(font!=null,"OFL pixel font");font.RequestCharactersInTexture("??'",24);foreach(char c in "??'")Require(font.HasCharacter(c),"Filipino glyph "+c);
+            foreach(var n in new[]{"KalyeDisplay","KalyeBody"}){var font=Resources.Load<TMPro.TMP_FontAsset>("Ilaban/Fonts/"+n);Require(font!=null,"OFL font asset "+n);foreach(char c in "Ññ'[]:!?")Require(font.HasCharacter(c),"Filipino glyph "+c+" in "+n);}
             Debug.Log("ILABAN VALIDATION PASSED: "+checks+" rubric assertions and asset/reaction checks");
         }
         static void Require(bool pass,string name) {if(!pass)throw new System.Exception("Missing "+name);}

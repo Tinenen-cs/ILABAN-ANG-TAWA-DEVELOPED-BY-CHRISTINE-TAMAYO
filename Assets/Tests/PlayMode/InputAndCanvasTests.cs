@@ -15,7 +15,7 @@ namespace Hexbound.Tests
             var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();
             game.Show(AcademyGame.ScreenState.Select);yield return null;game.Ready[0]=true;game.Ready[1]=false;game.StartMatch();Assert.AreNotEqual(AcademyGame.ScreenState.Fight,game.ScreenNow);game.Ready[1]=true;game.StartMatch();yield return null;
             Assert.IsNotNull(Object.FindAnyObjectByType<Canvas>());Assert.AreEqual(LanguageMode.Pormal,game.ReactionLanguage);
-            foreach(var t in Object.FindObjectsByType<TMP_Text>()){Assert.IsNotNull(t.font);Assert.AreEqual("StreetPixel",t.font.name);}
+            foreach(var t in Object.FindObjectsByType<TMP_Text>()){Assert.IsNotNull(t.font);Assert.That(t.font.name=="KalyeDisplay"||t.font.name=="KalyeBody","Unexpected font "+t.font.name);}
             foreach(var t in Object.FindObjectsByType<UnityEngine.UI.Text>())Assert.Fail("Legacy text: "+t.name);
             foreach(var g in Object.FindObjectsByType<Transform>()){string name=g.name.ToLowerInvariant();Assert.IsFalse(name.Contains("health")||name.Contains("stamina")||name.Contains("timer")||name.Contains("knockout"));}
             game.Model.players[1].x=DuelModel.RightRiftX;yield return null;Assert.IsTrue(game.Model.Finished);Assert.AreEqual(0,game.Model.winner);

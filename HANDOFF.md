@@ -41,7 +41,7 @@ Branch: `phase3-polish`. `main` untouched — never merge without the student's 
 1. [x] Approved maps: Codex originals 1672x941 (MAP ART/APPROVED did not exist) -> Assets/Resources/Ilaban/Maps/<Map>/<Map>_Takipsilim.png
 2. [x] Full-res maps, Bilinear (ProjectSetup import rule), cover fit, soft FX (Tools/generate_map_fx.py): clouds, lamp flicker,
        jeepney, floor shimmer, imburnal at fall points. Commit d9e2630.
-3. [ ] Fonts: replace Tiny5 with OFL pair (Lilita One display + Nunito body), SDF Bilinear, outline styles
+3. [x] Fonts: Lilita One (KalyeDisplay) + Nunito Bold (KalyeBody), SDF Bilinear, outline+underlay; tests updated (7/7, 4/4)
 4. [ ] Umaga/Hapon versions + Oras selector (Up/Down on Pumili ng Entablado)
 5. [ ] Backgrounds: Pambungad (layers), Pamagat, Pumili ng Entablado, Pumili ng Tauhan
 6. [ ] UI redo (C/D), QA at 4 resolutions, SUBMISSION zip

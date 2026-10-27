@@ -36,7 +36,7 @@ namespace Hexbound
         }
         RectTransform R(Transform parent,Rect area){var g=new GameObject("Pambungad",typeof(RectTransform));g.transform.SetParent(parent,false);var r=(RectTransform)g.transform;r.anchorMin=r.anchorMax=new Vector2(0,1);r.pivot=new Vector2(0,1);r.anchoredPosition=new Vector2(area.x,-area.y);r.sizeDelta=area.size;return r;}
         RawImage Art(Transform parent,Rect area,string resource){var image=R(parent,area).gameObject.AddComponent<RawImage>();image.texture=Resources.Load<Texture2D>("Ilaban/"+resource);image.raycastTarget=false;return image;}
-        TMP_Text Text(Transform parent,Rect area,string value,int size){var t=R(parent,area).gameObject.AddComponent<TextMeshProUGUI>();t.font=Resources.Load<TMP_FontAsset>("Ilaban/Fonts/StreetPixel");t.text=value;t.fontSize=size;t.color=new Color32(247,226,181,255);t.alignment=TextAlignmentOptions.Midline;t.raycastTarget=false;return t;}
+        TMP_Text Text(Transform parent,Rect area,string value,int size){var t=R(parent,area).gameObject.AddComponent<TextMeshProUGUI>();t.font=Resources.Load<TMP_FontAsset>("Ilaban/Fonts/KalyeDisplay");t.text=value;t.fontSize=size;t.color=new Color32(247,226,181,255);t.alignment=TextAlignmentOptions.Midline;t.raycastTarget=false;return t;}
         void Cue(string name){var clip=Resources.Load<AudioClip>("Ilaban/Audio/SFX/"+name);if(clip!=null)sound.PlayOneShot(clip);}
         void Update()
         {

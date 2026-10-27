@@ -23,7 +23,7 @@ namespace Hexbound
         Canvas canvas;
         RectTransform safe,view;
         RawImage scenery;
-        TMP_FontAsset font;
+        TMP_FontAsset font,bodyFont;
         readonly Texture2D[] heads=new Texture2D[8],bodies=new Texture2D[8],items=new Texture2D[8],stages=new Texture2D[3];
         readonly Dictionary<string,Sprite> sprites=new Dictionary<string,Sprite>();
         readonly Dictionary<string,AudioClip> clips=new Dictionary<string,AudioClip>();
@@ -66,7 +66,7 @@ namespace Hexbound
         {
             Application.targetFrameRate=60;
             controls=new AcademyInputManager(); reactions=new ReactionBank();
-            font=Resources.Load<TMP_FontAsset>("Ilaban/Fonts/StreetPixel");
+            font=Resources.Load<TMP_FontAsset>("Ilaban/Fonts/KalyeDisplay");bodyFont=Resources.Load<TMP_FontAsset>("Ilaban/Fonts/KalyeBody");
             for(int i=0;i<8;i++) { heads[i]=Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/portraits"); bodies[i]=Tex("Bodies/Body_"+i);items[i]=Tex("Items/Item_"+i); }
             for(int i=0;i<3;i++) stages[i]=MapTex(i);
             foreach(var clip in Resources.LoadAll<AudioClip>("Ilaban/Audio")) clips[clip.name]=clip;
@@ -116,7 +116,7 @@ namespace Hexbound
         }
         TMP_Text Label(Transform parent,Rect rect,string text,int size=24,Color? color=null,TextAnchor alignment=TextAnchor.MiddleCenter)
         {
-            var r=Rect(parent,"Teksto",rect);var t=r.gameObject.AddComponent<TextMeshProUGUI>();t.font=font;t.text=text;t.fontSize=size;t.color=color??cream;t.alignment=alignment==TextAnchor.MiddleLeft?TextAlignmentOptions.MidlineLeft:alignment==TextAnchor.MiddleRight?TextAlignmentOptions.MidlineRight:TextAlignmentOptions.Midline;t.raycastTarget=false;t.textWrappingMode=TextWrappingModes.Normal;t.overflowMode=TextOverflowModes.Truncate;var shadow=r.gameObject.AddComponent<Shadow>();shadow.effectColor=new Color(0,0,0,.8f);shadow.effectDistance=new Vector2(1,-2);return t;
+            var r=Rect(parent,"Teksto",rect);var t=r.gameObject.AddComponent<TextMeshProUGUI>();t.font=size>=27?font:bodyFont;t.text=text;t.fontSize=size;t.enableAutoSizing=true;t.fontSizeMax=size;t.fontSizeMin=Mathf.Max(10,size*.6f);t.color=color??cream;t.alignment=alignment==TextAnchor.MiddleLeft?TextAlignmentOptions.MidlineLeft:alignment==TextAnchor.MiddleRight?TextAlignmentOptions.MidlineRight:TextAlignmentOptions.Midline;t.raycastTarget=false;t.textWrappingMode=TextWrappingModes.Normal;t.overflowMode=TextOverflowModes.Truncate;return t;
         }
         Button Button(Transform parent,Rect rect,string text,Action action,bool enabled=true)
         {
@@ -275,7 +275,7 @@ namespace Hexbound
         void Controls()
         {
             Shade(.87f);Heading("Mga Kontrol","Malaya ang bawat manlalaro sa sariling teklado o mando.");
-            Label(view,new Rect(110,145,1060,151),"MANLALARO 1    A / D  LUMAKAD    F  SUNTOK / KUMPIRMAHIN\nMANLALARO 2    ← / →  LUMAKAD    CTRL KANAN / 0 SA BILANGAN  SUNTOK\nMANDO    PALANCA / MGA PALASO  LUMAKAD    IBABA / KALIWANG PINDUTAN  SUNTOK\nH  MGA KONTROL    ESC  BUMALIK / IHINTO",23,cream,TextAnchor.MiddleLeft);
+            Label(view,new Rect(110,145,1060,151),"MANLALARO 1    A / D  LUMAKAD    F  SUNTOK / KUMPIRMAHIN\nMANLALARO 2    PALASO KALIWA / KANAN  LUMAKAD    CTRL KANAN / 0  SUNTOK\nMANDO    PALANCA / MGA PALASO  LUMAKAD    IBABA / KALIWANG PINDUTAN  SUNTOK\nH  MGA KONTROL    ESC  BUMALIK / IHINTO",23,cream,TextAnchor.MiddleLeft);
             Label(view,new Rect(110,310,1060,60),"Isang suntok, isang hakbang paatras. Limang sunod na tama: hilo.\nItulak ang katunggali sa imburnal upang manalo.",24,gold);
             string[] labels={"Wika ng Reaksyon","Pangunahing Lakas","Musika","Tunog"};menuButtons=new Button[5];
             for(int i=0;i<4;i++) {int index=i;menuButtons[i]=Button(view,new Rect(280,398+i*50,720,44),SettingText(i),()=>{setting=focus=index;AdjustSetting(1);});}

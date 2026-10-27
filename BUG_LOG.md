@@ -27,3 +27,6 @@ Original artwork, face files, audio and Main.unity have not been deleted. Proced
 | C2 | Title advanced to Pumili ng Tauhan with no input after ~15s in built exe | NOT A BUG: runInBackground=0, so only the focused game window gets input; the newly launched window had focus and received outside keystrokes. Title correctly advances on any key. NEEDS MANUAL TEST: leave title idle 60s untouched |
 | C3 | Character card names truncated (Manong Latalata, Aling Boteng Suka, Ate Bato-Bato Pik) | OPEN: fix with item C layout |
 | C4 | QA capture method used screen copy and grabbed other windows | FIXED: captures now use PrintWindow on the game window only |
+| C5 | Phase 3 font swap: Tiny5 pixel font replaced by Lilita One + Nunito SDF (Bilinear, outline + underlay); arrow glyphs removed from controls text | FIXED: no MISSING GLYPH in smoke run |
+| C6 | Smoke harness was destroyed by the Pambungad -> Pamagat scene load | FIXED: DontDestroyOnLoad |
+| C7 | Labels overflowed their rects with the wider font | MITIGATED: TMP auto-size (min 60%); select screen redo pending |
