@@ -1,383 +1,351 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
+using System;
 using System.Collections.Generic;
 
 namespace Hexbound
 {
+    // Runtime Canvas preserves Main.unity and original asset GUIDs. Rendering never drives combat.
     public sealed class AcademyGame : MonoBehaviour
     {
-        enum ScreenState { Title, Select, StageSelect, Fight }
-        ScreenState screen;
-        readonly int[] selected={0,4};
-        readonly bool[] ready={false,false};
-        Texture2D[] portraits=new Texture2D[8], showcases=new Texture2D[8], abilityIcons=new Texture2D[8];
-        int selectedArena;
-        Texture2D[] sheets=new Texture2D[8], avatars=new Texture2D[8], effects=new Texture2D[8], stages=new Texture2D[3];
-        readonly Dictionary<string,AudioClip> clips=new Dictionary<string,AudioClip>();
-        Texture2D riftSheet, academyPanel, academyButton;
-        AudioSource music, sfx;
-        DuelModel model;
+        public enum ScreenState { Title, Select, StageSelect, Fight, Controls }
+        public ScreenState ScreenNow { get; private set; }
+        public DuelModel Model { get; private set; }
+        public readonly int[] Selected={0,4};
+        public readonly bool[] Ready={false,false};
+        public bool Paused { get; private set; }
+        public LanguageMode ReactionLanguage => reactions.Mode;
         AcademyInputManager controls;
-        Texture2D runeDisc;
-        float countdown, resultTime, animationTime;
-        bool paused, help, muted;
-        int lastSecond;
-        Font font, titleFont, bodyFont;
-        GUIStyle textStyle;
-        readonly Color ink=new Color32(13,16,30,255), cream=new Color32(242,227,201,255), gold=new Color32(211,176,109,255);
+        ReactionBank reactions;
+        Canvas canvas;
+        RectTransform safe,view;
+        RawImage scenery;
+        Font font;
+        readonly Texture2D[] heads=new Texture2D[8],bodies=new Texture2D[8],items=new Texture2D[8],stages=new Texture2D[3];
+        readonly Dictionary<string,Sprite> sprites=new Dictionary<string,Sprite>();
+        readonly Dictionary<string,AudioClip> clips=new Dictionary<string,AudioClip>();
+        readonly List<Actor> previews=new List<Actor>();
+        readonly List<RectTransform> flames=new List<RectTransform>();
+        Actor[] actors;
+        Text[] names,deviceLabels;
+        Image[][] dots;
+        Bubble[] bubbles;
+        RectTransform pausePanel,resultPanel;
+        Text resultTitle,resultReason,focusLabel;
+        Button[] menuButtons;
+        RectTransform[] cards;
+        Image[] stageBars;
+        Image[][] cardMarkers;
+        Text[] readiness;
+        Actor[] selectionShowcase;
+        Image[] selectionBars;
+        AudioSource music,sfx,highlight;
+        int selectedArena,focus,setting;
+        bool fromFight;
+        float clock,resultTime,master=.8f,musicLevel=.55f,soundLevel=.7f;
+        readonly Color cream=new Color32(245,229,194,255),gold=new Color32(224,181,105,255),ink=new Color32(16,30,40,255);
+        readonly Color[] playerColors={new Color32(81,214,218,255),new Color32(249,135,116,255)};
+        sealed class Actor { public RectTransform root; public RawImage body,head,dust; public int id; }
+        sealed class Bubble { public RectTransform root; public Text label; public CanvasGroup alpha; public float started=-10; }
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        static void Boot() { if (FindFirstObjectByType<AcademyGame>()==null) new GameObject("Hexbound Game").AddComponent<AcademyGame>(); }
+        static void Boot() { if(FindAnyObjectByType<AcademyGame>()==null) new GameObject("Ilaban ang Tawa").AddComponent<AcademyGame>(); }
         void Awake()
         {
             Application.targetFrameRate=60;
-            controls=new AcademyInputManager();
-            runeDisc=CreateRuneDisc();
-            riftSheet=Resources.Load<Texture2D>("Stages/RuneRift");
-            academyPanel=Resources.Load<Texture2D>("UI/AcademyPanel");
-            academyButton=Resources.Load<Texture2D>("UI/AcademyButton");
-            font=Resources.Load<Font>("UI/Cinzel"); bodyFont=Resources.Load<Font>("UI/EBGaramond"); titleFont=Resources.Load<Font>("UI/CinzelDecorative");
-            for (int i=0;i<8;i++) {
-                sheets[i]=Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/sheet");
-                avatars[i]=Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/avatar");
-                portraits[i]=Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/portraits");
-                showcases[i]=Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/showcase");
-                abilityIcons[i]=Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/abilities");
-                effects[i]=Resources.Load<Texture2D>("Effects/"+Roster.Files[i]);
-            }
-            for (int i=0;i<3;i++) stages[i]=Resources.Load<Texture2D>("Stages/"+Roster.StageFiles[i]);
-            foreach (var clip in Resources.LoadAll<AudioClip>("Audio/SFX")) clips[clip.name]=clip;
-            music=gameObject.AddComponent<AudioSource>(); sfx=gameObject.AddComponent<AudioSource>();
-            music.loop=true; music.volume=.5f; sfx.volume=.55f;
-            if (FindFirstObjectByType<AudioListener>()==null) gameObject.AddComponent<AudioListener>();
-            muted=PlayerPrefs.GetInt("Hexbound.Mute",0)==1; AudioListener.volume=muted?0:1;
-            PlayMusic("Menu");
+            controls=new AcademyInputManager(); reactions=new ReactionBank();
+            font=Resources.Load<Font>("UI/Tiny5");
+            for(int i=0;i<8;i++) { heads[i]=Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/portraits"); bodies[i]=Tex("Bodies/Body_"+i);items[i]=Tex("Items/Item_"+i); }
+            for(int i=0;i<3;i++) stages[i]=Tex("Stages/"+Roster.StageFiles[i]);
+            foreach(var clip in Resources.LoadAll<AudioClip>("Ilaban/Audio")) clips[clip.name]=clip;
+            music=gameObject.AddComponent<AudioSource>();sfx=gameObject.AddComponent<AudioSource>();highlight=gameObject.AddComponent<AudioSource>();
+            music.loop=true;highlight.loop=true;highlight.clip=clips["highlight_loop"];
+            master=PlayerPrefs.GetFloat("Ilaban.Master",.8f);musicLevel=PlayerPrefs.GetFloat("Ilaban.Music",.55f);soundLevel=PlayerPrefs.GetFloat("Ilaban.Sound",.7f);ApplyAudio();
+            if(FindAnyObjectByType<AudioListener>()==null) gameObject.AddComponent<AudioListener>();
+            BuildCanvas();Show(ScreenState.Title);
         }
-        void PlayMusic(string track) { music.clip=Resources.Load<AudioClip>("Audio/Music/"+track); music.Play(); }
-        void Sound(string name) { if (clips.TryGetValue(name,out var clip)) sfx.PlayOneShot(clip); }
-        bool Key(KeyCode code) => Input.GetKeyDown(code);
+        Texture2D Tex(string path)=>Resources.Load<Texture2D>("Ilaban/"+path);
+        Sprite Skin(string path)
+        {
+            if(sprites.TryGetValue(path,out var sprite)) return sprite;
+            var t=Tex("UI/"+path);sprite=Sprite.Create(t,new Rect(0,0,t.width,t.height),new Vector2(.5f,.5f),100,0,SpriteMeshType.FullRect,new Vector4(8,8,8,8));sprites[path]=sprite;return sprite;
+        }
+        void BuildCanvas()
+        {
+            var go=new GameObject("Ilaban Canvas",typeof(RectTransform),typeof(Canvas),typeof(CanvasScaler),typeof(GraphicRaycaster));go.transform.SetParent(transform,false);
+            canvas=go.GetComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.sortingOrder=10;
+            var scaler=go.GetComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;scaler.referenceResolution=new Vector2(1280,720);scaler.matchWidthOrHeight=.5f;
+            var canvasRect=(RectTransform)go.transform;
+            var background=Image(canvasRect,new Rect(0,0,1280,720),new Color32(35,54,67,255));Stretch(background.rectTransform);
+            scenery=Raw(canvasRect,new Rect(0,0,1280,720),stages[0]);
+            safe=Rect(canvasRect,"Safe layout",new Rect(0,0,1280,720));safe.anchorMin=safe.anchorMax=new Vector2(.5f,.5f);safe.pivot=new Vector2(.5f,.5f);safe.anchoredPosition=Vector2.zero;
+            // The background expands into surplus aspect-ratio space; gameplay/UI keeps its proportions.
+            if(FindAnyObjectByType<EventSystem>()==null) {
+                var es=new GameObject("Ilaban EventSystem",typeof(EventSystem),typeof(InputSystemUIInputModule));es.transform.SetParent(transform,false);
+                // Pointer-only module: keyboard/controller navigation is isolated by AcademyInputManager.
+                var module=es.GetComponent<InputSystemUIInputModule>();module.AssignDefaultActions();module.move=null;module.submit=null;module.cancel=null;
+            }
+        }
+        static void Stretch(RectTransform r) {r.anchorMin=Vector2.zero;r.anchorMax=Vector2.one;r.offsetMin=r.offsetMax=Vector2.zero;}
+        RectTransform Rect(Transform parent,string name,Rect area)
+        {
+            var g=new GameObject(name,typeof(RectTransform));g.transform.SetParent(parent,false);var r=(RectTransform)g.transform;
+            r.anchorMin=r.anchorMax=new Vector2(0,1);r.pivot=new Vector2(0,1);r.anchoredPosition=new Vector2(area.x,-area.y);r.sizeDelta=area.size;return r;
+        }
+        Image Image(Transform parent,Rect rect,Color color,string skin=null)
+        {
+            var r=Rect(parent,skin??"Panel",rect);var im=r.gameObject.AddComponent<Image>();im.color=color;im.raycastTarget=false;
+            if(skin!=null) {im.sprite=Skin(skin);im.type=UnityEngine.UI.Image.Type.Sliced;}
+            return im;
+        }
+        RawImage Raw(Transform parent,Rect rect,Texture2D texture)
+        {
+            var r=Rect(parent,"Pixel artwork",rect);var image=r.gameObject.AddComponent<RawImage>();image.texture=texture;image.raycastTarget=false;return image;
+        }
+        Text Label(Transform parent,Rect rect,string text,int size=24,Color? color=null,TextAnchor alignment=TextAnchor.MiddleCenter)
+        {
+            var r=Rect(parent,"Teksto",rect);var t=r.gameObject.AddComponent<Text>();t.font=font;t.text=text;t.fontSize=size;t.color=color??cream;t.alignment=alignment;t.raycastTarget=false;t.horizontalOverflow=HorizontalWrapMode.Wrap;t.verticalOverflow=VerticalWrapMode.Truncate;return t;
+        }
+        Button Button(Transform parent,Rect rect,string text,Action action,bool enabled=true)
+        {
+            var image=Image(parent,rect,Color.white,text=="Bumalik"?"Bumalik":"Simulan");image.raycastTarget=true;
+            var b=image.gameObject.AddComponent<Button>();b.targetGraphic=image;b.interactable=enabled;b.navigation=new Navigation {mode=Navigation.Mode.None};
+            var colors=b.colors;colors.highlightedColor=new Color(1,.86f,.6f);colors.pressedColor=new Color(.7f,.85f,.8f);colors.disabledColor=new Color(.45f,.45f,.45f);b.colors=colors;
+            b.onClick.AddListener(()=>{Sound("menu_confirm");action();});Label(image.transform,new Rect(8,4,rect.width-16,rect.height-8),text,25,cream);return b;
+        }
+        void Music(string name) {if(clips.TryGetValue(name,out var clip) && music.clip!=clip) {music.clip=clip;music.Play();}}
+        void Sound(string name) {if(clips.TryGetValue(name,out var clip)) sfx.PlayOneShot(clip);}
+        void ApplyAudio() {AudioListener.volume=master;music.volume=musicLevel;sfx.volume=soundLevel;highlight.volume=soundLevel*.07f;}
+        void SaveAudio() {ApplyAudio();PlayerPrefs.SetFloat("Ilaban.Master",master);PlayerPrefs.SetFloat("Ilaban.Music",musicLevel);PlayerPrefs.SetFloat("Ilaban.Sound",soundLevel);}
+        public void Show(ScreenState state)
+        {
+            ScreenNow=state;focus=0;previews.Clear();flames.Clear();cards=null;cardMarkers=null;menuButtons=null;pausePanel=null;resultPanel=null;
+            if(view!=null) {view.gameObject.SetActive(false);Destroy(view.gameObject);}
+            view=Rect(safe,"Screen "+state,new Rect(0,0,1280,720));
+            scenery.texture=stages[selectedArena];
+            if(state==ScreenState.Title) {Music("Title");Title();}
+            if(state==ScreenState.Select) {Music("Selection");Select();}
+            if(state==ScreenState.StageSelect) {Music("Selection");StageSelect();}
+            if(state==ScreenState.Fight) {Music(Roster.StageFiles[Model.ArenaIndex]);Fight();}
+            if(state==ScreenState.Controls) Controls();
+            if(state==ScreenState.Select || state==ScreenState.StageSelect) highlight.Play();else highlight.Stop();
+        }
+        void Shade(float alpha=.72f)=>Image(view,new Rect(0,0,1280,720),new Color(.025f,.06f,.09f,alpha));
+        void Heading(string title,string subtitle) {Label(view,new Rect(30,28,1220,62),title,48);Label(view,new Rect(100,92,1080,32),subtitle,20,gold);}
+        void Title()
+        {
+            Shade(.59f);Label(view,new Rect(0,102,1280,36),"L A R O   N G   B A R A N G A Y",23,gold);
+            Label(view,new Rect(90,166,1100,91),"ILABAN ANG TAWA",82);
+            Label(view,new Rect(90,264,1100,42),"DEVELOPED BY CHRISTINE TAMAYO",31,gold);
+            string[] labels={"Simulan ang Laro","Mga Kontrol","Lumabas"};menuButtons=new Button[3];
+            for(int i=0;i<3;i++) {int index=i;menuButtons[i]=Button(view,new Rect(440,366+i*67,400,55),labels[i],()=>ActivateTitle(index));}
+            Label(view,new Rect(220,619,840,35),"Pindutin ang anumang pindutan upang magsimula",23,gold);
+            Label(view,new Rect(240,667,800,25),"DALAWANG MANLALARO  /  TATLONG ENTABLADO",18);
+        }
+        void ActivateTitle(int index) {if(index==0) OpenSelect();else if(index==1){fromFight=false;Show(ScreenState.Controls);}else Application.Quit();}
+        void OpenSelect() {Ready[0]=Ready[1]=false;Paused=false;Show(ScreenState.Select);}
+        void Select()
+        {
+            Shade(.72f);Heading("Pumili ng Tauhan","Pumili at kumpirmahin ang tauhan ng bawat manlalaro.");
+            readiness=new Text[2];selectionShowcase=new Actor[2];
+            for(int p=0;p<2;p++) {
+                int side=p;float x=28+p*278;
+                readiness[p]=Label(view,new Rect(x,132,270,37),"",23,playerColors[p]);
+                selectionShowcase[p]=ActorView(view,Selected[p],new Rect(x+12,187,245,350));
+                Label(view,new Rect(x-5,526,280,40),Roster.Names[Selected[p]],27,playerColors[p]);
+                Button(view,new Rect(x+5,575,260,47),"Kumpirmahin",()=>Confirm(side));
+            }
+            cards=new RectTransform[8];cardMarkers=new Image[8][];
+            for(int i=0;i<8;i++) {
+                int id=i;float x=610+(i%4)*155,y=163+(i/4)*195;
+                var r=Rect(view,"Tauhan "+i,new Rect(x,y,145,182));cards[i]=r;
+                Slant(r,new Rect(0,0,145,182),new Color(.055f,.115f,.14f,.98f));
+                var preview=ActorView(r,i,new Rect(27,10,90,132));previews.Add(preview);
+                Raw(r,new Rect(108,95,27,27),items[i]);
+                Image(r,new Rect(4,136,137,43),new Color(.025f,.055f,.07f,.95f));Label(r,new Rect(7,138,131,40),Roster.Names[i],19);
+                cardMarkers[i]=new Image[2];for(int p=0;p<2;p++) {cardMarkers[i][p]=Image(r,new Rect(p==0?1:139,3,5,174),playerColors[p]);var badge=Label(cardMarkers[i][p].transform,new Rect(p==0?5:-25,0,25,25),(p+1).ToString(),22,playerColors[p]);}
+                var hit=Image(r,new Rect(0,0,145,182),Color.clear);hit.raycastTarget=true;var button=hit.gameObject.AddComponent<Button>();button.navigation=new Navigation{mode=Navigation.Mode.None};button.onClick.AddListener(()=>{int side=Ready[0]?1:0;if(!Ready[side]) {Selected[side]=id;Sound("carousel_slide");RefreshDescriptions();}});
+            }
+            Label(view,new Rect(605,558,620,33),Roster.Descriptions[Selected[0]],20,playerColors[0]);
+            Label(view,new Rect(605,594,620,33),Roster.Descriptions[Selected[1]],20,playerColors[1]);
+            Button(view,new Rect(35,646,205,52),"Bumalik",()=>Show(ScreenState.Title));
+            Button(view,new Rect(1040,646,205,52),"Simulan",()=>{if(Ready[0]&&Ready[1])Show(ScreenState.StageSelect);},Ready[0]&&Ready[1]);
+            Label(view,new Rect(260,642,760,58),"KALIWA / KANAN  PUMILI    F / CTRL KANAN  KUMPIRMAHIN",20,gold);
+        }
+        void Slant(Transform parent,Rect rect,Color color) {var r=Rect(parent,"Slanted card",rect);var g=r.gameObject.AddComponent<SlantGraphic>();g.color=color;g.raycastTarget=false;}
+        void Confirm(int side) {if(Ready[side])return;Ready[side]=true;Sound("confirm_sting");if(Ready[0]&&Ready[1]) Show(ScreenState.StageSelect);}
+        void StageSelect()
+        {
+            Shade(.68f);Heading("Pumili ng Entablado","Tatlong lugar. Iisang tuntunin: iwasan ang imburnal.");
+            cards=new RectTransform[3];stageBars=new Image[3];
+            for(int i=0;i<3;i++) {
+                int index=i;float x=93+i*371;
+                var r=Rect(view,"Entablado "+i,new Rect(x,160,350,390));cards[i]=r;
+                Slant(r,new Rect(0,0,350,390),new Color(.05f,.10f,.14f));stageBars[i]=Image(r,new Rect(5,382,340,6),gold);
+                var crop=Rect(r,"Slanted preview",new Rect(10,8,330,300));var mask=crop.gameObject.AddComponent<SlantGraphic>();mask.color=Color.white;crop.gameObject.AddComponent<Mask>().showMaskGraphic=false;
+                Raw(crop,new Rect(-120,-10,580,326),stages[i]);
+                Image(r,new Rect(10,309,330,71),new Color(.025f,.05f,.07f,.97f));Label(r,new Rect(15,319,320,50),Roster.Stages[i],30);
+                var hit=Image(r,new Rect(0,0,350,390),Color.clear);hit.raycastTarget=true;var b=hit.gameObject.AddComponent<Button>();b.navigation=new Navigation{mode=Navigation.Mode.None};b.onClick.AddListener(()=>ChooseStage(index));
+            }
+            focusLabel=Label(view,new Rect(150,565,980,48),Roster.StageDescriptions[selectedArena],25,gold);
+            Button(view,new Rect(35,646,205,52),"Bumalik",OpenSelect);Button(view,new Rect(1040,646,205,52),"Simulan",StartMatch);
+            Label(view,new Rect(260,645,760,53),"KALIWA / KANAN  PUMILI    ENTER / SUNTOK  KUMPIRMAHIN",20,gold);
+        }
+        void ChooseStage(int index) {selectedArena=index;scenery.texture=stages[index];if(focusLabel!=null)focusLabel.text=Roster.StageDescriptions[index];Sound("carousel_slide");}
+        public void StartMatch() {if(!Ready[0]||!Ready[1])return;Model=new DuelModel(Selected[0],Selected[1],selectedArena);Paused=false;resultTime=0;Show(ScreenState.Fight);for(int p=0;p<2;p++)React(p,"ready");}
+        Actor ActorView(Transform parent,int id,Rect area)
+        {
+            var a=new Actor {id=id,root=Rect(parent,"Tauhan",area)};
+            a.dust=Raw(a.root,new Rect(-10,area.height-28,area.width+20,40),Tex("UI/Glow"));a.dust.color=new Color(.9f,.8f,.6f,.3f);
+            a.body=Raw(a.root,new Rect(0,0,area.width,area.height),bodies[id]);a.body.uvRect=new Rect(0,6f/7,.25f,1f/7);
+            a.head=Raw(a.root,new Rect(area.width*.23f,-area.height*.03f,area.width*.56f,area.height*.41f),heads[id]);a.head.uvRect=new Rect(0,.5f,.5f,.5f);
+            return a;
+        }
+        void Fight()
+        {
+            scenery.texture=stages[Model.ArenaIndex];
+            foreach(float x in new[]{DuelModel.LeftRiftX,DuelModel.RightRiftX}) Raw(view,new Rect(x-70,526,140,70),Tex("UI/Imburnal_"+Roster.StageFiles[Model.ArenaIndex]));
+            // A moving tricycle silhouette, bunting and breathing lantern glow keep each stage alive.
+            for(int i=0;i<2;i++) {var glow=Raw(view,new Rect(i==0?8:1175,180,100,100),Tex("UI/Glow"));flames.Add(glow.rectTransform);}
+            actors=new Actor[2];names=new Text[2];deviceLabels=new Text[2];dots=new Image[2][];bubbles=new Bubble[2];
+            for(int p=0;p<2;p++) {
+                actors[p]=ActorView(view,Model.players[p].character,new Rect(0,0,170,255));
+                float x=p==0?22:958;
+                var ring=Image(view,new Rect(x+101,20,96,96),playerColors[p],"PortraitMask");
+                var mask=Image(ring.transform,new Rect(5,5,86,86),Color.white,"PortraitMask");mask.gameObject.AddComponent<Mask>().showMaskGraphic=false;
+                var portrait=Raw(mask.transform,new Rect(0,0,86,86),heads[Model.players[p].character]);portrait.uvRect=new Rect(0,.5f,.5f,.5f);
+                names[p]=Label(view,new Rect(x,119,300,32),Roster.Names[Model.players[p].character],25);
+                deviceLabels[p]=Label(view,new Rect(x-10,154,320,30),"",18,playerColors[p]);
+                Label(view,new Rect(x,187,300,23),"Sunod na Suntok",18,gold);
+                dots[p]=new Image[5];for(int i=0;i<5;i++) dots[p][i]=Image(view,new Rect(x+77+i*30,215,22,22),new Color(.24f,.32f,.35f),"HiloDot");
+                var orb=Image(view,new Rect(p==0?28:1156,610,96,96),playerColors[p],"Suntok");Label(orb.transform,new Rect(-20,63,136,28),"Suntok",23,cream);
+                var bubble=new Bubble();bubble.root=Rect(view,"Reaksyon",new Rect(0,0,250,69));Image(bubble.root,new Rect(0,0,250,69),Color.white,"SpeechBubble");bubble.label=Label(bubble.root,new Rect(10,4,230,53),"",23,ink);bubble.alpha=bubble.root.gameObject.AddComponent<CanvasGroup>();bubble.alpha.blocksRaycasts=false;bubble.alpha.alpha=0;bubbles[p]=bubble;
+            }
+            Raw(view,new Rect(0,0,1280,720),Tex("UI/Vignette"));
+            Label(view,new Rect(470,668,340,33),"Ihinto [ESC]    Mga Kontrol [H]",21,gold);
+            resultPanel=Rect(view,"Bunga ng Laban",new Rect(330,22,620,226));Image(resultPanel,new Rect(0,0,620,226),new Color(.025f,.065f,.09f,.94f));
+            resultTitle=Label(resultPanel,new Rect(15,8,590,48),"",32,gold);resultReason=Label(resultPanel,new Rect(15,58,590,43),"",24);
+            Button(resultPanel,new Rect(20,111,275,51),"Maglaro Muli",StartMatch);Button(resultPanel,new Rect(325,111,275,51),"Pumili Muli",OpenSelect);Label(resultPanel,new Rect(15,176,590,34),"SUNTOK  MULING MAGLARO    ESC  PUMILI MULI",18,gold);resultPanel.gameObject.SetActive(false);
+            pausePanel=Rect(view,"Pahinga",new Rect(385,240,510,280));Image(pausePanel,new Rect(0,0,510,280),new Color(.025f,.065f,.09f,.96f));Label(pausePanel,new Rect(0,15,510,47),"Pansamantalang Ihinto",34);
+            menuButtons=new[]{Button(pausePanel,new Rect(75,85,360,52),"Magpatuloy",()=>{Paused=false;pausePanel.gameObject.SetActive(false);}),Button(pausePanel,new Rect(75,155,360,52),"Pangunahing Talaan",()=>Show(ScreenState.Title))};Label(pausePanel,new Rect(30,225,450,30),"KALIWA / KANAN  PUMILI    SUNTOK  PILIIN",19,gold);pausePanel.gameObject.SetActive(false);
+        }
+        void React(int p,string kind)
+        {
+            string line=reactions.Choose(p,Model.players[p].character,kind,clock);if(line==null)return;
+            bubbles[p].label.text=line;bubbles[p].started=clock;
+        }
+        void Controls()
+        {
+            Shade(.87f);Heading("Mga Kontrol","Malaya ang bawat manlalaro sa sariling teklado o mando.");
+            Label(view,new Rect(110,145,1060,151),"MANLALARO 1    A / D  LUMAKAD    F  SUNTOK / KUMPIRMAHIN\nMANLALARO 2    ← / →  LUMAKAD    CTRL KANAN / 0 SA BILANGAN  SUNTOK\nMANDO    PALANCA / MGA PALASO  LUMAKAD    IBABA / KALIWANG PINDUTAN  SUNTOK\nH  MGA KONTROL    ESC  BUMALIK / IHINTO",23,cream,TextAnchor.MiddleLeft);
+            Label(view,new Rect(110,310,1060,60),"Isang suntok, isang hakbang paatras. Limang sunod na tama: hilo.\nItulak ang katunggali sa imburnal upang manalo.",24,gold);
+            string[] labels={"Wika ng Reaksyon","Pangunahing Lakas","Musika","Tunog"};menuButtons=new Button[5];
+            for(int i=0;i<4;i++) {int index=i;menuButtons[i]=Button(view,new Rect(280,398+i*50,720,44),SettingText(i),()=>{setting=focus=index;AdjustSetting(1);});}
+            menuButtons[4]=Button(view,new Rect(510,630,260,52),"Bumalik",CloseControls);
+            Label(view,new Rect(270,687,740,24),"PATAAS / PABABA  PUMILI    KALIWA / KANAN  BAGUHIN",18,gold);
+        }
+        string SettingText(int i)=>i==0?"Wika ng Reaksyon: "+(reactions.Mode==LanguageMode.Pormal?"Pormal":"Kabataan"):(i==1?"Pangunahing Lakas":i==2?"Musika":"Tunog")+": "+Mathf.RoundToInt((i==1?master:i==2?musicLevel:soundLevel)*100)+"%";
+        void AdjustSetting(int direction) {
+            if(focus==4) return;
+            int i=setting;
+            if(i==0) reactions.Mode=reactions.Mode==LanguageMode.Pormal?LanguageMode.GenZ:LanguageMode.Pormal;
+            if(i==1) master=Mathf.Clamp01(master+direction*.1f);if(i==2) musicLevel=Mathf.Clamp01(musicLevel+direction*.1f);if(i==3) soundLevel=Mathf.Clamp01(soundLevel+direction*.1f);
+            SaveAudio();menuButtons[i].GetComponentInChildren<Text>().text=SettingText(i);Sound("menu_move");
+        }
+        void CloseControls() {Show(fromFight?ScreenState.Fight:ScreenState.Title);Paused=fromFight;}
         void Update()
         {
-            controls.Poll(Time.unscaledTime);
-            if(controls.ControllerDisconnected && screen==ScreenState.Fight && !model.Finished) paused=true;
-            if (screen==ScreenState.Title) { animationTime+=Time.deltaTime; if (controls.StartPressed) OpenSelect(); return; }
-            if (Key(KeyCode.M)) { muted=!muted; AudioListener.volume=muted?0:1; PlayerPrefs.SetInt("Hexbound.Mute",muted?1:0); }
-            if (controls.Any("Help")) help=!help;
-            if (controls.Any("Pause") && screen==ScreenState.Fight && !model.Finished) paused=!paused;
-            if (!paused) animationTime+=Time.deltaTime;
-            if (screen==ScreenState.StageSelect) {
-                if (controls.Navigate(0).x<0||controls.Navigate(1).x<0) { selectedArena=(selectedArena+2)%3; Sound("select"); }
-                if (controls.Navigate(0).x>0||controls.Navigate(1).x>0) { selectedArena=(selectedArena+1)%3; Sound("select"); }
-                if (controls.Any("Confirm")) StartMatch();
-                else if (controls.Any("Cancel")) OpenSelect();
-                return;
+            clock+=Time.unscaledDeltaTime;controls.Poll(clock);
+            var cr=(RectTransform)canvas.transform;float fit=Mathf.Min(cr.rect.width/1280f,cr.rect.height/720f);safe.localScale=new Vector3(fit,fit,1);
+            // Cover unused aspect-ratio space with a proportion-preserving background.
+            float cover=Mathf.Max(cr.rect.width/1280f,cr.rect.height/720f);scenery.rectTransform.sizeDelta=new Vector2(1280*cover,720*cover);scenery.rectTransform.anchorMin=scenery.rectTransform.anchorMax=new Vector2(.5f,.5f);scenery.rectTransform.pivot=new Vector2(.5f,.5f);scenery.rectTransform.anchoredPosition=ScreenNow==ScreenState.Fight?Vector2.zero:new Vector2(Mathf.Sin(clock*.2f)*2,Mathf.Sin(clock*.17f)*2);
+            if(ScreenNow==ScreenState.Title) {
+                NavMenu(3);if(controls.Any("Confirm"))ActivateTitle(focus);
+                else if(controls.StartPressed && controls.Navigate(0)==Vector2Int.zero && controls.Navigate(1)==Vector2Int.zero && !controls.Any("Help") && !controls.Any("Pause") && !controls.Any("Cancel")) OpenSelect();
             }
-            if (screen==ScreenState.Select) {
-                SelectKeys(0);
-                SelectKeys(1);
-                for(int p=0;p<2;p++) if(controls.Press(p,"Cancel")) { ready[p]=false; Sound("select"); }
-                if (ready[0] && ready[1]) OpenStageSelect();
-                return;
+            else if(ScreenNow==ScreenState.Select) {
+                for(int p=0;p<2;p++) {if(!Ready[p]) {int dir=controls.Navigate(p).x;if(dir!=0) {Selected[p]=(Selected[p]+dir+8)%8;Sound("carousel_slide");RefreshDescriptions();}if(controls.Press(p,"Confirm")) {Confirm(p);if(ScreenNow!=ScreenState.Select)return;}}
+                    if(controls.Press(p,"Cancel")) {if(Ready[p])Ready[p]=false;else{Show(ScreenState.Title);return;}}}
+                for(int p=0;p<2;p++){Animate(selectionShowcase[p],Pose.Idle,(int)(clock*4)%4);}
+                for(int p=0;p<2;p++)readiness[p].text="Manlalaro "+(p+1)+"  /  "+(Ready[p]?"Handa na":"Kumpirmahin: "+controls.Prompt(p,"Confirm"));
+                for(int i=0;i<8;i++) {bool active=i==Selected[0]||i==Selected[1];cards[i].localScale=Vector3.one*(active?1.035f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);Animate(previews[i],active?Pose.Punch:Pose.Idle,(int)(clock*(active?5:3))%4);}
             }
-            if(paused && controls.Any("Cancel") && !controls.Any("Pause")) { OpenSelect(); return; }
-            if (paused || help) return;
-            if (model.Finished) {
-                resultTime+=Time.deltaTime;
-                if (resultTime>1.2f && controls.Any("Confirm")) {
-                    if (model.MatchFinished) OpenSelect();
-                    else { model.NextRound(); BeginRound(); }
+            else if(ScreenNow==ScreenState.StageSelect) {
+                int dir=controls.Navigate(0).x!=0?controls.Navigate(0).x:controls.Navigate(1).x;if(dir!=0)ChooseStage((selectedArena+dir+3)%3);
+                for(int i=0;i<3;i++){cards[i].localScale=Vector3.one*(i==selectedArena?1.04f:.96f);stageBars[i].color=i==selectedArena?gold:new Color(.22f,.31f,.34f);}
+                if(controls.Any("Cancel"))OpenSelect();else if(controls.Any("Confirm"))StartMatch();
+            }
+            else if(ScreenNow==ScreenState.Controls) {
+                NavMenu(5);setting=focus;if(controls.Navigate(0).x!=0||controls.Navigate(1).x!=0)AdjustSetting(controls.Navigate(0).x!=0?controls.Navigate(0).x:controls.Navigate(1).x);
+                if(controls.Any("Cancel")||controls.Any("Help"))CloseControls();else if(controls.Any("Confirm")) {if(focus==4)CloseControls();else AdjustSetting(1);}
+            }
+            else if(ScreenNow==ScreenState.Fight) UpdateFight();
+            if(ScreenNow!=ScreenState.Fight && ScreenNow!=ScreenState.Controls && controls.Any("Help")){fromFight=false;Show(ScreenState.Controls);}
+            if(menuButtons!=null && (ScreenNow==ScreenState.Title||ScreenNow==ScreenState.Controls||Paused)) for(int i=0;i<menuButtons.Length;i++)menuButtons[i].transform.localScale=Vector3.one*(i==focus?1.035f:1);
+        }
+        void NavMenu(int count) {var a=controls.Navigate(0);var b=controls.Navigate(1);int dir=a.y!=0?-a.y:b.y!=0?-b.y:a.x!=0?a.x:b.x;if(dir!=0){focus=(focus+dir+count)%count;Sound("menu_move");}}
+        void RefreshDescriptions() {
+            // Rebuild only on selection, never every animation frame; preserved state stays in Selected/Ready.
+            Show(ScreenState.Select);
+        }
+        void UpdateFight()
+        {
+            if(controls.Any("Help")&&!Model.Finished){fromFight=true;Paused=true;Show(ScreenState.Controls);return;}
+            if(controls.Any("Pause")&&!Model.Finished) {Paused=!Paused;focus=0;Sound("menu_back");}
+            pausePanel.gameObject.SetActive(Paused);
+            if(Paused) {NavMenu(2);if(controls.Any("Confirm")){if(focus==0)Paused=false;else Show(ScreenState.Title);}return;}
+            if(!Model.Finished) {
+                Model.Tick(Time.deltaTime,controls.Read(0),controls.Read(1));
+                foreach(var ev in Model.events)React(ev.player,ev.kind);
+                foreach(var sound in Model.sounds)Sound(sound);
+                if(Model.Finished) {
+                    resultTime=0;resultPanel.gameObject.SetActive(true);resultTitle.text=Model.winner<0?"Kapwa Nahulog!":"Panalo si "+Roster.Names[Model.players[Model.winner].character]+"!";
+                    resultReason.text=Model.winner<0?"Kapwa nahulog sa imburnal!":"Nahulog sa imburnal si "+Roster.Names[Model.players[1-Model.winner].character]+"!";
                 }
-                return;
+            } else {resultTime+=Time.deltaTime;if(resultTime>.65f){if(controls.Any("Cancel")){OpenSelect();return;}if(controls.Any("Confirm")){StartMatch();return;}}}
+            for(int p=0;p<2;p++) {
+                var f=Model.players[p];var actor=actors[p];float fall=f.fallen?Mathf.Clamp01(resultTime/.65f):0;
+                actor.root.anchoredPosition=new Vector2(f.x-85,-(343+fall*170));actor.root.localScale=Vector3.one*(1-fall*.75f);
+                actor.head.rectTransform.localScale=Vector3.one; // Keep each original face readable while the body faces its rival.
+                actor.root.localRotation=Quaternion.Euler(0,0,f.dizzyTime>0?Mathf.Sin(clock*12)*6:f.fallen?fall*80:0);
+                actor.root.gameObject.SetActive(!f.fallen||resultTime<.8f);Animate(actor,f.pose,(int)(clock*8)%4);if(f.facing<0){var uv=actor.body.uvRect;uv.x+=uv.width;uv.width=-uv.width;actor.body.uvRect=uv;}
+                deviceLabels[p].text=controls.DeviceName(p)+" / "+controls.Prompt(p,"Move")+" + "+controls.Prompt(p,"Punch");
+                for(int i=0;i<5;i++)dots[p][i].color=i<f.streak?playerColors[p]:new Color(.24f,.32f,.35f);
+                var bubble=bubbles[p];float age=clock-bubble.started;bool visible=age>=0&&age<1.1f;bubble.root.gameObject.SetActive(visible);
+                if(visible) {bubble.alpha.alpha=Mathf.Min(1,age/.08f)*Mathf.Clamp01((1.1f-age)/.25f);float x=Mathf.Clamp(f.x-125,330,700);if(p==1 && Mathf.Abs(x-bubbles[0].root.anchoredPosition.x)<255)x=Mathf.Min(950,x+240);bubble.root.anchoredPosition=new Vector2(x+Mathf.Sin(age*70)*Mathf.Max(0,1-age*6)*3,-263);bubble.root.localScale=Vector3.one*Mathf.Lerp(.85f,1,Mathf.Clamp01(age/.1f));}
             }
-            if (countdown>0) {
-                countdown-=Time.deltaTime;
-                int sec=Mathf.CeilToInt(countdown);
-                if (sec!=lastSecond) { Sound("bell"); lastSecond=sec; }
-                return;
-            }
-            model.Tick(Mathf.Min(Time.deltaTime,.0333f),controls.Read(0),controls.Read(1));
-            foreach (string sound in model.sounds) Sound(sound);
-            if (model.Finished) resultTime=0;
-            int second=Mathf.CeilToInt(model.remaining);
-            if (second<=10 && second!=lastSecond) { Sound("bell"); lastSecond=second; }
-        }
-        void SelectKeys(int p)
-        {
-            if (ready[p]) return;
-            int old=selected[p]; var direction=controls.Navigate(p);
-            if(direction.x<0) selected[p]=(selected[p]+7)%8;
-            if(direction.x>0) selected[p]=(selected[p]+1)%8;
-            if(direction.y!=0) selected[p]=(selected[p]+4)%8;
-            if(old!=selected[p]) Sound("select");
-            if(controls.Press(p,"Confirm")) { ready[p]=true; Sound("confirm"); }
-        }
-        void OpenSelect() { screen=ScreenState.Select; ready[0]=ready[1]=false; paused=false; help=false; PlayMusic("Menu"); Sound("confirm"); }
-        void OpenStageSelect() { screen=ScreenState.StageSelect; help=false; Sound("confirm"); }
-        void StartMatch() { model=new DuelModel(selected[0],selected[1],selectedArena); screen=ScreenState.Fight; help=false; BeginRound(); }
-        void BeginRound() { countdown=3; lastSecond=3; resultTime=0; Sound("bell"); PlayMusic(Roster.StageFiles[model.ArenaIndex]); }
-        bool TryStartFromEvent(EventType input)
-        {
-            if(screen!=ScreenState.Title || (input!=EventType.KeyDown && input!=EventType.MouseDown)) return false;
-            OpenSelect(); return true;
-        }
-        void OnGUI()
-        {
-            float scale=Mathf.Min(Screen.width/1280f,Screen.height/720f);
-            GUI.matrix=Matrix4x4.TRS(new Vector3((Screen.width-1280*scale)/2,(Screen.height-720*scale)/2,0),Quaternion.identity,Vector3.one*scale);
-            if(TryStartFromEvent(Event.current.type)) Event.current.Use();
-            if (textStyle==null) textStyle=new GUIStyle(GUI.skin.label) { padding=new RectOffset(0,0,0,0) };
-            textStyle.font=font; textStyle.fontStyle=FontStyle.Normal;
-            Box(0,0,1280,720,ink);
-            if (screen==ScreenState.Title) DrawTitle();
-            else if (screen==ScreenState.Select) DrawSelect();
-            else if (screen==ScreenState.StageSelect) DrawStageSelect();
-            else DrawFight();
-            if (screen!=ScreenState.Title && screen!=ScreenState.Fight) Label(30,690,800,22,"H  CONTROLS     M  "+(muted?"SOUND OFF":"SOUND ON")+"     KEYBOARD / XBOX / PS4",16,new Color(.62f,.63f,.71f));
-            if (help) DrawHelp();
-        }
-        void Box(float x,float y,float w,float h,Color color)
-        { GUI.color=color; GUI.DrawTexture(new Rect(x,y,w,h),Texture2D.whiteTexture); GUI.color=Color.white; }
-        void Label(float x,float y,float w,float h,string value,int size,Color color,TextAnchor align=TextAnchor.MiddleLeft)
-        {
-            textStyle.fontSize=size; textStyle.normal.textColor=color; textStyle.alignment=align; textStyle.wordWrap=true;
-            Font previousFont=textStyle.font;
-            if(previousFont==font && bodyFont!=null && size<=23 && value.Length>24) textStyle.font=bodyFont;
-            GUI.Label(new Rect(x,y,w,h),value,textStyle);
-            textStyle.font=previousFont;
-        }
-        void Picture(Texture2D tex,Rect rect,Color? tint=null)
-        { if (tex==null) return; GUI.color=tint??Color.white; GUI.DrawTexture(rect,tex,ScaleMode.StretchToFill); GUI.color=Color.white; }
-        // Nine-slice preserves the illustrated wood/brass corners at every panel size.
-        void Ornament(Texture2D texture,Rect rect,float corner=18)
-        {
-            if (texture==null) { Box(rect.x,rect.y,rect.width,rect.height,ink); return; }
-            float c=Mathf.Min(corner,Mathf.Min(rect.width,rect.height)/2);
-            float[] dx={rect.x,rect.x+c,rect.xMax-c,rect.xMax};
-            float[] dy={rect.y,rect.y+c,rect.yMax-c,rect.yMax};
-            float sourceCorner=texture==academyButton?48:96;
-            float u=sourceCorner/texture.width,v=sourceCorner/texture.height;
-            float[] sx={0,u,1-u,1},sy={0,v,1-v,1};
-            for(int row=0;row<3;row++) for(int col=0;col<3;col++)
-                GUI.DrawTextureWithTexCoords(new Rect(dx[col],dy[row],dx[col+1]-dx[col],dy[row+1]-dy[row]),texture,
-                    new Rect(sx[col],1-sy[row+1],sx[col+1]-sx[col],sy[row+1]-sy[row]),true);
-        }
-        void Frame(float x,float y,float w,float h) => Ornament(academyPanel,new Rect(x,y,w,h),h<70?8:18);
-        bool Button(float x,float y,float w,float h,string value)
-        {
-            Rect rect=new Rect(x,y,w,h); bool hover=rect.Contains(Event.current.mousePosition);
-            GUI.color=hover?new Color(1.18f,1.1f,.95f):Color.white;
-            Ornament(academyButton,rect,12); GUI.color=Color.white;
-            Label(x,y,w,h,value,h<45?18:22,cream,TextAnchor.MiddleCenter);
-            return GUI.Button(rect,GUIContent.none,GUIStyle.none);
-        }
-        void DrawTitle()
-        {
-            Picture(stages[2],new Rect(0,0,1280,720)); Box(0,0,1280,720,new Color(.015f,.02f,.055f,.78f));
-            Label(0,175,1280,35,"L A R O   N G   B A R A N G A Y",20,gold,TextAnchor.MiddleCenter);
-            textStyle.font=titleFont!=null?titleFont:font;
-            Label(0,230,1280,120,"ILABAN ANG TAWA",64,cream,TextAnchor.MiddleCenter);
-            Label(0,350,1280,52,"DEVELOPED BY CHRISTINE TAMAYO",26,gold,TextAnchor.MiddleCenter);
-            textStyle.font=font;
-            Box(490,428,300,1,gold);
-            Label(0,488,1280,40,"Pindutin ang anumang pindutan upang magsimula",25,new Color(1,.9f,.7f,.7f+.3f*Mathf.Sin(animationTime*2)),TextAnchor.MiddleCenter);
-            Label(0,648,1280,28,"DALAWANG MANLALARO  /  TATLONG ENTABLADO",17,gold,TextAnchor.MiddleCenter);
-        }
-        void DrawSelect()
-        {
-            Picture(stages[2],new Rect(0,0,1280,720)); Box(0,0,1280,720,new Color(.02f,.02f,.06f,.68f));
-            // Large opposing portraits and compact central roster follow the reference composition.
-            Box(0,0,625,720,new Color(.38f,.06f,.12f,.23f));
-            Box(655,0,625,720,new Color(.04f,.16f,.4f,.23f));
-            SelectPanel(0,30); SelectPanel(1,930);
-            Box(637,118,2,270,new Color(.7f,.6f,.4f,.35f));
-            Label(0,24,1280,28,"HEXBOUND / THE DUELING SOCIETY",18,gold,TextAnchor.MiddleCenter);
-            textStyle.font=titleFont!=null?titleFont:font;
-            Label(0,60,1280,55,"Choose your apprentice",30,cream,TextAnchor.MiddleCenter);
-            textStyle.font=font;
-            Label(555,246,170,65,"VS",52,gold,TextAnchor.MiddleCenter);
-            Frame(396,444,488,202);
-            for (int i=0;i<8;i++) {
-                float x=408+(i%4)*118, y=455+(i/4)*92;
-                Picture(avatars[i],new Rect(x+18,y+1,70,70));
-                Label(x,y+69,108,20,Roster.ShortNames[i],15,cream,TextAnchor.MiddleCenter);
-                for(int p=0;p<2;p++) if(selected[p]==i) {
-                    Color c=p==0?new Color(.4f,.85f,1):new Color(1,.4f,.55f);
-                    Box(x,y+p*87,108,3,c); Box(x+(p==0?0:105),y,3,90,c);
-                    Label(x+p*54,y,54,20,"P"+(p+1)+(ready[p]?" OK":""),15,c,TextAnchor.MiddleCenter);
-                }
-                if (GUI.Button(new Rect(x,y,108,90),GUIContent.none,GUIStyle.none)) {
-                    int p=ready[0]?1:0; if (!ready[p]) { selected[p]=i; Sound("select"); }
-                }
-            }
-            Label(390,650,500,28,"BOTH LOCK IN TO CHOOSE AN ARENA / ESC UNLOCKS",16,gold,TextAnchor.MiddleCenter);
-        }
-        void SelectPanel(int p,float x)
-        {
-            int id=selected[p]; Color c=p==0?new Color(.4f,.85f,1):new Color(1,.4f,.55f);
-            // The original high resolution pixel concept is used for the full-height showcase.
-            Rect art=new Rect(p==0?70:700,112,510,510);
-            if(showcases[id]!=null) {
-                Rect uv=new Rect(p==0?0:1,0,p==0?1:-1,1);
-                GUI.DrawTextureWithTexCoords(art,showcases[id],uv,true);
-            } else DrawSprite(id,Pose.Idle,(int)(animationTime*6)%4,art,p==0?1:-1);
-            float y=365;
-            Box(x,y,320,84,new Color(.025f,.025f,.06f,.78f));
-            Box(x,y,320,2,c);
-            Label(x,y+5,320,26,"PLAYER "+(p+1)+(ready[p]?" / OATH SEALED":" / SELECTING"),19,c,p==0?TextAnchor.MiddleLeft:TextAnchor.MiddleRight);
-            Label(x,y+34,320,43,Roster.ShortNames[id],38,cream,p==0?TextAnchor.MiddleLeft:TextAnchor.MiddleRight);
-            Frame(x,460,320,155);
-            Label(x+22,482,276,24,Roster.Names[id],20,cream);
-            Label(x+22,510,276,22,Roster.Titles[id],17,Roster.Colors[id]);
-            Label(x+22,537,276,40,Roster.Powers[id]+" / "+Roster.Weapons[id],18,cream);
-            Label(x+22,579,276,20,controls.Prompt(p,"Move")+" SELECT / "+controls.Prompt(p,"Confirm")+" LOCK",14,gold);
-            if (Button(x,620,320,40,ready[p]?"UNSEAL OATH":"SEAL OATH / LOCK IN")) { ready[p]=!ready[p]; Sound("confirm"); }
-        }
-        void DrawStageSelect()
-        {
-            Picture(stages[selectedArena],new Rect(0,0,1280,720)); Box(0,0,1280,720,new Color(.02f,.025f,.06f,.72f));
-            Label(0,55,1280,65,"CHOOSE THE OPENING ARENA",42,cream,TextAnchor.MiddleCenter);
-            Label(0,128,1280,30,"THREE ARENAS / 99 SECONDS EACH / ONLY RIFTS ELIMINATE",20,gold,TextAnchor.MiddleCenter);
-            for(int i=0;i<3;i++) {
-                float x=55+i*400; Frame(x,240,370,266);
-                Picture(stages[i],new Rect(x+10,250,350,197));
-                if(selectedArena==i) Box(x,236,370,4,gold);
-                Label(x+10,450,350,24,Roster.Stages[i],20,cream,TextAnchor.MiddleCenter);
-                Label(x+10,478,350,22,Roster.LightModes[i],18,gold,TextAnchor.MiddleCenter);
-                if(GUI.Button(new Rect(x,240,370,266),GUIContent.none,GUIStyle.none)) { selectedArena=i; Sound("select"); }
-            }
-            if(Button(440,555,400,54,"BEGIN THE DUEL / ENTER")) StartMatch();
-            Label(0,625,1280,28,"STICK / D-PAD / ARROWS SELECT / SOUTH BUTTON OR ENTER CONFIRM / EAST BUTTON BACK",18,gold,TextAnchor.MiddleCenter);
-        }
-        float GroundY => CombatHudLayout.GroundY;
-        void DrawFight()
-        {
-            Picture(stages[model.ArenaIndex],new Rect(0,0,1280,720));
-            // Ground corresponds to the stage art's upper stone walkway.
-            foreach (float hole in new[]{DuelModel.LeftRiftX,DuelModel.RightRiftX}) {
-                DrawRift(hole);
+            // A five-star orbit is separate from the streak dots and persists for the victim's recovery.
+            UpdateDizzyStars();
+            if(impactLabels==null || impactLabels[0]==null) {impactLabels=new Text[2];for(int i=0;i<2;i++)impactLabels[i]=Label(view,new Rect(0,0,110,80),"*",72,gold);}
+            for(int i=0;i<2;i++) {bool visible=false;foreach(var burst in Model.bursts)if(Mathf.Abs(burst.x-Model.players[i].x)<5){visible=true;impactLabels[i].rectTransform.anchoredPosition=new Vector2(burst.x-55,-430);impactLabels[i].color=new Color(1,.88f,.58f,Mathf.Clamp01(burst.life/.35f));}impactLabels[i].gameObject.SetActive(visible);}
 
-            }
-            for (int i=0;i<2;i++) {
-                var p=model.players[i];
-                Box(p.x-33,GroundY,66,6,new Color(0,0,0,.4f));
-                int frame=p.pose==Pose.Knockout?Mathf.Min(3,(int)((p.fallen?resultTime:p.knockdownElapsed)*8)):p.actionTime>0?Mathf.Clamp((int)((1-p.actionTime/p.actionLength)*4),0,3):(int)(animationTime*8)%4;
-                if (!p.fallen || resultTime<.8f) {
-                    float fall=p.fallen?Mathf.Clamp01(resultTime/.8f):0;
-                    float size=192*(1-fall*.8f);
-                    DrawSprite(p.character,p.pose,frame,new Rect(p.x-size/2,GroundY+18-p.height-size+fall*40,size,size),p.facing);
-                }
-                if(!p.fallen && p.actionTime>0 && (p.pose==Pose.Special || p.pose==Pose.Power))
-                    DrawEffect(p.character,p.x+p.facing*38,GroundY-87-p.height,p.pose==Pose.Power?136:88,(int)(animationTime*16)%8);
-                if (!p.fallen && (p.IsKnockedDown || p.blocking)) Label(p.x-50,GroundY-207-p.height,100,25,p.IsKnockedDown?"DOWN":"GUARD",18,i==0?new Color(.45f,.85f,1):new Color(1,.5f,.6f),TextAnchor.MiddleCenter);
-                if (p.combo>1 && p.comboWindow>0) Label(p.x-65,GroundY-240-p.height,130,28,p.combo+" HIT CHAIN",20,gold,TextAnchor.MiddleCenter);
-            }
-            foreach (var spell in model.spells) DrawEffect(spell.character,spell.x,GroundY-77-spell.height,spell.ultimate?144:86,(int)(animationTime*18)%8);
-            foreach (var burst in model.bursts) DrawEffect(burst.character,burst.x,GroundY-77-burst.height,burst.ultimate?160:110,Mathf.Clamp((int)((.45f-burst.life)/.45f*8),0,7));
-            DrawHud(0); DrawHud(1);
-            Frame(579,18,122,110);
-            Label(579,31,122,23,"VS",17,gold,TextAnchor.MiddleCenter);
-            Label(579,56,122,51,Mathf.CeilToInt(model.remaining).ToString("00"),48,model.remaining<=10?new Color(1,.4f,.4f):cream,TextAnchor.MiddleCenter);
-            DrawControlCluster(0); DrawControlCluster(1);
-            if (countdown>0) Overlay(Mathf.CeilToInt(countdown).ToString(),"PREPARE YOUR SPELLS",false);
-            else if (model.Finished) {
-                string result=model.winner<0?"ROUND DRAW":Roster.Names[model.players[model.winner].character]+" WINS";
-                if (model.MatchFinished) {
-                    int a=model.players[0].wins,b=model.players[1].wins;
-                    result=a==b?"MATCH DRAW":"PLAYER "+(a>b?1:2)+" / ACADEMY CHAMPION";
-                }
-                Overlay(result,model.reason+"  /  SCORE "+model.players[0].wins+" : "+model.players[1].wins,false);
-                if (resultTime>1.2f && Button(460,430,360,48,model.MatchFinished?"CHOOSE AGAIN / ENTER":"NEXT ARENA / ENTER")) {
-                    if (model.MatchFinished) OpenSelect(); else { model.NextRound(); BeginRound(); }
-                }
-            }
-            if (paused) {
-                Overlay("DUEL PAUSED","ESC TO RESUME",false);
-                if (Button(460,430,360,48,"RETURN TO CHARACTER SELECT")) OpenSelect();
-            }
+            for(int i=0;i<flames.Count;i++)flames[i].localScale=Vector3.one*(1+.06f*Mathf.Sin(clock*3+i));
         }
-        void DrawHud(int side)
-        {
-            var p=model.players[side]; bool left=side==0; Color accent=Roster.Colors[p.character];
-            float x=left?22:714, head=left?25:1163, bar=left?119:722;
-            Frame(x,20,544,93);
-            int reaction=p.IsKnockedDown||p.fallen?2:p.stun>0?1:model.Finished&&model.winner==side?3:0;
-            if(portraits[p.character]!=null) GUI.DrawTextureWithTexCoords(new Rect(head+4,27,82,82),portraits[p.character],new Rect((reaction%2)*.5f,1-(reaction/2+1)*.5f,.5f,.5f),true);
-            Label(bar,34,433,22,Roster.Names[p.character],20,cream,left?TextAnchor.MiddleLeft:TextAnchor.MiddleRight);
-            int remaining=p.IsKnockedDown||p.fallen?0:DuelModel.KnockdownHits-p.hitsTowardKnockdown;
-            for(int i=0;i<DuelModel.KnockdownHits;i++) {
-                float sx=bar+(left?i:4-i)*87;
-                Box(sx,58,82,22,gold); Box(sx+2,60,78,18,i<remaining?accent:new Color(.09f,.08f,.13f));
-                if(i<remaining) Box(sx+4,62,74,3,new Color(1,1,1,.4f));
-            }
-            Box(bar,84,433,5,new Color(.12f,.13f,.2f));
-            Box(left?bar:bar+433-433*p.mana/100,84,433*p.mana/100,5,new Color(.45f,.65f,1));
-            for(int i=0;i<3;i++) Picture(runeDisc,new Rect(left?bar+360+i*24:bar+48-i*24,6,18,18),i<p.wins?gold:new Color(.22f,.23f,.29f));
+        Text[] stars;
+        Text[] impactLabels;
+        void UpdateDizzyStars() {
+            if(stars==null||stars[0]==null) {stars=new Text[10];for(int i=0;i<10;i++)stars[i]=Label(view,new Rect(0,0,22,22),"*",27,gold);}
+            for(int p=0;p<2;p++)for(int i=0;i<5;i++) {var star=stars[p*5+i];star.gameObject.SetActive(Model.players[p].dizzyTime>0&&!Model.Finished);float angle=clock*5+i*Mathf.PI*2/5;star.rectTransform.anchoredPosition=new Vector2(Model.players[p].x-11+Mathf.Cos(angle)*46,-(335+Mathf.Sin(angle)*13));}
         }
-        static Texture2D CreateRuneDisc()
-        {
-            var t=new Texture2D(96,96,TextureFormat.RGBA32,false); t.filterMode=FilterMode.Point;
-            for(int y=0;y<96;y++) for(int x=0;x<96;x++) {
-                float r=Vector2.Distance(new Vector2(x,y),new Vector2(47.5f,47.5f));
-                t.SetPixel(x,y,r>47?Color.clear:r>43||r>37&&r<39?Color.white:new Color(.075f,.09f,.15f,.94f));
-            }
-            t.Apply(); return t;
+        void Animate(Actor actor,Pose pose,int frame) {
+            int row=pose==Pose.Walk?1:pose==Pose.Punch?2:pose==Pose.Hurt?3:pose==Pose.Dizzy?4:pose==Pose.Fall?5:pose==Pose.Win?6:0;
+            actor.body.uvRect=new Rect(frame*.25f,1-(row+1)/7f,.25f,1/7f);
+            actor.dust.color=new Color(1,.78f,.45f,pose==Pose.Walk?.3f+frame*.08f:pose==Pose.Punch?.45f:pose==Pose.Win?.3f:.06f);
+            int head=pose==Pose.Hurt?1:pose==Pose.Dizzy||pose==Pose.Fall?2:pose==Pose.Win?3:0;actor.head.uvRect=new Rect((head%2)*.5f,1-(head/2+1)*.5f,.5f,.5f);
+            actor.head.rectTransform.anchoredPosition=new Vector2(actor.root.sizeDelta.x*.23f,actor.root.sizeDelta.y*.03f+(frame%2==0?0:1));
         }
-        void DrawControlCluster(int side)
-        {
-            var fighter=model.players[side];
-            string[] actions={"Punch","Push","Spell","Power"};
-            var input=controls.Read(side);
-            bool[] active={input.punch,input.push,input.special,input.power};
-            for(int i=0;i<4;i++) {
-                Rect rect=CombatHudLayout.Ability(side,i);
-                bool affordable=i<2 || fighter.mana>=(i==2?20:60);
-                GUI.color=active[i]?new Color(1.4f,1.4f,1.4f):affordable?Color.white:new Color(.4f,.4f,.48f);
-                if(abilityIcons[fighter.character]!=null) GUI.DrawTextureWithTexCoords(rect,abilityIcons[fighter.character],new Rect((i%2)*.5f,1-(i/2+1)*.5f,.5f,.5f),true);
-                GUI.color=Color.white;
-                string key=controls.Prompt(side,actions[i]).Replace("TRIANGLE","TRI").Replace("SQUARE","SQ").Replace("CIRCLE","O").Replace("CROSS","X");
-                Box(rect.x+16,rect.y+50,40,22,new Color(.02f,.025f,.045f,.85f));
-                Label(rect.x+16,rect.y+50,40,22,key,17,cream,TextAnchor.MiddleCenter);
-            }
-        }
-        void OnDestroy() { controls?.Dispose(); if(runeDisc!=null) Destroy(runeDisc); }
-        void DrawSprite(int id,Pose pose,int frame,Rect rect,int facing)
-        {
-            if (sheets[id]==null) return;
-            Rect uv=new Rect(frame/4f,1-((int)pose+1)/10f,.25f,.1f);
-            if (facing<0) { uv.x+=uv.width; uv.width=-uv.width; }
-            GUI.DrawTextureWithTexCoords(rect,sheets[id],uv,true);
-        }
-        void DrawRift(float x)
-        {
-            if (riftSheet==null) { Box(x-36,GroundY-8,72,16,Color.black); return; }
-            int frame=(int)(animationTime*6)%4;
-            GUI.DrawTextureWithTexCoords(CombatHudLayout.Portal(x,model.RiftArtSize),riftSheet,
-                new Rect((frame%2)/2f,1-(frame/2+1)/2f,.5f,.5f),true);
-        }
-        void DrawEffect(int id,float x,float y,float size,int frame)
-        { if (effects[id]!=null) GUI.DrawTextureWithTexCoords(new Rect(x-size/2,y-size/2,size,size),effects[id],new Rect((frame%4)/4f,1-(frame/4+1)/2f,.25f,.5f),true); }
-        void Overlay(string title,string subtitle,bool unused)
-        {
-            Frame(220,260,840,148);
-            Label(235,275,810,67,title,42,cream,TextAnchor.MiddleCenter);
-            Label(235,346,810,40,subtitle,21,gold,TextAnchor.MiddleCenter);
-        }
-        void DrawHelp()
-        {
-            Frame(140,120,1000,525);
-            textStyle.font=bodyFont!=null?bodyFont:font;
-            Label(180,135,920,52,"THE DUELIST'S HANDBOOK",35,cream);
-            Label(180,195,920,370,"P1: A / D move, W jump, S guard, F punch, G shove, R spell, T power.\nP2: Left / Right move, Up jump, Down guard, J punch, K shove, U spell, I power.\n\nTap punch three times with a short pause between strikes to finish a combo.\nSpells cost 20 arcana; power attacks cost 60. Arcana regenerates.\nFive unguarded hits knock a duelist down temporarily, never eliminate.\nEvery attack knocks back. Drive your rival into a rune rift at either stage edge.\nPlay all 3 arenas. 99 seconds per round. No ring out means a draw. Most round wins takes the match.\nXbox: stick/D-pad move, A jump, LB guard, X punch, B push, Y spell, RB power.\nPS4: Cross jump, L1 guard, Square punch, Circle push, Triangle spell, R1 power.\nMenu/Options pauses; View/Share or H closes help. M mutes.",20,cream);
-            if (Button(455,580,370,45,"CLOSE HANDBOOK")) help=false;
-        }
-        void OnApplicationFocus(bool focus) { if (!focus && screen==ScreenState.Fight && model!=null && !model.Finished) paused=true; }
+        void OnDestroy() {controls?.Dispose();foreach(var sprite in sprites.Values)Destroy(sprite);}
 #if UNITY_EDITOR
-        public void CapturePreview(string path) { StartCoroutine(CaptureFrame(path)); }
-        System.Collections.IEnumerator CaptureFrame(string path)
-        {
-            yield return new WaitForEndOfFrame();
-            var texture=ScreenCapture.CaptureScreenshotAsTexture();
-            System.IO.File.WriteAllBytes(path,texture.EncodeToPNG());
-            Destroy(texture);
-        }
+        public void CapturePreview(string path) {StartCoroutine(CaptureFrame(path));}
+        System.Collections.IEnumerator CaptureFrame(string path) {yield return new WaitForEndOfFrame();var image=ScreenCapture.CaptureScreenshotAsTexture();System.IO.File.WriteAllBytes(path,image.EncodeToPNG());Destroy(image);}
 #endif
+    }
+    public sealed class SlantGraphic : MaskableGraphic
+    {
+        protected override void OnPopulateMesh(VertexHelper vh) {
+            vh.Clear();var r=rectTransform.rect;float cut=Mathf.Min(46,r.width*.15f);
+            vh.AddVert(new Vector3(r.xMin+cut,r.yMax,0),color,new Vector2(0,1));vh.AddVert(new Vector3(r.xMax,r.yMax,0),color,new Vector2(1,1));vh.AddVert(new Vector3(r.xMax-cut,r.yMin,0),color,new Vector2(1,0));vh.AddVert(new Vector3(r.xMin,r.yMin,0),color,new Vector2(0,0));vh.AddTriangle(0,1,2);vh.AddTriangle(2,3,0);
+        }
     }
 }

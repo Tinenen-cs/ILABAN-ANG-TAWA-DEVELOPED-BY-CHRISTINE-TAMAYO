@@ -27,6 +27,8 @@ namespace Hexbound.Editor
             Debug.Log("ILABAN BASELINE VALIDATION PASSED on Unity " + Application.unityVersion);
         }
 
+        public static void ValidateAndBuild(){ValidateBaseline();BuildWindows();}
+
         [MenuItem("Ilaban ang Tawa/Build Windows x64")]
         public static void BuildWindows()
         {

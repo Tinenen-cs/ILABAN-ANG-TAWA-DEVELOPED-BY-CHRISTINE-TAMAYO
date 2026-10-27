@@ -7,13 +7,13 @@ namespace Hexbound.Editor
 {
     public sealed class PixelImport : AssetPostprocessor
     {
-        public override uint GetVersion() => 2;
+        public override uint GetVersion() => 3;
         void OnPreprocessTexture()
         {
             if (!assetPath.StartsWith("Assets/Resources/")) return;
             var t=(TextureImporter)assetImporter;
             t.textureType=TextureImporterType.Default;
-            t.filterMode=FilterMode.Bilinear; t.textureCompression=TextureImporterCompression.Uncompressed;
+            t.filterMode=assetPath.StartsWith("Assets/Resources/Ilaban/")?FilterMode.Point:FilterMode.Bilinear; t.textureCompression=TextureImporterCompression.Uncompressed;
             t.mipmapEnabled=false; t.alphaIsTransparency=true; t.npotScale=TextureImporterNPOTScale.None;
             t.maxTextureSize=4096; t.wrapMode=TextureWrapMode.Clamp;
         }
@@ -72,34 +72,20 @@ namespace Hexbound.Editor
         public static void ValidateBatch()
         {
             EnsureScene();
-            RuleChecks.Run();
-            for(int side=0;side<2;side++) for(int action=0;action<4;action++) {
-                Rect icon=CombatHudLayout.Ability(side,action);
-                Require(icon.yMin>=CombatHudLayout.ControlsTop,"controls remain below portal-safe boundary");
-                Require(!icon.Overlaps(CombatHudLayout.Portal(DuelModel.LeftRiftX,200)) && !icon.Overlaps(CombatHudLayout.Portal(DuelModel.RightRiftX,200)),"controls never cover either portal");
+            int checks=RuleChecks.Run();
+            Require(Resources.Load<UnityEngine.InputSystem.InputActionAsset>("Input/AcademyControls")!=null,"input action asset");
+            for(int i=0;i<8;i++) {
+                Require(Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/portraits")!=null,"original face "+i);
+                Require(Resources.Load<Texture2D>("Ilaban/Bodies/Body_"+i)!=null,"body atlas "+i);
+                Require(Resources.Load<Texture2D>("Ilaban/Items/Item_"+i)!=null,"item "+i);
             }
-            Require(Resources.Load<UnityEngine.InputSystem.InputActionAsset>("Input/AcademyControls")!=null,"editable input action maps");
-            for (int i=0;i<8;i++) {
-                Require(Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/sheet")!=null,"sprite "+i);
-                Require(Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/avatar")!=null,"avatar "+i);
-                Require(Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/portraits")!=null,"head reactions "+i);
-                Require(Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/showcase")!=null,"selection showcase "+i);
-                Require(Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/abilities")!=null,"diamond ability icons "+i);
-                Require(Resources.Load<Texture2D>("Effects/"+Roster.Files[i])!=null,"effect "+i);
-                var sheet=Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/sheet");
-                Require(sheet.width==1024 && sheet.height==2560,"256-pixel fighter atlas "+i);
-            }
-            Require(Resources.Load<Font>("UI/Cinzel")!=null && Resources.Load<Font>("UI/EBGaramond")!=null,"wizard interface fonts");
-            Require(Resources.Load<Texture2D>("Stages/RuneRift")!=null,"rune rift");
-            Require(Resources.Load<Texture2D>("UI/AcademyPanel")!=null,"academy panel skin");
-            Require(Resources.Load<Texture2D>("UI/AcademyButton")!=null,"academy button skin");
-            Require(Resources.LoadAll<AudioClip>("Audio").Length==16,"16 audio files");
-            for(int i=0;i<3;i++) {
-                var track=Resources.Load<AudioClip>("Audio/Music/"+Roster.StageFiles[i]);
-                Require(track!=null && track.channels==2 && track.length>18,"distinct stereo arena score "+i);
-            }
-            Debug.Log("HEXBOUND VALIDATION PASSED: rules and imported assets");
+            for(int i=0;i<3;i++) {Require(Resources.Load<Texture2D>("Ilaban/Stages/"+Roster.StageFiles[i])!=null,"map "+i);Require(Resources.Load<AudioClip>("Ilaban/Audio/Music/"+Roster.StageFiles[i])!=null,"map music "+i);}
+            Require(Resources.LoadAll<AudioClip>("Ilaban/Audio").Length==25,"25 original clips");
+            var bank=new ReactionBank();Require(bank.Mode==LanguageMode.Pormal,"formal build default");
+            foreach(var categories in new[]{bank.Data.Pormal,bank.Data.GenZ}) {Require(categories.Length==6,"six reaction categories");foreach(var category in categories)Require(category.lines.Length>=6&&category.lines.Length<=10,"reaction pool size");}
+            var font=Resources.Load<Font>("UI/Tiny5");Require(font!=null,"OFL pixel font");font.RequestCharactersInTexture("??'",24);foreach(char c in "??'")Require(font.HasCharacter(c),"Filipino glyph "+c);
+            Debug.Log("ILABAN VALIDATION PASSED: "+checks+" rubric assertions and asset/reaction checks");
         }
-        static void Require(bool pass,string name) { if (!pass) throw new System.Exception("Missing "+name); }
+        static void Require(bool pass,string name) {if(!pass)throw new System.Exception("Missing "+name);}
     }
 }

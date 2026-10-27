@@ -1,0 +1,229 @@
+{
+  "LanguageMode": "Pormal",
+  "Pormal": [
+    {
+      "category": "ready",
+      "lines": [
+        "Handa na ako!",
+        "Magsimula na tayo!",
+        "Pagbutihin natin!",
+        "Nakahanda ang lahat!",
+        "Maligayang paglalaro!",
+        "Tawa ang puhunan!",
+        "Simulan ang paligsahan!",
+        "Magkita tayo sa gitna!"
+      ]
+    },
+    {
+      "category": "taunt",
+      "lines": [
+        "Ito na ang suntok!",
+        "Humanda ka!",
+        "Tingnan ang aking lakas!",
+        "Tuloy ang laban!",
+        "Lumapit ka rito!",
+        "Heto ang hamon!",
+        "Subukin ang aking galing!",
+        "Hindi ako uurong!"
+      ]
+    },
+    {
+      "category": "hurt",
+      "lines": [
+        "Aray!",
+        "Tinamaan ako!",
+        "Masakit iyon!",
+        "Napaatras ako!",
+        "Malakas ang suntok!",
+        "Muntik na ako!",
+        "Tuloy pa rin!",
+        "Kaya ko pa!"
+      ]
+    },
+    {
+      "category": "dizzy",
+      "lines": [
+        "Nahihilo ako!",
+        "Umiikot ang paligid!",
+        "Kailangan kong magpahinga!",
+        "Teka muna!",
+        "Nawawala ang aking balanse!",
+        "Panandaliang pahinga!",
+        "Sandali lamang!",
+        "Lilinaw rin ang paligid!"
+      ]
+    },
+    {
+      "category": "lose",
+      "lines": [
+        "Nahulog ako!",
+        "Nasa imburnal ako!",
+        "Natalo ako ngayon!",
+        "Babangon akong muli!",
+        "Mag-iingat na ako!",
+        "Muli akong lalaban!",
+        "Nawala ang aking tuntungan!",
+        "Sa susunod ay babawi ako!"
+      ]
+    },
+    {
+      "category": "win",
+      "lines": [
+        "Ako ang nanalo!",
+        "Tagumpay natin ito!",
+        "Salamat sa mahusay na laban!",
+        "Mabuhay ang barangay!",
+        "Masaya ang tagumpay!",
+        "Panalo ang pagtitiyaga!",
+        "Hanggang sa susunod!",
+        "Tawa ang ating gantimpala!"
+      ]
+    }
+  ],
+  "GenZ": [
+    {
+      "category": "ready",
+      "lines": [
+        "Tara na!",
+        "Handa na tayo!",
+        "Laban na!",
+        "Tawanan na!",
+        "Ako naman!",
+        "Ayos na ako!",
+        "Heto na ako!",
+        "Sige na nga!"
+      ]
+    },
+    {
+      "category": "taunt",
+      "lines": [
+        "Ito na!",
+        "Tikman mo ito!",
+        "Sapol ka!",
+        "Heto ang sa iyo!",
+        "Abangan mo!",
+        "Sige, lapit!",
+        "Kaya mo ba ito?",
+        "Pak, heto na!"
+      ]
+    },
+    {
+      "category": "hurt",
+      "lines": [
+        "Aray ko!",
+        "Sapul!",
+        "Hala, ang sakit!",
+        "Awit!",
+        "Ay, grabe!",
+        "Ay, teka!",
+        "Naku naman!",
+        "Ang lakas ah!"
+      ]
+    },
+    {
+      "category": "dizzy",
+      "lines": [
+        "Hilo na ako, bes!",
+        "Umiikot ang mundo ko!",
+        "Ay, teka, teka!",
+        "Sandali lang!",
+        "Hala, umiikot!",
+        "Hilo pa rin!",
+        "Naku, pahinga muna!",
+        "Teka, saan na ako?"
+      ]
+    },
+    {
+      "category": "lose",
+      "lines": [
+        "Yari na!",
+        "Hala, imburnal!",
+        "Talo na ako, hay!",
+        "Bawi ako mamaya!",
+        "Naku, laglag!",
+        "Ay, nahulog!",
+        "Hala, basa na!",
+        "Aahon din ako!"
+      ]
+    },
+    {
+      "category": "win",
+      "lines": [
+        "Petmalu!",
+        "Panalo tayo, mga bes!",
+        "Ako ang lodi!",
+        "Pak!",
+        "Ayos, panalo!",
+        "Tawanan na tayo!",
+        "Ang saya naman!",
+        "Bongga ang laban!"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": 0,
+      "lines": [
+        "Pamalo ko ay handa na!",
+        "Labada muna pagkatapos!",
+        "Palo at tawa ang dala ko!"
+      ]
+    },
+    {
+      "id": 1,
+      "lines": [
+        "Tsinelas ng bayan!",
+        "Nasaan ang kapareha nito?",
+        "Tsinelas ko, huwag mawala!"
+      ]
+    },
+    {
+      "id": 2,
+      "lines": [
+        "Bato-bato-pik, tawa ang kapalit!",
+        "Bato lamang ang baon ko!",
+        "Mabigat ang aking bulsa!"
+      ]
+    },
+    {
+      "id": 3,
+      "lines": [
+        "Batuta ng barangay!",
+        "Tigil muna sa gulo!",
+        "Bantay ako sa kanto!"
+      ]
+    },
+    {
+      "id": 4,
+      "lines": [
+        "Tak-tak-tak!",
+        "Lata ang maingay, ako ang masaya!",
+        "Walang laman, maraming ingay!"
+      ]
+    },
+    {
+      "id": 5,
+      "lines": [
+        "May upuan na tayo!",
+        "Silya ko, huwag masira!",
+        "Upo muna pagkatapos!"
+      ]
+    },
+    {
+      "id": 6,
+      "lines": [
+        "Suka ang laman nito!",
+        "Asim at tawa ang dala ko!",
+        "Ingat sa aking bote!"
+      ]
+    },
+    {
+      "id": 7,
+      "lines": [
+        "Walisin ko ang kalat!",
+        "Tingting ang aking sandigan!",
+        "Malinis ang ating laban!"
+      ]
+    }
+  ]
+}

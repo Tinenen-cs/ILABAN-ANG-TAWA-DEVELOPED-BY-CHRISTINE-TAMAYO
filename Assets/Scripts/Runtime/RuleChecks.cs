@@ -4,131 +4,40 @@ namespace Hexbound
     public static class RuleChecks
     {
         static int count;
-        static void Check(bool condition,string message) { if (!condition) throw new Exception("FAIL: "+message); count++; }
-        static DuelModel Close() { var d=new DuelModel(0,4); d.players[0].x=300; d.players[1].x=395; return d; }
-        static void Step(DuelModel d,int frames,DuelInput a=default(DuelInput),DuelInput b=default(DuelInput))
-        { for(int i=0;i<frames;i++) d.Tick(1f/60,a,b); }
+        static void Check(bool pass,string message){if(!pass)throw new Exception("RULE FAIL: "+message);count++;}
+        static void Step(DuelModel m,int frames,DuelInput a=default,DuelInput b=default){for(int i=0;i<frames;i++)m.Tick(1f/60,a,b);}
+        static DuelModel Close(int id=0){var m=new DuelModel(id,7-id);m.players[0].x=500;m.players[1].x=580;return m;}
+        static void Punch(DuelModel m,int player=0){m.Tick(1f/60,player==0?new DuelInput{punch=true}:default,player==1?new DuelInput{punch=true}:default);Step(m,25);}
         public static int Run()
         {
             count=0;
-            var d=new DuelModel(0,4); Check(d.remaining==99 && d.round==1,"99 second round");
-            Step(d,60); Check(Math.Abs(d.remaining-98)<.01,"timer progresses");
-            Check(typeof(Fighter).GetField("health")==null,"no health or life pool exists");
-            d=Close(); d.Tick(1f/60,new DuelInput { punch=true },default(DuelInput)); Step(d,10);
-            Check(d.players[1].knockback>0 && d.players[1].stun>0,"punch knocks back");
-            float mana=d.players[0].mana; Step(d,15); Check(d.players[0].mana-mana<2,"one contact per attack");
-            Check(!d.Finished && !d.players[1].fallen,"contact alone cannot eliminate");
-            d=Close(); d.players[1].x=900; d.Tick(1f/60,new DuelInput { punch=true },default(DuelInput)); Step(d,20);
-            Check(d.players[1].x==900,"out of range attack misses");
-            d=Close(); d.Tick(1f/60,new DuelInput { punch=true },new DuelInput { block=true }); Step(d,10,default(DuelInput),new DuelInput { block=true });
-            Check(d.players[1].knockback>0 && d.players[1].knockback<112,"guard reduces but does not remove knockback");
-            d=Close(); d.Tick(1f/60,new DuelInput { push=true },default(DuelInput)); Step(d,20);
-            Check(d.players[1].x>430 && !d.Finished,"shove moves opponent without elimination");
-            d=Close(); d.players[0].mana=0; d.Tick(.016f,new DuelInput { power=true,special=true },default(DuelInput));
-            Check(d.players[0].actionTime==0,"insufficient arcana rejects spells");
-            d=Close(); d.players[0].mana=100; d.Tick(.016f,new DuelInput { power=true },default(DuelInput));
-            Check(d.players[0].mana==40,"ultimate costs 60");
-            d=new DuelModel(0,4); d.Tick(.016f,new DuelInput { jump=true },default(DuelInput)); Step(d,15);
-            Check(d.players[0].height>0,"jump lifts fighter"); float v=d.players[0].verticalSpeed;
-            d.Tick(.016f,new DuelInput { jump=true },default(DuelInput)); Check(d.players[0].verticalSpeed<v,"no double jump");
-            for (int stage=1;stage<=3;stage++) {
-                d=new DuelModel(0,4); d.round=stage;
-                Check(d.RiftsOpen,"rune rift open in arena "+stage);
-                d.players[0].x=DuelModel.RightRiftX; d.Tick(.016f,default(DuelInput),default(DuelInput));
-                Check(d.Finished && d.winner==1 && d.players[0].fallen && d.players[1].wins==1,"rune rift awards round in arena "+stage);
+            for(int id=0;id<8;id++) {
+                var m=Close(id);float x=m.players[1].x;Punch(m);
+                Check(Math.Abs(m.players[1].x-x-DuelModel.StepBack)<.001f,"exact step for item "+id);
+                Check(m.players[0].streak==1,"attacker owns streak "+id);
+                Check(m.players[1].streak==0,"victim does not gain streak "+id);
+                Step(m,60);Check(Math.Abs(m.players[1].x-x-DuelModel.StepBack)<.001f,"no residual knockback "+id);
+                m=Close(id);float start=m.players[0].x;Punch(m,1);Check(Math.Abs(start-m.players[0].x-DuelModel.StepBack)<.001f,"mirrored step "+id);
             }
-            d=new DuelModel(0,4); d.players[0].x=DuelModel.RightRiftX; d.Tick(.016f,default(DuelInput),default(DuelInput));
-            Step(d,30); Check(d.players[1].wins==1,"score awarded once");
-            d.NextRound(); Check(d.round==2 && d.remaining==99 && d.players[1].wins==1 && !d.players[0].fallen,"next arena resets fall and preserves score");
-            d=new DuelModel(0,4); d.players[0].x=DuelModel.RightRiftX; d.players[0].height=80;
-            d.Tick(.016f,default(DuelInput),default(DuelInput)); Check(!d.Finished,"airborne fighter survives rune rift");
-            d=new DuelModel(0,4); d.elapsed=98.99f; d.Tick(.02f,default(DuelInput),default(DuelInput));
-            Check(d.winner==-1 && d.players[0].wins==0 && d.players[1].wins==0,"timeout is draw, no life comparison");
-            d=new DuelModel(0,4);
-            for (int i=0;i<3;i++) { d.elapsed=98.99f; d.Tick(.02f,default(DuelInput),default(DuelInput)); if(i<2) d.NextRound(); }
-            Check(d.MatchFinished && d.winner==-1,"three draws finish match");
-            d.NextRound(); Check(d.round==3,"no fourth arena");
-            d=Close();
-            for(int i=0;i<3;i++) { d.players[0].x=300; d.players[1].x=395; d.players[1].knockback=0;
-                d.Tick(1f/60,new DuelInput { punch=true },default(DuelInput)); Step(d,20); }
-            Check(d.players[0].combo==3 && d.players[1].x>440 ,"combo finishes with stronger knockback");
-            for (int id=0;id<8;id++) {
-                d=new DuelModel(id,0); d.players[0].x=DuelModel.RightRiftX-290; d.players[1].x=DuelModel.RightRiftX-44;
-                d.Tick(.016f,new DuelInput { special=true },default(DuelInput)); Step(d,120);
-                Check(d.Finished && d.winner==0 && d.players[1].fallen,"spell can ring out for fighter "+id);
-                d=new DuelModel(id,0); d.players[0].x=DuelModel.RightRiftX-290; d.players[1].x=DuelModel.RightRiftX-44; d.players[0].mana=100;
-                d.Tick(.016f,new DuelInput { power=true },default(DuelInput)); Step(d,120);
-                Check(d.Finished && d.winner==0,"power can ring out for fighter "+id);
+            var d=Close();Step(d,180,new DuelInput{jump=true,push=true,special=true,power=true,block=true});
+            Check(d.players[0].pose==Pose.Idle&&d.players[1].x==580,"all forbidden controls ignored");
+            Check(typeof(Fighter).GetField("health")==null,"no health field");
+            d=Close();for(int i=0;i<5;i++){d.players[0].x=500;d.players[1].x=580;Punch(d);if(i<4)Check(d.players[1].dizzyTime==0,"not dizzy before fifth");}
+            Check(d.players[1].dizzyTime>0 && d.players[0].streak==5,"fifth consecutive hit makes victim dizzy");
+            float locked=d.players[1].x;Step(d,20,default,new DuelInput{move=1,punch=true,jump=true});Check(d.players[1].x==locked,"dizzy locks controls");
+            Step(d,140);Check(d.players[1].dizzyTime==0&&d.players[0].streak==0,"defined recovery and fifth-dot reset");
+            d=Close();Punch(d);d.players[0].x=500;d.players[1].x=580;Punch(d,1);Check(d.players[0].streak==0,"attacker being hit resets streak");
+            d=Close();Punch(d);d.players[1].x=900;Punch(d);Check(d.players[0].streak==0,"miss resets streak");
+            d=Close();Punch(d);Step(d,190);Check(d.players[0].streak==0,"timeout resets streak");
+            d=Close();d.Tick(1f/60,new DuelInput{punch=true},new DuelInput{punch=true});Step(d,25);Check(d.players[0].x==448&&d.players[1].x==632,"simultaneous equal strikes");Check(d.players[0].streak==0&&d.players[1].streak==0,"trade breaks both streaks");
+            d=Close();d.players[0].streak=d.players[1].streak=4;d.players[0].streakTime=d.players[1].streakTime=3;d.Tick(1f/60,new DuelInput{punch=true},new DuelInput{punch=true});Step(d,25);Check(d.players[0].dizzyTime==0&&d.players[1].dizzyTime==0,"fifth-hit trade does not award dizzy");
+            d=Close();Step(d,120,new DuelInput{move=1});Check(d.players[1].x==580&&d.players[0].x<=520,"walking does not shove rival");
+            for(int side=0;side<2;side++)for(int edge=0;edge<2;edge++) {
+                d=new DuelModel(0,1);d.players[side].x=edge==0?DuelModel.HoleInnerEdge:1280-DuelModel.HoleInnerEdge;d.Tick(.016f,default,default);
+                Check(d.Finished&&d.winner==1-side&&d.players[side].fallen,"immediate fall side "+side+" edge "+edge);
+                float pos=d.players[0].x;Step(d,40,new DuelInput{move=1,punch=true});Check(d.players[0].x==pos,"round ends immediately");
             }
-            foreach (bool shove in new[]{false,true}) {
-                d=new DuelModel(0,4); d.players[0].x=DuelModel.RightRiftX-145; d.players[1].x=DuelModel.RightRiftX-48;
-                d.Tick(.016f,new DuelInput { punch=!shove,push=shove },default(DuelInput)); Step(d,60);
-                Check(d.winner==0,"melee/shove can ring out");
-            }
-            d=new DuelModel(0,4); d.players[0].x=DuelModel.LeftRiftX+48; d.players[1].x=DuelModel.LeftRiftX+145;
-            d.Tick(.016f,default(DuelInput),new DuelInput { push=true }); Step(d,60);
-            Check(d.winner==1,"P2 can shove left into rune rift");
-            for(int stage=1;stage<=3;stage++) {
-                d=new DuelModel(0,4); d.round=stage;
-                d.players[0].x=DuelModel.LeftRiftX;
-                d.Tick(.016f,default(DuelInput),default(DuelInput));
-                Check(d.winner==1 && d.players[0].fallen,"left edge trap works in arena "+stage);
-                d=new DuelModel(0,4); d.round=stage; d.players[0].x=610; d.players[1].x=670;
-                Step(d,120);
-                Check(!d.Finished && !d.players[0].fallen && !d.players[1].fallen,"center remains safe in arena "+stage);
-            }
-            d=new DuelModel(0,4); d.players[0].x=DuelModel.LeftRiftX; d.players[1].x=DuelModel.RightRiftX;
-            d.Tick(.016f,default(DuelInput),default(DuelInput));
-            Check(d.Finished && d.winner==-1 && d.players[0].fallen && d.players[1].fallen,"simultaneous falls into opposite rifts draw");
-            Check(d.players[0].wins==0 && d.players[1].wins==0,"simultaneous ring-out awards no win");
-            d=new DuelModel(0,4,2);
-            Check(d.ArenaIndex==2,"selected arena opens match");
-            d.elapsed=99; d.Tick(.016f,default(DuelInput),default(DuelInput)); d.NextRound();
-            Check(d.ArenaIndex==0,"arenas rotate from selected opening stage");
-            d=Close();
-            for(int hit=0;hit<5;hit++) {
-                d.players[0].x=400; d.players[1].x=495; d.players[1].knockback=0;
-                d.Tick(1f/60,new DuelInput { punch=true },default(DuelInput)); Step(d,20);
-                if(hit==3) Check(!d.players[1].IsKnockedDown,"four hits do not knock down");
-            }
-            Check(d.players[1].IsKnockedDown && !d.Finished && !d.players[1].fallen,"five hits knock down without elimination");
-            Check(d.players[0].wins==0 && d.players[1].wins==0,"knockdown awards no round win");
-            float downX=d.players[1].x;
-            d.players[1].knockback=0; d.players[1].mana=100;
-            d.Tick(.016f,default(DuelInput),new DuelInput { move=1,jump=true,power=true,block=true });
-            Check(d.players[1].x==downX && d.players[1].verticalSpeed==0 && d.players[1].actionTime==0 && !d.players[1].blocking,"downed fighter cannot move jump cast or guard");
-            Step(d,100);
-            Check(!d.players[1].IsKnockedDown && d.players[1].hitsTowardKnockdown==0,"knockdown recovers and resets hit count");
-            d.players[1].knockdownTime=1; d.players[1].x=DuelModel.LeftRiftX;
-            d.Tick(.016f,default(DuelInput),default(DuelInput));
-            Check(d.winner==0 && d.players[1].fallen,"downed fighter still falls into rift");
-            d=Close();
-            for(int hit=0;hit<5;hit++) {
-                d.players[0].x=400; d.players[1].x=495; d.players[1].knockback=0;
-                d.Tick(1f/60,new DuelInput { punch=true },new DuelInput { block=true });
-                Step(d,25,default(DuelInput),new DuelInput { block=true });
-            }
-            Check(!d.players[1].IsKnockedDown && d.players[1].hitsTowardKnockdown==0,"guarded hits do not count toward knockdown");
-            d.players[1].knockdownTime=1; d.elapsed=98.99f;
-            d.Tick(.02f,default(DuelInput),default(DuelInput));
-            Check(d.winner==-1 && !d.players[1].fallen,"timeout with downed fighter is still draw");
-            foreach(float center in new[]{DuelModel.LeftRiftX,DuelModel.RightRiftX}) {
-                float direction=center<640?1:-1;
-                d=new DuelModel(0,4);d.players[0].x=center+direction*43;d.elapsed=49.48f;
-                d.Tick(.001f,default(DuelInput),default(DuelInput));
-                Check(!d.Finished && d.RiftRadius==36,"normal portal remains narrow before half time");
-                d.elapsed=49.51f;d.Tick(.001f,default(DuelInput),default(DuelInput));
-                Check(d.winner==1 && d.RiftRadius==48 && d.RiftArtSize==172,"half-time portal grows and eliminates in new area");
-                d=new DuelModel(0,4);d.players[0].x=center+direction*55;d.elapsed=83.98f;
-                d.Tick(.001f,default(DuelInput),default(DuelInput));
-                Check(!d.Finished && d.RiftRadius==48,"half-time portal excludes final expansion area");
-                d.elapsed=84.01f;d.Tick(.001f,default(DuelInput),default(DuelInput));
-                Check(d.winner==1 && d.RiftRadius==60 && d.RiftArtSize==200,"final fifteen seconds grow portal and collision together");
-            }
-            d=new DuelModel(0,4);d.elapsed=85;d.players[0].x=DuelModel.LeftRiftX+55;d.players[0].height=80;
-            d.Tick(.016f,default(DuelInput),default(DuelInput));Check(!d.Finished,"jumping clears enlarged portal");
-            d=new DuelModel(0,4);d.elapsed=98.99f;d.Tick(.02f,default(DuelInput),default(DuelInput));
-            Check(d.winner==-1,"enlarged portals still permit time-up draw");
+            d=new DuelModel(0,1);Step(d,6600);Check(!d.Finished,"no timeout result");
             return count;
         }
     }
