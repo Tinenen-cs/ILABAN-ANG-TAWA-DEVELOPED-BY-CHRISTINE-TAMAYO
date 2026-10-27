@@ -30,3 +30,4 @@ Original artwork, face files, audio and Main.unity have not been deleted. Proced
 | C5 | Phase 3 font swap: Tiny5 pixel font replaced by Lilita One + Nunito SDF (Bilinear, outline + underlay); arrow glyphs removed from controls text | FIXED: no MISSING GLYPH in smoke run |
 | C6 | Smoke harness was destroyed by the Pambungad -> Pamagat scene load | FIXED: DontDestroyOnLoad |
 | C7 | Labels overflowed their rects with the wider font | MITIGATED: TMP auto-size (min 60%); select screen redo pending |
+| C8 | Character art policy | The real-person photos were used only as expression and outfit reference (see Docs/CHARACTER_DESIGN.md). No likeness reproduced. |
