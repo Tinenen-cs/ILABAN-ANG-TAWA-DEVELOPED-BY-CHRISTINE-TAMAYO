@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="9" result="Passed" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-27 20:21:43Z" end-time="2026-10-27 20:21:55Z" duration="11.5118235">
-  <test-suite type="TestSuite" id="1000" name="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" fullname="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-27 20:21:43Z" end-time="2026-10-27 20:21:55Z" duration="11.511824" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+<test-run id="2" testcasecount="9" result="Passed" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-27 21:29:56Z" end-time="2026-10-27 21:29:57Z" duration="0.5619764">
+  <test-suite type="TestSuite" id="1000" name="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" fullname="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-27 21:29:56Z" end-time="2026-10-27 21:29:57Z" duration="0.561976" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
     <properties>
       <property name="platform" value="EditMode" />
     </properties>
-    <test-suite type="Assembly" id="1011" name="Ilaban.EditMode.Tests.dll" fullname="C:/Users/chris/AppData/Local/Temp/Ilaban-Phase2-Validation/Library/ScriptAssemblies/Ilaban.EditMode.Tests.dll" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-27 20:21:43Z" end-time="2026-10-27 20:21:55Z" duration="11.443224" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1011" name="Ilaban.EditMode.Tests.dll" fullname="C:/Users/chris/AppData/Local/Temp/Ilaban-Final-Validation/Library/ScriptAssemblies/Ilaban.EditMode.Tests.dll" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-27 21:29:56Z" end-time="2026-10-27 21:29:57Z" duration="0.551826" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="22924" />
+        <property name="_PID" value="26364" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="EditMode" />
         <property name="EditorOnly" value="True" />
       </properties>
-      <test-suite type="TestSuite" id="1012" name="Hexbound" fullname="Hexbound" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-27 20:21:43Z" end-time="2026-10-27 20:21:55Z" duration="11.442720" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="1012" name="Hexbound" fullname="Hexbound" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-27 21:29:56Z" end-time="2026-10-27 21:29:57Z" duration="0.551300" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-suite type="TestSuite" id="1013" name="Tests" fullname="Hexbound.Tests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-27 20:21:43Z" end-time="2026-10-27 20:21:55Z" duration="11.442476" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestSuite" id="1013" name="Tests" fullname="Hexbound.Tests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-27 21:29:56Z" end-time="2026-10-27 21:29:57Z" duration="0.551118" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
           <properties />
-          <test-suite type="TestFixture" id="1001" name="RubricTests" fullname="Hexbound.Tests.RubricTests" classname="Hexbound.Tests.RubricTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-27 20:21:43Z" end-time="2026-10-27 20:21:55Z" duration="11.441004" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestFixture" id="1001" name="RubricTests" fullname="Hexbound.Tests.RubricTests" classname="Hexbound.Tests.RubricTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-27 21:29:56Z" end-time="2026-10-27 21:29:57Z" duration="0.549795" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-case id="1002" name="CompleteRubricSuite" fullname="Hexbound.Tests.RubricTests.CompleteRubricSuite" methodname="CompleteRubricSuite" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="1154423512" result="Passed" start-time="2026-10-27 20:21:43Z" end-time="2026-10-27 20:21:44Z" duration="0.511453" asserts="0">
+            <test-case id="1002" name="CompleteRubricSuite" fullname="Hexbound.Tests.RubricTests.CompleteRubricSuite" methodname="CompleteRubricSuite" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="2072198013" result="Passed" start-time="2026-10-27 21:29:56Z" end-time="2026-10-27 21:29:56Z" duration="0.018514" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1010" name="EveryMapHasDifferentMusic" fullname="Hexbound.Tests.RubricTests.EveryMapHasDifferentMusic" methodname="EveryMapHasDifferentMusic" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="1469212299" result="Passed" start-time="2026-10-27 20:21:44Z" end-time="2026-10-27 20:21:44Z" duration="0.234378" asserts="0">
+            <test-case id="1010" name="EveryMapHasDifferentMusic" fullname="Hexbound.Tests.RubricTests.EveryMapHasDifferentMusic" methodname="EveryMapHasDifferentMusic" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="711485" result="Passed" start-time="2026-10-27 21:29:56Z" end-time="2026-10-27 21:29:56Z" duration="0.011894" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1009" name="EveryOriginalAdultRigIsComplete" fullname="Hexbound.Tests.RubricTests.EveryOriginalAdultRigIsComplete" methodname="EveryOriginalAdultRigIsComplete" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="723648624" result="Passed" start-time="2026-10-27 20:21:44Z" end-time="2026-10-27 20:21:51Z" duration="7.185603" asserts="0">
+            <test-case id="1009" name="EveryOriginalAdultRigIsComplete" fullname="Hexbound.Tests.RubricTests.EveryOriginalAdultRigIsComplete" methodname="EveryOriginalAdultRigIsComplete" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="281508110" result="Passed" start-time="2026-10-27 21:29:56Z" end-time="2026-10-27 21:29:57Z" duration="0.241199" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1004" name="EveryStateRejectsForbiddenMoves" fullname="Hexbound.Tests.RubricTests.EveryStateRejectsForbiddenMoves" methodname="EveryStateRejectsForbiddenMoves" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="21370897" result="Passed" start-time="2026-10-27 20:21:51Z" end-time="2026-10-27 20:21:51Z" duration="0.066113" asserts="0">
+            <test-case id="1004" name="EveryStateRejectsForbiddenMoves" fullname="Hexbound.Tests.RubricTests.EveryStateRejectsForbiddenMoves" methodname="EveryStateRejectsForbiddenMoves" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="1840352642" result="Passed" start-time="2026-10-27 21:29:57Z" end-time="2026-10-27 21:29:57Z" duration="0.005019" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1008" name="EveryTimeOfDayHasImportedMap" fullname="Hexbound.Tests.RubricTests.EveryTimeOfDayHasImportedMap" methodname="EveryTimeOfDayHasImportedMap" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="555848900" result="Passed" start-time="2026-10-27 20:21:51Z" end-time="2026-10-27 20:21:52Z" duration="0.392364" asserts="0">
+            <test-case id="1008" name="EveryTimeOfDayHasImportedMap" fullname="Hexbound.Tests.RubricTests.EveryTimeOfDayHasImportedMap" methodname="EveryTimeOfDayHasImportedMap" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="1106505459" result="Passed" start-time="2026-10-27 21:29:57Z" end-time="2026-10-27 21:29:57Z" duration="0.196212" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1003" name="FiftyHitsHaveIdenticalDisplacement" fullname="Hexbound.Tests.RubricTests.FiftyHitsHaveIdenticalDisplacement" methodname="FiftyHitsHaveIdenticalDisplacement" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="1155825071" result="Passed" start-time="2026-10-27 20:21:52Z" end-time="2026-10-27 20:21:52Z" duration="0.023439" asserts="0">
+            <test-case id="1003" name="FiftyHitsHaveIdenticalDisplacement" fullname="Hexbound.Tests.RubricTests.FiftyHitsHaveIdenticalDisplacement" methodname="FiftyHitsHaveIdenticalDisplacement" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="91308557" result="Passed" start-time="2026-10-27 21:29:57Z" end-time="2026-10-27 21:29:57Z" duration="0.001154" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1006" name="ReactionCooldownAndNoRepeat" fullname="Hexbound.Tests.RubricTests.ReactionCooldownAndNoRepeat" methodname="ReactionCooldownAndNoRepeat" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="1473451220" result="Passed" start-time="2026-10-27 20:21:52Z" end-time="2026-10-27 20:21:53Z" duration="1.547177" asserts="0">
+            <test-case id="1006" name="ReactionCooldownAndNoRepeat" fullname="Hexbound.Tests.RubricTests.ReactionCooldownAndNoRepeat" methodname="ReactionCooldownAndNoRepeat" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="1293400323" result="Passed" start-time="2026-10-27 21:29:57Z" end-time="2026-10-27 21:29:57Z" duration="0.003361" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1005" name="ReactionsAreFormalAndDoNotTouchModel" fullname="Hexbound.Tests.RubricTests.ReactionsAreFormalAndDoNotTouchModel" methodname="ReactionsAreFormalAndDoNotTouchModel" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="1945823049" result="Passed" start-time="2026-10-27 20:21:53Z" end-time="2026-10-27 20:21:53Z" duration="0.079139" asserts="0">
+            <test-case id="1005" name="ReactionsAreFormalAndDoNotTouchModel" fullname="Hexbound.Tests.RubricTests.ReactionsAreFormalAndDoNotTouchModel" methodname="ReactionsAreFormalAndDoNotTouchModel" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="1474501320" result="Passed" start-time="2026-10-27 21:29:57Z" end-time="2026-10-27 21:29:57Z" duration="0.000475" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1007" name="StaticFontContainsRequiredCharacters" fullname="Hexbound.Tests.RubricTests.StaticFontContainsRequiredCharacters" methodname="StaticFontContainsRequiredCharacters" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="1568826467" result="Passed" start-time="2026-10-27 20:21:53Z" end-time="2026-10-27 20:21:55Z" duration="1.322087" asserts="0">
+            <test-case id="1007" name="StaticFontContainsRequiredCharacters" fullname="Hexbound.Tests.RubricTests.StaticFontContainsRequiredCharacters" methodname="StaticFontContainsRequiredCharacters" classname="Hexbound.Tests.RubricTests" runstate="Runnable" seed="953757901" result="Passed" start-time="2026-10-27 21:29:57Z" end-time="2026-10-27 21:29:57Z" duration="0.055948" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
-              <output><![CDATA[Saving results to: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\Logs\Verified-EditMode.xml
+              <output><![CDATA[Saving results to: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\Logs\Final-EditMode.xml
 ]]></output>
             </test-case>
           </test-suite>

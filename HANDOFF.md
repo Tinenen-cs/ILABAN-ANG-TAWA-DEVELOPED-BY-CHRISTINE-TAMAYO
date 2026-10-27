@@ -39,3 +39,11 @@ Once present and verified, upload only SUBMISSION/ILABAN ANG TAWA DEVELOPED BY C
 - BUG: dizzy stars orbit at y=335, hidden behind reaction bubbles (y 263-332); in QA_SCREENSHOTS/Final_1280x720/05-dizzy.png the dizzy indicator is not visible. Fix in AcademyGame.UpdateDizzyStars (raise/enlarge, draw last).
 - BUG: P1/P2 bubbles touch when fighters are close (AcademyGame bubble x shift 240 < width 250).
 - Tools/finalize_evidence.py (Codex) has not been run yet; run it after the rebuild/QA/zip.
+
+## Final correction step 3 evidence
+
+- Clean working branch commit 3979522 was cloned locally into %TEMP%\Ilaban-Final-Validation; git rev-parse HEAD matched real project exactly in both. User Unity Editor stayed open on real project.
+- Unity 6000.6.2f1 final build completed from clone; 65 rubric assertions passed. No error CS or warning CS entries.
+- Final EditMode 9/9 and graphics-enabled PlayMode 4/4 passed. XML saved to Docs/QA_EVIDENCE/EditMode.xml and PlayMode.xml.
+- Portable QA, screenshot inspection and fresh package still in progress.
+
