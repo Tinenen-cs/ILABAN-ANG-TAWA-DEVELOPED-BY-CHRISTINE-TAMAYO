@@ -171,14 +171,14 @@ namespace Hexbound
         void DrawTitle()
         {
             Picture(stages[2],new Rect(0,0,1280,720)); Box(0,0,1280,720,new Color(.015f,.02f,.055f,.78f));
-            Label(0,175,1280,35,"T H E   F O R B I D D E N   T R I A L S",20,gold,TextAnchor.MiddleCenter);
+            Label(0,175,1280,35,"L A R O   N G   B A R A N G A Y",20,gold,TextAnchor.MiddleCenter);
             textStyle.font=titleFont!=null?titleFont:font;
-            Label(0,230,1280,120,"HEXBOUND",96,cream,TextAnchor.MiddleCenter);
-            Label(0,350,1280,52,"ACADEMY DUEL",29,gold,TextAnchor.MiddleCenter);
+            Label(0,230,1280,120,"ILABAN ANG TAWA",64,cream,TextAnchor.MiddleCenter);
+            Label(0,350,1280,52,"DEVELOPED BY CHRISTINE TAMAYO",26,gold,TextAnchor.MiddleCenter);
             textStyle.font=font;
             Box(490,428,300,1,gold);
-            Label(0,488,1280,40,"PRESS ANY KEY OR CLICK TO BEGIN",25,new Color(1,.9f,.7f,.7f+.3f*Mathf.Sin(animationTime*2)),TextAnchor.MiddleCenter);
-            Label(0,648,1280,28,"TWO DUELISTS  /  THREE FORBIDDEN ARENAS  /  ONE ACADEMY",17,gold,TextAnchor.MiddleCenter);
+            Label(0,488,1280,40,"Pindutin ang anumang pindutan upang magsimula",25,new Color(1,.9f,.7f,.7f+.3f*Mathf.Sin(animationTime*2)),TextAnchor.MiddleCenter);
+            Label(0,648,1280,28,"DALAWANG MANLALARO  /  TATLONG ENTABLADO",17,gold,TextAnchor.MiddleCenter);
         }
         void DrawSelect()
         {

@@ -64,7 +64,7 @@ namespace Hexbound.Editor
                 if (previous.IsValid()) SceneManager.SetActiveScene(previous);
                 EditorSceneManager.CloseScene(scene,true);
             }
-            PlayerSettings.companyName="Student Arcana Studio"; PlayerSettings.productName="Hexbound - Academy Duel";
+            PlayerSettings.companyName="Christine Tamayo"; PlayerSettings.productName="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO";
             PlayerSettings.defaultScreenWidth=1280; PlayerSettings.defaultScreenHeight=720;
             PlayerSettings.runInBackground=false;
             AssetDatabase.SaveAssets();
