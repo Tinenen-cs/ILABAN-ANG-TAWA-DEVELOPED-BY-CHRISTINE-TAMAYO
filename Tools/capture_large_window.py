@@ -6,7 +6,7 @@ import ctypes, subprocess, os, time, json
 from pathlib import Path
 from PIL import Image
 root=Path(__file__).resolve().parents[1]
-exe=Path(os.environ['TEMP'])/'Ilaban-Phase2-Validation/Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe'
+exe=Path(os.environ.get('ILABAN_PROJECT',os.path.join(os.environ['TEMP'],'Ilaban-Phase2-Validation')))/'Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe'
 folder=root/'QA_SCREENSHOTS/Exact_2560x1440';log=root/'Logs/Exact_2560x1440.log'
 proc=subprocess.Popen([str(exe),'-popupwindow','-screen-fullscreen','0','-screen-width','2560','-screen-height','1440','-ilaban-smoke',str(folder),'-logFile',str(log)])
 user=ctypes.windll.user32

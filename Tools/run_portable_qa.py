@@ -1,6 +1,6 @@
-﻿from pathlib import Path
+from pathlib import Path
 import subprocess,shutil,os,json,sys
-root=Path.cwd();qa=Path(os.environ['TEMP'])/'Ilaban-Phase2-Validation';exe=qa/'Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe'
+root=Path.cwd();qa=Path(os.environ.get('ILABAN_PROJECT',os.path.join(os.environ['TEMP'],'Ilaban-Phase2-Validation')));exe=qa/'Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe'
 results=[]
 for w,h in [(1280,720),(1366,768),(1920,1080),(2560,1440)]:
  if w==2560:

@@ -7,6 +7,7 @@ Developer: Christine Tamayo.
 - **Lilita One**, Juan Pablo del Peral ? OFL 1.1. Source: https://github.com/google/fonts/tree/main/ofl/lilitaone . Source and license are included in Assets/Fonts. Static SDF `KalyeDisplay` for titles and large names.
 - **Nunito Bold**, Vernon Adams / Cyreal / Jacques Le Bailly and Nunito project contributors ? OFL 1.1. Source: https://github.com/google/fonts/tree/main/ofl/nunito . Included license in Assets/Fonts. Static SDF `KalyeBody` for labels, hints and reactions. Bilinear atlases and shared dark outline/underlay; printable ASCII and Filipino glyph checks in RubricTests.
 - Inactive legacy fonts remain in the archive for rollback; active UI uses only the pair above.
+- TMP essential resources include Liberation Sans for editor/default support, under its bundled OFL license at `Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt`; gameplay labels explicitly use KalyeDisplay/KalyeBody.
 
 ## Active character and environment art
 

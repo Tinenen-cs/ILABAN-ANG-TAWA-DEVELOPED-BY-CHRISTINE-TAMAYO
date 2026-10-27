@@ -3,9 +3,9 @@ import os, shutil, zipfile, hashlib, json, subprocess, time
 
 root=Path(__file__).resolve().parents[1]
 title='ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO'
-source=Path(os.environ['TEMP'])/'Ilaban-Phase2-Validation/Builds/Windows'
+source=Path(os.environ.get('ILABAN_PROJECT',os.path.join(os.environ['TEMP'],'Ilaban-Phase2-Validation')))/'Builds/Windows'
 submission=root/'SUBMISSION'; package=submission/title
-shutil.copytree(source,root/'Builds/Windows',dirs_exist_ok=True)
+if source.resolve()!=(root/'Builds/Windows').resolve():shutil.copytree(source,root/'Builds/Windows',dirs_exist_ok=True)
 shutil.copytree(source,package,dirs_exist_ok=True)
 (package/'BASAHIN_MUNA.txt').write_text('''ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO
 

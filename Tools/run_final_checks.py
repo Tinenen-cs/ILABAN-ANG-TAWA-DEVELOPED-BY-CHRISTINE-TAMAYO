@@ -1,6 +1,6 @@
 from pathlib import Path
 import subprocess,os
-root=Path.cwd();project=Path(os.environ['TEMP'])/'Ilaban-Phase2-Validation';unity=r'C:\Program Files\Unity\Hub\Editor\6000.6.2f1\Editor\Unity.exe'
+root=Path.cwd();project=Path(os.environ.get('ILABAN_PROJECT',os.path.join(os.environ['TEMP'],'Ilaban-Phase2-Validation')));unity=r'C:\Program Files\Unity\Hub\Editor\6000.6.2f1\Editor\Unity.exe'
 startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
 for mode in ['EditMode','PlayMode','Build']:
  args=[unity,'-nographics','-batchmode','-projectPath',str(project),'-logFile',str(root/'Logs'/('Verified-'+mode+'.log'))]

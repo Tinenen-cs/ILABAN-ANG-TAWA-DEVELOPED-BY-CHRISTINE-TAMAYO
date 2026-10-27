@@ -27,3 +27,7 @@ CHARACTER REFERENCE/
 
 **/CHARACTER REFERENCE/
 SUBMISSION/
+
+# Full-resolution acceptance captures stay beside the portable deliverable.
+# Their dimensions, hashes and test results are versioned under Docs.
+QA_SCREENSHOTS/

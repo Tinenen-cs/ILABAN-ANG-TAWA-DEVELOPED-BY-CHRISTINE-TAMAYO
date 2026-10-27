@@ -32,3 +32,10 @@ Real USB controllers and second controller, hot-swap feel, unplug/replug, keyboa
 ## Submission
 
 Once present and verified, upload only SUBMISSION/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip to Canvas. The ZIP includes the EXE, Data folder, UnityPlayer.dll, Mono runtime and Tagalog BASAHIN_MUNA.txt. CHECKLIST.md and QA_SCREENSHOTS are optional extras if the professor allows them.
+
+## Claude Code notes (2026-10-28, stopped at student's request)
+- Found: SUBMISSION zip (05:02) predates the final build log (05:06) and last commit (05:04), and was built from the TEMP validation copy. Rebuild + re-zip before submitting.
+- Tools/package_portable.py, run_portable_qa.py, capture_large_window.py, run_final_checks.py now accept env ILABAN_PROJECT (default = TEMP validation copy).
+- BUG: dizzy stars orbit at y=335, hidden behind reaction bubbles (y 263-332); in QA_SCREENSHOTS/Final_1280x720/05-dizzy.png the dizzy indicator is not visible. Fix in AcademyGame.UpdateDizzyStars (raise/enlarge, draw last).
+- BUG: P1/P2 bubbles touch when fighters are close (AcademyGame bubble x shift 240 < width 250).
+- Tools/finalize_evidence.py (Codex) has not been run yet; run it after the rebuild/QA/zip.
