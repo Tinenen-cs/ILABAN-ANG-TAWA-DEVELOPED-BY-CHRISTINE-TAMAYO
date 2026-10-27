@@ -36,3 +36,14 @@ Branch: `phase3-polish`. `main` untouched — never merge without the student's 
 - SCREENSHOTS: use PrintWindow on the game HWND only (see BUG_LOG C4); never screen-copy.
 - C2 closed (not a bug). QA screenshots: use exe arg `-ilaban-smoke <folder>` (Phase2Smoke.cs, in-process capture).
 - NEXT: item B (wire Stages/HD backgrounds + manhole + animated parts) -> C (slanted card layout) -> D..K.
+
+## STUDENT UPDATE (map art / fonts / time of day / screen backgrounds) - supersedes pixel maps and Tiny5
+1. [x] Approved maps: Codex originals 1672x941 (MAP ART/APPROVED did not exist) -> Assets/Resources/Ilaban/Maps/<Map>/<Map>_Takipsilim.png
+2. [x] Full-res maps, Bilinear (ProjectSetup import rule), cover fit, soft FX (Tools/generate_map_fx.py): clouds, lamp flicker,
+       jeepney, floor shimmer, imburnal at fall points. Commit d9e2630.
+3. [ ] Fonts: replace Tiny5 with OFL pair (Lilita One display + Nunito body), SDF Bilinear, outline styles
+4. [ ] Umaga/Hapon versions + Oras selector (Up/Down on Pumili ng Entablado)
+5. [ ] Backgrounds: Pambungad (layers), Pamagat, Pumili ng Entablado, Pumili ng Tauhan
+6. [ ] UI redo (C/D), QA at 4 resolutions, SUBMISSION zip
+RESUME: build = `Unity.exe -batchmode -quit -projectPath <proj> -executeMethod Hexbound.Editor.FinalizationSetup.ValidateAndBuild`
+        smoke = `"Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe" -screen-fullscreen 0 -screen-width 1280 -screen-height 720 -ilaban-smoke <abs folder>`
