@@ -366,7 +366,7 @@ namespace Hexbound
                 if(visible) {bubble.alpha.alpha=Mathf.Min(1,age/.08f)*Mathf.Clamp01((1.1f-age)/.25f);
                     // Keep each 250px bubble inside the central safe area and in its own lane.
                     // The HUD panels occupy the outer 314px on each side.
-                    float x=p==0?Mathf.Clamp(f.x-125,320,500):Mathf.Clamp(f.x-125,600,716);
+                    float x=p==0?Mathf.Clamp(f.x-125,340,500):Mathf.Clamp(f.x-125,600,700);
                     bubble.root.anchoredPosition=new Vector2(x+Mathf.Sin(age*70)*Mathf.Max(0,1-age*6)*3,-263);
                     bubble.root.localScale=Vector3.one*Mathf.Lerp(.85f,1,Mathf.Clamp01(age/.1f));}
             }
@@ -380,7 +380,7 @@ namespace Hexbound
         TMP_Text[] stars;
         TMP_Text[] impactLabels;
         void UpdateDizzyStars() {
-            if(stars==null||stars[0]==null) {stars=new TMP_Text[10];for(int i=0;i<10;i++)stars[i]=Label(view,new Rect(0,0,46,52),"★",36,gold);}
+            if(stars==null||stars[0]==null) {stars=new TMP_Text[10];for(int i=0;i<10;i++)stars[i]=Label(view,new Rect(0,0,46,52),"*",42,gold);}
             for(int p=0;p<2;p++)for(int i=0;i<5;i++) {
                 var star=stars[p*5+i];star.gameObject.SetActive(Model.players[p].dizzyTime>0&&!Model.Finished);
                 float angle=clock*5+i*Mathf.PI*2/5;
