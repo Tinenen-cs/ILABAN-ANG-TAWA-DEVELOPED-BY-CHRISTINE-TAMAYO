@@ -47,3 +47,6 @@ Branch: `phase3-polish`. `main` untouched — never merge without the student's 
 6. [ ] UI redo (C/D), QA at 4 resolutions, SUBMISSION zip
 RESUME: build = `Unity.exe -batchmode -quit -projectPath <proj> -executeMethod Hexbound.Editor.FinalizationSetup.ValidateAndBuild`
         smoke = `"Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe" -screen-fullscreen 0 -screen-width 1280 -screen-height 720 -ilaban-smoke <abs folder>`
+- CHARACTERS: Figma file https://www.figma.com/design/9J9nqsjyg38lIZVMeLXRYC (session e8b0b6d3-fa87-4e19-9c6d-b6f61d04b44f).
+  8 portraits generated (text prompts only), saved Assets/Art/Characters/Source/portrait_N.jpg (N = order in Docs/CHARACTER_DESIGN.md).
+  Sheet: QA_SCREENSHOTS/portrait_sheet.png. WAITING for student approval before full-body poses + animation rig.
