@@ -21,3 +21,6 @@ __pycache__/
 *.pyc
 .venv/
 Builds/
+
+# Real-person reference photos: never commit (student privacy)
+CHARACTER REFERENCE/
