@@ -75,8 +75,8 @@ namespace Hexbound.Editor
             int checks=RuleChecks.Run();
             Require(Resources.Load<UnityEngine.InputSystem.InputActionAsset>("Input/AcademyControls")!=null,"input action asset");
             for(int i=0;i<8;i++) {
-                Require(Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/portraits")!=null,"original face "+i);
-                Require(Resources.Load<Texture2D>("Ilaban/Bodies/Body_"+i)!=null,"body atlas "+i);
+                Require(Resources.Load<Texture2D>("Ilaban/Characters/"+Roster.Files[i]+"/Portrait")!=null,"original face "+i);
+                Require(Resources.Load<Texture2D>("Ilaban/Characters/"+Roster.Files[i]+"/Body")!=null,"body atlas "+i);
                 Require(Resources.Load<Texture2D>("Ilaban/Items/Item_"+i)!=null,"item "+i);
             }
             for(int i=0;i<3;i++) {Require(Resources.Load<Texture2D>("Ilaban/Stages/"+Roster.StageFiles[i])!=null,"map "+i);Require(Resources.Load<AudioClip>("Ilaban/Audio/Music/"+Roster.StageFiles[i])!=null,"map music "+i);}

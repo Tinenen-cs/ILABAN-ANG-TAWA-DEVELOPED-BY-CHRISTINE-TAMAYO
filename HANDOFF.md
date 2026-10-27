@@ -89,3 +89,6 @@ Scene order Pambungad, Pamagat, Pumili ng Tauhan, Pumili ng Entablado, Laban, Re
 
 ## H. Figma
 https://www.figma.com/design/9J9nqsjyg38lIZVMeLXRYC (Codex cannot use the Figma generator; prompts follow Docs/CHARACTER_DESIGN.md)
+
+## Codex continuation: character rig step (28 October 2026)
+Approved original base art now split into six disjoint registered visual parts by Tools/rig_characters.py. Runtime loads the new Filipino keys, full portraits, and code-driven part transforms. No real-person photos used or uploaded. UI name-label heights adjusted. Runtime compilation/tests still pending for this step. No push or merge permitted.

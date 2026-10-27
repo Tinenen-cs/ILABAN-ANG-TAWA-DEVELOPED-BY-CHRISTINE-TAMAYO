@@ -68,3 +68,7 @@ Names are proposals; reference faces must remain unchanged. Each line requires a
 - [ ] Portable folder and ZIP with README and CREDITS.
 - [ ] Run from a different folder and a clean Windows PC without Unity.
 - [ ] Complete TEST_PLAN.md with observed results; final bug review and fixes.
+
+## Current continuation checkpoint
+- [~] New Filipino runtime keys, full portraits and six-part procedural rigs connected; compile/visual verification pending.
+- [x] Private reference folder ignored; duplicate image hashes scanned and ignored if found. No push/history rewrite.

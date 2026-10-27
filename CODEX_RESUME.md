@@ -19,3 +19,6 @@ Laban, Resulta; no merge to main without approval.
 5. Build, SUBMISSION zip with BASAHIN_MUNA.txt, extract-and-run test.
 
 Resume commands: HANDOFF.md section G. Figma: https://www.figma.com/design/9J9nqsjyg38lIZVMeLXRYC
+
+## Codex continuation: character rig step (28 October 2026)
+Approved original base art now split into six disjoint registered visual parts by Tools/rig_characters.py. Runtime loads the new Filipino keys, full portraits, and code-driven part transforms. No real-person photos used or uploaded. UI name-label heights adjusted. Runtime compilation/tests still pending for this step. No push or merge permitted.

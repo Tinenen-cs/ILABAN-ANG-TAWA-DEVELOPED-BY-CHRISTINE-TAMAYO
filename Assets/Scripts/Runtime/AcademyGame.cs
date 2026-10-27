@@ -51,14 +51,14 @@ namespace Hexbound
         Image[][] cardMarkers;
         TMP_Text[] readiness;
         Actor[] selectionShowcase;
-        Image[] selectionBars;
+
         AudioSource music,sfx,highlight;
         int selectedArena,focus,setting;
         bool fromFight;
         float clock,resultTime,master=.8f,musicLevel=.55f,soundLevel=.7f;
         readonly Color cream=new Color32(245,229,194,255),gold=new Color32(224,181,105,255),ink=new Color32(16,30,40,255);
         readonly Color[] playerColors={new Color32(81,214,218,255),new Color32(249,135,116,255)};
-        sealed class Actor { public RectTransform root; public RawImage body,head,dust; public int id; }
+        sealed class Actor { public RectTransform root; public RawImage body,head,dust; public RawImage[] parts; public int id; }
         sealed class Bubble { public RectTransform root; public TMP_Text label; public CanvasGroup alpha; public float started=-10; }
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Boot() { if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name=="Pambungad")return;if(FindAnyObjectByType<AcademyGame>()==null) new GameObject("Ilaban ang Tawa").AddComponent<AcademyGame>(); }
@@ -67,7 +67,7 @@ namespace Hexbound
             Application.targetFrameRate=60;
             controls=new AcademyInputManager(); reactions=new ReactionBank();
             font=Resources.Load<TMP_FontAsset>("Ilaban/Fonts/KalyeDisplay");bodyFont=Resources.Load<TMP_FontAsset>("Ilaban/Fonts/KalyeBody");
-            for(int i=0;i<8;i++) { heads[i]=Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/portraits"); bodies[i]=Tex("Bodies/Body_"+i);items[i]=Tex("Items/Item_"+i); }
+            for(int i=0;i<8;i++) { heads[i]=Tex("Characters/"+Roster.Files[i]+"/Portrait"); bodies[i]=Tex("Characters/"+Roster.Files[i]+"/Body");items[i]=Tex("Items/Item_"+i); }
             for(int i=0;i<3;i++) stages[i]=MapTex(i);
             foreach(var clip in Resources.LoadAll<AudioClip>("Ilaban/Audio")) clips[clip.name]=clip;
             music=gameObject.AddComponent<AudioSource>();sfx=gameObject.AddComponent<AudioSource>();highlight=gameObject.AddComponent<AudioSource>();
@@ -191,7 +191,7 @@ namespace Hexbound
                 int side=p;float x=28+p*278;
                 readiness[p]=Label(view,new Rect(x,132,270,37),"",23,playerColors[p]);
                 selectionShowcase[p]=ActorView(view,Selected[p],new Rect(x+12,187,245,350));
-                Label(view,new Rect(x-5,526,280,40),Roster.Names[Selected[p]],27,playerColors[p]);
+                Label(view,new Rect(x-5,516,280,56),Roster.Names[Selected[p]],23,playerColors[p]);
                 Button(view,new Rect(x+5,575,260,47),"Kumpirmahin",()=>Confirm(side));
             }
             cards=new RectTransform[8];cardMarkers=new Image[8][];
@@ -201,12 +201,12 @@ namespace Hexbound
                 Slant(r,new Rect(0,0,145,182),new Color(.055f,.115f,.14f,.98f));
                 var preview=ActorView(r,i,new Rect(27,10,90,132));previews.Add(preview);
                 Raw(r,new Rect(108,95,27,27),items[i]);
-                Image(r,new Rect(4,136,137,43),new Color(.025f,.055f,.07f,.95f));Label(r,new Rect(7,138,131,40),Roster.Names[i],19);
+                Image(r,new Rect(4,136,137,43),new Color(.025f,.055f,.07f,.95f));Label(r,new Rect(5,134,135,46),Roster.Names[i],15);
                 cardMarkers[i]=new Image[2];for(int p=0;p<2;p++) {cardMarkers[i][p]=Image(r,new Rect(p==0?1:139,3,5,174),playerColors[p]);var badge=Label(cardMarkers[i][p].transform,new Rect(p==0?5:-25,0,25,25),(p+1).ToString(),22,playerColors[p]);}
                 var hit=Image(r,new Rect(0,0,145,182),Color.clear);hit.raycastTarget=true;var button=hit.gameObject.AddComponent<Button>();button.navigation=new Navigation{mode=Navigation.Mode.None};button.onClick.AddListener(()=>{int side=Ready[0]?1:0;if(!Ready[side]) {Selected[side]=id;Sound("carousel_slide");RefreshDescriptions();}});
             }
-            Label(view,new Rect(605,558,620,33),Roster.Descriptions[Selected[0]],20,playerColors[0]);
-            Label(view,new Rect(605,594,620,33),Roster.Descriptions[Selected[1]],20,playerColors[1]);
+            Label(view,new Rect(605,553,620,42),Roster.Descriptions[Selected[0]],20,playerColors[0]);
+            Label(view,new Rect(605,596,620,42),Roster.Descriptions[Selected[1]],20,playerColors[1]);
             Button(view,new Rect(35,646,205,52),"Bumalik",()=>Show(ScreenState.Title));
             Button(view,new Rect(1040,646,205,52),"Simulan",()=>{if(Ready[0]&&Ready[1])Show(ScreenState.StageSelect);},Ready[0]&&Ready[1]);
             Label(view,new Rect(260,642,760,58),"KALIWA / KANAN  PUMILI    F / CTRL KANAN  KUMPIRMAHIN",20,gold);
@@ -236,8 +236,9 @@ namespace Hexbound
         {
             var a=new Actor {id=id,root=Rect(parent,"Tauhan",area)};
             a.dust=Raw(a.root,new Rect(-10,area.height-28,area.width+20,40),Tex("UI/Glow"));a.dust.color=new Color(.9f,.8f,.6f,.3f);
-            a.body=Raw(a.root,new Rect(0,0,area.width,area.height),bodies[id]);a.body.uvRect=new Rect(0,6f/7,.25f,1f/7);
-            a.head=Raw(a.root,new Rect(area.width*.23f,-area.height*.03f,area.width*.56f,area.height*.41f),heads[id]);a.head.uvRect=new Rect(0,.5f,.5f,.5f);
+            a.parts=new RawImage[6];string[] partNames={"LegL","LegR","Torso","ArmL","ArmR","Head"};
+            for(int i=0;i<6;i++){a.parts[i]=Raw(a.root,new Rect(0,0,area.width,area.height),Tex("Characters/"+Roster.Files[id]+"/"+partNames[i]));a.parts[i].uvRect=new Rect(0,0,1,1);}
+            a.body=a.parts[2];a.head=a.parts[5];
             return a;
         }
         void Fight()
@@ -251,7 +252,7 @@ namespace Hexbound
                 float x=p==0?22:958;
                 var ring=Image(view,new Rect(x+101,20,96,96),playerColors[p],"PortraitMask");
                 var mask=Image(ring.transform,new Rect(5,5,86,86),Color.white,"PortraitMask");mask.gameObject.AddComponent<Mask>().showMaskGraphic=false;
-                var portrait=Raw(mask.transform,new Rect(0,0,86,86),heads[Model.players[p].character]);portrait.uvRect=new Rect(0,.5f,.5f,.5f);
+                var portrait=Raw(mask.transform,new Rect(0,0,86,86),heads[Model.players[p].character]);portrait.uvRect=new Rect(0,0,1,1);
                 names[p]=Label(view,new Rect(x,119,300,32),Roster.Names[Model.players[p].character],25);
                 deviceLabels[p]=Label(view,new Rect(x-10,154,320,30),"",18,playerColors[p]);
                 Label(view,new Rect(x,187,300,23),"Sunod na Suntok",18,gold);
@@ -347,7 +348,7 @@ namespace Hexbound
                 actor.root.anchoredPosition=new Vector2(f.x-85,-(343+fall*170));actor.root.localScale=Vector3.one*(1-fall*.75f);
                 actor.head.rectTransform.localScale=Vector3.one; // Keep each original face readable while the body faces its rival.
                 actor.root.localRotation=Quaternion.Euler(0,0,f.dizzyTime>0?Mathf.Sin(clock*12)*6:f.fallen?fall*80:0);
-                actor.root.gameObject.SetActive(!f.fallen||resultTime<.8f);Animate(actor,f.pose,(int)(clock*8)%4);if(f.facing<0){var uv=actor.body.uvRect;uv.x+=uv.width;uv.width=-uv.width;actor.body.uvRect=uv;}
+                actor.root.gameObject.SetActive(!f.fallen||resultTime<.8f);Animate(actor,f.pose,(int)(clock*8)%4);foreach(var part in actor.parts)part.uvRect=f.facing<0?new Rect(1,0,-1,1):new Rect(0,0,1,1);
                 deviceLabels[p].text=controls.DeviceName(p)+" / "+controls.Prompt(p,"Move")+" + "+controls.Prompt(p,"Punch");
                 for(int i=0;i<5;i++)dots[p][i].color=i<f.streak?playerColors[p]:new Color(.24f,.32f,.35f);
                 var bubble=bubbles[p];float age=clock-bubble.started;bool visible=age>=0&&age<1.1f;bubble.root.gameObject.SetActive(visible);
@@ -367,12 +368,20 @@ namespace Hexbound
             for(int p=0;p<2;p++)for(int i=0;i<5;i++) {var star=stars[p*5+i];star.gameObject.SetActive(Model.players[p].dizzyTime>0&&!Model.Finished);float angle=clock*5+i*Mathf.PI*2/5;star.rectTransform.anchoredPosition=new Vector2(Model.players[p].x-11+Mathf.Cos(angle)*46,-(335+Mathf.Sin(angle)*13));}
         }
         void Animate(Actor actor,Pose pose,int frame) {
-            int row=pose==Pose.Walk?1:pose==Pose.Punch?2:pose==Pose.Hurt?3:pose==Pose.Dizzy?4:pose==Pose.Fall?5:pose==Pose.Win?6:0;
-            actor.body.uvRect=new Rect(frame*.25f,1-(row+1)/7f,.25f,1/7f);
+            float phase=clock*7+actor.id*.3f,bob=Mathf.Sin(phase)*(pose==Pose.Walk?3:1.4f);
+            float punch=pose==Pose.Punch?Mathf.Sin((1-(Model!=null&&Model.players[0].character==actor.id?Model.players[0].actionTime/DuelModel.PunchDuration:Mathf.Repeat(clock,1)))*Mathf.PI):0;
+            float w=actor.root.sizeDelta.x,h=actor.root.sizeDelta.y;
+            for(int i=0;i<6;i++) {
+                var r=actor.parts[i].rectTransform;r.anchoredPosition=new Vector2(0,bob);r.localScale=Vector3.one;r.localRotation=Quaternion.identity;
+                if(i<2&&pose==Pose.Walk){r.localRotation=Quaternion.Euler(0,0,Mathf.Sin(phase*1.6f+i*Mathf.PI)*6);r.anchoredPosition+=new Vector2(Mathf.Sin(phase*1.6f+i*Mathf.PI)*w*.025f,0);}
+                if(i==4&&pose==Pose.Punch){r.anchoredPosition+=new Vector2(punch*w*.09f,0);r.localRotation=Quaternion.Euler(0,0,punch*8);}
+                if(i==5){r.anchoredPosition+=new Vector2(0,Mathf.Sin(phase)*h*.005f);if(pose==Pose.Dizzy)r.localRotation=Quaternion.Euler(0,0,Mathf.Sin(clock*12)*5);}
+                if(pose==Pose.Hurt)r.anchoredPosition+=new Vector2(-w*.018f*Mathf.Sin(clock*40),0);
+                if(pose==Pose.Win&&i>=3)r.localRotation=Quaternion.Euler(0,0,Mathf.Sin(phase)*4);
+            }
             actor.dust.color=new Color(1,.78f,.45f,pose==Pose.Walk?.3f+frame*.08f:pose==Pose.Punch?.45f:pose==Pose.Win?.3f:.06f);
-            int head=pose==Pose.Hurt?1:pose==Pose.Dizzy||pose==Pose.Fall?2:pose==Pose.Win?3:0;actor.head.uvRect=new Rect((head%2)*.5f,1-(head/2+1)*.5f,.5f,.5f);
-            actor.head.rectTransform.anchoredPosition=new Vector2(actor.root.sizeDelta.x*.23f,actor.root.sizeDelta.y*.03f+(frame%2==0?0:1));
         }
+
         void OnDestroy() {controls?.Dispose();foreach(var sprite in sprites.Values)Destroy(sprite);}
 #if UNITY_EDITOR
         public void CapturePreview(string path) {StartCoroutine(CaptureFrame(path));}
