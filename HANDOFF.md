@@ -44,6 +44,8 @@ Once present and verified, upload only SUBMISSION/ILABAN ANG TAWA DEVELOPED BY C
 
 - Clean working branch commit 3979522 was cloned locally into %TEMP%\Ilaban-Final-Validation; git rev-parse HEAD matched real project exactly in both. User Unity Editor stayed open on real project.
 - Unity 6000.6.2f1 final build completed from clone; 65 rubric assertions passed. No error CS or warning CS entries.
-- Final EditMode 9/9 and graphics-enabled PlayMode 4/4 passed. XML saved to Docs/QA_EVIDENCE/EditMode.xml and PlayMode.xml.
-- Portable QA, screenshot inspection and fresh package still in progress.
+- Final corrected-source EditMode 9/9 and graphics-enabled PlayMode 4/4 passed after the supported asterisk fix. XML saved to Docs/QA_EVIDENCE/EditMode.xml and PlayMode.xml.
+- Portable QA and screenshot inspection are rerunning on the corrected standalone build. Fresh package follows.
 
+
+- The first portable screen pass caught a missing star-font glyph. It was replaced with a supported large asterisk; the corrected build has 65 assertions, EditMode 9/9, and graphics PlayMode 4/4.

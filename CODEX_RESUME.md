@@ -20,5 +20,5 @@ Get-Content -LiteralPath HANDOFF.md
 
 Do not re-run Tools/generate_ilaban_assets.py blindly: it regenerates procedural fallback art/audio and does not recreate approved generated map/character art. Source map/screen prompts and output paths: Docs/new_art_manifest.json and Docs/opening_layers_manifest.json. Tools/rig_characters.py creates the deterministic rig partitions only.
 
-Latest verification: 3979522 is cloned in %TEMP%\Ilaban-Final-Validation with exact matching HEAD. Final build passed 65 rule assertions; EditMode 9/9, graphics-enabled PlayMode 4/4. QA/package remain in progress.
+Latest verification: 5f67ce1 is cloned in %TEMP%\Ilaban-Final-Validation with exact matching HEAD. Final build passed 65 rule assertions; EditMode 9/9, graphics-enabled PlayMode 4/4. Corrected-source QA/package remain in progress.
 
