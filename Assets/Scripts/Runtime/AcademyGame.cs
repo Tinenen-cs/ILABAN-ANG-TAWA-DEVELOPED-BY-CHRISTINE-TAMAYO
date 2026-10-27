@@ -137,7 +137,7 @@ namespace Hexbound
         void Title()
         {
             Shade(.59f);Label(view,new Rect(0,102,1280,36),"L A R O   N G   B A R A N G A Y",23,gold);
-            Label(view,new Rect(90,166,1100,91),"ILABAN ANG TAWA",82);
+            Label(view,new Rect(90,166,1100,91),"ILABAN ANG TAWA",82).overflowMode=TextOverflowModes.Overflow;
             Label(view,new Rect(90,264,1100,42),"DEVELOPED BY CHRISTINE TAMAYO",31,gold);
             string[] labels={"Simulan ang Laro","Mga Kontrol","Lumabas"};menuButtons=new Button[3];
             for(int i=0;i<3;i++) {int index=i;menuButtons[i]=Button(view,new Rect(440,366+i*67,400,55),labels[i],()=>ActivateTitle(index));}
