@@ -1,4 +1,4 @@
-// Simplified SDF shader:
+﻿// Simplified SDF shader:
 // - No Shading Option (bevel / bump / env map)
 // - No Glow Option
 // - Softness is applied on both side of the outline
@@ -81,7 +81,7 @@ SubShader {
 
 	Pass {
 		CGPROGRAM
-		#pragma enable_debug_symbols
+		#pragma enable_d3d11_debug_symbols
 		#pragma vertex VertShader
 		#pragma fragment PixShader
 		#pragma shader_feature __ OUTLINE_ON

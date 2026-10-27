@@ -17,6 +17,7 @@ namespace Hexbound
         AudioSource sound;
         float elapsed;
         bool enginePlayed,stingerPlayed;
+        public float Elapsed => elapsed;
         void Awake()
         {
             Application.targetFrameRate=60;
@@ -43,7 +44,8 @@ namespace Hexbound
         void Cue(string name){var clip=Resources.Load<AudioClip>("Ilaban/Audio/SFX/"+name);if(clip!=null)sound.PlayOneShot(clip);}
         void Update()
         {
-            elapsed+=Time.unscaledDeltaTime;
+            // Asset-loading stalls must not skip the whole opening on its first frame.
+            elapsed+=Mathf.Min(Time.unscaledDeltaTime,.1f);
             var rect=(RectTransform)canvas.transform;float fit=Mathf.Min(rect.rect.width/1280,rect.rect.height/720);content.localScale=Vector3.one*fit;
             flags.anchoredPosition=new Vector2(0,Mathf.Lerp(160,-10,Mathf.SmoothStep(0,1,elapsed/.8f)));flags.localRotation=Quaternion.Euler(0,0,Mathf.Sin(elapsed*3)*Mathf.Max(0,1-elapsed/2)*4);
             jeep.anchoredPosition=new Vector2(Mathf.Lerp(-350,1390,Mathf.Clamp01((elapsed-.6f)/4.5f)),-445+Mathf.Sin(elapsed*25)*1.5f);
@@ -55,7 +57,7 @@ namespace Hexbound
             bool skip=false;if(Keyboard.current!=null)foreach(var key in Keyboard.current.allKeys)if(key.wasPressedThisFrame){skip=true;break;}
             foreach(var pad in Gamepad.all)foreach(var control in pad.allControls)if(control is UnityEngine.InputSystem.Controls.ButtonControl button&&button.wasPressedThisFrame)skip=true;
             foreach(var stick in Joystick.all)if(stick.trigger.wasPressedThisFrame)skip=true;
-            if(elapsed>=6.3f||skip)SceneManager.LoadScene("Pamagat");
+            if(elapsed>=6.3f||(skip&&!Phase2Smoke.Active))SceneManager.LoadScene("Pamagat");
         }
     }
 }

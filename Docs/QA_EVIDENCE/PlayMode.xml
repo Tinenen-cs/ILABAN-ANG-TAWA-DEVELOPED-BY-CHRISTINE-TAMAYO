@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="4" result="Passed" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-27 21:02:30Z" end-time="2026-10-27 21:02:38Z" duration="8.3794045">
+  <test-suite type="TestSuite" id="1011" name="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" fullname="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-27 21:02:30Z" end-time="2026-10-27 21:02:38Z" duration="8.379405" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1006" name="Ilaban.PlayMode.Tests.dll" fullname="C:/Users/chris/AppData/Local/Temp/Ilaban-Phase2-Validation/Library/ScriptAssemblies/Ilaban.PlayMode.Tests.dll" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-27 21:02:30Z" end-time="2026-10-27 21:02:38Z" duration="8.364320" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="37512" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1007" name="Hexbound" fullname="Hexbound" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-27 21:02:30Z" end-time="2026-10-27 21:02:38Z" duration="8.357539" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1008" name="Tests" fullname="Hexbound.Tests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-27 21:02:30Z" end-time="2026-10-27 21:02:38Z" duration="8.340763" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1001" name="InputAndCanvasTests" fullname="Hexbound.Tests.InputAndCanvasTests" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-27 21:02:30Z" end-time="2026-10-27 21:02:38Z" duration="8.322471" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1004" name="ForbiddenKeysNeverProduceExtraMoves" fullname="Hexbound.Tests.InputAndCanvasTests.ForbiddenKeysNeverProduceExtraMoves" methodname="ForbiddenKeysNeverProduceExtraMoves" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="615665563" result="Passed" start-time="2026-10-27 21:02:30Z" end-time="2026-10-27 21:02:30Z" duration="0.379139" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="GamepadRemovalReplacementAndGenericJoystick" fullname="Hexbound.Tests.InputAndCanvasTests.GamepadRemovalReplacementAndGenericJoystick" methodname="GamepadRemovalReplacementAndGenericJoystick" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="2066134841" result="Passed" start-time="2026-10-27 21:02:30Z" end-time="2026-10-27 21:02:30Z" duration="0.072069" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1002" name="KeyboardIsolationAndSimultaneousPunches" fullname="Hexbound.Tests.InputAndCanvasTests.KeyboardIsolationAndSimultaneousPunches" methodname="KeyboardIsolationAndSimultaneousPunches" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1651272892" result="Passed" start-time="2026-10-27 21:02:30Z" end-time="2026-10-27 21:02:30Z" duration="0.017814" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1005" name="ScreensUseOnlyStaticPixelTMPAndReadinessGate" fullname="Hexbound.Tests.InputAndCanvasTests.ScreensUseOnlyStaticPixelTMPAndReadinessGate" methodname="ScreensUseOnlyStaticPixelTMPAndReadinessGate" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="564984802" result="Passed" start-time="2026-10-27 21:02:30Z" end-time="2026-10-27 21:02:38Z" duration="7.830699" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\Logs\Verified-PlayMode.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

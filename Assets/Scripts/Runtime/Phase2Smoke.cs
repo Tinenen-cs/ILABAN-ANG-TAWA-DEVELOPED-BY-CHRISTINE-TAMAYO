@@ -10,16 +10,21 @@ namespace Hexbound
     public sealed class Phase2Smoke : MonoBehaviour
     {
         string directory;
+        public static bool Active { get; private set; }
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Boot() {
             var args=Environment.GetCommandLineArgs();
-            for(int i=0;i<args.Length-1;i++)if(args[i]=="-ilaban-smoke") {var runner=new GameObject("Opt-in smoke capture").AddComponent<Phase2Smoke>();runner.directory=args[i+1];DontDestroyOnLoad(runner.gameObject);}
+            for(int i=0;i<args.Length-1;i++)if(args[i]=="-ilaban-smoke"&&!Active) {Active=true;var runner=new GameObject("Opt-in smoke capture").AddComponent<Phase2Smoke>();runner.directory=args[i+1];DontDestroyOnLoad(runner.gameObject);}
         }
         IEnumerator Start() {
             Application.runInBackground=true;
             Directory.CreateDirectory(directory);
             UnityEngine.InputSystem.InputSystem.settings.backgroundBehavior=UnityEngine.InputSystem.InputSettings.BackgroundBehavior.IgnoreFocus;
-            yield return new WaitForSecondsRealtime(3.7f);yield return Capture("00-opening");
+            var opening=FindAnyObjectByType<OpeningSequence>();
+            if(opening==null)throw new Exception("Portable build did not begin with Pambungad");
+            while(opening!=null&&opening.Elapsed<3.7f)yield return null;
+            if(opening==null)throw new Exception("Opening ended before its capture");
+            yield return Capture("00-opening");
             while(FindAnyObjectByType<AcademyGame>()==null)yield return null;
             var game=FindAnyObjectByType<AcademyGame>();yield return new WaitForSecondsRealtime(.5f);
             if(game.ReactionLanguage!=LanguageMode.Pormal)throw new Exception("Non-formal default");
