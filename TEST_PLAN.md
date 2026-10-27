@@ -1,4 +1,4 @@
-# ILABAN ANG TAWA â€” manual acceptance test
+# ILABAN ANG TAWA - manual acceptance test
 
 Status: planned. Baseline tests of the academy prototype do not establish compliance with the new rubric. Write PASS or FAIL and evidence after executing each test. Hardware checks require the student's controllers and a second Windows PC.
 

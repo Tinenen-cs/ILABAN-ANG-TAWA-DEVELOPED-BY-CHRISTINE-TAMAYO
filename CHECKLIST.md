@@ -1,4 +1,4 @@
-# ILABAN ANG TAWA â€” implementation checklist
+# ILABAN ANG TAWA - implementation checklist
 
 Only verified work is checked. The original academy prototype is not yet the final submission.
 
@@ -15,14 +15,14 @@ Only verified work is checked. The original academy prototype is not yet the fin
 
 ## 2. Character recreation
 Names are proposals; reference faces must remain unchanged. Each line requires all seven animations (idle, walk, punch, hit, dizzy, fall, win), effects, and animated selection preview before completion.
-- [ ] Aling Puring â€” pamalo; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Neneng â€” tsinelas; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Tala â€” bato; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Ligaya â€” batuta; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Mang Isko â€” lata; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Dodong â€” silya; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Berting â€” bote; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Kulas â€” walis tingting; face preserved, new outfit, seven animations, effects, preview.
+- [ ] Aling Puring - pamalo; face preserved, new outfit, seven animations, effects, preview.
+- [ ] Neneng - tsinelas; face preserved, new outfit, seven animations, effects, preview.
+- [ ] Tala - bato; face preserved, new outfit, seven animations, effects, preview.
+- [ ] Ligaya - batuta; face preserved, new outfit, seven animations, effects, preview.
+- [ ] Mang Isko - lata; face preserved, new outfit, seven animations, effects, preview.
+- [ ] Dodong - silya; face preserved, new outfit, seven animations, effects, preview.
+- [ ] Berting - bote; face preserved, new outfit, seven animations, effects, preview.
+- [ ] Kulas - walis tingting; face preserved, new outfit, seven animations, effects, preview.
 - [ ] Equal punch timing, reach and knockback for every item.
 - [ ] Pixel import: Point filtering, no compression; document PPU for sprite assets.
 
@@ -63,7 +63,7 @@ Names are proposals; reference faces must remain unchanged. Each line requires a
 - [ ] Simultaneous inputs and keyboard/controller menu navigation verified.
 
 ## 8. Build and handoff
-- [ ] Commit each verified major implementation step to the existing repository.
+- [x] Commit and push setup checkpoint ec68355 to the existing repository; repeat for later steps.
 - [ ] Windows x64 standalone with required executable filename.
 - [ ] Portable folder and ZIP with README and CREDITS.
 - [ ] Run from a different folder and a clean Windows PC without Unity.
