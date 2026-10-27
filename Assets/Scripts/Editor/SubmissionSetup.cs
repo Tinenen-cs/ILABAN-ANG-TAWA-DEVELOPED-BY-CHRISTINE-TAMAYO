@@ -40,7 +40,7 @@ namespace Hexbound.Editor
             Directory.CreateDirectory(directory);
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
             {
-                scenes = new[] { "Assets/Scenes/Main.unity" },
+                scenes = new[] { "Assets/Scenes/Pambungad.unity", "Assets/Scenes/Pamagat.unity", "Assets/Scenes/Main.unity" },
                 locationPathName = Path.Combine(directory, ProductName + ".exe"),
                 target = BuildTarget.StandaloneWindows64,
                 options = BuildOptions.None

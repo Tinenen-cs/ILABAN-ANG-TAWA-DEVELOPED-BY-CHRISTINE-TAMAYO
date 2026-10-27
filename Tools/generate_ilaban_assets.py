@@ -105,6 +105,13 @@ im=Image.new('RGBA',(64,64));p=im.load()
 for y in range(64):
  for x in range(64):p[x,y]=(255,199,103,int(max(0,1-math.hypot(x-31.5,y-31.5)/32)**2*180))
 save(im,'UI/Glow')
+im=Image.new('RGBA',(160,80));d=ImageDraw.Draw(im)
+d.rounded_rectangle((10,20,145,65),8,fill='#c7ad67',outline='#3f3940',width=3);d.rectangle((8,13,130,23),fill='#67a59d',outline='#343c3e',width=2)
+for x in range(22,125,26):d.rectangle((x,28,x+20,45),fill='#305061',outline='#e7cf99',width=2)
+d.rectangle((130,36,155,63),fill='#b76240');d.rectangle((4,59,157,66),fill='#a1aba2');d.ellipse((26,55,54,79),fill='#242f3b',outline='#8c9695',width=4);d.ellipse((112,55,140,79),fill='#242f3b',outline='#8c9695',width=4);d.rectangle((144,42,154,48),fill='#f4e4ac');save(im,'UI/Jeepney')
+im=Image.new('RGBA',(640,72));d=ImageDraw.Draw(im);d.line((0,6,640,14),fill='#5c514a',width=3)
+for x in range(8,640,34):d.polygon([(x,8),(x+26,9),(x+14,57)],fill=['#d08052','#e1bd67','#6ba59b'][(x//34)%3],outline='#a78a63')
+save(im,'UI/Banderitas')
 # Original short plucked-string compositions; inspired by rondalla timbre, no borrowed melodies.
 RATE=22050;rng=np.random.default_rng(4126);inventory=[]
 def audio(name,signal,music=False,title='',description=''):
@@ -125,17 +132,26 @@ for idx,name in enumerate(['Title','Selection','Palengke','Looban','Plaza']):
   if k%4==0:
    v=pluck(notes[0]-24,1.0)*.36;np.add.at(s,(at+np.arange(len(v)))%n,v)
  audio(name,s,True,'Himig '+name,'Original looping plucked-string sketch; listening review pending.')
-for idx,name in enumerate(['menu_move','menu_back','menu_confirm','carousel_slide','highlight_loop','confirm_sting','punch','step','dizzy','fall','splash','win']+[f'hit_{i}' for i in range(8)]):
- duration=2.4 if name=='win' else 1.1 if name in ['dizzy','fall','highlight_loop'] else .25
+for idx,name in enumerate(['menu_move','menu_back','menu_confirm','carousel_slide','highlight_loop','confirm_sting','punch','step','dizzy','fall','splash','win','opening_bell','jeepney_engine','banderitas','opening_sting','crowd']+[f'hit_{i}' for i in range(8)]):
+ duration=2.4 if name in ['win','opening_sting','jeepney_engine','crowd'] else 1.1 if name in ['dizzy','fall','highlight_loop'] else .25
  t=np.arange(int(RATE*duration))/RATE;noise=rng.normal(0,1,len(t));base=120+idx*31
- if name=='win':
+ if name in ['win','opening_sting']:
   s=np.zeros(len(t))
   for k,note in enumerate([60,64,67,72]):
    v=pluck(note,.9)*.6;at=int(k*.3*RATE);s[at:at+min(len(v),len(s)-at)]+=v[:len(s)-at]
+ elif name=='jeepney_engine':s=(np.sin(2*np.pi*(53*t+12*t*t))+.3*np.sin(2*np.pi*107*t)+noise*.18)*np.sin(np.pi*t/duration)**2
+ elif name=='banderitas':s=noise*np.sin(2*np.pi*9*t)**2*np.exp(-t*5)*.2
+ elif name=='crowd':s=sum(np.sin(2*np.pi*(220+k*39)*t+np.sin(2*np.pi*(2+k*.13)*t)*5) for k in range(6))*.06*np.sin(np.pi*t/duration)**2+noise*.09*np.sin(np.pi*t/duration)**2
  elif name in ['splash','punch','step','carousel_slide']:s=noise*np.exp(-t*(9 if name!='splash' else 4))*.35
  elif name=='dizzy':s=np.sin(2*np.pi*(480*t+80*np.sin(2*np.pi*3*t)))*np.exp(-t*3)
  elif name=='fall':s=np.sin(2*np.pi*(650*t-230*t*t))*np.exp(-t*3)
- else:s=(np.sin(2*np.pi*base*t)+.35*np.sin(2*np.pi*base*2.71*t)+noise*.12)*np.exp(-t*(9 if name.startswith('hit') else 13))
- audio(name,s,title=name,description='Original synthesized cue; item timbre is a placeholder.' if name.startswith('hit') else 'Original synthesized game cue.')
+ elif name.startswith('hit_'):
+  itemid=int(name[-1]);freq=[145,210,83,300,760,170,540,125][itemid]
+  if itemid in [4,6]:s=sum(np.sin(2*np.pi*freq*h*t)*np.exp(-t*(7+h*3))/h for h in [1,2.71,4.13])*.4
+  elif itemid==7:s=noise*np.exp(-t*12)*(.25+.2*np.sin(2*np.pi*37*t))
+  elif itemid==5:s=sum(np.roll(noise*np.exp(-t*29),int(k*.038*RATE)) for k in range(3))*.24
+  else:s=(np.sin(2*np.pi*freq*t)*np.exp(-t*27)+noise*np.exp(-t*45)*(.6 if itemid==1 else .24))
+ else:s=(np.sin(2*np.pi*base*t)+.35*np.sin(2*np.pi*base*2.71*t)+noise*.12)*np.exp(-t*13)
+ audio(name,s,title=name,description='Original synthesized item timbre; listening review required.' if name.startswith('hit') else 'Original synthesized game cue.')
 (ROOT/'Docs/ilaban_audio_manifest.json').write_text(json.dumps(inventory,indent=2),encoding='utf-8')
 print('Generated 8 body atlases, 8 items, 3 stages, UI primitives and',len(inventory),'audio clips.')

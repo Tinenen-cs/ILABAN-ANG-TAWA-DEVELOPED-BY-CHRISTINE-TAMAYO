@@ -1,0 +1,8 @@
+{
+  "name": "Ilaban.Runtime",
+  "references": [
+    "Unity.InputSystem",
+    "UnityEngine.UI",
+    "Unity.TextMeshPro"
+  ]
+}

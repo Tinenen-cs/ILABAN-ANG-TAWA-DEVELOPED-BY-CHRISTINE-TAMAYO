@@ -1,0 +1,16 @@
+{
+  "name": "Ilaban.EditMode.Tests",
+  "references": [
+    "Ilaban.Runtime",
+    "Unity.InputSystem",
+    "Unity.TextMeshPro",
+    "UnityEngine.UI",
+    "Unity.InputSystem.TestFramework"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

@@ -80,7 +80,7 @@ namespace Hexbound.Editor
                 Require(Resources.Load<Texture2D>("Ilaban/Items/Item_"+i)!=null,"item "+i);
             }
             for(int i=0;i<3;i++) {Require(Resources.Load<Texture2D>("Ilaban/Stages/"+Roster.StageFiles[i])!=null,"map "+i);Require(Resources.Load<AudioClip>("Ilaban/Audio/Music/"+Roster.StageFiles[i])!=null,"map music "+i);}
-            Require(Resources.LoadAll<AudioClip>("Ilaban/Audio").Length==25,"25 original clips");
+            Require(Resources.LoadAll<AudioClip>("Ilaban/Audio").Length==30,"30 original clips");
             var bank=new ReactionBank();Require(bank.Mode==LanguageMode.Pormal,"formal build default");
             foreach(var categories in new[]{bank.Data.Pormal,bank.Data.GenZ}) {Require(categories.Length==6,"six reaction categories");foreach(var category in categories)Require(category.lines.Length>=6&&category.lines.Length<=10,"reaction pool size");}
             var font=Resources.Load<Font>("UI/Tiny5");Require(font!=null,"OFL pixel font");font.RequestCharactersInTexture("??'",24);foreach(char c in "??'")Require(font.HasCharacter(c),"Filipino glyph "+c);

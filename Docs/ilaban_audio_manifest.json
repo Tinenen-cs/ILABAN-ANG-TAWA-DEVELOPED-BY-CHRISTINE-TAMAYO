@@ -204,15 +204,75 @@
     "loop": false
   },
   {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/opening_bell.wav",
+    "title": "opening_bell",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_ilaban_assets.py",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "description": "Original synthesized game cue.",
+    "rms": 0.12862194649537959,
+    "peak": 0.5786513644424259,
+    "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/jeepney_engine.wav",
+    "title": "jeepney_engine",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_ilaban_assets.py",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "description": "Original synthesized game cue.",
+    "rms": 0.13999999753057132,
+    "peak": 0.53494532618443,
+    "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/banderitas.wav",
+    "title": "banderitas",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_ilaban_assets.py",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "description": "Original synthesized game cue.",
+    "rms": 0.13899875493337896,
+    "peak": 0.8004079311097112,
+    "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/opening_sting.wav",
+    "title": "opening_sting",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_ilaban_assets.py",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "description": "Original synthesized game cue.",
+    "rms": 0.13925712129473344,
+    "peak": 0.6348385265094385,
+    "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/crowd.wav",
+    "title": "crowd",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_ilaban_assets.py",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "description": "Original synthesized game cue.",
+    "rms": 0.1328133947830255,
+    "peak": 0.81999999841993,
+    "loop": false
+  },
+  {
     "file": "Assets/Resources/Ilaban/Audio/SFX/hit_0.wav",
     "title": "hit_0",
     "author": "Original procedural synthesis for Christine Tamayo",
     "source": "Tools/generate_ilaban_assets.py",
     "license": "CC0-1.0",
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "description": "Original synthesized cue; item timbre is a placeholder.",
-    "rms": 0.13183070044773876,
-    "peak": 0.5023351752591927,
+    "description": "Original synthesized item timbre; listening review required.",
+    "rms": 0.10558370324783867,
+    "peak": 0.6155609756490361,
     "loop": false
   },
   {
@@ -222,9 +282,9 @@
     "source": "Tools/generate_ilaban_assets.py",
     "license": "CC0-1.0",
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "description": "Original synthesized cue; item timbre is a placeholder.",
-    "rms": 0.13155514067054727,
-    "peak": 0.49952002783027016,
+    "description": "Original synthesized item timbre; listening review required.",
+    "rms": 0.06745940194815288,
+    "peak": 0.5415161649204387,
     "loop": false
   },
   {
@@ -234,9 +294,9 @@
     "source": "Tools/generate_ilaban_assets.py",
     "license": "CC0-1.0",
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "description": "Original synthesized cue; item timbre is a placeholder.",
-    "rms": 0.13154688738127293,
-    "peak": 0.5119992066701792,
+    "description": "Original synthesized item timbre; listening review required.",
+    "rms": 0.10421343791567816,
+    "peak": 0.6354602566049169,
     "loop": false
   },
   {
@@ -246,9 +306,9 @@
     "source": "Tools/generate_ilaban_assets.py",
     "license": "CC0-1.0",
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "description": "Original synthesized cue; item timbre is a placeholder.",
-    "rms": 0.1317430978248151,
-    "peak": 0.5096428579779323,
+    "description": "Original synthesized item timbre; listening review required.",
+    "rms": 0.09452564296078061,
+    "peak": 0.5570601632993355,
     "loop": false
   },
   {
@@ -258,9 +318,9 @@
     "source": "Tools/generate_ilaban_assets.py",
     "license": "CC0-1.0",
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "description": "Original synthesized cue; item timbre is a placeholder.",
-    "rms": 0.1317934716753665,
-    "peak": 0.5209280474866729,
+    "description": "Original synthesized item timbre; listening review required.",
+    "rms": 0.13043485983291245,
+    "peak": 0.549526167101867,
     "loop": false
   },
   {
@@ -270,9 +330,9 @@
     "source": "Tools/generate_ilaban_assets.py",
     "license": "CC0-1.0",
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "description": "Original synthesized cue; item timbre is a placeholder.",
-    "rms": 0.13174945684954845,
-    "peak": 0.5654247751765074,
+    "description": "Original synthesized item timbre; listening review required.",
+    "rms": 0.11221183054014729,
+    "peak": 0.8199999988707604,
     "loop": false
   },
   {
@@ -282,9 +342,9 @@
     "source": "Tools/generate_ilaban_assets.py",
     "license": "CC0-1.0",
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "description": "Original synthesized cue; item timbre is a placeholder.",
-    "rms": 0.13136187643676947,
-    "peak": 0.5110381631585377,
+    "description": "Original synthesized item timbre; listening review required.",
+    "rms": 0.13043809816203406,
+    "peak": 0.5436336888373314,
     "loop": false
   },
   {
@@ -294,9 +354,9 @@
     "source": "Tools/generate_ilaban_assets.py",
     "license": "CC0-1.0",
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "description": "Original synthesized cue; item timbre is a placeholder.",
-    "rms": 0.13172590260100855,
-    "peak": 0.5231320918274666,
+    "description": "Original synthesized item timbre; listening review required.",
+    "rms": 0.08489522647076299,
+    "peak": 0.7053068227716925,
     "loop": false
   }
 ]

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using System;
@@ -22,23 +23,23 @@ namespace Hexbound
         Canvas canvas;
         RectTransform safe,view;
         RawImage scenery;
-        Font font;
+        TMP_FontAsset font;
         readonly Texture2D[] heads=new Texture2D[8],bodies=new Texture2D[8],items=new Texture2D[8],stages=new Texture2D[3];
         readonly Dictionary<string,Sprite> sprites=new Dictionary<string,Sprite>();
         readonly Dictionary<string,AudioClip> clips=new Dictionary<string,AudioClip>();
         readonly List<Actor> previews=new List<Actor>();
         readonly List<RectTransform> flames=new List<RectTransform>();
         Actor[] actors;
-        Text[] names,deviceLabels;
+        TMP_Text[] names,deviceLabels;
         Image[][] dots;
         Bubble[] bubbles;
         RectTransform pausePanel,resultPanel;
-        Text resultTitle,resultReason,focusLabel;
+        TMP_Text resultTitle,resultReason,focusLabel;
         Button[] menuButtons;
         RectTransform[] cards;
         Image[] stageBars;
         Image[][] cardMarkers;
-        Text[] readiness;
+        TMP_Text[] readiness;
         Actor[] selectionShowcase;
         Image[] selectionBars;
         AudioSource music,sfx,highlight;
@@ -48,14 +49,14 @@ namespace Hexbound
         readonly Color cream=new Color32(245,229,194,255),gold=new Color32(224,181,105,255),ink=new Color32(16,30,40,255);
         readonly Color[] playerColors={new Color32(81,214,218,255),new Color32(249,135,116,255)};
         sealed class Actor { public RectTransform root; public RawImage body,head,dust; public int id; }
-        sealed class Bubble { public RectTransform root; public Text label; public CanvasGroup alpha; public float started=-10; }
+        sealed class Bubble { public RectTransform root; public TMP_Text label; public CanvasGroup alpha; public float started=-10; }
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        static void Boot() { if(FindAnyObjectByType<AcademyGame>()==null) new GameObject("Ilaban ang Tawa").AddComponent<AcademyGame>(); }
+        static void Boot() { if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name=="Pambungad")return;if(FindAnyObjectByType<AcademyGame>()==null) new GameObject("Ilaban ang Tawa").AddComponent<AcademyGame>(); }
         void Awake()
         {
             Application.targetFrameRate=60;
             controls=new AcademyInputManager(); reactions=new ReactionBank();
-            font=Resources.Load<Font>("UI/Tiny5");
+            font=Resources.Load<TMP_FontAsset>("Ilaban/Fonts/StreetPixel");
             for(int i=0;i<8;i++) { heads[i]=Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/portraits"); bodies[i]=Tex("Bodies/Body_"+i);items[i]=Tex("Items/Item_"+i); }
             for(int i=0;i<3;i++) stages[i]=Tex("Stages/"+Roster.StageFiles[i]);
             foreach(var clip in Resources.LoadAll<AudioClip>("Ilaban/Audio")) clips[clip.name]=clip;
@@ -103,9 +104,9 @@ namespace Hexbound
         {
             var r=Rect(parent,"Pixel artwork",rect);var image=r.gameObject.AddComponent<RawImage>();image.texture=texture;image.raycastTarget=false;return image;
         }
-        Text Label(Transform parent,Rect rect,string text,int size=24,Color? color=null,TextAnchor alignment=TextAnchor.MiddleCenter)
+        TMP_Text Label(Transform parent,Rect rect,string text,int size=24,Color? color=null,TextAnchor alignment=TextAnchor.MiddleCenter)
         {
-            var r=Rect(parent,"Teksto",rect);var t=r.gameObject.AddComponent<Text>();t.font=font;t.text=text;t.fontSize=size;t.color=color??cream;t.alignment=alignment;t.raycastTarget=false;t.horizontalOverflow=HorizontalWrapMode.Wrap;t.verticalOverflow=VerticalWrapMode.Truncate;return t;
+            var r=Rect(parent,"Teksto",rect);var t=r.gameObject.AddComponent<TextMeshProUGUI>();t.font=font;t.text=text;t.fontSize=size;t.color=color??cream;t.alignment=alignment==TextAnchor.MiddleLeft?TextAlignmentOptions.MidlineLeft:alignment==TextAnchor.MiddleRight?TextAlignmentOptions.MidlineRight:TextAlignmentOptions.Midline;t.raycastTarget=false;t.textWrappingMode=TextWrappingModes.Normal;t.overflowMode=TextOverflowModes.Truncate;var shadow=r.gameObject.AddComponent<Shadow>();shadow.effectColor=new Color(0,0,0,.8f);shadow.effectDistance=new Vector2(1,-2);return t;
         }
         Button Button(Transform parent,Rect rect,string text,Action action,bool enabled=true)
         {
@@ -148,7 +149,7 @@ namespace Hexbound
         void Select()
         {
             Shade(.72f);Heading("Pumili ng Tauhan","Pumili at kumpirmahin ang tauhan ng bawat manlalaro.");
-            readiness=new Text[2];selectionShowcase=new Actor[2];
+            readiness=new TMP_Text[2];selectionShowcase=new Actor[2];
             for(int p=0;p<2;p++) {
                 int side=p;float x=28+p*278;
                 readiness[p]=Label(view,new Rect(x,132,270,37),"",23,playerColors[p]);
@@ -208,7 +209,7 @@ namespace Hexbound
             foreach(float x in new[]{DuelModel.LeftRiftX,DuelModel.RightRiftX}) Raw(view,new Rect(x-70,526,140,70),Tex("UI/Imburnal_"+Roster.StageFiles[Model.ArenaIndex]));
             // A moving tricycle silhouette, bunting and breathing lantern glow keep each stage alive.
             for(int i=0;i<2;i++) {var glow=Raw(view,new Rect(i==0?8:1175,180,100,100),Tex("UI/Glow"));flames.Add(glow.rectTransform);}
-            actors=new Actor[2];names=new Text[2];deviceLabels=new Text[2];dots=new Image[2][];bubbles=new Bubble[2];
+            actors=new Actor[2];names=new TMP_Text[2];deviceLabels=new TMP_Text[2];dots=new Image[2][];bubbles=new Bubble[2];
             for(int p=0;p<2;p++) {
                 actors[p]=ActorView(view,Model.players[p].character,new Rect(0,0,170,255));
                 float x=p==0?22:958;
@@ -251,7 +252,7 @@ namespace Hexbound
             int i=setting;
             if(i==0) reactions.Mode=reactions.Mode==LanguageMode.Pormal?LanguageMode.GenZ:LanguageMode.Pormal;
             if(i==1) master=Mathf.Clamp01(master+direction*.1f);if(i==2) musicLevel=Mathf.Clamp01(musicLevel+direction*.1f);if(i==3) soundLevel=Mathf.Clamp01(soundLevel+direction*.1f);
-            SaveAudio();menuButtons[i].GetComponentInChildren<Text>().text=SettingText(i);Sound("menu_move");
+            SaveAudio();menuButtons[i].GetComponentInChildren<TMP_Text>().text=SettingText(i);Sound("menu_move");
         }
         void CloseControls() {Show(fromFight?ScreenState.Fight:ScreenState.Title);Paused=fromFight;}
         void Update()
@@ -298,7 +299,7 @@ namespace Hexbound
             if(!Model.Finished) {
                 Model.Tick(Time.deltaTime,controls.Read(0),controls.Read(1));
                 foreach(var ev in Model.events)React(ev.player,ev.kind);
-                foreach(var sound in Model.sounds)Sound(sound);
+                foreach(var sound in Model.sounds)Sound(sound);if(Model.Finished)Sound("crowd");
                 if(Model.Finished) {
                     resultTime=0;resultPanel.gameObject.SetActive(true);resultTitle.text=Model.winner<0?"Kapwa Nahulog!":"Panalo si "+Roster.Names[Model.players[Model.winner].character]+"!";
                     resultReason.text=Model.winner<0?"Kapwa nahulog sa imburnal!":"Nahulog sa imburnal si "+Roster.Names[Model.players[1-Model.winner].character]+"!";
@@ -317,15 +318,15 @@ namespace Hexbound
             }
             // A five-star orbit is separate from the streak dots and persists for the victim's recovery.
             UpdateDizzyStars();
-            if(impactLabels==null || impactLabels[0]==null) {impactLabels=new Text[2];for(int i=0;i<2;i++)impactLabels[i]=Label(view,new Rect(0,0,110,80),"*",72,gold);}
+            if(impactLabels==null || impactLabels[0]==null) {impactLabels=new TMP_Text[2];for(int i=0;i<2;i++)impactLabels[i]=Label(view,new Rect(0,0,110,80),"*",72,gold);}
             for(int i=0;i<2;i++) {bool visible=false;foreach(var burst in Model.bursts)if(Mathf.Abs(burst.x-Model.players[i].x)<5){visible=true;impactLabels[i].rectTransform.anchoredPosition=new Vector2(burst.x-55,-430);impactLabels[i].color=new Color(1,.88f,.58f,Mathf.Clamp01(burst.life/.35f));}impactLabels[i].gameObject.SetActive(visible);}
 
             for(int i=0;i<flames.Count;i++)flames[i].localScale=Vector3.one*(1+.06f*Mathf.Sin(clock*3+i));
         }
-        Text[] stars;
-        Text[] impactLabels;
+        TMP_Text[] stars;
+        TMP_Text[] impactLabels;
         void UpdateDizzyStars() {
-            if(stars==null||stars[0]==null) {stars=new Text[10];for(int i=0;i<10;i++)stars[i]=Label(view,new Rect(0,0,22,22),"*",27,gold);}
+            if(stars==null||stars[0]==null) {stars=new TMP_Text[10];for(int i=0;i<10;i++)stars[i]=Label(view,new Rect(0,0,22,22),"*",27,gold);}
             for(int p=0;p<2;p++)for(int i=0;i<5;i++) {var star=stars[p*5+i];star.gameObject.SetActive(Model.players[p].dizzyTime>0&&!Model.Finished);float angle=clock*5+i*Mathf.PI*2/5;star.rectTransform.anchoredPosition=new Vector2(Model.players[p].x-11+Mathf.Cos(angle)*46,-(335+Mathf.Sin(angle)*13));}
         }
         void Animate(Actor actor,Pose pose,int frame) {

@@ -1,0 +1,13 @@
+{
+  "name": "Ilaban.PlayMode.Tests",
+  "references": [
+    "Ilaban.Runtime",
+    "Unity.InputSystem",
+    "Unity.TextMeshPro",
+    "UnityEngine.UI",
+    "Unity.InputSystem.TestFramework"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

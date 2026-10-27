@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 namespace Hexbound
 {
     // Opt-in acceptance harness; never runs during normal play or changes the saved language default.
@@ -16,7 +17,7 @@ namespace Hexbound
         }
         IEnumerator Start() {
             Application.runInBackground=true;
-            yield return null;
+            while(FindAnyObjectByType<AcademyGame>()==null)yield return null;
             var game=FindAnyObjectByType<AcademyGame>();
             Directory.CreateDirectory(directory);
             yield return new WaitForSecondsRealtime(.8f);
@@ -38,11 +39,13 @@ namespace Hexbound
         }
         IEnumerator Capture(string name) {
             yield return null;yield return new WaitForEndOfFrame();Canvas.ForceUpdateCanvases();
+            var textDump=new System.Text.StringBuilder();
             // Every active user-facing Text must fit vertically and horizontally; report suspect labels for review.
-            foreach(var t in FindObjectsByType<Text>(FindObjectsSortMode.None))if(t.isActiveAndEnabled && !string.IsNullOrEmpty(t.text)) {
-                var settings=t.GetGenerationSettings(t.rectTransform.rect.size);var generator=new TextGenerator();float height=generator.GetPreferredHeight(t.text,settings)/t.pixelsPerUnit;
+            foreach(var t in FindObjectsByType<TMP_Text>())if(t.isActiveAndEnabled && !string.IsNullOrEmpty(t.text)) {
+                t.ForceMeshUpdate();textDump.AppendLine(t.text.Replace("\n"," | "));foreach(char c in t.text)if(!char.IsControl(c)&&!t.font.HasCharacter(c))Debug.LogError("MISSING GLYPH: "+(int)c+" / "+t.text);float height=t.preferredHeight;
                 if(height>t.rectTransform.rect.height+3)Debug.LogWarning("LAYOUT TEXT OVERFLOW: "+name+" / "+t.text+" / "+height+" > "+t.rectTransform.rect.height);
             }
+            File.WriteAllText(Path.Combine(directory,name+"-ui.txt"),textDump.ToString());
             var image=ScreenCapture.CaptureScreenshotAsTexture();File.WriteAllBytes(Path.Combine(directory,name+".png"),image.EncodeToPNG());Destroy(image);
         }
     }

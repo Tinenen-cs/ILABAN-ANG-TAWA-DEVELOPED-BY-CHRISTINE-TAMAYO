@@ -6,7 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Pambungad.unity
+    guid: a1a5d0e6c7145a94d9004fbe5242997f
+  - enabled: 1
+    path: Assets/Scenes/Pamagat.unity
+    guid: 64994831dad5ba8459f1ad9d48c5d38b
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 26d165b85193f4581813e9a132d29012
   m_configObjects: {}
-  m_UseUCBPForAssetBundles: 0

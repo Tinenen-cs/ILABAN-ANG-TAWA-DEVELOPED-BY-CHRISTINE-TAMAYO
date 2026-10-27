@@ -57,8 +57,8 @@ namespace Hexbound
         public DuelInput Read(int p)=>new DuelInput {move=maps[p]["Move"].ReadValue<Vector2>().x,punch=Press(p,"Punch")};
         public string DeviceName(int p)=>used[p]?"Mando":"Teklado";
         public string Prompt(int p,string action) {
-            if(used[p]) return action=="Move"?"Palanca / mga palaso":action=="Punch"?"X / ?":action=="Confirm"?"A / ?":action=="Cancel"?"B / ?":"Pindutang paghinto";
-            return action=="Move"?(p==0?"A / D":"? / ?"):action=="Punch"||action=="Confirm"?(p==0?"F":"Ctrl kanan / 0 bilang"):"ESC";
+            if(used[p]) return action=="Move"?"Palanca / mga palaso":action=="Punch"?"A / X":action=="Confirm"?"A / X":action=="Cancel"?"B":"Pindutang paghinto";
+            return action=="Move"?(p==0?"A / D":"Mga palaso"):action=="Punch"||action=="Confirm"?(p==0?"F":"Ctrl kanan / 0"):"ESC";
         }
         public void Dispose() {InputSystem.onDeviceChange-=DeviceChanged;asset.Disable();UnityEngine.Object.Destroy(asset);}
     }
