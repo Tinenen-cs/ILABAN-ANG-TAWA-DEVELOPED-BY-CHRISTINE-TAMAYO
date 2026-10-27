@@ -34,4 +34,5 @@ Branch: `phase3-polish`. `main` untouched — never merge without the student's 
   -> Builds/Windows (gitignored).
 - Smoke test: exe runs, Player.log clean. Fixed the invisible title (BUG_LOG C1). Open: C2, C3.
 - SCREENSHOTS: use PrintWindow on the game HWND only (see BUG_LOG C4); never screen-copy.
-- NEXT: C2 investigation -> item B (wire Stages/HD backgrounds + manhole + animated parts) -> C (slanted card layout) -> D..K.
+- C2 closed (not a bug). QA screenshots: use exe arg `-ilaban-smoke <folder>` (Phase2Smoke.cs, in-process capture).
+- NEXT: item B (wire Stages/HD backgrounds + manhole + animated parts) -> C (slanted card layout) -> D..K.

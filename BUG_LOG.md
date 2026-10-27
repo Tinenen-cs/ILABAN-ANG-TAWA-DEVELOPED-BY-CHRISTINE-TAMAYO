@@ -24,6 +24,6 @@ Original artwork, face files, audio and Main.unity have not been deleted. Proced
 | # | Bug | Status |
 |---|---|---|
 | C1 | Title "ILABAN ANG TAWA" invisible: 82pt label in 91px rect with Truncate overflow hid the whole line (AcademyGame.cs:140) | FIXED: overflow mode on that label; verified in built exe screenshot |
-| C2 | Title advanced to Pumili ng Tauhan with no input after ~15s in built exe | OPEN: investigate (stray input or auto-advance) |
+| C2 | Title advanced to Pumili ng Tauhan with no input after ~15s in built exe | NOT A BUG: runInBackground=0, so only the focused game window gets input; the newly launched window had focus and received outside keystrokes. Title correctly advances on any key. NEEDS MANUAL TEST: leave title idle 60s untouched |
 | C3 | Character card names truncated (Manong Latalata, Aling Boteng Suka, Ate Bato-Bato Pik) | OPEN: fix with item C layout |
 | C4 | QA capture method used screen copy and grabbed other windows | FIXED: captures now use PrintWindow on the game window only |
