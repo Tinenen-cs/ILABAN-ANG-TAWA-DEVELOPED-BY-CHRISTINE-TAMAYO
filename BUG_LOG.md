@@ -42,3 +42,5 @@ Original artwork, face files, audio and Main.unity have not been deleted. Proced
 - Direct batch launch failed while user had working project open: tests/build use an isolated source copy and leave user's editor intact.
 - Dead spell/knockout pose labels and unused round-transition helpers removed. Jump enum retained only as a forbidden-state test sentinel.
 - Heuristic active-string scan: zero English candidates. Audio sample audit: 30 files, zero clipped samples. These are not claims of perfect translation or listening quality.
+
+- Final QA: Windows decorated-window clamp prevented native 1440p; exact-size borderless diagnostic capture passed. Intro capture advanced past opening during startup delays; bounded intro clock and required-opening harness fixed it. Headless PlayMode TMP importer needs graphics; graphics-enabled 4/4 result retained.

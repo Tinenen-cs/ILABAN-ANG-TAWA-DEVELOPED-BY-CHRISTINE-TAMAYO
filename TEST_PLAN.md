@@ -50,12 +50,12 @@ Prior baseline notes above are historical; use this section and the final checkl
 | Horizontal-only, equal punch, five-hit dizzy, recovery, streak resets, manhole-only round result | X | | 65 assertions; 50-hit Unity case |
 | Reaction state cannot change combat timing/displacement | X | | RubricTests deterministic comparison |
 | Latest built actual simulated gamepad match | X | | Preliminary Final_1280x720/PASS.txt; genuine movement and punches to fall, not injected final position |
-| Corrected UI labels/HUD contrast and rig articulation | | | Source fixes after preliminary screenshots; final re-capture pending |
-| Latest PlayMode rerun lifecycle | | | Prior 4/4; new runner stalls independently of tests, under investigation |
-| Four resolution captures | | | Tools/run_portable_qa.py writes dimensions and error checks to Docs/portable_qa_results.json |
+| Dizzy stars and non-overlapping reaction bubbles | X | | Inspected dizzy/match/result screenshots at each resolution; HUD margins clear |
+| Latest PlayMode rerun lifecycle | X | | Graphics-enabled runner passed 4/4 and exited; headless TMP importer attempt excluded |
+| Four resolution captures | X | | Exact 720p, 768p, 1080p and 1440p; JSON dimensions and native PNG hashes saved |
 | Active English keyword scan | X | | Zero heuristic candidates; literal UI text dump also captured per screen |
 | Audio peak audit | X | | 30 active clips, zero samples at clipping threshold; listening remains manual |
-| Portable ZIP extracted and launched | | | Pending final package |
+| Portable ZIP extracted and launched | X | | Docs/package_verification.json; fresh temp extraction, launch and full simulated match passed on this PC |
 
 ### Manual checks after the final ZIP is ready
 

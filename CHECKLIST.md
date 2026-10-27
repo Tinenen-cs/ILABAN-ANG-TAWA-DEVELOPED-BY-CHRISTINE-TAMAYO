@@ -2,7 +2,7 @@
 
 Statuses: [x] verified evidence; [p] partial; [~] NEEDS MANUAL TEST; [ ] pending. Counts refer to these acceptance rows, not a guaranteed grade.
 
-Evidence: Logs XML/build/runtime logs; QA_SCREENSHOTS captures; Docs/FINAL_STATIC_AUDIT.json; prior checkpoint in HANDOFF.md.
+Evidence: Docs/QA_EVIDENCE, Docs/portable_qa_results.json, Docs/package_verification.json, and current Logs build/runtime files.
 
 ## Phase 1 — setup, gameplay and input
 
@@ -58,8 +58,9 @@ Evidence: Logs XML/build/runtime logs; QA_SCREENSHOTS captures; Docs/FINAL_STATI
 - [x] 65 deterministic rubric checks plus 50-hit displacement and reaction-independence tests.
 - [x] Expanded EditMode XML reports 9/9 passed, including all map/time and rig resources.
 - [x] Rebuilt from clean clone of real commit 2f3fbbe; build passed 65 assertions, EditMode 9/9 and graphics-enabled PlayMode 4/4.
-- [x] Preliminary built 1280x720 actual simulated gamepad match reached dizzy and manhole win.
+- [x] Built portable game completed an actual simulated gamepad match through five-hit dizzy and the manhole result.
 - [x] Corrected stars and disjoint bubble lanes passed 25 capture checks at each exact target resolution, including 2560x1440; no glyph/overflow/runtime issues.
+- [x] Fresh portable ZIP extracted and launched; full simulated match passed; size, SHA-256 and extraction path recorded in Docs/package_verification.json.
 - [x] Active English keyword scan found zero candidates; font/audio/static audit scripts saved.
 - [~] Actual monitor fit and perceived readability — NEEDS MANUAL TEST.
 - [~] Clean second PC without Unity — NEEDS MANUAL TEST.

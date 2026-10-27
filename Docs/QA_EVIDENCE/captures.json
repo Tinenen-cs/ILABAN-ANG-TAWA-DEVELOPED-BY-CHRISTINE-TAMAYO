@@ -1,0 +1,802 @@
+[
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\00-opening.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "824cc71a0b384bd33e9ab913c13e533007e4cfea2488a1c81bf9746619971c3b"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\01-title.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "b15315d1b3f6b6772924078cca7d9f2155a3fc53b1e83432f38671bc8639be9e"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\02-characters.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "fd04a9566fb9f59c36eaa383f24498d85d88c9933a784f4d315e4b6514c92e3e"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\03-stage-0-0.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "52cbb976a808785c77e38a90e2115a6b664206e2d956011bc6b782bd36d83efe"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\03-stage-0-1.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "596a3aadc12a50c9ac23deca898607138e27196ed24622e1ff6a0756f2a99d97"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\03-stage-0-2.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "635d0fb60165f9daf0e641ec7729e82b8d6d82531374c3ea50208a06902e525f"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\03-stage-1-0.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "8a2e65054573b2bd32206870c2c28d93b966506579e723488a5dfa60a8d0eba4"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\03-stage-1-1.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "fdfb9137b2ea688492f7c837e78254539d8a1d53ddfe6476ff1a0fe9721505fb"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\03-stage-1-2.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "66742995969c14449b18394fb1f7c8f7da9dd8daf63b55faddc8bb4eb5c30dc1"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\03-stage-2-0.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "0e00ba2c205ad70894f7ee1beffa0574f9f48b06f390b224b21001d7c4972445"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\03-stage-2-1.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "80cf20b9571e04010a6061ace62b8932fd800024a9aaefe3e57fe63be26a0f2e"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\03-stage-2-2.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "457300f64944eaa9843f8feee41c9791e4fbfd730459361fd9ce73832589fe97"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\04-match-0-0.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "6544036493e30553a6b5791f0f7fa1805dc4dfe96522633c7aaca8ca32aa3ecb"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\04-match-0-1.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "b29d1b6fcd7c0b77f6c119f9449ceedd057239f4550c527f3908661f046331f9"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\04-match-0-2.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "bdc4adf907c4f0bec1b3e49d7223fa713d439814fbb092d5cb3f889ee2007aef"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\04-match-1-0.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "4464f9fc4a77ba512f2e8f3464e6b40ced52a1d4ad5f70029b455edb36e526dc"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\04-match-1-1.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "934130d630cba601af260016bccc3fff5f297de38ec20b5ce269fc36dd750d2d"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\04-match-1-2.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "9ed3ab3fac5e8b6a5560ed622037d206d362e8aa63c3c874ba000815c0ac96dd"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\04-match-2-0.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "d002a969e57eef7ce2ff608c19a6e1f7f38bb0163b0a52638f2a0b6ab3c82f41"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\04-match-2-1.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "1a4fd3aac973f215b81126163aca566a290baa8639076b0bd902486f34e8e89a"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\04-match-2-2.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "052d967c4624dee6c9d0a75f68f1d3fc716dd4587a78e53f20b00fe05ceda0db"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\05-dizzy.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "cd4135c65cf6e00a00370a88b234fa58280e229f220b3a1de14e2650ecf51f24"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\06-result.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "990088fc950ff8f7688f2490c615a1378100c4b53429d56e503c29156a798f71"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\07-pause.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "5625c93a4486966b74faaaf26d57ed90f6ed447c7c1e7f037977782cc0057213"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1280x720\\08-controls.png",
+    "size": [
+      1280,
+      720
+    ],
+    "sha256": "496c2fb11fed0a0e815a450a0989e7495be5d0703f9b27815e5c66cc91b3c0ee"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\00-opening.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "4cf8225d7c42b0bf848758ae888bf4054a0a1372cfb37c0cf962350b72460352"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\01-title.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "a559cc12bf1cf42fd72bf8f23118a456a742dad0a27bff08d4d3223ccc2b2204"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\02-characters.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "28ce573e1049803734651cdabf9ac32085562b69d7adf5a8e7df85d3ac922f1c"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\03-stage-0-0.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "0e2a2c7f386803261d063eeb6ad0cd8bdc384d11c37bba068d502954181568c5"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\03-stage-0-1.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "b942ba40d8c7ce28bcfbbae739b1ae08534e04fc5225e85a53891167c5bedbbf"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\03-stage-0-2.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "3901db5dd81e43d8262d60d8921ff1cb30c3a88a5e4c73f51f9c5153656dcbe0"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\03-stage-1-0.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "91dc49e5e072d24ac813b2847cea9a9c7b390a8c907d3c639b10a9cdd2ed891b"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\03-stage-1-1.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "9f9ef38093c0dc40ecee9557c0cbd419e78089cb823697562dc2143d2ad40714"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\03-stage-1-2.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "905857d90e66979068d1b14a34b01430ce46568658cb86e4ced249fb39e99ef4"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\03-stage-2-0.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "20e3c740e791b6f35ba09fa75ed87e5df4f615cee3fef3911e987fb7b5da443a"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\03-stage-2-1.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "272a22249fc2f9414a8b00c25b28c214286b7977358ee46087e1ed2d3a706bba"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\03-stage-2-2.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "4229e94c349c49cac9519478b17651b08f85bdac977a96d376d81262e883f1e6"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\04-match-0-0.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "9ec0c07cf988906ad527a30f059e04743741f7b1aa5ffdd1a834db78dc9903cf"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\04-match-0-1.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "4896ae54f56520314a73b01bc176ec03db2988b978d7c229d9b1733280e782d5"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\04-match-0-2.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "ff5a6819c65462333591b5607e20ce6a10cf0ad52c2af8ba341ab37f3366f68f"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\04-match-1-0.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "6bf38204e864bf139b6b78a36fea31ca3ceb6ee69cbf590e29422951908aefa8"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\04-match-1-1.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "4ffd64b4c0f4313ec77989c68540528c88560da6735b689ca1598ac71af817ed"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\04-match-1-2.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "a2bd6b7b69d5bc7038b264ce0da51477e2fc77490e8b2ef7045399a956b51860"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\04-match-2-0.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "a125570234e8206a191c2541e309aebbf5d41be875a487814744a3692888bd85"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\04-match-2-1.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "61e284cff4afc725697f3613147ca121c6a0be26999e28fcb4e35841c43f1e4f"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\04-match-2-2.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "669c4d978a273cd3b428fb2fe0bf24fc4571118f8a0db7c2cfe46d72e3a72fa4"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\05-dizzy.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "8800dc51b0062f5132dc311fab2c7125a0b568b63bd5fbee0970917ed8f5ff2c"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\06-result.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "b6b7bbd67e4b1cea56f8fc90d09bbae5abfb23c9ef77919597e804117ca988bf"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\07-pause.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "743238f8c47038900e1f1190ff6ab62e108895bf299093d4f9a87865956ecd22"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1366x768\\08-controls.png",
+    "size": [
+      1366,
+      768
+    ],
+    "sha256": "2df68eebd28f4b264e273361746f2d29989cd739950d0ec1a48d382d9aa17c9d"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\00-opening.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "e48f0bf29edc71dc0b97b7ed5d0041e65a1c1e0c828b542670fa51e506b25890"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\01-title.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "b36b4973108f8b2784bfe46eb94abadff6c9d61d633193b8ea38bc8741b44560"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\02-characters.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "40d601ca3d11a91732bd941d2658fc8bf201af5d283e322337b530e6f628ba71"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\03-stage-0-0.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "72a29cb15ee9a5c9bb1eae93b52c9c97947fb997d40dd53e48e4962a438e4c57"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\03-stage-0-1.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "61849bde3ef2541d6333673c2c26245a76c713f72fd64bc1ad9c176abfdfc07a"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\03-stage-0-2.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "72a3e190283cbd1ba48967677ce7e3d1bc99547f0c8ea7d8684b679998ed2a48"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\03-stage-1-0.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "de5f577d720dfd0faa4e02d6d35ff7a824dc821eabdbe74f1ed2d8a31bf16e76"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\03-stage-1-1.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "876a3d6f8721898c8fb3859630e9f55cd263f79b46ec8fe1384ecf456486fc7e"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\03-stage-1-2.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "206d9d94c429912250f6c69c240ffa3184a57dda3b40c814847a9d83af82098a"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\03-stage-2-0.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "81f6569adf06beac28a5d89b0d00f9c5e97280ee18b69a6720f279320f831669"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\03-stage-2-1.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "d1a739bba1371b2b240bd11ca0d94b7748f4e35527b2738c1c59bde677548e6d"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\03-stage-2-2.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "ff6334810b49b271c66a3940457d5739b2d0493e2c8b8f80adb794e5d09a67a3"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\04-match-0-0.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "d6279fe1026343f4ed1244a63733373e95770d8ea0369b38e4053ecaf002d328"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\04-match-0-1.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "25356633b98e607872fe893830daa5c5bbb8530adcc6e192bb955fc79004fb5c"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\04-match-0-2.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "7af3cd1585c4f0745674a2138ca84aaf8067076a851f6d34a3bf0ca1e6256fa0"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\04-match-1-0.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "4b3a8fd6fecd48999626a2351283a80dc7b5acbf8ca52d026b69cd4a3561a7db"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\04-match-1-1.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "bbebf9f838dcc78cd1023ac39ff1814a72941344c658156c5a9b7d9d43d07a0a"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\04-match-1-2.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "0893051ef5d916df6fa8f9b2d863c7ddee86a384740a8f5cd57cadb94575db2d"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\04-match-2-0.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "071dfff1bf31029ab8a79d6c9bd90347c1ac3bf74bdd04d3b150c4060432afb3"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\04-match-2-1.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "74a9bcaa2ec1cacc2c22cc6c670d92417b9d06bd82847de128ef89792f38a09b"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\04-match-2-2.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "5615b48e89fab64e0cad83df1b558aee836b50f9e5c03c00d5c2cc4d9a830270"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\05-dizzy.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "38bae2fb2aafc6022fdd7d3301a49a5b5e4345e8f60606e009002fa7589d7674"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\06-result.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "3dc0943c170fa53fe4238c598213eb004f8f20f232dff1f7a0dec3b911ae8526"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\07-pause.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "80a0a4ae887cbc956425901c42591e989631eeecc2ea055ccb184cfe7fbe4919"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Final_1920x1080\\08-controls.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "sha256": "a07e21d5a59f1e975076d4d6daf1bb12ec29dee85dbe5105c5017cc78acf361e"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\00-opening.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "63b23734f79630561ce40ad5efc525015e8add839da0b00454a4bcc301d83119"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\01-title.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "c7fadaa7871cb45ec39bb8bbcea9592aedf29c3af9efeed019dfdb723126c849"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\02-characters.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "a9721665f54ed60c8adc8c39553a77aef2b0c27ca818d68956130aae8d5ba330"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\03-stage-0-0.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "20b11b8e39e612a6d6bdedbf6aebc91787ccc3d174eaff79f7a87f06bb826854"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\03-stage-0-1.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "d146f89529098567d2f174d041ad7e4d47531931bd676d1df5f02a9797c6fc3f"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\03-stage-0-2.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "46ec197b101eaaa8c1ce521434cba837075debb60013ef0ae4fa71b4d506e2ad"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\03-stage-1-0.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "e891c9bfb5de8ac0158d9a7bc35ee02ef0455482b6b489ecc6ef2c9b8847d4cd"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\03-stage-1-1.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "954c9ce12bd9f8c684f3e3c5ab567ed54806c1289c11624c6514b4190d860383"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\03-stage-1-2.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "dc0ef6c881561b57bfe97c1b95e92587c3ecc3edb2c25c89aa4861f06e7a3f2e"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\03-stage-2-0.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "a4e374be3dae9c89b32222835a98ad8f61d34909fff98ead632651919f45ed71"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\03-stage-2-1.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "c602bf7e293d6d3da1a683b3a2349d6ee8f37e15d25f887d19707c3cb8eacfb2"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\03-stage-2-2.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "3ff97466660f7b8f9da9559498ab850246ea543b928aecf68b040d1dac84df40"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\04-match-0-0.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "5c9bceb263ed9713ddc91d1d85620b19776ff79bd885489c2d8a303a27cba5ba"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\04-match-0-1.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "9b6a114d9ce8bd9bb3587ed4b053a7520d1be776d8f28e62d546428e58e6a2c6"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\04-match-0-2.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "31abb29468a3e31051be217f9ca1cae5319748c77790d9d0d470ab8a85133bb1"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\04-match-1-0.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "c708dc635c7ffe508af4d0e51ff8dcdab265793bd2b8a01e92ac414f5713dc3a"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\04-match-1-1.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "57ddd0dc9de106ed825b694e64d5664b4aba3e4af7f637034454efe762c676d8"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\04-match-1-2.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "2a5c19efe9dae1cb2947eeb0e358e1e752a74cb76a94391dedb1316ce4afe461"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\04-match-2-0.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "d193cf6c3a9bf6b97a4570814710ffff68425a70eb22adc10283750989db5ddb"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\04-match-2-1.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "8d9efb72f448dd1697c2e550afc1eef50e212b4b8bbf3d9b797c545c7869c250"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\04-match-2-2.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "d2afeac2368a1b14c32971510f9e73f4c0543c0a67b9661512561597f5b15b41"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\05-dizzy.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "588f15c52dee68221f87f9b37739e5ce996849abc78a81d342fad09742f5fb56"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\06-result.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "7cb4970863437007f334916667d7926eaac7f182be90a52750143ea0da1abfde"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\07-pause.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "f0470adc8805d688adbf34a3c924abb8792eedf02c31e74f2d1cf769dc641717"
+  },
+  {
+    "file": "QA_SCREENSHOTS\\Exact_2560x1440\\08-controls.png",
+    "size": [
+      2560,
+      1440
+    ],
+    "sha256": "59c9dfcedaeb63e37bcb4312603fb544b17dce1f7cfdf29ca4d00bcf999a02fc"
+  }
+]

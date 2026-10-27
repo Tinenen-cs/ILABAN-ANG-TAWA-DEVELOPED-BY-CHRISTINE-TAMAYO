@@ -1,26 +1,12 @@
-# Resume this project
+# Resume this Unity project
 
-Working folder: `C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO`.
-Stay on **phase3-polish**. Read HANDOFF.md, CHECKLIST.md and Docs/CHARACTER_DESIGN.md. One editor agent at a time.
+Project: `C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO`
+Branch: `phase3-polish`.
 
-**Do not push, force-push, rewrite history or merge.** The owner decides after resolving repository privacy. Real-person reference photos are local-only and ignored; never add or upload them, including to an image tool.
+Read `HANDOFF.md`, `CHECKLIST.md` and `Docs/CHARACTER_DESIGN.md`. Do not push, force-push, rewrite history, merge, or add/upload/send any `CHARACTER REFERENCE` photos. Keep all graded combat and Tagalog/Pormal rules intact.
 
-Current art: 8 approved fictional adult bases/portraits now connected using Filipino keys and six registered scripted visual parts; no old academy faces in active play. Original accepted art preserved. 3 maps x Umaga/Hapon/Takipsilim, smooth painterly style, lamps off by day. Four original menu/opening backgrounds and five parallax layers are imported. Fonts are Lilita One/Nunito, not pixel fonts. Pormal remains default.
+The latest Windows x64 build was made from `%TEMP%\Ilaban-Final-Validation`. Its source HEAD matched real commit `2f3fbbe` when built; later commits only updated packaging helpers and QA documentation. Set `$env:ILABAN_PROJECT=Join-Path $env:TEMP 'Ilaban-Final-Validation'` before rerunning `Tools/run_portable_qa.py` or `Tools/package_portable.py`.
 
-Tests/build are run in `%TEMP%\Ilaban-Phase2-Validation` while the user's working Unity editor stays open. Latest portable builds are copied back after verification. The 1280x720 preliminary actual-input match passed; screenshot findings were corrected. Current final verification status is in HANDOFF.md and Docs/portable_qa_results.json when present.
+Verified: 65 rule assertions; EditMode 9/9; graphics-enabled PlayMode 4/4; portable QA 1280x720, 1366x768, 1920x1080 and 2560x1440; extracted ZIP launched and completed a simulated gamepad match. Details and hashes are in `HANDOFF.md`, `Docs/portable_qa_results.json`, `Docs/package_verification.json` and `Docs/QA_EVIDENCE`.
 
-Exact resume command (PowerShell):
-
-```powershell
-Set-Location -LiteralPath 'C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO'
-git switch phase3-polish
-Get-Content -LiteralPath CODEX_RESUME.md
-Get-Content -LiteralPath HANDOFF.md
-```
-
-Do not re-run Tools/generate_ilaban_assets.py blindly: it regenerates procedural fallback art/audio and does not recreate approved generated map/character art. Source map/screen prompts and output paths: Docs/new_art_manifest.json and Docs/opening_layers_manifest.json. Tools/rig_characters.py creates the deterministic rig partitions only.
-
-Latest verification: 5f67ce1 is cloned in %TEMP%\Ilaban-Final-Validation with exact matching HEAD. Final build passed 65 rule assertions; EditMode 9/9, graphics-enabled PlayMode 4/4. Corrected-source QA/package remain in progress.
-
-
-Correction verification: dizzy stars use the supported `*` glyph, 46x52 region, y=350 orbit, and last-sibling draw order; reaction bubbles stay separated in x lanes 340-390 and 650-695. Build/test and all four portable QA resolutions passed from the validation clone. Package/extraction verification next.
+Remaining manual checks: physical controllers/hot-swap, keyboard rollover and latency, listening/audio balance, presentation monitor fit, clean PC without Unity, antivirus/SmartScreen. Cutout rig articulation/expression swaps remain partial. Do not rerun `Tools/generate_ilaban_assets.py` blindly; it does not reproduce the approved art.
