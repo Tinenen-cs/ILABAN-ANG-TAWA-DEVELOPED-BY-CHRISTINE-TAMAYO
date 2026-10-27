@@ -95,3 +95,6 @@ Approved original base art now split into six disjoint registered visual parts b
 
 ### Continuation: layout and time controls
 Oras selector wired for Umaga/Hapon/Takipsilim (Up/Down); dusk-only lamp glow. Actor aspect ratios preserved, two-line card names and transition fade added. Removed unused spell/knockout pose and round helper remnants; Jump remains a test-only sentinel. Compile and screenshot verification pending. Latest resume: open this project on phase3-polish; read CODEX_RESUME.md then HANDOFF.md; do not push.
+
+### Artwork checkpoint
+Six lighting-only map edits plus four original screen backgrounds generated using image_gen (text/map inputs only), each viewed and imported as new assets. Dusk maps unchanged. Full paths and prompt summaries: Docs/new_art_manifest.json. Lamps disabled by code outside Takipsilim. Full build/QA of integrated art pending. No remote writes.

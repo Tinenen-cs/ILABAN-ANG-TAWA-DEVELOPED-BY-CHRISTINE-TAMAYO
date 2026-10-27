@@ -140,10 +140,10 @@ namespace Hexbound
             view=Rect(safe,"Screen "+state,new Rect(0,0,1280,720));view.gameObject.AddComponent<CanvasGroup>();
             for(int i=0;i<3;i++)stages[i]=MapTex(i);
             scenery.texture=stages[selectedArena];
-            Ambience(state==ScreenState.Fight?Model.ArenaIndex:selectedArena,state!=ScreenState.Controls);
-            if(state==ScreenState.Title) {Music("Title");Title();}
-            if(state==ScreenState.Select) {Music("Selection");Select();}
-            if(state==ScreenState.StageSelect) {Music("Selection");StageSelect();}
+            Ambience(state==ScreenState.Fight?Model.ArenaIndex:selectedArena,state==ScreenState.Fight);
+            if(state==ScreenState.Title) {scenery.texture=Tex("Backgrounds/Pamagat")??scenery.texture;Music("Title");Title();}
+            if(state==ScreenState.Select) {scenery.texture=Tex("Backgrounds/PumiliTauhan")??scenery.texture;Music("Selection");Select();}
+            if(state==ScreenState.StageSelect) {scenery.texture=Tex("Backgrounds/PumiliEntablado")??scenery.texture;Music("Selection");StageSelect();}
             if(state==ScreenState.Fight) {Music(Roster.StageFiles[Model.ArenaIndex]);Fight();}
             if(state==ScreenState.Controls) Controls();
             if(state==ScreenState.Select || state==ScreenState.StageSelect) highlight.Play();else highlight.Stop();
