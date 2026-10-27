@@ -1,36 +1,21 @@
-# CODEX RESUME (read this first, then HANDOFF.md)
+# Resume this project
 
-- Branch: `phase3-polish` (local only, NOT pushed). Last commit: run `git log -1`. Never merge to `main` without approval.
-- One agent at a time. Commit after every step and update HANDOFF.md.
-- PRIVACY: `CHARACTER REFERENCE/` photos are public on origin/main and origin/phase2-ui. They are untracked on phase3-polish.
-  Do not push or rewrite history until the student decides (top of HANDOFF.md).
+Working folder: `C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO`.
+Stay on **phase3-polish**. Read HANDOFF.md, CHECKLIST.md and Docs/CHARACTER_DESIGN.md. One editor agent at a time.
 
-## Decisions
-3 maps only; 9 map backgrounds (Umaga / Hapon / Takipsilim); layout-only UI references with a Filipino street look;
-Lilita One + Nunito, no pixel text; original chibi adult characters, no likeness, photos never uploaded; Pormal default;
-the item is only a visual skin of the straight punch; scene order Pambungad, Pamagat, Pumili ng Tauhan, Pumili ng Entablado,
-Laban, Resulta; no merge to main without approval.
+**Do not push, force-push, rewrite history or merge.** The owner decides after resolving repository privacy. Real-person reference photos are local-only and ignored; never add or upload them, including to an image tool.
 
-## Next 5 steps
-1. Image work (HANDOFF.md section E): Umaga/Hapon for the 3 maps (lamps OFF, same layout), then the 4 screen backgrounds. [image tool]
-2. Scripted character rig and switch to the new keys/art (HANDOFF.md B2). Re-run rules tests. [no image tool needed]
-3. Oras selector on Pumili ng Entablado, select-screen layout redo (B3), HUD polish (B4).
-4. Audio (B5), English-string scan, QA screenshots at 4 resolutions (B7), master CHECKLIST.md + Rubric Self-Check (B8).
-5. Build, SUBMISSION zip with BASAHIN_MUNA.txt, extract-and-run test.
+Current art: 8 approved fictional adult bases/portraits now connected using Filipino keys and six registered scripted visual parts; no old academy faces in active play. Original accepted art preserved. 3 maps x Umaga/Hapon/Takipsilim, smooth painterly style, lamps off by day. Four original menu/opening backgrounds and five parallax layers are imported. Fonts are Lilita One/Nunito, not pixel fonts. Pormal remains default.
 
-Resume commands: HANDOFF.md section G. Figma: https://www.figma.com/design/9J9nqsjyg38lIZVMeLXRYC
+Tests/build are run in `%TEMP%\Ilaban-Phase2-Validation` while the user's working Unity editor stays open. Latest portable builds are copied back after verification. The 1280x720 preliminary actual-input match passed; screenshot findings were corrected. Current final verification status is in HANDOFF.md and Docs/portable_qa_results.json when present.
 
-## Codex continuation: character rig step (28 October 2026)
-Approved original base art now split into six disjoint registered visual parts by Tools/rig_characters.py. Runtime loads the new Filipino keys, full portraits, and code-driven part transforms. No real-person photos used or uploaded. UI name-label heights adjusted. Runtime compilation/tests still pending for this step. No push or merge permitted.
+Exact resume command (PowerShell):
 
-### Continuation: layout and time controls
-Oras selector wired for Umaga/Hapon/Takipsilim (Up/Down); dusk-only lamp glow. Actor aspect ratios preserved, two-line card names and transition fade added. Removed unused spell/knockout pose and round helper remnants; Jump remains a test-only sentinel. Compile and screenshot verification pending. Latest resume: open this project on phase3-polish; read CODEX_RESUME.md then HANDOFF.md; do not push.
+```powershell
+Set-Location -LiteralPath 'C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO'
+git switch phase3-polish
+Get-Content -LiteralPath CODEX_RESUME.md
+Get-Content -LiteralPath HANDOFF.md
+```
 
-### Artwork checkpoint
-Six lighting-only map edits plus four original screen backgrounds generated using image_gen (text/map inputs only), each viewed and imported as new assets. Dusk maps unchanged. Full paths and prompt summaries: Docs/new_art_manifest.json. Lamps disabled by code outside Takipsilim. Full build/QA of integrated art pending. No remote writes.
-
-### Integration QA checkpoint
-1280x720 actual simulated gamepad match reached dizziness and manhole win; preliminary screenshots exposed label fit, HUD contrast and cut-out seams, now corrected in source. Isolated EditMode/PlayMode/build rerun active. Full 4-resolution pass and portable package still pending. Do not push.
-
-### Opening parallax checkpoint
-Five generated full-canvas layers inspected and saved under Backgrounds/Pambungad; aligned Sky/Skyline/Midground/Wires/Street move at independent small offsets. Source imagery preserved. Manifest records source paths/prompts. Rebuild needed after this opening-only change; isolated rule/input tests are running. No push.
+Do not re-run Tools/generate_ilaban_assets.py blindly: it regenerates procedural fallback art/audio and does not recreate approved generated map/character art. Source map/screen prompts and output paths: Docs/new_art_manifest.json and Docs/opening_layers_manifest.json. Tools/rig_characters.py creates the deterministic rig partitions only.

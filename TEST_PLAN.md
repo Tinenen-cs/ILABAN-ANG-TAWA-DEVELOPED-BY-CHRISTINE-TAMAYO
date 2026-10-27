@@ -39,3 +39,34 @@ Status: planned. Baseline tests of the academy prototype do not establish compli
 - Unity upgrade retained scene and asset GUIDs and added editor serialization fields. Compiler deprecation warnings remain for FindFirstObjectByType; no compile errors occurred.
 - Physical controllers, final art/audio, final rubric gameplay, standalone builds and clean-PC tests remain pending.
 - Original folder is retained because Windows locks it; all further edits belong in the fully named sibling folder.
+
+## Current continuation acceptance evidence
+
+Prior baseline notes above are historical; use this section and the final checklist for the current game.
+
+| Check | Pass | Fail | Evidence / qualification |
+| --- | --- | --- | --- |
+| New adult character paths and all 9 map/time resources | X | | Expanded EditMode 9/9 XML in Logs/Verified-EditMode.xml |
+| Horizontal-only, equal punch, five-hit dizzy, recovery, streak resets, manhole-only round result | X | | 65 assertions; 50-hit Unity case |
+| Reaction state cannot change combat timing/displacement | X | | RubricTests deterministic comparison |
+| Latest built actual simulated gamepad match | X | | Preliminary Final_1280x720/PASS.txt; genuine movement and punches to fall, not injected final position |
+| Corrected UI labels/HUD contrast and rig articulation | | | Source fixes after preliminary screenshots; final re-capture pending |
+| Latest PlayMode rerun lifecycle | | | Prior 4/4; new runner stalls independently of tests, under investigation |
+| Four resolution captures | | | Tools/run_portable_qa.py writes dimensions and error checks to Docs/portable_qa_results.json |
+| Active English keyword scan | X | | Zero heuristic candidates; literal UI text dump also captured per screen |
+| Audio peak audit | X | | 30 active clips, zero samples at clipping threshold; listening remains manual |
+| Portable ZIP extracted and launched | | | Pending final package |
+
+### Manual checks after the final ZIP is ready
+
+For each row mark one box, then note device details or any failure:
+
+- Real USB gamepad plus a second controller: [ ] PASS [ ] FAIL.
+- Keyboard-to-gamepad switch, then unplug/replug mid-match: [ ] PASS [ ] FAIL.
+- Two people on one keyboard (hold movement and punch together): [ ] PASS [ ] FAIL.
+- Entire extracted folder on a PC without Unity: [ ] PASS [ ] FAIL.
+- Speakers and headphones, all volume settings and item sounds: [ ] PASS [ ] FAIL.
+- Actual monitor fit, text readability and 60-second idle title: [ ] PASS [ ] FAIL.
+- Antivirus/SmartScreen handling of the unsigned executable: [ ] PASS [ ] FAIL.
+
+Do not treat an extracted-folder launch on the development PC as a clean-PC result.

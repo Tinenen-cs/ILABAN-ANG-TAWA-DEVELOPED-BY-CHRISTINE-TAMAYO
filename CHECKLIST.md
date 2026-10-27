@@ -1,86 +1,75 @@
-# ILABAN ANG TAWA - implementation checklist
+# ILABAN ANG TAWA — master checklist
 
-Only verified work is checked. The original academy prototype is not yet the final submission.
+Statuses: [x] verified evidence; [p] partial; [~] NEEDS MANUAL TEST; [ ] pending. Counts refer to these acceptance rows, not a guaranteed grade.
 
-## 1. Setup and naming
-- [x] Inspect the existing source before changes; preserve Main.unity and asset GUIDs.
-- [x] Save an external pre-upgrade source backup (Fight-Fght-backups).
-- [x] Identify installed editor: Unity 6000.6.2f1; Windows standalone module present.
-- [x] Reconnect local files to the existing Tinenen-cs/Fight-Fght Git history.
-- [x] Create the working folder ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO (original Windows-locked folder retained).
-- [x] Upgrade, compile, and validate the existing game with the installed editor.
-- [x] Set company to Christine Tamayo and product/window/build name to the required title.
-- [x] Open the original Main scene in the installed Unity Editor.
-- [x] Update repository display name while retaining the existing repository identity/history.
+Evidence: Logs XML/build/runtime logs; QA_SCREENSHOTS captures; Docs/FINAL_STATIC_AUDIT.json; prior checkpoint in HANDOFF.md.
 
-## 2. Character recreation
-Names are proposals; reference faces must remain unchanged. Each line requires all seven animations (idle, walk, punch, hit, dizzy, fall, win), effects, and animated selection preview before completion.
-- [ ] Aling Puring - pamalo; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Neneng - tsinelas; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Tala - bato; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Ligaya - batuta; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Mang Isko - lata; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Dodong - silya; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Berting - bote; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Kulas - walis tingting; face preserved, new outfit, seven animations, effects, preview.
-- [ ] Equal punch timing, reach and knockback for every item.
-- [ ] Pixel import: Point filtering, no compression; document PPU for sprite assets.
+## Phase 1 — setup, gameplay and input
 
-## 3. Maps (user confirmed three)
-- [ ] Kalye sa Palengke: artwork, full-screen fit, imburnal, animated background, distinct music.
-- [ ] Looban: artwork, full-screen fit, imburnal, animated background, distinct music.
-- [ ] Plaza ng Barangay: artwork, full-screen fit, imburnal, animated background, distinct music.
-- [ ] Verify 1920x1080, 1366x768, 1280x720, 2560x1440 and a 16:10 desktop.
+- [x] Unity 6000.6.2f1, original source backups and fully named working folder.
+- [x] Product/company/window title and repository name updated; original folder retained.
+- [x] Main scene and original source assets preserved; no original asset deletion.
+- [x] Local branch phase3-polish; reference photos ignored and never supplied to image tools; no remote writes during this continuation.
+- [x] Two players share one screen; horizontal-only movement; forbidden actions ignored in every tested state.
+- [x] One equal straight punch for every item; fixed 52-unit step with no residual force.
+- [x] Five consecutive landed punches cause two-second dizzy; misses, being hit and timeout break streak.
+- [x] Simultaneous strikes are fair and break both streaks.
+- [x] No health, stamina, timer or knockout system in active gameplay; manhole-only immediate round end.
+- [x] Independent P1 A/D/F and P2 arrows/Right Ctrl/Numpad 0; Enter confirms only P1.
+- [x] Input System controller ownership, deadzone, generic joystick trigger, virtual replacement and hot-swap implemented.
+- [~] Physical USB/gamepad behavior, second controller and unplug/replug feel — NEEDS MANUAL TEST.
+- [~] Simultaneous two-person keyboard rollover and input latency on actual hardware — NEEDS MANUAL TEST.
 
-## 4. Audio
-- [ ] Separate title and selection music.
-- [ ] Three original Filipino-inspired map tracks with credits.
-- [ ] Move, select, confirm, back menu cues.
-- [ ] Whoosh and eight item-specific impact cues.
-- [ ] Walking/hit/dizzy/recovery/fall/splash/win cues synchronized.
-- [ ] Source and license inventory in CREDITS.md.
+## Phase 2 — characters, maps, layout, reactions and sound
 
-## 5. Language and screens
-- [ ] Exact required title: ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.
-- [ ] Title, selection, stage selection, controls, pause and results reviewed in Tagalog.
-- [ ] Animated character previews, items and independent confirmation.
-- [ ] Scan visible strings for English; exempt only the required title and hardware key labels.
+- [x] Eight confirmed Filipino names and descriptions; new internal Filipino resource keys.
+- [x] Original fictional adult portrait/base art imported; no real-person likeness assets in active game.
+- [x] Aling Pamalo: original body/portrait, pamalo and registered visual rig resources.
+- [x] Kuya Tsinelas: original body/portrait, tsinelas and registered visual rig resources.
+- [x] Ate Bato-Bato Pik: accepted ponytail portrait, bato and registered visual rig resources.
+- [x] Kap Batuta: original body/portrait, batuta and registered visual rig resources.
+- [x] Manong Latalata: original body/portrait, lata and registered visual rig resources.
+- [x] Tito Silya: approved adult portrait retained, silya and registered visual rig resources.
+- [x] Aling Boteng Suka: original body/portrait, bote and registered visual rig resources.
+- [x] Nanay Tingting: original body/portrait, walis tingting and registered visual rig resources.
+- [p] Idle, walk, straight punch/item flourish, hit, dizzy, fall and win use code-driven cut-out motion. Simple disjoint partitions; polished joint pivots/expression swaps remain partial.
+- [x] Palengke, Looban and Plaza have smooth approved dusk art plus inspected morning/afternoon edits; dusk sources unchanged.
+- [x] Oras selector changes visual theme only; daytime lamp glow disabled.
+- [x] Animated clouds, traffic, lamp flicker and floor shimmer; full-screen cover scenery.
+- [x] Canvas Scaler and separate safe UI region; slanted cards, two-line name plates, P1 teal/P2 coral.
+- [x] Independent character confirmation and Handa na gate; stage selection and back/start buttons.
+- [x] HUD limited to portraits/names/controls, five streak dots, one Suntok orb, pause/controls hint.
+- [x] Six reaction categories, cooldown, no immediate repeats, priority and item lines; separate from combat random state.
+- [x] Pormal default and optional Kabataan toggle; both pools reviewed for English expressions.
+- [x] Distinct map/title/selection music; opening and win stingers; 8 item-hit timbres; fall/splash/dizzy/crowd/menu cues.
+- [x] Pangunahing Lakas/Musika/Tunog controls cover opening and game audio.
+- [x] Audio inventory and per-file source/license declarations; 30 active WAV files with no clipped samples.
+- [p] Synthesized Filipino-inspired music/SFX are usable original cues; realistic recordings and final mix remain optional polish.
+- [~] Speaker/headphone balance and subjective audio quality — NEEDS MANUAL TEST.
 
-## 6. Rubric gameplay
-- [ ] Shared-screen two-player movement, horizontal only; jumping impossible in every state.
-- [ ] Straight punch only; guard/kick/crouch/combo/spell/power/shove disabled.
-- [ ] Every landed punch moves the victim exactly one fixed backward step.
-- [ ] Five consecutive landed punches cause dizzy stars/wobble with defined recovery.
-- [ ] Attacker hit or broken streak resets the streak; no health/poise bars or K.O.
-- [ ] Imburnal fall immediately ends the round and visibly animates into results.
+## Phase 3 — opening, fonts, QA and portable submission
 
-## 7. Input
-- [x] Existing Input System asset (upgraded by Unity to 1.20.0) and separate Player1/Player2 action maps located.
-- [ ] Keyboard A/D/F and arrows/Right Ctrl/Numpad 0 isolation.
-- [ ] Gamepad deadzone and exclusive device ownership.
-- [ ] Generic USB controller recognition tested on physical hardware.
-- [ ] Live keyboard/gamepad switching and unplug/replug without forced pause.
-- [ ] Simultaneous inputs and keyboard/controller menu navigation verified.
+- [x] Separate Pambungad and Pamagat scenes; selection/stage/combat/result remain screens inside Main and are documented.
+- [x] Skippable six-second jeepney opening, banderitas, logo and Tagalog credits.
+- [x] Five independently offset painterly parallax PNG layers imported; original flat image retained.
+- [x] Distinct original title/character-select/stage-select backgrounds; layout-only reference use.
+- [x] Lilita One and Nunito static TMP fonts, OFL sources/licenses, outline/underlay and Filipino glyph test.
+- [x] Required developer title format retained; Pormal remains launch default.
+- [x] 65 deterministic rubric checks plus 50-hit displacement and reaction-independence tests.
+- [x] Expanded EditMode XML reports 9/9 passed, including all map/time and rig resources.
+- [p] Latest PlayMode rerun and build lifecycle verification in progress; previous checkpoint passed 4/4.
+- [x] Preliminary built 1280x720 actual simulated gamepad match reached dizzy and manhole win.
+- [p] Latest screenshots at four required resolutions, corrected overflow audit, final extracted build launch and package validation in progress.
+- [x] Active English keyword scan found zero candidates; font/audio/static audit scripts saved.
+- [~] Actual monitor fit and perceived readability — NEEDS MANUAL TEST.
+- [~] Clean second PC without Unity — NEEDS MANUAL TEST.
+- [~] Unsigned executable antivirus/SmartScreen behavior — NEEDS MANUAL TEST.
+- [ ] Publish branch after owner privacy decision; do not push or merge automatically.
 
-## 8. Build and handoff
-- [x] Commit and push setup checkpoint ec68355 to the existing repository; repeat for later steps.
-- [ ] Windows x64 standalone with required executable filename.
-- [ ] Portable folder and ZIP with README and CREDITS.
-- [ ] Run from a different folder and a clean Windows PC without Unity.
-- [ ] Complete TEST_PLAN.md with observed results; final bug review and fixes.
+## Rubric Self-Check
 
-## Current continuation checkpoint
-- [~] New Filipino runtime keys, full portraits and six-part procedural rigs connected; compile/visual verification pending.
-- [x] Private reference folder ignored; duplicate image hashes scanned and ignored if found. No push/history rewrite.
-
-### Continuation: layout and time controls
-Oras selector wired for Umaga/Hapon/Takipsilim (Up/Down); dusk-only lamp glow. Actor aspect ratios preserved, two-line card names and transition fade added. Removed unused spell/knockout pose and round helper remnants; Jump remains a test-only sentinel. Compile and screenshot verification pending. Latest resume: open this project on phase3-polish; read CODEX_RESUME.md then HANDOFF.md; do not push.
-
-### Artwork checkpoint
-Six lighting-only map edits plus four original screen backgrounds generated using image_gen (text/map inputs only), each viewed and imported as new assets. Dusk maps unchanged. Full paths and prompt summaries: Docs/new_art_manifest.json. Lamps disabled by code outside Takipsilim. Full build/QA of integrated art pending. No remote writes.
-
-### Integration QA checkpoint
-1280x720 actual simulated gamepad match reached dizziness and manhole win; preliminary screenshots exposed label fit, HUD contrast and cut-out seams, now corrected in source. Isolated EditMode/PlayMode/build rerun active. Full 4-resolution pass and portable package still pending. Do not push.
-
-### Opening parallax checkpoint
-Five generated full-canvas layers inspected and saved under Backgrounds/Pambungad; aligned Sky/Skyline/Midground/Wires/Street move at independent small offsets. Source imagery preserved. Manifest records source paths/prompts. Rebuild needed after this opening-only change; isolated rule/input tests are running. No push.
+| Criterion | Assessment | Evidence / limitation |
+| --- | --- | --- |
+| UI and Thematic Authenticity | Not yet claimed Exceeds-level | Original adult characters, nine Philippine map/time choices, Tagalog UI, themed fonts/audio; cut-out articulation and final presentation/mix remain partial. |
+| Gameplay Mechanics and Engine Logic | Automated rubric behavior verified; no grade guarantee | 65 rule assertions, 50-hit test, simultaneous strikes, forbidden controls, streak recovery and actual-input manhole match. |
+| Controller and Input Systems | Simulated behavior verified; Exceeds-level pending hardware | Separate maps/device ownership and virtual replacement/joystick tests; physical USB, rollover, latency and two-person feel require manual checks. |
