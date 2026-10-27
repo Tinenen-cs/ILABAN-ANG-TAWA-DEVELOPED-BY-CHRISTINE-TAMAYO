@@ -13,7 +13,7 @@ namespace Hexbound.Editor
             if (!assetPath.StartsWith("Assets/Resources/")) return;
             var t=(TextureImporter)assetImporter;
             t.textureType=TextureImporterType.Default;
-            t.filterMode=assetPath.StartsWith("Assets/Resources/Ilaban/")?FilterMode.Point:FilterMode.Bilinear; t.textureCompression=TextureImporterCompression.Uncompressed;
+            bool smooth=assetPath.Contains("/Ilaban/Maps/")||assetPath.Contains("/Ilaban/Backgrounds/");t.filterMode=assetPath.StartsWith("Assets/Resources/Ilaban/")&&!smooth?FilterMode.Point:FilterMode.Bilinear;t.maxTextureSize=4096; t.textureCompression=TextureImporterCompression.Uncompressed;
             t.mipmapEnabled=false; t.alphaIsTransparency=true; t.npotScale=TextureImporterNPOTScale.None;
             t.maxTextureSize=4096; t.wrapMode=TextureWrapMode.Clamp;
         }

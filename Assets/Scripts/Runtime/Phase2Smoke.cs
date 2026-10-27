@@ -13,7 +13,7 @@ namespace Hexbound
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Boot() {
             var args=Environment.GetCommandLineArgs();
-            for(int i=0;i<args.Length-1;i++)if(args[i]=="-ilaban-smoke") {var runner=new GameObject("Opt-in smoke capture").AddComponent<Phase2Smoke>();runner.directory=args[i+1];}
+            for(int i=0;i<args.Length-1;i++)if(args[i]=="-ilaban-smoke") {var runner=new GameObject("Opt-in smoke capture").AddComponent<Phase2Smoke>();runner.directory=args[i+1];DontDestroyOnLoad(runner.gameObject);}
         }
         IEnumerator Start() {
             Application.runInBackground=true;

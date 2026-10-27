@@ -29,6 +29,16 @@ namespace Hexbound
         readonly Dictionary<string,AudioClip> clips=new Dictionary<string,AudioClip>();
         readonly List<Actor> previews=new List<Actor>();
         readonly List<RectTransform> flames=new List<RectTransform>();
+        readonly List<RawImage> clouds=new List<RawImage>(),lamps=new List<RawImage>();
+        RectTransform ambience,jeepney;
+        RawImage shimmer;
+        // Approved maps: normalized lamp/bulb centres (x, y from top) and the far-street line for passing traffic.
+        static readonly Vector2[][] MapLamps={
+            new[]{new Vector2(.065f,.42f),new Vector2(.265f,.42f),new Vector2(.595f,.39f),new Vector2(.71f,.10f),new Vector2(.958f,.42f)},
+            new[]{new Vector2(.229f,.29f),new Vector2(.700f,.33f),new Vector2(.836f,.29f)},
+            new[]{new Vector2(.146f,.165f),new Vector2(.428f,.23f),new Vector2(.858f,.26f),new Vector2(.944f,.165f)}};
+        static readonly float[] FarStreet={.62f,.61f,.585f};
+        Texture2D MapTex(int arena) {var n=Roster.StageFiles[arena];return Tex("Maps/"+n+"/"+n+"_Takipsilim")??Tex("Stages/"+n);}
         Actor[] actors;
         TMP_Text[] names,deviceLabels;
         Image[][] dots;
@@ -58,7 +68,7 @@ namespace Hexbound
             controls=new AcademyInputManager(); reactions=new ReactionBank();
             font=Resources.Load<TMP_FontAsset>("Ilaban/Fonts/StreetPixel");
             for(int i=0;i<8;i++) { heads[i]=Resources.Load<Texture2D>("Characters/"+Roster.Files[i]+"/portraits"); bodies[i]=Tex("Bodies/Body_"+i);items[i]=Tex("Items/Item_"+i); }
-            for(int i=0;i<3;i++) stages[i]=Tex("Stages/"+Roster.StageFiles[i]);
+            for(int i=0;i<3;i++) stages[i]=MapTex(i);
             foreach(var clip in Resources.LoadAll<AudioClip>("Ilaban/Audio")) clips[clip.name]=clip;
             music=gameObject.AddComponent<AudioSource>();sfx=gameObject.AddComponent<AudioSource>();highlight=gameObject.AddComponent<AudioSource>();
             music.loop=true;highlight.loop=true;highlight.clip=clips["highlight_loop"];
@@ -125,12 +135,39 @@ namespace Hexbound
             if(view!=null) {view.gameObject.SetActive(false);Destroy(view.gameObject);}
             view=Rect(safe,"Screen "+state,new Rect(0,0,1280,720));
             scenery.texture=stages[selectedArena];
+            Ambience(state==ScreenState.Fight?Model.ArenaIndex:selectedArena,state!=ScreenState.Controls);
             if(state==ScreenState.Title) {Music("Title");Title();}
             if(state==ScreenState.Select) {Music("Selection");Select();}
             if(state==ScreenState.StageSelect) {Music("Selection");StageSelect();}
             if(state==ScreenState.Fight) {Music(Roster.StageFiles[Model.ArenaIndex]);Fight();}
             if(state==ScreenState.Controls) Controls();
             if(state==ScreenState.Select || state==ScreenState.StageSelect) highlight.Play();else highlight.Stop();
+        }
+        // Street life layered over every stage: drifting clouds, a jeepney on the far road, swaying banderitas, flickering lamps.
+        // Parented to the cover-fit map so every layer stays pinned to the painted lamps and street at any aspect ratio.
+        void Ambience(int arena,bool enabled)
+        {
+            clouds.Clear();lamps.Clear();jeepney=null;shimmer=null;
+            if(ambience!=null)Destroy(ambience.gameObject);
+            ambience=Rect(scenery.transform,"Buhay ng Kalye",new Rect(0,0,1,1));Stretch(ambience);
+            if(!enabled)return;
+            for(int i=0;i<3;i++) {var c=Area(ambience,Fx("Cloud"),new Rect(0,.02f+i*.07f,.16f-i*.03f,.08f-i*.015f));c.color=new Color(1,1,1,.32f-i*.07f);clouds.Add(c);}
+            jeepney=Area(ambience,Tex("UI/Jeepney"),new Rect(0,FarStreet[arena]-.075f,.09f,.075f)).rectTransform;jeepney.GetComponent<RawImage>().color=new Color(.82f,.78f,.74f,.92f);
+            foreach(var p in MapLamps[arena]) {var l=Area(ambience,Fx("Glow"),new Rect(p.x-.045f,p.y-.08f,.09f,.16f));lamps.Add(l);}
+            shimmer=Area(ambience,Fx("Shimmer"),new Rect(0,.70f,.4f,.10f));
+        }
+        Texture2D Fx(string name)=>Tex("Maps/FX/"+name);
+        RawImage Area(Transform parent,Texture2D texture,Rect normalized)
+        {
+            var image=Raw(parent,new Rect(0,0,0,0),texture);var r=image.rectTransform;
+            r.anchorMin=new Vector2(normalized.xMin,1-normalized.yMax);r.anchorMax=new Vector2(normalized.xMax,1-normalized.yMin);r.offsetMin=r.offsetMax=Vector2.zero;return image;
+        }
+        void UpdateAmbience()
+        {
+            for(int i=0;i<clouds.Count;i++) {var r=clouds[i].rectTransform;float w=r.anchorMax.x-r.anchorMin.x,x=Mathf.Repeat(clock*(.006f+i*.004f)+i*.37f,1+w)-w;r.anchorMin=new Vector2(x,r.anchorMin.y);r.anchorMax=new Vector2(x+w,r.anchorMax.y);}
+            if(jeepney!=null) {float w=jeepney.anchorMax.x-jeepney.anchorMin.x,x=Mathf.Repeat(clock*.07f,1.6f)-w;float bob=((int)(clock*8)%2)*.002f;jeepney.anchorMin=new Vector2(x,jeepney.anchorMin.y);jeepney.anchorMax=new Vector2(x+w,jeepney.anchorMax.y);jeepney.anchoredPosition=new Vector2(0,bob*720);}
+            for(int i=0;i<lamps.Count;i++) {float flicker=Mathf.PerlinNoise(clock*5,i*3.1f);lamps[i].color=new Color(1,1,1,.18f+flicker*.22f+(Mathf.PerlinNoise(clock*40,i)>.92f?-.12f:0));}
+            if(shimmer!=null) {var r=shimmer.rectTransform;float x=.3f+Mathf.Sin(clock*.35f)*.3f;r.anchorMin=new Vector2(x,r.anchorMin.y);r.anchorMax=new Vector2(x+.4f,r.anchorMax.y);shimmer.color=new Color(1,1,1,.10f+.05f*Mathf.Sin(clock*1.7f));}
         }
         void Shade(float alpha=.72f)=>Image(view,new Rect(0,0,1280,720),new Color(.025f,.06f,.09f,alpha));
         void Heading(string title,string subtitle) {Label(view,new Rect(30,28,1220,62),title,48);Label(view,new Rect(100,92,1080,32),subtitle,20,gold);}
@@ -193,7 +230,7 @@ namespace Hexbound
             Button(view,new Rect(35,646,205,52),"Bumalik",OpenSelect);Button(view,new Rect(1040,646,205,52),"Simulan",StartMatch);
             Label(view,new Rect(260,645,760,53),"KALIWA / KANAN  PUMILI    ENTER / SUNTOK  KUMPIRMAHIN",20,gold);
         }
-        void ChooseStage(int index) {selectedArena=index;scenery.texture=stages[index];if(focusLabel!=null)focusLabel.text=Roster.StageDescriptions[index];Sound("carousel_slide");}
+        void ChooseStage(int index) {selectedArena=index;scenery.texture=stages[index];Ambience(index,true);ambience.SetAsFirstSibling();if(focusLabel!=null)focusLabel.text=Roster.StageDescriptions[index];Sound("carousel_slide");}
         public void StartMatch() {if(!Ready[0]||!Ready[1])return;Model=new DuelModel(Selected[0],Selected[1],selectedArena);Paused=false;resultTime=0;Show(ScreenState.Fight);for(int p=0;p<2;p++)React(p,"ready");}
         Actor ActorView(Transform parent,int id,Rect area)
         {
@@ -206,9 +243,8 @@ namespace Hexbound
         void Fight()
         {
             scenery.texture=stages[Model.ArenaIndex];
-            foreach(float x in new[]{DuelModel.LeftRiftX,DuelModel.RightRiftX}) Raw(view,new Rect(x-70,526,140,70),Tex("UI/Imburnal_"+Roster.StageFiles[Model.ArenaIndex]));
-            // A moving tricycle silhouette, bunting and breathing lantern glow keep each stage alive.
-            for(int i=0;i<2;i++) {var glow=Raw(view,new Rect(i==0?8:1175,180,100,100),Tex("UI/Glow"));flames.Add(glow.rectTransform);}
+            // Manholes live in gameplay space so they sit exactly on the model's fall points.
+            foreach(float x in new[]{DuelModel.LeftRiftX,DuelModel.RightRiftX}) Raw(view,new Rect(x-110,552,220,69),Fx("Imburnal"));
             actors=new Actor[2];names=new TMP_Text[2];deviceLabels=new TMP_Text[2];dots=new Image[2][];bubbles=new Bubble[2];
             for(int p=0;p<2;p++) {
                 actors[p]=ActorView(view,Model.players[p].character,new Rect(0,0,170,255));
@@ -261,6 +297,7 @@ namespace Hexbound
             var cr=(RectTransform)canvas.transform;float fit=Mathf.Min(cr.rect.width/1280f,cr.rect.height/720f);safe.localScale=new Vector3(fit,fit,1);
             // Cover unused aspect-ratio space with a proportion-preserving background.
             float cover=Mathf.Max(cr.rect.width/1280f,cr.rect.height/720f);scenery.rectTransform.sizeDelta=new Vector2(1280*cover,720*cover);scenery.rectTransform.anchorMin=scenery.rectTransform.anchorMax=new Vector2(.5f,.5f);scenery.rectTransform.pivot=new Vector2(.5f,.5f);scenery.rectTransform.anchoredPosition=ScreenNow==ScreenState.Fight?Vector2.zero:new Vector2(Mathf.Sin(clock*.2f)*2,Mathf.Sin(clock*.17f)*2);
+            UpdateAmbience();
             if(ScreenNow==ScreenState.Title) {
                 NavMenu(3);if(controls.Any("Confirm"))ActivateTitle(focus);
                 else if(controls.StartPressed && controls.Navigate(0)==Vector2Int.zero && controls.Navigate(1)==Vector2Int.zero && !controls.Any("Help") && !controls.Any("Pause") && !controls.Any("Cancel")) OpenSelect();
