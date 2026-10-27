@@ -363,7 +363,12 @@ namespace Hexbound
                 deviceLabels[p].text=controls.DeviceName(p)+" / "+controls.Prompt(p,"Move")+" + "+controls.Prompt(p,"Punch");
                 for(int i=0;i<5;i++)dots[p][i].color=i<f.streak?playerColors[p]:new Color(.24f,.32f,.35f);
                 var bubble=bubbles[p];float age=clock-bubble.started;bool visible=age>=0&&age<1.1f;bubble.root.gameObject.SetActive(visible);
-                if(visible) {bubble.alpha.alpha=Mathf.Min(1,age/.08f)*Mathf.Clamp01((1.1f-age)/.25f);float x=Mathf.Clamp(f.x-125,330,700);if(p==1 && Mathf.Abs(x-bubbles[0].root.anchoredPosition.x)<255)x=Mathf.Min(950,x+240);bubble.root.anchoredPosition=new Vector2(x+Mathf.Sin(age*70)*Mathf.Max(0,1-age*6)*3,-263);bubble.root.localScale=Vector3.one*Mathf.Lerp(.85f,1,Mathf.Clamp01(age/.1f));}
+                if(visible) {bubble.alpha.alpha=Mathf.Min(1,age/.08f)*Mathf.Clamp01((1.1f-age)/.25f);
+                    // Keep each 250px bubble inside the central safe area and in its own lane.
+                    // The HUD panels occupy the outer 314px on each side.
+                    float x=p==0?Mathf.Clamp(f.x-125,320,500):Mathf.Clamp(f.x-125,600,716);
+                    bubble.root.anchoredPosition=new Vector2(x+Mathf.Sin(age*70)*Mathf.Max(0,1-age*6)*3,-263);
+                    bubble.root.localScale=Vector3.one*Mathf.Lerp(.85f,1,Mathf.Clamp01(age/.1f));}
             }
             // A five-star orbit is separate from the streak dots and persists for the victim's recovery.
             UpdateDizzyStars();
@@ -375,8 +380,13 @@ namespace Hexbound
         TMP_Text[] stars;
         TMP_Text[] impactLabels;
         void UpdateDizzyStars() {
-            if(stars==null||stars[0]==null) {stars=new TMP_Text[10];for(int i=0;i<10;i++)stars[i]=Label(view,new Rect(0,0,30,36),"*",24,gold);}
-            for(int p=0;p<2;p++)for(int i=0;i<5;i++) {var star=stars[p*5+i];star.gameObject.SetActive(Model.players[p].dizzyTime>0&&!Model.Finished);float angle=clock*5+i*Mathf.PI*2/5;star.rectTransform.anchoredPosition=new Vector2(Model.players[p].x-11+Mathf.Cos(angle)*46,-(335+Mathf.Sin(angle)*13));}
+            if(stars==null||stars[0]==null) {stars=new TMP_Text[10];for(int i=0;i<10;i++)stars[i]=Label(view,new Rect(0,0,46,52),"★",36,gold);}
+            for(int p=0;p<2;p++)for(int i=0;i<5;i++) {
+                var star=stars[p*5+i];star.gameObject.SetActive(Model.players[p].dizzyTime>0&&!Model.Finished);
+                float angle=clock*5+i*Mathf.PI*2/5;
+                star.rectTransform.anchoredPosition=new Vector2(Model.players[p].x-23+Mathf.Cos(angle)*54,-(350+Mathf.Sin(angle)*17));
+                star.transform.SetAsLastSibling();
+            }
         }
         void Animate(Actor actor,Pose pose,int frame) {
             float phase=clock*7+actor.id*.3f,bob=Mathf.Sin(phase)*(pose==Pose.Walk?3:1.4f);
