@@ -31,3 +31,14 @@ Original artwork, face files, audio and Main.unity have not been deleted. Proced
 | C6 | Smoke harness was destroyed by the Pambungad -> Pamagat scene load | FIXED: DontDestroyOnLoad |
 | C7 | Labels overflowed their rects with the wider font | MITIGATED: TMP auto-size (min 60%); select screen redo pending |
 | C8 | Character art policy | The real-person photos were used only as expression and outfit reference (see Docs/CHARACTER_DESIGN.md). No likeness reproduced. |
+
+## Continuation fixes (28 October 2026)
+
+- New approved character assets existed but runtime still loaded academy keys: connected Filipino resource keys and full portrait UVs; added eight complete rig-resource checks.
+- Character-card long names truncated: two-line display names and taller readiness regions. Screenshot verification in progress.
+- Bright map scenery reduced HUD contrast: added dark backplates without changing HUD gameplay content.
+- Whole-canvas rotations of disjoint rig parts exposed seams: reduced local part rotations/displacements; whole-character dizzy/fall transforms provide the strong motion. Visual polish remains limited by the simple cut-out rig.
+- Preliminary smoke captured a completed actual-input match but reported undersized readiness/label regions: enlarged key labels, bubble text area, punch labels, stars and rules text. Audit now uses TMP's actual overflow flag after auto-sizing, rather than unscaled preferred height.
+- Direct batch launch failed while user had working project open: tests/build use an isolated source copy and leave user's editor intact.
+- Dead spell/knockout pose labels and unused round-transition helpers removed. Jump enum retained only as a forbidden-state test sentinel.
+- Heuristic active-string scan: zero English candidates. Audio sample audit: 30 files, zero clipped samples. These are not claims of perfect translation or listening quality.

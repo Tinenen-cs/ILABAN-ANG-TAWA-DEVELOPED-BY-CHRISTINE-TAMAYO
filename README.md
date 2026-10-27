@@ -1,47 +1,30 @@
 # ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO
 
-A Unity 2D, local two-player college game project by Christine Tamayo. The Filipino street-brawler adaptation is in progress. The current playable baseline still contains academy artwork and the original moves; it is not the final rubric-compliant game.
+A local two-player Philippine street brawler by Christine Tamayo, for the 2026 midterm. Open in Unity **6000.6.2f1**. Work is on local branch `phase3-polish`; do not push or merge without the owner's decision.
 
-## Open on this computer
+## Play
 
-Use the installed **Unity 6000.6.2f1** Editor. The downloaded project originally recorded 6000.3.27f1, which is not installed here. Let the upgraded editor finish importing and compiling before pressing Play.
+The portable Windows folder is packaged under SUBMISSION when final checks finish. Extract the entire ZIP and double-click **ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe**. Keep its Data folder, UnityPlayer.dll and MonoBleedingEdge together. No Unity installation is needed on the target PC; a clean-PC test remains a separate manual check.
 
-1. In Unity Hub, choose Add project from disk and select the project folder containing Assets, Packages and ProjectSettings.
-2. Choose Unity 6000.6.2f1. Open Assets/Scenes/Main.unity.
-3. Press Play and click inside the Game view. Press any key to start.
-4. For the existing baseline, P1 selects with WASD and confirms/punches with F; P2 uses arrows and J. Enter advances the menus. The new controls and restricted moveset are tracked in CHECKLIST.md.
+P1: A/D to walk, F to punch/confirm. P2: left/right arrows to walk, Right Ctrl or Numpad 0 to punch/confirm. Gamepad: stick/D-pad to walk, South or West face button to punch/confirm. Escape pauses; H opens controls/settings. The first controller owns P1, the next P2; keyboard remains available. Generic joystick trigger is supported, subject to hardware driver compatibility.
 
-Windows Build Support is installed for this editor. The original scene and Resources paths remain intact. Do not open the upgraded project in an older editor; restore the external backup first if rollback is needed.
+Choose both characters independently and confirm each. Choose Palengke, Looban or Plaza; Up/Down changes Oras between Umaga, Hapon and Takipsilim. Time of day changes art only. Every straight punch steps the target back exactly 52 logical units. Five consecutive hits cause a two-second dizzy recovery; a miss, three-second gap or being hit breaks the attacker's streak. Only falling into an edge imburnal ends the round. No health, timer, jump or extra moves.
 
-## Progress and acceptance
+## Project and verification
 
-- [CHECKLIST.md](CHECKLIST.md): all requested features, including eight item-themed characters and three maps.
-- [TEST_PLAN.md](TEST_PLAN.md): manual acceptance tests; pending tests are not claimed as passes.
-- [CREDITS.md](CREDITS.md): source and license inventory.
-- [Original README](Docs/README_ACADEMY_ORIGINAL.md): preserved baseline documentation, controls and asset workflow; historical claims there are not verification on this Windows computer.
+Pambungad and Pamagat are scenes, followed by Main. Character selection, stage selection, combat and results are screens within Main; scene structure is intentionally preserved. Runtime Canvas and cover-fit scenery keep proportional UI and full-screen backgrounds. New adult characters use scripted visual parts, independent of combat rules. Pormal reactions are the default on every launch; Kabataan can be selected in Mga Kontrol.
 
-Confirmed final maps: **Kalye sa Palengke, Looban, Plaza ng Barangay**. Character reference images are in CHARACTER REFERENCE; map references are in MAPS REFERCES (original spelling).
+- CHECKLIST.md: continuous status and rubric evidence.
+- TEST_PLAN.md: automated results and manual checks.
+- BUG_LOG.md: observed problems and fixes.
+- AUDIO_LIST.md and CREDITS.md: all sound/font/art provenance.
+- Docs/new_art_manifest.json: generated map/screen artwork and prompt summaries.
+- CODEX_RESUME.md and HANDOFF.md: exact continuation state.
 
-## Existing source structure
+No original art was deleted. Legacy academy resources remain for rollback and can increase build size. The old Fight-Fght-main folder remains untouched. Real-person reference photos are ignored on this branch and must not be pushed; earlier remote history is for the owner to resolve. Do not force-push or rewrite history automatically.
 
-- Assets/Scenes/Main.unity: single saved entry scene.
-- Assets/Scripts/Runtime/AcademyGame.cs: title, selection, fight, pause, result UI and audio.
-- Assets/Scripts/Runtime/DuelModel.cs: pure C# combat and round rules.
-- Assets/Scripts/Runtime/Roster.cs: eight fighters and three stage definitions.
-- Assets/Scripts/Runtime/AcademyInputManager.cs: per-player input maps and device assignment.
-- Assets/Resources/Input/AcademyControls.inputactions: editable action asset.
-- Assets/Resources/Characters, Effects, Stages, Audio, UI: runtime assets.
-- Assets/Scripts/Editor: scene setup, baseline validation and Windows build commands.
-- Tools: existing asset/audio generators and combat checks.
+## Build and tests
 
-The baseline uses immediate-mode GUI and sprite-sheet cells, not Animator controllers or Rigidbody2D. Preserve its scene structure and asset GUIDs while implementing the new requirements.
+Use FinalizationSetup.ValidateAndBuild in Unity batch mode, or Ilaban ang Tawa > Build Windows x64. Tools/run_final_checks.py runs EditMode, PlayMode and build on the isolated validation copy. Run Tools/audit_submission.py for audio peak checks and heuristic UI-string scanning. Use the built game's `-ilaban-smoke <absolute-output-folder>` argument for opt-in captures and an actual simulated gamepad match. Normal play does not execute the harness.
 
-## Build
-
-Use **Ilaban ang Tawa > Build Windows x64** in the editor. The build command uses Mono and writes the required executable filename into Builds/Windows. This command being available does not mean a final build has passed acceptance.
-
-Distribute the entire output folder, including its Data directory and UnityPlayer.dll, inside a ZIP. An EXE by itself is not portable. Clean-PC testing remains required.
-
-## Repository and backup
-
-The existing repository was renamed to [ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO), retaining its identity and history. The old Fight-Fght URL redirects to it. The pre-upgrade source archive is outside this folder in Fight-Fght-backups. No original art has been deleted.
+Physical USB behavior, keyboard rollover, audio listening, the real monitor, unsigned-executable warnings and a PC without Unity require manual verification. Generated art and procedural animation remain a stylized student prototype; see the final checklist for partial polish items.

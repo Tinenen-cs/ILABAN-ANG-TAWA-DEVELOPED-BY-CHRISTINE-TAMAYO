@@ -1,0 +1,191 @@
+{
+  "ui_english_candidates": [],
+  "audio_files": 30,
+  "audio": [
+    {
+      "file": "Assets/Resources/Ilaban/Audio/Music/Looban.wav",
+      "rms": 0.1339028811941658,
+      "peak": 0.8199462890625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/Music/Palengke.wav",
+      "rms": 0.15045505237355997,
+      "peak": 0.8199462890625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/Music/Plaza.wav",
+      "rms": 0.12624343456980813,
+      "peak": 0.8199462890625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/Music/Selection.wav",
+      "rms": 0.14327030077369177,
+      "peak": 0.8199462890625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/Music/Title.wav",
+      "rms": 0.13537323975607093,
+      "peak": 0.8199462890625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/banderitas.wav",
+      "rms": 0.13898526795764396,
+      "peak": 0.80035400390625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/carousel_slide.wav",
+      "rms": 0.12156772722968032,
+      "peak": 0.695770263671875,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/confirm_sting.wav",
+      "rms": 0.12857414267665712,
+      "peak": 0.560760498046875,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/crowd.wav",
+      "rms": 0.1327993213550197,
+      "peak": 0.8199462890625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/dizzy.wav",
+      "rms": 0.13716807871030023,
+      "peak": 0.499237060546875,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/fall.wav",
+      "rms": 0.137230474245075,
+      "peak": 0.4931640625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/highlight_loop.wav",
+      "rms": 0.07805710129699434,
+      "peak": 0.727569580078125,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/hit_0.wav",
+      "rms": 0.10557273903090848,
+      "peak": 0.61553955078125,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/hit_1.wav",
+      "rms": 0.06745011790446331,
+      "peak": 0.541473388671875,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/hit_2.wav",
+      "rms": 0.10420252777440255,
+      "peak": 0.63543701171875,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/hit_3.wav",
+      "rms": 0.09451502874359662,
+      "peak": 0.557037353515625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/hit_4.wav",
+      "rms": 0.1304196492679669,
+      "peak": 0.54949951171875,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/hit_5.wav",
+      "rms": 0.11219952740382526,
+      "peak": 0.8199462890625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/hit_6.wav",
+      "rms": 0.1304231609524719,
+      "peak": 0.543609619140625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/hit_7.wav",
+      "rms": 0.08488437904492994,
+      "peak": 0.70526123046875,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/jeepney_engine.wav",
+      "rms": 0.13998489920886667,
+      "peak": 0.534912109375,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/menu_back.wav",
+      "rms": 0.12838474793280372,
+      "peak": 0.638671875,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/menu_confirm.wav",
+      "rms": 0.12867953607271343,
+      "peak": 0.61883544921875,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/menu_move.wav",
+      "rms": 0.1293296548708973,
+      "peak": 0.644622802734375,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/opening_bell.wav",
+      "rms": 0.1286078524818507,
+      "peak": 0.57861328125,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/opening_sting.wav",
+      "rms": 0.1392435678873132,
+      "peak": 0.634796142578125,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/punch.wav",
+      "rms": 0.11347845957728452,
+      "peak": 0.669586181640625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/splash.wav",
+      "rms": 0.13526047896921034,
+      "peak": 0.6397705078125,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/step.wav",
+      "rms": 0.12782685404816413,
+      "peak": 0.8199462890625,
+      "clipped_samples": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/win.wav",
+      "rms": 0.1392435678873132,
+      "peak": 0.634796142578125,
+      "clipped_samples": 0
+    }
+  ],
+  "notes": [
+    "Automated English keyword scan is heuristic; actual player-visible strings also dumped by portable QA.",
+    "Required developer title is the sole English phrase allowed. Hardware key labels are technical.",
+    "Real hardware, clean-PC and listening verification remain manual."
+  ]
+}

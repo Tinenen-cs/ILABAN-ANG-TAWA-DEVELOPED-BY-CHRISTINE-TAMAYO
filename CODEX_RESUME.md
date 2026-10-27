@@ -28,3 +28,6 @@ Oras selector wired for Umaga/Hapon/Takipsilim (Up/Down); dusk-only lamp glow. A
 
 ### Artwork checkpoint
 Six lighting-only map edits plus four original screen backgrounds generated using image_gen (text/map inputs only), each viewed and imported as new assets. Dusk maps unchanged. Full paths and prompt summaries: Docs/new_art_manifest.json. Lamps disabled by code outside Takipsilim. Full build/QA of integrated art pending. No remote writes.
+
+### Integration QA checkpoint
+1280x720 actual simulated gamepad match reached dizziness and manhole win; preliminary screenshots exposed label fit, HUD contrast and cut-out seams, now corrected in source. Isolated EditMode/PlayMode/build rerun active. Full 4-resolution pass and portable package still pending. Do not push.

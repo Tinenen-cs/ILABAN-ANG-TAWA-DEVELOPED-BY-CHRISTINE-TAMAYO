@@ -194,7 +194,7 @@ namespace Hexbound
             readiness=new TMP_Text[2];selectionShowcase=new Actor[2];
             for(int p=0;p<2;p++) {
                 int side=p;float x=28+p*278;
-                readiness[p]=Label(view,new Rect(x,132,270,37),"",23,playerColors[p]);
+                readiness[p]=Label(view,new Rect(x,125,270,62),"",18,playerColors[p]);
                 selectionShowcase[p]=ActorView(view,Selected[p],new Rect(x+12,187,245,350));
                 Label(view,new Rect(x-5,516,280,56),Roster.Names[Selected[p]],23,playerColors[p]);
                 Button(view,new Rect(x+5,575,260,47),"Kumpirmahin",()=>Confirm(side));
@@ -207,7 +207,7 @@ namespace Hexbound
                 var preview=ActorView(r,i,new Rect(27,10,90,132));previews.Add(preview);
                 Raw(r,new Rect(108,95,27,27),items[i]);
                 Image(r,new Rect(4,136,137,43),new Color(.025f,.055f,.07f,.95f));Label(r,new Rect(5,134,135,46),Roster.Names[i].Replace("Aling ","Aling\n").Replace("Kuya ","Kuya\n").Replace("Ate ","Ate\n").Replace("Kap ","Kap\n").Replace("Manong ","Manong\n").Replace("Tito ","Tito\n").Replace("Nanay ","Nanay\n"),16);
-                cardMarkers[i]=new Image[2];for(int p=0;p<2;p++) {cardMarkers[i][p]=Image(r,new Rect(p==0?1:139,3,5,174),playerColors[p]);var badge=Label(cardMarkers[i][p].transform,new Rect(p==0?5:-25,0,25,25),(p+1).ToString(),22,playerColors[p]);}
+                cardMarkers[i]=new Image[2];for(int p=0;p<2;p++) {cardMarkers[i][p]=Image(r,new Rect(p==0?1:139,3,5,174),playerColors[p]);var badge=Label(cardMarkers[i][p].transform,new Rect(p==0?5:-25,0,25,34),(p+1).ToString(),22,playerColors[p]);}
                 var hit=Image(r,new Rect(0,0,145,182),Color.clear);hit.raycastTarget=true;var button=hit.gameObject.AddComponent<Button>();button.navigation=new Navigation{mode=Navigation.Mode.None};button.onClick.AddListener(()=>{int side=Ready[0]?1:0;if(!Ready[side]) {Selected[side]=id;Sound("carousel_slide");RefreshDescriptions();}});
             }
             Label(view,new Rect(605,553,620,42),Roster.Descriptions[Selected[0]],20,playerColors[0]);
@@ -259,6 +259,7 @@ namespace Hexbound
             for(int p=0;p<2;p++) {
                 actors[p]=ActorView(view,Model.players[p].character,new Rect(0,0,170,255));
                 float x=p==0?22:958;
+                Image(view,new Rect(x-7,15,314,228),new Color(.025f,.055f,.075f,.84f));
                 var ring=Image(view,new Rect(x+101,20,96,96),playerColors[p],"PortraitMask");
                 var mask=Image(ring.transform,new Rect(5,5,86,86),Color.white,"PortraitMask");mask.gameObject.AddComponent<Mask>().showMaskGraphic=false;
                 var portrait=Raw(mask.transform,new Rect(0,0,86,86),heads[Model.players[p].character]);portrait.uvRect=new Rect(0,0,1,1);
@@ -266,8 +267,8 @@ namespace Hexbound
                 deviceLabels[p]=Label(view,new Rect(x-10,154,320,30),"",18,playerColors[p]);
                 Label(view,new Rect(x,187,300,23),"Sunod na Suntok",18,gold);
                 dots[p]=new Image[5];for(int i=0;i<5;i++) dots[p][i]=Image(view,new Rect(x+77+i*30,215,22,22),new Color(.24f,.32f,.35f),"HiloDot");
-                var orb=Image(view,new Rect(p==0?28:1156,610,96,96),playerColors[p],"Suntok");Label(orb.transform,new Rect(-20,63,136,28),"Suntok",23,cream);
-                var bubble=new Bubble();bubble.root=Rect(view,"Reaksyon",new Rect(0,0,250,69));Image(bubble.root,new Rect(0,0,250,69),Color.white,"SpeechBubble");bubble.label=Label(bubble.root,new Rect(10,4,230,53),"",23,ink);bubble.alpha=bubble.root.gameObject.AddComponent<CanvasGroup>();bubble.alpha.blocksRaycasts=false;bubble.alpha.alpha=0;bubbles[p]=bubble;
+                var orb=Image(view,new Rect(p==0?28:1156,610,96,96),playerColors[p],"Suntok");Label(orb.transform,new Rect(-20,60,136,36),"Suntok",21,cream);
+                var bubble=new Bubble();bubble.root=Rect(view,"Reaksyon",new Rect(0,0,250,69));Image(bubble.root,new Rect(0,0,250,69),Color.white,"SpeechBubble");bubble.label=Label(bubble.root,new Rect(10,4,230,57),"",19,ink);bubble.alpha=bubble.root.gameObject.AddComponent<CanvasGroup>();bubble.alpha.blocksRaycasts=false;bubble.alpha.alpha=0;bubbles[p]=bubble;
             }
             Raw(view,new Rect(0,0,1280,720),Tex("UI/Vignette"));
             Label(view,new Rect(470,668,340,33),"Ihinto [ESC]    Mga Kontrol [H]",21,gold);
@@ -286,7 +287,7 @@ namespace Hexbound
         {
             Shade(.87f);Heading("Mga Kontrol","Malaya ang bawat manlalaro sa sariling teklado o mando.");
             Label(view,new Rect(110,145,1060,151),"MANLALARO 1    A / D  LUMAKAD    F  SUNTOK / KUMPIRMAHIN\nMANLALARO 2    PALASO KALIWA / KANAN  LUMAKAD    CTRL KANAN / 0  SUNTOK\nMANDO    PALANCA / MGA PALASO  LUMAKAD    IBABA / KALIWANG PINDUTAN  SUNTOK\nH  MGA KONTROL    ESC  BUMALIK / IHINTO",23,cream,TextAnchor.MiddleLeft);
-            Label(view,new Rect(110,310,1060,60),"Isang suntok, isang hakbang paatras. Limang sunod na tama: hilo.\nItulak ang katunggali sa imburnal upang manalo.",24,gold);
+            Label(view,new Rect(110,300,1060,84),"Isang suntok, isang hakbang paatras. Limang sunod na tama: hilo.\nItulak ang katunggali sa imburnal upang manalo.",24,gold);
             string[] labels={"Wika ng Reaksyon","Pangunahing Lakas","Musika","Tunog"};menuButtons=new Button[5];
             for(int i=0;i<4;i++) {int index=i;menuButtons[i]=Button(view,new Rect(280,398+i*50,720,44),SettingText(i),()=>{setting=focus=index;AdjustSetting(1);});}
             menuButtons[4]=Button(view,new Rect(510,630,260,52),"Bumalik",CloseControls);
@@ -316,7 +317,7 @@ namespace Hexbound
                 for(int p=0;p<2;p++) {if(!Ready[p]) {int dir=controls.Navigate(p).x;if(dir!=0) {Selected[p]=(Selected[p]+dir+8)%8;Sound("carousel_slide");RefreshDescriptions();}if(controls.Press(p,"Confirm")) {Confirm(p);if(ScreenNow!=ScreenState.Select)return;}}
                     if(controls.Press(p,"Cancel")) {if(Ready[p])Ready[p]=false;else{Show(ScreenState.Title);return;}}}
                 for(int p=0;p<2;p++){Animate(selectionShowcase[p],Pose.Idle,(int)(clock*4)%4);}
-                for(int p=0;p<2;p++)readiness[p].text="Manlalaro "+(p+1)+"  /  "+(Ready[p]?"Handa na":"Kumpirmahin: "+controls.Prompt(p,"Confirm"));
+                for(int p=0;p<2;p++)readiness[p].text="Manlalaro "+(p+1)+"\n"+(Ready[p]?"Handa na":"Kumpirmahin: "+controls.Prompt(p,"Confirm"));
                 for(int i=0;i<8;i++) {bool active=i==Selected[0]||i==Selected[1];cards[i].localScale=Vector3.one*(active?1.035f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);Animate(previews[i],active?Pose.Punch:Pose.Idle,(int)(clock*(active?5:3))%4);}
             }
             else if(ScreenNow==ScreenState.StageSelect) {
@@ -374,7 +375,7 @@ namespace Hexbound
         TMP_Text[] stars;
         TMP_Text[] impactLabels;
         void UpdateDizzyStars() {
-            if(stars==null||stars[0]==null) {stars=new TMP_Text[10];for(int i=0;i<10;i++)stars[i]=Label(view,new Rect(0,0,22,22),"*",27,gold);}
+            if(stars==null||stars[0]==null) {stars=new TMP_Text[10];for(int i=0;i<10;i++)stars[i]=Label(view,new Rect(0,0,30,36),"*",24,gold);}
             for(int p=0;p<2;p++)for(int i=0;i<5;i++) {var star=stars[p*5+i];star.gameObject.SetActive(Model.players[p].dizzyTime>0&&!Model.Finished);float angle=clock*5+i*Mathf.PI*2/5;star.rectTransform.anchoredPosition=new Vector2(Model.players[p].x-11+Mathf.Cos(angle)*46,-(335+Mathf.Sin(angle)*13));}
         }
         void Animate(Actor actor,Pose pose,int frame) {
@@ -383,11 +384,11 @@ namespace Hexbound
             float w=actor.root.sizeDelta.x,h=actor.root.sizeDelta.y;
             for(int i=0;i<6;i++) {
                 var r=actor.parts[i].rectTransform;r.anchoredPosition=new Vector2(0,bob);r.localScale=Vector3.one;r.localRotation=Quaternion.identity;
-                if(i<2&&pose==Pose.Walk){r.localRotation=Quaternion.Euler(0,0,Mathf.Sin(phase*1.6f+i*Mathf.PI)*6);r.anchoredPosition+=new Vector2(Mathf.Sin(phase*1.6f+i*Mathf.PI)*w*.025f,0);}
-                if(i==4&&pose==Pose.Punch){r.anchoredPosition+=new Vector2(punch*w*.09f,0);r.localRotation=Quaternion.Euler(0,0,punch*8);}
-                if(i==5){r.anchoredPosition+=new Vector2(0,Mathf.Sin(phase)*h*.005f);if(pose==Pose.Dizzy)r.localRotation=Quaternion.Euler(0,0,Mathf.Sin(clock*12)*5);}
+                if(i<2&&pose==Pose.Walk){r.localRotation=Quaternion.Euler(0,0,Mathf.Sin(phase*1.6f+i*Mathf.PI)*.5f);r.anchoredPosition+=new Vector2(Mathf.Sin(phase*1.6f+i*Mathf.PI)*w*.003f,0);}
+                if(i==4&&pose==Pose.Punch){r.anchoredPosition+=new Vector2(punch*w*.015f,0);r.localRotation=Quaternion.Euler(0,0,punch*.6f);}
+                if(i==5){r.anchoredPosition+=new Vector2(0,0);if(pose==Pose.Dizzy)r.localRotation=Quaternion.Euler(0,0,0);}
                 if(pose==Pose.Hurt)r.anchoredPosition+=new Vector2(-w*.018f*Mathf.Sin(clock*40),0);
-                if(pose==Pose.Win&&i>=3)r.localRotation=Quaternion.Euler(0,0,Mathf.Sin(phase)*4);
+                if(pose==Pose.Win&&i>=3)r.localRotation=Quaternion.Euler(0,0,Mathf.Sin(phase)*.5f);
             }
             actor.dust.color=new Color(1,.78f,.45f,pose==Pose.Walk?.3f+frame*.08f:pose==Pose.Punch?.45f:pose==Pose.Win?.3f:.06f);
         }
