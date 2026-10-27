@@ -31,3 +31,6 @@ Six lighting-only map edits plus four original screen backgrounds generated usin
 
 ### Integration QA checkpoint
 1280x720 actual simulated gamepad match reached dizziness and manhole win; preliminary screenshots exposed label fit, HUD contrast and cut-out seams, now corrected in source. Isolated EditMode/PlayMode/build rerun active. Full 4-resolution pass and portable package still pending. Do not push.
+
+### Opening parallax checkpoint
+Five generated full-canvas layers inspected and saved under Backgrounds/Pambungad; aligned Sky/Skyline/Midground/Wires/Street move at independent small offsets. Source imagery preserved. Manifest records source paths/prompts. Rebuild needed after this opening-only change; isolated rule/input tests are running. No push.
