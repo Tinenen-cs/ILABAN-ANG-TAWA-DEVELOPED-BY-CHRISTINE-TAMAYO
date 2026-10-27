@@ -16,3 +16,13 @@ Branch: `phase3-polish`. `main` untouched — never merge without the student's 
 1. Close the editor (with the student's OK), then run batch compile + EditMode/PlayMode tests.
 2. Fix CS0618 warnings (use FindAnyObjectByType).
 3. Rebuild Windows x64, smoke test, then work through items B–K in order.
+
+## Codex session findings (read-only: ~/.codex/sessions/2026/10/28/rollout-...01a17e88....jsonl)
+- Student decisions: folder renamed to the full title; ONLY 3 maps (Palengke, Looban, Plaza); 8 roster names confirmed;
+  UI references = LAYOUT ONLY, keep Filipino street theme.
+- Codex built/validated in a COPY of the project: `%LOCALAPPDATA%\Temp\Ilaban-Phase2-Validation` (has Builds\Windows\*.exe).
+  Its last actions: launching that exe for screenshots into QA_SCREENSHOTS\Preliminary; robocopying Fonts back into the real project.
+  That copy is reference only; the real project is the source of truth.
+- AI backgrounds DID finish: ~/.codex/generated_images/01a17e88.../ (3 PNGs, 1672x941). Copied to
+  Assets/Resources/Ilaban/Stages/HD/{Plaza,Palengke,Looban}_HD.png. Not wired into the game yet. 640x360 placeholders kept.
+- UI references saved in `UI REFERENCE/` (character select, match HUD, arena select), provided by the student in chat.
