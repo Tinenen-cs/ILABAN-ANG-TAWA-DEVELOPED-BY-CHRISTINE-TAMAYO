@@ -186,15 +186,15 @@
     ],
     [
       "x",
-      "Rebuilt from clean clone of real commit 3979522; build passed 65 assertions, EditMode 9/9 and graphics-enabled PlayMode 4/4."
+      "Rebuilt from clean clone of real commit 2f3fbbe; build passed 65 assertions, EditMode 9/9 and graphics-enabled PlayMode 4/4."
     ],
     [
       "x",
       "Preliminary built 1280x720 actual simulated gamepad match reached dizzy and manhole win."
     ],
     [
-      "p",
-      "Latest screenshots at four required resolutions, corrected overflow audit, final extracted build launch and package validation in progress."
+      "x",
+      "Corrected stars and disjoint bubble lanes passed 25 capture checks at each exact target resolution, including 2560x1440; no glyph/overflow/runtime issues."
     ],
     [
       "x",

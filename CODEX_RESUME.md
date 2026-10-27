@@ -22,3 +22,5 @@ Do not re-run Tools/generate_ilaban_assets.py blindly: it regenerates procedural
 
 Latest verification: 5f67ce1 is cloned in %TEMP%\Ilaban-Final-Validation with exact matching HEAD. Final build passed 65 rule assertions; EditMode 9/9, graphics-enabled PlayMode 4/4. Corrected-source QA/package remain in progress.
 
+
+Correction verification: dizzy stars use the supported `*` glyph, 46x52 region, y=350 orbit, and last-sibling draw order; reaction bubbles stay separated in x lanes 340-390 and 650-695. Build/test and all four portable QA resolutions passed from the validation clone. Package/extraction verification next.

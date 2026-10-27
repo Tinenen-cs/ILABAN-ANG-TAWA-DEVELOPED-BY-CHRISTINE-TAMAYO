@@ -49,3 +49,7 @@ Once present and verified, upload only SUBMISSION/ILABAN ANG TAWA DEVELOPED BY C
 
 
 - The first portable screen pass caught a missing star-font glyph. It was replaced with a supported large asterisk; the corrected build has 65 assertions, EditMode 9/9, and graphics PlayMode 4/4.
+
+- Final corrected UI QA passed 1280x720, 1366x768, 1920x1080 and 2560x1440. Inspected dizzy, match and result captures: five supported asterisk stars are drawn above the head, reaction bubbles occupy separated central lanes with safe margins from the outer HUD. Automated capture reports zero missing glyphs, TMP overflow or runtime errors. All 9 map/time screens and actual simulated gamepad match to manhole were covered.
+- QA ran from ILABAN_PROJECT `%TEMP%\Ilaban-Final-Validation`; its HEAD matched real source commit 2f3fbbe at build time.
+- Packaging on the same build follows.

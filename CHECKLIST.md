@@ -57,9 +57,9 @@ Evidence: Logs XML/build/runtime logs; QA_SCREENSHOTS captures; Docs/FINAL_STATI
 - [x] Required developer title format retained; Pormal remains launch default.
 - [x] 65 deterministic rubric checks plus 50-hit displacement and reaction-independence tests.
 - [x] Expanded EditMode XML reports 9/9 passed, including all map/time and rig resources.
-- [x] Rebuilt from clean clone of real commit 3979522; build passed 65 assertions, EditMode 9/9 and graphics-enabled PlayMode 4/4.
+- [x] Rebuilt from clean clone of real commit 2f3fbbe; build passed 65 assertions, EditMode 9/9 and graphics-enabled PlayMode 4/4.
 - [x] Preliminary built 1280x720 actual simulated gamepad match reached dizzy and manhole win.
-- [p] Latest screenshots at four required resolutions, corrected overflow audit, final extracted build launch and package validation in progress.
+- [x] Corrected stars and disjoint bubble lanes passed 25 capture checks at each exact target resolution, including 2560x1440; no glyph/overflow/runtime issues.
 - [x] Active English keyword scan found zero candidates; font/audio/static audit scripts saved.
 - [~] Actual monitor fit and perceived readability — NEEDS MANUAL TEST.
 - [~] Clean second PC without Unity — NEEDS MANUAL TEST.
