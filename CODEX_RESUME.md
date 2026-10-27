@@ -22,3 +22,6 @@ Resume commands: HANDOFF.md section G. Figma: https://www.figma.com/design/9J9nq
 
 ## Codex continuation: character rig step (28 October 2026)
 Approved original base art now split into six disjoint registered visual parts by Tools/rig_characters.py. Runtime loads the new Filipino keys, full portraits, and code-driven part transforms. No real-person photos used or uploaded. UI name-label heights adjusted. Runtime compilation/tests still pending for this step. No push or merge permitted.
+
+### Continuation: layout and time controls
+Oras selector wired for Umaga/Hapon/Takipsilim (Up/Down); dusk-only lamp glow. Actor aspect ratios preserved, two-line card names and transition fade added. Removed unused spell/knockout pose and round helper remnants; Jump remains a test-only sentinel. Compile and screenshot verification pending. Latest resume: open this project on phase3-polish; read CODEX_RESUME.md then HANDOFF.md; do not push.

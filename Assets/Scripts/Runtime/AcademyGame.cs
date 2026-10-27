@@ -38,7 +38,7 @@ namespace Hexbound
             new[]{new Vector2(.229f,.29f),new Vector2(.700f,.33f),new Vector2(.836f,.29f)},
             new[]{new Vector2(.146f,.165f),new Vector2(.428f,.23f),new Vector2(.858f,.26f),new Vector2(.944f,.165f)}};
         static readonly float[] FarStreet={.62f,.61f,.585f};
-        Texture2D MapTex(int arena) {var n=Roster.StageFiles[arena];return Tex("Maps/"+n+"/"+n+"_Takipsilim")??Tex("Stages/"+n);}
+        Texture2D MapTex(int arena) {var n=Roster.StageFiles[arena];return Tex("Maps/"+n+"/"+n+"_"+Times[TimeOfDay])??Tex("Maps/"+n+"/"+n+"_Takipsilim")??Tex("Stages/"+n);}
         Actor[] actors;
         TMP_Text[] names,deviceLabels;
         Image[][] dots;
@@ -54,7 +54,11 @@ namespace Hexbound
 
         AudioSource music,sfx,highlight;
         int selectedArena,focus,setting;
+        public int TimeOfDay {get;private set;}=2;
+        static readonly string[] Times={"Umaga","Hapon","Takipsilim"};
+        TMP_Text timeLabel;
         bool fromFight;
+        float enteredAt;
         float clock,resultTime,master=.8f,musicLevel=.55f,soundLevel=.7f;
         readonly Color cream=new Color32(245,229,194,255),gold=new Color32(224,181,105,255),ink=new Color32(16,30,40,255);
         readonly Color[] playerColors={new Color32(81,214,218,255),new Color32(249,135,116,255)};
@@ -131,9 +135,10 @@ namespace Hexbound
         void SaveAudio() {ApplyAudio();PlayerPrefs.SetFloat("Ilaban.Master",master);PlayerPrefs.SetFloat("Ilaban.Music",musicLevel);PlayerPrefs.SetFloat("Ilaban.Sound",soundLevel);}
         public void Show(ScreenState state)
         {
-            ScreenNow=state;focus=0;previews.Clear();flames.Clear();cards=null;cardMarkers=null;menuButtons=null;pausePanel=null;resultPanel=null;
+            ScreenNow=state;enteredAt=clock;focus=0;previews.Clear();flames.Clear();cards=null;cardMarkers=null;menuButtons=null;pausePanel=null;resultPanel=null;
             if(view!=null) {view.gameObject.SetActive(false);Destroy(view.gameObject);}
-            view=Rect(safe,"Screen "+state,new Rect(0,0,1280,720));
+            view=Rect(safe,"Screen "+state,new Rect(0,0,1280,720));view.gameObject.AddComponent<CanvasGroup>();
+            for(int i=0;i<3;i++)stages[i]=MapTex(i);
             scenery.texture=stages[selectedArena];
             Ambience(state==ScreenState.Fight?Model.ArenaIndex:selectedArena,state!=ScreenState.Controls);
             if(state==ScreenState.Title) {Music("Title");Title();}
@@ -153,7 +158,7 @@ namespace Hexbound
             if(!enabled)return;
             for(int i=0;i<3;i++) {var c=Area(ambience,Fx("Cloud"),new Rect(0,.02f+i*.07f,.16f-i*.03f,.08f-i*.015f));c.color=new Color(1,1,1,.32f-i*.07f);clouds.Add(c);}
             jeepney=Area(ambience,Tex("UI/Jeepney"),new Rect(0,FarStreet[arena]-.075f,.09f,.075f)).rectTransform;jeepney.GetComponent<RawImage>().color=new Color(.82f,.78f,.74f,.92f);
-            foreach(var p in MapLamps[arena]) {var l=Area(ambience,Fx("Glow"),new Rect(p.x-.045f,p.y-.08f,.09f,.16f));lamps.Add(l);}
+            if(TimeOfDay==2)foreach(var p in MapLamps[arena]) {var l=Area(ambience,Fx("Glow"),new Rect(p.x-.045f,p.y-.08f,.09f,.16f));lamps.Add(l);}
             shimmer=Area(ambience,Fx("Shimmer"),new Rect(0,.70f,.4f,.10f));
         }
         Texture2D Fx(string name)=>Tex("Maps/FX/"+name);
@@ -201,7 +206,7 @@ namespace Hexbound
                 Slant(r,new Rect(0,0,145,182),new Color(.055f,.115f,.14f,.98f));
                 var preview=ActorView(r,i,new Rect(27,10,90,132));previews.Add(preview);
                 Raw(r,new Rect(108,95,27,27),items[i]);
-                Image(r,new Rect(4,136,137,43),new Color(.025f,.055f,.07f,.95f));Label(r,new Rect(5,134,135,46),Roster.Names[i],15);
+                Image(r,new Rect(4,136,137,43),new Color(.025f,.055f,.07f,.95f));Label(r,new Rect(5,134,135,46),Roster.Names[i].Replace("Aling ","Aling\n").Replace("Kuya ","Kuya\n").Replace("Ate ","Ate\n").Replace("Kap ","Kap\n").Replace("Manong ","Manong\n").Replace("Tito ","Tito\n").Replace("Nanay ","Nanay\n"),16);
                 cardMarkers[i]=new Image[2];for(int p=0;p<2;p++) {cardMarkers[i][p]=Image(r,new Rect(p==0?1:139,3,5,174),playerColors[p]);var badge=Label(cardMarkers[i][p].transform,new Rect(p==0?5:-25,0,25,25),(p+1).ToString(),22,playerColors[p]);}
                 var hit=Image(r,new Rect(0,0,145,182),Color.clear);hit.raycastTarget=true;var button=hit.gameObject.AddComponent<Button>();button.navigation=new Navigation{mode=Navigation.Mode.None};button.onClick.AddListener(()=>{int side=Ready[0]?1:0;if(!Ready[side]) {Selected[side]=id;Sound("carousel_slide");RefreshDescriptions();}});
             }
@@ -226,14 +231,18 @@ namespace Hexbound
                 Image(r,new Rect(10,309,330,71),new Color(.025f,.05f,.07f,.97f));Label(r,new Rect(15,319,320,50),Roster.Stages[i],30);
                 var hit=Image(r,new Rect(0,0,350,390),Color.clear);hit.raycastTarget=true;var b=hit.gameObject.AddComponent<Button>();b.navigation=new Navigation{mode=Navigation.Mode.None};b.onClick.AddListener(()=>ChooseStage(index));
             }
-            focusLabel=Label(view,new Rect(150,565,980,48),Roster.StageDescriptions[selectedArena],25,gold);
+            focusLabel=Label(view,new Rect(150,550,980,45),Roster.StageDescriptions[selectedArena],25,gold);
+            timeLabel=Label(view,new Rect(360,600,560,34),"Oras: "+Times[TimeOfDay]+"  [Pataas / Pababa]",22,gold);
             Button(view,new Rect(35,646,205,52),"Bumalik",OpenSelect);Button(view,new Rect(1040,646,205,52),"Simulan",StartMatch);
             Label(view,new Rect(260,645,760,53),"KALIWA / KANAN  PUMILI    ENTER / SUNTOK  KUMPIRMAHIN",20,gold);
         }
+        public void SetTimeOfDay(int time){TimeOfDay=(time+3)%3;Show(ScreenState.StageSelect);Sound("menu_move");}
+        public void SelectArena(int index){selectedArena=Mathf.Clamp(index,0,2);}
         void ChooseStage(int index) {selectedArena=index;scenery.texture=stages[index];Ambience(index,true);ambience.SetAsFirstSibling();if(focusLabel!=null)focusLabel.text=Roster.StageDescriptions[index];Sound("carousel_slide");}
         public void StartMatch() {if(!Ready[0]||!Ready[1])return;Model=new DuelModel(Selected[0],Selected[1],selectedArena);Paused=false;resultTime=0;Show(ScreenState.Fight);for(int p=0;p<2;p++)React(p,"ready");}
         Actor ActorView(Transform parent,int id,Rect area)
         {
+            float originalWidth=area.width;area.width=area.height*bodies[id].width/bodies[id].height;area.x+=(originalWidth-area.width)/2;
             var a=new Actor {id=id,root=Rect(parent,"Tauhan",area)};
             a.dust=Raw(a.root,new Rect(-10,area.height-28,area.width+20,40),Tex("UI/Glow"));a.dust.color=new Color(.9f,.8f,.6f,.3f);
             a.parts=new RawImage[6];string[] partNames={"LegL","LegR","Torso","ArmL","ArmR","Head"};
@@ -294,7 +303,7 @@ namespace Hexbound
         void CloseControls() {Show(fromFight?ScreenState.Fight:ScreenState.Title);Paused=fromFight;}
         void Update()
         {
-            clock+=Time.unscaledDeltaTime;controls.Poll(clock);
+            clock+=Time.unscaledDeltaTime;controls.Poll(clock);if(view!=null)view.GetComponent<CanvasGroup>().alpha=Mathf.Clamp01((clock-enteredAt)/.16f);
             var cr=(RectTransform)canvas.transform;float fit=Mathf.Min(cr.rect.width/1280f,cr.rect.height/720f);safe.localScale=new Vector3(fit,fit,1);
             // Cover unused aspect-ratio space with a proportion-preserving background.
             float cover=Mathf.Max(cr.rect.width/1280f,cr.rect.height/720f);scenery.rectTransform.sizeDelta=new Vector2(1280*cover,720*cover);scenery.rectTransform.anchorMin=scenery.rectTransform.anchorMax=new Vector2(.5f,.5f);scenery.rectTransform.pivot=new Vector2(.5f,.5f);scenery.rectTransform.anchoredPosition=ScreenNow==ScreenState.Fight?Vector2.zero:new Vector2(Mathf.Sin(clock*.2f)*2,Mathf.Sin(clock*.17f)*2);
@@ -311,6 +320,7 @@ namespace Hexbound
                 for(int i=0;i<8;i++) {bool active=i==Selected[0]||i==Selected[1];cards[i].localScale=Vector3.one*(active?1.035f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);Animate(previews[i],active?Pose.Punch:Pose.Idle,(int)(clock*(active?5:3))%4);}
             }
             else if(ScreenNow==ScreenState.StageSelect) {
+                int vertical=controls.Navigate(0).y!=0?controls.Navigate(0).y:controls.Navigate(1).y;if(vertical!=0){SetTimeOfDay(TimeOfDay-vertical);return;}
                 int dir=controls.Navigate(0).x!=0?controls.Navigate(0).x:controls.Navigate(1).x;if(dir!=0)ChooseStage((selectedArena+dir+3)%3);
                 for(int i=0;i<3;i++){cards[i].localScale=Vector3.one*(i==selectedArena?1.04f:.96f);stageBars[i].color=i==selectedArena?gold:new Color(.22f,.31f,.34f);}
                 if(controls.Any("Cancel"))OpenSelect();else if(controls.Any("Confirm"))StartMatch();
@@ -345,7 +355,7 @@ namespace Hexbound
             } else {resultTime+=Time.deltaTime;if(resultTime>.65f){if(controls.Any("Cancel")){OpenSelect();return;}if(controls.Any("Confirm")){StartMatch();return;}}}
             for(int p=0;p<2;p++) {
                 var f=Model.players[p];var actor=actors[p];float fall=f.fallen?Mathf.Clamp01(resultTime/.65f):0;
-                actor.root.anchoredPosition=new Vector2(f.x-85,-(343+fall*170));actor.root.localScale=Vector3.one*(1-fall*.75f);
+                actor.root.anchoredPosition=new Vector2(f.x-actor.root.sizeDelta.x/2,-(343+fall*170));actor.root.localScale=Vector3.one*(1-fall*.75f);
                 actor.head.rectTransform.localScale=Vector3.one; // Keep each original face readable while the body faces its rival.
                 actor.root.localRotation=Quaternion.Euler(0,0,f.dizzyTime>0?Mathf.Sin(clock*12)*6:f.fallen?fall*80:0);
                 actor.root.gameObject.SetActive(!f.fallen||resultTime<.8f);Animate(actor,f.pose,(int)(clock*8)%4);foreach(var part in actor.parts)part.uvRect=f.facing<0?new Rect(1,0,-1,1):new Rect(0,0,1,1);
@@ -369,7 +379,7 @@ namespace Hexbound
         }
         void Animate(Actor actor,Pose pose,int frame) {
             float phase=clock*7+actor.id*.3f,bob=Mathf.Sin(phase)*(pose==Pose.Walk?3:1.4f);
-            float punch=pose==Pose.Punch?Mathf.Sin((1-(Model!=null&&Model.players[0].character==actor.id?Model.players[0].actionTime/DuelModel.PunchDuration:Mathf.Repeat(clock,1)))*Mathf.PI):0;
+            float punch=pose==Pose.Punch?Mathf.Max(0,Mathf.Sin(clock*10)):0;
             float w=actor.root.sizeDelta.x,h=actor.root.sizeDelta.y;
             for(int i=0;i<6;i++) {
                 var r=actor.parts[i].rectTransform;r.anchoredPosition=new Vector2(0,bob);r.localScale=Vector3.one;r.localRotation=Quaternion.identity;

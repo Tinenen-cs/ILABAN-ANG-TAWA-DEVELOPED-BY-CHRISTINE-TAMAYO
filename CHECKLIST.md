@@ -72,3 +72,6 @@ Names are proposals; reference faces must remain unchanged. Each line requires a
 ## Current continuation checkpoint
 - [~] New Filipino runtime keys, full portraits and six-part procedural rigs connected; compile/visual verification pending.
 - [x] Private reference folder ignored; duplicate image hashes scanned and ignored if found. No push/history rewrite.
+
+### Continuation: layout and time controls
+Oras selector wired for Umaga/Hapon/Takipsilim (Up/Down); dusk-only lamp glow. Actor aspect ratios preserved, two-line card names and transition fade added. Removed unused spell/knockout pose and round helper remnants; Jump remains a test-only sentinel. Compile and screenshot verification pending. Latest resume: open this project on phase3-polish; read CODEX_RESUME.md then HANDOFF.md; do not push.

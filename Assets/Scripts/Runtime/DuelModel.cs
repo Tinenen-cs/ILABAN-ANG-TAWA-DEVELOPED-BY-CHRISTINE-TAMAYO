@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Hexbound
 {
-    // Legacy row indices are retained so the original atlases remain usable as fallbacks.
-    public enum Pose { Idle, Walk, Punch, Hurt, Knockout, Combo, Special, Power, Push, Jump, Dizzy, Fall, Win }
+    // Jump remains a test sentinel only; no code can enter it.
+    public enum Pose { Idle, Walk, Punch, Hurt, Jump, Dizzy, Fall, Win }
     public struct DuelInput { public float move; public bool punch, jump, push, special, power, block; }
     public sealed class Fighter
     {
@@ -12,7 +12,6 @@ namespace Hexbound
         public float x, actionTime, actionLength, stun, dizzyTime, streakTime, stepClock;
         public bool attackPending, fallen;
         public Pose pose;
-        public bool IsKnockedDown => dizzyTime > 0;
         public Fighter(int character, float x, int facing) { this.character=character; this.x=x; this.facing=facing; }
     }
     public sealed class Burst { public int character; public float x, life=.35f; }
@@ -39,15 +38,12 @@ namespace Hexbound
         readonly int startingArena;
         public int ArenaIndex => startingArena;
         public bool Finished => winner!=-2;
-        public bool MatchFinished => Finished;
-        public float RiftArtSize => 140;
         public static bool OverRift(float x,float unused=0) => x<=HoleInnerEdge || x>=1280-HoleInnerEdge;
         public DuelModel(int p1,int p2,int arena=0)
         {
             startingArena=Math.Max(0,Math.Min(2,arena));
             players=new[]{new Fighter(p1,430,1),new Fighter(p2,850,-1)};
         }
-        public void NextRound() { }
         void Emit(int p,string kind) { events.Add(new CombatEvent(p,kind)); }
         public void Tick(float dt,DuelInput a,DuelInput b)
         {
