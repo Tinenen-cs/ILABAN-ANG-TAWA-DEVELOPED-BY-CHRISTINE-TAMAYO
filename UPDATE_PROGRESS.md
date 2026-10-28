@@ -77,3 +77,9 @@ Next: Step 9 trapped-focus validation popups; then 10 win/lose reactions, 11 sub
 DONE: shared rounded soft-sound validation modal blocks pointer and consumes keyboard/gamepad dismissal. Readiness start, invalid stage/settings/result attempts covered; same-character duels intentionally allowed. Clean rerun PlayMode 13/13 exit 0, build/65 checks exit 0, 17-screen native full-match smoke passed; popup/banner viewed.
 
 Next: Step 10 verify and animate all win/lose poses; then 11 sky ambience/performance, 12 Hilo proof, 13 final multi-resolution QA, 14 single EXE.
+
+## UPDATE2 step 10 — 2026-10-28T16:46:25.717884+00:00
+
+DONE: explicit whole-body Lose rendering and character win/lose cue playback; dedicated original Win/Lose source poses for every fighter, four frames each, sparkle victory and slump/drain loss. Build/65 checks and 172 native strike/hurt/win/lose/pair screenshots passed; all-eight emote contact sheet personally viewed.
+
+Next: Step 11 subtle sky clouds and measured frame timings; then 12 five-segment Hilo verification, 13 full QA/docs/push, 14 portable single EXE.

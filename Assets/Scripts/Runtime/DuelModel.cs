@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Hexbound
 {
     // Jump remains a test sentinel only; no code can enter it.
-    public enum Pose { Idle, Walk, Punch, Hurt, Jump, Dizzy, Fall, Win }
+    public enum Pose { Idle, Walk, Punch, Hurt, Jump, Dizzy, Fall, Win, Lose }
     public struct DuelInput { public float move; public bool punch, jump, push, special, power, block; }
     public sealed class Fighter
     {

@@ -489,7 +489,7 @@ namespace Hexbound
         {
             string line=reactions.Choose(p,Model.players[p].character,kind,clock);if(line==null)return;
             bubbles[p].label.text=language==1&&reactions.Mode==LanguageMode.Pormal?EnglishReaction(line):line;bubbles[p].started=clock;
-            QueueCharacterCue(Model.players[p].character);
+            if(kind=="win"||kind=="lose")Sound("reaction_"+Model.players[p].character);else QueueCharacterCue(Model.players[p].character);
         }
         void Controls()
         {
@@ -641,7 +641,7 @@ namespace Hexbound
         }
         void Animate(Actor actor,Pose pose,int frame) {
             if(actor==null||actor.body==null||actor.root==null)return;
-            int action=pose==Pose.Walk?1:pose==Pose.Punch?2:pose==Pose.Hurt?3:pose==Pose.Dizzy?4:pose==Pose.Fall?5:pose==Pose.Win?6:0;
+            int action=pose==Pose.Walk?1:pose==Pose.Punch?2:pose==Pose.Hurt?3:pose==Pose.Dizzy?4:pose==Pose.Fall?5:pose==Pose.Win?6:pose==Pose.Lose?7:0;
             var frames=actionFrames[actor.id][action];var wholeBody=frames[frame%frames.Length];if(wholeBody!=null&&actor.body.texture!=wholeBody)actor.body.texture=wholeBody;
             var anchor=animationAnchors.characters[actor.id].actions[action].frames[frame%frames.Length];
             float x=actor.body.uvRect.width<0?896-anchor.head.x:anchor.head.x;
