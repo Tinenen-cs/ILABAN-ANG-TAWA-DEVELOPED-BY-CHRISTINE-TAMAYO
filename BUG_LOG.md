@@ -89,3 +89,6 @@ Native result review found the final impact star persisted because combat burst 
 
 ### HUD grain transparency pinholes
 Full-resolution review exposed bright hairlines in the wood bar. The procedural grain was drawn directly with low alpha, replacing the opaque wood pixels. Grain now draws onto a separate layer and alpha-composites onto the solid frame, retaining subtle color without holes. Ring aperture and rounded outside edges remain transparent. Rebuild/retest/native proof required after the texture correction.
+
+### Optional single-file SFX rejected
+Official public-domain LZMA SDK 26.05 7zSD.sfx wrapper was created from the exact tested build. Windows refused its normal launch with WinError 740 (elevation required). No elevation, manifest workaround, security setting or antivirus exclusion was attempted. B fails the no-setup requirement and is not recommended or uploaded. A ZIP passes and is the final Canvas deliverable.

@@ -1,0 +1,45 @@
+[
+  {
+    "case": "A_Extracted_1920x1080",
+    "exe": "C:\\Users\\chris\\AppData\\Local\\Temp\\Ilaban-Extracted-qv6wxfi2\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe",
+    "exit": 0,
+    "passed": true,
+    "issues": [],
+    "image_sizes": [
+      [
+        1920,
+        1080
+      ]
+    ],
+    "seconds_to_opening_capture": 8.56,
+    "elapsed_seconds": 26.61,
+    "native_monitor": [
+      1920,
+      1080
+    ],
+    "default_launch_check": "separate desktop double-click check",
+    "clean_pc": false
+  },
+  {
+    "case": "B_Temp_Spaces_1920x1080",
+    "passed": false,
+    "launched": false,
+    "error": "Windows CreateProcess WinError 740: requested operation requires elevation. No elevation attempted.",
+    "result": "REJECTED: not a no-setup portable game",
+    "native_monitor": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "case": "B_Downloads_Native_1920x1080",
+    "passed": false,
+    "launched": false,
+    "error": "Not attempted: B already rejected after temp-copy launch returned WinError 740.",
+    "result": "SKIPPED AFTER B REJECTION",
+    "native_monitor": [
+      1920,
+      1080
+    ]
+  }
+]

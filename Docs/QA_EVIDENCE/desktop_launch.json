@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-28T05:20:26.973463+00:00",
+  "exe": "C:\\Users\\chris\\AppData\\Local\\Temp\\Ilaban-Extracted-qv6wxfi2\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe",
+  "double_clicked_in_explorer": true,
+  "started_without_arguments": true,
+  "observed_title_exact": true,
+  "native_borderless_fullscreen": [
+    1920,
+    1080
+  ],
+  "alt_enter_to_windowed_and_back": true,
+  "physical_keyboard_select": "NEEDS MANUAL TEST: desktop-injected F/Enter/arrows did not advance navigation; Alt+Enter worked. Simulated InputSystem keyboard isolation tests passed. Do not claim a physical keyboard test passed.",
+  "physical_gamepad": "none connected; NEEDS MANUAL TEST",
+  "clean_pc": false,
+  "pointer_character_selection": true
+}
