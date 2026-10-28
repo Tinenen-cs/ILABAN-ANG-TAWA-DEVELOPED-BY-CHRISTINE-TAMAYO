@@ -12,7 +12,7 @@ for mode in modes:
  if mode in ('EditMode','PlayMode'):
   xml=evidence/(mode+'.xml')
   if xml.exists():shutil.copy2(xml,logs/(mode+'-previous.xml'));xml.unlink()
- args=[str(unity),'-batchmode','-projectPath',str(project),'-logFile',str(logs/('UIRelease-'+mode+'.log'))]
+ args=[str(unity),'-force-d3d11','-batchmode','-projectPath',str(project),'-logFile',str(logs/('UIRelease-'+mode+'.log'))]
  if mode=='EditMode':args+=['-runTests','-testPlatform','EditMode','-assemblyNames','Ilaban.EditMode.Tests','-testResults',str(evidence/'EditMode.xml')]
  elif mode=='PlayMode':args+=['-runTests','-testPlatform','PlayMode','-assemblyNames','Ilaban.PlayMode.Tests','-testResults',str(evidence/'PlayMode.xml')]
  elif mode=='Rules':args+=['-quit','-executeMethod','Hexbound.Editor.SubmissionSetup.ValidateBaseline']

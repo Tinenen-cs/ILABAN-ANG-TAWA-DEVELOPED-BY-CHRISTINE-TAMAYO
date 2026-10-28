@@ -12,14 +12,13 @@ A two-player Filipino street brawler made by Christine Tamayo. Pick a character,
 
 ![Laban sa palengke](Docs/ReleasePreview/match.png)
 
-## UPDATE2 release status
+## UPDATE3 release status
 
-The requested UI fixes, original chibi head revisions, first-to-three match, five-option pause, error notices and whole-body emotes are implemented. Final verification and one-file packaging passed. Published v1.0 is historical. Use the UPDATE2 EXE and current hash in SUBMISSION/FILE_INFO.txt.
+The visible drain now triggers immediately on both sides of every map. Original painted festival pieces, measured43% head proportions, uniform button icons, bounded focus feedback, painted background motion and mirrored name-plate win medals are implemented. Exactly five Hilo segments remain for the five-hit dizzy rule; no health/timer/extra attacks.
 
-**Verified Canvas file: ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe** (202,928,640 bytes). SHA-256: `4f794497062d201eb6129c2e574d1e706aadeca3bddfec67713bab2a62ac0fc5`. The current original GUI launcher passed EXE-only empty-Temp and space-path full three-win tests, default fullscreen/Alt+Enter and Defender. It embeds all dependencies and uses Windows built-in .NET Framework 4.x. [Download the verified EXE from Drive](https://drive.google.com/file/d/1ubFKaj6uhFB26cStVNLoqwrel4wL_pN3/view?usp=drivesdk) or [GitHub UPDATE2](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.1-update2). GitHub replaces filename spaces with dots; the bytes/hash are identical. Keep the complete Windows folder/ZIP as backup.
+Verification/evidence: Docs/HEAD_RATIO.md, Docs/background_motion_check.json, Docs/QA_EVIDENCE and QA_SCREENSHOTS/UPDATE3. Windows standalone candidate is built from this real project. Updated single-EXE packaging/delivery is in progress; older UPDATE2 release hashes are historical and do not verify UPDATE3.
 
-[PUBLIC source repository](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO).
-[Drive folder](https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH).
+[PUBLIC source repository](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO). [Drive folder](https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH).
 
 ## Controls
 

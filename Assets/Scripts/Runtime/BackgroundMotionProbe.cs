@@ -16,7 +16,7 @@ namespace Hexbound {
                 game.enabled=true;
                 if(scene<3){game.Selected[0]=0;game.Selected[1]=4;game.Ready[0]=game.Ready[1]=true;game.SelectArena(scene);game.StartMatch();}
                 else game.Show(scene==3?AcademyGame.ScreenState.Title:AcademyGame.ScreenState.StageSelect);
-                yield return null;game.enabled=false;yield return new WaitForSecondsRealtime(.6f);
+                yield return new WaitForSecondsRealtime(.6f);game.enabled=false;yield return new WaitForSecondsRealtime(.1f);
                 var motion=FindAnyObjectByType<PaintingMotion>();if(motion==null||!motion.isActiveAndEnabled||motion.LayerCount<4)throw new Exception("Motion missing/disabled in scene "+scene);
                 float before=motion.Age;yield return Capture(scene+"-a");yield return new WaitForSecondsRealtime(1.5f);yield return Capture(scene+"-b");
                 if(motion.Age-before<1.5f)throw new Exception("Ambient clock is not running independently");

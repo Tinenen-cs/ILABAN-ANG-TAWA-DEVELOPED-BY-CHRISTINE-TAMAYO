@@ -6,6 +6,7 @@ from PIL import Image
 root=Path(__file__).resolve().parents[1]
 report=json.loads((root/'Docs/single_exe_build.json').read_text())
 source=Path(report['file']);results=[]
+label=os.environ.get('ILABAN_QA_LABEL','UPDATE2')
 assert hashlib.sha256(source.read_bytes()).hexdigest()==report['sha256']
 cases=[('EmptyTemp',Path(tempfile.mkdtemp(prefix='IlabanExeOnly-'))),
        ('PathWithSpaces',Path(tempfile.mkdtemp(prefix='Ilaban Test With Spaces '))/'Laro Para Sa Paaralan')]
@@ -14,12 +15,12 @@ for case,folder in cases:
     assert not list(folder.iterdir()),'The launch directory must start empty'
     exe=folder/source.name;shutil.copy2(source,exe)
     assert len(list(folder.iterdir()))==1,'No external companion assets may be present'
-    out=root/'QA_SCREENSHOTS/UPDATE2/SingleExe'/case
+    out=root/'QA_SCREENSHOTS'/label/'SingleExe'/case
     out.mkdir(parents=True,exist_ok=True)
     # These output folders are owned by this test; remove only its known prior captures.
     for path in out.glob('*.png'):path.unlink()
     (out/'PASS.txt').unlink(missing_ok=True)
-    log=root/'Logs'/('Update2-SingleExe-'+case+'.log')
+    log=root/'Logs'/(label+'-SingleExe-'+case+'.log')
     start=time.monotonic()
     proc=subprocess.Popen([str(exe),'-screen-fullscreen','1','-screen-width','1920','-screen-height','1080',
                            '-ilaban-smoke',str(out),'-logFile',str(log)],cwd=folder)
@@ -33,7 +34,7 @@ for case,folder in cases:
          'captures':len(files),'image_sizes':[list(size) for size in sizes],
          'seconds':round(time.monotonic()-start,2),'full_three_win_match':passed,'clean_pc':False}
     results.append(row)
-    (root/'Docs/update2_single_exe_tests.json').write_text(json.dumps(results,indent=2),encoding='utf-8')
+    (root/'Docs'/(label.lower()+'_single_exe_tests.json')).write_text(json.dumps(results,indent=2),encoding='utf-8')
     print(json.dumps(row),flush=True)
     assert passed,row
 report.update(tested=True,passed=all(row['passed'] for row in results),tests='Docs/update2_single_exe_tests.json')

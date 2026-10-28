@@ -1,3 +1,14 @@
+# UPDATE3 step 7 - 2026-10-28T22:33:29.182870+00:00
+
+Done: PASS: text-sized240-370px HUD name plates, three mirrored20px win medals inside plate, no old portrait row. All8 names/both sides containment regression passed. EditMode15/15, graphics D3D11 PlayMode16/16 exit0, build/65 exit0. Native1280 match/round-banner viewed. Earlier D3D12 editor shutdown access violations preserved in BUG_LOG; assertions passed but those process runs not counted clean. Final5-size matrix/animation audit and refreshed portable packaging in progress.
+
+In progress / next: finish final resolution/animation evidence; package/test current single EXE; update delivery metadata and handoff
+
+Next five: follow remaining UPDATE3 tasks in Docs/UPDATE3_REQUEST.md in order; verify current screenshot; run required regression; checkpoint evidence; continue remaining task.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md, CHECKLIST.md and Docs/UPDATE3_REQUEST.md; run git status; finish UPDATE3 task finish final resolution/animation evidence; package/test current single EXE; update delivery metadata and handoff. No reference photos, no history rewrite."`
+
+---
 # UPDATE3 step 6 - 2026-10-28T22:19:57.474752+00:00
 
 Done: PASS: root cause fixed (title/stage motion disabled); approved painting cutouts and independent clock enabled. PlayMode15/15 plus build/65 passed, zero C# diagnostics. Native stationary pairs1.5s apart passed unchanged thresholds in all3 maps/title/stage: backgroundMAD0.15-2.81/255, floor0.0; contact/difference personally viewed. Looban lacks painted flags and reuses3 original pennants. Pixel evidence QA_SCREENSHOTS/UPDATE3/motion_check.txt.

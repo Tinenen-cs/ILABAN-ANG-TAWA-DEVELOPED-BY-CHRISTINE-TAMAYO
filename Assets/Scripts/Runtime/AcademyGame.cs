@@ -428,6 +428,14 @@ namespace Hexbound
                 var portrait=Raw(mask.transform,new Rect(0,0,80,80),heads[Model.players[p].character]);portrait.uvRect=new Rect(0,0,1,1);
                 var namePlate=Image(view,new Rect(nameX,20,370,31),new Color(.94f,.82f,.62f,.96f));namePlate.sprite=PlateSprite();namePlate.type=UnityEngine.UI.Image.Type.Sliced;namePlate.name=p==0?"P1 wooden name plate":"P2 wooden name plate";
                 names[p]=Label(namePlate.transform,new Rect(9,2,352,26),Roster.Names[Model.players[p].character],19,ink,p==0?TextAnchor.MiddleLeft:TextAnchor.MiddleRight);
+                float nameWidth=Mathf.Clamp(names[p].GetPreferredValues(Roster.Names[Model.players[p].character]).x+2,80,272);
+                float plateWidth=Mathf.Clamp(nameWidth+96,240,370);
+                namePlate.rectTransform.sizeDelta=new Vector2(plateWidth,31);
+                namePlate.rectTransform.anchoredPosition=new Vector2(p==0?barX:barX+370-plateWidth,-20);
+                names[p].rectTransform.anchoredPosition=new Vector2(p==0?9:plateWidth-9-nameWidth,-2);
+                names[p].rectTransform.sizeDelta=new Vector2(nameWidth,26);
+                float medalOrigin=p==0?nameWidth+21:plateWidth-nameWidth-41;
+
                 var bar=Raw(view,new Rect(barX,55,370,54),Tex("UI/HudWoodBar"));bar.name=p==0?"P1 Hilo wooden bar":"P2 Hilo wooden bar";
                 string hilo=language==0?"Hilo":"Dizzy";
                 var meterLabel=Label(bar.transform,new Rect(p==0?16:306,12,48,28),hilo,16,cream,p==0?TextAnchor.MiddleLeft:TextAnchor.MiddleRight);meterLabel.name="Hilo meter label";
@@ -437,12 +445,12 @@ namespace Hexbound
                     hiloPips[p][i]=Image(bar.transform,new Rect(sx,14,52,26),new Color(.28f,.22f,.17f,.98f));
                     hiloPips[p][i].sprite=Art("HudSegment",new Vector4(12,12,12,12));hiloPips[p][i].type=UnityEngine.UI.Image.Type.Sliced;hiloPips[p][i].name="Hilo segment "+(i+1);
                 }
-                winSparkles[p]=Label(view,new Rect(hudX+22,107,60,48),"*",38,gold);winSparkles[p].name="Panalo sparkle";winSparkles[p].gameObject.SetActive(false);
                 winMarkers[p]=new Image[3];
                 for(int i=0;i<3;i++){
-                    float sx=p==0?hudX+9+i*30: hudX+91-i*30;
-                    winMarkers[p][i]=Image(view,new Rect(sx,112,26,26),new Color(.34f,.27f,.20f,.9f));winMarkers[p][i].sprite=Art("HudMedal");winMarkers[p][i].name="Panalo medal "+(i+1);
+                    float sx=medalOrigin+(p==0?i*22:-i*22);
+                    winMarkers[p][i]=Image(namePlate.transform,new Rect(sx,5,20,20),new Color(.34f,.27f,.20f,.9f));winMarkers[p][i].sprite=Art("HudMedal");winMarkers[p][i].name="Panalo medal "+(i+1);
                 }
+                winSparkles[p]=Label(namePlate.transform,new Rect(p==0?medalOrigin-5:medalOrigin-49,-6,74,42),"*",30,gold);winSparkles[p].name="Panalo sparkle";winSparkles[p].gameObject.SetActive(false);
                 var bubble=new Bubble();bubble.root=Rect(view,"Reaksyon",new Rect(0,0,160,50));
                 bubble.tail=Image(bubble.root,new Rect(80,48,14,14),cream).rectTransform;bubble.tail.pivot=new Vector2(.5f,.5f);bubble.tail.localRotation=Quaternion.Euler(0,0,45);
                 RoundedPanel(bubble.root,new Rect(0,0,160,50),cream);bubble.label=Label(bubble.root,new Rect(8,3,144,43),"",17,ink);bubble.label.fontSizeMin=12;

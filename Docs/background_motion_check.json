@@ -2,40 +2,40 @@
   {
     "scene": "Palengke",
     "interval_seconds": 1.5,
-    "background_mean_absolute_rgb": 1.0449679904513889,
-    "changed_fraction_over_2": 0.07560221354166667,
+    "background_mean_absolute_rgb": 1.0164740668402779,
+    "changed_fraction_over_2": 0.07483317057291666,
     "floor_mean_absolute_rgb": 0.0,
     "passed": true
   },
   {
     "scene": "Looban",
     "interval_seconds": 1.5,
-    "background_mean_absolute_rgb": 0.15113389756944445,
-    "changed_fraction_over_2": 0.02066650390625,
+    "background_mean_absolute_rgb": 0.12465277777777778,
+    "changed_fraction_over_2": 0.018880208333333332,
     "floor_mean_absolute_rgb": 0.0,
     "passed": true
   },
   {
     "scene": "Plaza",
     "interval_seconds": 1.5,
-    "background_mean_absolute_rgb": 1.860693359375,
-    "changed_fraction_over_2": 0.0776123046875,
+    "background_mean_absolute_rgb": 1.7396660698784723,
+    "changed_fraction_over_2": 0.07620442708333333,
     "floor_mean_absolute_rgb": 0.0,
     "passed": true
   },
   {
     "scene": "Title",
     "interval_seconds": 1.5,
-    "background_mean_absolute_rgb": 0.40735150329992664,
-    "changed_fraction_over_2": 0.0373258372036177,
+    "background_mean_absolute_rgb": 0.8062657866862218,
+    "changed_fraction_over_2": 0.03065265216328526,
     "floor_mean_absolute_rgb": 0.0,
     "passed": true
   },
   {
     "scene": "StageSelect",
     "interval_seconds": 1.5,
-    "background_mean_absolute_rgb": 2.804744791666667,
-    "changed_fraction_over_2": 0.13798046875,
+    "background_mean_absolute_rgb": 1.0235520833333334,
+    "changed_fraction_over_2": 0.09730859375,
     "floor_mean_absolute_rgb": 0.0,
     "passed": true
   }

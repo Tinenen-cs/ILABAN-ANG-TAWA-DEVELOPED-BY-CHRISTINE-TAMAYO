@@ -27,6 +27,25 @@ namespace Hexbound.Tests
             var impacts=(TMP_Text[])typeof(AcademyGame).GetField("impactLabels",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(game);foreach(var impact in impacts)Assert.IsFalse(impact.gameObject.activeSelf,"Combat impact sparkles must not remain frozen over the result screen.");
         }
 
+        [Test] public void WinMedalsFitNamePlatesAndNeverOverlapNames(){
+            var previous=Object.FindAnyObjectByType<AcademyGame>();if(previous!=null)Object.DestroyImmediate(previous.gameObject);
+            var game=new GameObject("Medal placement regression").AddComponent<AcademyGame>();game.enabled=false;game.SetLanguage(0);
+            const System.Reflection.BindingFlags flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+            for(int id=0;id<8;id++){
+                game.Selected[0]=id;game.Selected[1]=7-id;game.Ready[0]=game.Ready[1]=true;game.StartMatch();Canvas.ForceUpdateCanvases();
+                var names=(TMP_Text[])typeof(AcademyGame).GetField("names",flags).GetValue(game);var medals=(Image[][])typeof(AcademyGame).GetField("winMarkers",flags).GetValue(game);
+                for(int p=0;p<2;p++){
+                    var plate=(RectTransform)names[p].transform.parent;Assert.That(plate.rect.width,Is.InRange(240,370));Assert.AreEqual(3,medals[p].Length);
+                    System.Func<RectTransform,Rect> localBox=rt=>new Rect(rt.anchoredPosition.x,-rt.anchoredPosition.y,rt.rect.width,rt.rect.height);
+                    var nameBox=localBox(names[p].rectTransform);
+                    foreach(var medal in medals[p]){
+                        Assert.AreSame(plate,medal.transform.parent,"No old row below portraits");var box=localBox(medal.rectTransform);
+                        Assert.IsFalse(box.Overlaps(nameBox),"Medal must not cover name");Assert.GreaterOrEqual(box.xMin,8);Assert.LessOrEqual(box.xMax,plate.rect.width-8);Assert.GreaterOrEqual(box.yMin,0);Assert.LessOrEqual(box.yMax,31);
+                        Assert.IsTrue(p==0?box.xMin>nameBox.xMax:box.xMax<nameBox.xMin,"Mirrored tally follows/before name");
+                    }
+                }
+            }game.enabled=true;
+        }
         [UnityTest] public IEnumerator PaintingMotionIsPresentEnabledAndRunsWithFrozenFighters(){
             var previous=Object.FindAnyObjectByType<AcademyGame>();if(previous!=null)Object.DestroyImmediate(previous.gameObject);
             var game=new GameObject("Painted motion regression").AddComponent<AcademyGame>();game.enabled=false;

@@ -84,3 +84,5 @@ No manual download is required to run. For higher realism, replace the generated
 UPDATE2 emotes: eight dedicated original whole-body Win and Lose source poses each have four runtime frames. Win sparkles animate; losing slump is used during the one-body drain sink. Explicit Lose preview is available to native QA. Win/lose events play the character-specific quiet procedural reaction cue alongside the shared victory/fall sounds; no new recordings or reference likenesses.
 
 UPDATE2 final audit: all 38 active WAVs present, no missing runtime references and zero clipped samples. Human speaker/headphone mix remains NEEDS MANUAL TEST.
+
+UPDATE3: existing banderitas/opening and shared menu/confirm cues retained. Painted background movement is silent; uniform icons add no extra overlapping cue. No audio files replaced; all38 WAVs still require the final clipping/reference audit.
