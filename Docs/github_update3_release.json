@@ -1,0 +1,44 @@
+{
+  "url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.2-update3",
+  "tag": "v1.2-update3",
+  "visibility": "PUBLIC",
+  "assets": [
+    {
+      "name": "BASAHIN_MUNA.txt",
+      "size": 1902,
+      "digest": "sha256:dd9f0d0868eeb04bd5e04891ff544a95881e54ce9fbc0497c2744c67494a5269",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2-update3/BASAHIN_MUNA.txt"
+    },
+    {
+      "name": "FILE_INFO.txt",
+      "size": 2286,
+      "digest": "sha256:cfe247a3e817f7b612ab99d034dc2118e082d2df9ad353a08ab51627e13ebc67",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2-update3/FILE_INFO.txt"
+    },
+    {
+      "name": "ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.exe",
+      "size": 213747712,
+      "digest": "sha256:4ec4b62c193724a5d2948681e1cf3a39924a27deb950f18bfe7b9c11bcc1b362",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2-update3/ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.exe"
+    },
+    {
+      "name": "ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.zip",
+      "size": 213704643,
+      "digest": "sha256:0f8d9a1aa137f38e2878103747b95965a02d4addf54f4e95bdb0289a8a5c8f81",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2-update3/ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.zip"
+    },
+    {
+      "name": "QA_SCREENSHOTS_FINAL.zip",
+      "size": 99104648,
+      "digest": "sha256:d71fd9be122fc1d1dfae3b610e0ce17fa1644ebdcec4c62ea1f7094825839945",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2-update3/QA_SCREENSHOTS_FINAL.zip"
+    },
+    {
+      "name": "README.md",
+      "size": 4270,
+      "digest": "sha256:439d2be3cbc39bd0fb7f76143d44ef6f0c66ce70069b32febb69fc00cf25c7f6",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2-update3/README.md"
+    }
+  ],
+  "all_sizes_and_sha256_match": true
+}

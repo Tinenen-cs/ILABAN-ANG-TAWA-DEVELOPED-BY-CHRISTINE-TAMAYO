@@ -1,0 +1,45 @@
+{
+  "folder": "https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH",
+  "complete": false,
+  "files": [
+    {
+      "id": "1UfktzohMZ-_jmzjec9NpD-BAYxdgVvwr",
+      "name": "FILE_INFO.txt",
+      "bytes": 2286,
+      "url": "https://drive.google.com/file/d/1UfktzohMZ-_jmzjec9NpD-BAYxdgVvwr/view?usp=drivesdk"
+    },
+    {
+      "id": "1y2x-IhdQBhOo3SC-oE60lJr_D1dBeE4y",
+      "name": "README.md",
+      "bytes": 4270,
+      "url": "https://drive.google.com/file/d/1y2x-IhdQBhOo3SC-oE60lJr_D1dBeE4y/view?usp=drivesdk"
+    },
+    {
+      "id": "1exPc45F06M08tWoMce4qm-i0fMr6tVpC",
+      "name": "QA_SCREENSHOTS_FINAL.zip",
+      "bytes": 99104648,
+      "url": "https://drive.google.com/file/d/1exPc45F06M08tWoMce4qm-i0fMr6tVpC/view?usp=drivesdk"
+    },
+    {
+      "id": "1eP8XA15jvofhJwF7ieRh_i7mnIhrj_fz",
+      "name": "BASAHIN_MUNA.txt",
+      "bytes": 1902,
+      "url": "https://drive.google.com/file/d/1eP8XA15jvofhJwF7ieRh_i7mnIhrj_fz/view?usp=drivesdk"
+    },
+    {
+      "id": "1wDqFNpaPGaU3QmxbVzE-fA0lP0VZ_1wr",
+      "name": "ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip",
+      "bytes": 202885864,
+      "url": "https://drive.google.com/file/d/1wDqFNpaPGaU3QmxbVzE-fA0lP0VZ_1wr/view?usp=drivesdk"
+    },
+    {
+      "id": "1ubFKaj6uhFB26cStVNLoqwrel4wL_pN3",
+      "name": "ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe",
+      "bytes": 202928640,
+      "url": "https://drive.google.com/file/d/1ubFKaj6uhFB26cStVNLoqwrel4wL_pN3/view?usp=drivesdk"
+    }
+  ],
+  "large_binary_replacements_pending": true,
+  "reason": "Connector100MB limit; owner browser minimized, restore blocked by detected-user-input guard",
+  "anyone_with_link_viewer_verified": true
+}
