@@ -12,15 +12,15 @@ A two-player Filipino street brawler made by Christine Tamayo. Pick a character,
 
 ![Laban sa palengke](Docs/ReleasePreview/match.png)
 
-## UPDATE3 release status
+## Hilo display fix - v1.2.1
 
-The visible drain now triggers immediately on both sides of every map. Original painted festival pieces, measured43% head proportions, uniform button icons, bounded focus feedback, painted background motion and mirrored name-plate win medals are implemented. Exactly five Hilo segments remain for the five-hit dizzy rule; no health/timer/extra attacks.
+Each Hilo Meter now shows consecutive hits taken by its owner: the opponent current streak. Only the victim bar fills; the fifth hit makes that same character dizzy. Streak breaks and recovery clear the display. Exactly five segments and Tagalog Hilo / English Dizzy remain. Combat rules, range, timing and one-step knockback are unchanged.
 
-Verification/evidence: Docs/HEAD_RATIO.md, Docs/background_motion_check.json, Docs/QA_EVIDENCE and QA_SCREENSHOTS/UPDATE3. Windows standalone candidate is built from this real project. Verified Canvas EXE: **213,747,712 bytes**, SHA-256 `4ec4b62c193724a5d2948681e1cf3a39924a27deb950f18bfe7b9c11bcc1b362`. Both EXE-only full-match tests and Defender scans passed. Download the current game from the [verified UPDATE3 Release](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.2-update3).
+Verified: EditMode15/15, graphics PlayMode17/17,65 rule assertions,48 native fill/reset/dizzy captures across both sides/all3 maps, two EXE-only full3-win matches from emptyTemp/space-path folders, and clean Defender scans. See RUBRIC_CHECKLIST.md and Docs/QA_EVIDENCE/hilo_final_summary.json. Older broad UPDATE3 resolution/animation reports are historical; this focused change does not alter HUD geometry.
 
-**Drive EXE/ZIP are still older UPDATE2 files.** Large replacements are pending because the minimized owner browser cannot be restored through the automation input guard. Four Drive support files are updated. Use the current GitHub Release for the game. Physical keyboard/controller/USB, human audio/art, clean-PC and strict steady60fps checks remain manual; see HANDOFF.md. Final graphics tests use Direct3D11 after a recorded Direct3D12 editor teardown access violation; standalone tests exited0.
+Canvas EXE: **213,749,248 bytes**, SHA-256 `721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3`. [Hilo fix release](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.2.1-hilo-victim) publication is pending final server verification. The original GUI launcher embeds all dependencies and uses Windows built-in.NET Framework4.x; keep the complete folder/ZIP backup.
 
-[PUBLIC source repository](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO). [Drive folder](https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH).
+Repository PUBLIC. Drive binaries remain older and are outside this task; use the current GitHub release after verification. Physical keyboard/controller/USB, human audio/art and clean-PC checks remain manual.
 
 ## Controls
 

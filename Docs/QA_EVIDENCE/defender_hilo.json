@@ -1,0 +1,14 @@
+[
+  {
+    "file": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe",
+    "exit": 0,
+    "output": "Scan starting...\nScan finished.\nScanning C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe found no threats.\n",
+    "sha256": "721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3"
+  },
+  {
+    "file": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip",
+    "exit": 0,
+    "output": "Scan starting...\nScan finished.\nScanning C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip found no threats.\n",
+    "sha256": "8eaea627ae8e71404c4123b04810c5219697d248faa1612fafb1fda022d69fa2"
+  }
+]

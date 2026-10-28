@@ -1,0 +1,50 @@
+{
+  "scope": "Hilo incoming-hit display only",
+  "utc": "2026-10-28T23:47:32.905304+00:00",
+  "passed": true,
+  "tests": {
+    "EditMode": {
+      "passed": 15,
+      "total": 15
+    },
+    "PlayMode": {
+      "passed": 17,
+      "total": 17
+    }
+  },
+  "rule_assertions": 65,
+  "combat_model_unchanged": true,
+  "hilo_native_stages": 48,
+  "all_stages_viewed": true,
+  "isolated_exe_tests": "Docs/hilo_victim_single_exe_tests.json",
+  "single_exe": {
+    "file": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe",
+    "bytes": 213749248,
+    "sha256": "721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3",
+    "method": "Original C# GUI launcher with complete verified ZIP resource, temp extraction and per-file SHA verification",
+    "payload_sha256": "8eaea627ae8e71404c4123b04810c5219697d248faa1612fafb1fda022d69fa2",
+    "payload_files": 168,
+    "no_console": true,
+    "requested_execution_level": "asInvoker",
+    "requires": "Windows 10/11 x64 with built-in .NET Framework 4.x",
+    "tested": true,
+    "passed": true,
+    "tests": "Docs/hilo_victim_single_exe_tests.json"
+  },
+  "package": {
+    "zip": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip",
+    "bytes": 213706395,
+    "sha256": "8eaea627ae8e71404c4123b04810c5219697d248faa1612fafb1fda022d69fa2",
+    "extracted_to": "C:\\Users\\chris\\AppData\\Local\\Temp\\Ilaban-Extracted-rcs4bas3",
+    "exit": 0,
+    "passed": true,
+    "issues": [],
+    "clean_pc_test": false
+  },
+  "defender_passed": true,
+  "source": {
+    "sha256": "70781bd234fcf9c8b7b054956e50abe09a8842bbfc4ceb99940f083fbc44a407",
+    "files": 1065
+  },
+  "older_resolution_animation_reports_are_historical": true
+}

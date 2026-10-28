@@ -1,0 +1,18 @@
+ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO - HILO VICTIM DISPLAY FIX
+
+FINAL CANVAS EXE
+Full path: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe
+Size: 213749248 bytes
+SHA-256: 721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3
+
+COMPLETE BACKUP ZIP
+Full path: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip
+Size: 213706395 bytes
+SHA-256: 8eaea627ae8e71404c4123b04810c5219697d248faa1612fafb1fda022d69fa2
+
+PASS: EditMode15/15 (including RubricTests), graphics PlayMode17/17,65 rule assertions, Windowsx64 real-project build with zero C# diagnostics.48 native1280x720 screenshots show empty/fill1-5/victim dizzy/recovery/streak-break on both sides/all3 maps; all viewed. The combat model is unchanged. Exactly5 Hilo segments show consecutive hits TAKEN, never damage/life points.
+PASS: freshly extracted backup full3-win match. Single EXE alone in independent emptyTemp and path-with-spaces folders, two full3-win matches,34 native1920x1080 captures, no exceptions/exit0. Current EXE/ZIP Defender custom scans found no threats. Complete backup folder matches current build bytes.
+Method: original free C# GUI launcher, complete verified ZIP/per-file SHA manifest, unique temporary extraction, asInvoker/no console. Windows10/11x64 built-in.NET Framework4.x required. Do not submit the small inner UnityEXE alone.
+Current release: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.2.1-hilo-victim
+RUBRIC_CHECKLIST.md and Docs/QA_EVIDENCE/hilo_final_summary.json contain the verification record.
+Manual checks remain: physical keyboard/gamepad/USB/hot-swap, sound/Tagalog/art review, cleanPC and steady60fps on other hardware. Existing Drive binaries are older; this task updates GitHub and local files only.

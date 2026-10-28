@@ -1,3 +1,12 @@
+# CURRENT HILO FIX - PORTABLE VERIFIED, RELEASE NEXT
+
+Display-only fix committed at b79f525; DuelModel unchanged. EditMode15/15, graphics PlayMode17/17,65 rules,48 native stages viewed. Real-folder Windowsx64 build/completeZIP and GUI singleEXE passed. EXE213749248 bytes SHA721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3. Two independent EXE-only full3-win runs (emptyTemp and spaces), clean logs/exit0,34native1920 captures. Defender scans clean. Fresh backup folder matches build. See RUBRIC_CHECKLIST.md, Docs/FILE_INFO_HILO.txt and Docs/QA_EVIDENCE/hilo_final_summary.json.
+
+Next: normal-push main, publish v1.2.1-hilo-victim with currentEXE/ZIP/FILE_INFO/rubric/proof, verify server sizes and SHA256, mark rubric complete and push final docs. Do not rebuild or alter combat. Existing Drive pending tasks remain outside this request.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md current Hilo section and RUBRIC_CHECKLIST.md; finish only pending verified GitHub release and final docs/clean-tree checks. Never use reference photos or rewrite history."`
+
+---
 # CURRENT HILO FIX - DISPLAY VERIFIED, PACKAGING NEXT
 
 Done: previous update implementation1-10 checked complete; HUD now reads opponent streak (hits taken). DuelModel unchanged. EditMode15/15, graphics PlayMode17/17,65 rules, build exit0/zero C# diagnostics.48 native screenshots across all3 maps/both attackers verified and viewed: victim-only1-5 fill, same victim dizzy on5, resets. See RUBRIC_CHECKLIST.md and Docs/QA_EVIDENCE/hilo_victim_capture.json.

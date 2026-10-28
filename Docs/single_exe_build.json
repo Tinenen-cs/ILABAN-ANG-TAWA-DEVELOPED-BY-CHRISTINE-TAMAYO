@@ -1,14 +1,14 @@
 {
   "file": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe",
-  "bytes": 213747712,
-  "sha256": "4ec4b62c193724a5d2948681e1cf3a39924a27deb950f18bfe7b9c11bcc1b362",
+  "bytes": 213749248,
+  "sha256": "721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3",
   "method": "Original C# GUI launcher with complete verified ZIP resource, temp extraction and per-file SHA verification",
-  "payload_sha256": "0f8d9a1aa137f38e2878103747b95965a02d4addf54f4e95bdb0289a8a5c8f81",
+  "payload_sha256": "8eaea627ae8e71404c4123b04810c5219697d248faa1612fafb1fda022d69fa2",
   "payload_files": 168,
   "no_console": true,
   "requested_execution_level": "asInvoker",
   "requires": "Windows 10/11 x64 with built-in .NET Framework 4.x",
   "tested": true,
   "passed": true,
-  "tests": "Docs/update2_single_exe_tests.json"
+  "tests": "Docs/hilo_victim_single_exe_tests.json"
 }
