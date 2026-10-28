@@ -18,7 +18,7 @@ Each Hilo Meter now shows consecutive hits taken by its owner: the opponent curr
 
 Verified: EditMode15/15, graphics PlayMode17/17,65 rule assertions,48 native fill/reset/dizzy captures across both sides/all3 maps, two EXE-only full3-win matches from emptyTemp/space-path folders, and clean Defender scans. See RUBRIC_CHECKLIST.md and Docs/QA_EVIDENCE/hilo_final_summary.json. Older broad UPDATE3 resolution/animation reports are historical; this focused change does not alter HUD geometry.
 
-Canvas EXE: **213,749,248 bytes**, SHA-256 `721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3`. [Hilo fix release](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.2.1-hilo-victim) publication is pending final server verification. The original GUI launcher embeds all dependencies and uses Windows built-in.NET Framework4.x; keep the complete folder/ZIP backup.
+Canvas EXE: **213,749,248 bytes**, SHA-256 `721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3`. [Hilo fix release](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.2.1-hilo-victim) is published; all seven download sizes/serverSHA256 digests are verified. The original GUI launcher embeds all dependencies and uses Windows built-in.NET Framework4.x; keep the complete folder/ZIP backup.
 
 Repository PUBLIC. Drive binaries remain older and are outside this task; use the current GitHub release after verification. Physical keyboard/controller/USB, human audio/art and clean-PC checks remain manual.
 

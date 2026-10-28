@@ -46,5 +46,9 @@
     "sha256": "70781bd234fcf9c8b7b054956e50abe09a8842bbfc4ceb99940f083fbc44a407",
     "files": 1065
   },
-  "older_resolution_animation_reports_are_historical": true
+  "older_resolution_animation_reports_are_historical": true,
+  "release": {
+    "url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.2.1-hilo-victim",
+    "assets_verified": 7
+  }
 }

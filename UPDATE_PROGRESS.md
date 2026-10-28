@@ -1,3 +1,26 @@
+# HILO VICTIM DISPLAY FIX COMPLETE - 2026-10-28T23:59:53.406127+00:00
+
+Requested task complete. Previous update implementation tasks1-10 checked first and complete; old manual checks remain labelled. Display-only change at b79f525: each player's Hilo Meter reads Model.players[1-p].streak, the consecutive hits TAKEN. Exactly5segments, Hilo/Dizzy labels, victim dizzy on fifth, reset on existing streak breaks/recovery. DuelModel unchanged (git blob equality recorded); no range, timing, knockback, inputs or grading-rule changes.
+
+Verified: EditMode15/15 including RubricTests; graphics-enabled Direct3D11 PlayMode17/17 including asymmetric snapshots and real-hit/miss/timeout/counter/recovery tests on both sides;65 rule assertions; real-folder Unity6000.6.2f1 Windowsx64 build exit0, zero C# diagnostics. Captured48native1280x720 states covering all3maps/both attackers, empty/hits1-5/same-victim dizzy/recovered/streak-broken. All six contact sheets and native1-5 images viewed. Also viewed packaged EXE fifth-hit screenshot. Evidence: Docs/QA_EVIDENCE/hilo_victim_capture.json; QA_SCREENSHOTS/HILO_VICTIM; RUBRIC_CHECKLIST.md.
+
+Final portable EXE: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe
+Bytes: 213749248; SHA-256: 721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3.
+Backup ZIP: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip
+Bytes: 213706395; SHA-256: 8eaea627ae8e71404c4123b04810c5219697d248faa1612fafb1fda022d69fa2.
+Used Docs/PORTABLE_EXE_METHOD.md free GUI launcher adaptation (verified complete168-file payload, uniqueTemp extraction, asInvoker/no console). Fresh ZIP extraction/full3-win match passed. Outer EXE alone passed emptyTemp and space-path runs, two full3-win matches,34native1920x1080 captures, clean logs/exit0. Defender scans of current EXE/ZIP found no threats. Full SUBMISSION backup folder byte-matches Builds/Windows. FILE_INFO.txt updated. Windows built-in.NET Framework4.x required; cleanPC remains manual.
+
+Published verified release: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.2.1-hilo-victim
+All7 published artifact sizes and serverSHA256 digests match local files after final README/rubric updates. Repository PUBLIC. Normal main push; no history rewrite, reference photos or binary source commits. Source/package checkpoint7375956, final docs follow. Current final commit/clean-tree hash is in local RESUME_STATE.txt after the last push. Proof ZIP is a release asset, not a source commit.
+
+Current authoritative focused report: Docs/QA_EVIDENCE/hilo_final_summary.json. Older UPDATE3 broad resolution/animation reports below are dated historical evidence; this focused change preserves geometry and does not claim those old screenshots were retaken.
+
+NEEDS MANUAL TEST remains: physical keyboard/gamepad/USB/hot-swap, human sound/Tagalog/art, Editor stop, cleanPC/SmartScreen/.NET and strict steady60fps on other hardware. Historical Drive large-file replacement is outside this request and still pending; the current game is on GitHub above. Watchdog remains disabled,0 editing relaunches; no second agent.
+
+Done: display/test/screenshots/build/repack/isolatedEXE/FILE_INFO/main push/release/rubric. In progress: none for this request. Next five owner checks: launch final EXE from another folder; check fullscreen; play two-person match to3wins; test actual gamepad/USB; review sound and presentation hardware.
+Exact resume command: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md current Hilo COMPLETE section and RUBRIC_CHECKLIST.md. The requested Hilo display fix, tests, screenshots, Windows rebuild, single portable EXE, main push and GitHub release are complete. Do not redo completed work. Continue only a new explicit request or documented manual checks. Never use reference photos or rewrite history."`
+
+---
 # CURRENT HILO FIX - PORTABLE VERIFIED, RELEASE NEXT
 
 Display-only fix committed at b79f525; DuelModel unchanged. EditMode15/15, graphics PlayMode17/17,65 rules,48 native stages viewed. Real-folder Windowsx64 build/completeZIP and GUI singleEXE passed. EXE213749248 bytes SHA721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3. Two independent EXE-only full3-win runs (emptyTemp and spaces), clean logs/exit0,34native1920 captures. Defender scans clean. Fresh backup folder matches build. See RUBRIC_CHECKLIST.md, Docs/FILE_INFO_HILO.txt and Docs/QA_EVIDENCE/hilo_final_summary.json.

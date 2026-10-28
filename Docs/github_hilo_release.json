@@ -1,0 +1,50 @@
+{
+  "url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.2.1-hilo-victim",
+  "tag": "v1.2.1-hilo-victim",
+  "visibility": "PUBLIC",
+  "all_sizes_and_sha256_match": true,
+  "assets": [
+    {
+      "name": "BASAHIN_MUNA.txt",
+      "size": 1902,
+      "digest": "sha256:dd9f0d0868eeb04bd5e04891ff544a95881e54ce9fbc0497c2744c67494a5269",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2.1-hilo-victim/BASAHIN_MUNA.txt"
+    },
+    {
+      "name": "FILE_INFO.txt",
+      "size": 1988,
+      "digest": "sha256:abbeab426e2f73ab3c56fc1bce40a20f40f64d8c8cea7231850f06e18f73530d",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2.1-hilo-victim/FILE_INFO.txt"
+    },
+    {
+      "name": "HILO_DISPLAY_PROOF.zip",
+      "size": 102700123,
+      "digest": "sha256:f93bd236264f1600417e98f33244ef5350f1b51c819666edf7ef417d10232243",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2.1-hilo-victim/HILO_DISPLAY_PROOF.zip"
+    },
+    {
+      "name": "ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.exe",
+      "size": 213749248,
+      "digest": "sha256:721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2.1-hilo-victim/ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.exe"
+    },
+    {
+      "name": "ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.zip",
+      "size": 213706395,
+      "digest": "sha256:8eaea627ae8e71404c4123b04810c5219697d248faa1612fafb1fda022d69fa2",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2.1-hilo-victim/ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.zip"
+    },
+    {
+      "name": "README.md",
+      "size": 4100,
+      "digest": "sha256:eb2ff8cf2449c0697352230f4c9db1d37b02fe04be6f742574beaa608c97d692",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2.1-hilo-victim/README.md"
+    },
+    {
+      "name": "RUBRIC_CHECKLIST.md",
+      "size": 2277,
+      "digest": "sha256:27230197e292f91036485bc46553d870a8bc7cc34e3a9f4786a28a618b327e70",
+      "browser_download_url": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.2.1-hilo-victim/RUBRIC_CHECKLIST.md"
+    }
+  ]
+}
