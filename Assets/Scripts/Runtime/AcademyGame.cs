@@ -45,6 +45,7 @@ namespace Hexbound
         Actor[] actors;
         TMP_Text[] names;
         Image[][] hiloPips,winMarkers;
+        TMP_Text[] winSparkles;
         Bubble[] bubbles;
         RectTransform pausePanel,resultPanel;
         TMP_Text resultTitle,resultReason,focusLabel;
@@ -146,6 +147,14 @@ namespace Hexbound
             return im;
         }
         Image RoundedPanel(Transform parent,Rect rect,Color color) {var panel=Image(parent,rect,color);panel.sprite=PlateSprite();panel.type=UnityEngine.UI.Image.Type.Sliced;return panel;}
+        Image WoodPanel(Transform parent,Rect rect) {
+            var panel=Image(parent,rect,Color.white);panel.sprite=Art("HudWoodBar",new Vector4(30,30,30,30));panel.type=UnityEngine.UI.Image.Type.Sliced;panel.name="Kahoy na balangkas";
+            RoundedPanel(panel.transform,new Rect(7,7,rect.width-14,rect.height-14),new Color(.055f,.075f,.075f,.97f));return panel;
+        }
+        void KeyHint(Transform parent,float x,float width,string key,string text,float textWidth) {
+            var cap=RoundedPanel(parent,new Rect(x,9,width,30),new Color32(112,72,43,255));cap.name="Pindutan "+key;Label(cap.transform,new Rect(2,2,width-4,26),key,17,cream);
+            Label(parent,new Rect(x+width+10,7,textWidth,34),text,17,gold,TextAnchor.MiddleLeft);
+        }
         RawImage Raw(Transform parent,Rect rect,Texture2D texture)
         {
             var r=Rect(parent,"Pixel artwork",rect);var image=r.gameObject.AddComponent<RawImage>();image.texture=texture;image.raycastTarget=false;return image;
@@ -158,6 +167,7 @@ namespace Hexbound
         Button Button(Transform parent,Rect rect,string text,Action action,bool enabled=true)
         {
             var image=Image(parent,rect,Color.white);image.sprite=PlateSprite();image.type=UnityEngine.UI.Image.Type.Sliced;image.pixelsPerUnitMultiplier=1;image.color=new Color32(129,87,57,255);image.raycastTarget=true;
+            image.rectTransform.pivot=new Vector2(.5f,.5f);image.rectTransform.anchoredPosition=new Vector2(rect.x+rect.width/2,-rect.y-rect.height/2);
             var b=image.gameObject.AddComponent<Button>();b.targetGraphic=image;b.interactable=enabled;b.navigation=new Navigation {mode=Navigation.Mode.None};
             var colors=b.colors;colors.normalColor=Color.white;colors.highlightedColor=new Color(1f,.84f,.48f);colors.pressedColor=new Color(.75f,.9f,.83f);colors.selectedColor=new Color(1f,.88f,.62f);colors.disabledColor=new Color(.48f,.48f,.46f);colors.colorMultiplier=1;colors.fadeDuration=.08f;b.colors=colors;
             var outline=image.gameObject.AddComponent<Outline>();outline.effectColor=new Color32(239,196,119,180);outline.effectDistance=new Vector2(1.5f,-1.5f);outline.enabled=false;
@@ -343,10 +353,12 @@ namespace Hexbound
             scenery.texture=stages[Model.ArenaIndex];
             // KanaL artwork is fixed at both stage edges and remains in the combat plane.
             for(int side=0;side<2;side++){var canal=Raw(view,new Rect(side==0?0:1060,550,220,72),Fx("Kanal")??Fx("Imburnal"));if(side==1)canal.uvRect=new Rect(1,0,-1,1);}
-            actors=new Actor[2];names=new TMP_Text[2];hiloPips=new Image[2][];winMarkers=new Image[2][];bubbles=new Bubble[2];
+            actors=new Actor[2];names=new TMP_Text[2];hiloPips=new Image[2][];winMarkers=new Image[2][];winSparkles=new TMP_Text[2];bubbles=new Bubble[2];
             for(int p=0;p<2;p++) {
                 actors[p]=ActorView(view,Model.players[p].character,new Rect(0,0,170,255));
+                actors[p].root.anchoredPosition=new Vector2(Model.players[p].x,-598);actors[p].body.uvRect=Model.players[p].facing<0?new Rect(1,0,-1,1):new Rect(0,0,1,1);Animate(actors[p],Model.players[p].pose,Model.players[p].pose==Pose.Punch?StrikeFrame(Model.players[p].actionLength-Model.players[p].actionTime):(int)(clock*8)%4);
                 float hudX=p==0?20:1160;float barX=p==0?130:780;float nameX=barX;
+                var join=Image(view,new Rect(p==0?106:1130,57,44,36),Color.white);join.sprite=Art("HudWoodBar",new Vector4(30,30,30,30));join.type=UnityEngine.UI.Image.Type.Sliced;join.name="Kahoy na dugtungan";
                 var ring=Image(view,new Rect(hudX,14,100,100),Color.white);ring.sprite=Art("HudWoodRing");ring.type=UnityEngine.UI.Image.Type.Simple;ring.name=p==0?"P1 wooden portrait ring":"P2 wooden portrait ring";
                 var mask=Image(ring.transform,new Rect(10,10,80,80),Color.white,"PortraitMask");mask.gameObject.AddComponent<Mask>().showMaskGraphic=false;
                 var portrait=Raw(mask.transform,new Rect(0,0,80,80),heads[Model.players[p].character]);portrait.uvRect=new Rect(0,0,1,1);
@@ -354,14 +366,14 @@ namespace Hexbound
                 names[p]=Label(namePlate.transform,new Rect(9,2,352,26),Roster.Names[Model.players[p].character],19,ink,p==0?TextAnchor.MiddleLeft:TextAnchor.MiddleRight);
                 var bar=Raw(view,new Rect(barX,55,370,54),Tex("UI/HudWoodBar"));bar.name=p==0?"P1 Hilo wooden bar":"P2 Hilo wooden bar";
                 string hilo=language==0?"Hilo":"Dizzy";
-                if(p==0)Label(bar.transform,new Rect(16,12,48,28),hilo,16,cream,TextAnchor.MiddleLeft);
-                else Label(bar.transform,new Rect(306,12,48,28),hilo,16,cream,TextAnchor.MiddleRight);
+                var meterLabel=Label(bar.transform,new Rect(p==0?16:306,12,48,28),hilo,16,cream,p==0?TextAnchor.MiddleLeft:TextAnchor.MiddleRight);meterLabel.name="Hilo meter label";
                 hiloPips[p]=new Image[5];
                 for(int i=0;i<5;i++){
-                    float sx=p==0?70+i*57:300-i*57;
+                    float sx=p==0?70+i*57:242-i*57;
                     hiloPips[p][i]=Image(bar.transform,new Rect(sx,14,52,26),new Color(.28f,.22f,.17f,.98f));
                     hiloPips[p][i].sprite=Art("HudSegment",new Vector4(12,12,12,12));hiloPips[p][i].type=UnityEngine.UI.Image.Type.Sliced;hiloPips[p][i].name="Hilo segment "+(i+1);
                 }
+                winSparkles[p]=Label(view,new Rect(hudX+22,107,60,48),"*",38,gold);winSparkles[p].name="Panalo sparkle";winSparkles[p].gameObject.SetActive(false);
                 winMarkers[p]=new Image[3];
                 for(int i=0;i<3;i++){
                     float sx=p==0?hudX+9+i*30: hudX+91-i*30;
@@ -375,13 +387,13 @@ namespace Hexbound
             var versus=Image(view,new Rect(588,18,104,54),new Color(.98f,.88f,.70f,.98f));versus.sprite=PlateSprite();versus.type=UnityEngine.UI.Image.Type.Sliced;versus.name="Tapat badge";Label(versus.transform,new Rect(0,1,104,50),"VS",36,gold);
             Raw(view,new Rect(0,0,1280,720),Tex("UI/Vignette"));
             var hintPlate=Image(view,new Rect(288,652,704,48),new Color(.025f,.055f,.07f,.78f));hintPlate.sprite=PlateSprite();hintPlate.type=UnityEngine.UI.Image.Type.Sliced;hintPlate.name="Mga pindutan hint plate";
-            Label(hintPlate.transform,new Rect(10,5,684,38),"ESC: IHINTO     H: MGA KONTROL     F / CTRL: SUNTOK",18,gold);
-            resultPanel=Rect(view,"Bunga ng Laban",new Rect(320,48,640,220));RoundedPanel(resultPanel,new Rect(0,0,640,220),new Color(.025f,.065f,.09f,.96f));
+            KeyHint(hintPlate.transform,20,50,"ESC",language==0?"Ihinto":"Pause",100);KeyHint(hintPlate.transform,223,34,"H",language==0?"Mga Kontrol":"Controls",140);KeyHint(hintPlate.transform,448,88,"F / CTRL",language==0?"Suntok":"Punch",125);
+            resultPanel=Rect(view,"Bunga ng Laban",new Rect(320,48,640,220));WoodPanel(resultPanel,new Rect(0,0,640,220));
             resultTitle=Label(resultPanel,new Rect(20,16,600,48),"",36,gold);resultReason=Label(resultPanel,new Rect(24,65,592,35),"",22);
             resultButtons=new[]{Button(resultPanel,new Rect(28,120,280,54),"Maglaro Muli",StartMatch),Button(resultPanel,new Rect(332,120,280,54),"Pumili Muli",OpenSelect)};Label(resultPanel,new Rect(20,179,600,27),"SUNTOK: MAGLARO MULI     ESC: PUMILI MULI",16,gold);resultPanel.gameObject.SetActive(false);
             Color[] paper={new Color32(243,185,96,255),new Color32(74,201,192,255),new Color32(231,119,99,255),new Color32(246,225,183,255)};
             for(int i=0;i<28;i++){float x=i%2==0?15+(i/2%5)*23:1140+(i/2%5)*23;var piece=Image(view,new Rect(x,0,7+i%3*2,12),paper[i%paper.Length]);confetti.Add(piece.rectTransform);piece.gameObject.SetActive(false);}
-            pausePanel=Rect(view,"Pahinga",new Rect(385,210,510,315));RoundedPanel(pausePanel,new Rect(0,0,510,315),new Color(.025f,.065f,.09f,.97f));Label(pausePanel,new Rect(0,18,510,47),"Pansamantalang Ihinto",34);
+            pausePanel=Rect(view,"Pahinga",new Rect(385,210,510,315));WoodPanel(pausePanel,new Rect(0,0,510,315));Label(pausePanel,new Rect(0,18,510,47),"Pansamantalang Ihinto",34);
             menuButtons=new[]{Button(pausePanel,new Rect(75,82,360,52),"Magpatuloy",()=>{Paused=false;pausePanel.gameObject.SetActive(false);}),Button(pausePanel,new Rect(75,148,360,52),"Mga Kontrol",()=>{fromFight=true;Show(ScreenState.Controls);Paused=true;}),Button(pausePanel,new Rect(75,214,360,52),"Pangunahing Talaan",()=>{Paused=false;Show(ScreenState.Title);})};Label(pausePanel,new Rect(30,273,450,30),"KALIWA / KANAN  PUMILI    SUNTOK  PILIIN",18,gold);pausePanel.gameObject.SetActive(false);
         }
         static string EnglishReaction(string line) {
@@ -411,7 +423,7 @@ namespace Hexbound
         void Controls()
         {
             Shade(.87f);Heading("Mga Kontrol","Mga galaw at tunog ng laro.");
-            RoundedPanel(view,new Rect(90,135,1100,196),new Color(.025f,.055f,.07f,.92f));
+            WoodPanel(view,new Rect(90,135,1100,196));
             Label(view,new Rect(112,145,1056,34),language==0?"MGA PINDUTAN":"KEYS",21,gold);
             string p1="MANLALARO 1    A / D: LAKAD    F: SUNTOK";
             string p2="MANLALARO 2    KALIWA / KANAN: LAKAD    CTRL KANAN / 0: SUNTOK";
@@ -419,7 +431,7 @@ namespace Hexbound
             if(language==1){p1="PLAYER 1    A / D: MOVE    F: PUNCH";p2="PLAYER 2    LEFT / RIGHT: MOVE    RIGHT CTRL / 0: PUNCH";pad="GAMEPAD    STICK: MOVE    A / X: PUNCH   B: BACK";}
             Label(view,new Rect(116,183,1048,39),p1,21,cream,TextAnchor.MiddleLeft);Label(view,new Rect(116,226,1048,39),p2,21,cream,TextAnchor.MiddleLeft);Label(view,new Rect(116,269,1048,39),pad,21,cream,TextAnchor.MiddleLeft);
             Label(view,new Rect(120,338,1040,48),"Isang suntok, isang hakbang paatras. Limang sunod na tama: hilo.\nItulak ang katunggali sa imburnal upang manalo.",21,gold);
-            RoundedPanel(view,new Rect(170,390,940,210),new Color(.025f,.055f,.07f,.86f));menuButtons=new Button[6];
+            WoodPanel(view,new Rect(170,390,940,210));menuButtons=new Button[6];
             settingsSliders=new Slider[3];settingValues=new TMP_Text[3];
             for(int i=0;i<5;i++){
                 int index=i;var row=Button(view,new Rect(196,400+i*37,888,34),SettingText(i),()=>{if(index<2){setting=focus=index;AdjustSetting(1);}});menuButtons[i]=row;
@@ -473,11 +485,11 @@ namespace Hexbound
                     if(controls.Press(p,"Cancel")) {if(Ready[p])Ready[p]=false;else{Show(ScreenState.Title);return;}}}
                 for(int p=0;p<2;p++){Animate(selectionShowcase[p],Ready[p]?Pose.Win:Pose.Idle,(int)(clock*4)%4);}
                 for(int p=0;p<2;p++){readiness[p].text=Tr("Manlalaro "+(p+1))+"\n"+(Ready[p]?Tr("Handa na"):Tr("Kumpirmahin: "+controls.Prompt(p,"Confirm")));if(confirmButtons[p]!=null){confirmButtons[p].interactable=!Ready[p];confirmButtons[p].GetComponentInChildren<TMP_Text>().text=Tr(Ready[p]?"Handa na":"Kumpirmahin");confirmButtons[p].transform.localScale=Vector3.one*(Ready[p]?1.035f:1);}}
-                for(int i=0;i<8;i++) {int owner=Selected[0]==i?0:Selected[1]==i?1:-1;bool active=owner>=0;cards[i].localScale=Vector3.one*(active?1.035f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null)feedback.SetFocused(active);Animate(previews[i],owner>=0&&Ready[owner]?Pose.Win:Pose.Idle,(int)(clock*(active?5:3))%4);}
+                for(int i=0;i<8;i++) {int owner=Selected[0]==i?0:Selected[1]==i?1:-1;bool active=owner>=0;cards[i].localScale=Vector3.one*(active?1.025f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null){feedback.allowScale=false;feedback.SetFocused(active);}Animate(previews[i],owner>=0&&Ready[owner]?Pose.Win:Pose.Idle,(int)(clock*(active?5:3))%4);}
             }
             else if(ScreenNow==ScreenState.StageSelect) {
                 int dir=controls.Navigate(0).x!=0?controls.Navigate(0).x:controls.Navigate(1).x;if(dir!=0)ChooseStage((selectedArena+dir+3)%3);
-                for(int i=0;i<3;i++){cards[i].localScale=Vector3.one*(i==selectedArena?1.04f:.96f);stageBars[i].color=i==selectedArena?gold:new Color(.22f,.31f,.34f);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null)feedback.SetFocused(i==selectedArena);}
+                for(int i=0;i<3;i++){cards[i].localScale=Vector3.one*(i==selectedArena?1.025f:.97f);stageBars[i].color=i==selectedArena?gold:new Color(.22f,.31f,.34f);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null){feedback.allowScale=false;feedback.SetFocused(i==selectedArena);}}
                 if(controls.Any("Cancel"))OpenSelect();else if(controls.Any("Confirm"))StartMatch();
             }
             else if(ScreenNow==ScreenState.Controls) {
@@ -521,6 +533,7 @@ namespace Hexbound
                 actor.body.uvRect=f.facing<0?new Rect(1,0,-1,1):new Rect(0,0,1,1);Animate(actor,celebration?Pose.Win:f.pose,actionFrame);
                 for(int i=0;i<5;i++)hiloPips[p][i].color=i<f.streak?HiloColors[i]:new Color(.30f,.23f,.17f,.95f);
                 for(int i=0;i<winMarkers[p].Length;i++){bool won=i<f.wins;winMarkers[p][i].color=won?Color.white:new Color(.43f,.34f,.25f,.88f);float pop=won&&Model.Finished&&p==Model.winner&&i==f.wins-1?1+.18f*Mathf.Sin(Mathf.Clamp01(resultTime/.45f)*Mathf.PI):1;winMarkers[p][i].rectTransform.localScale=Vector3.one*pop;}
+                bool sparkle=Model.Finished&&p==Model.winner&&resultTime<.65f;winSparkles[p].gameObject.SetActive(sparkle);if(sparkle){winSparkles[p].color=new Color(gold.r,gold.g,gold.b,1-resultTime/.65f);winSparkles[p].rectTransform.localScale=Vector3.one*(.8f+resultTime);winSparkles[p].transform.SetAsLastSibling();}
             }
             UpdateReactionBubbles();
             // A five-star orbit is separate from the streak dots and persists for the victim's recovery.
@@ -583,11 +596,11 @@ namespace Hexbound
     }
     public sealed class PlateButtonFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        public Image image;public Outline outline;bool focused,hovered;
+        public Image image;public Outline outline;public bool allowScale=true;bool focused,hovered;
         public void SetFocused(bool value){focused=value;Apply();}
         public void OnPointerEnter(PointerEventData eventData){hovered=true;Apply();}
         public void OnPointerExit(PointerEventData eventData){hovered=false;Apply();}
-        void Apply(){bool active=focused||hovered;if(image!=null)image.color=active?new Color32(163,114,67,255):new Color32(129,87,57,255);if(outline!=null)outline.enabled=active;transform.localScale=Vector3.one*(active?1.04f:1);}
+        void Apply(){bool active=focused||hovered;if(image!=null)image.color=active?new Color32(163,114,67,255):new Color32(129,87,57,255);if(outline!=null)outline.enabled=active;transform.localScale=Vector3.one*(active&&allowScale?1.04f:1);}
     }
     public sealed class SlantGraphic : MaskableGraphic
     {

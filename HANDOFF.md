@@ -14,7 +14,7 @@ Branch: `phase3-polish`. Project: `C:\Users\chris\Documents\CSEL GAMEDEV FILES\I
 ## In progress
 
 - Step 2 complete: per-frame head positions are authored in animation data, mirrored with the whole sprite, and transformed with the actor through motion/dizzy/fall. Bubbles use rounded 160x50 plates and short tails, stay centered on their own heads, clamp to the screen/HUD-safe region, and separate vertically when close. Fresh EditMode 11/11, PlayMode 9/9 and 65 rule assertions passed. Native close-range smoke proof is under `QA_SCREENSHOTS/Step2_Bubbles/`.
-- Step 3: finish the mirrored wooden Hilo HUD. Fix the P2 label/segment collision, join ring and bar, add real bottom keycaps and match menu panel styling.
+- Step 3 source refinements are checkpointed: P2 label no longer shares a segment slot; ring/bar connectors, keycaps, win sparkle and shared wooden menu frames are implemented. Native review found a pause-before-first-update placement bug and focus scaling outside the settings frame; both are fixed with new regressions. Fresh tests/build and five-size re-capture are pending for these last two corrections.
 - Watchdog file exists from the interrupted work but is not registered or running. Finish/test strikes, bubbles and HUD before completing watchdog setup, per the latest user order.
 - Latest distributable ZIP is intentionally not rebuilt here; final EXE/Drive work is queued separately.
 

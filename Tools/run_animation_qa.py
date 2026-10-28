@@ -3,6 +3,7 @@ import os,subprocess,shutil,json,hashlib
 from PIL import Image
 root=Path(__file__).resolve().parents[1];project=Path(os.environ.get('ILABAN_PROJECT',root))
 folder=root/'QA_SCREENSHOTS/ANIMATION/Unity';log=root/'Logs/Animation-Capture.log'
+assert root.resolve() in folder.resolve().parents,'Capture cleanup must stay within the project'
 if folder.exists():shutil.rmtree(folder)
 folder.mkdir(parents=True)
 exe=project/'Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe'

@@ -14,7 +14,11 @@ namespace Hexbound.Tests
         [Test] public void ForbiddenKeysNeverProduceExtraMoves(){var keys=InputSystem.AddDevice<Keyboard>();var pad=InputSystem.AddDevice<Gamepad>();using(var input=new AcademyInputManager()){Press(keys.wKey);Press(keys.upArrowKey);Press(keys.spaceKey);Press(pad.buttonSouth);Press(pad.dpad.up);input.Poll(1);for(int p=0;p<2;p++){var action=input.Read(p);Assert.IsFalse(action.jump||action.push||action.special||action.power||action.block);}}}
         [UnityTest] public IEnumerator ScreensUseOnlyStaticPixelTMPAndReadinessGate(){
             var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();
-            game.Show(AcademyGame.ScreenState.Select);yield return null;game.Ready[0]=true;game.Ready[1]=false;game.StartMatch();Assert.AreNotEqual(AcademyGame.ScreenState.Fight,game.ScreenNow);game.Ready[1]=true;game.StartMatch();yield return null;
+            game.Show(AcademyGame.ScreenState.Select);yield return null;
+            var selectionCards=(RectTransform[])typeof(AcademyGame).GetField("cards",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(game);
+            Rect bounds(RectTransform r){var corners=new Vector3[4];r.GetWorldCorners(corners);return new Rect(corners[0],corners[2]-corners[0]);}
+            for(int a=0;a<selectionCards.Length;a++)for(int b=a+1;b<selectionCards.Length;b++)Assert.IsFalse(bounds(selectionCards[a]).Overlaps(bounds(selectionCards[b])),"Selected character cards must not overlap.");
+            game.Ready[0]=true;game.Ready[1]=false;game.StartMatch();Assert.AreNotEqual(AcademyGame.ScreenState.Fight,game.ScreenNow);game.Ready[1]=true;game.StartMatch();yield return null;
             Assert.IsNotNull(Object.FindAnyObjectByType<Canvas>());Assert.AreEqual(LanguageMode.Pormal,game.ReactionLanguage);
             foreach(var t in Object.FindObjectsByType<TMP_Text>()){Assert.IsNotNull(t.font);Assert.That(t.font.name=="KalyeDisplay"||t.font.name=="KalyeBody","Unexpected font "+t.font.name);}
             foreach(var t in Object.FindObjectsByType<UnityEngine.UI.Text>())Assert.Fail("Legacy text: "+t.name);
@@ -32,8 +36,9 @@ namespace Hexbound.Tests
             foreach(Slider slider in sliders){Assert.AreEqual(290,slider.GetComponent<RectTransform>().sizeDelta.x,.01f,"Slider track stays within its row.");Assert.LessOrEqual(slider.fillRect.rect.width,290.01f,"Slider fill cannot overflow its track.");}
         }
         [UnityTest] public IEnumerator PauseAndSettingsOverlaysHaveNoOrphanFighterObjects(){
-            var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();game.Ready[0]=game.Ready[1]=true;game.StartMatch();yield return null;
+            var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();game.Ready[0]=game.Ready[1]=true;game.StartMatch();
             var setter=typeof(AcademyGame).GetProperty("Paused").GetSetMethod(true);setter.Invoke(game,new object[]{true});yield return null;
+            var actors=(System.Array)typeof(AcademyGame).GetField("actors",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(game);for(int p=0;p<2;p++){var root=(RectTransform)actors.GetValue(p).GetType().GetField("root").GetValue(actors.GetValue(p));Assert.AreEqual(new Vector2(game.Model.players[p].x,-598),root.anchoredPosition,"Pausing before the first fight update must preserve on-stage fighter placement.");}
             int[] fighterCount(){int count=0;foreach(var t in Object.FindObjectsByType<Transform>())if(t.name=="Tauhan")count++;return new[]{count};}
             Assert.AreEqual(2,fighterCount()[0],"Only the two expected fighters exist during pause.");game.Show(AcademyGame.ScreenState.Controls);yield return null;yield return null;Assert.AreEqual(0,fighterCount()[0],"Settings must not retain orphan fighter sprites.");
         }
@@ -41,10 +46,15 @@ namespace Hexbound.Tests
             var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();game.Ready[0]=game.Ready[1]=true;game.StartMatch();yield return null;
             const System.Reflection.BindingFlags flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
             var pips=(Image[][])typeof(AcademyGame).GetField("hiloPips",flags).GetValue(game);Assert.AreEqual(2,pips.Length);Assert.AreEqual(5,pips[0].Length);Assert.AreEqual(5,pips[1].Length);
-            foreach(var text in Object.FindObjectsByType<TMP_Text>()){string value=text.text.ToLowerInvariant();Assert.IsFalse(value.Contains("health")||value.Contains("stamina")||value.Contains("timer")||value.Contains("knockout"),"Forbidden HUD wording: "+text.text);}
+            foreach(var text in Object.FindObjectsByType<TMP_Text>()){string value=text.text.ToLowerInvariant();Assert.IsFalse(value.Contains("health")||value.Contains("stamina")||value.Contains("timer")||value.Contains("knockout")||value.Contains("k.o.")||value.Contains("sunod na suntok"),"Forbidden HUD wording: "+text.text);}
+            Rect localBox(RectTransform r)=>new Rect(r.anchoredPosition.x,r.anchoredPosition.y-r.sizeDelta.y,r.sizeDelta.x,r.sizeDelta.y);
+            for(int p=0;p<2;p++){
+                var label=pips[p][0].transform.parent.GetComponentInChildren<TMP_Text>();Assert.AreEqual("Hilo",label.text,"Both players must have a visible Hilo label.");
+                foreach(var pip in pips[p]){Assert.IsFalse(localBox(label.rectTransform).Overlaps(localBox(pip.rectTransform)),"A Hilo segment must not cover its label.");Assert.Less(pip.color.r,.5f,"Both meters start empty.");}
+            }
             var actors=(System.Array)typeof(AcademyGame).GetField("actors",flags).GetValue(game);foreach(var item in actors){var actorRoot=(RectTransform)item.GetType().GetField("root").GetValue(item);Assert.AreEqual(new Vector2(.5f,0),actorRoot.pivot,"The complete fighter rotates and scales around its fixed feet-center pivot.");Assert.AreEqual(2,actorRoot.GetComponentsInChildren<RawImage>(true).Length,"Each fighter is a single whole-body image plus ground dust; no separate weapon child.");foreach(Transform child in actorRoot.GetComponentsInChildren<Transform>(true))Assert.IsFalse(child.name.ToLowerInvariant().Contains("item"),"No independent weapon/item object is allowed.");}
-            var update=typeof(AcademyGame).GetMethod("Update",flags);for(int count=1;count<=5;count++){game.Model.players[0].streak=count;game.Model.players[0].streakTime=2;update.Invoke(game,null);for(int i=0;i<5;i++)Assert.AreEqual(i<count,pips[0][i].color.r>.5f,"Hilo pips fill in order from one through five.");}
-            game.Model.players[0].streak=0;game.Model.players[0].streakTime=0;update.Invoke(game,null);foreach(var pip in pips[0])Assert.Less(pip.color.r,.5f,"The meter resets when the streak breaks.");
+            var update=typeof(AcademyGame).GetMethod("Update",flags);for(int count=1;count<=5;count++){for(int p=0;p<2;p++){game.Model.players[p].streak=count;game.Model.players[p].streakTime=2;}update.Invoke(game,null);for(int p=0;p<2;p++)for(int i=0;i<5;i++)Assert.AreEqual(i<count,pips[p][i].color.r>.5f,"Both Hilo meters fill in order from one through five.");}
+            for(int p=0;p<2;p++){game.Model.players[p].streak=0;game.Model.players[p].streakTime=0;}update.Invoke(game,null);foreach(var playerPips in pips)foreach(var pip in playerPips)Assert.Less(pip.color.r,.5f,"The meter resets when the streak breaks.");
         }
         [UnityTest] public IEnumerator EveryCharacterUsesWholeBodyFramesOnOneSharedCanvas(){
             var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();

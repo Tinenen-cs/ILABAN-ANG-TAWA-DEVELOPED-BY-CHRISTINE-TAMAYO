@@ -9,6 +9,7 @@ root=Path(__file__).resolve().parents[1]
 exe=Path(os.environ.get('ILABAN_PROJECT',os.path.join(os.environ['TEMP'],'Ilaban-Phase2-Validation')))/'Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe'
 width=int(os.environ.get('ILABAN_CAPTURE_WIDTH','2560'));height=int(os.environ.get('ILABAN_CAPTURE_HEIGHT','1440'))
 folder=root/'QA_SCREENSHOTS'/f'Exact_{width}x{height}';log=root/'Logs'/f'Exact_{width}x{height}.log'
+assert root.resolve() in folder.resolve().parents,'Capture cleanup must stay within the project'
 if folder.exists():shutil.rmtree(folder)
 folder.mkdir(parents=True)
 proc=subprocess.Popen([str(exe),'-popupwindow','-screen-fullscreen','0','-screen-width',str(width),'-screen-height',str(height),'-ilaban-smoke',str(folder),'-logFile',str(log)])
