@@ -89,3 +89,9 @@ Next: Step 11 subtle sky clouds and measured frame timings; then 12 five-segment
 DONE: faint feathered code-native sky wisps clipped above the street, all-map gentle flags plus existing restrained leaves/night lamps; no vehicles/floor motion. Build/65 checks and native match passed; three maps viewed. Measured 59.64/59.94/59.05 average fps, 16.70ms p95, occasional 33.4ms frame: near-60 observed, strict steady-60/hardware stress NEEDS MANUAL TEST.
 
 Next: Step 12 five-segment Hilo checks; then 13 all suites/five resolutions/English-glyph audit/docs/push; 14 standalone EXE and verified delivery.
+
+## UPDATE2 step 12 — 2026-10-28T17:02:12.864799+00:00
+
+DONE: retained exactly five Hilo segments because dizziness requires exactly five consecutive hits. Fill 1-5/reset verified by PlayMode HUD test and 65 rules, fifth-hit stars screenshot viewed. Fixed required CanvasRenderer on masked clouds. EditMode 13/13, PlayMode 13/13, build/65 exit 0; complete three-win native match with runtime-log scan passed. Corrected measured fps 59.63/59.94/59.94.
+
+Next: Step 13 final source/evidence harness, all tests/five sizes/audits/docs/source push; then 14 one-file executable and verified release/Drive.

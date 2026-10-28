@@ -286,7 +286,7 @@ namespace Hexbound
             if(!enabled)return;
             // Clip drifting cloud wisps to the actual upper sky opening, behind the fighters.
             var sky=Rect(ambience,"Langit lamang",new Rect(0,0,1,1));sky.anchorMin=new Vector2(.40f,.84f);sky.anchorMax=new Vector2(.65f,.98f);sky.offsetMin=sky.offsetMax=Vector2.zero;sky.gameObject.AddComponent<RectMask2D>();
-            skyCloud=Rect(sky,"Mabagal na ulap",new Rect(-180,12,180,48));var cloud=skyCloud.gameObject.AddComponent<SkyCloudGraphic>();cloud.raycastTarget=false;cloud.color=arena==0?new Color(1,.96f,.87f,.075f):new Color(.55f,.63f,.77f,.055f);
+            skyCloud=Rect(sky,"Mabagal na ulap",new Rect(-180,12,180,48));skyCloud.gameObject.AddComponent<CanvasRenderer>();var cloud=skyCloud.gameObject.AddComponent<SkyCloudGraphic>();cloud.raycastTarget=false;cloud.color=arena==0?new Color(1,.96f,.87f,.075f):new Color(.55f,.63f,.77f,.055f);
             if(arena>0)foreach(var p in MapLamps[arena]) {var l=Area(ambience,Fx("Glow"),new Rect(p.x-.035f,p.y-.055f,.07f,.11f));lamps.Add(l);}
             // Small isolated accents only; the painting, floor and parked scenery stay fixed.
             foreach(float x in new[]{.035f,.94f}){var leaf=Area(ambience,Fx("Leaves"),new Rect(x,.04f,.045f,.05f));leaf.rectTransform.pivot=new Vector2(.5f,1);leaves.Add(leaf.rectTransform);}
@@ -691,6 +691,7 @@ namespace Hexbound
         System.Collections.IEnumerator CaptureFrame(string path) {yield return new WaitForEndOfFrame();var image=ScreenCapture.CaptureScreenshotAsTexture();System.IO.File.WriteAllBytes(path,image.EncodeToPNG());Destroy(image);}
 #endif
     }
+    [RequireComponent(typeof(CanvasRenderer))]
     public sealed class SkyCloudGraphic : MaskableGraphic {
         protected override void OnPopulateMesh(VertexHelper vh){
             vh.Clear();var r=rectTransform.rect;
