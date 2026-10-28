@@ -47,3 +47,9 @@ Status: [x] verified automatically or visually; [~] NEEDS MANUAL TEST or explici
 ## UPDATE2 (2026-10-28)
 - [x] Step 1: corrected opening direction/logo effects and title spacing; native screenshot/build/65 checks verified.
 - [ ] Steps 2?14: current new attachment; v1.0 evidence above does not verify these changes.
+
+## UPDATE2 step 2 — 2026-10-28T15:42:05.865539+00:00
+
+DONE: removed generic title mouse/any-key start interception; screen entry consumes initiating press. Keyboard/gamepad routes and pointer regression passed, PlayMode 11/11, build/65 checks and native smoke passed. Controls/exit screenshots viewed.
+
+Next: Step 3: antialiased nine-slice panels; then 4 cleanup, 5 heads, 6 stage zones, 7 first-to-three.

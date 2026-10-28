@@ -510,9 +510,11 @@ namespace Hexbound
             float cover=Mathf.Max(cr.rect.width/1280f,cr.rect.height/720f);scenery.rectTransform.sizeDelta=new Vector2(1280*cover,720*cover);scenery.rectTransform.anchorMin=scenery.rectTransform.anchorMax=new Vector2(.5f,.5f);scenery.rectTransform.pivot=new Vector2(.5f,.5f);scenery.rectTransform.anchoredPosition=ScreenNow==ScreenState.Fight?Vector2.zero:new Vector2(Mathf.Sin(clock*.2f)*2,Mathf.Sin(clock*.17f)*2);
             UpdateAmbience();
             UpdateCharacterCue();
+            // Screen changes and pointer callbacks consume the initiating press.
+            if(Time.frameCount==screenEnteredFrame)return;
             if(ScreenNow==ScreenState.Title) {
                 if(exitOpen){NavMenu(2);if(controls.Any("Cancel"))CancelExit();else if(controls.Any("Confirm")){if(focus==0)QuitGame();else CancelExit();}if(exitButtons!=null)for(int i=0;i<2;i++){var f=exitButtons[i].GetComponent<PlateButtonFeedback>();if(f!=null)f.SetFocused(i==focus);}}
-                else {NavMenu(3);if(controls.Any("Confirm"))ActivateTitle(focus);else if(controls.StartPressed&&controls.Navigate(0)==Vector2Int.zero&&controls.Navigate(1)==Vector2Int.zero&&!controls.Any("Help")&&!controls.Any("Pause")&&!controls.Any("Cancel"))OpenSelect();}
+                else {NavMenu(3);if(controls.Any("Confirm"))ActivateTitle(focus);}
             }
             else if(ScreenNow==ScreenState.Select) {
                 for(int p=0;p<2;p++) {if(!Ready[p]) {int dir=controls.Navigate(p).x;if(dir!=0) {Selected[p]=(Selected[p]+dir+8)%8;Sound("carousel_slide");RefreshDescriptions();QueueCharacterCue(Selected[p]);}if(controls.Press(p,"Confirm")) {Confirm(p);if(ScreenNow!=ScreenState.Select)return;}}

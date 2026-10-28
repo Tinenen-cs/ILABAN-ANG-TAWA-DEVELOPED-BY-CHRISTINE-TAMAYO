@@ -27,6 +27,25 @@ namespace Hexbound.Tests
             var impacts=(TMP_Text[])typeof(AcademyGame).GetField("impactLabels",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(game);foreach(var impact in impacts)Assert.IsFalse(impact.gameObject.activeSelf,"Combat impact sparkles must not remain frozen over the result screen.");
         }
 
+        [Test] public void TitleRoutesKeyboardGamepadAndPointerWithoutAnyClickStart(){
+            var keys=InputSystem.AddDevice<Keyboard>();var pad=InputSystem.AddDevice<Gamepad>();var mouse=InputSystem.AddDevice<Mouse>();
+            var previousGame=Object.FindAnyObjectByType<AcademyGame>();if(previousGame!=null)Object.DestroyImmediate(previousGame.gameObject);var game=new GameObject("Routing regression").AddComponent<AcademyGame>();game.enabled=false;
+            const System.Reflection.BindingFlags flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+            var focus=typeof(AcademyGame).GetField("focus",flags);var update=typeof(AcademyGame).GetMethod("Update",flags);
+            for(int device=0;device<2;device++)for(int option=1;option<=2;option++){
+                game.Show(AcademyGame.ScreenState.Title);typeof(AcademyGame).GetField("screenEnteredFrame",flags).SetValue(game,-1);typeof(AcademyGame).GetField("screenEnteredFrame",flags).SetValue(game,-1);focus.SetValue(game,option);
+                if(device==0)Press(keys.fKey);else Press(pad.buttonSouth);update.Invoke(game,null);
+                Assert.AreEqual(option==1?AcademyGame.ScreenState.Controls:AcademyGame.ScreenState.Title,game.ScreenNow,"Device="+device+", option="+option+", key="+keys.fKey.isPressed+", frame="+Time.frameCount);
+                if(option==2){Assert.IsTrue((bool)typeof(AcademyGame).GetField("exitOpen",flags).GetValue(game));Assert.AreEqual(1,focus.GetValue(game),"Hindi is default.");game.CancelExit();}
+                if(device==0)Release(keys.fKey);else Release(pad.buttonSouth);typeof(AcademyGame).GetField("screenEnteredFrame",flags).SetValue(game,-1);
+            }
+            game.Show(AcademyGame.ScreenState.Title);typeof(AcademyGame).GetField("screenEnteredFrame",flags).SetValue(game,-1);Press(mouse.leftButton);update.Invoke(game,null);
+            Assert.AreEqual(AcademyGame.ScreenState.Title,game.ScreenNow,"A generic pointer press must not start selection before onClick.");Release(mouse.leftButton);
+            var buttons=(Button[])typeof(AcademyGame).GetField("menuButtons",flags).GetValue(game);buttons[1].onClick.Invoke();update.Invoke(game,null);
+            Assert.AreEqual(AcademyGame.ScreenState.Controls,game.ScreenNow,"Pointer settings callback owns its press.");
+            game.Show(AcademyGame.ScreenState.Title);typeof(AcademyGame).GetField("screenEnteredFrame",flags).SetValue(game,-1);buttons=(Button[])typeof(AcademyGame).GetField("menuButtons",flags).GetValue(game);buttons[2].onClick.Invoke();
+            Assert.IsTrue((bool)typeof(AcademyGame).GetField("exitOpen",flags).GetValue(game));game.CancelExit();game.enabled=true;
+        }
         [UnityTest] public IEnumerator SettingsAndExitUseTheirOwnScreenFlow(){
             var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();
             game.Show(AcademyGame.ScreenState.Title);yield return null;game.ActivateTitle(1);Assert.AreEqual(AcademyGame.ScreenState.Controls,game.ScreenNow,"Settings selection must remain on settings.");

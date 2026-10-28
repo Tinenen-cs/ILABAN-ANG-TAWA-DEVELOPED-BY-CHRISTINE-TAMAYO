@@ -138,3 +138,9 @@ Ordinary A desktop test: double-clicked the freshly extracted EXE in File Explor
 Drive method 1 unavailable: no G: or Google Drive home mount. Method 2 metadata works, folder is CSEL_ILABAN ANG TAWA; connector upload rejected A before invocation with HTTP 413 (200010588 > 104857600 bytes). Nothing uploaded. Next try official rclone; browser sign-in may need owner. Defender no threats and A fresh/default launch passed; B excluded. Resume command remains final-delivery command above.
 
 Delivery checkpoint: main pushed successfully; v1.0 published with safe A only. GitHub asset size and server SHA-256 match local A (200010588 bytes, e4dbd4a302f20bca4c52c8bc8b4c66e9f55f6110e41dc16069c310c5ece905c3). GitHub sanitizes spaces to dots in its asset filename. Drive A uploaded via signed-in browser after connector size failure; folder list confirms ID 1wDqFNpaPGaU3QmxbVzE-fA0lP0VZ_1wr and matching size. Screenshot ZIP ID 1exPc45F06M08tWoMce4qm-i0fMr6tVpC (47618333 bytes); BASAHIN_MUNA ID 1eP8XA15jvofhJwF7ieRh_i7mnIhrj_fz. Rclone OAuth was not completed; its waiting process was stopped because browser upload succeeded. No token was printed or committed. Next: sharing Viewer, remaining README/FILE_INFO uploads, final readback/hash/status commit/push.
+
+## UPDATE2 step 2 — 2026-10-28T15:42:05.865539+00:00
+
+DONE: removed generic title mouse/any-key start interception; screen entry consumes initiating press. Keyboard/gamepad routes and pointer regression passed, PlayMode 11/11, build/65 checks and native smoke passed. Controls/exit screenshots viewed.
+
+Next: Step 3: antialiased nine-slice panels; then 4 cleanup, 5 heads, 6 stage zones, 7 first-to-three.

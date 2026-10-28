@@ -29,3 +29,9 @@ Main pushed, v1.0 published, safe ZIP/current build verified, Drive five-file si
 25. [x] Current safe ZIP extraction/full-match/Defender passed; v1.0 server digest matches. Drive exactly five allowed files/sizes verified and Anyone-with-link Viewer. README/FILE_INFO links current. B elevation failure documented and excluded.
 
 Physical/human checks remain as listed in CHECKLIST.md. Watchdog and rclone auth wait stopped.
+
+## UPDATE2 step 2 — 2026-10-28T15:42:05.865539+00:00
+
+DONE: removed generic title mouse/any-key start interception; screen entry consumes initiating press. Keyboard/gamepad routes and pointer regression passed, PlayMode 11/11, build/65 checks and native smoke passed. Controls/exit screenshots viewed.
+
+Next: Step 3: antialiased nine-slice panels; then 4 cleanup, 5 heads, 6 stage zones, 7 first-to-three.
