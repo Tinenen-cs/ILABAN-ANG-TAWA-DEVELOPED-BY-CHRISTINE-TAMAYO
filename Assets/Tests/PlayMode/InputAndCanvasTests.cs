@@ -61,12 +61,16 @@ namespace Hexbound.Tests
             const System.Reflection.BindingFlags flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
             var actors=(System.Array)typeof(AcademyGame).GetField("actors",flags).GetValue(game);var bubbles=(System.Array)typeof(AcademyGame).GetField("bubbles",flags).GetValue(game);float now=(float)typeof(AcademyGame).GetField("clock",flags).GetValue(game);
             for(int i=0;i<2;i++){object bubble=bubbles.GetValue(i);bubble.GetType().GetField("started").SetValue(bubble,now-.2f);}yield return null;
-            game.Model.players[0].x=650;game.Model.players[1].x=800;for(int i=0;i<2;i++){object bubble=bubbles.GetValue(i);bubble.GetType().GetField("started").SetValue(bubble,now-.2f);}yield return null;
-            var positions=new UnityEngine.Vector2[2];for(int i=0;i<2;i++){object actor=actors.GetValue(i),bubble=bubbles.GetValue(i);var root=(RectTransform)actor.GetType().GetField("root").GetValue(actor);var bubbleRoot=(RectTransform)bubble.GetType().GetField("root").GetValue(bubble);Assert.AreEqual(root.anchoredPosition.y+root.sizeDelta.y+75,bubbleRoot.anchoredPosition.y,.01f,"Bubble follows head height.");positions[i]=bubbleRoot.anchoredPosition;}
-            Assert.Less(positions[0].x+170,positions[1].x,"Close fighters' bubbles stay separated.");
-            Assert.GreaterOrEqual(positions[0].x,8,"Bubble stays inside left edge.");Assert.LessOrEqual(positions[1].x+170,1272,"Bubble stays inside right edge.");
+            game.Model.players[0].x=650;game.Model.players[1].x=720;for(int i=0;i<2;i++){object bubble=bubbles.GetValue(i);bubble.GetType().GetField("started").SetValue(bubble,now-.2f);}yield return null;
+            var positions=new UnityEngine.Vector2[2];for(int i=0;i<2;i++){
+                object actor=actors.GetValue(i),bubble=bubbles.GetValue(i);var head=(RectTransform)actor.GetType().GetField("headTop").GetValue(actor);var bubbleRoot=(RectTransform)bubble.GetType().GetField("root").GetValue(bubble);var tail=(RectTransform)bubble.GetType().GetField("tail").GetValue(bubble);
+                Vector2 headPoint=((RectTransform)bubbleRoot.parent).InverseTransformPoint(head.position);positions[i]=bubbleRoot.anchoredPosition;
+                Assert.AreEqual(Mathf.Clamp(headPoint.x-80,8,1112),positions[i].x,.1f,"Each bubble stays centered on its own animated head; close fighters use vertical separation.");
+                Assert.AreEqual(headPoint.x,positions[i].x+tail.anchoredPosition.x,.1f,"The short tail points at its own head.");Assert.Greater(positions[i].y-60,headPoint.y,"Bubble and tail remain above the head.");Assert.LessOrEqual(positions[i].y,-158,"Bubbles stay below the HUD.");Assert.GreaterOrEqual(positions[i].x,8);Assert.LessOrEqual(positions[i].x+160,1272);
+            }
+            Assert.IsFalse(new Rect(positions[0].x,positions[0].y-60,160,60).Overlaps(new Rect(positions[1].x,positions[1].y-60,160,60)),"Close fighters' bubbles and tails cannot overlap.");
             game.Model.players[0].x=410;game.Model.players[1].x=850;yield return null;
-            for(int i=0;i<2;i++){object bubble=bubbles.GetValue(i);var bubbleRoot=(RectTransform)bubble.GetType().GetField("root").GetValue(bubble);Assert.AreEqual(game.Model.players[i].x-85,bubbleRoot.anchoredPosition.x,1,"Separated bubble tracks its fighter.");}
+            for(int i=0;i<2;i++){object actor=actors.GetValue(i),bubble=bubbles.GetValue(i);var head=(RectTransform)actor.GetType().GetField("headTop").GetValue(actor);var bubbleRoot=(RectTransform)bubble.GetType().GetField("root").GetValue(bubble);Vector2 point=((RectTransform)bubbleRoot.parent).InverseTransformPoint(head.position);Assert.AreEqual(point.x-80,bubbleRoot.anchoredPosition.x,.1f,"Separated bubble follows its own head.");Assert.AreEqual(point.y+66,bubbleRoot.anchoredPosition.y,.1f);}
         }
     }
 }

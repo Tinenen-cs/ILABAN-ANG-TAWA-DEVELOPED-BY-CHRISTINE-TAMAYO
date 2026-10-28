@@ -27,6 +27,7 @@ namespace Hexbound
         TMP_FontAsset font,bodyFont;
         readonly Texture2D[] heads=new Texture2D[8],bodies=new Texture2D[8],items=new Texture2D[8],stages=new Texture2D[3];
         Texture2D[][][] actionFrames;
+        AnchorBank animationAnchors;
         static readonly string[] ActionNames={"Idle","Walk","Strike","Hurt","Dizzy","Fall","Win","Lose"};
         readonly Dictionary<string,Sprite> sprites=new Dictionary<string,Sprite>();
         readonly Dictionary<string,AudioClip> clips=new Dictionary<string,AudioClip>();
@@ -70,8 +71,12 @@ namespace Hexbound
         readonly Color cream=new Color32(245,229,194,255),gold=new Color32(224,181,105,255),ink=new Color32(16,30,40,255);
         readonly Color[] playerColors={new Color32(81,214,218,255),new Color32(249,135,116,255)};
         static readonly Color[] HiloColors={new Color32(239,189,93,255),new Color32(243,158,75,255),new Color32(239,120,65,255),new Color32(224,83,60,255),new Color32(190,48,49,255)};
-        sealed class Actor { public RectTransform root; public RawImage body,dust; public int id; }
-        sealed class Bubble { public RectTransform root; public TMP_Text label; public CanvasGroup alpha; public float started=-10; }
+        [Serializable] sealed class AnchorBank {public CharacterAnchors[] characters=Array.Empty<CharacterAnchors>();}
+        [Serializable] sealed class CharacterAnchors {public ActionAnchors[] actions=Array.Empty<ActionAnchors>();}
+        [Serializable] sealed class ActionAnchors {public FrameAnchors[] frames=Array.Empty<FrameAnchors>();}
+        [Serializable] sealed class FrameAnchors {public Vector2 head=Vector2.zero,grip=Vector2.zero,tip=Vector2.zero;}
+        sealed class Actor { public RectTransform root,headTop; public RawImage body,dust; public int id; }
+        sealed class Bubble { public RectTransform root,tail; public TMP_Text label; public CanvasGroup alpha; public float started=-10; }
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Boot() { if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name=="Pambungad")return;if(FindAnyObjectByType<AcademyGame>()==null) new GameObject("Ilaban ang Tawa").AddComponent<AcademyGame>(); }
         void Awake()
@@ -89,6 +94,7 @@ namespace Hexbound
                 }
                 if(actionFrames[i][0][0]!=null)bodies[i]=actionFrames[i][0][0];
             }
+            animationAnchors=JsonUtility.FromJson<AnchorBank>(Resources.Load<TextAsset>("Ilaban/Characters/AnimationAnchors").text);
             for(int i=0;i<3;i++) stages[i]=MapTex(i);
             foreach(var clip in Resources.LoadAll<AudioClip>("Ilaban/Audio")) clips[clip.name]=clip;
             music=gameObject.AddComponent<AudioSource>();sfx=gameObject.AddComponent<AudioSource>();highlight=gameObject.AddComponent<AudioSource>();
@@ -329,6 +335,7 @@ namespace Hexbound
             a.root.pivot=new Vector2(.5f,0);a.root.anchoredPosition=new Vector2(area.x+area.width/2,-area.y-area.height);
             a.dust=Raw(a.root,new Rect(area.width/2-70,area.height-28,140,40),Tex("UI/Glow"));a.dust.color=new Color(.9f,.8f,.6f,.3f);
             a.body=Raw(a.root,new Rect(0,0,area.width,area.height),bodies[id]);a.body.uvRect=new Rect(0,0,1,1);
+            a.headTop=Rect(a.root,"Head top anchor",new Rect(area.width/2,8,0,0));
             return a;
         }
         void Fight()
@@ -360,7 +367,10 @@ namespace Hexbound
                     float sx=p==0?hudX+9+i*30: hudX+91-i*30;
                     winMarkers[p][i]=Image(view,new Rect(sx,112,26,26),new Color(.34f,.27f,.20f,.9f));winMarkers[p][i].sprite=Art("HudMedal");winMarkers[p][i].name="Panalo medal "+(i+1);
                 }
-                var bubble=new Bubble();bubble.root=Rect(view,"Reaksyon",new Rect(0,0,170,56));Image(bubble.root,new Rect(0,0,170,56),Color.white,"SpeechBubble");bubble.label=Label(bubble.root,new Rect(8,3,154,46),"",17,ink);bubble.label.enableAutoSizing=true;bubble.label.fontSizeMin=13;bubble.alpha=bubble.root.gameObject.AddComponent<CanvasGroup>();bubble.alpha.blocksRaycasts=false;bubble.alpha.alpha=0;bubbles[p]=bubble;
+                var bubble=new Bubble();bubble.root=Rect(view,"Reaksyon",new Rect(0,0,160,50));
+                bubble.tail=Image(bubble.root,new Rect(80,48,14,14),cream).rectTransform;bubble.tail.pivot=new Vector2(.5f,.5f);bubble.tail.localRotation=Quaternion.Euler(0,0,45);
+                RoundedPanel(bubble.root,new Rect(0,0,160,50),cream);bubble.label=Label(bubble.root,new Rect(8,3,144,43),"",17,ink);bubble.label.fontSizeMin=12;
+                bubble.alpha=bubble.root.gameObject.AddComponent<CanvasGroup>();bubble.alpha.blocksRaycasts=false;bubble.alpha.alpha=0;bubbles[p]=bubble;
             }
             var versus=Image(view,new Rect(588,18,104,54),new Color(.98f,.88f,.70f,.98f));versus.sprite=PlateSprite();versus.type=UnityEngine.UI.Image.Type.Sliced;versus.name="Tapat badge";Label(versus.transform,new Rect(0,1,104,50),"VS",36,gold);
             Raw(view,new Rect(0,0,1280,720),Tex("UI/Vignette"));
@@ -508,26 +518,11 @@ namespace Hexbound
                 actor.root.gameObject.SetActive(!f.fallen||resultTime<.20f);
                 int actionFrame=f.pose==Pose.Punch?StrikeFrame(f.actionLength-f.actionTime):(int)(clock*8)%4;
                 if(AnimationCapture.Active&&AnimationCapture.Frame>=0)actionFrame=AnimationCapture.Frame;
-                Animate(actor,celebration?Pose.Win:f.pose,actionFrame);actor.body.uvRect=f.facing<0?new Rect(1,0,-1,1):new Rect(0,0,1,1);
+                actor.body.uvRect=f.facing<0?new Rect(1,0,-1,1):new Rect(0,0,1,1);Animate(actor,celebration?Pose.Win:f.pose,actionFrame);
                 for(int i=0;i<5;i++)hiloPips[p][i].color=i<f.streak?HiloColors[i]:new Color(.30f,.23f,.17f,.95f);
                 for(int i=0;i<winMarkers[p].Length;i++){bool won=i<f.wins;winMarkers[p][i].color=won?Color.white:new Color(.43f,.34f,.25f,.88f);float pop=won&&Model.Finished&&p==Model.winner&&i==f.wins-1?1+.18f*Mathf.Sin(Mathf.Clamp01(resultTime/.45f)*Mathf.PI):1;winMarkers[p][i].rectTransform.localScale=Vector3.one*pop;}
-                var bubble=bubbles[p];float age=clock-bubble.started;bool visible=!Model.Finished&&age>=0&&age<1.1f;bubble.root.gameObject.SetActive(visible);
-                if(visible) {bubble.alpha.alpha=Mathf.Min(1,age/.08f)*Mathf.Clamp01((1.1f-age)/.25f);
-                    // Follow each fighter's head. If both bubbles would collide, move them apart only for the overlap interval.
-                    float x=Mathf.Clamp(f.x-85,8,1102);
-                    var other=bubbles[1-p];float otherAge=clock-other.started;
-                    if(otherAge>=0&&otherAge<1.1f) {
-                        float otherCenter=Model.players[1-p].x;float separation=Mathf.Abs(f.x-otherCenter);
-                        if(separation<174) {
-                            int leftPlayer=Model.players[0].x<=Model.players[1].x?0:1;
-                            float leftX=Mathf.Clamp((Model.players[0].x+Model.players[1].x)*.5f-174,8,1102-174);
-                            x=p==leftPlayer?leftX:leftX+174;
-                        }
-                    }
-                    float headTop=actor.root.anchoredPosition.y+actor.root.sizeDelta.y+75;
-                    bubble.root.anchoredPosition=new Vector2(x,Mathf.Clamp(headTop,-330,-175));
-                    bubble.root.localScale=Vector3.one*Mathf.Lerp(.85f,1,Mathf.Clamp01(age/.1f));}
             }
+            UpdateReactionBubbles();
             // A five-star orbit is separate from the streak dots and persists for the victim's recovery.
             UpdateDizzyStars();
             if(impactLabels==null || impactLabels[0]==null) {impactLabels=new TMP_Text[2];for(int i=0;i<2;i++)impactLabels[i]=Label(view,new Rect(0,0,110,80),"*",72,gold);}
@@ -551,7 +546,30 @@ namespace Hexbound
             if(actor==null||actor.body==null||actor.root==null)return;
             int action=pose==Pose.Walk?1:pose==Pose.Punch?2:pose==Pose.Hurt?3:pose==Pose.Dizzy?4:pose==Pose.Fall?5:pose==Pose.Win?6:0;
             var frames=actionFrames[actor.id][action];var wholeBody=frames[frame%frames.Length];if(wholeBody!=null&&actor.body.texture!=wholeBody)actor.body.texture=wholeBody;
+            var anchor=animationAnchors.characters[actor.id].actions[action].frames[frame%frames.Length];
+            float x=actor.body.uvRect.width<0?896-anchor.head.x:anchor.head.x;
+            actor.headTop.anchoredPosition=new Vector2(x/896*actor.root.sizeDelta.x,-anchor.head.y/512*actor.root.sizeDelta.y);
             actor.dust.color=new Color(1,.78f,.45f,pose==Pose.Walk?.3f+(frame%2)*.08f:pose==Pose.Punch?.45f:pose==Pose.Win?.3f:.06f);
+        }
+        void UpdateReactionBubbles() {
+            var heads=new Vector2[2];var positions=new Vector2[2];var visible=new bool[2];
+            for(int p=0;p<2;p++) {
+                var bubble=bubbles[p];float age=clock-bubble.started;
+                visible[p]=age>=0&&age<1.1f&&(!Model.Finished||(Model.players[p].fallen&&resultTime<.20f));bubble.root.gameObject.SetActive(visible[p]);
+                if(!visible[p])continue;
+                heads[p]=view.InverseTransformPoint(actors[p].headTop.position);
+                positions[p]=new Vector2(Mathf.Clamp(heads[p].x-80,8,1112),Mathf.Clamp(heads[p].y+66,-570,-158));
+                bubble.alpha.alpha=Mathf.Min(1,age/.08f)*Mathf.Clamp01((1.1f-age)/.25f);
+            }
+            if(visible[0]&&visible[1]&&new Rect(positions[0].x,positions[0].y-60,160,60).Overlaps(new Rect(positions[1].x,positions[1].y-60,160,60))) {
+                int raised=heads[0].x<=heads[1].x?0:1;int lower=1-raised;
+                positions[raised].y=Mathf.Min(-158,Mathf.Max(positions[0].y,positions[1].y)+64);
+                positions[lower].y=Mathf.Min(positions[lower].y,positions[raised].y-64);
+            }
+            for(int p=0;p<2;p++)if(visible[p]) {
+                var bubble=bubbles[p];bubble.root.anchoredPosition=positions[p];bubble.root.localScale=Vector3.one;
+                bubble.tail.anchoredPosition=new Vector2(Mathf.Clamp(heads[p].x-positions[p].x,12,148),-48);bubble.root.SetAsLastSibling();
+            }
         }
         // Visual phases align the extended weapon with the existing .12-second hit event.
         // This only chooses artwork; DuelModel remains the sole owner of attack timing/range.

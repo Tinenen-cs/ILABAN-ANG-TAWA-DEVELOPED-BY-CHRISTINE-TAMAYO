@@ -58,11 +58,11 @@ def import_character(name,config):
         assert x>=0 and x+resized.width<=SIZE[0],(name,index,'weapon would clip',x,resized.width)
         canvas=Image.new('RGBA',SIZE);canvas.alpha_composite(resized,(x,y));path=out/f'Strike_{index:02}.png';canvas.save(path,optimize=True)
         def point(p):return [round(x+(p[0]-box[0])*scale),round(y+(p[1]-box[1])*scale)]
-        grip,tip=point(config['grips'][index]),point(config['tips'][index])
+        grip,tip,head=point(config['grips'][index]),point(config['tips'][index]),point(config['heads'][index])
         for kind,p in [('grip',grip),('tip',tip)]:
             assert 0<=p[0]<SIZE[0] and 0<=p[1]<SIZE[1],(name,index,kind,p)
             assert canvas.getchannel('A').crop((p[0]-8,p[1]-8,p[0]+9,p[1]+9)).getbbox(),(name,index,kind,'anchor misses drawn body/weapon',p)
-        frames.append({'phase':PHASES[index],'grip':grip,'tip':tip,'source_box':box,'foot_pivot':[SIZE[0]//2,SIZE[1]],'scale':scale})
+        frames.append({'phase':PHASES[index],'grip':grip,'tip':tip,'head':head,'source_box':box,'foot_pivot':[SIZE[0]//2,SIZE[1]],'scale':scale})
     return {'character':name,'item':config['item'],'canvas':list(SIZE),'pivot':[.5,0],'ground_line':512,'grip':frames[3]['grip'],'tip':frames[3]['tip'],'frames':frames}
 
 def main():

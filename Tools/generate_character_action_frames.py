@@ -55,18 +55,26 @@ def render(index,base,action,frame,anchor):
     return im,body_mask
 
 def main():
-    manifest=[];anchors={x['character']:x for x in json.loads((ROOT/'Docs/character_weapon_anchors.json').read_text())}
+    manifest=[];runtime=[];anchors={x['character']:x for x in json.loads((ROOT/'Docs/character_weapon_anchors.json').read_text())}
     for i,name in enumerate(CHARS):
         source=ROOT/'ArtSource/StrikeFrames'/name;ready=Image.open(source/'Strike_00.png').convert('RGBA')
         out=ART/name/'Actions';out.mkdir(exist_ok=True);masks=ROOT/'ArtSource/ActionMasks'/name;masks.mkdir(parents=True,exist_ok=True)
+        character_data={'actions':[]}
         for action in ACTIONS:
+            action_data={'frames':[]}
             count=6 if action=='Strike' else 4
             for f in range(count):
                 base=Image.open(source/f'Strike_{f:02}.png').convert('RGBA') if action=='Strike' else ready
                 anchor=anchors[name]['frames'][f if action=='Strike' else 0]
+                head=list(anchor['head']);amount=[-.009,0,.009,0][f] if action=='Walk' else [-.045,-.065,-.035,0][f] if action=='Hurt' else 0
+                head[0]+=amount*(512-head[1]);vector=lambda p:{'x':p[0],'y':p[1]}
+                action_data['frames'].append({'head':vector(head),'grip':vector(anchor['grip']),'tip':vector(anchor['tip'])})
                 image,body_mask=render(i,base,action,f,anchor);path=out/f'{action}_{f:02}.png';image.save(path,optimize=True);body_mask.save(masks/path.name,optimize=True)
                 manifest.append({'file':path.relative_to(ROOT).as_posix(),'size':list(SIZE),'action':action,'frame':f,'weapon':anchors[name]['item'],'weapon_is_baked_into_fullbody':True,'strike_pose_placeholder':False,'action_pose_placeholder':action not in ('Strike','Idle'),'phase':anchor['phase'] if action=='Strike' else None,'grip':anchor['grip'] if action=='Strike' else None,'tip':anchor['tip'] if action=='Strike' else None,'pivot':[.5,0],'foot_pivot':[448,512],'ground_line':512,'body_mask':(masks/path.name).relative_to(ROOT).as_posix()})
+            character_data['actions'].append(action_data)
+        runtime.append(character_data)
     (ROOT/'Docs/character_action_frames.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
+    (ART/'AnimationAnchors.json').write_text(json.dumps({'characters':runtime},indent=2),encoding='utf-8')
     print(f'Prepared {len(manifest)} whole-body frames, including 48 authored weapon-strike poses; no reference photos read.')
 
 if __name__=='__main__':main()

@@ -18,7 +18,7 @@
 | 14 | Fight HUD/Hilo | [x] | Original wood/brass design; exactly five amber/red pips, medals, VS and bottom hints; five-size screenshots |
 | 15 | Map animation | [~] | Lamp glow; foliage is fixed art |
 | 16 | Pause/controls | [x] | No-orphan PlayMode test |
-| 17 | Reaction bubbles | [x] | Head anchors, clamp, separation and HUD-safe lanes tested |
+| 17 | Reaction bubbles | [x] | Per-frame head/flip anchors, small tails, vertical close-range separation and HUD bounds tested; native step-2 smoke |
 | 18 | Remove Suntok orb | [x] | Match screenshot |
 | 19 | Results | [x] | Result screenshot at five sizes |
 | 20 | Windowed/fullscreen build | [~] | Five exact sizes; target monitor needs manual check |
