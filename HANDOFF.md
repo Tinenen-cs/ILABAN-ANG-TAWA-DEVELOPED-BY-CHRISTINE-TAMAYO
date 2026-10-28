@@ -15,26 +15,30 @@ Branch: `phase3-polish`. Project: `C:\Users\chris\Documents\CSEL GAMEDEV FILES\I
 
 - Step 2 complete: per-frame head positions are authored in animation data, mirrored with the whole sprite, and transformed with the actor through motion/dizzy/fall. Bubbles use rounded 160x50 plates and short tails, stay centered on their own heads, clamp to the screen/HUD-safe region, and separate vertically when close. Fresh EditMode 11/11, PlayMode 9/9 and 65 rule assertions passed. Native close-range smoke proof is under `QA_SCREENSHOTS/Step2_Bubbles/`.
 - Step 3 complete: joined wood/brass rings and Hilo bars, uncovered mirrored labels, five amber/red segments per player, win medal pop/sparkle, bottom keycaps and shared wooden menu frames. Native review found pause-before-first-update placement and double/edge focus scaling bugs; both are fixed and covered by regressions. All tests/build and five-size native re-captures passed. HUD captures are under `QA_SCREENSHOTS/HUD/`.
-- Watchdog file exists from the interrupted work but is not registered or running. Finish/test strikes, bubbles and HUD before completing watchdog setup, per the latest user order.
+- Step 4 complete after steps 1–3: watchdog source, setup helper, exclusive lock/reset tests, harmless read-only CLI smoke, active-process guard, hidden start and scheduled task are verified. Current relaunch count is **0**; it sees the active Codex processes and correctly skips a second editing agent. The real second-watchdog poll exited because the first owned the lock.
 - Latest distributable ZIP is intentionally not rebuilt here; final EXE/Drive work is queued separately.
 
 ## Next five steps
 
-1. Finish/test the watchdog now that steps 1–3 passed; verify one-agent detection and lock/reset behavior.
-2. Register/start it, record scheduled task and prior power settings, and commit step 4; rerun RubricTests/65 rules.
-3. Continue remaining original UI/art work: reaction/expression poses, headings/controls details, fixed night relighting and subtle foliage/banderitas.
-4. Refresh final test/build/capture evidence after remaining source/art changes; keep hardware/clean-PC checks manual.
-5. Run the clean-tree pre-check and stop before the separately queued final EXE/Drive task. No public publishing until the photo-history decision.
+1. Continue character reaction/expression and complete-action pose art using fictional source drawings only; add menu-safe matching cues.
+2. Finish the original heading-lettering assets, controls keycap grid and remaining common button details.
+3. Correct Looban/Plaza to fixed night lighting and add subtle isolated banderitas/leaves without moving the painted background.
+4. Refresh rule/input/build and five-size capture evidence after those changes; hardware/clean-PC checks remain manual.
+5. Run the clean-tree pre-check, write TASK_COMPLETE.flag, disable IlabanAutoResume and stop its verified watchdog process. End before the separately queued final EXE/Drive task. No publishing until the photo-history decision.
 
 ## Resume command
 
-`codex exec --sandbox workspace-write -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read RESUME_STATE.txt and HANDOFF.md, run git status, finish step 4 safe auto-resume setup and tests, then continue the original UI/art checklist. Do not ask questions or start the queued EXE/Drive task."`
+`codex exec --sandbox workspace-write -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read RESUME_STATE.txt and HANDOFF.md, run git status, continue the remaining character reactions and original UI/art checklist. Do not ask questions or start the queued EXE/Drive task."`
 
 For the next Codex session: read `RESUME_STATE.txt`, `HANDOFF.md`, `PENDING_NETWORK.md`, `CHECKLIST.md`; run `git status`; continue from step 1 above. Do not ask questions. Do not start final EXE/Drive task in this continuation.
 
 ## Auto-resume / network / power
 
-`Tools/autoresume.ps1` was tested via the harmless CLI smoke command; one unsupported option was corrected after consulting `codex --help` and `codex exec --help`. The watchdog has not yet relaunched this task; relaunch count: **0**. `PENDING_NETWORK.md` records the public-photo-history hold and queued Drive sign-in/upload. Powercfg showed AC sleep and display timeouts were already 0; commands to restore those previous values are both `... 0`.
+`Tools/autoresume.ps1 -SelfTest` passed its exclusive-lock, reset-plus-two-minutes (4620-second example), 900-second fallback, and harmless Codex CLI checks. Fresh `codex --help`/`codex exec --help` and official non-interactive documentation were consulted. The task is registered with current-user logon and PT5M triggers; its hidden process and settings are recorded in `Docs/QA_EVIDENCE/autoresume_setup.json`. Another copy exits on the held lock. Three failed relaunches persist a halt across scheduled starts.
+
+Safety limitation: the watchdog conservatively blocks while **any** codex.exe host is running, including an idle App/IDE, because this script cannot prove that those remote sessions are idle. Close those hosts before expecting a CLI relaunch. Actual reboot/usage-limit recovery remains NEEDS MANUAL TEST; it has relaunched this task **0 times**, because the current Codex process guard is active.
+
+The first combined setup command was rejected by automatic review; running normal PowerShell setup without an outer execution-policy override succeeded. No unresolved setup block remains. AC sleep and monitor timeouts were already 0 seconds before setup and remain 0; restore commands: `powercfg /change standby-timeout-ac 0` and `powercfg /change monitor-timeout-ac 0`. DC settings were not changed. Disable the task with `Disable-ScheduledTask -TaskName IlabanAutoResume` after completion. `PENDING_NETWORK.md` retains the public-photo-history hold and separate Drive task.
 
 ## NEEDS MANUAL TEST
 

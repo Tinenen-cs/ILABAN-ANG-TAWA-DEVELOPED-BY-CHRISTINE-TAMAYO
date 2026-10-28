@@ -38,3 +38,5 @@ TASK_COMPLETE.flag
 Tools/autoresume.lock
 Tools/codex-active.lock
 Tools/autoresume-last-output.txt
+Tools/autoresume-state.json
+Tools/autoresume-selftest.lock

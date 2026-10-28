@@ -8,7 +8,7 @@ Steps 1–3 are implemented and verified: 48 authored whole-body weapon-strike p
 
 Fresh verification from the real project: Unity 6000.6.2f1 build, 65 rule assertions, EditMode 11/11, PlayMode 9/9, five native resolution runs (1280x720, 1366x768, 1920x1080, 2560x1440, 3440x1440). 108 native animation/pair screenshots and 272 body-mask structural checks passed. See `Docs/QA_EVIDENCE`, `Docs/portable_qa_results.json`, `Docs/animation_capture_evidence.json`.
 
-Next: finish/test step 4 watchdog after the completed three fixes; then continue remaining original UI/art checklist items listed in HANDOFF. Watchdog files exist from interrupted work but are not yet registered/running. Relaunch count 0.
+Step 4 also passed: watchdog lock/reset/harmless CLI checks, hidden start and scheduled task at logon/every five minutes. Relaunch count 0; any running codex.exe conservatively blocks launch. AC sleep/display were already 0 and remain 0. Next: remaining character reactions and original heading/controls/night-map/foliage work in HANDOFF. After all automatic checks pass, write TASK_COMPLETE.flag, disable the task and stop the watchdog before ending.
 
 Do not start the separately queued final EXE/ZIP delivery or Drive upload task. Current distributable ZIP predates these changes. Public publishing is held for the owner decision about old reference photos in public Git history.
 

@@ -45,3 +45,10 @@ Status: [x] verified in source/tests/captures; [~] implemented partially or NEED
 - Clean Windows PC without Unity; antivirus/SmartScreen behavior for unsigned executable.
 - Owner decision on public reference-photo history before any publishing.
 - Latest SUBMISSION ZIP rebuild, extraction and simulated match are part of the queued final executable task, not this step.
+- Actual watchdog reboot/usage-limit recovery with Codex App/IDE hosts closed. Lock, process-guard, reset parsing, harmless CLI and scheduled registration tests passed; current editing relaunch count is zero.
+
+## Resume safeguards
+
+- [x] Tested `Tools/autoresume.ps1`, hidden background start and current-user `IlabanAutoResume` scheduled task (logon plus five minutes). Evidence: `Docs/QA_EVIDENCE/autoresume_tests.json`, `autoresume_setup.json`, local `Tools/autoresume.log`.
+- [x] One exclusive watchdog lock, conservative Codex-process guard, persisted three-failure halt, connectivity backoff and reset-time wait. No account/key changes or limit bypass.
+- [x] AC sleep/display prior values recorded (both already zero), same values reapplied. No DC power changes.

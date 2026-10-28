@@ -1,0 +1,17 @@
+﻿{
+    "utc":  "2026-10-28T03:24:15.1830637Z",
+    "previous_ac_sleep_seconds":  0,
+    "previous_ac_monitor_seconds":  0,
+    "current_ac_sleep_seconds":  0,
+    "current_ac_monitor_seconds":  0,
+    "task_registered":  true,
+    "task_error":  "",
+    "watchdog_pid":  26716,
+    "scheduled_task":  "IlabanAutoResume",
+    "triggers":  [
+                     "At logon for current user",
+                     "Every 5 minutes"
+                 ],
+    "restore_sleep_command":  "powercfg /change standby-timeout-ac 0",
+    "restore_monitor_command":  "powercfg /change monitor-timeout-ac 0"
+}

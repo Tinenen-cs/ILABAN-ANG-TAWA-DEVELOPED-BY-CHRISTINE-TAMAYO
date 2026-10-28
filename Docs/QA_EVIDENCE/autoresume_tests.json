@@ -1,0 +1,9 @@
+﻿{
+    "utc":  "2026-10-28T03:16:25.3654284Z",
+    "lock_exclusive":  true,
+    "reset_wait_seconds":  4620,
+    "fallback_seconds":  900,
+    "harmless_cli_exit":  0,
+    "harmless_cli_passed":  true,
+    "codex":  "c:\\Users\\chris\\.vscode\\extensions\\openai.chatgpt-26.1021.22027-win32-x64\\bin\\windows-x86_64\\codex.exe"
+}

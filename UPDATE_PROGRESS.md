@@ -29,3 +29,5 @@
 | 25 | Release docs | [~] | Local docs ready; final EXE/Drive task queued |
 
 No push, merge, history rewrite, public release or Drive upload was attempted. Physical/device checks remain NEEDS MANUAL TEST.
+
+Resume safeguards are installed and tested: hidden watchdog, exclusive lock, conservative active-process guard, persisted three-failure halt, reset wait and logon/PT5M task. Editing relaunch count 0. AC sleep/display were already never and remain so; see HANDOFF for restoration and stop instructions.
