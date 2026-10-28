@@ -71,3 +71,9 @@ Next: Step 8 five-option pause; then 9 modal errors, 10 emotes, 11 ambience/perf
 DONE: five-option rounded pause menu: resume, controls, choose other fighters, title, exit. Exit uses shared No-default modal and Esc cannot quit. PlayMode 12/12, build/65 checks and complete native smoke passed; pause screenshot viewed.
 
 Next: Step 9 trapped-focus validation popups; then 10 win/lose reactions, 11 subtle sky motion/performance, 12 Hilo, 13 final QA.
+
+## UPDATE2 step 9 — 2026-10-28T16:42:13.507480+00:00
+
+DONE: shared rounded soft-sound validation modal blocks pointer and consumes keyboard/gamepad dismissal. Readiness start, invalid stage/settings/result attempts covered; same-character duels intentionally allowed. Clean rerun PlayMode 13/13 exit 0, build/65 checks exit 0, 17-screen native full-match smoke passed; popup/banner viewed.
+
+Next: Step 10 verify and animate all win/lose poses; then 11 sky ambience/performance, 12 Hilo proof, 13 final multi-resolution QA, 14 single EXE.

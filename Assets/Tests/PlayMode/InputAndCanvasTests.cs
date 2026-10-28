@@ -46,6 +46,13 @@ namespace Hexbound.Tests
             game.Show(AcademyGame.ScreenState.Title);typeof(AcademyGame).GetField("screenEnteredFrame",flags).SetValue(game,-1);buttons=(Button[])typeof(AcademyGame).GetField("menuButtons",flags).GetValue(game);buttons[2].onClick.Invoke();
             Assert.IsTrue((bool)typeof(AcademyGame).GetField("exitOpen",flags).GetValue(game));game.CancelExit();game.enabled=true;
         }
+        [Test] public void ValidationPopupsTrapKeyboardAndGamepadAndCoverInvalidActions(){
+            var keys=InputSystem.AddDevice<Keyboard>();var pad=InputSystem.AddDevice<Gamepad>();var previousGame=Object.FindAnyObjectByType<AcademyGame>();if(previousGame!=null)Object.DestroyImmediate(previousGame.gameObject);var game=new GameObject("Modal regression").AddComponent<AcademyGame>();game.enabled=false;
+            const System.Reflection.BindingFlags flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;var type=typeof(AcademyGame);var open=type.GetField("errorOpen",flags);var frame=type.GetField("screenEnteredFrame",flags);var update=type.GetMethod("Update",flags);
+            game.Show(AcademyGame.ScreenState.Select);game.Ready[0]=game.Ready[1]=false;game.TryStartSelection();Assert.IsTrue((bool)open.GetValue(game));frame.SetValue(game,-1);Press(keys.fKey);update.Invoke(game,null);Assert.IsFalse((bool)open.GetValue(game));Assert.IsFalse(game.Ready[0]||game.Ready[1],"Dismissal must not confirm a fighter underneath.");Release(keys.fKey);
+            game.Ready[0]=true;game.TryStartSelection();Assert.IsTrue((bool)open.GetValue(game));frame.SetValue(game,-1);Press(pad.buttonSouth);update.Invoke(game,null);Assert.IsFalse((bool)open.GetValue(game));Assert.IsFalse(game.Ready[1]);Release(pad.buttonSouth);
+            game.SelectArena(-1);Assert.IsTrue((bool)open.GetValue(game));game.CloseError();game.Show(AcademyGame.ScreenState.Controls);game.SetLanguage(2);Assert.IsTrue((bool)open.GetValue(game));game.CloseError();game.ActivateResult(0);Assert.IsTrue((bool)open.GetValue(game));game.CloseError();game.enabled=true;
+        }
         [UnityTest] public IEnumerator SettingsAndExitUseTheirOwnScreenFlow(){
             var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();
             game.Show(AcademyGame.ScreenState.Title);yield return null;game.ActivateTitle(1);Assert.AreEqual(AcademyGame.ScreenState.Controls,game.ScreenNow,"Settings selection must remain on settings.");

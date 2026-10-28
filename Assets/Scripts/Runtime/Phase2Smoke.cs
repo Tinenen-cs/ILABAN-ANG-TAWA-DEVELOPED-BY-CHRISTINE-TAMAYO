@@ -34,15 +34,16 @@ namespace Hexbound
             game.Show(AcademyGame.ScreenState.Select);yield return Capture("02-characters");
             game.Ready[0]=true;game.Ready[1]=false;game.Show(AcademyGame.ScreenState.StageSelect);game.StartMatch();
             if(game.ScreenNow==AcademyGame.ScreenState.Fight)throw new Exception("Started without both confirmations");
+            yield return Capture("11-validation-popup");game.CloseError();
             for(int map=0;map<3;map++) {
                 game.SelectArena(map);game.Show(AcademyGame.ScreenState.StageSelect);yield return Capture("03-stage-"+map);
                 game.Ready[1]=true;game.StartMatch();yield return Capture("04-match-"+map);
             }
             game.SelectArena(0);game.Ready[0]=game.Ready[1]=true;game.StartMatch();
             var pad=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Gamepad>();
-            float deadline=Time.realtimeSinceStartup+145,nextPunch=0;bool dizzyCaptured=false;
+            float deadline=Time.realtimeSinceStartup+145,nextPunch=0;bool dizzyCaptured=false,roundCaptured=false;
             while(!game.Model.MatchFinished && Time.realtimeSinceStartup<deadline) {
-                if(game.Model.Finished){UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState());yield return null;continue;}
+                if(game.Model.Finished){if(!roundCaptured){roundCaptured=true;yield return Capture("12-round-banner");}UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState());yield return null;continue;}
                 var a=game.Model.players[0];var rival=game.Model.players[1];
                 float move=rival.x-a.x>DuelModel.PunchReach-12?1:0;
                 var state=new UnityEngine.InputSystem.LowLevel.GamepadState {leftStick=new Vector2(move,0)};

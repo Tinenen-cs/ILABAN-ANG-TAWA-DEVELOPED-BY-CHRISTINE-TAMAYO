@@ -62,7 +62,10 @@ namespace Hexbound
         Button[] confirmButtons,resultButtons;
         Slider[] settingsSliders;
         TMP_Text[] settingValues;
-        RectTransform exitPanel;
+        RectTransform exitPanel,errorPanel;
+        TMP_Text errorMessage;
+        Button errorButton;
+        bool errorOpen;
         Button[] exitButtons;
 
         AudioSource music,sfx,highlight;
@@ -203,6 +206,9 @@ namespace Hexbound
                 case "Simulan ang Laro":return "Start Game";case "Mga Kontrol":return "Settings";case "Lumabas":case "Umalis":return "Exit";case "Pumili ng Tauhan":return "Choose a Fighter";case "Pumili ng Entablado":return "Choose an Arena";
                 case "Pumili at kumpirmahin ang tauhan ng bawat manlalaro.":return "Choose and confirm a fighter for each player.";
                 case "Bumalik":return "Back";case "Simulan":return "Start";case "Kumpirmahin":return "Confirm";case "Handa na":return "Ready";case "Magpatuloy":return "Resume";case "Pangunahing Talaan":return "Main Menu";case "Pansamantalang Ihinto":return "Paused";
+                case "Paunawa":return "Notice";case "Sige":return "OK";
+                case "Pumili at kumpirmahin muna ang tauhan ng bawat manlalaro.":return "Choose and confirm each player's fighter first.";
+                case "Pumili muna ng isang entablado.":return "Choose an arena first.";case "Hindi wasto ang napiling ayos.":return "That setting is not valid.";case "Hindi pa maaaring piliin ang kilos na ito.":return "That action is not available yet.";
                 case "Pumili ng Ibang Tauhan":return "Choose Other Fighters";case "Maglaro Muli":return "Play Again";case "Pumili Muli":return "Choose Again";case "Sunod na Suntok":return "Next Hit";case "Hilo":return "Dizzy";case "Wika ng Reaksyon":return "Reaction Style";case "Wika ng Laro":return "Game Language";
                 case "Pangunahing Lakas":return "Master Volume";case "Panalo":return "Wins";case "Musika":return "Music";case "Tunog":return "Sound";case "Umalis sa Laro?":return "Leave the Game?";case "Gusto mo na bang umalis sa laro?":return "Do you want to leave the game?";case "Oo":return "Yes";case "Hindi":return "No";
                 case "Manlalaro 1":return "Player 1";case "Manlalaro 2":return "Player 2";case "Kumpirmahin: F":return "Confirm: F";case "Kumpirmahin: Ctrl kanan / 0":return "Confirm: Right Ctrl / 0";
@@ -254,7 +260,7 @@ namespace Hexbound
         void SaveAudio() {ApplyAudio();PlayerPrefs.SetFloat("Ilaban.Master",master);PlayerPrefs.SetFloat("Ilaban.Music",musicLevel);PlayerPrefs.SetFloat("Ilaban.Sound",soundLevel);}
         public void Show(ScreenState state)
         {
-            ScreenNow=state;screenEnteredFrame=Time.frameCount;enteredAt=clock;focus=0;exitOpen=false;previews.Clear();flames.Clear();confetti.Clear();cards=null;cardMarkers=null;menuButtons=null;confirmButtons=null;resultButtons=null;pausePanel=null;resultPanel=null;exitPanel=null;exitButtons=null;
+            ScreenNow=state;screenEnteredFrame=Time.frameCount;enteredAt=clock;focus=0;exitOpen=false;errorOpen=false;previews.Clear();flames.Clear();confetti.Clear();cards=null;cardMarkers=null;menuButtons=null;confirmButtons=null;resultButtons=null;pausePanel=null;resultPanel=null;exitPanel=null;exitButtons=null;
             if(view!=null) {view.gameObject.SetActive(false);Destroy(view.gameObject);}
             view=Rect(safe,"Screen "+state,new Rect(0,0,1280,720));view.gameObject.AddComponent<CanvasGroup>();
             for(int i=0;i<3;i++)stages[i]=MapTex(i);
@@ -265,7 +271,7 @@ namespace Hexbound
             if(state==ScreenState.StageSelect) {scenery.texture=Tex("Backgrounds/PumiliEntablado")??scenery.texture;Music("Selection");StageSelect();}
             if(state==ScreenState.Fight) {Music(Roster.StageFiles[Model.ArenaIndex]);Fight();}
             if(state==ScreenState.Controls) Controls();
-            BuildExitDialog();
+            BuildExitDialog();BuildErrorDialog();
             if(state==ScreenState.Select)QueueCharacterCue(Selected[0]);else if(state!=ScreenState.StageSelect){highlight.Stop();queuedCharacter=-1;}
         }
         // Only subtle lamp and banderita motion is layered over the fixed stage paintings.
@@ -315,10 +321,20 @@ namespace Hexbound
             Label(plate,new Rect(20,18,460,48),"Umalis sa Laro?",30,gold);Label(plate,new Rect(24,70,452,42),"Gusto mo na bang umalis sa laro?",22);
             exitButtons=new[]{Button(plate,new Rect(38,130,200,52),"Oo",QuitGame),Button(plate,new Rect(262,130,200,52),"Hindi",CancelExit)};exitPanel.gameObject.SetActive(false);
         }
+        void BuildErrorDialog(){
+            errorPanel=Rect(view,"Paunawa",new Rect(0,0,1280,720));var blocker=Image(errorPanel,new Rect(0,0,1280,720),new Color(0,0,0,.65f));blocker.raycastTarget=true;
+            var plate=Rect(errorPanel,"Paunawa na kahoy",new Rect(350,235,580,250));WoodPanel(plate,new Rect(0,0,580,250));
+            Label(plate,new Rect(20,18,540,40),"Paunawa",30,gold);errorMessage=Label(plate,new Rect(30,65,520,90),"",24);
+            errorButton=Button(plate,new Rect(190,177,200,48),"Sige",CloseError);errorPanel.gameObject.SetActive(false);
+        }
+        public void ShowError(string message){if(errorPanel==null)return;errorMessage.text=Tr(message);errorOpen=true;screenEnteredFrame=Time.frameCount;errorPanel.gameObject.SetActive(true);errorPanel.SetAsLastSibling();errorButton.GetComponent<PlateButtonFeedback>().SetFocused(true);Sound("menu_back");}
+        public void CloseError(){errorOpen=false;if(errorPanel!=null)errorPanel.gameObject.SetActive(false);screenEnteredFrame=Time.frameCount;}
+        public void TryStartSelection(){if(!Ready[0]||!Ready[1])ShowError("Pumili at kumpirmahin muna ang tauhan ng bawat manlalaro.");else Show(ScreenState.StageSelect);}
+        public void ActivateResult(int index){if(Model==null||!Model.MatchFinished||index<0||index>2){ShowError("Hindi pa maaaring piliin ang kilos na ito.");return;}if(index==0)StartMatch();else if(index==1)OpenSelect();else RequestExit();}
         public void ActivateTitle(int index) {if(index==0) OpenSelect();else if(index==1){fromFight=false;setting=0;Show(ScreenState.Controls);}else RequestExit();}
         public void RequestExit(){if(exitPanel==null||exitOpen)return;exitReturnFocus=focus;exitOpen=true;focus=1;screenEnteredFrame=Time.frameCount;exitPanel.gameObject.SetActive(true);exitPanel.SetAsLastSibling();}
-        public void SetLanguage(int value){language=value==1?1:0;PlayerPrefs.SetInt("Ilaban.Language",language);PlayerPrefs.Save();if(ScreenNow==ScreenState.Controls)Show(ScreenState.Controls);}
-        public void SetReactionStyle(int value){reactions.Mode=value==1?LanguageMode.GenZ:LanguageMode.Pormal;PlayerPrefs.SetInt("Ilaban.ReactionStyle",value==1?1:0);PlayerPrefs.Save();}
+        public void SetLanguage(int value){if(value<0||value>1){ShowError("Hindi wasto ang napiling ayos.");return;}language=value==1?1:0;PlayerPrefs.SetInt("Ilaban.Language",language);PlayerPrefs.Save();if(ScreenNow==ScreenState.Controls)Show(ScreenState.Controls);}
+        public void SetReactionStyle(int value){if(value<0||value>1){ShowError("Hindi wasto ang napiling ayos.");return;}reactions.Mode=value==1?LanguageMode.GenZ:LanguageMode.Pormal;PlayerPrefs.SetInt("Ilaban.ReactionStyle",value==1?1:0);PlayerPrefs.Save();}
         public void CancelExit(){exitOpen=false;if(exitPanel!=null)exitPanel.gameObject.SetActive(false);focus=exitReturnFocus;screenEnteredFrame=Time.frameCount;}
         public void QuitGame(){
 #if UNITY_EDITOR
@@ -353,7 +369,7 @@ namespace Hexbound
             Label(view,new Rect(605,553,620,42),Roster.Descriptions[Selected[0]],20,playerColors[0]);
             Label(view,new Rect(605,596,620,42),Roster.Descriptions[Selected[1]],20,playerColors[1]);
             Button(view,new Rect(35,646,205,52),"Bumalik",()=>Show(ScreenState.Title));
-            Button(view,new Rect(1040,646,205,52),"Simulan",()=>{if(Ready[0]&&Ready[1])Show(ScreenState.StageSelect);},Ready[0]&&Ready[1]);
+            Button(view,new Rect(1040,646,205,52),"Simulan",TryStartSelection);
             Label(view,new Rect(260,642,760,58),"KALIWA / KANAN  PUMILI    F / CTRL KANAN  KUMPIRMAHIN",20,gold);
         }
         void Slant(Transform parent,Rect rect,Color color) {var r=Rect(parent,"Slanted card",rect);var g=r.gameObject.AddComponent<SlantGraphic>();g.color=color;g.raycastTarget=false;}
@@ -376,9 +392,9 @@ namespace Hexbound
             Button(view,new Rect(35,646,205,52),"Bumalik",OpenSelect);Button(view,new Rect(1040,646,205,52),"Simulan",StartMatch);
             Label(view,new Rect(260,645,760,53),"KALIWA / KANAN  PUMILI    ENTER / SUNTOK  KUMPIRMAHIN",20,gold);
         }
-        public void SelectArena(int index){selectedArena=Mathf.Clamp(index,0,2);}
+        public void SelectArena(int index){if(index<0||index>=3){ShowError("Pumili muna ng isang entablado.");return;}selectedArena=index;}
         void ChooseStage(int index) {selectedArena=index;scenery.texture=stages[index];Ambience(index,true);ambience.SetAsFirstSibling();if(focusLabel!=null)focusLabel.text=Tr(Roster.StageDescriptions[index]);Sound("carousel_slide");}
-        public void StartMatch() {if(!Ready[0]||!Ready[1])return;Model=new DuelModel(Selected[0],Selected[1],selectedArena);Paused=false;resultTime=0;Show(ScreenState.Fight);for(int p=0;p<2;p++)React(p,"ready");}
+        public void StartMatch() {if(!Ready[0]||!Ready[1]){ShowError("Pumili at kumpirmahin muna ang tauhan ng bawat manlalaro.");return;}if(selectedArena<0||selectedArena>=3){ShowError("Pumili muna ng isang entablado.");return;}Model=new DuelModel(Selected[0],Selected[1],selectedArena);Paused=false;resultTime=0;Show(ScreenState.Fight);for(int p=0;p<2;p++)React(p,"ready");}
         Actor ActorView(Transform parent,int id,Rect area)
         {
             float originalWidth=area.width;area.width=area.height*bodies[id].width/bodies[id].height;area.x+=(originalWidth-area.width)/2;
@@ -434,7 +450,7 @@ namespace Hexbound
             resultPanel=Rect(view,"Bunga ng Laban",new Rect(320,145,640,465));WoodPanel(resultPanel,new Rect(0,0,640,465));
             resultTitle=Label(resultPanel,new Rect(20,16,600,40),"",30,gold);resultReason=Label(resultPanel,new Rect(24,58,592,32),"",20);
             resultWinner=ActorView(resultPanel,Selected[0],new Rect(245,94,150,145));
-            resultButtons=new[]{Button(resultPanel,new Rect(105,252,430,48),"Maglaro Muli",StartMatch),Button(resultPanel,new Rect(105,312,430,48),"Pumili ng Ibang Tauhan",OpenSelect),Button(resultPanel,new Rect(105,372,430,48),"Umalis",RequestExit)};
+            resultButtons=new[]{Button(resultPanel,new Rect(105,252,430,48),"Maglaro Muli",()=>ActivateResult(0)),Button(resultPanel,new Rect(105,312,430,48),"Pumili ng Ibang Tauhan",()=>ActivateResult(1)),Button(resultPanel,new Rect(105,372,430,48),"Umalis",()=>ActivateResult(2))};
             Label(resultPanel,new Rect(30,427,580,26),"KALIWA / KANAN  PUMILI    SUNTOK  PILIIN",16,gold);resultPanel.gameObject.SetActive(false);
             Color[] paper={new Color32(243,185,96,255),new Color32(74,201,192,255),new Color32(231,119,99,255),new Color32(246,225,183,255)};
             for(int i=0;i<28;i++){float x=i%2==0?15+(i/2%5)*23:1140+(i/2%5)*23;var piece=Image(view,new Rect(x,0,7+i%3*2,12),paper[i%paper.Length]);confetti.Add(piece.rectTransform);piece.gameObject.SetActive(false);}
@@ -536,6 +552,7 @@ namespace Hexbound
             UpdateCharacterCue();
             // Screen changes and pointer callbacks consume the initiating press.
             if(Time.frameCount==screenEnteredFrame)return;
+            if(errorOpen){if(controls.Any("Confirm")||controls.Any("Cancel"))CloseError();return;}
             if(exitOpen){
                 NavMenu(2);if(controls.Any("Cancel"))CancelExit();else if(controls.Any("Confirm")){if(focus==0)QuitGame();else CancelExit();}
                 for(int i=0;i<2;i++)exitButtons[i].GetComponent<PlateButtonFeedback>().SetFocused(i==focus);return;
@@ -585,7 +602,7 @@ namespace Hexbound
                 }
             } else {resultTime+=Time.deltaTime;
                 if(!Model.MatchFinished){if(resultTime>=1.6f&&Model.BeginNextRound()){resultTime=0;Show(ScreenState.Fight);for(int p=0;p<2;p++)React(p,"ready");return;}}
-                else {NavMenu(3);if(controls.Any("Cancel")){OpenSelect();return;}if(controls.Any("Confirm")){if(focus==0)StartMatch();else if(focus==1)OpenSelect();else RequestExit();return;}}
+                else {NavMenu(3);if(controls.Any("Cancel")){OpenSelect();return;}if(controls.Any("Confirm")){ActivateResult(focus);return;}}
             }
             for(int i=0;i<confetti.Count;i++){var piece=confetti[i];piece.gameObject.SetActive(Model.Finished);if(Model.Finished){float y=Mathf.Repeat(resultTime*100+i*27,210);piece.anchoredPosition=new Vector2(piece.anchoredPosition.x,-y);piece.localRotation=Quaternion.Euler(0,0,Mathf.Sin(clock*4+i)*35);}}
             for(int p=0;p<2;p++) {
