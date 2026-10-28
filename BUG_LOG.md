@@ -98,3 +98,4 @@ Normal double-click A launch, pointer selection and Alt+Enter worked. Sky-inject
 
 UPDATE2 step 1: Jeepney source faces left but positive-x travel made it reverse. Reversed the path without changing art; reused painted title plate for the opening and separated tagline. Build/65 checks/native smoke passed; viewed opening and title.
 UPDATE2 step 2 root cause: StartPressed included every left mouse press, entering selection before intended button callbacks. Removed the any-key title fallback; pointer callbacks and isolated Confirm actions own routing. Added keyboard/gamepad and pointer regressions. Passed 11 PlayMode tests.
+UPDATE2 step 3: binary-alpha corners plus point-filtered UI and long-bar skin stretched into tall panels caused jagged/cut edges. Replaced shared corners with padded signed-distance coverage and preserved nine-slice borders; bilinear UI import; tall panels use continuous shared rounded rim. All five native sizes passed.

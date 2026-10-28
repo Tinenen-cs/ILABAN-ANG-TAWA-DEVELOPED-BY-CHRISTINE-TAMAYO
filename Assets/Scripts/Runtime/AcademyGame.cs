@@ -150,7 +150,7 @@ namespace Hexbound
         }
         Image RoundedPanel(Transform parent,Rect rect,Color color) {var panel=Image(parent,rect,color);panel.sprite=PlateSprite();panel.type=UnityEngine.UI.Image.Type.Sliced;return panel;}
         Image WoodPanel(Transform parent,Rect rect) {
-            var panel=Image(parent,rect,Color.white);panel.sprite=Art("HudWoodBar",new Vector4(30,30,30,30));panel.type=UnityEngine.UI.Image.Type.Sliced;panel.name="Kahoy na balangkas";
+            var panel=Image(parent,rect,new Color32(171,112,58,255));panel.sprite=PlateSprite();panel.type=UnityEngine.UI.Image.Type.Sliced;panel.name="Kahoy na balangkas";
             RoundedPanel(panel.transform,new Rect(7,7,rect.width-14,rect.height-14),new Color(.055f,.075f,.075f,.97f));return panel;
         }
         void KeyHint(Transform parent,float x,float width,string key,string text,float textWidth) {
@@ -184,9 +184,15 @@ namespace Hexbound
         static Sprite plateSprite;
         static Sprite PlateSprite() {
             if(plateSprite!=null)return plateSprite;
-            const int n=64;var tex=new Texture2D(n,n,TextureFormat.RGBA32,false);tex.name="Filipino signboard button";tex.filterMode=FilterMode.Bilinear;tex.wrapMode=TextureWrapMode.Clamp;
-            for(int y=0;y<n;y++)for(int x=0;x<n;x++){float dx=Mathf.Max(8-x,0,x-(n-9)),dy=Mathf.Max(8-y,0,y-(n-9));bool inside=dx*dx+dy*dy<=64;bool edge=x<2||y<2||x>=n-2||y>=n-2;tex.SetPixel(x,y,inside?(edge?new Color32(237,195,126,255):Color.white):Color.clear);}tex.Apply();
-            plateSprite=Sprite.Create(tex,new Rect(0,0,n,n),new Vector2(.5f,.5f),100,0,SpriteMeshType.FullRect,new Vector4(14,14,14,14));plateSprite.name="Filipino signboard button";return plateSprite;
+            const int n=96;var tex=new Texture2D(n,n,TextureFormat.RGBA32,false);tex.name="Antialiased padded signboard";tex.filterMode=FilterMode.Bilinear;tex.wrapMode=TextureWrapMode.Clamp;
+            // Signed distance coverage, three transparent texels, and a complete curved rim.
+            // Every nine-slice corner retains its original radius; no rectangular cut lines.
+            for(int y=0;y<n;y++)for(int x=0;x<n;x++){
+                var q=new Vector2(Mathf.Abs(x+.5f-n/2f)-31,Mathf.Abs(y+.5f-n/2f)-31);
+                float distance=new Vector2(Mathf.Max(q.x,0),Mathf.Max(q.y,0)).magnitude+Mathf.Min(Mathf.Max(q.x,q.y),0)-14;
+                float alpha=Mathf.Clamp01(.5f-distance);var color=Color.Lerp(Color.white,new Color32(237,195,126,255),Mathf.Clamp01(distance+2));color.a=alpha;tex.SetPixel(x,y,color);
+            }tex.Apply();
+            plateSprite=Sprite.Create(tex,new Rect(0,0,n,n),new Vector2(.5f,.5f),100,0,SpriteMeshType.FullRect,new Vector4(20,20,20,20));plateSprite.name="Filipino signboard button";return plateSprite;
         }
         string Tr(string value) {
             if(language==0||string.IsNullOrEmpty(value))return value;

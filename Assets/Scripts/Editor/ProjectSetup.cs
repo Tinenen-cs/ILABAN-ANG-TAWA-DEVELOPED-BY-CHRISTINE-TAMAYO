@@ -7,13 +7,13 @@ namespace Hexbound.Editor
 {
     public sealed class PixelImport : AssetPostprocessor
     {
-        public override uint GetVersion() => 3;
+        public override uint GetVersion() => 4;
         void OnPreprocessTexture()
         {
             if (!assetPath.StartsWith("Assets/Resources/")) return;
             var t=(TextureImporter)assetImporter;
             t.textureType=TextureImporterType.Default;
-            bool smooth=assetPath.Contains("/Ilaban/Maps/")||assetPath.Contains("/Ilaban/Backgrounds/")||assetPath.Contains("/Ilaban/Characters/");t.filterMode=assetPath.StartsWith("Assets/Resources/Ilaban/")&&!smooth?FilterMode.Point:FilterMode.Bilinear;t.maxTextureSize=4096; t.textureCompression=TextureImporterCompression.Uncompressed;
+            bool smooth=assetPath.Contains("/Ilaban/Maps/")||assetPath.Contains("/Ilaban/Backgrounds/")||assetPath.Contains("/Ilaban/Characters/")||assetPath.Contains("/Ilaban/UI/");t.filterMode=assetPath.StartsWith("Assets/Resources/Ilaban/")&&!smooth?FilterMode.Point:FilterMode.Bilinear;t.maxTextureSize=4096; t.textureCompression=TextureImporterCompression.Uncompressed;
             t.mipmapEnabled=false; t.alphaIsTransparency=true; t.npotScale=TextureImporterNPOTScale.None;
             t.maxTextureSize=4096; t.wrapMode=TextureWrapMode.Clamp;
         }

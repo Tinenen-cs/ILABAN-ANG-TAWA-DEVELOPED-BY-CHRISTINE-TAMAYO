@@ -35,3 +35,9 @@ Physical/human checks remain as listed in CHECKLIST.md. Watchdog and rclone auth
 DONE: removed generic title mouse/any-key start interception; screen entry consumes initiating press. Keyboard/gamepad routes and pointer regression passed, PlayMode 11/11, build/65 checks and native smoke passed. Controls/exit screenshots viewed.
 
 Next: Step 3: antialiased nine-slice panels; then 4 cleanup, 5 heads, 6 stage zones, 7 first-to-three.
+
+## UPDATE2 step 3 — 2026-10-28T15:48:58.933278+00:00
+
+DONE: signed-distance antialiased rounded nine-slice sprite with transparent padding; smooth uncompressed UI textures; continuous rounded wood-panel frames. Build/65 checks and all five native resolutions passed; controls/cards/pause/stage screenshots at four required sizes personally viewed.
+
+Next: Step 4 remove card item ornaments and confirm icons; next 5 heads, 6 stage zones, 7 match flow, 8 pause.
