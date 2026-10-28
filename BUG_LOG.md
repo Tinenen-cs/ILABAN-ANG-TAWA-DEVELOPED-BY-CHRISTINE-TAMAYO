@@ -69,3 +69,11 @@ Original artwork, face files, audio and Main.unity have not been deleted. Proced
 ## Step 2 verified — head-owned bubbles
 
 The old bubble code used fighter foot X plus a fixed offset, then pushed nearby bubbles into horizontal lanes. That made bubbles drift away from the heads. Each action frame now provides a head-top coordinate; the rendered anchor mirrors and moves with the complete sprite. Rounded bubbles center on that anchor, and close-range collisions raise one bubble by a safe vertical lane instead of moving it sideways. A small tail retains the head's X target. Tests cover owner centering, tail direction, vertical non-overlap and HUD/screen bounds; 11 EditMode, 9 PlayMode and all 65 rule assertions pass. Combat timing/range/hitboxes are unchanged.
+
+## Step 3 verified — mirrored wooden Hilo HUD and pause layout
+
+- P2's first Hilo segment used x=300 while its label started at x=306, covering the word. Segments now occupy x=14..294 with a separate label slot, and both meters are tested empty / 1..5 / reset.
+- Added ring/bar wood connectors, bottom keycaps, medal sparkle and matching wood menu frames. No life/stamina/timer/K.O. widget exists.
+- The top-left pause fighter was not an extra object: Fight created both actors at the helper's default origin, and an immediate pause returned before their first layout update. Actors now receive stage positions and facing when constructed; a pause-before-first-update regression checks their exact placement.
+- Focus scaling pivoted buttons at their top-left and cards scaled twice (parent and child). Buttons now scale around center; card child feedback uses color/outline while the parent has one bounded scale. Selected card non-overlap is tested.
+- Final step-3 checks: EditMode 11/11, PlayMode 9/9, 65 rule assertions, zero C# warnings/errors, five exact native resolution runs, no reported glyph/overflow/runtime issues. HUD and pause/controls/result/selection captures were reviewed.
