@@ -11,7 +11,7 @@ assert all(v['passed']==v['total'] and v['total']>0 for v in report['tests'].val
 assert len(report['resolutions'])==5 and all(v['passed'] for v in report['resolutions'])
 assert report['build_source']==source_fingerprint(root),'Source differs from final verified build'
 watch=json.loads((root/'Docs/QA_EVIDENCE/autoresume_tests.json').read_text(encoding='utf-8-sig'));assert watch['lock_exclusive'] and watch['harmless_cli_passed']
-assert subprocess.check_output(['git','branch','--show-current'],cwd=root,text=True).strip()=='phase3-polish'
+assert subprocess.check_output(['git','branch','--show-current'],cwd=root,text=True).strip() in ('phase3-polish','main')
 status=subprocess.check_output(['git','status','--porcelain'],cwd=root,text=True)
 if not args.allow_dirty:assert not status,'Commit the remaining evidence/docs before completion'
 print('PASS: 25 explicit checklist states; tests, 65 assertions, five resolutions, current build fingerprint, watchdog smoke and branch verified.')

@@ -1,0 +1,9 @@
+{
+  "native_resolution": [
+    1920,
+    1080
+  ],
+  "graphics": "AMD Radeon(TM) Graphics",
+  "xinput_connected_indices": [],
+  "physical_hotswap": "NEEDS MANUAL TEST"
+}
