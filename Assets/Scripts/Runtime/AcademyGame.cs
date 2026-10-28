@@ -177,7 +177,7 @@ namespace Hexbound
             var colors=b.colors;colors.normalColor=Color.white;colors.highlightedColor=new Color(1f,.84f,.48f);colors.pressedColor=new Color(.75f,.9f,.83f);colors.selectedColor=new Color(1f,.88f,.62f);colors.disabledColor=new Color(.48f,.48f,.46f);colors.colorMultiplier=1;colors.fadeDuration=.08f;b.colors=colors;
             var outline=image.gameObject.AddComponent<Outline>();outline.effectColor=new Color32(239,196,119,180);outline.effectDistance=new Vector2(1.5f,-1.5f);outline.enabled=false;
             var feedback=image.gameObject.AddComponent<PlateButtonFeedback>();feedback.image=image;feedback.outline=outline;feedback.onHover=()=>Sound("menu_move");
-            int icon=text=="Bumalik"?0:text=="Kumpirmahin"||text=="Handa na"?1:text=="Mga Kontrol"?3:text=="Umalis"?4:text=="Simulan"||text=="Simulan ang Laro"||text=="Magpatuloy"||text=="Maglaro Muli"?2:-1;
+            int icon=text=="Bumalik"?0:text=="Mga Kontrol"?3:text=="Umalis"?4:text=="Simulan"||text=="Simulan ang Laro"||text=="Magpatuloy"||text=="Maglaro Muli"?2:-1;
             if(icon>=0){var ir=Rect(image.transform,"Sagisag",new Rect(13,rect.height/2-10,20,20));var graphic=ir.gameObject.AddComponent<PlateIcon>();graphic.kind=icon;graphic.color=cream;graphic.raycastTarget=false;feedback.icon=ir;}
             b.onClick.AddListener(()=>{Sound("menu_confirm");action();});Label(image.transform,new Rect(icon>=0?39:8,4,Mathf.Max(1,rect.width-(icon>=0?51:16)),rect.height-8),roundBack?"":Tr(text),25,cream);return b;
         }
@@ -339,7 +339,6 @@ namespace Hexbound
                 var cardSurface=RoundedPanel(r,new Rect(0,0,145,182),new Color(.055f,.115f,.14f,.98f));cardSurface.raycastTarget=true;var cardButton=cardSurface.gameObject.AddComponent<Button>();cardButton.targetGraphic=cardSurface;cardButton.navigation=new Navigation{mode=Navigation.Mode.None};var cardFeedback=cardSurface.gameObject.AddComponent<PlateButtonFeedback>();cardFeedback.image=cardSurface;var cardOutline=cardSurface.gameObject.AddComponent<Outline>();cardOutline.enabled=false;cardFeedback.outline=cardOutline;cardButton.onClick.AddListener(()=>{int side=Ready[0]?1:0;if(!Ready[side]){Selected[side]=id;Sound("carousel_slide");RefreshDescriptions();QueueCharacterCue(id);}});
                 cardFeedback.onHover=()=>{hoverUntil[id]=clock+.4f;Sound("menu_move");QueueCharacterCue(id);};
                 var preview=ActorView(r,i,new Rect(27,10,90,132));previews.Add(preview);
-                Raw(r,new Rect(108,95,27,27),items[i]);
                 Image(r,new Rect(4,136,137,43),new Color(.025f,.055f,.07f,.95f));Label(r,new Rect(5,134,135,46),Roster.Names[i].Replace("Aling ","Aling\n").Replace("Kuya ","Kuya\n").Replace("Ate ","Ate\n").Replace("Kap ","Kap\n").Replace("Manong ","Manong\n").Replace("Tito ","Tito\n").Replace("Nanay ","Nanay\n"),16);
                 cardMarkers[i]=new Image[2];for(int p=0;p<2;p++) {cardMarkers[i][p]=Image(r,new Rect(p==0?1:139,3,5,174),playerColors[p]);var badge=Label(cardMarkers[i][p].transform,new Rect(p==0?5:-25,0,25,34),(p+1).ToString(),22,playerColors[p]);}
 

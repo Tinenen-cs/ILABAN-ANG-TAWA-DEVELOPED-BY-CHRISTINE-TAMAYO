@@ -150,3 +150,9 @@ Next: Step 3: antialiased nine-slice panels; then 4 cleanup, 5 heads, 6 stage zo
 DONE: signed-distance antialiased rounded nine-slice sprite with transparent padding; smooth uncompressed UI textures; continuous rounded wood-panel frames. Build/65 checks and all five native resolutions passed; controls/cards/pause/stage screenshots at four required sizes personally viewed.
 
 Next: Step 4 remove card item ornaments and confirm icons; next 5 heads, 6 stage zones, 7 match flow, 8 pause.
+
+## UPDATE2 step 4 — 2026-10-28T15:52:20.436977+00:00
+
+DONE: removed eight standalone card item images and confirm checkmark decorations; retained baked-in weapons, names and P1/P2 markers. Build/65 checks/native selection smoke passed; clean selection screenshot viewed.
+
+Next: Step 5 chibi head consistency; then 6 stage zones, 7 reach/first-to-three, 8 pause, 9 modal errors.
