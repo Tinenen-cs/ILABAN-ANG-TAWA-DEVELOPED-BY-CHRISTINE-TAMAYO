@@ -27,12 +27,13 @@ Mga tuntunin:
 Kaliwa at kanan lamang ang galaw. Tuwid na suntok lamang ang atake.
 Bawat tama ay tumutulak ng katunggali nang isang hakbang paatras.
 Limang sunod na tama ang nagpapahilo nang dalawang segundo.
-Kapag nahulog sa kanal ang manlalaro, agad nagtatapos ang laban.
+Kapag nahulog sa kanal ang manlalaro, agad nagtatapos ang yugto.
+Unang makakuha ng tatlong panalo ang panalo sa buong laban.
 Walang lakas-buhay, knockout, talon, sipa, dagdag na galaw o takdang oras.
 
-Sa Canvas, i-upload ang eksaktong siping ito:
-ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip
-Makikita ng guro ang EXE, mga kailangang kasamang talaksan at gabay na ito.
+Para sa Canvas, gamitin ang iisang portable na EXE kapag nasubok na ito:
+ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe
+Ang ZIP na ito ay reserbang kumpletong lalagyan. Huwag ihiwalay ang maliit na EXE sa loob nito sa mga kasamang talaksan.
 ''',encoding='utf-8')
 for name in ['CREDITS.md','AUDIO_LIST.md']:
     shutil.copy2(root/name,package/name)

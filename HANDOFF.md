@@ -219,3 +219,7 @@ Next: Step 13 final source/evidence harness, all tests/five sizes/audits/docs/so
 Final QA PASSED: 13/13 EditMode, 13/13 PlayMode, 65 rules, zero C# diagnostics, 85 UI captures across five sizes and 172 native animation captures. English/glyph/mojibake/audio checks clean. Screens viewed. Source audit/normal push next; executable delivery still pending.
 
 Next: Step 14 build/test one-file EXE, Defender, hashes, public Release/Drive verification and final clean-tree handoff.
+
+## UPDATE2 step 14a
+
+Current backup ZIP rebuilt, fresh extraction/full-three-win smoke passed. Original free GUI single-file launcher compiled (202928640 bytes, SHA-256 4f794497062d201eb6129c2e574d1e706aadeca3bddfec67713bab2a62ac0fc5), embeds 168 verified files. Candidate still UNTESTED; do not upload yet. Next: run Tools/test_single_exe_update2.py, Defender, normal desktop/no-argument launch, public release and Drive readback.

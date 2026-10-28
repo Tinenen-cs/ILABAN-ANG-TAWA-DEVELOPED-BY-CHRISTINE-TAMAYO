@@ -25,10 +25,10 @@
 21. [x] Final 85 native captures: 17 screens at all five sizes; 172 animation captures; screenshots viewed, logs clean.
 22. [~] Physical keyboard/controller/USB/hot-swap/rollover, monitor and clean-PC manual.
 23. [~] Near-60 observed; strict steady-60/other hardware manual; occasional 33ms frame recorded.
-24. [~] Normal PUBLIC-main push pending final source audit; no photos/force-push/history rewrite.
+24. [x] Normal main push succeeded at 0396ab7; repository PUBLIC. No reference-photo paths staged; no force push/history rewrite.
 25. [~] New single EXE, independent tests/Defender/hash/release/Drive pending step 14; v1.0 historical.
 
-## UPDATE2 step 13 — 2026-10-28T17:15:35.092874+00:00
+## UPDATE2 step 13 â€” 2026-10-28T17:15:35.092874+00:00
 
 Final QA PASSED: 13/13 EditMode, 13/13 PlayMode, 65 rules, zero C# diagnostics, 85 UI captures across five sizes and 172 native animation captures. English/glyph/mojibake/audio checks clean. Screens viewed. Source audit/normal push next; executable delivery still pending.
 

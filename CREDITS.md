@@ -41,3 +41,5 @@ UPDATE2: six original fictional chibi whole-body sheets edited with the built-in
 UPDATE2 emotes: eight dedicated original whole-body Win and Lose source poses each have four runtime frames. Win sparkles animate; losing slump is used during the one-body drain sink. Explicit Lose preview is available to native QA. Win/lose events play the character-specific quiet procedural reaction cue alongside the shared victory/fall sounds; no new recordings or reference likenesses.
 
 UPDATE2: padded rounded corners and softly feathered sky wisps are original code-native graphics. Reference photographs remain local and unused.
+
+UPDATE2 portable packaging: original free C# launcher, full ZIP/per-file SHA-256 validation and ordinary temporary extraction; compiled with installed Windows .NET Framework tools. No proprietary packer or reference photographs included.

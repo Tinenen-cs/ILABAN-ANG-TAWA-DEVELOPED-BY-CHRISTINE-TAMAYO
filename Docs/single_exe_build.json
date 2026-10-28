@@ -1,16 +1,13 @@
 {
   "file": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe",
-  "bytes": 167677682,
-  "sha256": "6d67e17dfcc17e9313829c91991c9cfb0a95834dc4b6a31904bd7708031675ea",
-  "sdk": "LZMA SDK 26.05",
-  "sdk_url": "https://www.7-zip.org/sdk.html",
-  "module_sha256": "3a335e4338ebb8a8cff7b81aaa35decc148845e2ce144bfaf680b09cd647cb8c",
-  "archive_sha256": "46d77c1c9134062e7be2b7aaf061728ff0f92979354a664136970f7495ddfdb1",
-  "extracts_to_temp": true,
-  "visible_progress": true,
+  "bytes": 202928640,
+  "sha256": "4f794497062d201eb6129c2e574d1e706aadeca3bddfec67713bab2a62ac0fc5",
+  "method": "Original C# GUI launcher with complete verified ZIP resource, temp extraction and per-file SHA verification",
+  "payload_sha256": "805d812e959a70e0deb9b0b1d4d9816b39ad1c3db88ddd484ff08dd52dca5060",
+  "payload_files": 168,
   "no_console": true,
-  "tested": true,
-  "passed": false,
-  "recommended": false,
-  "reason": "WinError 740 requires administrator elevation; no elevated launch or security bypass attempted. Failed B stays local and is excluded from uploads/releases."
+  "requested_execution_level": "asInvoker",
+  "requires": "Windows 10/11 x64 with built-in .NET Framework 4.x",
+  "tested": false,
+  "passed": false
 }
