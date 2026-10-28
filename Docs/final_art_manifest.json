@@ -1,0 +1,65 @@
+[
+  {
+    "target": "ArtSource/ActionSheets/AlingPamalo.png",
+    "source": "C:\\Users\\chris\\.codex\\generated_images\\01a17e88-bce6-7f03-bc81-b5d695b3460a\\exec-25d4e058-e745-463d-8e21-2b57b31bbda8.png",
+    "prompt_set": "Docs/strike_generation.md#additional-action-sheets",
+    "input": "fictional ready drawing only"
+  },
+  {
+    "target": "ArtSource/ActionSheets/KuyaTsinelas.png",
+    "source": "C:\\Users\\chris\\.codex\\generated_images\\01a17e88-bce6-7f03-bc81-b5d695b3460a\\exec-d4f9bb31-4011-4e4f-9301-d2f914533e87.png",
+    "prompt_set": "Docs/strike_generation.md#additional-action-sheets",
+    "input": "fictional ready drawing only"
+  },
+  {
+    "target": "ArtSource/ActionSheets/AteBatoBatoPik.png",
+    "source": "C:\\Users\\chris\\.codex\\generated_images\\01a17e88-bce6-7f03-bc81-b5d695b3460a\\exec-84963e57-0b95-4fc7-8261-dae1618c027d.png",
+    "prompt_set": "Docs/strike_generation.md#additional-action-sheets",
+    "input": "fictional ready drawing only"
+  },
+  {
+    "target": "ArtSource/ActionSheets/KapBatuta.png",
+    "source": "C:\\Users\\chris\\.codex\\generated_images\\01a17e88-bce6-7f03-bc81-b5d695b3460a\\exec-72e06d58-06d8-4252-be75-4b03324dae94.png",
+    "prompt_set": "Docs/strike_generation.md#additional-action-sheets",
+    "input": "fictional ready drawing only"
+  },
+  {
+    "target": "ArtSource/ActionSheets/ManongLatalata.png",
+    "source": "C:\\Users\\chris\\.codex\\generated_images\\01a17e88-bce6-7f03-bc81-b5d695b3460a\\exec-22a05c47-bb7e-4f04-a21b-847b354fdbc5.png",
+    "prompt_set": "Docs/strike_generation.md#additional-action-sheets",
+    "input": "fictional ready drawing only"
+  },
+  {
+    "target": "ArtSource/ActionSheets/TitoSilya.png",
+    "source": "C:\\Users\\chris\\.codex\\generated_images\\01a17e88-bce6-7f03-bc81-b5d695b3460a\\exec-a4e364f2-7f92-438d-85da-d5870b4ce6f7.png",
+    "prompt_set": "Docs/strike_generation.md#additional-action-sheets",
+    "input": "fictional ready drawing only"
+  },
+  {
+    "target": "ArtSource/ActionSheets/AlingBotengSuka.png",
+    "source": "C:\\Users\\chris\\.codex\\generated_images\\01a17e88-bce6-7f03-bc81-b5d695b3460a\\exec-dffcd75a-6034-44e2-a1e3-2146607abee8.png",
+    "prompt_set": "Docs/strike_generation.md#additional-action-sheets",
+    "input": "fictional ready drawing only"
+  },
+  {
+    "target": "ArtSource/ActionSheets/NanayTingting.png",
+    "source": "C:\\Users\\chris\\.codex\\generated_images\\01a17e88-bce6-7f03-bc81-b5d695b3460a\\exec-6b9e9245-71fd-4806-be09-937644ba6ed5.png",
+    "prompt_set": "Docs/strike_generation.md#additional-action-sheets",
+    "input": "fictional ready drawing only"
+  },
+  {
+    "target": "Assets/Resources/Ilaban/Maps/Looban/Looban_Gabi.png",
+    "source": "C:\\Users\\chris\\.codex\\generated_images\\01a17e88-bce6-7f03-bc81-b5d695b3460a\\exec-15bc78f3-b436-4d98-891d-e7f0cdcd1988.png",
+    "prompt": "Relight approved fictional map to moonlit navy night, warm lamps/windows, preserve composition and foreground. Looban: remove parked tricycle and restore empty alley."
+  },
+  {
+    "target": "Assets/Resources/Ilaban/Maps/Plaza/Plaza_Gabi.png",
+    "source": "C:\\Users\\chris\\.codex\\generated_images\\01a17e88-bce6-7f03-bc81-b5d695b3460a\\exec-9686ed69-65ae-499d-8bc3-6563ddfe7b78.png",
+    "prompt": "Relight approved fictional map to moonlit navy night, warm lamps/windows, preserve composition and foreground. Looban: remove parked tricycle and restore empty alley."
+  },
+  {
+    "target": "ArtSource/UI/PaintedHeadings.png",
+    "source": "C:\\Users\\chris\\.codex\\generated_images\\01a17e88-bce6-7f03-bc81-b5d695b3460a\\exec-e801db2d-3f7c-493a-a4ec-0f548dc3ef76.png",
+    "prompt": "Five isolated transparent painted cream/walnut/brass/capiz signs: exact full developer title; Mga Kontrol; Pumili ng Tauhan; Pumili ng Entablado; Panalo!."
+  }
+]

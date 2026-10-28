@@ -14,7 +14,7 @@ A two-player Filipino street brawler made by Christine Tamayo. Pick a character,
 
 ## Download and open the portable game
 
-The release page is [GitHub Releases](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/latest). When version 1.0 is published, open the latest release and download **ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip**. On a phone, download the ZIP and transfer it to the Windows computer using a cable, cloud drive or school file service. You can also download the same ZIP directly on a school computer.
+The release page is [GitHub Releases](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/latest). A new release is not published yet: final packaging/Drive is queued separately, and publishing is held for the owner decision about reference photos in public Git history. When version 1.0 is published, open the latest release and download **ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip**. On a phone, download the ZIP and transfer it to the Windows computer using a cable, cloud drive or school file service. You can also download the same ZIP directly on a school computer.
 
 On Windows 10 or 11, right-click the ZIP and choose **Extract All**. Save it in a folder you can find, such as Documents. Open the extracted folder and double-click **ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe**. Keep the `_Data` folder, `UnityPlayer.dll` and all other included files beside the EXE. No Unity installation or game installer is needed.
 
@@ -38,9 +38,9 @@ Upload this exact file: **SUBMISSION/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMA
 ## Requirements and credits
 
 - Windows 10 or Windows 11, 64-bit.
-- Two keyboards players share one computer, or connect compatible gamepads.
+- Two keyboard players share one computer, or connect compatible gamepads.
 - See [CREDITS.md](CREDITS.md) for character, stage, font and audio credits; see [AUDIO_LIST.md](AUDIO_LIST.md) for cue details.
 
 ## Project verification
 
-The source is developed with Unity 6000.6.2f1. Automated test, build, screenshot and package evidence is recorded under `Docs/QA_EVIDENCE/`, `Docs/portable_qa_results.json` and `Docs/package_verification.json`. See [CHECKLIST.md](CHECKLIST.md) for verified and manual items.
+The source is developed with Unity 6000.6.2f1. Automated test, build, screenshot and package evidence is recorded under `Docs/QA_EVIDENCE/`, `Docs/portable_qa_results.json` and `Docs/QA_EVIDENCE/final_summary.json`. The existing `Docs/package_verification.json` describes an older ZIP; current final packaging is queued separately. See [CHECKLIST.md](CHECKLIST.md) for verified and manual items.

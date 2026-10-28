@@ -1,72 +1,26 @@
-# ILABAN ANG TAWA - manual acceptance test
+﻿# Test plan and current evidence
 
-Status: planned. Baseline tests of the academy prototype do not establish compliance with the new rubric. Write PASS or FAIL and evidence after executing each test. Hardware checks require the student's controllers and a second Windows PC.
+Run from the real project folder with Unity 6000.6.2f1 installed:
 
-| Step | Test and expected result | Pass | Fail | Evidence |
-| --- | --- | --- | --- | --- |
-| 1 | Open the project in Unity 6000.6.2f1, wait for import, open Assets/Scenes/Main.unity, and check Console errors. | | | Not run |
-| 2 | Press Play, start the game, choose both characters independently and confirm both. Check previews, items, menu cues and stage transition. | | | Not run |
-| 3 | Hold P1 A/D/F while P2 is idle, then reverse using arrows/Right Ctrl/Numpad 0. Only the intended player responds. | | | Not run |
-| 4 | Hold movement and punch on both players simultaneously. Check input response and keyboard rollover. | | | Not run |
-| 5 | Attempt W, Up, Space and every gamepad button while idle, walking, punching, hit, dizzy, falling and paused. No jump, kick, crouch, special, guard or extra attack may occur. | | | Not run |
-| 6 | Land a single punch from each direction with movement released. Record position before/after; repeat ten times per character. Every hit has the same step distance. | | | Not run |
-| 7 | Land five consecutive hits with the same attacker. The fifth causes stars/spiral and wobble, then recovers after the configured window. | | | Not run |
-| 8 | After four hits, let the attacker be struck; repeat after a missed punch and after the streak timeout. The next hit must not trigger a five-hit dizzy. | | | Not run |
-| 9 | Push each player into each edge imburnal on all three maps. Round ends at fall detection, fall remains visible and results appear promptly with correct names. | | | Not run |
-| 10 | Inspect all screens. No health/poise bars or K.O. behavior; required title exact; other visible text is Tagalog. | | | Not run |
-| 11 | Connect two controllers. Move/punch independently, navigate menus and confirm. Test an available generic USB controller. | | | Not run |
-| 12 | Switch between keyboard and controller mid-match, unplug one controller, continue playing, reconnect it. No crash, cross-player control or forced pause. | | | Not run |
-| 13 | Play all maps. Listen for three distinct tracks plus separate title/selection music. Verify all menu, item, dizzy, fall/splash and victory cues against credits. | | | Not run |
-| 14 | Check 1920x1080, 1366x768, 1280x720, 2560x1440 and 1920x1200. Confirm no stretching, bars, clipped controls or hidden manholes. | | | Not run |
-| 15 | Pause, resume, replay and return to the title using keyboard and controllers. Check focus loss and new rounds for stuck input/state. | | | Not run |
-| 16 | Extract the final portable ZIP into a different folder. Launch the named EXE with its Data folder and UnityPlayer.dll present. Complete one match. | | | Not run |
-| 17 | Copy that entire folder to a clean Windows PC without Unity and repeat. Check player logs for errors and missing resources. | | | Not run |
+1. Set ILABAN_PROJECT to this project folder; run python Tools/run_final_checks.py. This runs EditMode, graphics-enabled PlayMode, the validation build and 65 assertions. Current totals are 11 and 10; use actual XML, never hardcoded historical totals.
+2. Run python Tools/capture_character_actions.py for all 272 whole-body masks, feet pivots, ground lines and both-facing grip/tip checks.
+3. Run python Tools/run_portable_qa.py for 1280x720, 1366x768, 1920x1080, 2560x1440 and 3440x1440. This launches a real built executable and simulated input through ready selection, pause/controls, five-hit dizzy and manhole result. Large windows use exact client sizing without changing monitor modes.
+4. Run python Tools/run_animation_qa.py for 108 native frame/pair screenshots. Review strike/hurt frames for all eight characters and representative head/bubble/HUD/result captures at every size.
+5. Run python Tools/audit_submission.py for default English candidates, glyph/mojibake, audio references and 38 WAV peak checks.
+6. Run python Tools/finalize_evidence.py --local-only to verify current source/build fingerprint, XML, 65 log assertion result and fresh native capture hashes. It never rewrites the checklist or claims the queued ZIP passed.
 
-## Bugs identified during initial inspection
-- Required Unity 6000.3.27f1 is absent locally; upgrade/import verification in progress.
-- Downloaded project has no .git directory; existing Git history reconnection in progress.
-- Gameplay, art, audio and English UI are still the academy prototype, including disallowed moves.
-- Existing controller disconnect logic forces pause, contrary to the new hot-swap requirement.
-- Existing render pipeline draws a fixed 1280x720 GUI; aspect-ratio handling needs review.
-- Actual map reference folder is MAPS REFERCES (spelling preserved); character references are present.
+Packaging/Drive are a separate queued task. After its pre-check passes, that task runs Tools/package_portable.py with the same ILABAN_PROJECT, verifies fresh extraction/full match, then Tools/finalize_evidence.py without --local-only to compare every ZIP build file to the current build. Old Docs/package_verification.json is historical until then.
 
-## Setup verification (28 October 2026)
+Manual pass/fail sheet, after the final ZIP is ready:
 
-- PASS: original baseline imported and compiled in Unity 6000.6.2f1; ProjectSetup.ValidateBatch passed.
-- PASS: SubmissionSetup.ValidateBaseline passed in the newly named project folder.
-- PASS: InputChecks.ValidateBatch passed 36 virtual-device assertions. These validate existing bindings, not the new restricted control scheme.
-- PASS: Main.unity opened interactively; entering Play reached the existing character selection with sprites present.
-- Unity upgrade retained scene and asset GUIDs and added editor serialization fields. Compiler deprecation warnings remain for FindFirstObjectByType; no compile errors occurred.
-- Physical controllers, final art/audio, final rubric gameplay, standalone builds and clean-PC tests remain pending.
-- Original folder is retained because Windows locks it; all further edits belong in the fully named sibling folder.
+- Two physical USB controllers, independent input: [ ] PASS [ ] FAIL.
+- Keyboard/controller switch and unplug/replug during match: [ ] PASS [ ] FAIL.
+- Shared keyboard simultaneous movement/punch rollover: [ ] PASS [ ] FAIL.
+- Clean Windows 10/11 64-bit PC without Unity: [ ] PASS [ ] FAIL.
+- Speaker/headphone balance and every item cue: [ ] PASS [ ] FAIL.
+- Presentation monitor/fullscreen, Alt+Enter and 16:10 fit: [ ] PASS [ ] FAIL.
+- Unsigned-app antivirus/SmartScreen handling: [ ] PASS [ ] FAIL.
+- Human Tagalog, art consistency, grip/pose/readiness review: [ ] PASS [ ] FAIL.
+- Reboot/real limit reset auto-resume with App/IDE hosts closed: [ ] PASS [ ] FAIL.
 
-## Current continuation acceptance evidence
-
-Prior baseline notes above are historical; use this section and the final checklist for the current game.
-
-| Check | Pass | Fail | Evidence / qualification |
-| --- | --- | --- | --- |
-| New adult character paths and all 9 map/time resources | X | | Expanded EditMode 9/9 XML in Logs/Verified-EditMode.xml |
-| Horizontal-only, equal punch, five-hit dizzy, recovery, streak resets, manhole-only round result | X | | 65 assertions; 50-hit Unity case |
-| Reaction state cannot change combat timing/displacement | X | | RubricTests deterministic comparison |
-| Latest built actual simulated gamepad match | X | | Preliminary Final_1280x720/PASS.txt; genuine movement and punches to fall, not injected final position |
-| Dizzy stars and non-overlapping reaction bubbles | X | | Inspected dizzy/match/result screenshots at each resolution; HUD margins clear |
-| Latest PlayMode rerun lifecycle | X | | Graphics-enabled runner passed 4/4 and exited; headless TMP importer attempt excluded |
-| Four resolution captures | X | | Exact 720p, 768p, 1080p and 1440p; JSON dimensions and native PNG hashes saved |
-| Active English keyword scan | X | | Zero heuristic candidates; literal UI text dump also captured per screen |
-| Audio peak audit | X | | 30 active clips, zero samples at clipping threshold; listening remains manual |
-| Portable ZIP extracted and launched | X | | Docs/package_verification.json; fresh temp extraction, launch and full simulated match passed on this PC |
-
-### Manual checks after the final ZIP is ready
-
-For each row mark one box, then note device details or any failure:
-
-- Real USB gamepad plus a second controller: [ ] PASS [ ] FAIL.
-- Keyboard-to-gamepad switch, then unplug/replug mid-match: [ ] PASS [ ] FAIL.
-- Two people on one keyboard (hold movement and punch together): [ ] PASS [ ] FAIL.
-- Entire extracted folder on a PC without Unity: [ ] PASS [ ] FAIL.
-- Speakers and headphones, all volume settings and item sounds: [ ] PASS [ ] FAIL.
-- Actual monitor fit, text readability and 60-second idle title: [ ] PASS [ ] FAIL.
-- Antivirus/SmartScreen handling of the unsigned executable: [ ] PASS [ ] FAIL.
-
-Do not treat an extracted-folder launch on the development PC as a clean-PC result.
+A development-PC extraction test never counts as a clean-PC or physical-device test. Do not publish until the owner resolves the public reference-photo history hold.

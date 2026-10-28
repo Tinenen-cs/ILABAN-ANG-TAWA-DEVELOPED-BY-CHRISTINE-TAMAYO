@@ -1,15 +1,13 @@
-# Resume this Unity project
+# Resume checkpoint
 
-Project: `C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO`; branch `phase3-polish`.
+The local Unity overhaul is complete on phase3-polish in C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.
 
-Read `RESUME_STATE.txt`, `HANDOFF.md`, `PENDING_NETWORK.md`, `CHECKLIST.md`; run `git status`. Do not push, merge, force-push or rewrite history. Never read/upload/commit real-person `CHARACTER REFERENCE` photos. Keep graded movement, punch, step-back, dizzy, manhole, input isolation and Tagalog/Pormal defaults intact.
+Read RESUME_STATE.txt, HANDOFF.md, PENDING_NETWORK.md and CHECKLIST.md, then run git status and python Tools/verify_completion.py. Exact CLI resume command and next five steps are in HANDOFF.md.
 
-Steps 1–3 are implemented and verified: 48 authored whole-body weapon-strike poses, common 896x512 canvases/feet pivots, per-frame head-owned bubbles with tails/vertical separation, joined wood/brass Hilo HUD with five amber/red segments and winner medals. Immediate-pause and button/card scaling regressions are fixed.
+Current verification: EditMode 11/11, graphics-enabled PlayMode 10/10, 65 rule assertions, real-project Unity 6000.6.2f1 validation build, five exact resolutions, 75 native UI captures, 108 native action/pair captures, 272 structural frame checks, 38 non-clipping audio files. Current source/build fingerprint is in Docs/QA_EVIDENCE/build_provenance.json.
 
-Fresh verification from the real project: Unity 6000.6.2f1 build, 65 rule assertions, EditMode 11/11, PlayMode 9/9, five native resolution runs (1280x720, 1366x768, 1920x1080, 2560x1440, 3440x1440). 108 native animation/pair screenshots and 272 body-mask structural checks passed. See `Docs/QA_EVIDENCE`, `Docs/portable_qa_results.json`, `Docs/animation_capture_evidence.json`.
+No gameplay rules changed. Whole-body weapons/reactions, anchored bubbles, wooden Hilo HUD, painted headings, controls grid and night maps are integrated. Reference photos stay local/ignored and were never uploaded or newly committed. No push/merge/rewrite. Repository PUBLIC; publishing held for owner photo-history decision.
 
-Step 4 also passed: watchdog lock/reset/harmless CLI checks, hidden start and scheduled task at logon/every five minutes. Relaunch count 0; any running codex.exe conservatively blocks launch. AC sleep/display were already 0 and remain 0. Next: remaining character reactions and original heading/controls/night-map/foliage work in HANDOFF. After all automatic checks pass, write TASK_COMPLETE.flag, disable the task and stop the watchdog before ending.
+TASK_COMPLETE.flag is for the LOCAL OVERHAUL only. Watchdog must be disabled/stopped on closure. Editing relaunch count 0; conservative active-Codex guard prevented duplicate agents. Manual hardware/human/reboot checks remain; see CHECKLIST.md and TEST_PLAN.md.
 
-Do not start the separately queued final EXE/ZIP delivery or Drive upload task. Current distributable ZIP predates these changes. Public publishing is held for the owner decision about old reference photos in public Git history.
-
-Exact resume command is in `HANDOFF.md`. Before every long command update the local one-line `RESUME_STATE.txt` with current HEAD, operation and UTC time.
+Do not start final EXE/ZIP delivery or Drive upload unless its separately queued prompt is actually invoked and the pre-check passes. Existing ZIP/package JSON are older than this build. Do not treat them as current submission proof.

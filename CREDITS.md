@@ -12,13 +12,13 @@ Developer: Christine Tamayo.
 
 - Eight fictional adult characters use original full-body base art and portraits. No real-person photos or likeness inputs were supplied to image tools.
 - Eight six-phase whole-body strike sheets were created with the built-in imagegen tool, using only the original fictional Body.png drawings. Original faces/outfits were preserved while each item was drawn in a raised wind-up and forward chest-height strike. Prompt set and corrections: `Docs/strike_generation.md`; source sheets: `ArtSource/StrikeSheets/`.
-- `Tools/import_strike_sheets.py` slices complete sprites and aligns their feet; it never rigs or relocates limbs/items separately. `Tools/generate_character_action_frames.py` prepares 272 transparent 896x512 textures with a shared feet-center pivot and adds original curved trails, item sparkle, impact and dust. Other action states currently use whole-body effect variants. Structural masks are retained under `ArtSource/ActionMasks/`.
+- `Tools/import_strike_sheets.py` slices complete sprites and aligns their feet; it never rigs or relocates limbs/items separately. `Tools/generate_character_action_frames.py` prepares 272 transparent 896x512 textures with a shared feet-center pivot and adds original curved trails, item sparkle, impact and dust. Dedicated walk/hurt/dizzy/win/lose source poses are integrated; idle uses ready and fall uses lose art with whole-body sinking. Structural masks are retained under `ArtSource/ActionMasks/`.
 - `Tools/generate_hud_art.py` creates the original varnished wood/brass portrait ring, carved Hilo bar, five inset segment frames and winner medals. The HUD art uses no supplied reference pixels.
 - Original local reference photos remain private and ignored by Git. See `Docs/character_action_frames.json` and `Docs/character_action_validation.json` for asset dimensions and silhouette checks.
 
 ## Maps and interface art
 
-- Three active maps: Kalye sa Palengke (Umaga), Looban (Takipsilim), and Plaza ng Barangay (Takipsilim). Original art manifests and prompt summaries are in `Docs/new_art_manifest.json`.
+- Three active maps: Kalye sa Palengke (Umaga), Looban (Gabi), and Plaza ng Barangay (Gabi). Original art manifests and prompt summaries are in `Docs/new_art_manifest.json`.
 - Jeepney frames, open kanal art, UI plates and small effects are original assets made from text prompts or local procedural drawing. See `Docs/ASSET_REPLACEMENTS.md`.
 - Image-generation outputs are project-specific; no third-party image license is claimed for them.
 

@@ -1,54 +1,45 @@
-# ILABAN ANG TAWA — release checklist
+# ILABAN ANG TAWA - release checklist
 
-Status: [x] verified in source/tests/captures; [~] implemented partially or NEEDS MANUAL TEST. No grade level is guaranteed.
+Status: [x] verified automatically or visually; [~] NEEDS MANUAL TEST or explicitly queued/owner-held work. No grade is guaranteed. Latest machine results: Docs/QA_EVIDENCE/final_summary.json. Final source/build fingerprint and fresh captures verified on 2026-10-28.
 
-1. [x] Opening jeepney animation is restricted to the opening; no jeepney actor is used in the fight. Evidence: `QA_SCREENSHOTS/Final_1280x720/00-opening.png`, `04-match-0.png`.
-2. [~] Themed headings use localized text and themed plates; fully painted lettering assets are incomplete. Evidence: title and controls captures.
-3. [x] Tagalog and Pormal are defaults; English and reaction selection work. Evidence: controls and English settings captures.
-4. [x] Language, reaction and volume controls fit their rows; slider fill stays in bounds. Evidence: `InputAndCanvasTests.SettingsAndExitUseTheirOwnScreenFlow`.
-5. [x] Themed title buttons and spacing fit at all five QA sizes.
-6. [~] Shared focus, hover and press feedback exists; every button and device state still needs manual review.
-7. [x] Mga Kontrol opens the controls/settings view. Evidence: PlayMode routing test.
-8. [~] Umalis dialog defaults to Hindi. Gamepad feel and actual application exit need a physical review.
-9. [~] Eight character cards, portraits, readiness and descriptions work. Fine detail and every two-player readiness combination need manual review.
-10. [~] All eight characters now have authored whole-body weapon strikes (`Strike_00.png` through `Strike_05.png`: ready, wind-up, swing, forward strike, impact, recovery). Each weapon stays in the hand and extends toward the opponent; there is no independent weapon overlay. All 272 action textures share an 896x512 canvas, actual feet-center transform pivot and ground line. Every body mask passed connectivity, bounds, ground and both-facing checks. 108 native Unity frame/pair captures are under `QA_SCREENSHOTS/ANIMATION/Unity/`. Dedicated walk/hurt/dizzy/win/lose poses and facial expressions are now integrated. Fall reuses lose art with a whole-body sink; idle uses ready art. New menu-safe reaction cues are implemented; current Unity retest is pending. Evidence: `Docs/character_action_validation.json`, `Docs/animation_capture_evidence.json`, `Docs/strike_generation.md`.
-11. [x] Three stage cards show distinct location art, names and hints at all five sizes.
-12. [~] Shared themed buttons work across views; exhaustive manual state review remains.
-13. [x] Exactly three maps: Palengke (Umaga), Looban (Takipsilim), Plaza (Takipsilim); no time selector.
-14. [x] Joined original wood/brass portrait rings and mirrored five-segment Hilo bars, wood name plates, center VS, win medals with pop/sparkle, and a rounded bottom keycap plate are used. Both labels remain uncovered. No health/stamina/timer/K.O. objects. Hilo starts empty, fills with consecutive hits and resets with the streak. Pause, controls and results share the wood frame. Evidence: five native screenshots in `QA_SCREENSHOTS/HUD/`, both-player Hilo/label PlayMode checks.
-15. [~] Lamp glow animates. Banderitas and foliage remain part of fixed artwork.
-16. [x] Pause/controls transitions have no orphan fighters; immediate pause before the first fight update preserves correct stage placement. Root cause and regression are recorded in `BUG_LOG.md` and `PauseAndSettingsOverlaysHaveNoOrphanFighterObjects`.
-17. [x] Rounded 160x50 reaction bubbles track each per-frame head anchor through facing/motion, with a small tail pointing to that head. Close bubbles separate vertically while their horizontal centers stay on their owners. Screen/HUD bounds and non-overlap are tested. A falling actor's bubble follows it briefly before hiding with the actor. Evidence: `ReactionBubblesTrackHeadAndStayInSeparateHudSafeLanes`, `QA_SCREENSHOTS/Step2_Bubbles/05-dizzy.png`.
-18. [x] No interactive Suntok orb remains. Fight hint shows the punch control.
-19. [x] Result panel, winner pose, confetti and win sound work. Evidence: `06-result.png` at each resolution.
-20. [~] Windows build starts windowed for QA and supports Alt+Enter. Exact screenshot layouts passed all five sizes; full-screen monitor behavior still needs a manual device check.
-21. [~] Rubric evidence is documented; no Exceeds-level claim is made.
-22. [x] This checklist and `UPDATE_PROGRESS.md` cover all 25 release items.
-23. [~] Current source passed 65 rule assertions, EditMode 11/11, PlayMode 9/9 and five native resolution runs (1280x720, 1366x768, 1920x1080, 2560x1440, 3440x1440). No reported exceptions, glyph/overflow issues, default English candidates or clipped audio samples. Action-frame audit and 108 native animation captures passed. Latest ZIP rebuild/extraction remains in the separately queued EXE/Drive task.
-24. [~] Local work is on `phase3-polish`; no push, merge, force-push or history rewrite. The PUBLIC repository's prior history contains reference photos. Owner decision about history/privacy is pending.
-25. [~] README and local evidence are prepared. The ZIP and public release link await the separate final EXE/Drive task and the public-history decision.
+1. [x] Opening-only animated jeepney, skippable opening, no moving vehicle in fights. Evidence: 00-opening.png and three 04-match captures in each QA folder.
+2. [x] Original painted logo and four headings with live localized TMP underneath. Exact full developer title preserved. Assets/Resources/Ilaban/UI/Heading*.png.
+3. [x] Tagalog and Pormal defaults; language and reaction controls work. Native default/English captures and RubricTests.
+4. [x] Three keycap control cards plus five settings rows, keyboard/gamepad navigation and bounded sliders. SettingsAndExitUseTheirOwnScreenFlow; 08-controls.png.
+5. [x] Rounded wood/tin title buttons, inner highlight and original code-drawn icons. 01-title.png.
+6. [~] Shared hover/focus/press colors, outline, centered scale, moving icons and soft sound implemented. NEEDS MANUAL TEST for subjective pointer/controller feel.
+7. [x] Mga Kontrol stays in controls, with consumed per-screen input. SettingsAndExitUseTheirOwnScreenFlow and native routing capture.
+8. [~] Umalis opens confirmation, defaults to Hindi and returns focus correctly. Automated routing passed. NEEDS MANUAL TEST for actual quit and physical gamepad feel.
+9. [~] Eight non-overlapping cards, names, item icons, two-player ready checks, round back button, intro/hover/ready/wait poses and sparkle. Automated layout/readiness gates passed; NEEDS MANUAL TEST for every human two-player selection combination.
+10. [~] Eight complete whole-body action sets: 272 textures, 48 six-phase strikes and 48 authored walk/reaction source poses; idle uses ready stance and fall sinks the lose pose as one body. No item child/parts rig; common 896x512 canvas, feet pivot and ground line. 272 structural checks, 48 grip/tip checks in both facings and 108 native captures passed in final confirmation. Signature cues wait behind menu sounds. NEEDS MANUAL TEST for animation feel and facial/art consistency.
+11. [x] Three large stage cards with separate names/description/hint zones; selection scale preserves gaps. Native screenshots at five sizes.
+12. [~] Shared modern themed button states across all screens. NEEDS MANUAL TEST for exhaustive device/pointer feel.
+13. [x] Exactly three fixed-light maps: Palengke Umaga; Looban Gabi; Plaza Gabi. Inactive variants outside Assets. No time selector; Looban vehicle removed. RubricTests and ProjectSetup checks.
+14. [x] Original wood/brass portrait rings joined to five amber/red Hilo segments; empty start, fill/reset with streak, win medals/pop, name plates, center VS and bottom keycaps. No health/stamina/timer/K.O. HUD. Open street kanal at each edge. FightHudHasFiveHiloPipsAndNoSeparateItemSprites; QA_SCREENSHOTS/HUD.
+15. [x] Only subtle night-lamp glow, isolated flags and leaves animate over fixed fight paintings. Morning glow off. No moving vehicle, cloud or floor layer. AcademyGame.Ambience/UpdateAmbience.
+16. [x] Pause/controls use centered wooden panels and no orphan fighters. Immediate-pause placement regression passed. PauseAndSettingsOverlaysHaveNoOrphanFighterObjects.
+17. [x] Small rounded head-owned bubbles, tails, per-frame head anchors, facing/motion/fall tracking, HUD clamp and vertical non-overlap. ReactionBubblesTrackHeadAndStayInSeparateHudSafeLanes. Dizzy stars are larger and always drawn above bubbles.
+18. [x] Nonfunctional attack orbs removed; non-interactive bottom keycap hint only. Native match screenshots.
+19. [x] Centered result panel above whole-body winner, painted Panalo sign, options/confetti/jingle and winner medal sparkle. Final-hit effect hides on finish; regression passed. 06-result.png.
+20. [~] Fresh build configured borderless native desktop resolution; Alt+Enter toggle implemented; five exact-size native window tests passed in final confirmation. NEEDS MANUAL TEST for actual presentation monitor/fullscreen and 16:10 hardware.
+21. [~] Rubric behavior has real automated evidence; no Exceeds/grade guarantee. Physical feel and human theme/Tagalog review remain NEEDS MANUAL TEST.
+22. [x] Checklist covers 1-25; UPDATE_PROGRESS.md and handoff keep evidence and next commands.
+23. [~] Latest Unity EditMode 11/11, graphics-enabled PlayMode 10/10, 65 assertions and real-folder build passed. Final five-size/native animation confirmation passed; 75 UI and 108 animation captures verified. Final ZIP extraction is QUEUED SEPARATELY; hardware/clean-PC checks NEEDS MANUAL TEST.
+24. [~] All source work stays on phase3-polish. PUBLIC repo visibility rechecked with gh repo view. No push/merge/rewrite; publishing held for owner decision on reference-photo history.
+25. [~] README download/unzip/controls/submission guide and credits prepared. Latest final ZIP, verified public release link and Drive upload are QUEUED SEPARATELY; current ZIP is older than source.
 
 ## Rubric self-check
 
-| Criterion | Evidence | Remaining limitation |
-| --- | --- | --- |
-| Filipino theme and interface | Tagalog-first interface, original scenery/characters, three arenas, themed wood/brass HUD, five-size screenshots | Strike pose polish, character expressions, foliage motion and painted heading art are partial. |
-| Gameplay rules | `Tools/run_final_checks.py`, 65 assertions, model checks and PlayMode tests | Physical feel/hardware checks remain. |
-| Player input | Separate keyboard bindings and simulated gamepad ownership/hot-swap | Physical two-controller hot-swap and keyboard rollover need manual checks. |
+- Filipino theme/interface: fictional original adult chibi characters, painted lettering, wood/brass/capiz details, Tagalog-first UI and three approved barangay locations. Default English/glyph audit must pass; human phrasing/presentation review remains manual.
+- Mechanics: RubricTests and 65 assertions cover left/right only, disabled jump/extra moves, same straight-punch range/timing, one 52-unit step, exactly five-hit dizzy for two seconds, no health/timer/K.O. system and immediate manhole finish. Animation never drives collision.
+- Input: independent keyboard and simulated controller ownership/hot-swap tests pass. Physical USB/disconnect/reconnect/keyboard rollover remain manual.
 
-## NEEDS MANUAL TEST
+## NEEDS MANUAL TEST / held tasks
 
-- Human feel/presentation review of the authored weapon strikes; technical grip, grounding, bounds, connectivity and facing checks pass.
-- Facial expression swaps and signature per-character reaction sounds.
-- Physical controllers, disconnect/reconnect feel, and keyboard rollover.
-- Full-screen monitor fit and speaker/headphone balance.
-- Clean Windows PC without Unity; antivirus/SmartScreen behavior for unsigned executable.
-- Owner decision on public reference-photo history before any publishing.
-- Latest SUBMISSION ZIP rebuild, extraction and simulated match are part of the queued final executable task, not this step.
-- Actual watchdog reboot/usage-limit recovery with Codex App/IDE hosts closed. Lock, process-guard, reset parsing, harmless CLI and scheduled registration tests passed; current editing relaunch count is zero.
-
-## Resume safeguards
-
-- [x] Tested `Tools/autoresume.ps1`, hidden background start and current-user `IlabanAutoResume` scheduled task (logon plus five minutes). Evidence: `Docs/QA_EVIDENCE/autoresume_tests.json`, `autoresume_setup.json`, local `Tools/autoresume.log`.
-- [x] One exclusive watchdog lock, conservative Codex-process guard, persisted three-failure halt, connectivity backoff and reset-time wait. No account/key changes or limit bypass.
-- [x] AC sleep/display prior values recorded (both already zero), same values reapplied. No DC power changes.
+- Human animation/art/Tagalog presentation and speaker/headphone mix review.
+- Real two-controller and keyboard rollover/hot-swap checks.
+- Fullscreen on the presentation monitor, including a 16:10 display if used.
+- Clean Windows PC without Unity and unsigned-app antivirus/SmartScreen behavior.
+- Actual reboot/usage-limit auto-resume with Codex App/IDE hosts closed. Lock/reset/CLI smoke/scheduler checks passed; editing relaunch count is zero because the active-process guard blocks duplicate agents.
+- Owner decision on PUBLIC reference-photo history before publishing. Photos were never uploaded or newly committed.
+- Final ZIP rebuild/extraction and EXE/Drive delivery are deliberately queued separately.

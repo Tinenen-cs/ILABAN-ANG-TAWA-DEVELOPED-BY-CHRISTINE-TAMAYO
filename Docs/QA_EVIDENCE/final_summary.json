@@ -1,0 +1,97 @@
+{
+  "utc": "2026-10-28T04:32:57.112401+00:00",
+  "local_passed": true,
+  "tests": {
+    "EditMode": {
+      "passed": 11,
+      "total": 11,
+      "started": "2026-10-28 04:28:40Z",
+      "finished": "2026-10-28 04:28:41Z"
+    },
+    "PlayMode": {
+      "passed": 10,
+      "total": 10,
+      "started": "2026-10-28 04:29:01Z",
+      "finished": "2026-10-28 04:29:05Z"
+    }
+  },
+  "rule_assertions": 65,
+  "resolutions": [
+    {
+      "resolution": "1280x720",
+      "exit": 0,
+      "passed": true,
+      "image_sizes": [
+        [
+          1280,
+          720
+        ]
+      ],
+      "issues": []
+    },
+    {
+      "resolution": "1366x768",
+      "exit": 0,
+      "passed": true,
+      "image_sizes": [
+        [
+          1366,
+          768
+        ]
+      ],
+      "issues": []
+    },
+    {
+      "resolution": "1920x1080",
+      "exit": 0,
+      "passed": true,
+      "image_sizes": [
+        [
+          1920,
+          1080
+        ]
+      ],
+      "issues": []
+    },
+    {
+      "resolution": "2560x1440",
+      "exit": 0,
+      "passed": true,
+      "image_sizes": [
+        [
+          2560,
+          1440
+        ]
+      ],
+      "issues": [],
+      "method": "Borderless window exact client sizing; Unity framebuffer capture",
+      "folder": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\QA_SCREENSHOTS\\Exact_2560x1440"
+    },
+    {
+      "resolution": "3440x1440",
+      "exit": 0,
+      "passed": true,
+      "image_sizes": [
+        [
+          3440,
+          1440
+        ]
+      ],
+      "issues": [],
+      "method": "Borderless window exact client sizing; Unity framebuffer capture",
+      "folder": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\QA_SCREENSHOTS\\Exact_3440x1440"
+    }
+  ],
+  "native_ui_captures": 75,
+  "native_animation_captures": 108,
+  "action_frame_checks": 272,
+  "audio_files": 38,
+  "package": {
+    "status": "QUEUED_SEPARATELY",
+    "verified_current": false
+  },
+  "build_source": {
+    "sha256": "14659cc890910e8b63c670b077740c33782078a9e973d4e588eb2db6d992fd94",
+    "files": 976
+  }
+}

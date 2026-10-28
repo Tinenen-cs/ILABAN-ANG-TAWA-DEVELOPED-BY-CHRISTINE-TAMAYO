@@ -14,6 +14,7 @@ provenance=json.loads((evidence/'build_provenance.json').read_text());assert pro
 assert provenance['source']==source_fingerprint(root),'Source changed since the validation build'
 exe=root/'Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe'
 assert sha(exe)==provenance['exe_sha256'],'Built player changed'
+build_time=datetime.datetime.fromisoformat(provenance['utc']).timestamp()
 log=(root/'Logs/UIRelease-Build.log').read_text(encoding='utf-8',errors='replace')
 assert 'ILABAN VALIDATION PASSED: 65 rubric assertions' in log
 import re
@@ -25,11 +26,14 @@ for result in results:
     assert (folder/'PASS.txt').exists() and 'Handog ni Christine Tamayo' in (folder/'00-opening-ui.txt').read_text(encoding='utf-8')
     files=sorted(folder.glob('*.png'));assert len(files)==15,(folder,len(files))
     for path in files:
+        assert path.stat().st_mtime>=build_time,'Stale capture: '+str(path)
         assert Image.open(path).size==size
         captures.append({'file':path.relative_to(root).as_posix(),'size':list(size),'sha256':sha(path)})
 frames=json.loads((root/'Docs/character_action_validation.json').read_text());assert frames['all_passed'] and frames['frames_checked']==272
 animation=json.loads((root/'Docs/animation_capture_evidence.json').read_text());assert animation['passed'] and animation['frames']==108
-for row in animation['files']:assert sha(root/row['file'])==row['sha256']
+for row in animation['files']:
+    path=root/row['file'];assert path.stat().st_mtime>=build_time,'Stale native animation capture'
+    assert sha(path)==row['sha256']
 audit=json.loads((root/'Docs/FINAL_STATIC_AUDIT.json').read_text());assert audit['audio_files']==38 and audit['clipped_samples']==0 and not any(audit[k] for k in ['tagalog_default_english_candidates','mojibake_files','missing_audio_references'])
 package={'status':'QUEUED_SEPARATELY','verified_current':False}
 if not args.local_only:

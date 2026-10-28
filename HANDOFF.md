@@ -1,58 +1,59 @@
-# Handoff — 2026-10-28
+# Handoff - local overhaul complete, 2026-10-28
 
-Branch: `phase3-polish`. Project: `C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO`.
+Project: `C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO`
+Branch: `phase3-polish`. Do not push, merge, force-push or rewrite history. Never read/upload/commit the local real-person CHARACTER REFERENCE photos. No reference photos were supplied to tools or newly committed in this work.
 
 ## Done
 
-- Rebuilt the game from the real project folder with Unity 6000.6.2f1. Current source passes 65 rule assertions, graphics-enabled EditMode 11/11 and PlayMode 9/9. Fresh native smoke passes all five sizes: 1280x720, 1366x768, 1920x1080, 2560x1440 and 3440x1440, with no reported exceptions, missing glyphs or TMP overflow. Both Hilo labels remain clear and the reviewed HUDs fit every size.
-- Reviewed 1280x720 match/dizzy and 3440x1440 match/result. The Hilo HUD is visible, five amber/red streak pips fill/reset, and dizzy stars show. HUD screenshots for all five sizes are under `QA_SCREENSHOTS/HUD/`.
-- Step 1 complete: eight authored six-phase weapon-strike sheets are integrated. Weapons raise and reach horizontally toward the opponent, with no separate weapon object or thin straight trail. All 272 textures share an 896x512 canvas and an actual feet-center actor pivot. Every frame passed body-mask connectivity/bounds/ground checks; all 48 strikes passed grip/tip checks. Swing/impact audio and the fully extended frame align to the unchanged hit event.
-- The native build captured 108 animation/pair screenshots under `QA_SCREENSHOTS/ANIMATION/Unity/`, covering six strike and four hurt frames per character in both facings and all 28 pair types. I reviewed all eight strike/hurt asset montages and native representative frames; no split body, floating item or clipping was found. `Docs/animation_capture_evidence.json` stores native capture hashes.
-- Fresh source checks for the strike swap: EditMode 11/11, graphics-enabled PlayMode 9/9, build plus 65 assertions passed from the real folder. Other reaction/locomotion states still use whole-body effect variants and need dedicated pose/expression polish.
-- Created the auto-resume PowerShell script/docs and ran a harmless `codex exec` test (exit 0). No reference photos were read or sent to tools.
+- All eight characters use one whole-body image per frame, with their own baked weapon. Six strike phases: ready, wind-up, swing, fully extended chest-height strike, impact hold, recovery. Separate item overlays and the old split-body rig are gone.
+- 48 authored walk/reaction source poses provide dedicated walk, hurt, dizzy, win and lose expressions. Idle uses ready stance; fall uses the lose pose with a whole-body sink/rotation. All 272 runtime textures share the 896x512 canvas, actual feet-center pivot and ground line. Head/grip/tip anchors are stored in data.
+- Original curved trails, impact, foot dust and item-colored sparkle align to the unchanged punch timing. Eight quiet character cues wait behind menu sounds and coalesce repeated selections. Intro/hover/ready/wait selection reactions use the authored whole-body poses.
+- Reaction bubbles are small rounded head-owned plates with tails, per-frame transformed anchors, screen/HUD clamps and vertical separation. Bigger dizzy stars always draw above bubbles.
+- Original wooden/brass portrait rings join mirrored five-segment amber/red Hilo bars. No health/stamina/timer/K.O. HUD. Win medals pop/sparkle, and bottom keycaps share a rounded plate. Pause/controls/results share wooden frames.
+- Original painted full developer logo and four headings, live localized TMP underneath, rounded button icons/focus/press states, round back arrows, three controls keycap cards and a balanced centered result layout are integrated.
+- Exactly three fixed-light maps: Palengke morning, Looban night, Plaza night. Dusk variants archived outside Assets; Looban tricycle removed. Only restrained lamp/leaf/flag layers animate; morning glow is off.
+- Fixed and documented split rigs, duplicate thin item line, pause-before-first-update placement, double/edge focus scaling, frozen result impact star, transparent wood-grain pinholes and stale evidence generation. DuelModel gameplay timing, hitboxes, range, step-back and manhole logic were not changed.
 
-## In progress
+## Final verified results
 
-- Step 2 complete: per-frame head positions are authored in animation data, mirrored with the whole sprite, and transformed with the actor through motion/dizzy/fall. Bubbles use rounded 160x50 plates and short tails, stay centered on their own heads, clamp to the screen/HUD-safe region, and separate vertically when close. Fresh EditMode 11/11, PlayMode 9/9 and 65 rule assertions passed. Native close-range smoke proof is under `QA_SCREENSHOTS/Step2_Bubbles/`.
-- Step 3 complete: joined wood/brass rings and Hilo bars, uncovered mirrored labels, five amber/red segments per player, win medal pop/sparkle, bottom keycaps and shared wooden menu frames. Native review found pause-before-first-update placement and double/edge focus scaling bugs; both are fixed and covered by regressions. All tests/build and five-size native re-captures passed. HUD captures are under `QA_SCREENSHOTS/HUD/`.
-- Step 4 complete after steps 1–3: watchdog source, setup helper, exclusive lock/reset tests, harmless read-only CLI smoke, active-process guard, hidden start and scheduled task are verified. Current relaunch count is **0**; it sees the active Codex processes and correctly skips a second editing agent. The real second-watchdog poll exited because the first owned the lock.
-- Latest distributable ZIP is intentionally not rebuilt here; final EXE/Drive work is queued separately.
+Built from this REAL project folder with Unity 6000.6.2f1, not a temporary validation copy. No Unity Editor was holding this project. Graphics-enabled EditMode **11/11**, PlayMode **10/10**, **65 rubric assertions**, build exit 0, no C# compiler errors/warnings in all three final logs.
 
-## Next five steps
+Five exact native framebuffer runs passed: **1280x720, 1366x768, 1920x1080, 2560x1440, 3440x1440**. The built executable used actual simulated input through selection, pause/controls, five-hit dizzy and instant manhole finish. All 75 UI captures passed runtime/glyph/overflow checks. Large captures used borderless exact client sizing without changing display modes. HUDs at all five sizes were visually reviewed; dizzy and result proof confirm visible stars and no stale impact effect.
 
-1. Continue character reaction/expression and complete-action pose art using fictional source drawings only; add menu-safe matching cues.
-2. Finish the original heading-lettering assets, controls keycap grid and remaining common button details.
-3. Correct Looban/Plaza to fixed night lighting and add subtle isolated banderitas/leaves without moving the painted background.
-4. Refresh rule/input/build and five-size capture evidence after those changes; hardware/clean-PC checks remain manual.
-5. Run the clean-tree pre-check, write TASK_COMPLETE.flag, disable IlabanAutoResume and stop its verified watchdog process. End before the separately queued final EXE/Drive task. No publishing until the photo-history decision.
+272 body-mask connectivity/bounds/ground/pivot checks and 48 both-facing strike grip/tip checks passed. 108 fresh native Unity animation/pair captures cover six strike and four hurt frames for each character in both facings and all 28 unique pairs. Eight native frame contact sheets and four pair-contact pages were visually reviewed; no split body, floating duplicate item or clipping found. Proofs: `QA_SCREENSHOTS/ANIMATION/Unity`, `NativeContacts`; HUDs: `QA_SCREENSHOTS/HUD`.
 
-## Resume command
+Default English heuristic, glyph/mojibake and audio-reference audits passed. All **38 WAVs** have zero clipped samples. Human phrasing, animation feel and audio balance still need manual review.
 
-`codex exec --sandbox workspace-write -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read RESUME_STATE.txt and HANDOFF.md, run git status, continue the remaining character reactions and original UI/art checklist. Do not ask questions or start the queued EXE/Drive task."`
+Evidence: `Docs/QA_EVIDENCE/final_summary.json`, current source/build hash in `build_provenance.json`, XML files, capture hashes, `Docs/FINAL_STATIC_AUDIT.json`, `Docs/character_action_validation.json`, `Docs/animation_capture_evidence.json`. `Tools/finalize_evidence.py --local-only` verifies these without inventing totals or rewriting checklists. It rejects stale source/build or capture files. Full mode additionally rejects an old ZIP by comparing every build file.
 
-For the next Codex session: read `RESUME_STATE.txt`, `HANDOFF.md`, `PENDING_NETWORK.md`, `CHECKLIST.md`; run `git status`; continue from step 1 above. Do not ask questions. Do not start final EXE/Drive task in this continuation.
+Checklist: **15 verified, 10 manual/queued/owner-held, 0 unclassified/not-done**. All automatable work in this local overhaul is complete. No final EXE/ZIP delivery or Drive upload was started; the existing SUBMISSION ZIP and package_verification.json are historical and predate this build.
 
-## Auto-resume / network / power
+## In progress / stop condition
 
-`Tools/autoresume.ps1 -SelfTest` passed its exclusive-lock, reset-plus-two-minutes (4620-second example), 900-second fallback, and harmless Codex CLI checks. Fresh `codex --help`/`codex exec --help` and official non-interactive documentation were consulted. The task is registered with current-user logon and PT5M triggers; its hidden process and settings are recorded in `Docs/QA_EVIDENCE/autoresume_setup.json`. Another copy exits on the held lock. Three failed relaunches persist a halt across scheduled starts.
+Only closure remains: commit final docs/evidence, run `python Tools/verify_completion.py` with a clean tree, write local TASK_COMPLETE.flag, disable IlabanAutoResume and stop its verified watchdog process. Closure result is saved to `Docs/QA_EVIDENCE/completion.json`. This flag completes the local overhaul and stops automatic work; it does not claim the separately queued delivery/publishing tasks are complete.
 
-Safety limitation: the watchdog conservatively blocks while **any** codex.exe host is running, including an idle App/IDE, because this script cannot prove that those remote sessions are idle. Close those hosts before expecting a CLI relaunch. Actual reboot/usage-limit recovery remains NEEDS MANUAL TEST; it has relaunched this task **0 times**, because the current Codex process guard is active.
+## Next five steps for the separately invoked continuation
 
-The first combined setup command was rejected by automatic review; running normal PowerShell setup without an outer execution-policy override succeeded. No unresolved setup block remains. AC sleep and monitor timeouts were already 0 seconds before setup and remain 0; restore commands: `powercfg /change standby-timeout-ac 0` and `powercfg /change monitor-timeout-ac 0`. DC settings were not changed. Disable the task with `Disable-ScheduledTask -TaskName IlabanAutoResume` after completion. `PENDING_NETWORK.md` retains the public-photo-history hold and separate Drive task.
+1. Read this file, RESUME_STATE.txt, PENDING_NETWORK.md and CHECKLIST.md; run git status and `python Tools/verify_completion.py`. Do not redo finished art or start delivery merely because a watchdog resumes.
+2. Only when the separately queued EXE/Drive prompt is actually invoked and the pre-check passes, set ILABAN_PROJECT to the real project path and run Tools/package_portable.py. Verify its fresh temp extraction and complete simulated match.
+3. Run Tools/finalize_evidence.py without --local-only; verify current ZIP size/SHA-256 and all files against the current validation build. Update package results without claiming a clean-PC test.
+4. Follow that separately invoked prompt for Drive destination/sign-in and verify the destination listing. GitHub publishing stays held until the owner resolves the PUBLIC reference-photo history decision; no merge/push/release now.
+5. Record physical-controller/hot-swap/rollover, presentation monitor/fullscreen, clean-PC/SmartScreen and subjective art/Tagalog/audio results. Mark pass/fail in TEST_PLAN.md.
+
+## Exact resume command
+
+`codex exec --sandbox workspace-write -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read RESUME_STATE.txt, HANDOFF.md, PENDING_NETWORK.md and CHECKLIST.md; run git status and python Tools/verify_completion.py. The local overhaul is complete. Do not ask questions, publish, or start final EXE/Drive delivery unless its separate queued prompt has been invoked."`
+
+## Watchdog / power / network
+
+Tools/autoresume.ps1 and setup/docs were created after steps 1-3 were tested. Exclusive-lock/reset parsing/15-minute fallback and a harmless read-only codex exec command passed. The hidden process and current-user scheduled task were registered at logon plus every five minutes; a real second instance exited on the held lock. The watchdog conservatively refuses to launch while ANY codex.exe host exists, including an idle App/IDE, because their busy state cannot be safely proven. Physical reboot/limit-reset recovery remains NEEDS MANUAL TEST.
+
+Editing relaunch count: **0**. Reason: the current Codex process guard correctly prevented a second editing agent. One harmless CLI smoke test was not an editing relaunch. Three consecutive failures persist a halt; limit messages wait until reset plus two minutes or 15 minutes when unknown; no account/key changes or limit bypass.
+
+AC sleep/display timeouts were already 0 seconds and remain 0; DC unchanged. Original restore commands: `powercfg /change standby-timeout-ac 0` and `powercfg /change monitor-timeout-ac 0`. The first combined setup command was rejected by automatic review; normal PowerShell setup then succeeded. No unresolved setup rejection remains.
+
+Repository visibility rechecked with gh: **PUBLIC**. Proof: Docs/QA_EVIDENCE/repository_visibility.json. Owner photo-history decision remains held in PENDING_NETWORK.md. No push, release, merge, rewrite or upload performed.
 
 ## NEEDS MANUAL TEST
 
-Human presentation/feel review of authored strikes, signature facial reactions/cues and dedicated locomotion poses, physical gamepad/hot-swap and keyboard rollover, full-screen fit on the presentation monitor, subjective audio levels, clean-PC/SmartScreen, final ZIP extraction/playback (queued separately), and owner decision on the public photo history.
-
-## Current action-art checkpoint
-
-48 additional authored whole-body walk/hurt/dizzy/win/lose poses are integrated for all eight fictional characters. Fall uses the lose pose with the existing whole-body sink transform; idle uses the ready stance. Six-frame strikes remain unchanged. All 272 masks and 48 strike grip/tip checks passed after regeneration. Eight soft reaction cues wait for menu audio and coalesce rapidly repeated selections. Fresh Unity tests/rule checks are running; do not claim their new results until XML/logs are checked. Next five: verify tests; review new native animation captures; finish heading/control assets; night maps and isolated foliage; final evidence/pre-check. Resume with the existing exact command above.
-
-Action-pose/cue verification completed: fresh EditMode 11/11, PlayMode 10/10 and 65 assertions passed. Continuing painted headings, controls grid and night-map relights; no gameplay-model changes.
-
-## Painted UI / night-map checkpoint
-Original painted logo and four heading assets are integrated with live localized TMP underneath. Controls use three keycap cards; shared buttons have code-drawn icons and hover/focus motion; select/stage back buttons are round. Results use a centered panel above a whole-body winner. Looban and Plaza now use fixed Gabi paintings; Looban vehicle removed. Morning lamp overlay stays off. Only small lamp/leaf/flag layers animate; no vehicle/floor/cloud motion. Fresh tests passed before the final round-back/pulse details; full build and final capture pass are next. Next five: final build/tests; five-size smoke; native animation review; honest evidence/docs; clean pre-check and watchdog shutdown. Exact resume command remains above.
-
-Native review confirmed new headings, control cards, authored ready reactions, night map, Hilo bars and visible dizzy stars. Found/fixed frozen last-hit sparkle on results; final test/build/capture confirmation follows. Next five: rerun final checks; five native sizes; native action captures; final evidence/docs; completion flag and watchdog shutdown. Resume with existing command above.
-
-Final high-resolution HUD review found low-alpha wood grain replacing solid pixels. Corrected the procedural generator to composite grain over opaque wood; this is an asset-only fix. Next: final tests/build; five-size/native capture refresh; evidence/doc verification; clean pre-check; completion flag/watchdog shutdown. Exact resume command above still applies.
+Human art/animation/Tagalog presentation and speaker/headphone balance; physical two-controller hot-swap and keyboard rollover; actual monitor/fullscreen including 16:10; clean Windows PC without Unity and unsigned-app antivirus/SmartScreen; real reboot/usage-limit recovery. Final ZIP extraction and EXE/Drive delivery are queued separately, and public-history publishing needs the owner's decision.

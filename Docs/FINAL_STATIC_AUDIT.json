@@ -1,7 +1,7 @@
 {
   "tagalog_default_english_candidates": [],
   "mojibake_files": [],
-  "audio_files": 30,
+  "audio_files": 38,
   "missing_audio_references": [],
   "clipped_samples": 0,
   "audio": [
@@ -192,6 +192,62 @@
       "samples": 5512,
       "peak": 0.669586181640625,
       "rms": 0.11347845957728452,
+      "clipped": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_0.wav",
+      "samples": 3969,
+      "peak": 0.27996826171875,
+      "rms": 0.06283664162541223,
+      "clipped": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_1.wav",
+      "samples": 3969,
+      "peak": 0.27996826171875,
+      "rms": 0.035988502384450546,
+      "clipped": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_2.wav",
+      "samples": 3969,
+      "peak": 0.27996826171875,
+      "rms": 0.0691324924947341,
+      "clipped": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_3.wav",
+      "samples": 3969,
+      "peak": 0.27996826171875,
+      "rms": 0.06615698462108588,
+      "clipped": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_4.wav",
+      "samples": 3969,
+      "peak": 0.27996826171875,
+      "rms": 0.05094913763174413,
+      "clipped": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_5.wav",
+      "samples": 3969,
+      "peak": 0.27996826171875,
+      "rms": 0.07271092285669821,
+      "clipped": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_6.wav",
+      "samples": 3969,
+      "peak": 0.27996826171875,
+      "rms": 0.04635922088028876,
+      "clipped": 0
+    },
+    {
+      "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_7.wav",
+      "samples": 3969,
+      "peak": 0.27996826171875,
+      "rms": 0.04330519983447653,
       "clipped": 0
     },
     {

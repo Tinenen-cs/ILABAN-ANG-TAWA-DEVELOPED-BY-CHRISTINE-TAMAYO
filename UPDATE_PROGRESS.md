@@ -1,41 +1,31 @@
 # Update progress
 
-| # | Work item | Status | Evidence / next action |
-|---:|---|:---:|---|
-| 1 | Opening jeepney | [x] | Opening and match screenshots |
-| 2 | Themed headings | [~] | Localized signboard plates; painted lettering incomplete |
-| 3 | Language/reaction defaults | [x] | Pormal default and English settings capture |
-| 4 | Settings layout | [x] | Slider bounds test |
-| 5 | Title buttons | [x] | Five-size captures |
-| 6 | Button states | [~] | Shared component; exhaustive manual review |
-| 7 | Controls routing | [x] | PlayMode flow test |
-| 8 | Exit dialog | [~] | Hindi default; actual exit and physical gamepad review |
-| 9 | Character select | [~] | Cards/readiness verified; full state/art review remains |
-| 10 | Character actions | [~] | 48 authored weapon-strike poses in 272 shared 896x512 textures; 108 Unity captures; dedicated reaction expressions/locomotion poses remain partial |
-| 11 | Stage select | [x] | Three arenas at five sizes |
-| 12 | Shared button system | [~] | Implemented; full manual state sweep remains |
-| 13 | Fixed maps | [x] | Palengke morning; Looban/Plaza dusk |
-| 14 | Fight HUD/Hilo | [x] | Original wood/brass design; exactly five amber/red pips, medals, VS and bottom hints; five-size screenshots |
-| 15 | Map animation | [~] | Lamp glow; foliage is fixed art |
-| 16 | Pause/controls | [x] | No-orphan PlayMode test |
-| 17 | Reaction bubbles | [x] | Per-frame head/flip anchors, small tails, vertical close-range separation and HUD bounds tested; native step-2 smoke |
-| 18 | Remove Suntok orb | [x] | Match screenshot |
-| 19 | Results | [x] | Result screenshot at five sizes |
-| 20 | Windowed/fullscreen build | [~] | Five exact sizes; target monitor needs manual check |
-| 21 | Rubric self-check | [~] | Evidence and limits written |
-| 22 | Checklist | [x] | 25 rows current |
-| 23 | Local QA/package | [~] | Source build, 65 rules, EditMode 11/11, PlayMode 9/9 and five resolutions pass; current submission ZIP rebuild queued separately |
-| 24 | Publication | [~] | Held for owner decision about photo-containing public history |
-| 25 | Release docs | [~] | Local docs ready; final EXE/Drive task queued |
+Local overhaul and all automated verification complete on phase3-polish. Final ZIP/Drive delivery is separately queued; public publishing is held for the owner photo-history decision.
 
-No push, merge, history rewrite, public release or Drive upload was attempted. Physical/device checks remain NEEDS MANUAL TEST.
+1. [x] Opening-only animated jeepney, skippable opening, no moving vehicle in fights. Evidence: 00-opening.png and three 04-match captures in each QA folder.
+2. [x] Original painted logo and four headings with live localized TMP underneath. Exact full developer title preserved. Assets/Resources/Ilaban/UI/Heading*.png.
+3. [x] Tagalog and Pormal defaults; language and reaction controls work. Native default/English captures and RubricTests.
+4. [x] Three keycap control cards plus five settings rows, keyboard/gamepad navigation and bounded sliders. SettingsAndExitUseTheirOwnScreenFlow; 08-controls.png.
+5. [x] Rounded wood/tin title buttons, inner highlight and original code-drawn icons. 01-title.png.
+6. [~] Shared hover/focus/press colors, outline, centered scale, moving icons and soft sound implemented. NEEDS MANUAL TEST for subjective pointer/controller feel.
+7. [x] Mga Kontrol stays in controls, with consumed per-screen input. SettingsAndExitUseTheirOwnScreenFlow and native routing capture.
+8. [~] Umalis opens confirmation, defaults to Hindi and returns focus correctly. Automated routing passed. NEEDS MANUAL TEST for actual quit and physical gamepad feel.
+9. [~] Eight non-overlapping cards, names, item icons, two-player ready checks, round back button, intro/hover/ready/wait poses and sparkle. Automated layout/readiness gates passed; NEEDS MANUAL TEST for every human two-player selection combination.
+10. [~] Eight complete whole-body action sets: 272 textures, 48 six-phase strikes and 48 authored walk/reaction source poses; idle uses ready stance and fall sinks the lose pose as one body. No item child/parts rig; common 896x512 canvas, feet pivot and ground line. 272 structural checks, 48 grip/tip checks in both facings and 108 native captures passed in final confirmation. Signature cues wait behind menu sounds. NEEDS MANUAL TEST for animation feel and facial/art consistency.
+11. [x] Three large stage cards with separate names/description/hint zones; selection scale preserves gaps. Native screenshots at five sizes.
+12. [~] Shared modern themed button states across all screens. NEEDS MANUAL TEST for exhaustive device/pointer feel.
+13. [x] Exactly three fixed-light maps: Palengke Umaga; Looban Gabi; Plaza Gabi. Inactive variants outside Assets. No time selector; Looban vehicle removed. RubricTests and ProjectSetup checks.
+14. [x] Original wood/brass portrait rings joined to five amber/red Hilo segments; empty start, fill/reset with streak, win medals/pop, name plates, center VS and bottom keycaps. No health/stamina/timer/K.O. HUD. Open street kanal at each edge. FightHudHasFiveHiloPipsAndNoSeparateItemSprites; QA_SCREENSHOTS/HUD.
+15. [x] Only subtle night-lamp glow, isolated flags and leaves animate over fixed fight paintings. Morning glow off. No moving vehicle, cloud or floor layer. AcademyGame.Ambience/UpdateAmbience.
+16. [x] Pause/controls use centered wooden panels and no orphan fighters. Immediate-pause placement regression passed. PauseAndSettingsOverlaysHaveNoOrphanFighterObjects.
+17. [x] Small rounded head-owned bubbles, tails, per-frame head anchors, facing/motion/fall tracking, HUD clamp and vertical non-overlap. ReactionBubblesTrackHeadAndStayInSeparateHudSafeLanes. Dizzy stars are larger and always drawn above bubbles.
+18. [x] Nonfunctional attack orbs removed; non-interactive bottom keycap hint only. Native match screenshots.
+19. [x] Centered result panel above whole-body winner, painted Panalo sign, options/confetti/jingle and winner medal sparkle. Final-hit effect hides on finish; regression passed. 06-result.png.
+20. [~] Fresh build configured borderless native desktop resolution; Alt+Enter toggle implemented; five exact-size native window tests passed in final confirmation. NEEDS MANUAL TEST for actual presentation monitor/fullscreen and 16:10 hardware.
+21. [~] Rubric behavior has real automated evidence; no Exceeds/grade guarantee. Physical feel and human theme/Tagalog review remain NEEDS MANUAL TEST.
+22. [x] Checklist covers 1-25; UPDATE_PROGRESS.md and handoff keep evidence and next commands.
+23. [~] Latest Unity EditMode 11/11, graphics-enabled PlayMode 10/10, 65 assertions and real-folder build passed. Final five-size/native animation confirmation passed; 75 UI and 108 animation captures verified. Final ZIP extraction is QUEUED SEPARATELY; hardware/clean-PC checks NEEDS MANUAL TEST.
+24. [~] All source work stays on phase3-polish. PUBLIC repo visibility rechecked with gh repo view. No push/merge/rewrite; publishing held for owner decision on reference-photo history.
+25. [~] README download/unzip/controls/submission guide and credits prepared. Latest final ZIP, verified public release link and Drive upload are QUEUED SEPARATELY; current ZIP is older than source.
 
-Resume safeguards are installed and tested: hidden watchdog, exclusive lock, conservative active-process guard, persisted three-failure halt, reset wait and logon/PT5M task. Editing relaunch count 0. AC sleep/display were already never and remain so; see HANDOFF for restoration and stop instructions.
-
-### Authored action and reaction checkpoint
-- Integrated 48 fictional walk/reaction poses using whole-body crops, common 896x512 canvas and feet pivot. No body-part rig or item overlay.
-- Added eight original quiet reaction WAVs, delayed behind menu sounds, plus select intro/hover/ready/wait emotion loops.
-- Structural frame audit: 272/272 passed. Fresh Unity verification pending.
-
-### Painted UI and fixed-night maps
-Original logo/heading signs, keycap controls grid, common button icons/focus motion, round back buttons and centered result composition added. Looban and Plaza relit to night, inactive dusk paintings archived outside Assets, parked tricycle removed. Subtle isolated flags/leaves and night lamp glow only; morning glow off. Full final validation pending.
+Evidence: Docs/QA_EVIDENCE/final_summary.json. Editing watchdog relaunches: 0; active Codex guard blocked duplicate agents. Physical/human tests remain manual.
