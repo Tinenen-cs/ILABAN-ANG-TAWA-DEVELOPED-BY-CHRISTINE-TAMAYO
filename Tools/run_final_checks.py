@@ -18,6 +18,7 @@ for mode in modes:
  elif mode=='Rules':args+=['-quit','-executeMethod','Hexbound.Editor.SubmissionSetup.ValidateBaseline']
  elif mode=='Build':args+=['-quit','-executeMethod','Hexbound.Editor.SubmissionSetup.ValidateAndBuild']
  else:raise ValueError('Unknown check mode '+mode)
+ (root/'RESUME_STATE.txt').write_text('HEAD='+subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()+' | UPDATE3: about to run real-folder Unity '+mode+'; resume from HANDOFF.md | UTC='+datetime.datetime.now(datetime.timezone.utc).isoformat(),encoding='utf-8')
  print('Running graphics-enabled Unity '+mode+' on '+str(project),flush=True)
  result=subprocess.run(args)
  print(mode,'exit',result.returncode,flush=True)

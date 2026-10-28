@@ -1,0 +1,64 @@
+{
+  "source": "Maps/Looban/Looban_Gabi.png",
+  "layers": [
+    {
+      "id": "Leaf0",
+      "kind": "leaf",
+      "x": 0.0035885167464114833,
+      "y": 0.0,
+      "width": 0.48504784688995217,
+      "height": 0.26461211477151964
+    },
+    {
+      "id": "Leaf1",
+      "kind": "leaf",
+      "x": 0.9138755980861244,
+      "y": 0.2146652497343252,
+      "width": 0.0861244019138756,
+      "height": 0.230605738575983
+    },
+    {
+      "id": "Festival0",
+      "kind": "flag",
+      "textureResource": "Ilaban/UI/Festival/Flag0",
+      "x": 0.45,
+      "y": 0.12,
+      "width": 0.024,
+      "height": 0.055
+    },
+    {
+      "id": "Festival1",
+      "kind": "flag",
+      "textureResource": "Ilaban/UI/Festival/Flag1",
+      "x": 0.515,
+      "y": 0.127,
+      "width": 0.024,
+      "height": 0.055
+    },
+    {
+      "id": "Festival2",
+      "kind": "flag",
+      "textureResource": "Ilaban/UI/Festival/Flag2",
+      "x": 0.5800000000000001,
+      "y": 0.134,
+      "width": 0.024,
+      "height": 0.055
+    },
+    {
+      "id": "LampsWindows",
+      "kind": "glow",
+      "x": 0.0,
+      "y": 0.10626992561105207,
+      "width": 0.9946172248803827,
+      "height": 0.41870350690754515
+    },
+    {
+      "id": "Clouds",
+      "kind": "cloud",
+      "x": 0.4820574162679426,
+      "y": 0.015940488841657812,
+      "width": 0.18660287081339713,
+      "height": 0.19872476089266738
+    }
+  ]
+}

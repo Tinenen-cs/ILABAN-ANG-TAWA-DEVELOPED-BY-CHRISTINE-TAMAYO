@@ -27,6 +27,17 @@ namespace Hexbound.Tests
             var impacts=(TMP_Text[])typeof(AcademyGame).GetField("impactLabels",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(game);foreach(var impact in impacts)Assert.IsFalse(impact.gameObject.activeSelf,"Combat impact sparkles must not remain frozen over the result screen.");
         }
 
+        [UnityTest] public IEnumerator PaintingMotionIsPresentEnabledAndRunsWithFrozenFighters(){
+            var previous=Object.FindAnyObjectByType<AcademyGame>();if(previous!=null)Object.DestroyImmediate(previous.gameObject);
+            var game=new GameObject("Painted motion regression").AddComponent<AcademyGame>();game.enabled=false;
+            for(int scene=0;scene<5;scene++){
+                if(scene<3){game.Ready[0]=game.Ready[1]=true;game.SelectArena(scene);game.StartMatch();}else game.Show(scene==3?AcademyGame.ScreenState.Title:AcademyGame.ScreenState.StageSelect);
+                yield return null;
+                var motion=Object.FindAnyObjectByType<PaintingMotion>();Assert.IsNotNull(motion);Assert.IsTrue(motion.isActiveAndEnabled);Assert.GreaterOrEqual(motion.LayerCount,5);
+                foreach(var layer in motion.GetComponentsInChildren<RawImage>())Assert.IsNotNull(layer.texture);
+                float age=motion.Age;yield return new WaitForSecondsRealtime(.06f);Assert.Greater(motion.Age,age,"Independent unscaled clock must advance even with game disabled");
+            }game.enabled=true;
+        }
         [Test] public void UniformActionButtonsKeepEightPixelsOfFocusPadding(){
             var previous=Object.FindAnyObjectByType<AcademyGame>();if(previous!=null)Object.DestroyImmediate(previous.gameObject);
             var game=new GameObject("Button geometry regression").AddComponent<AcademyGame>();game.enabled=false;

@@ -37,7 +37,7 @@ namespace Hexbound
         readonly List<RawImage> lamps=new List<RawImage>();
         readonly List<RectTransform> leaves=new List<RectTransform>(),flags=new List<RectTransform>();
         readonly float[] readyAt={-10,-10},hoverUntil=new float[8];
-        RectTransform ambience,skyCloud;
+        RectTransform ambience;
         readonly List<float>[] frameSamples={new List<float>(),new List<float>(),new List<float>()};
         [Serializable] sealed class FrameReport {public FrameRow[] maps;}
         [Serializable] sealed class FrameRow {public string map;public int samples;public float averageFps,p95Milliseconds,maxMilliseconds;}
@@ -279,29 +279,24 @@ namespace Hexbound
             view=Rect(safe,"Screen "+state,new Rect(0,0,1280,720));view.gameObject.AddComponent<CanvasGroup>();
             for(int i=0;i<3;i++)stages[i]=MapTex(i);
             scenery.texture=stages[selectedArena];
-            Ambience(state==ScreenState.Fight?Model.ArenaIndex:selectedArena,state==ScreenState.Fight);
             if(state==ScreenState.Title) {scenery.texture=Tex("Backgrounds/Pamagat")??scenery.texture;Music("Title");Title();}
             if(state==ScreenState.Select) {scenery.texture=Tex("Backgrounds/PumiliTauhan")??scenery.texture;Music("Selection");Select();}
             if(state==ScreenState.StageSelect) {scenery.texture=Tex("Backgrounds/PumiliEntablado")??scenery.texture;Music("Selection");StageSelect();}
             if(state==ScreenState.Fight) {Music(Roster.StageFiles[Model.ArenaIndex]);Fight();}
             if(state==ScreenState.Controls) Controls();
+            Ambience(state==ScreenState.Fight?Model.ArenaIndex:selectedArena,true);
             BuildExitDialog();BuildErrorDialog();
             if(state==ScreenState.Select)QueueCharacterCue(Selected[0]);else if(state!=ScreenState.StageSelect){highlight.Stop();queuedCharacter=-1;}
         }
         // Only subtle lamp and banderita motion is layered over the fixed stage paintings.
         void Ambience(int arena,bool enabled)
         {
-            lamps.Clear();leaves.Clear();flags.Clear();skyCloud=null;
-            if(ambience!=null)Destroy(ambience.gameObject);
+            lamps.Clear();leaves.Clear();flags.Clear();
+            if(ambience!=null){ambience.gameObject.SetActive(false);Destroy(ambience.gameObject);}
             ambience=Rect(scenery.transform,"Buhay ng Kalye",new Rect(0,0,1,1));Stretch(ambience);
-            if(!enabled)return;
-            // Clip drifting cloud wisps to the actual upper sky opening, behind the fighters.
-            var sky=Rect(ambience,"Langit lamang",new Rect(0,0,1,1));sky.anchorMin=new Vector2(.40f,.84f);sky.anchorMax=new Vector2(.65f,.98f);sky.offsetMin=sky.offsetMax=Vector2.zero;sky.gameObject.AddComponent<RectMask2D>();
-            skyCloud=Rect(sky,"Mabagal na ulap",new Rect(-180,12,180,48));skyCloud.gameObject.AddComponent<CanvasRenderer>();var cloud=skyCloud.gameObject.AddComponent<SkyCloudGraphic>();cloud.raycastTarget=false;cloud.color=arena==0?new Color(1,.96f,.87f,.075f):new Color(.55f,.63f,.77f,.055f);
-            if(arena>0)foreach(var p in MapLamps[arena]) {var l=Area(ambience,Fx("Glow"),new Rect(p.x-.035f,p.y-.055f,.07f,.11f));lamps.Add(l);}
-            // Small isolated accents only; the painting, floor and parked scenery stay fixed.
-            foreach(float x in new[]{.035f,.94f}){var leaf=Area(ambience,Fx("Leaves"),new Rect(x,.04f,.045f,.05f));leaf.rectTransform.pivot=new Vector2(.5f,1);leaves.Add(leaf.rectTransform);}
-            for(int i=0;i<(arena==1?3:9);i++){var flag=Area(ambience,Fx("Flag"),new Rect(arena==1?.44f+i*.052f:.19f+i*.072f,arena==1?.08f:.13f+Mathf.Sin(i*.4f)*.04f,.014f,.029f));flag.rectTransform.pivot=new Vector2(.5f,1);flag.color=new[]{new Color32(198,135,75,255),new Color32(204,171,82,255),new Color32(82,150,142,255)}[i%3];flags.Add(flag.rectTransform);}
+            // Configure after each screen chooses its actual painting. Title and stage
+            // selection previously disabled this layer, leaving completely static art.
+            if(enabled&&scenery.texture!=null)ambience.gameObject.AddComponent<PaintingMotion>().Configure(scenery.texture.name);
         }
         Texture2D Fx(string name)=>Tex("Maps/FX/"+name);
         RawImage Area(Transform parent,Texture2D texture,Rect normalized)
@@ -309,13 +304,7 @@ namespace Hexbound
             var image=Raw(parent,new Rect(0,0,0,0),texture);var r=image.rectTransform;
             r.anchorMin=new Vector2(normalized.xMin,1-normalized.yMax);r.anchorMax=new Vector2(normalized.xMax,1-normalized.yMin);r.offsetMin=r.offsetMax=Vector2.zero;return image;
         }
-        void UpdateAmbience()
-        {
-            if(skyCloud!=null)skyCloud.anchoredPosition=new Vector2(Mathf.Repeat(clock*2f,((RectTransform)skyCloud.parent).rect.width+220)-200,-12);
-            for(int i=0;i<lamps.Count;i++) {float flicker=Mathf.PerlinNoise(clock*2,i*3.1f);lamps[i].color=new Color(1,1,1,.24f+flicker*.16f);}
-            for(int i=0;i<leaves.Count;i++)leaves[i].localRotation=Quaternion.Euler(0,0,Mathf.Sin(clock*.8f+i)*1.4f);
-            for(int i=0;i<flags.Count;i++)flags[i].localRotation=Quaternion.Euler(0,0,Mathf.Sin(clock*1.3f+i*.5f)*2);
-        }
+        void UpdateAmbience() {} // PaintingMotion owns an independent unscaled clock.
         void Shade(float alpha=.72f)=>Image(view,new Rect(0,0,1280,720),new Color(.025f,.06f,.09f,alpha));
         void PaintedText(Transform parent,Rect area,string title,string asset,int size=48,bool always=false){
             var live=Label(parent,area,title,size);var tex=Tex("UI/Heading"+asset);
