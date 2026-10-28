@@ -11,7 +11,8 @@ Developer: Christine Tamayo.
 ## Character art
 
 - Eight fictional adult characters use original full-body base art and portraits. No real-person photos or likeness inputs were supplied to image tools.
-- Full-body action frames (idle, walk, strike, hurt, dizzy, fall, win and lose) are generated locally from the approved fictional full-body bases. Every frame uses a 272x512 transparent canvas and shared bottom-center feet pivot. Six strike placeholders include a broad curved trail, impact burst/sparkle and foot dust. The underlying item stays in the source carry pose; the weapon is not yet reposed into the requested shoulder-height strike. `Tools/generate_character_action_frames.py` reads only character base PNGs in `Assets/Resources/Ilaban/Characters`.
+- Eight six-phase whole-body strike sheets were created with the built-in imagegen tool, using only the original fictional Body.png drawings. Original faces/outfits were preserved while each item was drawn in a raised wind-up and forward chest-height strike. Prompt set and corrections: `Docs/strike_generation.md`; source sheets: `ArtSource/StrikeSheets/`.
+- `Tools/import_strike_sheets.py` slices complete sprites and aligns their feet; it never rigs or relocates limbs/items separately. `Tools/generate_character_action_frames.py` prepares 272 transparent 896x512 textures with a shared feet-center pivot and adds original curved trails, item sparkle, impact and dust. Other action states currently use whole-body effect variants. Structural masks are retained under `ArtSource/ActionMasks/`.
 - `Tools/generate_hud_art.py` creates the original varnished wood/brass portrait ring, carved Hilo bar, five inset segment frames and winner medals. The HUD art uses no supplied reference pixels.
 - Original local reference photos remain private and ignored by Git. See `Docs/character_action_frames.json` and `Docs/character_action_validation.json` for asset dimensions and silhouette checks.
 

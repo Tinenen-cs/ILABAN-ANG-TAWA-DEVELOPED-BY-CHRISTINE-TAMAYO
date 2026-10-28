@@ -11,7 +11,7 @@
 | 7 | Controls routing | [x] | PlayMode flow test |
 | 8 | Exit dialog | [~] | Hindi default; actual exit and physical gamepad review |
 | 9 | Character select | [~] | Cards/readiness verified; full state/art review remains |
-| 10 | Character actions | [~] | 272 shared-canvas whole-body frames; six strike placeholders per character; weapon pose/expression polish incomplete |
+| 10 | Character actions | [~] | 48 authored weapon-strike poses in 272 shared 896x512 textures; 108 Unity captures; dedicated reaction expressions/locomotion poses remain partial |
 | 11 | Stage select | [x] | Three arenas at five sizes |
 | 12 | Shared button system | [~] | Implemented; full manual state sweep remains |
 | 13 | Fixed maps | [x] | Palengke morning; Looban/Plaza dusk |

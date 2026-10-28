@@ -11,7 +11,7 @@ Status: [x] verified in source/tests/captures; [~] implemented partially or NEED
 7. [x] Mga Kontrol opens the controls/settings view. Evidence: PlayMode routing test.
 8. [~] Umalis dialog defaults to Hindi. Gamepad feel and actual application exit need a physical review.
 9. [~] Eight character cards, portraits, readiness and descriptions work. Fine detail and every two-player readiness combination need manual review.
-10. [~] Eight whole-body action sets have 272 PNGs (six strike frames and four frames for each other action per character), all 272x512 with a common feet-center pivot/ground line. The split-body rig was removed. Strike sprites remain explicit placeholders named `Strike_00.png` through `Strike_05.png` in each `Assets/Resources/Ilaban/Characters/<Character>/Actions/` folder: weapon-specific raised/reaching poses and expression swaps are incomplete. The old long straight trail line was removed. Evidence: `Docs/character_action_frames.json`, `Docs/character_action_validation.json`, `QA_SCREENSHOTS/ANIMATION/`.
+10. [~] All eight characters now have authored whole-body weapon strikes (`Strike_00.png` through `Strike_05.png`: ready, wind-up, swing, forward strike, impact, recovery). Each weapon stays in the hand and extends toward the opponent; there is no independent weapon overlay. All 272 action textures share an 896x512 canvas, actual feet-center transform pivot and ground line. Every body mask passed connectivity, bounds, ground and both-facing checks. 108 native Unity frame/pair captures are under `QA_SCREENSHOTS/ANIMATION/Unity/`. Walk/hurt/dizzy/fall/win/lose still use whole-body effect variants; dedicated facial-expression swaps remain partial. Evidence: `Docs/character_action_validation.json`, `Docs/animation_capture_evidence.json`, `Docs/strike_generation.md`.
 11. [x] Three stage cards show distinct location art, names and hints at all five sizes.
 12. [~] Shared themed buttons work across views; exhaustive manual state review remains.
 13. [x] Exactly three maps: Palengke (Umaga), Looban (Takipsilim), Plaza (Takipsilim); no time selector.
@@ -38,7 +38,7 @@ Status: [x] verified in source/tests/captures; [~] implemented partially or NEED
 
 ## NEEDS MANUAL TEST
 
-- Review weapon grip/facing/strike poses for each character; current six-frame strikes are whole-body placeholders with a curved effect trail, not finished weapon choreography.
+- Human feel/presentation review of the authored weapon strikes; technical grip, grounding, bounds, connectivity and facing checks pass.
 - Facial expression swaps and signature per-character reaction sounds.
 - Physical controllers, disconnect/reconnect feel, and keyboard rollover.
 - Full-screen monitor fit and speaker/headphone balance.

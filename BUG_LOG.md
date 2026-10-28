@@ -58,3 +58,10 @@ Original artwork, face files, audio and Main.unity have not been deleted. Proced
 - Fixed slider fill anchors that caused the control bars to grow outside their tracks. Added PlayMode size bounds. Hid reaction bubbles after a match ends so they do not compete with the result panel.
 - Updated highlight/ready animation to show a selected item flourish and ready sparkle. Facial expression swaps, polished limb motion and dedicated reaction voice cues remain partial.
 - Earlier bubble test flake: it sampled before the first post-StartMatch layout update and sometimes saw the default (0,0) RectTransform. The test now waits one frame, confirms Fight state and measures a fresh visible interval; final PlayMode passes.
+
+## Step 1 verified — authored whole-body strikes
+
+- Replaced the relaxed-carry strike placeholders with 48 authored weapon poses for all eight characters. The straight trail that looked like a second stick and ambiguous hurt speed marks are removed. Weapons are baked into the same image as the complete body; only whole-body UV mirroring is used.
+- Corrected generated-source review defects before import: Manong recovery was missing its can, and Tito wind-up had an extra hand. Selected sheets now show one weapon and two arms/hands per character.
+- All actions now share an 896x512 canvas and a real bottom-center actor pivot. Normalized whole-body frames preserve the ground line while knockback moves the whole actor by the existing model step. Extended strike artwork begins at the unchanged 0.12-second hit event.
+- Fresh verification: EditMode 11/11, PlayMode 9/9, build/65 rule assertions; 272 body-mask connectivity/bounds/pivot tests; 48 grip/tip checks; 108 native Unity screenshots cover six strike and four hurt frames for all eight in both facings and all 28 pair types. Evidence: Docs/animation_capture_evidence.json. Other reaction/locomotion poses remain effect variants pending further polish.

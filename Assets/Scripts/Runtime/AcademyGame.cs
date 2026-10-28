@@ -326,7 +326,8 @@ namespace Hexbound
         {
             float originalWidth=area.width;area.width=area.height*bodies[id].width/bodies[id].height;area.x+=(originalWidth-area.width)/2;
             var a=new Actor {id=id,root=Rect(parent,"Tauhan",area)};
-            a.dust=Raw(a.root,new Rect(-10,area.height-28,area.width+20,40),Tex("UI/Glow"));a.dust.color=new Color(.9f,.8f,.6f,.3f);
+            a.root.pivot=new Vector2(.5f,0);a.root.anchoredPosition=new Vector2(area.x+area.width/2,-area.y-area.height);
+            a.dust=Raw(a.root,new Rect(area.width/2-70,area.height-28,140,40),Tex("UI/Glow"));a.dust.color=new Color(.9f,.8f,.6f,.3f);
             a.body=Raw(a.root,new Rect(0,0,area.width,area.height),bodies[id]);a.body.uvRect=new Rect(0,0,1,1);
             return a;
         }
@@ -462,7 +463,7 @@ namespace Hexbound
                     if(controls.Press(p,"Cancel")) {if(Ready[p])Ready[p]=false;else{Show(ScreenState.Title);return;}}}
                 for(int p=0;p<2;p++){Animate(selectionShowcase[p],Ready[p]?Pose.Win:Pose.Idle,(int)(clock*4)%4);}
                 for(int p=0;p<2;p++){readiness[p].text=Tr("Manlalaro "+(p+1))+"\n"+(Ready[p]?Tr("Handa na"):Tr("Kumpirmahin: "+controls.Prompt(p,"Confirm")));if(confirmButtons[p]!=null){confirmButtons[p].interactable=!Ready[p];confirmButtons[p].GetComponentInChildren<TMP_Text>().text=Tr(Ready[p]?"Handa na":"Kumpirmahin");confirmButtons[p].transform.localScale=Vector3.one*(Ready[p]?1.035f:1);}}
-                for(int i=0;i<8;i++) {int owner=Selected[0]==i?0:Selected[1]==i?1:-1;bool active=owner>=0;cards[i].localScale=Vector3.one*(active?1.035f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null)feedback.SetFocused(active);Animate(previews[i],owner<0?Pose.Idle:Ready[owner]?Pose.Win:Pose.Punch,(int)(clock*(active?5:3))%4);}
+                for(int i=0;i<8;i++) {int owner=Selected[0]==i?0:Selected[1]==i?1:-1;bool active=owner>=0;cards[i].localScale=Vector3.one*(active?1.035f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null)feedback.SetFocused(active);Animate(previews[i],owner>=0&&Ready[owner]?Pose.Win:Pose.Idle,(int)(clock*(active?5:3))%4);}
             }
             else if(ScreenNow==ScreenState.StageSelect) {
                 int dir=controls.Navigate(0).x!=0?controls.Navigate(0).x:controls.Navigate(1).x;if(dir!=0)ChooseStage((selectedArena+dir+3)%3);
@@ -502,10 +503,11 @@ namespace Hexbound
             for(int p=0;p<2;p++) {
                 var f=Model.players[p];var actor=actors[p];float fall=f.fallen?Mathf.Clamp01(resultTime/.20f):0;
                 bool celebration=Model.Finished&&!f.fallen&&p==Model.winner;
-                actor.root.anchoredPosition=celebration?new Vector2(640-actor.root.sizeDelta.x/2,-385):new Vector2(f.x-actor.root.sizeDelta.x/2,-(343+fall*170));actor.root.localScale=Vector3.one*(celebration?1.18f:1-fall*.75f);
+                actor.root.anchoredPosition=celebration?new Vector2(640,-640):new Vector2(f.x,-(598+fall*170));actor.root.localScale=Vector3.one*(celebration?1.18f:1-fall*.75f);
                 actor.root.localRotation=Quaternion.Euler(0,0,f.dizzyTime>0?Mathf.Sin(clock*12)*6:f.fallen?fall*80:0);
                 actor.root.gameObject.SetActive(!f.fallen||resultTime<.20f);
-                int actionFrame=f.pose==Pose.Punch?Mathf.Clamp((int)((f.actionLength-f.actionTime)/DuelModel.PunchDuration*6),0,5):(int)(clock*8)%4;
+                int actionFrame=f.pose==Pose.Punch?StrikeFrame(f.actionLength-f.actionTime):(int)(clock*8)%4;
+                if(AnimationCapture.Active&&AnimationCapture.Frame>=0)actionFrame=AnimationCapture.Frame;
                 Animate(actor,celebration?Pose.Win:f.pose,actionFrame);actor.body.uvRect=f.facing<0?new Rect(1,0,-1,1):new Rect(0,0,1,1);
                 for(int i=0;i<5;i++)hiloPips[p][i].color=i<f.streak?HiloColors[i]:new Color(.30f,.23f,.17f,.95f);
                 for(int i=0;i<winMarkers[p].Length;i++){bool won=i<f.wins;winMarkers[p][i].color=won?Color.white:new Color(.43f,.34f,.25f,.88f);float pop=won&&Model.Finished&&p==Model.winner&&i==f.wins-1?1+.18f*Mathf.Sin(Mathf.Clamp01(resultTime/.45f)*Mathf.PI):1;winMarkers[p][i].rectTransform.localScale=Vector3.one*pop;}
@@ -522,7 +524,7 @@ namespace Hexbound
                             x=p==leftPlayer?leftX:leftX+174;
                         }
                     }
-                    float headTop=actor.root.anchoredPosition.y+75;
+                    float headTop=actor.root.anchoredPosition.y+actor.root.sizeDelta.y+75;
                     bubble.root.anchoredPosition=new Vector2(x,Mathf.Clamp(headTop,-330,-175));
                     bubble.root.localScale=Vector3.one*Mathf.Lerp(.85f,1,Mathf.Clamp01(age/.1f));}
             }
@@ -551,6 +553,9 @@ namespace Hexbound
             var frames=actionFrames[actor.id][action];var wholeBody=frames[frame%frames.Length];if(wholeBody!=null&&actor.body.texture!=wholeBody)actor.body.texture=wholeBody;
             actor.dust.color=new Color(1,.78f,.45f,pose==Pose.Walk?.3f+(frame%2)*.08f:pose==Pose.Punch?.45f:pose==Pose.Win?.3f:.06f);
         }
+        // Visual phases align the extended weapon with the existing .12-second hit event.
+        // This only chooses artwork; DuelModel remains the sole owner of attack timing/range.
+        public static int StrikeFrame(float elapsed) => elapsed<.035f?0:elapsed<.08f?1:elapsed<DuelModel.PunchStartup?2:elapsed<.18f?3:elapsed<.24f?4:5;
 
         void OnDestroy() {controls?.Dispose();foreach(var sprite in sprites.Values)Destroy(sprite);}
 #if UNITY_EDITOR

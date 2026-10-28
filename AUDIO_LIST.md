@@ -4,6 +4,8 @@ Every active clip is original deterministic synthesis, with no third-party recor
 
 Strike playback uses `punch.wav` as the swing cue and the character-indexed `hit_0.wav`–`hit_7.wav` clip at impact. Runtime rate-limits impact playback to prevent fast repeated hits from cutting off or stacking harshly. These are synthesized item-themed hits, not physical recordings. Dedicated soft reaction cues for each character and separate footstep cues for every action are not complete; keep these items NEEDS MANUAL TEST / art-audio follow-up.
 
+The six authored strike phases align their fully extended frame to the existing 0.12-second hit event. Audio uses PlayOneShot so new swings do not stop earlier clip tails; a 35 ms per-cue guard and 70 ms impact guard prevent duplicate/trade bursts from stacking harshly. Combat timing and the 0.36-second attack duration remain unchanged.
+
 | Filename | Where played | Theme concept | Source / license | RMS / peak | Playback |
 | --- | --- | --- | --- | --- | --- |
 | `Assets/Resources/Ilaban/Audio/Music/Title.wav` | Pamagat | Original looping plucked-string sketch; listening review pending. | [Original generator](Tools/generate_ilaban_assets.py), [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | 0.141 / 0.820 | Loop |

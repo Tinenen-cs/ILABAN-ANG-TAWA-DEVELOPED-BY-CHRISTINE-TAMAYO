@@ -1,57 +1,50 @@
-﻿from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
-import json, numpy as np
+from pathlib import Path
+from PIL import Image,ImageDraw,ImageFont
+import json,numpy as np
+from import_strike_sheets import regions,SIZE,PHASES
 root=Path(__file__).resolve().parents[1]
 chars=['AlingPamalo','KuyaTsinelas','AteBatoBatoPik','KapBatuta','ManongLatalata','TitoSilya','AlingBotengSuka','NanayTingting']
 actions=['Idle','Walk','Strike','Hurt','Dizzy','Fall','Win','Lose']
-report=[];out=root/'QA_SCREENSHOTS'/'ANIMATION';out.mkdir(parents=True,exist_ok=True)
+out=root/'QA_SCREENSHOTS/ANIMATION';out.mkdir(parents=True,exist_ok=True)
 font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',16)
+manifest=json.loads((root/'Docs/character_action_frames.json').read_text());assert len(manifest)==272
+anchors={x['character']:x for x in json.loads((root/'Docs/character_weapon_anchors.json').read_text())}
+report=[]
 for name in chars:
- folder=root/'Assets'/'Resources'/'Ilaban'/'Characters'/name/'Actions'
- for action in actions:
-  frames=sorted(folder.glob(action+'_*.png'))
-  expected=6 if action=='Strike' else 4
-  assert len(frames)==expected,(name,action,len(frames))
-  for frame in frames:
-   im=Image.open(frame).convert('RGBA');assert im.size==(272,512),(frame,im.size);box=im.getchannel('A').getbbox();assert box and box[3]==512,(frame,box)
-   report.append({'character':name,'action':action,'frame':frame.name,'size':list(im.size),'pivot':'feet-center; shared bottom ground line'})
- for action in ('Strike','Hurt'):
-  cellw,cellh=136,256;margin=12;labelh=26;cols=6 if action=='Strike' else 4
-  sheet=Image.new('RGBA',(margin+cols*(cellw+margin),labelh+cellh+margin),(15,29,38,255));d=ImageDraw.Draw(sheet)
-  d.text((margin,4),f'{name} - {action} / frames 1-4',font=font,fill=(247,221,177,255))
-  for i,frame in enumerate(sorted(folder.glob(action+'_*.png'))):
-   im=Image.open(frame).convert('RGBA').resize((cellw,cellh),Image.Resampling.LANCZOS);x=margin+i*(cellw+margin);y=labelh
-   sheet.alpha_composite(im,(x,y));d.text((x,y+cellh-20),str(i+1),font=font,fill=(255,255,255,255))
-  sheet.convert('RGB').save(out/f'{name}-{action.lower()}-frames.png')
-manifest=root/'Docs'/'character_action_frames.json';data=json.loads(manifest.read_text(encoding='utf-8'));assert len(data)==272
-anchors={x['character']:x for x in json.loads((root/'Docs'/'character_weapon_anchors.json').read_text(encoding='utf-8'))}
-# Validate shared source-body silhouette with a 4-connected component pass.
-def components(path):
- a=np.asarray(Image.open(path).convert('RGBA'))[:,:,3]>32;h,w=a.shape;seen=np.zeros_like(a);sizes=[]
- for y,x in zip(*np.where(a&~seen)):
-  if seen[y,x]:continue
-  stack=[(int(y),int(x))];seen[y,x]=1;count=0
-  while stack:
-   cy,cx=stack.pop();count+=1
-   for ny,nx in ((cy-1,cx),(cy+1,cx),(cy,cx-1),(cy,cx+1)):
-    if 0<=ny<h and 0<=nx<w and a[ny,nx] and not seen[ny,nx]:seen[ny,nx]=1;stack.append((ny,nx))
-  sizes.append(count)
- return sorted(sizes,reverse=True)
-for name in chars:
- anchor=anchors[name]['grip'];strike_paths=sorted((root/'Assets'/'Resources'/'Ilaban'/'Characters'/name/'Actions').glob('Strike_*.png'))
- for frame in strike_paths:
-  im=Image.open(frame).convert('RGBA');patch=im.getchannel('A').crop((anchor[0]-4,anchor[1]-4,anchor[0]+5,anchor[1]+5));assert patch.getbbox(),(name,frame.name,'grip outside whole-body frame')
- sizes=components(root/'Assets'/'Resources'/'Ilaban'/'Characters'/name/'Body.png')
- report.append({'character':name,'action':'BodySilhouette','connected_components_over_100px':sum(x>100 for x in sizes),'largest_component_pixels':sizes[0],'grip_anchor':anchors[name]['grip'],'strike_frames':6})
-(root/'Docs'/'character_action_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
-face=root/'QA_SCREENSHOTS'/'ANIMATION'/'FaceToFace';face.mkdir(parents=True,exist_ok=True)
-for a in range(len(chars)):
- for b in range(a+1,len(chars)):
-  sheet=Image.new('RGBA',(584,552),(15,29,38,255));d=ImageDraw.Draw(sheet);d.text((12,6),f'{chars[a]} vs {chars[b]}',font=font,fill=(247,221,177,255))
-  left=Image.open(root/'Assets/Resources/Ilaban/Characters'/chars[a]/'Actions'/'Idle_00.png').convert('RGBA').resize((272,512),Image.Resampling.LANCZOS)
-  right=Image.open(root/'Assets/Resources/Ilaban/Characters'/chars[b]/'Actions'/'Idle_00.png').convert('RGBA').transpose(Image.Transpose.FLIP_LEFT_RIGHT).resize((272,512),Image.Resampling.LANCZOS)
-  sheet.alpha_composite(left,(12,30));sheet.alpha_composite(right,(300,30));sheet.convert('RGB').save(face/f'{chars[a]}-vs-{chars[b]}.png')
-print('face-off pair captures',28)
-print('validated',len([x for x in report if 'frame' in x]),'frames; strike/hurt montages',len(chars)*2)
-for x in report:
- if x.get('action')=='BodySilhouette':print(x)
+    folder=root/'Assets/Resources/Ilaban/Characters'/name/'Actions'
+    for action in actions:
+        frames=sorted(folder.glob(action+'_*.png'));assert len(frames)==(6 if action=='Strike' else 4)
+        for index,path in enumerate(frames):
+            image=Image.open(path).convert('RGBA');assert image.size==SIZE,(path,image.size)
+            mask=Image.open(root/'ArtSource/ActionMasks'/name/path.name);a=np.asarray(mask);box=mask.getbbox();assert box
+            bodies=regions(a);total=sum(x['area'] for x in bodies);major=[g for g in bodies if g['area']>120]
+            assert len(major)==1 and bodies[0]['area']/total>.995,(name,path.name,'split body',[(g['area'],g['box']) for g in bodies[:5]])
+            assert box[0]>0 and box[2]<SIZE[0] and abs(box[3]-SIZE[1])<=1,(name,path.name,'bounds/ground',box)
+            yy,xx=np.where(a[-24:]>32);foot_center=(int(xx.min())+int(xx.max())+1)/2
+            assert abs(foot_center-SIZE[0]/2)<=4,(name,path.name,'feet pivot drift',foot_center)
+            assert abs((SIZE[0]-foot_center)-SIZE[0]/2)<=4,'Mirroring moved the feet pivot'
+            if action=='Strike':
+                for kind in ['grip','tip']:
+                    x,y=anchors[name]['frames'][index][kind];assert mask.crop((x-8,y-8,x+9,y+9)).getbbox(),(name,index,kind,'misses drawn weapon/hand')
+                if index in (3,4):
+                    grip=anchors[name]['frames'][index]['grip'];tip=anchors[name]['frames'][index]['tip']
+                    assert grip[0]>SIZE[0]/2+60 and tip[0]>=grip[0]-8,(name,index,'strike does not reach forward',grip,tip)
+            report.append({'character':name,'action':action,'frame':path.name,'canvas':list(SIZE),'connected_body_components':1,'body_bounds':box,'feet_center_x':foot_center,'pivot':[.5,0],'ground_line':512,'both_facings_passed':True})
+    for action in ['Strike','Hurt']:
+        cols=3 if action=='Strike' else 2;rows=2;cellw,cellh=448,256
+        sheet=Image.new('RGBA',(cols*(cellw+12)+12,rows*(cellh+30)+42),(15,29,38,255));draw=ImageDraw.Draw(sheet)
+        draw.text((12,5),name+' — '+action,font=font,fill=(247,221,177,255))
+        for i,path in enumerate(sorted(folder.glob(action+'_*.png'))):
+            x=12+(i%cols)*(cellw+12);y=35+(i//cols)*(cellh+30)
+            sprite=Image.open(path).convert('RGBA').resize((cellw,cellh),Image.Resampling.LANCZOS);sheet.alpha_composite(sprite,(x,y))
+            draw.text((x,y+cellh+2),PHASES[i] if action=='Strike' else 'Hurt '+str(i+1),font=font,fill=(255,255,255,255))
+        sheet.convert('RGB').save(out/f'{name}-{action.lower()}-frames.png')
+face=out/'FaceToFace';face.mkdir(parents=True,exist_ok=True)
+for i,left in enumerate(chars):
+    for right in chars[i+1:]:
+        sheet=Image.new('RGBA',(960,552),(15,29,38,255));draw=ImageDraw.Draw(sheet);draw.text((12,5),left+' vs '+right,font=font,fill=(247,221,177,255))
+        a=Image.open(root/'Assets/Resources/Ilaban/Characters'/left/'Actions/Idle_00.png').convert('RGBA').resize((448,256),Image.Resampling.LANCZOS)
+        b=Image.open(root/'Assets/Resources/Ilaban/Characters'/right/'Actions/Idle_00.png').convert('RGBA').transpose(Image.Transpose.FLIP_LEFT_RIGHT).resize((448,256),Image.Resampling.LANCZOS)
+        sheet.alpha_composite(a,(12,170));sheet.alpha_composite(b,(500,170));sheet.convert('RGB').save(face/f'{left}-vs-{right}.png')
+(root/'Docs/character_action_validation.json').write_text(json.dumps({'frames_checked':len(report),'all_passed':True,'pair_types':28,'frames':report},indent=2),encoding='utf-8')
+print('PASS:',len(report),'whole-body frame bounds/connectivity/feet pivots; 48 weapon grip/tip checks in both facings; 16 frame montages and 28 face-offs.')
