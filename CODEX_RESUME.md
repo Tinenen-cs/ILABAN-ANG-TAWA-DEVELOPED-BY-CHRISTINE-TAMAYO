@@ -8,6 +8,6 @@ Current verification: EditMode 11/11, graphics-enabled PlayMode 10/10, 65 rule a
 
 No gameplay rules changed. Whole-body weapons/reactions, anchored bubbles, wooden Hilo HUD, painted headings, controls grid and night maps are integrated. Reference photos stay local/ignored and were never uploaded or newly committed. No push/merge/rewrite. Repository PUBLIC; publishing held for owner photo-history decision.
 
-TASK_COMPLETE.flag is for the LOCAL OVERHAUL only. Watchdog must be disabled/stopped on closure. Editing relaunch count 0; conservative active-Codex guard prevented duplicate agents. Manual hardware/human/reboot checks remain; see CHECKLIST.md and TEST_PLAN.md.
+TASK_COMPLETE.flag is for the LOCAL OVERHAUL only. Watchdog is stopped and scheduled task Disabled; closure proof is Docs/QA_EVIDENCE/completion.json. Editing relaunch count 0; conservative active-Codex guard prevented duplicate agents. Manual hardware/human/reboot checks remain; see CHECKLIST.md and TEST_PLAN.md.
 
 Do not start final EXE/ZIP delivery or Drive upload unless its separately queued prompt is actually invoked and the pre-check passes. Existing ZIP/package JSON are older than this build. Do not treat them as current submission proof.

@@ -30,7 +30,7 @@ Checklist: **15 verified, 10 manual/queued/owner-held, 0 unclassified/not-done**
 
 ## In progress / stop condition
 
-Only closure remains: commit final docs/evidence, run `python Tools/verify_completion.py` with a clean tree, write local TASK_COMPLETE.flag, disable IlabanAutoResume and stop its verified watchdog process. Closure result is saved to `Docs/QA_EVIDENCE/completion.json`. This flag completes the local overhaul and stops automatic work; it does not claim the separately queued delivery/publishing tasks are complete.
+Closure complete: the clean-tree pre-check passed, local TASK_COMPLETE.flag was written, IlabanAutoResume was disabled, and verified watchdog PID 26716 was stopped after a 15-second grace period. No Codex host was terminated. Closure result is saved to `Docs/QA_EVIDENCE/completion.json`. This flag completes the local overhaul and stops automatic work; it does not claim the separately queued delivery/publishing tasks are complete.
 
 ## Next five steps for the separately invoked continuation
 
@@ -57,3 +57,5 @@ Repository visibility rechecked with gh: **PUBLIC**. Proof: Docs/QA_EVIDENCE/rep
 ## NEEDS MANUAL TEST
 
 Human art/animation/Tagalog presentation and speaker/headphone balance; physical two-controller hot-swap and keyboard rollover; actual monitor/fullscreen including 16:10; clean Windows PC without Unity and unsigned-app antivirus/SmartScreen; real reboot/usage-limit recovery. Final ZIP extraction and EXE/Drive delivery are queued separately, and public-history publishing needs the owner's decision.
+
+Final closure proof: Docs/QA_EVIDENCE/completion.json records task Disabled, watchdog_running false, forced_stop true after the grace period, editing relaunches 0. This stops the watchdog without waiting for its next 60-second poll. All final evidence/docs are committed locally; run git status and Tools/verify_completion.py to confirm.

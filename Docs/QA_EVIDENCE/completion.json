@@ -1,0 +1,14 @@
+﻿{
+    "utc":  "2026-10-28T04:40:42.9782751Z",
+    "local_overhaul_complete":  true,
+    "clean_precheck_head":  "eaec574f8a1e28e6e37bf5de40c0a63e91c54ab5",
+    "task_complete_flag":  true,
+    "scheduled_task_state":  "Disabled",
+    "watchdog_pid":  26716,
+    "watchdog_running":  false,
+    "forced_stop":  true,
+    "editing_relaunches":  0,
+    "relaunch_reason":  "Active Codex guard prevented duplicate editing agents",
+    "delivery":  "Final EXE/ZIP and Drive queued separately",
+    "publishing":  "Held for owner public-photo-history decision"
+}
