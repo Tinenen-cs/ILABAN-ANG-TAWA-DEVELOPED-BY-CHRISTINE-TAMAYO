@@ -86,3 +86,6 @@ The previous night labels pointed to dusk art and Looban retained a parked vehic
 
 ### Frozen last-hit sparkle on result
 Native result review found the final impact star persisted because combat burst lifetimes stop ticking once the manhole ends the round. Rendering now hides combat bursts immediately when Finished; result confetti/medal sparkle still plays. Gameplay end timing is unchanged. Added a result-screen regression to InputAndCanvasTests.
+
+### HUD grain transparency pinholes
+Full-resolution review exposed bright hairlines in the wood bar. The procedural grain was drawn directly with low alpha, replacing the opaque wood pixels. Grain now draws onto a separate layer and alpha-composites onto the solid frame, retaining subtle color without holes. Ring aperture and rounded outside edges remain transparent. Rebuild/retest/native proof required after the texture correction.
