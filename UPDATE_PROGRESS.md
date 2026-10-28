@@ -31,3 +31,8 @@
 No push, merge, history rewrite, public release or Drive upload was attempted. Physical/device checks remain NEEDS MANUAL TEST.
 
 Resume safeguards are installed and tested: hidden watchdog, exclusive lock, conservative active-process guard, persisted three-failure halt, reset wait and logon/PT5M task. Editing relaunch count 0. AC sleep/display were already never and remain so; see HANDOFF for restoration and stop instructions.
+
+### Authored action and reaction checkpoint
+- Integrated 48 fictional walk/reaction poses using whole-body crops, common 896x512 canvas and feet pivot. No body-part rig or item overlay.
+- Added eight original quiet reaction WAVs, delayed behind menu sounds, plus select intro/hover/ready/wait emotion loops.
+- Structural frame audit: 272/272 passed. Fresh Unity verification pending.

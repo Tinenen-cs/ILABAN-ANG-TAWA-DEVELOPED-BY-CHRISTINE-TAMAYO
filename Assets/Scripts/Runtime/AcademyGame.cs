@@ -35,6 +35,7 @@ namespace Hexbound
         readonly List<RectTransform> flames=new List<RectTransform>();
         readonly List<RectTransform> confetti=new List<RectTransform>();
         readonly List<RawImage> lamps=new List<RawImage>();
+        readonly float[] readyAt={-10,-10},hoverUntil=new float[8];
         RectTransform ambience;
         // Approved maps: normalized lamp/bulb centres (x, y from top).
         static readonly Vector2[][] MapLamps={
@@ -99,7 +100,7 @@ namespace Hexbound
             for(int i=0;i<3;i++) stages[i]=MapTex(i);
             foreach(var clip in Resources.LoadAll<AudioClip>("Ilaban/Audio")) clips[clip.name]=clip;
             music=gameObject.AddComponent<AudioSource>();sfx=gameObject.AddComponent<AudioSource>();highlight=gameObject.AddComponent<AudioSource>();
-            music.loop=true;highlight.loop=true;highlight.clip=clips["highlight_loop"];
+            music.loop=true;highlight.loop=false;
             reactions.Mode=PlayerPrefs.GetInt("Ilaban.ReactionStyle",0)==1?LanguageMode.GenZ:LanguageMode.Pormal;
             master=PlayerPrefs.GetFloat("Ilaban.Master",.8f);musicLevel=PlayerPrefs.GetFloat("Ilaban.Music",.55f);soundLevel=PlayerPrefs.GetFloat("Ilaban.Sound",.7f);ApplyAudio();
             language=PlayerPrefs.GetInt("Ilaban.Language",0)==1?1:0;
@@ -171,7 +172,7 @@ namespace Hexbound
             var b=image.gameObject.AddComponent<Button>();b.targetGraphic=image;b.interactable=enabled;b.navigation=new Navigation {mode=Navigation.Mode.None};
             var colors=b.colors;colors.normalColor=Color.white;colors.highlightedColor=new Color(1f,.84f,.48f);colors.pressedColor=new Color(.75f,.9f,.83f);colors.selectedColor=new Color(1f,.88f,.62f);colors.disabledColor=new Color(.48f,.48f,.46f);colors.colorMultiplier=1;colors.fadeDuration=.08f;b.colors=colors;
             var outline=image.gameObject.AddComponent<Outline>();outline.effectColor=new Color32(239,196,119,180);outline.effectDistance=new Vector2(1.5f,-1.5f);outline.enabled=false;
-            var feedback=image.gameObject.AddComponent<PlateButtonFeedback>();feedback.image=image;feedback.outline=outline;
+            var feedback=image.gameObject.AddComponent<PlateButtonFeedback>();feedback.image=image;feedback.outline=outline;feedback.onHover=()=>Sound("menu_move");
             b.onClick.AddListener(()=>{Sound("menu_confirm");action();});Label(image.transform,new Rect(8,4,rect.width-16,rect.height-8),Tr(text),25,cream);return b;
         }
         static Sprite plateSprite;
@@ -218,13 +219,23 @@ namespace Hexbound
         void Music(string name) {if(clips.TryGetValue(name,out var clip) && music.clip!=clip) {music.clip=clip;music.Play();}}
         readonly Dictionary<string,float> lastSoundAt=new Dictionary<string,float>();
         float nextImpactSoundAt;
+        float menuSoundUntil,queuedCueAt,lastCharacterCueAt=-10;
+        int queuedCharacter=-1,lastCharacterCue=-1;
         void Sound(string name) {
             if(!clips.TryGetValue(name,out var clip))return;
             if(name.StartsWith("hit_",StringComparison.Ordinal)){if(clock<nextImpactSoundAt)return;nextImpactSoundAt=clock+.07f;}
             if(lastSoundAt.TryGetValue(name,out var last)&&clock-last<.035f)return;
+            bool menu=name.StartsWith("menu_",StringComparison.Ordinal)||name=="carousel_slide"||name=="confirm_sting";
+            if(menu){highlight.Stop();menuSoundUntil=Mathf.Max(menuSoundUntil,clock+clip.length);}
             lastSoundAt[name]=clock;sfx.PlayOneShot(clip);
         }
-        void ApplyAudio() {AudioListener.volume=master;music.volume=musicLevel;sfx.volume=soundLevel;highlight.volume=soundLevel*.07f;}
+        void QueueCharacterCue(int character){queuedCharacter=Mathf.Clamp(character,0,7);queuedCueAt=Mathf.Max(clock+.025f,menuSoundUntil+.02f,lastCharacterCueAt+.28f);}
+        void UpdateCharacterCue(){
+            if(ScreenNow==ScreenState.Title||ScreenNow==ScreenState.Controls||Paused){queuedCharacter=-1;return;}
+            if(queuedCharacter<0||clock<Mathf.Max(queuedCueAt,menuSoundUntil+.02f)||highlight.isPlaying)return;
+            if(clips.TryGetValue("reaction_"+queuedCharacter,out var clip)){highlight.clip=clip;highlight.Play();lastCharacterCue=queuedCharacter;lastCharacterCueAt=clock;}queuedCharacter=-1;
+        }
+        void ApplyAudio() {AudioListener.volume=master;music.volume=musicLevel;sfx.volume=soundLevel;highlight.volume=soundLevel*.25f;}
         void SaveAudio() {ApplyAudio();PlayerPrefs.SetFloat("Ilaban.Master",master);PlayerPrefs.SetFloat("Ilaban.Music",musicLevel);PlayerPrefs.SetFloat("Ilaban.Sound",soundLevel);}
         public void Show(ScreenState state)
         {
@@ -239,7 +250,7 @@ namespace Hexbound
             if(state==ScreenState.StageSelect) {scenery.texture=Tex("Backgrounds/PumiliEntablado")??scenery.texture;Music("Selection");StageSelect();}
             if(state==ScreenState.Fight) {Music(Roster.StageFiles[Model.ArenaIndex]);Fight();}
             if(state==ScreenState.Controls) Controls();
-            if(state==ScreenState.Select || state==ScreenState.StageSelect) highlight.Play();else highlight.Stop();
+            if(state==ScreenState.Select)QueueCharacterCue(Selected[0]);else if(state!=ScreenState.StageSelect){highlight.Stop();queuedCharacter=-1;}
         }
         // Only subtle lamp and banderita motion is layered over the fixed stage paintings.
         void Ambience(int arena,bool enabled)
@@ -303,7 +314,8 @@ namespace Hexbound
             for(int i=0;i<8;i++) {
                 int id=i;float x=610+(i%4)*155,y=163+(i/4)*195;
                 var r=Rect(view,"Tauhan "+i,new Rect(x,y,145,182));cards[i]=r;
-                var cardSurface=RoundedPanel(r,new Rect(0,0,145,182),new Color(.055f,.115f,.14f,.98f));cardSurface.raycastTarget=true;var cardButton=cardSurface.gameObject.AddComponent<Button>();cardButton.targetGraphic=cardSurface;cardButton.navigation=new Navigation{mode=Navigation.Mode.None};var cardFeedback=cardSurface.gameObject.AddComponent<PlateButtonFeedback>();cardFeedback.image=cardSurface;var cardOutline=cardSurface.gameObject.AddComponent<Outline>();cardOutline.enabled=false;cardFeedback.outline=cardOutline;cardButton.onClick.AddListener(()=>{int side=Ready[0]?1:0;if(!Ready[side]){Selected[side]=id;Sound("carousel_slide");RefreshDescriptions();}});
+                var cardSurface=RoundedPanel(r,new Rect(0,0,145,182),new Color(.055f,.115f,.14f,.98f));cardSurface.raycastTarget=true;var cardButton=cardSurface.gameObject.AddComponent<Button>();cardButton.targetGraphic=cardSurface;cardButton.navigation=new Navigation{mode=Navigation.Mode.None};var cardFeedback=cardSurface.gameObject.AddComponent<PlateButtonFeedback>();cardFeedback.image=cardSurface;var cardOutline=cardSurface.gameObject.AddComponent<Outline>();cardOutline.enabled=false;cardFeedback.outline=cardOutline;cardButton.onClick.AddListener(()=>{int side=Ready[0]?1:0;if(!Ready[side]){Selected[side]=id;Sound("carousel_slide");RefreshDescriptions();QueueCharacterCue(id);}});
+                cardFeedback.onHover=()=>{hoverUntil[id]=clock+.4f;Sound("menu_move");QueueCharacterCue(id);};
                 var preview=ActorView(r,i,new Rect(27,10,90,132));previews.Add(preview);
                 Raw(r,new Rect(108,95,27,27),items[i]);
                 Image(r,new Rect(4,136,137,43),new Color(.025f,.055f,.07f,.95f));Label(r,new Rect(5,134,135,46),Roster.Names[i].Replace("Aling ","Aling\n").Replace("Kuya ","Kuya\n").Replace("Ate ","Ate\n").Replace("Kap ","Kap\n").Replace("Manong ","Manong\n").Replace("Tito ","Tito\n").Replace("Nanay ","Nanay\n"),16);
@@ -317,7 +329,7 @@ namespace Hexbound
             Label(view,new Rect(260,642,760,58),"KALIWA / KANAN  PUMILI    F / CTRL KANAN  KUMPIRMAHIN",20,gold);
         }
         void Slant(Transform parent,Rect rect,Color color) {var r=Rect(parent,"Slanted card",rect);var g=r.gameObject.AddComponent<SlantGraphic>();g.color=color;g.raycastTarget=false;}
-        void Confirm(int side) {if(Ready[side])return;Ready[side]=true;Sound("confirm_sting");if(Ready[0]&&Ready[1]) Show(ScreenState.StageSelect);}
+        void Confirm(int side) {if(Ready[side])return;Ready[side]=true;readyAt[side]=clock;Sound("confirm_sting");QueueCharacterCue(Selected[side]);if(Ready[0]&&Ready[1]) Show(ScreenState.StageSelect);}
         void StageSelect()
         {
             Shade(.68f);Heading("Pumili ng Entablado","Tatlong lugar. Iisang tuntunin: iwasan ang imburnal.");
@@ -327,6 +339,7 @@ namespace Hexbound
                 var r=Rect(view,"Entablado "+i,new Rect(x,160,350,390));cards[i]=r;
                 var stageSurface=RoundedPanel(r,new Rect(0,0,350,390),new Color(.05f,.10f,.14f));stageSurface.raycastTarget=true;var stageButton=stageSurface.gameObject.AddComponent<Button>();stageButton.targetGraphic=stageSurface;stageButton.navigation=new Navigation{mode=Navigation.Mode.None};var stageFeedback=stageSurface.gameObject.AddComponent<PlateButtonFeedback>();stageFeedback.image=stageSurface;var stageOutline=stageSurface.gameObject.AddComponent<Outline>();stageOutline.enabled=false;stageFeedback.outline=stageOutline;stageButton.onClick.AddListener(()=>ChooseStage(index));stageBars[i]=Image(r,new Rect(5,382,340,6),gold);
                 var crop=Rect(r,"Rounded preview",new Rect(10,8,330,300));var mask=crop.gameObject.AddComponent<Image>();mask.sprite=PlateSprite();mask.type=UnityEngine.UI.Image.Type.Sliced;mask.color=Color.white;crop.gameObject.AddComponent<Mask>().showMaskGraphic=false;
+                stageFeedback.onHover=()=>Sound("menu_move");
                 Raw(crop,new Rect(-120,-10,580,326),stages[i]);
                 Image(r,new Rect(10,309,330,71),new Color(.025f,.05f,.07f,.97f));Label(r,new Rect(15,319,320,50),Roster.Stages[i],30);
 
@@ -419,6 +432,7 @@ namespace Hexbound
         {
             string line=reactions.Choose(p,Model.players[p].character,kind,clock);if(line==null)return;
             bubbles[p].label.text=language==1&&reactions.Mode==LanguageMode.Pormal?EnglishReaction(line):line;bubbles[p].started=clock;
+            QueueCharacterCue(Model.players[p].character);
         }
         void Controls()
         {
@@ -476,16 +490,17 @@ namespace Hexbound
             // Cover unused aspect-ratio space with a proportion-preserving background.
             float cover=Mathf.Max(cr.rect.width/1280f,cr.rect.height/720f);scenery.rectTransform.sizeDelta=new Vector2(1280*cover,720*cover);scenery.rectTransform.anchorMin=scenery.rectTransform.anchorMax=new Vector2(.5f,.5f);scenery.rectTransform.pivot=new Vector2(.5f,.5f);scenery.rectTransform.anchoredPosition=ScreenNow==ScreenState.Fight?Vector2.zero:new Vector2(Mathf.Sin(clock*.2f)*2,Mathf.Sin(clock*.17f)*2);
             UpdateAmbience();
+            UpdateCharacterCue();
             if(ScreenNow==ScreenState.Title) {
                 if(exitOpen){NavMenu(2);if(controls.Any("Cancel"))CancelExit();else if(controls.Any("Confirm")){if(focus==0)QuitGame();else CancelExit();}if(exitButtons!=null)for(int i=0;i<2;i++){var f=exitButtons[i].GetComponent<PlateButtonFeedback>();if(f!=null)f.SetFocused(i==focus);}}
                 else {NavMenu(3);if(controls.Any("Confirm"))ActivateTitle(focus);else if(controls.StartPressed&&controls.Navigate(0)==Vector2Int.zero&&controls.Navigate(1)==Vector2Int.zero&&!controls.Any("Help")&&!controls.Any("Pause")&&!controls.Any("Cancel"))OpenSelect();}
             }
             else if(ScreenNow==ScreenState.Select) {
-                for(int p=0;p<2;p++) {if(!Ready[p]) {int dir=controls.Navigate(p).x;if(dir!=0) {Selected[p]=(Selected[p]+dir+8)%8;Sound("carousel_slide");RefreshDescriptions();}if(controls.Press(p,"Confirm")) {Confirm(p);if(ScreenNow!=ScreenState.Select)return;}}
+                for(int p=0;p<2;p++) {if(!Ready[p]) {int dir=controls.Navigate(p).x;if(dir!=0) {Selected[p]=(Selected[p]+dir+8)%8;Sound("carousel_slide");RefreshDescriptions();QueueCharacterCue(Selected[p]);}if(controls.Press(p,"Confirm")) {Confirm(p);if(ScreenNow!=ScreenState.Select)return;}}
                     if(controls.Press(p,"Cancel")) {if(Ready[p])Ready[p]=false;else{Show(ScreenState.Title);return;}}}
-                for(int p=0;p<2;p++){Animate(selectionShowcase[p],Ready[p]?Pose.Win:Pose.Idle,(int)(clock*4)%4);}
+                for(int p=0;p<2;p++){bool react=Ready[p]?(clock-readyAt[p]<.6f||Mathf.Repeat(clock-readyAt[p],3.2f)<.24f):clock-enteredAt<.35f;Animate(selectionShowcase[p],react?Pose.Win:Pose.Idle,(int)(clock*4)%4);}
                 for(int p=0;p<2;p++){readiness[p].text=Tr("Manlalaro "+(p+1))+"\n"+(Ready[p]?Tr("Handa na"):Tr("Kumpirmahin: "+controls.Prompt(p,"Confirm")));if(confirmButtons[p]!=null){confirmButtons[p].interactable=!Ready[p];confirmButtons[p].GetComponentInChildren<TMP_Text>().text=Tr(Ready[p]?"Handa na":"Kumpirmahin");confirmButtons[p].transform.localScale=Vector3.one*(Ready[p]?1.035f:1);}}
-                for(int i=0;i<8;i++) {int owner=Selected[0]==i?0:Selected[1]==i?1:-1;bool active=owner>=0;cards[i].localScale=Vector3.one*(active?1.025f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null){feedback.allowScale=false;feedback.SetFocused(active);}Animate(previews[i],owner>=0&&Ready[owner]?Pose.Win:Pose.Idle,(int)(clock*(active?5:3))%4);}
+                for(int i=0;i<8;i++) {int owner=Selected[0]==i?0:Selected[1]==i?1:-1;bool active=owner>=0;cards[i].localScale=Vector3.one*(active?1.025f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null){feedback.allowScale=false;feedback.SetFocused(active);}Animate(previews[i],clock<hoverUntil[i]||(owner>=0&&Ready[owner]&&clock-readyAt[owner]<.6f)?Pose.Win:Pose.Idle,(int)(clock*(active?5:3))%4);}
             }
             else if(ScreenNow==ScreenState.StageSelect) {
                 int dir=controls.Navigate(0).x!=0?controls.Navigate(0).x:controls.Navigate(1).x;if(dir!=0)ChooseStage((selectedArena+dir+3)%3);
@@ -596,9 +611,9 @@ namespace Hexbound
     }
     public sealed class PlateButtonFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        public Image image;public Outline outline;public bool allowScale=true;bool focused,hovered;
+        public Image image;public Outline outline;public bool allowScale=true;public Action onHover;bool focused,hovered;
         public void SetFocused(bool value){focused=value;Apply();}
-        public void OnPointerEnter(PointerEventData eventData){hovered=true;Apply();}
+        public void OnPointerEnter(PointerEventData eventData){hovered=true;onHover?.Invoke();Apply();}
         public void OnPointerExit(PointerEventData eventData){hovered=false;Apply();}
         void Apply(){bool active=focused||hovered;if(image!=null)image.color=active?new Color32(163,114,67,255):new Color32(129,87,57,255);if(outline!=null)outline.enabled=active;transform.localScale=Vector3.one*(active&&allowScale?1.04f:1);}
     }

@@ -20,3 +20,7 @@ Character weapon directions:
 - Nanay Tingting: one twig broom, both hands on the handle, draw back then sweep horizontally with the bristles leading.
 
 Review corrections: removed the earlier procedural thin straight trail that looked like a floating stick. The generated Manong recovery was checked for a missing can; the Tito wind-up was checked for an extra hand. Corrected variants are selected before runtime import.
+
+## Additional action sheets
+
+Selected files: ArtSource/ActionSheets/<Character>.png, sliced into ArtSource/ActionFrames/<Character>/{WalkA,WalkB,Hurt,Dizzy,Win,Lose}.png. Prompt: use only the supplied fictional ready drawing; preserve adult chibi identity, outfit, one naturally gripped weapon and three-head proportions. Six isolated transparent whole-body poses in a 3x2 grid: two grounded walking strides, hurt recoil, confused dizzy face, confident win/ready signature expression, embarrassed lose pose. Keep two arms/hands, no jump/attack/special, no loose item, text or scenery. Feet align to the same ground after uniform scaling. All eight source sheets were visually reviewed before integration.

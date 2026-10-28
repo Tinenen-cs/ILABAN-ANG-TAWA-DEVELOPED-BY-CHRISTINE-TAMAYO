@@ -358,5 +358,101 @@
     "rms": 0.08489522647076299,
     "peak": 0.7053068227716925,
     "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_0.wav",
+    "title": "Pamalo reaction",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_character_cues.py",
+    "license": "CC0-1.0",
+    "description": "Soft item-themed tink and original voice-like blip; no words or recordings. Queued after menu cues.",
+    "rms": 0.06284733921617887,
+    "peak": 0.2799999997157158,
+    "seconds": 0.18,
+    "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_1.wav",
+    "title": "Tsinelas reaction",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_character_cues.py",
+    "license": "CC0-1.0",
+    "description": "Soft item-themed tink and original voice-like blip; no words or recordings. Queued after menu cues.",
+    "rms": 0.03599762395699247,
+    "peak": 0.2799999995266014,
+    "seconds": 0.18,
+    "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_2.wav",
+    "title": "Bato reaction",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_character_cues.py",
+    "license": "CC0-1.0",
+    "description": "Soft item-themed tink and original voice-like blip; no words or recordings. Queued after menu cues.",
+    "rms": 0.0691437993482359,
+    "peak": 0.27999999968713385,
+    "seconds": 0.18,
+    "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_3.wav",
+    "title": "Batuta reaction",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_character_cues.py",
+    "license": "CC0-1.0",
+    "description": "Soft item-themed tink and original voice-like blip; no words or recordings. Queued after menu cues.",
+    "rms": 0.06616796298858532,
+    "peak": 0.27999999969545214,
+    "seconds": 0.18,
+    "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_4.wav",
+    "title": "Lata reaction",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_character_cues.py",
+    "license": "CC0-1.0",
+    "description": "Soft item-themed tink and original voice-like blip; no words or recordings. Queued after menu cues.",
+    "rms": 0.050959380271256745,
+    "peak": 0.2799999997818947,
+    "seconds": 0.18,
+    "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_5.wav",
+    "title": "Silya reaction",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_character_cues.py",
+    "license": "CC0-1.0",
+    "description": "Soft item-themed tink and original voice-like blip; no words or recordings. Queued after menu cues.",
+    "rms": 0.0727229516244311,
+    "peak": 0.27999999973346873,
+    "seconds": 0.18,
+    "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_6.wav",
+    "title": "Bote reaction",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_character_cues.py",
+    "license": "CC0-1.0",
+    "description": "Soft item-themed tink and original voice-like blip; no words or recordings. Queued after menu cues.",
+    "rms": 0.0463693464217962,
+    "peak": 0.27999999980155915,
+    "seconds": 0.18,
+    "loop": false
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Audio/SFX/reaction_7.wav",
+    "title": "Walis tingting reaction",
+    "author": "Original procedural synthesis for Christine Tamayo",
+    "source": "Tools/generate_character_cues.py",
+    "license": "CC0-1.0",
+    "description": "Soft item-themed tink and original voice-like blip; no words or recordings. Queued after menu cues.",
+    "rms": 0.043315324844881785,
+    "peak": 0.27999999953686155,
+    "seconds": 0.18,
+    "loop": false
   }
 ]

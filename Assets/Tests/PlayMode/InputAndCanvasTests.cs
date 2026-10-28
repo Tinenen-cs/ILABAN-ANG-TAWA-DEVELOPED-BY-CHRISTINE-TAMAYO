@@ -66,6 +66,16 @@ namespace Hexbound.Tests
             game.Show(AcademyGame.ScreenState.Title);yield return null;var actor=typeof(AcademyGame).GetField("actors",flags).GetValue(game);
             Assert.IsNull(actor,"No combat fighter is split into independent body parts on menu screens.");
         }
+        [UnityTest] public IEnumerator CharacterReactionCuesWaitForMenuAudio(){
+            var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();game.Show(AcademyGame.ScreenState.Select);yield return null;
+            const System.Reflection.BindingFlags flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+            var type=typeof(AcademyGame);var sound=type.GetMethod("Sound",flags);var queue=type.GetMethod("QueueCharacterCue",flags);var play=type.GetMethod("UpdateCharacterCue",flags);var clock=type.GetField("clock",flags);float before=(float)clock.GetValue(game);
+            sound.Invoke(game,new object[]{"menu_move"});queue.Invoke(game,new object[]{2});play.Invoke(game,null);
+            Assert.AreEqual(2,type.GetField("queuedCharacter",flags).GetValue(game),"Reaction remains queued while a menu sound is active.");
+            float until=(float)type.GetField("menuSoundUntil",flags).GetValue(game);clock.SetValue(game,until+.05f);play.Invoke(game,null);
+            var source=(AudioSource)type.GetField("highlight",flags).GetValue(game);Assert.AreEqual("reaction_2",source.clip.name);Assert.AreEqual(-1,type.GetField("queuedCharacter",flags).GetValue(game));
+            sound.Invoke(game,new object[]{"menu_back"});Assert.IsFalse(source.isPlaying,"A new menu action takes priority over a character blip.");clock.SetValue(game,before);game.Show(AcademyGame.ScreenState.Title);
+        }
         [UnityTest] public IEnumerator ReactionBubblesTrackHeadAndStayInSeparateHudSafeLanes(){
             var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();game.Ready[0]=game.Ready[1]=true;game.StartMatch();yield return null;Assert.IsFalse(game.Model.Finished);Assert.AreEqual(AcademyGame.ScreenState.Fight,game.ScreenNow);
             const System.Reflection.BindingFlags flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;

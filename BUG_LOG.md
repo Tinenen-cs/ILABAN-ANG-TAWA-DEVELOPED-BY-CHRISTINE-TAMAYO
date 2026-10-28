@@ -77,3 +77,6 @@ The old bubble code used fighter foot X plus a fixed offset, then pushed nearby 
 - The top-left pause fighter was not an extra object: Fight created both actors at the helper's default origin, and an immediate pause returned before their first layout update. Actors now receive stage positions and facing when constructed; a pause-before-first-update regression checks their exact placement.
 - Focus scaling pivoted buttons at their top-left and cards scaled twice (parent and child). Buttons now scale around center; card child feedback uses color/outline while the parent has one bounded scale. Selected card non-overlap is tested.
 - Final step-3 checks: EditMode 11/11, PlayMode 9/9, 65 rule assertions, zero C# warnings/errors, five exact native resolution runs, no reported glyph/overflow/runtime issues. HUD and pause/controls/result/selection captures were reviewed.
+
+### Selection reaction audio overlaps
+Character cues now share a dedicated non-looping source, wait for menu audio to finish, and coalesce repeated highlights. Menu actions take priority and stop an active reaction blip. Combat impacts keep their existing separate one-shot playback and throttling. Added a PlayMode regression.

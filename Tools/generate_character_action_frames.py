@@ -56,6 +56,7 @@ def render(index,base,action,frame,anchor):
 
 def main():
     manifest=[];runtime=[];anchors={x['character']:x for x in json.loads((ROOT/'Docs/character_weapon_anchors.json').read_text())}
+    poses={(x['character'],x['pose']):x for x in json.loads((ROOT/'Docs/character_action_poses.json').read_text())}
     for i,name in enumerate(CHARS):
         source=ROOT/'ArtSource/StrikeFrames'/name;ready=Image.open(source/'Strike_00.png').convert('RGBA')
         out=ART/name/'Actions';out.mkdir(exist_ok=True);masks=ROOT/'ArtSource/ActionMasks'/name;masks.mkdir(parents=True,exist_ok=True)
@@ -66,11 +67,16 @@ def main():
             for f in range(count):
                 base=Image.open(source/f'Strike_{f:02}.png').convert('RGBA') if action=='Strike' else ready
                 anchor=anchors[name]['frames'][f if action=='Strike' else 0]
+                pose_name=('WalkA' if f%2==0 else 'WalkB') if action=='Walk' else 'Lose' if action=='Fall' else action
+                pose=poses.get((name,pose_name))
+                if pose:
+                    base=Image.open(ROOT/pose['file']).convert('RGBA')
+                    anchor={**anchor,'head':pose['head']}
                 head=list(anchor['head']);amount=[-.009,0,.009,0][f] if action=='Walk' else [-.045,-.065,-.035,0][f] if action=='Hurt' else 0
                 head[0]+=amount*(512-head[1]);vector=lambda p:{'x':p[0],'y':p[1]}
                 action_data['frames'].append({'head':vector(head),'grip':vector(anchor['grip']),'tip':vector(anchor['tip'])})
                 image,body_mask=render(i,base,action,f,anchor);path=out/f'{action}_{f:02}.png';image.save(path,optimize=True);body_mask.save(masks/path.name,optimize=True)
-                manifest.append({'file':path.relative_to(ROOT).as_posix(),'size':list(SIZE),'action':action,'frame':f,'weapon':anchors[name]['item'],'weapon_is_baked_into_fullbody':True,'strike_pose_placeholder':False,'action_pose_placeholder':action not in ('Strike','Idle'),'phase':anchor['phase'] if action=='Strike' else None,'grip':anchor['grip'] if action=='Strike' else None,'tip':anchor['tip'] if action=='Strike' else None,'pivot':[.5,0],'foot_pivot':[448,512],'ground_line':512,'body_mask':(masks/path.name).relative_to(ROOT).as_posix()})
+                manifest.append({'file':path.relative_to(ROOT).as_posix(),'size':list(SIZE),'action':action,'frame':f,'weapon':anchors[name]['item'],'weapon_is_baked_into_fullbody':True,'strike_pose_placeholder':False,'action_pose_placeholder':False,'pose_source':pose['file'] if pose else str((source/f'Strike_{f if action=="Strike" else 0:02}.png').relative_to(ROOT).as_posix()),'phase':anchor['phase'] if action=='Strike' else None,'grip':anchor['grip'] if action=='Strike' else None,'tip':anchor['tip'] if action=='Strike' else None,'pivot':[.5,0],'foot_pivot':[448,512],'ground_line':512,'body_mask':(masks/path.name).relative_to(ROOT).as_posix()})
             character_data['actions'].append(action_data)
         runtime.append(character_data)
     (ROOT/'Docs/character_action_frames.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')

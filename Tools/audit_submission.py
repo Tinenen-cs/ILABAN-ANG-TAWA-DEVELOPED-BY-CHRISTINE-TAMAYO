@@ -24,6 +24,7 @@ referenced=set(re.findall(r'(?:Sound|Music)\(\s*"([A-Za-z0-9_]+)"',sources))|set
 missing=sorted(name for name in referenced if name not in clips and not name.endswith('_'))
 # All eight impact variants are required by the combat model.
 missing += [f'hit_{i}' for i in range(8) if f'hit_{i}' not in clips]
+missing += [f'reaction_{i}' for i in range(8) if f'reaction_{i}' not in clips]
 wave_rows=[]
 for p in sorted(audio_root.rglob('*.wav')):
  with wave.open(str(p),'rb') as w:
@@ -36,4 +37,4 @@ print(json.dumps({k:v for k,v in report.items() if k!='audio'},ensure_ascii=Fals
 assert not findings,'English candidate found in default Tagalog UI captures'
 assert not mojibake,'Mojibake found'
 assert not missing,'Missing referenced audio'
-assert len(wave_rows)==30 and report['clipped_samples']==0
+assert len(wave_rows)==38 and report['clipped_samples']==0

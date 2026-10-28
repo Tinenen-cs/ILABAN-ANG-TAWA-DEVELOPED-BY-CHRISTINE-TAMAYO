@@ -85,7 +85,7 @@ namespace Hexbound.Editor
             foreach(var n in new[]{"Looban","Plaza"})Require(Resources.Load<Texture2D>("Ilaban/Maps/"+n+"/"+n+"_Takipsilim")!=null,"fixed night map "+n);
             Require(Resources.Load<Texture2D>("Ilaban/Maps/FX/Kanal")!=null,"open canal art");Require(Resources.Load<Texture2D>("Ilaban/UI/JeepneyFrames")!=null,"animated opening jeepney sheet");
             foreach(var n in new[]{"Palengke_Hapon","Palengke_Takipsilim","Looban_Hapon","Looban_Umaga","Plaza_Hapon","Plaza_Umaga"})Require(Resources.Load<Texture2D>("Ilaban/Maps/"+n.Substring(0,n.IndexOf('_'))+"/"+n)==null,"inactive map variant archived: "+n);
-            Require(Resources.LoadAll<AudioClip>("Ilaban/Audio").Length==30,"30 original clips");
+            Require(Resources.LoadAll<AudioClip>("Ilaban/Audio").Length==38,"38 original clips including eight character reactions");
             var bank=new ReactionBank();Require(bank.Mode==LanguageMode.Pormal,"formal build default");
             foreach(var categories in new[]{bank.Data.Pormal,bank.Data.GenZ}) {Require(categories.Length==6,"six reaction categories");foreach(var category in categories)Require(category.lines.Length>=6&&category.lines.Length<=10,"reaction pool size");}
             foreach(var n in new[]{"KalyeDisplay","KalyeBody"}){var font=Resources.Load<TMPro.TMP_FontAsset>("Ilaban/Fonts/"+n);Require(font!=null,"OFL font asset "+n);foreach(char c in "Ññ'[]:!?")Require(font.HasCharacter(c),"Filipino glyph "+c+" in "+n);}

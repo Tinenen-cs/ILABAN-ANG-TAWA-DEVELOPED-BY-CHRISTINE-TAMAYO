@@ -26,3 +26,5 @@ Developer: Christine Tamayo.
 
 - All active WAV files are original procedural cues generated for Christine Tamayo. Source: `Tools/generate_ilaban_assets.py`; license: CC0-1.0. No external songs or samples are used. See `AUDIO_LIST.md` for playback roles and technical checks.
 - `punch.wav` is the short swing cue; `hit_0.wav` through `hit_7.wav` are item-specific impact cues. Other action cues cover steps, dizzy, fall, splash, win and crowd reactions. Repeated impact sounds are rate-limited in the runtime to avoid harsh stacking.
+
+- Additional original fictional six-pose walk/reaction sheets were generated with built-in imagegen from the fictional ready drawings only. Sources: ArtSource/ActionSheets; sliced whole bodies: ArtSource/ActionFrames. No photos supplied. Reaction audio: Tools/generate_character_cues.py, original procedural CC0-1.0 tones, no recordings.

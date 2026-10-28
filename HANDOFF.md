@@ -43,3 +43,7 @@ The first combined setup command was rejected by automatic review; running norma
 ## NEEDS MANUAL TEST
 
 Human presentation/feel review of authored strikes, signature facial reactions/cues and dedicated locomotion poses, physical gamepad/hot-swap and keyboard rollover, full-screen fit on the presentation monitor, subjective audio levels, clean-PC/SmartScreen, final ZIP extraction/playback (queued separately), and owner decision on the public photo history.
+
+## Current action-art checkpoint
+
+48 additional authored whole-body walk/hurt/dizzy/win/lose poses are integrated for all eight fictional characters. Fall uses the lose pose with the existing whole-body sink transform; idle uses the ready stance. Six-frame strikes remain unchanged. All 272 masks and 48 strike grip/tip checks passed after regeneration. Eight soft reaction cues wait for menu audio and coalesce rapidly repeated selections. Fresh Unity tests/rule checks are running; do not claim their new results until XML/logs are checked. Next five: verify tests; review new native animation captures; finish heading/control assets; night maps and isolated foliage; final evidence/pre-check. Resume with the existing exact command above.
