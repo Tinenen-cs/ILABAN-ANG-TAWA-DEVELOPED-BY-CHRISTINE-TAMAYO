@@ -31,3 +31,10 @@ SUBMISSION/
 # Full-resolution acceptance captures stay beside the portable deliverable.
 # Their dimensions, hashes and test results are versioned under Docs.
 QA_SCREENSHOTS/
+
+# Local resume/watchdog state
+RESUME_STATE.txt
+TASK_COMPLETE.flag
+Tools/autoresume.lock
+Tools/codex-active.lock
+Tools/autoresume-last-output.txt

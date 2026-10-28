@@ -1,36 +1,38 @@
-# Current handoff ? 28 October 2026
+# Handoff — 2026-10-28
 
-Local branch: `phase3-polish`. Reference photos stay private and gitignored. No push, force-push, history rewrite or merge was made. The owner still controls repository privacy and publishing.
+Branch: `phase3-polish`. Project: `C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO`.
 
-## Implemented
+## Done
 
-- Eight original fictional adult characters with Filipino internal resource keys, approved portraits/bases and six-part scripted cutout rigs. The rigs animate idle, walk, punch, hurt, dizzy, fall and win. Joint pivots and expression-head swaps remain partial.
-- Three smooth painterly maps in Umaga, Hapon and Takipsilim. Existing dusk art remains; day versions turn lamps off.
-- Original title, character-selection, stage-selection and opening backgrounds, five parallax layers, Lilita One/Nunito gameplay fonts, Tagalog UI and Pormal default reactions.
-- Layout uses the supplied UI references only for screen organization. Visual treatment remains Filipino wood, tin, market and barangay scenery.
-- Combat rules remain intact: left/right movement, no jump, straight punch, one fixed step per hit, five-hit dizzy for two seconds, no health/K.O./timer, manhole-only instant end, isolated player inputs.
-- Dizzy indicator: five large supported asterisks orbit at y=350 and each draws last in the UI. P1/P2 reaction bubbles use non-overlapping central lanes with margins from the HUD.
+- Rebuilt the game from the real project folder with Unity 6000.6.2f1. Build passes 65 rule assertions. Graphics-enabled EditMode 11/11, PlayMode 9/9. Portable smoke and screenshot checks pass at 1280x720, 1366x768, 1920x1080, 2560x1440 and 3440x1440.
+- Reviewed 1280x720 match/dizzy and 3440x1440 match/result. The Hilo HUD is visible, five amber/red streak pips fill/reset, and dizzy stars show. HUD screenshots for all five sizes are under `QA_SCREENSHOTS/HUD/`.
+- Combat now draws one whole-body texture per actor/action; 272 frames share 272x512 canvases and fixed feet-center grounding. Structural checks report one connected base silhouette for each character. The user-reported floating stick came from our procedural straight grip-to-tip line; replaced it with a curved ribbon, and verified the refreshed montage. No separate item object exists in the fight hierarchy.
+- Strike choreography is still placeholder art: the held prop does not yet raise and extend toward the opponent. Do not claim the requested weapon poses complete. All rules/timing/hitboxes remain unchanged.
+- Created the auto-resume PowerShell script/docs and ran a harmless `codex exec` test (exit 0). No reference photos were read or sent to tools.
 
-## Final verification
+## In progress
 
-- Unity 6000.6.2f1 Windows x64 build from a clean local clone of source commit `2f3fbbe`. At build time, the validation clone and real project had matching `git rev-parse HEAD`; the student's Unity Editor stayed open on the real folder. Build passed the 65 rubric assertions and reported no C# compiler errors or warnings.
-- EditMode 9/9 and graphics-enabled PlayMode 4/4 passed. XML: `Docs/QA_EVIDENCE/EditMode.xml`, `Docs/QA_EVIDENCE/PlayMode.xml`.
-- Portable smoke passed at 1280x720, 1366x768, 1920x1080 and 2560x1440. Each run captured opening, title, character select, all nine map/time choices, match, dizzy, result, pause and controls. I inspected dizzy, match and result captures; stars are visible, bubbles are separated, and HUD remains clear. Logs report no missing glyphs, TMP overflow or runtime exceptions. Full-resolution screenshot hashes are in `Docs/QA_EVIDENCE/captures.json`.
-- The fresh portable ZIP was extracted to `C:\Users\chris\AppData\Local\Temp\Ilaban-Extracted-20261028-054255`, launched and played through a simulated gamepad match to dizzy and manhole result. No reported errors. This validates the development PC only.
-- ZIP path, byte size, SHA-256 and extraction result are recorded in `Docs/package_verification.json`; four-resolution results are in `Docs/portable_qa_results.json`.
+- Final local docs/checkpoint commit and watchdog registration/launch.
+- Latest distributable ZIP is intentionally not rebuilt here; final EXE/Drive work is queued separately.
 
-## Remaining NEEDS MANUAL TEST
+## Next five steps
 
-- Physical USB gamepads, a second controller, hot-swap and unplug/replug feel.
-- Two-person keyboard rollover and real input latency.
-- Speaker/headphone balance and subjective audio mix.
-- The actual presentation monitor's fit/readability.
-- Launch on a clean PC without Unity and antivirus/SmartScreen behavior for the unsigned executable.
+1. Verify `Tools/autoresume.ps1` parses and its lock/complete gates work; record the test.
+2. Register and launch the watchdog at logon and every five minutes; current `Tools/codex-active.lock` prevents it from duplicating this foreground session.
+3. Set AC standby/display timeouts to never; both were already 0, so undo is `powercfg /change standby-timeout-ac 0` and `powercfg /change monitor-timeout-ac 0` (these restore current prior values).
+4. Commit this local UI/animation/watchdog checkpoint; update `RESUME_STATE.txt` and this handoff.
+5. Finish final evidence audit and source clean-tree check. Stop before queued final EXE/Drive task; do not publish while public history contains photos.
 
-Score limitations: character motion is a simple cutout rig, and the original synthesized sound still needs listening review. No grade or Exceeds-level guarantee is claimed.
+## Resume command
 
-## Claude Code notes (resolved during finalization)
+`powershell -NoProfile -ExecutionPolicy Bypass -File Tools\autoresume.ps1`
 
-The stale submission, hidden/missing dizzy glyph, and touching reaction bubbles were identified in the prior audit. The submission ZIP was rebuilt from the validation build; the supported asterisk glyph and separated safe lanes are covered by the final four-resolution captures. `Tools/finalize_evidence.py` ran successfully and confirmed 100 captures plus both XML test suites and the ZIP hash.
+For the next Codex session: read `RESUME_STATE.txt`, `HANDOFF.md`, `PENDING_NETWORK.md`, `CHECKLIST.md`; run `git status`; continue from step 1 above. Do not ask questions. Do not start final EXE/Drive task in this continuation.
 
-Canvas submission instruction: upload only `SUBMISSION/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip`, unless the instructor requests supporting files. Do not publish this branch until the owner resolves the earlier public reference-photo history.
+## Auto-resume / network / power
+
+`Tools/autoresume.ps1` was tested via the harmless CLI smoke command; one unsupported option was corrected after consulting `codex --help` and `codex exec --help`. The watchdog has not yet relaunched this task; relaunch count: **0**. `PENDING_NETWORK.md` records the public-photo-history hold and queued Drive sign-in/upload. Powercfg showed AC sleep and display timeouts were already 0; commands to restore those previous values are both `... 0`.
+
+## NEEDS MANUAL TEST
+
+Weapon-specific poses, signature facial reactions/cues, physical gamepad/hot-swap and keyboard rollover, full-screen fit on the presentation monitor, subjective audio levels, clean-PC/SmartScreen, final ZIP extraction/playback (queued separately), and owner decision on the public photo history.

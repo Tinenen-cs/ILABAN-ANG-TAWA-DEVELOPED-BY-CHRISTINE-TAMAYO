@@ -1,0 +1,2810 @@
+[
+  {
+    "character": "AlingPamalo",
+    "action": "Idle",
+    "frame": "Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Idle",
+    "frame": "Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Idle",
+    "frame": "Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Idle",
+    "frame": "Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Walk",
+    "frame": "Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Walk",
+    "frame": "Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Walk",
+    "frame": "Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Walk",
+    "frame": "Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Strike",
+    "frame": "Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Strike",
+    "frame": "Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Strike",
+    "frame": "Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Strike",
+    "frame": "Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Strike",
+    "frame": "Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Strike",
+    "frame": "Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Hurt",
+    "frame": "Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Hurt",
+    "frame": "Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Hurt",
+    "frame": "Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Hurt",
+    "frame": "Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Dizzy",
+    "frame": "Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Dizzy",
+    "frame": "Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Dizzy",
+    "frame": "Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Dizzy",
+    "frame": "Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Fall",
+    "frame": "Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Fall",
+    "frame": "Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Fall",
+    "frame": "Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Fall",
+    "frame": "Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Win",
+    "frame": "Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Win",
+    "frame": "Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Win",
+    "frame": "Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Win",
+    "frame": "Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Lose",
+    "frame": "Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Lose",
+    "frame": "Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Lose",
+    "frame": "Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "Lose",
+    "frame": "Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Idle",
+    "frame": "Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Idle",
+    "frame": "Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Idle",
+    "frame": "Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Idle",
+    "frame": "Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Walk",
+    "frame": "Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Walk",
+    "frame": "Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Walk",
+    "frame": "Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Walk",
+    "frame": "Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Strike",
+    "frame": "Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Strike",
+    "frame": "Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Strike",
+    "frame": "Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Strike",
+    "frame": "Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Strike",
+    "frame": "Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Strike",
+    "frame": "Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Hurt",
+    "frame": "Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Hurt",
+    "frame": "Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Hurt",
+    "frame": "Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Hurt",
+    "frame": "Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Dizzy",
+    "frame": "Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Dizzy",
+    "frame": "Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Dizzy",
+    "frame": "Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Dizzy",
+    "frame": "Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Fall",
+    "frame": "Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Fall",
+    "frame": "Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Fall",
+    "frame": "Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Fall",
+    "frame": "Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Win",
+    "frame": "Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Win",
+    "frame": "Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Win",
+    "frame": "Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Win",
+    "frame": "Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Lose",
+    "frame": "Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Lose",
+    "frame": "Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Lose",
+    "frame": "Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "Lose",
+    "frame": "Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Idle",
+    "frame": "Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Idle",
+    "frame": "Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Idle",
+    "frame": "Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Idle",
+    "frame": "Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Walk",
+    "frame": "Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Walk",
+    "frame": "Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Walk",
+    "frame": "Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Walk",
+    "frame": "Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Strike",
+    "frame": "Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Strike",
+    "frame": "Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Strike",
+    "frame": "Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Strike",
+    "frame": "Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Strike",
+    "frame": "Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Strike",
+    "frame": "Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Hurt",
+    "frame": "Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Hurt",
+    "frame": "Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Hurt",
+    "frame": "Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Hurt",
+    "frame": "Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Dizzy",
+    "frame": "Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Dizzy",
+    "frame": "Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Dizzy",
+    "frame": "Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Dizzy",
+    "frame": "Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Fall",
+    "frame": "Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Fall",
+    "frame": "Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Fall",
+    "frame": "Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Fall",
+    "frame": "Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Win",
+    "frame": "Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Win",
+    "frame": "Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Win",
+    "frame": "Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Win",
+    "frame": "Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Lose",
+    "frame": "Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Lose",
+    "frame": "Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Lose",
+    "frame": "Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "Lose",
+    "frame": "Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Idle",
+    "frame": "Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Idle",
+    "frame": "Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Idle",
+    "frame": "Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Idle",
+    "frame": "Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Walk",
+    "frame": "Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Walk",
+    "frame": "Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Walk",
+    "frame": "Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Walk",
+    "frame": "Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Strike",
+    "frame": "Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Strike",
+    "frame": "Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Strike",
+    "frame": "Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Strike",
+    "frame": "Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Strike",
+    "frame": "Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Strike",
+    "frame": "Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Hurt",
+    "frame": "Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Hurt",
+    "frame": "Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Hurt",
+    "frame": "Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Hurt",
+    "frame": "Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Dizzy",
+    "frame": "Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Dizzy",
+    "frame": "Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Dizzy",
+    "frame": "Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Dizzy",
+    "frame": "Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Fall",
+    "frame": "Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Fall",
+    "frame": "Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Fall",
+    "frame": "Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Fall",
+    "frame": "Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Win",
+    "frame": "Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Win",
+    "frame": "Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Win",
+    "frame": "Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Win",
+    "frame": "Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Lose",
+    "frame": "Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Lose",
+    "frame": "Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Lose",
+    "frame": "Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "KapBatuta",
+    "action": "Lose",
+    "frame": "Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Idle",
+    "frame": "Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Idle",
+    "frame": "Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Idle",
+    "frame": "Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Idle",
+    "frame": "Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Walk",
+    "frame": "Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Walk",
+    "frame": "Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Walk",
+    "frame": "Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Walk",
+    "frame": "Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Strike",
+    "frame": "Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Strike",
+    "frame": "Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Strike",
+    "frame": "Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Strike",
+    "frame": "Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Strike",
+    "frame": "Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Strike",
+    "frame": "Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Hurt",
+    "frame": "Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Hurt",
+    "frame": "Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Hurt",
+    "frame": "Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Hurt",
+    "frame": "Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Dizzy",
+    "frame": "Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Dizzy",
+    "frame": "Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Dizzy",
+    "frame": "Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Dizzy",
+    "frame": "Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Fall",
+    "frame": "Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Fall",
+    "frame": "Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Fall",
+    "frame": "Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Fall",
+    "frame": "Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Win",
+    "frame": "Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Win",
+    "frame": "Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Win",
+    "frame": "Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Win",
+    "frame": "Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Lose",
+    "frame": "Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Lose",
+    "frame": "Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Lose",
+    "frame": "Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "Lose",
+    "frame": "Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Idle",
+    "frame": "Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Idle",
+    "frame": "Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Idle",
+    "frame": "Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Idle",
+    "frame": "Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Walk",
+    "frame": "Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Walk",
+    "frame": "Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Walk",
+    "frame": "Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Walk",
+    "frame": "Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Strike",
+    "frame": "Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Strike",
+    "frame": "Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Strike",
+    "frame": "Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Strike",
+    "frame": "Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Strike",
+    "frame": "Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Strike",
+    "frame": "Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Hurt",
+    "frame": "Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Hurt",
+    "frame": "Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Hurt",
+    "frame": "Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Hurt",
+    "frame": "Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Dizzy",
+    "frame": "Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Dizzy",
+    "frame": "Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Dizzy",
+    "frame": "Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Dizzy",
+    "frame": "Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Fall",
+    "frame": "Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Fall",
+    "frame": "Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Fall",
+    "frame": "Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Fall",
+    "frame": "Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Win",
+    "frame": "Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Win",
+    "frame": "Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Win",
+    "frame": "Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Win",
+    "frame": "Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Lose",
+    "frame": "Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Lose",
+    "frame": "Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Lose",
+    "frame": "Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "TitoSilya",
+    "action": "Lose",
+    "frame": "Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Idle",
+    "frame": "Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Idle",
+    "frame": "Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Idle",
+    "frame": "Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Idle",
+    "frame": "Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Walk",
+    "frame": "Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Walk",
+    "frame": "Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Walk",
+    "frame": "Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Walk",
+    "frame": "Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Strike",
+    "frame": "Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Strike",
+    "frame": "Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Strike",
+    "frame": "Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Strike",
+    "frame": "Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Strike",
+    "frame": "Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Strike",
+    "frame": "Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Hurt",
+    "frame": "Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Hurt",
+    "frame": "Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Hurt",
+    "frame": "Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Hurt",
+    "frame": "Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Dizzy",
+    "frame": "Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Dizzy",
+    "frame": "Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Dizzy",
+    "frame": "Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Dizzy",
+    "frame": "Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Fall",
+    "frame": "Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Fall",
+    "frame": "Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Fall",
+    "frame": "Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Fall",
+    "frame": "Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Win",
+    "frame": "Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Win",
+    "frame": "Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Win",
+    "frame": "Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Win",
+    "frame": "Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Lose",
+    "frame": "Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Lose",
+    "frame": "Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Lose",
+    "frame": "Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "Lose",
+    "frame": "Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Idle",
+    "frame": "Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Idle",
+    "frame": "Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Idle",
+    "frame": "Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Idle",
+    "frame": "Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Walk",
+    "frame": "Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Walk",
+    "frame": "Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Walk",
+    "frame": "Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Walk",
+    "frame": "Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Strike",
+    "frame": "Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Strike",
+    "frame": "Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Strike",
+    "frame": "Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Strike",
+    "frame": "Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Strike",
+    "frame": "Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Strike",
+    "frame": "Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Hurt",
+    "frame": "Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Hurt",
+    "frame": "Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Hurt",
+    "frame": "Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Hurt",
+    "frame": "Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Dizzy",
+    "frame": "Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Dizzy",
+    "frame": "Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Dizzy",
+    "frame": "Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Dizzy",
+    "frame": "Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Fall",
+    "frame": "Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Fall",
+    "frame": "Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Fall",
+    "frame": "Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Fall",
+    "frame": "Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Win",
+    "frame": "Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Win",
+    "frame": "Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Win",
+    "frame": "Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Win",
+    "frame": "Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Lose",
+    "frame": "Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Lose",
+    "frame": "Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Lose",
+    "frame": "Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "NanayTingting",
+    "action": "Lose",
+    "frame": "Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "pivot": "feet-center; shared bottom ground line"
+  },
+  {
+    "character": "AlingPamalo",
+    "action": "BodySilhouette",
+    "connected_components_over_100px": 1,
+    "largest_component_pixels": 66884,
+    "grip_anchor": [
+      122,
+      357
+    ],
+    "strike_frames": 6
+  },
+  {
+    "character": "KuyaTsinelas",
+    "action": "BodySilhouette",
+    "connected_components_over_100px": 1,
+    "largest_component_pixels": 58000,
+    "grip_anchor": [
+      164,
+      194
+    ],
+    "strike_frames": 6
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "action": "BodySilhouette",
+    "connected_components_over_100px": 1,
+    "largest_component_pixels": 62884,
+    "grip_anchor": [
+      183,
+      236
+    ],
+    "strike_frames": 6
+  },
+  {
+    "character": "KapBatuta",
+    "action": "BodySilhouette",
+    "connected_components_over_100px": 1,
+    "largest_component_pixels": 71988,
+    "grip_anchor": [
+      130,
+      340
+    ],
+    "strike_frames": 6
+  },
+  {
+    "character": "ManongLatalata",
+    "action": "BodySilhouette",
+    "connected_components_over_100px": 1,
+    "largest_component_pixels": 68217,
+    "grip_anchor": [
+      185,
+      300
+    ],
+    "strike_frames": 6
+  },
+  {
+    "character": "TitoSilya",
+    "action": "BodySilhouette",
+    "connected_components_over_100px": 1,
+    "largest_component_pixels": 55056,
+    "grip_anchor": [
+      205,
+      320
+    ],
+    "strike_frames": 6
+  },
+  {
+    "character": "AlingBotengSuka",
+    "action": "BodySilhouette",
+    "connected_components_over_100px": 1,
+    "largest_component_pixels": 80077,
+    "grip_anchor": [
+      174,
+      264
+    ],
+    "strike_frames": 6
+  },
+  {
+    "character": "NanayTingting",
+    "action": "BodySilhouette",
+    "connected_components_over_100px": 1,
+    "largest_component_pixels": 58687,
+    "grip_anchor": [
+      205,
+      300
+    ],
+    "strike_frames": 6
+  }
+]

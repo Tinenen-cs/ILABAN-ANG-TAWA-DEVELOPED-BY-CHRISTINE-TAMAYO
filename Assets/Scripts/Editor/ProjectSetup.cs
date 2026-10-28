@@ -66,6 +66,7 @@ namespace Hexbound.Editor
             }
             PlayerSettings.companyName="Christine Tamayo"; PlayerSettings.productName="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO";
             PlayerSettings.defaultScreenWidth=1280; PlayerSettings.defaultScreenHeight=720;
+            PlayerSettings.defaultIsNativeResolution=true;PlayerSettings.fullScreenMode=FullScreenMode.FullScreenWindow;PlayerSettings.allowFullscreenSwitch=true;
             PlayerSettings.runInBackground=false;
             AssetDatabase.SaveAssets();
         }
@@ -80,6 +81,10 @@ namespace Hexbound.Editor
                 Require(Resources.Load<Texture2D>("Ilaban/Items/Item_"+i)!=null,"item "+i);
             }
             for(int i=0;i<3;i++) {Require(Resources.Load<Texture2D>("Ilaban/Stages/"+Roster.StageFiles[i])!=null,"map "+i);Require(Resources.Load<AudioClip>("Ilaban/Audio/Music/"+Roster.StageFiles[i])!=null,"map music "+i);}
+            Require(Resources.Load<Texture2D>("Ilaban/Maps/Palengke/Palengke_Umaga")!=null,"fixed morning market map");
+            foreach(var n in new[]{"Looban","Plaza"})Require(Resources.Load<Texture2D>("Ilaban/Maps/"+n+"/"+n+"_Takipsilim")!=null,"fixed night map "+n);
+            Require(Resources.Load<Texture2D>("Ilaban/Maps/FX/Kanal")!=null,"open canal art");Require(Resources.Load<Texture2D>("Ilaban/UI/JeepneyFrames")!=null,"animated opening jeepney sheet");
+            foreach(var n in new[]{"Palengke_Hapon","Palengke_Takipsilim","Looban_Hapon","Looban_Umaga","Plaza_Hapon","Plaza_Umaga"})Require(Resources.Load<Texture2D>("Ilaban/Maps/"+n.Substring(0,n.IndexOf('_'))+"/"+n)==null,"inactive map variant archived: "+n);
             Require(Resources.LoadAll<AudioClip>("Ilaban/Audio").Length==30,"30 original clips");
             var bank=new ReactionBank();Require(bank.Mode==LanguageMode.Pormal,"formal build default");
             foreach(var categories in new[]{bank.Data.Pormal,bank.Data.GenZ}) {Require(categories.Length==6,"six reaction categories");foreach(var category in categories)Require(category.lines.Length>=6&&category.lines.Length<=10,"reaction pool size");}

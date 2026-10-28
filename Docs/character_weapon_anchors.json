@@ -1,0 +1,98 @@
+[
+  {
+    "character": "AlingPamalo",
+    "item": "Pamalo",
+    "grip": [
+      122,
+      357
+    ],
+    "tip": [
+      199,
+      348
+    ]
+  },
+  {
+    "character": "KuyaTsinelas",
+    "item": "Tsinelas",
+    "grip": [
+      164,
+      194
+    ],
+    "tip": [
+      205,
+      184
+    ]
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "item": "Bato",
+    "grip": [
+      183,
+      236
+    ],
+    "tip": [
+      218,
+      230
+    ]
+  },
+  {
+    "character": "KapBatuta",
+    "item": "Batuta",
+    "grip": [
+      130,
+      340
+    ],
+    "tip": [
+      207,
+      334
+    ]
+  },
+  {
+    "character": "ManongLatalata",
+    "item": "Lata",
+    "grip": [
+      185,
+      300
+    ],
+    "tip": [
+      220,
+      298
+    ]
+  },
+  {
+    "character": "TitoSilya",
+    "item": "Silya",
+    "grip": [
+      205,
+      320
+    ],
+    "tip": [
+      235,
+      330
+    ]
+  },
+  {
+    "character": "AlingBotengSuka",
+    "item": "Bote",
+    "grip": [
+      174,
+      264
+    ],
+    "tip": [
+      212,
+      254
+    ]
+  },
+  {
+    "character": "NanayTingting",
+    "item": "Walis tingting",
+    "grip": [
+      205,
+      300
+    ],
+    "tip": [
+      250,
+      300
+    ]
+  }
+]

@@ -1,31 +1,31 @@
-﻿# UI/UX Overhaul Progress
+# Update progress
 
-| Item | Status | Evidence / next action |
-|---:|:---:|---|
-| 1 | [ ] | OpeningSequence.cs and approved transparent vehicle art |
-| 2 | [ ] | Themed heading treatments with localized TMP retained |
-| 3 | [ ] | Persisted Tagalog/English UI locale; Pormal/Kabataan remains separate |
-| 4 | [ ] | Controls/settings cards and focus navigation |
-| 5 | [ ] | Replace torn-paper buttons |
-| 6 | [ ] | Pointer, keyboard, and controller feedback |
-| 7 | [ ] | Per-screen input consumption + regression test |
-| 8 | [ ] | Localized exit confirmation and editor-aware quit |
-| 9 | [ ] | Eight-character responsive roster layout and ready states |
-| 10 | [~] | Existing cutout animations; full art sets remain manual art work |
-| 11 | [ ] | Three-stage responsive card layout |
-| 12 | [ ] | Apply shared button style to every screen |
-| 13 | [ ] | Fixed Palengke morning and Looban/Plaza night; archive unused variants |
-| 14 | [ ] | Rounded fight HUD, tally, canal edges, remove control labels/orbs |
-| 15 | [ ] | Restrict background motion to lamps, flags, and available foliage layers |
-| 16 | [ ] | Pause/settings regression for stray characters |
-| 17 | [ ] | Head-following reaction bubble anchors and tests |
-| 18 | [ ] | Remove nonfunctional attack orbs |
-| 19 | [ ] | Centered result panel, winner pose, celebratory effect/audio |
-| 20 | [ ] | Borderless desktop launch and aspect-ratio checks |
-| 21 | [ ] | Rubric self-check grounded in actual evidence |
-| 22 | [ ] | Checklist and progress table |
-| 23 | [ ] | Build/tests/scans/screenshots/fresh extraction/full match |
-| 24 | [ ] | Repo visibility audit; only publish after clean privacy/artifact audit |
-| 25 | [ ] | Portable-release README and in-zip Tagalog guide |
+| # | Work item | Status | Evidence / next action |
+|---:|---|:---:|---|
+| 1 | Opening jeepney | [x] | Opening and match screenshots |
+| 2 | Themed headings | [~] | Localized signboard plates; painted lettering incomplete |
+| 3 | Language/reaction defaults | [x] | Pormal default and English settings capture |
+| 4 | Settings layout | [x] | Slider bounds test |
+| 5 | Title buttons | [x] | Five-size captures |
+| 6 | Button states | [~] | Shared component; exhaustive manual review |
+| 7 | Controls routing | [x] | PlayMode flow test |
+| 8 | Exit dialog | [~] | Hindi default; actual exit and physical gamepad review |
+| 9 | Character select | [~] | Cards/readiness verified; full state/art review remains |
+| 10 | Character actions | [~] | 272 shared-canvas whole-body frames; six strike placeholders per character; weapon pose/expression polish incomplete |
+| 11 | Stage select | [x] | Three arenas at five sizes |
+| 12 | Shared button system | [~] | Implemented; full manual state sweep remains |
+| 13 | Fixed maps | [x] | Palengke morning; Looban/Plaza dusk |
+| 14 | Fight HUD/Hilo | [x] | Original wood/brass design; exactly five amber/red pips, medals, VS and bottom hints; five-size screenshots |
+| 15 | Map animation | [~] | Lamp glow; foliage is fixed art |
+| 16 | Pause/controls | [x] | No-orphan PlayMode test |
+| 17 | Reaction bubbles | [x] | Head anchors, clamp, separation and HUD-safe lanes tested |
+| 18 | Remove Suntok orb | [x] | Match screenshot |
+| 19 | Results | [x] | Result screenshot at five sizes |
+| 20 | Windowed/fullscreen build | [~] | Five exact sizes; target monitor needs manual check |
+| 21 | Rubric self-check | [~] | Evidence and limits written |
+| 22 | Checklist | [x] | 25 rows current |
+| 23 | Local QA/package | [~] | Source build, 65 rules, EditMode 11/11, PlayMode 9/9 and five resolutions pass; current submission ZIP rebuild queued separately |
+| 24 | Publication | [~] | Held for owner decision about photo-containing public history |
+| 25 | Release docs | [~] | Local docs ready; final EXE/Drive task queued |
 
-`[x]` means automated evidence or inspected screenshot exists. `[~]` means NEEDS MANUAL TEST or partial. `[ ]` means pending.
+No push, merge, history rewrite, public release or Drive upload was attempted. Physical/device checks remain NEEDS MANUAL TEST.

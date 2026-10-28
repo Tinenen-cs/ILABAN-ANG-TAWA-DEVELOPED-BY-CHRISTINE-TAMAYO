@@ -12,14 +12,16 @@ namespace Hexbound
         RectTransform content,flags,jeep;
         TMP_Text logo,credit;
         Image fade;
-        RawImage street;
+        RawImage street,jeepImage;
         RawImage[] layers;
         AudioSource sound;
         float elapsed;
         bool enginePlayed,stingerPlayed;
+        bool english;
         public float Elapsed => elapsed;
         void Awake()
         {
+            english=false;foreach(var arg in Environment.GetCommandLineArgs())if(arg=="-ilaban-smoke"){english=false;break;}else english=PlayerPrefs.GetInt("Ilaban.Language",0)==1;
             Application.targetFrameRate=60;
             if(FindAnyObjectByType<AudioListener>()==null)gameObject.AddComponent<AudioListener>();
             AudioListener.volume=PlayerPrefs.GetFloat("Ilaban.Master",.8f);sound=gameObject.AddComponent<AudioSource>();sound.volume=PlayerPrefs.GetFloat("Ilaban.Sound",.7f);
@@ -31,10 +33,10 @@ namespace Hexbound
             street=layers[4];
             var shade=R(content,new Rect(0,0,1280,720)).gameObject.AddComponent<Image>();shade.color=new Color(.02f,.06f,.1f,.35f);
             flags=Art(content,new Rect(0,-160,1280,144),"UI/Banderitas").rectTransform;
-            jeep=Art(content,new Rect(-350,445,320,160),"UI/Jeepney").rectTransform;
+            jeepImage=Art(content,new Rect(-380,386,360,250),"UI/JeepneyFrames");jeep=jeepImage.rectTransform;jeepImage.uvRect=new Rect(0,.15f,.25f,.57f);
             logo=Text(content,new Rect(80,210,1120,100),"ILABAN ANG TAWA",80);logo.gameObject.SetActive(false);
-            credit=Text(content,new Rect(130,330,1020,110),"Isang Laro mula sa Pilipinas\nHandog ni Christine Tamayo",30);credit.alpha=0;
-            Text(content,new Rect(200,666,880,29),"Pindutin ang anumang pindutan upang laktawan",22);
+            credit=Text(content,new Rect(130,330,1020,110),english?"A Game from the Philippines\nCreated by Christine Tamayo":"Isang laro mula sa Pilipinas\nHandog ni Christine Tamayo",30);credit.alpha=0;
+            Text(content,new Rect(200,666,880,29),english?"Press any button to skip":"Pindutin ang anumang pindutan upang laktawan",22);
             fade=R(content,new Rect(0,0,1280,720)).gameObject.AddComponent<Image>();fade.color=Color.black;
             Cue("opening_bell");Cue("banderitas");
         }
@@ -48,7 +50,7 @@ namespace Hexbound
             elapsed+=Mathf.Min(Time.unscaledDeltaTime,.1f);
             var rect=(RectTransform)canvas.transform;float fit=Mathf.Min(rect.rect.width/1280,rect.rect.height/720);content.localScale=Vector3.one*fit;
             flags.anchoredPosition=new Vector2(0,Mathf.Lerp(160,-10,Mathf.SmoothStep(0,1,elapsed/.8f)));flags.localRotation=Quaternion.Euler(0,0,Mathf.Sin(elapsed*3)*Mathf.Max(0,1-elapsed/2)*4);
-            jeep.anchoredPosition=new Vector2(Mathf.Lerp(-350,1390,Mathf.Clamp01((elapsed-.6f)/4.5f)),-445+Mathf.Sin(elapsed*25)*1.5f);
+            float progress=Mathf.Clamp01((elapsed-.6f)/4.5f);jeep.anchoredPosition=new Vector2(Mathf.Lerp(-380,1390,progress),-386+Mathf.Sin(elapsed*25)*1.5f);jeepImage.uvRect=new Rect((Mathf.FloorToInt(elapsed*8)%4)*.25f,.15f,.25f,.57f);
             for(int i=0;i<layers.Length;i++)layers[i].rectTransform.anchoredPosition=new Vector2(-200+Mathf.Sin(elapsed*.3f)*(i+1)*3,0);
             if(elapsed>.6f&&!enginePlayed){enginePlayed=true;Cue("jeepney_engine");}
             if(elapsed>2.5f&&!stingerPlayed){stingerPlayed=true;Cue("opening_sting");logo.gameObject.SetActive(true);}

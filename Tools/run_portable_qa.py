@@ -2,11 +2,14 @@ from pathlib import Path
 import subprocess,shutil,os,json,sys
 root=Path.cwd();qa=Path(os.environ.get('ILABAN_PROJECT',os.path.join(os.environ['TEMP'],'Ilaban-Phase2-Validation')));exe=qa/'Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe'
 results=[]
-for w,h in [(1280,720),(1366,768),(1920,1080),(2560,1440)]:
- if w==2560:
-  subprocess.run([sys.executable,str(root/'Tools/capture_large_window.py')],check=True)
-  break
+for w,h in [(1280,720),(1366,768),(1920,1080),(2560,1440),(3440,1440)]:
+ if w>=2560:
+  env=os.environ.copy();env['ILABAN_CAPTURE_WIDTH']=str(w);env['ILABAN_CAPTURE_HEIGHT']=str(h)
+  subprocess.run([sys.executable,str(root/'Tools/capture_large_window.py')],check=True,env=env)
+  continue
  folder=root/'QA_SCREENSHOTS'/f'Final_{w}x{h}';log=root/'Logs'/f'Final_{w}x{h}.log'
+ if folder.exists():shutil.rmtree(folder)
+ folder.mkdir(parents=True)
  print('Capturing',w,h,flush=True)
  proc=subprocess.Popen([str(exe),'-screen-fullscreen','0','-screen-width',str(w),'-screen-height',str(h),'-ilaban-smoke',str(folder),'-logFile',str(log)])
  try:code=proc.wait(timeout=100)

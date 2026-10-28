@@ -1,76 +1,47 @@
-# ILABAN ANG TAWA — master checklist
+# ILABAN ANG TAWA — release checklist
 
-Statuses: [x] verified evidence; [p] partial; [~] NEEDS MANUAL TEST; [ ] pending. Counts refer to these acceptance rows, not a guaranteed grade.
+Status: [x] verified in source/tests/captures; [~] implemented partially or NEEDS MANUAL TEST. No grade level is guaranteed.
 
-Evidence: Docs/QA_EVIDENCE, Docs/portable_qa_results.json, Docs/package_verification.json, and current Logs build/runtime files.
+1. [x] Opening jeepney animation is restricted to the opening; no jeepney actor is used in the fight. Evidence: `QA_SCREENSHOTS/Final_1280x720/00-opening.png`, `04-match-0.png`.
+2. [~] Themed headings use localized text and themed plates; fully painted lettering assets are incomplete. Evidence: title and controls captures.
+3. [x] Tagalog and Pormal are defaults; English and reaction selection work. Evidence: controls and English settings captures.
+4. [x] Language, reaction and volume controls fit their rows; slider fill stays in bounds. Evidence: `InputAndCanvasTests.SettingsAndExitUseTheirOwnScreenFlow`.
+5. [x] Themed title buttons and spacing fit at all five QA sizes.
+6. [~] Shared focus, hover and press feedback exists; every button and device state still needs manual review.
+7. [x] Mga Kontrol opens the controls/settings view. Evidence: PlayMode routing test.
+8. [~] Umalis dialog defaults to Hindi. Gamepad feel and actual application exit need a physical review.
+9. [~] Eight character cards, portraits, readiness and descriptions work. Fine detail and every two-player readiness combination need manual review.
+10. [~] Eight whole-body action sets have 272 PNGs (six strike frames and four frames for each other action per character), all 272x512 with a common feet-center pivot/ground line. The split-body rig was removed. Strike sprites remain explicit placeholders named `Strike_00.png` through `Strike_05.png` in each `Assets/Resources/Ilaban/Characters/<Character>/Actions/` folder: weapon-specific raised/reaching poses and expression swaps are incomplete. The old long straight trail line was removed. Evidence: `Docs/character_action_frames.json`, `Docs/character_action_validation.json`, `QA_SCREENSHOTS/ANIMATION/`.
+11. [x] Three stage cards show distinct location art, names and hints at all five sizes.
+12. [~] Shared themed buttons work across views; exhaustive manual state review remains.
+13. [x] Exactly three maps: Palengke (Umaga), Looban (Takipsilim), Plaza (Takipsilim); no time selector.
+14. [x] Original carved wood/brass portrait rings, wood name plates, center VS badge, winner medals, bottom hint plate and five amber-to-red Hilo pips are used. There is no health, stamina, timer or K.O. object. Hilo fills on consecutive hits and resets when a streak breaks. Evidence: `QA_SCREENSHOTS/HUD/`, `FightHudHasFiveHiloPipsAndNoSeparateItemSprites`.
+15. [~] Lamp glow animates. Banderitas and foliage remain part of fixed artwork.
+16. [x] Pause/controls transitions have no orphan fighters. Evidence: PlayMode test.
+17. [x] Smaller reaction bubbles follow each head anchor, stay clamped, and separate in close quarters; they hide when the result appears. Evidence: PlayMode test and `05-dizzy.png`.
+18. [x] No interactive Suntok orb remains. Fight hint shows the punch control.
+19. [x] Result panel, winner pose, confetti and win sound work. Evidence: `06-result.png` at each resolution.
+20. [~] Windows build starts windowed for QA and supports Alt+Enter. Exact screenshot layouts passed all five sizes; full-screen monitor behavior still needs a manual device check.
+21. [~] Rubric evidence is documented; no Exceeds-level claim is made.
+22. [x] This checklist and `UPDATE_PROGRESS.md` cover all 25 release items.
+23. [~] Current local source build passed 65 rule assertions, EditMode 11/11, PlayMode 9/9, and portable QA at 1280x720, 1366x768, 1920x1080, 2560x1440 and 3440x1440. Screenshot/text audit and action-frame structural audit passed. The distributable ZIP has not been rebuilt for this latest HUD/action change; queued executable/Drive work stays separate.
+24. [~] Local work is on `phase3-polish`; no push, merge, force-push or history rewrite. The PUBLIC repository's prior history contains reference photos. Owner decision about history/privacy is pending.
+25. [~] README and local evidence are prepared. The ZIP and public release link await the separate final EXE/Drive task and the public-history decision.
 
-## Phase 1 — setup, gameplay and input
+## Rubric self-check
 
-- [x] Unity 6000.6.2f1, original source backups and fully named working folder.
-- [x] Product/company/window title and repository name updated; original folder retained.
-- [x] Main scene and original source assets preserved; no original asset deletion.
-- [x] Local branch phase3-polish; reference photos ignored and never supplied to image tools; no remote writes during this continuation.
-- [x] Two players share one screen; horizontal-only movement; forbidden actions ignored in every tested state.
-- [x] One equal straight punch for every item; fixed 52-unit step with no residual force.
-- [x] Five consecutive landed punches cause two-second dizzy; misses, being hit and timeout break streak.
-- [x] Simultaneous strikes are fair and break both streaks.
-- [x] No health, stamina, timer or knockout system in active gameplay; manhole-only immediate round end.
-- [x] Independent P1 A/D/F and P2 arrows/Right Ctrl/Numpad 0; Enter confirms only P1.
-- [x] Input System controller ownership, deadzone, generic joystick trigger, virtual replacement and hot-swap implemented.
-- [~] Physical USB/gamepad behavior, second controller and unplug/replug feel — NEEDS MANUAL TEST.
-- [~] Simultaneous two-person keyboard rollover and input latency on actual hardware — NEEDS MANUAL TEST.
-
-## Phase 2 — characters, maps, layout, reactions and sound
-
-- [x] Eight confirmed Filipino names and descriptions; new internal Filipino resource keys.
-- [x] Original fictional adult portrait/base art imported; no real-person likeness assets in active game.
-- [x] Aling Pamalo: original body/portrait, pamalo and registered visual rig resources.
-- [x] Kuya Tsinelas: original body/portrait, tsinelas and registered visual rig resources.
-- [x] Ate Bato-Bato Pik: accepted ponytail portrait, bato and registered visual rig resources.
-- [x] Kap Batuta: original body/portrait, batuta and registered visual rig resources.
-- [x] Manong Latalata: original body/portrait, lata and registered visual rig resources.
-- [x] Tito Silya: approved adult portrait retained, silya and registered visual rig resources.
-- [x] Aling Boteng Suka: original body/portrait, bote and registered visual rig resources.
-- [x] Nanay Tingting: original body/portrait, walis tingting and registered visual rig resources.
-- [p] Idle, walk, straight punch/item flourish, hit, dizzy, fall and win use code-driven cut-out motion. Simple disjoint partitions; polished joint pivots/expression swaps remain partial.
-- [x] Palengke, Looban and Plaza have smooth approved dusk art plus inspected morning/afternoon edits; dusk sources unchanged.
-- [x] Oras selector changes visual theme only; daytime lamp glow disabled.
-- [x] Animated clouds, traffic, lamp flicker and floor shimmer; full-screen cover scenery.
-- [x] Canvas Scaler and separate safe UI region; slanted cards, two-line name plates, P1 teal/P2 coral.
-- [x] Independent character confirmation and Handa na gate; stage selection and back/start buttons.
-- [x] HUD limited to portraits/names/controls, five streak dots, one Suntok orb, pause/controls hint.
-- [x] Six reaction categories, cooldown, no immediate repeats, priority and item lines; separate from combat random state.
-- [x] Pormal default and optional Kabataan toggle; both pools reviewed for English expressions.
-- [x] Distinct map/title/selection music; opening and win stingers; 8 item-hit timbres; fall/splash/dizzy/crowd/menu cues.
-- [x] Pangunahing Lakas/Musika/Tunog controls cover opening and game audio.
-- [x] Audio inventory and per-file source/license declarations; 30 active WAV files with no clipped samples.
-- [p] Synthesized Filipino-inspired music/SFX are usable original cues; realistic recordings and final mix remain optional polish.
-- [~] Speaker/headphone balance and subjective audio quality — NEEDS MANUAL TEST.
-
-## Phase 3 — opening, fonts, QA and portable submission
-
-- [x] Separate Pambungad and Pamagat scenes; selection/stage/combat/result remain screens inside Main and are documented.
-- [x] Skippable six-second jeepney opening, banderitas, logo and Tagalog credits.
-- [x] Five independently offset painterly parallax PNG layers imported; original flat image retained.
-- [x] Distinct original title/character-select/stage-select backgrounds; layout-only reference use.
-- [x] Lilita One and Nunito static TMP fonts, OFL sources/licenses, outline/underlay and Filipino glyph test.
-- [x] Required developer title format retained; Pormal remains launch default.
-- [x] 65 deterministic rubric checks plus 50-hit displacement and reaction-independence tests.
-- [x] Expanded EditMode XML reports 9/9 passed, including all map/time and rig resources.
-- [x] Rebuilt from clean clone of real commit 2f3fbbe; build passed 65 assertions, EditMode 9/9 and graphics-enabled PlayMode 4/4.
-- [x] Built portable game completed an actual simulated gamepad match through five-hit dizzy and the manhole result.
-- [x] Corrected stars and disjoint bubble lanes passed 25 capture checks at each exact target resolution, including 2560x1440; no glyph/overflow/runtime issues.
-- [x] Fresh portable ZIP extracted and launched; full simulated match passed; size, SHA-256 and extraction path recorded in Docs/package_verification.json.
-- [x] Active English keyword scan found zero candidates; font/audio/static audit scripts saved.
-- [~] Actual monitor fit and perceived readability — NEEDS MANUAL TEST.
-- [~] Clean second PC without Unity — NEEDS MANUAL TEST.
-- [~] Unsigned executable antivirus/SmartScreen behavior — NEEDS MANUAL TEST.
-- [ ] Publish branch after owner privacy decision; do not push or merge automatically.
-
-## Rubric Self-Check
-
-| Criterion | Assessment | Evidence / limitation |
+| Criterion | Evidence | Remaining limitation |
 | --- | --- | --- |
-| UI and Thematic Authenticity | Not yet claimed Exceeds-level | Original adult characters, nine Philippine map/time choices, Tagalog UI, themed fonts/audio; cut-out articulation and final presentation/mix remain partial. |
-| Gameplay Mechanics and Engine Logic | Automated rubric behavior verified; no grade guarantee | 65 rule assertions, 50-hit test, simultaneous strikes, forbidden controls, streak recovery and actual-input manhole match. |
-| Controller and Input Systems | Simulated behavior verified; Exceeds-level pending hardware | Separate maps/device ownership and virtual replacement/joystick tests; physical USB, rollover, latency and two-person feel require manual checks. |
+| Filipino theme and interface | Tagalog-first interface, original scenery/characters, three arenas, themed wood/brass HUD, five-size screenshots | Strike pose polish, character expressions, foliage motion and painted heading art are partial. |
+| Gameplay rules | `Tools/run_final_checks.py`, 65 assertions, model checks and PlayMode tests | Physical feel/hardware checks remain. |
+| Player input | Separate keyboard bindings and simulated gamepad ownership/hot-swap | Physical two-controller hot-swap and keyboard rollover need manual checks. |
+
+## NEEDS MANUAL TEST
+
+- Review weapon grip/facing/strike poses for each character; current six-frame strikes are whole-body placeholders with a curved effect trail, not finished weapon choreography.
+- Facial expression swaps and signature per-character reaction sounds.
+- Physical controllers, disconnect/reconnect feel, and keyboard rollover.
+- Full-screen monitor fit and speaker/headphone balance.
+- Clean Windows PC without Unity; antivirus/SmartScreen behavior for unsigned executable.
+- Owner decision on public reference-photo history before any publishing.
+- Latest SUBMISSION ZIP rebuild, extraction and simulated match are part of the queued final executable task, not this step.

@@ -11,6 +11,8 @@ namespace Hexbound
     {
         string directory;
         public static bool Active { get; private set; }
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        static void SeedSmokeDefaults(){foreach(var arg in Environment.GetCommandLineArgs())if(arg=="-ilaban-smoke"){PlayerPrefs.SetInt("Ilaban.Language",0);PlayerPrefs.SetInt("Ilaban.ReactionStyle",0);PlayerPrefs.Save();break;}}
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Boot() {
             var args=Environment.GetCommandLineArgs();
@@ -26,17 +28,17 @@ namespace Hexbound
             if(opening==null)throw new Exception("Opening ended before its capture");
             yield return Capture("00-opening");
             while(FindAnyObjectByType<AcademyGame>()==null)yield return null;
-            var game=FindAnyObjectByType<AcademyGame>();yield return new WaitForSecondsRealtime(.5f);
-            if(game.ReactionLanguage!=LanguageMode.Pormal)throw new Exception("Non-formal default");
+            var game=FindAnyObjectByType<AcademyGame>();yield return new WaitForSecondsRealtime(.5f);game.SetLanguage(0);game.SetReactionStyle(0);
+            if(game.ReactionLanguage!=LanguageMode.Pormal||game.Language!=0)throw new Exception("Wrong fresh default language/reaction style");
             yield return Capture("01-title");
             game.Show(AcademyGame.ScreenState.Select);yield return Capture("02-characters");
             game.Ready[0]=true;game.Ready[1]=false;game.Show(AcademyGame.ScreenState.StageSelect);game.StartMatch();
             if(game.ScreenNow==AcademyGame.ScreenState.Fight)throw new Exception("Started without both confirmations");
-            for(int map=0;map<3;map++)for(int time=0;time<3;time++) {
-                game.SelectArena(map);game.SetTimeOfDay(time);yield return Capture("03-stage-"+map+"-"+time);
-                game.Ready[1]=true;game.StartMatch();yield return Capture("04-match-"+map+"-"+time);
+            for(int map=0;map<3;map++) {
+                game.SelectArena(map);game.Show(AcademyGame.ScreenState.StageSelect);yield return Capture("03-stage-"+map);
+                game.Ready[1]=true;game.StartMatch();yield return Capture("04-match-"+map);
             }
-            game.SelectArena(0);game.SetTimeOfDay(2);game.Ready[0]=game.Ready[1]=true;game.StartMatch();
+            game.SelectArena(0);game.Ready[0]=game.Ready[1]=true;game.StartMatch();
             var pad=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Gamepad>();
             float deadline=Time.realtimeSinceStartup+45,nextPunch=0;bool dizzyCaptured=false;
             while(!game.Model.Finished && Time.realtimeSinceStartup<deadline) {
@@ -52,7 +54,9 @@ namespace Hexbound
             yield return Capture("06-result");UnityEngine.InputSystem.InputSystem.RemoveDevice(pad);
             game.StartMatch();typeof(AcademyGame).GetProperty("Paused").GetSetMethod(true).Invoke(game,new object[]{true});yield return Capture("07-pause");
             game.Show(AcademyGame.ScreenState.Controls);yield return Capture("08-controls");
-            File.WriteAllText(Path.Combine(directory,"PASS.txt"),"Portable smoke passed at "+Screen.width+"x"+Screen.height+". Pormal default; readiness gate; all 9 map/time choices; actual simulated gamepad movement/punches to manhole; dizzy and results; pause; controls. Physical input/listening remain manual.");
+            game.Show(AcademyGame.ScreenState.Title);game.RequestExit();yield return Capture("09-exit-dialog");game.CancelExit();
+            game.SetLanguage(1);game.Show(AcademyGame.ScreenState.Controls);yield return Capture("10-settings-english");game.SetLanguage(0);
+            File.WriteAllText(Path.Combine(directory,"PASS.txt"),"Portable smoke passed at "+Screen.width+"x"+Screen.height+". Tagalog/Pormal fresh defaults; readiness gate; three fixed-light maps; actual simulated gamepad movement/punches to manhole; dizzy and results; pause; controls; exit dialog; English settings. Physical input/listening remain manual.");
             Debug.Log("ILABAN PORTABLE SMOKE PASSED "+Screen.width+"x"+Screen.height);Application.Quit(0);
         }
         IEnumerator Capture(string name) {

@@ -2,6 +2,8 @@
 
 Every active clip is original deterministic synthesis, with no third-party recordings or borrowed melodies. New generated media are dedicated under CC0-1.0. Synthesis is an intentional placeholder for realistic street recordings; auditory quality remains NEEDS MANUAL TEST. Music wraps its note tails across the loop boundary; effects use short fades. Master/music/SFX controls govern opening and gameplay sources.
 
+Strike playback uses `punch.wav` as the swing cue and the character-indexed `hit_0.wav`–`hit_7.wav` clip at impact. Runtime rate-limits impact playback to prevent fast repeated hits from cutting off or stacking harshly. These are synthesized item-themed hits, not physical recordings. Dedicated soft reaction cues for each character and separate footstep cues for every action are not complete; keep these items NEEDS MANUAL TEST / art-audio follow-up.
+
 | Filename | Where played | Theme concept | Source / license | RMS / peak | Playback |
 | --- | --- | --- | --- | --- | --- |
 | `Assets/Resources/Ilaban/Audio/Music/Title.wav` | Pamagat | Original looping plucked-string sketch; listening review pending. | [Original generator](Tools/generate_ilaban_assets.py), [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | 0.141 / 0.820 | Loop |

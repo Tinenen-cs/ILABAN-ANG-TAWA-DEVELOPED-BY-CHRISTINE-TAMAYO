@@ -4,7 +4,7 @@ from PIL import Image
 root=Path(__file__).resolve().parents[1]
 results=json.loads((root/'Docs/portable_qa_results.json').read_text())
 package=json.loads((root/'Docs/package_verification.json').read_text())
-assert len(results)==4 and all(r['passed'] for r in results)
+assert len(results)==5 and all(r['passed'] for r in results)
 assert package['passed']
 assert hashlib.sha256(Path(package['zip']).read_bytes()).hexdigest()==package['sha256']
 for name in ['EditMode','PlayMode']:
@@ -30,7 +30,7 @@ text+='''
 - Windows x64 build: Unity 6000.6.2f1, Logs/Final-release.log, exit 0, 65 rubric assertions. No C# compiler errors or warnings found. Unity licensing/network diagnostic messages are distinct from compilation results.
 - EditMode 9/9 and PlayMode 4/4 passed; XML under Docs/QA_EVIDENCE. PlayMode requires graphics because TMP can open its editor resource importer; the headless attempt was not counted as a pass.
 - 25 captures at each of 1280x720, 1366x768, 1920x1080 and 2560x1440. The 1440p capture uses an exact-size borderless window; no monitor-mode changes. Native Unity framebuffer capture, not resized images. Docs/QA_EVIDENCE/captures.json stores dimensions and hashes.
-- All four smoke runs check Pormal default, both-player readiness, nine map/time choices, actual simulated gamepad movement/punches to dizzy and manhole win, pause and controls. No reported runtime exceptions, missing glyphs or TMP overflow.
+- All five resolution runs check Tagalog/Pormal defaults, both-player readiness, three fixed-light maps, actual simulated gamepad movement/punches to dizzy and manhole win, pause and controls. No reported runtime exceptions, missing glyphs or TMP overflow.
 - Initial capture exposed an opening timing problem during slow loading. Opening time now advances at a bounded rate and the harness requires a real intro before title. Normal players can still skip with a key/controller button.
 - Portable ZIP extracted to a fresh temporary folder and completed the same actual-input match. This is a development-PC test, not a clean-PC test. Exact ZIP hash, size and extraction path: Docs/package_verification.json.
 - All work is committed locally on phase3-polish. No push, history rewrite or merge performed. Full PNG captures and SUBMISSION stay local; evidence manifests are versioned.

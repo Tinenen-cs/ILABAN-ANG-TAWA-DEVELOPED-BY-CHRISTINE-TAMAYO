@@ -44,3 +44,17 @@ Original artwork, face files, audio and Main.unity have not been deleted. Proced
 - Heuristic active-string scan: zero English candidates. Audio sample audit: 30 files, zero clipped samples. These are not claims of perfect translation or listening quality.
 
 - Final QA: Windows decorated-window clamp prevented native 1440p; exact-size borderless diagnostic capture passed. Intro capture advanced past opening during startup delays; bounded intro clock and required-opening harness fixed it. Headless PlayMode TMP importer needs graphics; graphics-enabled 4/4 result retained.
+
+
+## 2026-10-28 final UI and animation pass
+
+- Root cause of the split-on-hit glitch: fighters had separate arm, leg, torso and head textures, and the punch/hurt motion independently offset or rotated those pieces around a full-canvas origin. Replaced combat actors with one whole-body image per frame; knockback and facing now move/flip the parent sprite as one object. All 272 action frames share a transparent 272x512 canvas, bottom-center pivot and common ground line. Connectivity checks report one connected body silhouette for each of the eight base characters.
+- Root cause of the thin stray "second stick" in the strike: the procedural strike frame drew a narrow straight line from grip to tip on top of the weapon already present in the full-body base art. Removed that line and replaced it with a broad, curved motion ribbon. Fight actors have no item/weapon child; item thumbnails remain selection-only. Verified in the refreshed strike montages.
+- Strike poses remain PLACEHOLDERS: six timed whole-body frames have effects, but weapon-specific hand poses do not yet raise and extend each prop toward the opponent. Grip/tip anchors are stored in `Docs/character_weapon_anchors.json`; this is not proof that the artwork reaches the opponent. Do not mark weapon choreography complete.
+- Added the original carved wood/brass portrait rings, segmented wooden Hilo meter, medal tallies, center VS badge and bottom hint plate. Removed fight HUD dark rectangles, `Sunod na Suntok`, and player control lines. Hilo has five amber-to-red pips, fills once per consecutive hit and resets with the streak. The PlayMode test checks five-pip ordering/reset and absence of fighter item objects.
+- Reaction bubbles now follow each actor's head anchor, clamp to the screen and separate in close quarters. Bubbles are hidden on the result screen.
+- Strike frames include a curved ribbon, impact sparkle/burst and foot dust. Item-specific hit audio uses `hit_0.wav` through `hit_7.wav`; impact playback is rate-limited. Dedicated per-character reaction voice cues remain partial.
+- Unity graphics-enabled EditMode, PlayMode and build passed; 65 rule assertions and portable smoke passed at 1280x720, 1366x768, 1920x1080, 2560x1440 and 3440x1440. See `Docs/QA_EVIDENCE/`, `Docs/portable_qa_results.json`, `QA_SCREENSHOTS/HUD/` and `QA_SCREENSHOTS/ANIMATION/`.
+- Fixed slider fill anchors that caused the control bars to grow outside their tracks. Added PlayMode size bounds. Hid reaction bubbles after a match ends so they do not compete with the result panel.
+- Updated highlight/ready animation to show a selected item flourish and ready sparkle. Facial expression swaps, polished limb motion and dedicated reaction voice cues remain partial.
+- Earlier bubble test flake: it sampled before the first post-StartMatch layout update and sometimes saw the default (0,0) RectTransform. The test now waits one frame, confirms Fight state and measures a fresh visible interval; final PlayMode passes.

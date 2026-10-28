@@ -1,0 +1,4642 @@
+[
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 0,
+    "weapon": "Pamalo",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      122,
+      357
+    ],
+    "tip": [
+      199,
+      348
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 1,
+    "weapon": "Pamalo",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      122,
+      357
+    ],
+    "tip": [
+      199,
+      348
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 2,
+    "weapon": "Pamalo",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      122,
+      357
+    ],
+    "tip": [
+      199,
+      348
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 3,
+    "weapon": "Pamalo",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      122,
+      357
+    ],
+    "tip": [
+      199,
+      348
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 4,
+    "weapon": "Pamalo",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      122,
+      357
+    ],
+    "tip": [
+      199,
+      348
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 5,
+    "weapon": "Pamalo",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      122,
+      357
+    ],
+    "tip": [
+      199,
+      348
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingPamalo/Actions/Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 0,
+    "weapon": "Tsinelas",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      164,
+      194
+    ],
+    "tip": [
+      205,
+      184
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 1,
+    "weapon": "Tsinelas",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      164,
+      194
+    ],
+    "tip": [
+      205,
+      184
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 2,
+    "weapon": "Tsinelas",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      164,
+      194
+    ],
+    "tip": [
+      205,
+      184
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 3,
+    "weapon": "Tsinelas",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      164,
+      194
+    ],
+    "tip": [
+      205,
+      184
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 4,
+    "weapon": "Tsinelas",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      164,
+      194
+    ],
+    "tip": [
+      205,
+      184
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 5,
+    "weapon": "Tsinelas",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      164,
+      194
+    ],
+    "tip": [
+      205,
+      184
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KuyaTsinelas/Actions/Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 0,
+    "weapon": "Bato",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      183,
+      236
+    ],
+    "tip": [
+      218,
+      230
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 1,
+    "weapon": "Bato",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      183,
+      236
+    ],
+    "tip": [
+      218,
+      230
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 2,
+    "weapon": "Bato",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      183,
+      236
+    ],
+    "tip": [
+      218,
+      230
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 3,
+    "weapon": "Bato",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      183,
+      236
+    ],
+    "tip": [
+      218,
+      230
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 4,
+    "weapon": "Bato",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      183,
+      236
+    ],
+    "tip": [
+      218,
+      230
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 5,
+    "weapon": "Bato",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      183,
+      236
+    ],
+    "tip": [
+      218,
+      230
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AteBatoBatoPik/Actions/Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 0,
+    "weapon": "Batuta",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      130,
+      340
+    ],
+    "tip": [
+      207,
+      334
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 1,
+    "weapon": "Batuta",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      130,
+      340
+    ],
+    "tip": [
+      207,
+      334
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 2,
+    "weapon": "Batuta",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      130,
+      340
+    ],
+    "tip": [
+      207,
+      334
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 3,
+    "weapon": "Batuta",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      130,
+      340
+    ],
+    "tip": [
+      207,
+      334
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 4,
+    "weapon": "Batuta",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      130,
+      340
+    ],
+    "tip": [
+      207,
+      334
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 5,
+    "weapon": "Batuta",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      130,
+      340
+    ],
+    "tip": [
+      207,
+      334
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/KapBatuta/Actions/Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 0,
+    "weapon": "Lata",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      185,
+      300
+    ],
+    "tip": [
+      220,
+      298
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 1,
+    "weapon": "Lata",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      185,
+      300
+    ],
+    "tip": [
+      220,
+      298
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 2,
+    "weapon": "Lata",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      185,
+      300
+    ],
+    "tip": [
+      220,
+      298
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 3,
+    "weapon": "Lata",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      185,
+      300
+    ],
+    "tip": [
+      220,
+      298
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 4,
+    "weapon": "Lata",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      185,
+      300
+    ],
+    "tip": [
+      220,
+      298
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 5,
+    "weapon": "Lata",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      185,
+      300
+    ],
+    "tip": [
+      220,
+      298
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/ManongLatalata/Actions/Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 0,
+    "weapon": "Silya",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      320
+    ],
+    "tip": [
+      235,
+      330
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 1,
+    "weapon": "Silya",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      320
+    ],
+    "tip": [
+      235,
+      330
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 2,
+    "weapon": "Silya",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      320
+    ],
+    "tip": [
+      235,
+      330
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 3,
+    "weapon": "Silya",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      320
+    ],
+    "tip": [
+      235,
+      330
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 4,
+    "weapon": "Silya",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      320
+    ],
+    "tip": [
+      235,
+      330
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 5,
+    "weapon": "Silya",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      320
+    ],
+    "tip": [
+      235,
+      330
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/TitoSilya/Actions/Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 0,
+    "weapon": "Bote",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      174,
+      264
+    ],
+    "tip": [
+      212,
+      254
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 1,
+    "weapon": "Bote",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      174,
+      264
+    ],
+    "tip": [
+      212,
+      254
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 2,
+    "weapon": "Bote",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      174,
+      264
+    ],
+    "tip": [
+      212,
+      254
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 3,
+    "weapon": "Bote",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      174,
+      264
+    ],
+    "tip": [
+      212,
+      254
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 4,
+    "weapon": "Bote",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      174,
+      264
+    ],
+    "tip": [
+      212,
+      254
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 5,
+    "weapon": "Bote",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      174,
+      264
+    ],
+    "tip": [
+      212,
+      254
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/AlingBotengSuka/Actions/Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Idle_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Idle_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Idle_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Idle_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Idle",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Walk_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Walk_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Walk_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Walk_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Walk",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Strike_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 0,
+    "weapon": "Walis tingting",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      300
+    ],
+    "tip": [
+      250,
+      300
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Strike_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 1,
+    "weapon": "Walis tingting",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      300
+    ],
+    "tip": [
+      250,
+      300
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Strike_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 2,
+    "weapon": "Walis tingting",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      300
+    ],
+    "tip": [
+      250,
+      300
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Strike_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 3,
+    "weapon": "Walis tingting",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      300
+    ],
+    "tip": [
+      250,
+      300
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Strike_04.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 4,
+    "weapon": "Walis tingting",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      300
+    ],
+    "tip": [
+      250,
+      300
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Strike_05.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Strike",
+    "frame": 5,
+    "weapon": "Walis tingting",
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": true,
+    "strike_pose_note": "weapon remains in relaxed carry pose; item-specific reach pose not drawn yet",
+    "grip": [
+      205,
+      300
+    ],
+    "tip": [
+      250,
+      300
+    ],
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Hurt_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Hurt_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Hurt_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Hurt_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Hurt",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Dizzy_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Dizzy_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Dizzy_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Dizzy_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Dizzy",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Fall_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Fall_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Fall_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Fall_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Fall",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Win_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Win_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Win_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Win_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Win",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Lose_00.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 0,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Lose_01.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 1,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Lose_02.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 2,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  },
+  {
+    "file": "Assets/Resources/Ilaban/Characters/NanayTingting/Actions/Lose_03.png",
+    "size": [
+      272,
+      512
+    ],
+    "action": "Lose",
+    "frame": 3,
+    "weapon": null,
+    "weapon_is_baked_into_fullbody": true,
+    "strike_pose_placeholder": false,
+    "strike_pose_note": null,
+    "grip": null,
+    "tip": null,
+    "pivot": "bottom-center; shared ground line"
+  }
+]

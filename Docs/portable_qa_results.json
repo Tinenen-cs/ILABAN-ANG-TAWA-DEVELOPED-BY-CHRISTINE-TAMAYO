@@ -48,5 +48,19 @@
     "issues": [],
     "method": "Borderless window exact client sizing; Unity framebuffer capture",
     "folder": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\QA_SCREENSHOTS\\Exact_2560x1440"
+  },
+  {
+    "resolution": "3440x1440",
+    "exit": 0,
+    "passed": true,
+    "image_sizes": [
+      [
+        3440,
+        1440
+      ]
+    ],
+    "issues": [],
+    "method": "Borderless window exact client sizing; Unity framebuffer capture",
+    "folder": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\QA_SCREENSHOTS\\Exact_3440x1440"
   }
 ]
