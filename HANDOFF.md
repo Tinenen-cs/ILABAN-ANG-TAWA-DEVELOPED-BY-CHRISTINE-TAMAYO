@@ -1,3 +1,14 @@
+# UPDATE3 step 5 - 2026-10-28T22:00:26.037162+00:00
+
+Done: PASS: no action-button scaling; shared focus/hover/press fills/rim/icon slide. PlayMode14/14 including8px padding test; build/65 passed. 85 native screenshots across1280,1366,1920,2560 and3440 sizes passed clean logs/text fit; all five screen contact sheets viewed and preserved under UPDATE3/Step05.
+
+In progress / next: 6 cut painting-specific motion layers and prove pixel differences, then 7 name-plate medals
+
+Next five: follow remaining UPDATE3 tasks in Docs/UPDATE3_REQUEST.md in order; verify current screenshot; run required regression; checkpoint evidence; continue remaining task.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md, CHECKLIST.md and Docs/UPDATE3_REQUEST.md; run git status; finish UPDATE3 task 6 cut painting-specific motion layers and prove pixel differences, then 7 name-plate medals. No reference photos, no history rewrite."`
+
+---
 # UPDATE3 step 4 - 2026-10-28T21:52:16.518691+00:00
 
 Done: PASS: shared 20px cream icons, consistent 13px inset, symmetric centered labels, semantic button names; proper toothed gear plus check/play/exit/refresh/swap/home/back/no. Original editable icon sheet saved. Build/65 and 17 native screens/full match passed; pause/popup viewed. Existing virtual input regressions remain; final rerun after all tasks.

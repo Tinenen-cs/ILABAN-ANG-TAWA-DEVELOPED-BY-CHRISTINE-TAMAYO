@@ -27,6 +27,22 @@ namespace Hexbound.Tests
             var impacts=(TMP_Text[])typeof(AcademyGame).GetField("impactLabels",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(game);foreach(var impact in impacts)Assert.IsFalse(impact.gameObject.activeSelf,"Combat impact sparkles must not remain frozen over the result screen.");
         }
 
+        [Test] public void UniformActionButtonsKeepEightPixelsOfFocusPadding(){
+            var previous=Object.FindAnyObjectByType<AcademyGame>();if(previous!=null)Object.DestroyImmediate(previous.gameObject);
+            var game=new GameObject("Button geometry regression").AddComponent<AcademyGame>();game.enabled=false;
+            foreach(var screen in new[]{AcademyGame.ScreenState.Title,AcademyGame.ScreenState.Select,AcademyGame.ScreenState.StageSelect,AcademyGame.ScreenState.Controls,AcademyGame.ScreenState.Fight}){
+                if(screen==AcademyGame.ScreenState.Fight){game.Ready[0]=game.Ready[1]=true;game.StartMatch();}else game.Show(screen);
+                Canvas.ForceUpdateCanvases();
+                foreach(var feedback in game.GetComponentsInChildren<PlateButtonFeedback>(true)){
+                    if(feedback.icon==null)continue; // Illustrated selectable cards are their own surfaces.
+                    feedback.SetFocused(true);Assert.LessOrEqual(feedback.transform.localScale.x,1.03f);
+                    var rt=(RectTransform)feedback.transform;var parent=(RectTransform)rt.parent;var corners=new Vector3[4];rt.GetWorldCorners(corners);
+                    foreach(var c in corners){var v=parent.InverseTransformPoint(c);Assert.That(v.x,Is.InRange(parent.rect.xMin+8-.01f,parent.rect.xMax-8+.01f),feedback.name);Assert.That(v.y,Is.InRange(parent.rect.yMin+8-.01f,parent.rect.yMax-8+.01f),feedback.name);}
+                    Assert.AreEqual(new Vector2(20,20),feedback.icon.sizeDelta);Assert.IsNotEmpty(feedback.name);
+                    feedback.OnPointerDown(null);Assert.AreEqual(Vector3.one,feedback.transform.localScale);feedback.OnPointerUp(null);feedback.SetFocused(false);
+                }
+            }game.enabled=true;
+        }
         [Test] public void TitleRoutesKeyboardGamepadAndPointerWithoutAnyClickStart(){
             var keys=InputSystem.AddDevice<Keyboard>();var pad=InputSystem.AddDevice<Gamepad>();var mouse=InputSystem.AddDevice<Mouse>();
             var previousGame=Object.FindAnyObjectByType<AcademyGame>();if(previousGame!=null)Object.DestroyImmediate(previousGame.gameObject);var game=new GameObject("Routing regression").AddComponent<AcademyGame>();game.enabled=false;

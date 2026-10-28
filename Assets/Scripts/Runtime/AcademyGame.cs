@@ -581,7 +581,7 @@ namespace Hexbound
                 for(int p=0;p<2;p++) {if(!Ready[p]) {int dir=controls.Navigate(p).x;if(dir!=0) {Selected[p]=(Selected[p]+dir+8)%8;Sound("carousel_slide");RefreshDescriptions();QueueCharacterCue(Selected[p]);}if(controls.Press(p,"Confirm")) {Confirm(p);if(ScreenNow!=ScreenState.Select)return;}}
                     if(controls.Press(p,"Cancel")) {if(Ready[p])Ready[p]=false;else{Show(ScreenState.Title);return;}}}
                 for(int p=0;p<2;p++){bool react=Ready[p]?(clock-readyAt[p]<.6f||Mathf.Repeat(clock-readyAt[p],3.2f)<.24f):clock-enteredAt<.35f;Animate(selectionShowcase[p],react?Pose.Win:Pose.Idle,(int)(clock*4)%4);}
-                for(int p=0;p<2;p++){readiness[p].text=Tr("Manlalaro "+(p+1))+"\n"+(Ready[p]?Tr("Handa na"):Tr("Kumpirmahin: "+controls.Prompt(p,"Confirm")));if(confirmButtons[p]!=null){confirmButtons[p].interactable=!Ready[p];confirmButtons[p].GetComponentInChildren<TMP_Text>().text=Tr(Ready[p]?"Handa na":"Kumpirmahin");confirmButtons[p].transform.localScale=Vector3.one*(Ready[p]?1.02f+.012f*Mathf.Sin(clock*3):1);}}
+                for(int p=0;p<2;p++){readiness[p].text=Tr("Manlalaro "+(p+1))+"\n"+(Ready[p]?Tr("Handa na"):Tr("Kumpirmahin: "+controls.Prompt(p,"Confirm")));if(confirmButtons[p]!=null){confirmButtons[p].interactable=!Ready[p];confirmButtons[p].GetComponentInChildren<TMP_Text>().text=Tr(Ready[p]?"Handa na":"Kumpirmahin");confirmButtons[p].transform.localScale=Vector3.one;}}
                 for(int i=0;i<8;i++) {int owner=Selected[0]==i?0:Selected[1]==i?1:-1;bool active=owner>=0;cards[i].localScale=Vector3.one*(active?1.025f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null){feedback.allowScale=false;feedback.SetFocused(active);}Animate(previews[i],clock<hoverUntil[i]||(owner>=0&&Ready[owner]&&clock-readyAt[owner]<.6f)?Pose.Win:Pose.Idle,(int)(clock*(active?5:3))%4);}
             }
             else if(ScreenNow==ScreenState.StageSelect) {
@@ -712,13 +712,24 @@ namespace Hexbound
             }
         }
     }
-    public sealed class PlateButtonFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public sealed class PlateButtonFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
     {
-        public Image image;public Outline outline;public RectTransform icon;public bool allowScale=true;public Action onHover;bool focused,hovered;
+        public Image image;public Outline outline;public RectTransform icon;public bool allowScale=true;public Action onHover;bool focused,hovered,pressed;
         public void SetFocused(bool value){focused=value;Apply();}
         public void OnPointerEnter(PointerEventData eventData){hovered=true;onHover?.Invoke();Apply();}
         public void OnPointerExit(PointerEventData eventData){hovered=false;Apply();}
-        void Apply(){bool active=focused||hovered;if(image!=null)image.color=active?new Color32(163,114,67,255):new Color32(129,87,57,255);if(outline!=null)outline.enabled=active;transform.localScale=Vector3.one*(active&&allowScale?1.04f:1);if(icon!=null)icon.anchoredPosition=new Vector2(active?17:13,icon.anchoredPosition.y);}
+        public void OnPointerDown(PointerEventData eventData){pressed=true;Apply();}
+        public void OnPointerUp(PointerEventData eventData){pressed=false;Apply();}
+        void OnDisable(){hovered=pressed=false;}
+        void Apply(){bool active=focused||hovered;
+            if(image!=null)image.color=pressed?new Color32(148,103,65,255):active?new Color32(163,114,67,255):new Color32(129,87,57,255);
+            if(outline!=null)outline.enabled=active||pressed;
+            // Retain geometry: feedback comes from fill, rim and a two-pixel icon slide.
+            // This also leaves settings rows comfortably inside their wooden container.
+            transform.localScale=Vector3.one;
+            if(icon!=null)icon.anchoredPosition=new Vector2(active?15:13,icon.anchoredPosition.y);
+        }
+
     }
     public sealed class PlateIcon : MaskableGraphic
     {
