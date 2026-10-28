@@ -177,18 +177,29 @@ namespace Hexbound
         }
         Button Button(Transform parent,Rect rect,string text,Action action,bool enabled=true)
         {
-            bool roundBack=text=="Bumalik"&&parent==view&&(ScreenNow==ScreenState.Select||ScreenNow==ScreenState.StageSelect);
+            bool roundBack=false; // Shared full button geometry and centered labels on every screen.
             if(roundBack){Label(parent,new Rect(rect.x+63,rect.y+4,135,rect.height-8),text,22,cream,TextAnchor.MiddleLeft);rect.width=rect.height;}
             var image=Image(parent,rect,Color.white);image.sprite=PlateSprite();image.type=UnityEngine.UI.Image.Type.Sliced;image.pixelsPerUnitMultiplier=1;image.color=new Color32(129,87,57,255);image.raycastTarget=true;
             if(roundBack){image.sprite=Skin("PortraitMask");image.type=UnityEngine.UI.Image.Type.Simple;image.name="Bumalik";}
             image.rectTransform.pivot=new Vector2(.5f,.5f);image.rectTransform.anchoredPosition=new Vector2(rect.x+rect.width/2,-rect.y-rect.height/2);
-            var b=image.gameObject.AddComponent<Button>();b.targetGraphic=image;b.interactable=enabled;b.navigation=new Navigation {mode=Navigation.Mode.None};
+            image.name=Tr(text);var b=image.gameObject.AddComponent<Button>();b.targetGraphic=image;b.interactable=enabled;b.navigation=new Navigation {mode=Navigation.Mode.None};
             var colors=b.colors;colors.normalColor=Color.white;colors.highlightedColor=new Color(1f,.84f,.48f);colors.pressedColor=new Color(.75f,.9f,.83f);colors.selectedColor=new Color(1f,.88f,.62f);colors.disabledColor=new Color(.48f,.48f,.46f);colors.colorMultiplier=1;colors.fadeDuration=.08f;b.colors=colors;
             var outline=image.gameObject.AddComponent<Outline>();outline.effectColor=new Color32(239,196,119,180);outline.effectDistance=new Vector2(1.5f,-1.5f);outline.enabled=false;
             var feedback=image.gameObject.AddComponent<PlateButtonFeedback>();feedback.image=image;feedback.outline=outline;feedback.onHover=()=>Sound("menu_move");
-            int icon=text=="Bumalik"?0:text=="Mga Kontrol"?3:text=="Umalis"?4:text=="Simulan"||text=="Simulan ang Laro"||text=="Magpatuloy"||text=="Maglaro Muli"?2:-1;
+            int icon=ButtonIcon(text);
             if(icon>=0){var ir=Rect(image.transform,"Sagisag",new Rect(13,rect.height/2-10,20,20));var graphic=ir.gameObject.AddComponent<PlateIcon>();graphic.kind=icon;graphic.color=cream;graphic.raycastTarget=false;feedback.icon=ir;}
-            b.onClick.AddListener(()=>{Sound("menu_confirm");action();});Label(image.transform,new Rect(icon>=0?39:8,4,Mathf.Max(1,rect.width-(icon>=0?51:16)),rect.height-8),roundBack?"":Tr(text),25,cream);return b;
+            b.onClick.AddListener(()=>{Sound("menu_confirm");action();});Label(image.transform,new Rect(40,4,Mathf.Max(1,rect.width-80),rect.height-8),roundBack?"":Tr(text),25,cream);return b;
+        }
+        static int ButtonIcon(string text) {
+            if(text=="Bumalik")return 0;
+            if(text=="Kumpirmahin"||text=="Handa na"||text=="Oo"||text=="Sige")return 1;
+            if(text=="Simulan"||text=="Simulan ang Laro"||text=="Magpatuloy")return 2;
+            if(text=="Umalis")return 4;
+            if(text=="Maglaro Muli")return 5;
+            if(text=="Pumili ng Ibang Tauhan")return 6;
+            if(text=="Pangunahing Talaan")return 7;
+            if(text=="Hindi")return 8;
+            return 3; // Settings rows and Mga Kontrol use the same gear.
         }
         static Sprite plateSprite;
         static Sprite PlateSprite() {
@@ -720,7 +731,18 @@ namespace Hexbound
             if(kind==0){Line(.15f,.5f,.9f,.5f);Line(.15f,.5f,.48f,.82f);Line(.15f,.5f,.48f,.18f);}
             else if(kind==1){Line(.08f,.48f,.38f,.18f);Line(.38f,.18f,.91f,.84f);}
             else if(kind==2)Tri(.2f,.08f,.9f,.5f,.2f,.92f);
-            else if(kind==3){for(int i=0;i<8;i++){float a=i*Mathf.PI/4,b=a+.55f;Line(.5f+Mathf.Cos(a)*.34f,.5f+Mathf.Sin(a)*.34f,.5f+Mathf.Cos(b)*.34f,.5f+Mathf.Sin(b)*.34f);Line(.5f+Mathf.Cos(a)*.32f,.5f+Mathf.Sin(a)*.32f,.5f+Mathf.Cos(a)*.46f,.5f+Mathf.Sin(a)*.46f);}}
+            else if(kind==3){
+                // Continuous toothed annulus with a clear circular hole, never a dotted ring.
+                for(int i=0;i<64;i++){float a=i*Mathf.PI/32,b=(i+1)*Mathf.PI/32;float ra=i%8<4?.46f:.35f,rb=(i+1)%8<4?.46f:.35f;
+                    float ax=.5f+Mathf.Cos(a)*ra,ay=.5f+Mathf.Sin(a)*ra,bx=.5f+Mathf.Cos(b)*rb,by=.5f+Mathf.Sin(b)*rb;
+                    float cx=.5f+Mathf.Cos(a)*.19f,cy=.5f+Mathf.Sin(a)*.19f,dx=.5f+Mathf.Cos(b)*.19f,dy=.5f+Mathf.Sin(b)*.19f;
+                    Tri(ax,ay,bx,by,dx,dy);Tri(ax,ay,dx,dy,cx,cy);
+                }
+            }
+            else if(kind==5){for(int i=0;i<22;i++){float a=(45+i*12)*Mathf.Deg2Rad,b=(57+i*12)*Mathf.Deg2Rad;Line(.5f+Mathf.Cos(a)*.32f,.5f+Mathf.Sin(a)*.32f,.5f+Mathf.Cos(b)*.32f,.5f+Mathf.Sin(b)*.32f);}Line(.73f,.75f,.70f,.43f);Line(.73f,.75f,.99f,.71f);}
+            else if(kind==6){Line(.1f,.7f,.88f,.7f);Line(.88f,.7f,.65f,.9f);Line(.88f,.7f,.65f,.5f);Line(.9f,.3f,.12f,.3f);Line(.12f,.3f,.35f,.1f);Line(.12f,.3f,.35f,.5f);}
+            else if(kind==7){Line(.08f,.48f,.5f,.89f);Line(.5f,.89f,.92f,.48f);Line(.22f,.5f,.22f,.13f);Line(.22f,.13f,.78f,.13f);Line(.78f,.13f,.78f,.5f);Line(.46f,.13f,.46f,.4f);Line(.46f,.4f,.61f,.4f);}
+            else if(kind==8){Line(.2f,.2f,.8f,.8f);Line(.2f,.8f,.8f,.2f);}
             else{Line(.2f,.12f,.2f,.88f);Line(.2f,.88f,.68f,.88f);Line(.2f,.12f,.68f,.12f);Line(.45f,.5f,.96f,.5f);Line(.96f,.5f,.72f,.73f);Line(.96f,.5f,.72f,.27f);}
         }
     }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="120" viewBox="0 0 900 120">
+<g transform="translate(0,0)" fill="none" stroke="#f7e2b5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 50H88 M18 50L49 81 M18 50L49 19" fill-rule="evenodd"/><title>back</title></g>
+<g transform="translate(100,0)" fill="none" stroke="#f7e2b5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 48L38 22L88 79" fill-rule="evenodd"/><title>check_yes_OK</title></g>
+<g transform="translate(200,0)" fill="none" stroke="#f7e2b5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M25 15L85 50L25 85Z" fill-rule="evenodd"/><title>play</title></g>
+<g transform="translate(300,0)" fill="none" stroke="#f7e2b5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M50 10L58 22L72 18L76 32L90 40L84 51L90 64L75 70L72 84L58 80L49 92L40 80L26 84L22 69L10 62L17 50L10 38L24 32L27 18L40 23Z M64 50A14 14 0 1 0 36 50A14 14 0 1 0 64 50" fill-rule="evenodd"/><title>gear</title></g>
+<g transform="translate(400,0)" fill="none" stroke="#f7e2b5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M25 15V85H60 M25 15H60 M48 50H90L72 30 M90 50L72 70" fill-rule="evenodd"/><title>exit</title></g>
+<g transform="translate(500,0)" fill="none" stroke="#f7e2b5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M75 27A32 32 0 1 0 82 64 M75 27L73 50 M75 27H96" fill-rule="evenodd"/><title>refresh</title></g>
+<g transform="translate(600,0)" fill="none" stroke="#f7e2b5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 30H88L67 10 M88 30L67 50 M88 70H12L33 50 M12 70L33 90" fill-rule="evenodd"/><title>swap</title></g>
+<g transform="translate(700,0)" fill="none" stroke="#f7e2b5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 49L50 10L90 49 M25 40V85H75V40 M45 85V60H62" fill-rule="evenodd"/><title>home</title></g>
+<g transform="translate(800,0)" fill="none" stroke="#f7e2b5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20L80 80 M20 80L80 20" fill-rule="evenodd"/><title>no</title></g>
+</svg>
