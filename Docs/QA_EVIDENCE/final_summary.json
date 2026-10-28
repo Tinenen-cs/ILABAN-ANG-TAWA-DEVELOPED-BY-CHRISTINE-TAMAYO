@@ -1,18 +1,18 @@
 {
-  "utc": "2026-10-28T05:34:15.634143+00:00",
+  "utc": "2026-10-28T17:13:04.735692+00:00",
   "local_passed": true,
   "tests": {
     "EditMode": {
-      "passed": 11,
-      "total": 11,
-      "started": "2026-10-28 04:56:29Z",
-      "finished": "2026-10-28 04:56:30Z"
+      "passed": 13,
+      "total": 13,
+      "started": "2026-10-28 17:04:49Z",
+      "finished": "2026-10-28 17:04:50Z"
     },
     "PlayMode": {
-      "passed": 10,
-      "total": 10,
-      "started": "2026-10-28 04:56:59Z",
-      "finished": "2026-10-28 04:57:05Z"
+      "passed": 13,
+      "total": 13,
+      "started": "2026-10-28 17:05:13Z",
+      "finished": "2026-10-28 17:05:17Z"
     }
   },
   "rule_assertions": 65,
@@ -82,23 +82,16 @@
       "folder": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\QA_SCREENSHOTS\\Exact_3440x1440"
     }
   ],
-  "native_ui_captures": 75,
-  "native_animation_captures": 108,
+  "native_ui_captures": 85,
+  "native_animation_captures": 172,
   "action_frame_checks": 272,
   "audio_files": 38,
   "package": {
-    "zip": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip",
-    "bytes": 200010588,
-    "sha256": "e4dbd4a302f20bca4c52c8bc8b4c66e9f55f6110e41dc16069c310c5ece905c3",
-    "extracted_to": "C:\\Users\\chris\\AppData\\Local\\Temp\\Ilaban-Extracted-qv6wxfi2",
-    "exit": 0,
-    "passed": true,
-    "issues": [],
-    "clean_pc_test": false,
-    "verified_current": true
+    "status": "QUEUED_SEPARATELY",
+    "verified_current": false
   },
   "build_source": {
-    "sha256": "15c30d210d0bb60e96a353a61062a4986f3d91775fcebea8941b501160ae19d7",
+    "sha256": "665f25baba3ec3c329d86b603a93492b6b1d99ff3ad0e7deb799e33e995f5031",
     "files": 976
   }
 }

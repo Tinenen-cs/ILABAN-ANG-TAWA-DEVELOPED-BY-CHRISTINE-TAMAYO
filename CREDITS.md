@@ -39,3 +39,5 @@ The separate self-extracting EXE uses Igor Pavlov's LZMA SDK 26.05 7zSD.sfx, pub
 UPDATE2: six original fictional chibi whole-body sheets edited with the built-in OpenAI image generation tool, using ONLY the prior game artwork. Nanay Tingting, Tito Silya, Aling Boteng Suka: head approx 42% of height, original outfits/items/poses retained. Prompts: preserve 3x2 poses; increase round chibi heads; no real-person likeness; transparent background. Saved sources: ArtSource/StrikeSheets and ArtSource/ActionSheets; runtime actions/portraits under Assets/Resources/Ilaban/Characters.
 
 UPDATE2 emotes: eight dedicated original whole-body Win and Lose source poses each have four runtime frames. Win sparkles animate; losing slump is used during the one-body drain sink. Explicit Lose preview is available to native QA. Win/lose events play the character-specific quiet procedural reaction cue alongside the shared victory/fall sounds; no new recordings or reference likenesses.
+
+UPDATE2: padded rounded corners and softly feathered sky wisps are original code-native graphics. Reference photographs remain local and unused.

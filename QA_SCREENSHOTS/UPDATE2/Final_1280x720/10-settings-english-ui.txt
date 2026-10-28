@@ -1,0 +1,31 @@
+Player 2
+Punch
+F
+Player 1
+Master Volume
+Settings
+Gamepad
+55%
+Game Language: English
+Stick
+Punch
+Punch
+H: Controls   ESC: Pause
+A / D
+B: Back
+H: Controls   ESC: Pause
+Move
+One punch, one step back. Five hits in a row cause dizziness. | Push your rival into the drain to win.
+UP / DOWN: SELECT    LEFT / RIGHT: CHANGE
+70%
+Movement and sound settings.
+A / X
+Back
+Sound
+Move
+Right Ctrl / 0
+80%
+Reaction Style: Formal
+Left / Right
+Move
+Music

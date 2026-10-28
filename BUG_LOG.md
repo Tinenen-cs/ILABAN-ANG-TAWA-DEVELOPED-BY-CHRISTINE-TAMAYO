@@ -103,3 +103,5 @@ UPDATE2 step 7: 118-unit logic reach was shorter than the illustrated chest-heig
 UPDATE2 step 9: missing invalid-action feedback fixed with a universal raycast-blocking focus-trapped notice and consumed dismissal input. Selection Start stays clickable to explain missing confirmations. All 13 tests passed; first editor process crashed on shutdown after tests, clean rerun and build exited 0. Standalone full three-win smoke exited 0.
 
 UPDATE2 step 12 regression check caught missing CanvasRenderer on the new masked cloud Graphic during PlayMode clipping. Added explicit required CanvasRenderer before the Graphic. Initial Step11 smoke completion/performance alone did not verify absence of logged exceptions; superseded by rerun and final log-scanned QA. Five-segment Hilo logic remains unchanged.
+
+UPDATE2 final audit: Editor exit now directly calls the editor API under UNITY_EDITOR, avoiding reflection against an assembly name that may differ between Unity versions. Standalone retains Application.Quit. Opening evidence checks the actual loaded painted HeadingLogo resource and full title rather than obsolete removed intro credit text.

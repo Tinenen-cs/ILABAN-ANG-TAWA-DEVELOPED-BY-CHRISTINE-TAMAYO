@@ -12,18 +12,14 @@ A two-player Filipino street brawler made by Christine Tamayo. Pick a character,
 
 ![Laban sa palengke](Docs/ReleasePreview/match.png)
 
-## Which file to download and upload
+## UPDATE2 release status
 
-**Upload `ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip` to Canvas.** It contains the tested Windows x64 EXE and every required companion file. Size: 200,010,588 bytes. SHA-256: `e4dbd4a302f20bca4c52c8bc8b4c66e9f55f6110e41dc16069c310c5ece905c3`.
+The requested UI fixes, original chibi head revisions, first-to-three match, five-option pause, error notices and whole-body emotes are implemented. Final verification and one-file packaging are in progress. Published v1.0 files and their old hashes are historical; consult SUBMISSION/FILE_INFO.txt after UPDATE2 delivery verification.
 
-- [Google Drive folder](https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH): verified game ZIP and supporting files; Anyone with the link: Viewer. [Download the game ZIP](https://drive.google.com/file/d/1wDqFNpaPGaU3QmxbVzE-fA0lP0VZ_1wr/view).
-- [GitHub Release v1.0](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.0): download the verified ZIP asset. GitHub replaces spaces with dots in its download filename; its hash is identical to the Canvas ZIP. The source repository is PUBLIC.
+The requested Canvas file is **ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe**, one portable file. It must pass independent fresh-folder tests and Defender before recommendation. Keep the complete Windows folder/ZIP as backup; never submit its inner Unity EXE without companion files.
 
-On a phone, download the ZIP then transfer it to a Windows computer, or download directly on a school PC. Right-click > Extract All, open the extracted folder and double-click **ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe**. Keep `_Data`, `UnityPlayer.dll`, `MonoBleedingEdge` and all other companions together. No Unity installation or game installer is needed.
-
-The optional single-file SFX EXE was rejected: Windows requested administrator elevation (WinError 740). It is not recommended or uploaded. Use the safe ZIP. If Canvas rejects a raw EXE, upload the ZIP; rename a ZIP only if the professor explicitly instructs you to do so.
-
-Defender scanned both candidate deliverables and found no threats on this PC. A clean-PC and unsigned-file SmartScreen check remain manual. If SmartScreen warns, verify the official download/hash and follow school policy; only choose More info > Run anyway when you trust that verified file. Never disable antivirus.
+[PUBLIC source repository](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO).
+[Drive folder](https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH).
 
 ## Controls
 
@@ -34,11 +30,11 @@ Defender scanned both candidate deliverables and found no threats on this PC. A 
 
 ## Game rules
 
-Movement is left and right only. Every player has the same straight punch. A landed hit moves the target back exactly one step. Five consecutive hits make the target dizzy for two seconds; a miss, a three-second gap or being hit resets the streak. The round ends immediately when a player falls into the kanal. There are no health bars, knockout system, jump, kick, extra move or match timer.
+Movement is left and right only. Every player has the same straight punch. A landed hit moves the target back exactly one step. Five consecutive hits make the target dizzy for two seconds; a miss, a three-second gap or being hit resets the streak. The round ends immediately when a player falls into the kanal. First to three round wins takes the match; earlier rounds advance automatically. All eight use 190-unit reach, .12-second startup, .36-second cycle and one 52-unit step per hit. The five-segment Hilo meter tracks landed-hit streak, never health. There are no health bars, knockout system, jump, kick, extra move or match timer.
 
 ## Submit in Canvas
 
-Upload this exact file: **SUBMISSION/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip**. The instructor should extract it and see the portable EXE, its required Unity data and support files, and the Tagalog `BASAHIN_MUNA.txt` guide. No source project is needed unless the instructor separately asks for it.
+UPDATE2 single-EXE verification is pending. Do not submit the older elevation-dependent SFX. Current exact size/hash and delivery links will be recorded in SUBMISSION/FILE_INFO.txt only after fresh-folder launch and full three-win match checks.
 
 ## Requirements and credits
 

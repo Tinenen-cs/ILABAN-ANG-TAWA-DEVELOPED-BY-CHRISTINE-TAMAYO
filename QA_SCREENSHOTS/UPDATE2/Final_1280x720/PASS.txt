@@ -1,0 +1,1 @@
+Portable smoke passed at 1280x720. Tagalog/Pormal fresh defaults; readiness gate; three fixed-light maps; actual simulated gamepad movement/punches to three drain wins; five-hit dizzy, automatic round banners and final results; validation popup; pause; controls; exit dialog; English settings. Physical input/listening remain manual.

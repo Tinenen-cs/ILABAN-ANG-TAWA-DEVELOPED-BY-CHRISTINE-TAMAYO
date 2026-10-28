@@ -1,3 +1,12 @@
+# CURRENT UPDATE2 - 2026-10-29
+
+Done: steps 1-12, individually committed; latest 6516807. Step 13 QA PASSED: 13/13 EditMode, 13/13 PlayMode, build/65 checks, five sizes/17 screens each (85), 172 native animation captures. Static English/glyph/audio audit clean; 38 WAVs, no clipping. Final screen contact sheet and key native sizes personally viewed. Source commit/push is next. New EXE/Drive delivery not yet done; v1.0 artifacts/hashes below are historical.
+
+Next five: finish log-scanned QA/audits; inspect/copy final captures to UPDATE2 and refresh docs; commit/normal push after photo/large-file audit; build/test single-file temporary-extraction launcher and scan Defender; publish verified EXE/backup and verify Drive sizes/sharing/hash/clean tree.
+
+Exact resume command: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md CURRENT UPDATE2, RESUME_STATE.txt and Docs/UPDATE2_REQUEST.md. Run git status. Finish step 13 QA, then step 14 single-executable verification and delivery. No questions, no force push, never use reference photos, never claim unrun tests."`
+
+---
 # UPDATE2 in progress ? latest user attachment supersedes completed v1.0 below
 
 Step 1 DONE: left-facing jeepney now travels right-to-left; opening reuses exact painted HeadingLogo, with pop, transparent-letter shine and gentle glow; title tagline moved up with a 30px clear gap. Real-folder Unity build + 65 checks passed, native 1280 smoke passed; opening/title screenshots personally viewed in QA_SCREENSHOTS/UPDATE2/Step01. Existing published v1.0 is historical until UPDATE2 is built/released.
@@ -139,68 +148,74 @@ Drive method 1 unavailable: no G: or Google Drive home mount. Method 2 metadata 
 
 Delivery checkpoint: main pushed successfully; v1.0 published with safe A only. GitHub asset size and server SHA-256 match local A (200010588 bytes, e4dbd4a302f20bca4c52c8bc8b4c66e9f55f6110e41dc16069c310c5ece905c3). GitHub sanitizes spaces to dots in its asset filename. Drive A uploaded via signed-in browser after connector size failure; folder list confirms ID 1wDqFNpaPGaU3QmxbVzE-fA0lP0VZ_1wr and matching size. Screenshot ZIP ID 1exPc45F06M08tWoMce4qm-i0fMr6tVpC (47618333 bytes); BASAHIN_MUNA ID 1eP8XA15jvofhJwF7ieRh_i7mnIhrj_fz. Rclone OAuth was not completed; its waiting process was stopped because browser upload succeeded. No token was printed or committed. Next: sharing Viewer, remaining README/FILE_INFO uploads, final readback/hash/status commit/push.
 
-## UPDATE2 step 2 — 2026-10-28T15:42:05.865539+00:00
+## UPDATE2 step 2 â€” 2026-10-28T15:42:05.865539+00:00
 
 DONE: removed generic title mouse/any-key start interception; screen entry consumes initiating press. Keyboard/gamepad routes and pointer regression passed, PlayMode 11/11, build/65 checks and native smoke passed. Controls/exit screenshots viewed.
 
 Next: Step 3: antialiased nine-slice panels; then 4 cleanup, 5 heads, 6 stage zones, 7 first-to-three.
 
-## UPDATE2 step 3 — 2026-10-28T15:48:58.933278+00:00
+## UPDATE2 step 3 â€” 2026-10-28T15:48:58.933278+00:00
 
 DONE: signed-distance antialiased rounded nine-slice sprite with transparent padding; smooth uncompressed UI textures; continuous rounded wood-panel frames. Build/65 checks and all five native resolutions passed; controls/cards/pause/stage screenshots at four required sizes personally viewed.
 
 Next: Step 4 remove card item ornaments and confirm icons; next 5 heads, 6 stage zones, 7 match flow, 8 pause.
 
-## UPDATE2 step 4 — 2026-10-28T15:52:20.436977+00:00
+## UPDATE2 step 4 â€” 2026-10-28T15:52:20.436977+00:00
 
 DONE: removed eight standalone card item images and confirm checkmark decorations; retained baked-in weapons, names and P1/P2 markers. Build/65 checks/native selection smoke passed; clean selection screenshot viewed.
 
 Next: Step 5 chibi head consistency; then 6 stage zones, 7 reach/first-to-three, 8 pause, 9 modal errors.
 
-## UPDATE2 step 5 — 2026-10-28T16:15:11.829446+00:00
+## UPDATE2 step 5 â€” 2026-10-28T16:15:11.829446+00:00
 
 DONE: six original-fictional chibi source sheets regenerated with built-in imagegen; three portraits/body previews and all action frames updated. Sources saved ArtSource/StrikeSheets and ActionSheets. No photos used. 272 structural/48 weapon-anchor checks and build/65 checks passed; 108 native Unity animation captures passed; three changed characters personally viewed.
 
 Next: Step 6 fixed stage zones; then 7 reach and first-to-three, 8 pause, 9 modal errors, 10 emotes.
 
-## UPDATE2 step 6 — 2026-10-28T16:18:58.485125+00:00
+## UPDATE2 step 6 â€” 2026-10-28T16:18:58.485125+00:00
 
 DONE: centered stage card pivots, reduced fixed card height, separate name/description/hint zones, selected-card clear gap; subtitle Isang tuntunin. Build/65 checks and native smoke passed; highlighted Looban screenshot viewed.
 
 Next: Step 7 common visual reach, short approach, persistent first-to-three match; then 8 pause, 9 modal errors, 10 emotes, 11 ambience.
 
-## UPDATE2 step 7 — 2026-10-28T16:25:59.014105+00:00
+## UPDATE2 step 7 â€” 2026-10-28T16:25:59.014105+00:00
 
 DONE: shared reach 190, body gap 112, start gap 230 (short 40-unit approach), unchanged 0.12/0.36 punch timing and 52 knockback. Persistent win tally; automatic 1.6s round banner; third win opens centered winner-pose panel with replay/select/exit. Universal safe No-default exit modal. EditMode 13/13, PlayMode 11/11, build/65 checks and complete native three-win simulated match passed; final screenshot viewed.
 
 Next: Step 8 five-option pause; then 9 modal errors, 10 emotes, 11 ambience/performance, 12 Hilo proof.
 
-## UPDATE2 step 8 — 2026-10-28T16:29:49.060232+00:00
+## UPDATE2 step 8 â€” 2026-10-28T16:29:49.060232+00:00
 
 DONE: five-option rounded pause menu: resume, controls, choose other fighters, title, exit. Exit uses shared No-default modal and Esc cannot quit. PlayMode 12/12, build/65 checks and complete native smoke passed; pause screenshot viewed.
 
 Next: Step 9 trapped-focus validation popups; then 10 win/lose reactions, 11 subtle sky motion/performance, 12 Hilo, 13 final QA.
 
-## UPDATE2 step 9 — 2026-10-28T16:42:13.507480+00:00
+## UPDATE2 step 9 â€” 2026-10-28T16:42:13.507480+00:00
 
 DONE: shared rounded soft-sound validation modal blocks pointer and consumes keyboard/gamepad dismissal. Readiness start, invalid stage/settings/result attempts covered; same-character duels intentionally allowed. Clean rerun PlayMode 13/13 exit 0, build/65 checks exit 0, 17-screen native full-match smoke passed; popup/banner viewed.
 
 Next: Step 10 verify and animate all win/lose poses; then 11 sky ambience/performance, 12 Hilo proof, 13 final multi-resolution QA, 14 single EXE.
 
-## UPDATE2 step 10 — 2026-10-28T16:46:25.717884+00:00
+## UPDATE2 step 10 â€” 2026-10-28T16:46:25.717884+00:00
 
 DONE: explicit whole-body Lose rendering and character win/lose cue playback; dedicated original Win/Lose source poses for every fighter, four frames each, sparkle victory and slump/drain loss. Build/65 checks and 172 native strike/hurt/win/lose/pair screenshots passed; all-eight emote contact sheet personally viewed.
 
 Next: Step 11 subtle sky clouds and measured frame timings; then 12 five-segment Hilo verification, 13 full QA/docs/push, 14 portable single EXE.
 
-## UPDATE2 step 11 — 2026-10-28T16:51:25.388122+00:00
+## UPDATE2 step 11 â€” 2026-10-28T16:51:25.388122+00:00
 
 DONE: faint feathered code-native sky wisps clipped above the street, all-map gentle flags plus existing restrained leaves/night lamps; no vehicles/floor motion. Build/65 checks and native match passed; three maps viewed. Measured 59.64/59.94/59.05 average fps, 16.70ms p95, occasional 33.4ms frame: near-60 observed, strict steady-60/hardware stress NEEDS MANUAL TEST.
 
 Next: Step 12 five-segment Hilo checks; then 13 all suites/five resolutions/English-glyph audit/docs/push; 14 standalone EXE and verified delivery.
 
-## UPDATE2 step 12 — 2026-10-28T17:02:12.864799+00:00
+## UPDATE2 step 12 â€” 2026-10-28T17:02:12.864799+00:00
 
 DONE: retained exactly five Hilo segments because dizziness requires exactly five consecutive hits. Fill 1-5/reset verified by PlayMode HUD test and 65 rules, fifth-hit stars screenshot viewed. Fixed required CanvasRenderer on masked clouds. EditMode 13/13, PlayMode 13/13, build/65 exit 0; complete three-win native match with runtime-log scan passed. Corrected measured fps 59.63/59.94/59.94.
 
 Next: Step 13 final source/evidence harness, all tests/five sizes/audits/docs/source push; then 14 one-file executable and verified release/Drive.
+
+## UPDATE2 step 13 — 2026-10-28T17:15:35.092874+00:00
+
+Final QA PASSED: 13/13 EditMode, 13/13 PlayMode, 65 rules, zero C# diagnostics, 85 UI captures across five sizes and 172 native animation captures. English/glyph/mojibake/audio checks clean. Screens viewed. Source audit/normal push next; executable delivery still pending.
+
+Next: Step 14 build/test one-file EXE, Defender, hashes, public Release/Drive verification and final clean-tree handoff.

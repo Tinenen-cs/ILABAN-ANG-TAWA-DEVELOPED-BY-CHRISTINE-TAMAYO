@@ -23,14 +23,14 @@ results=json.loads((root/'Docs/portable_qa_results.json').read_text());assert {r
 captures=[]
 for result in results:
     size=tuple(map(int,result['resolution'].split('x')));folder=Path(result.get('folder',root/'QA_SCREENSHOTS'/('Final_'+result['resolution'])))
-    assert (folder/'PASS.txt').exists() and 'Handog ni Christine Tamayo' in (folder/'00-opening-ui.txt').read_text(encoding='utf-8')
-    files=sorted(folder.glob('*.png'));assert len(files)==15,(folder,len(files))
+    assert (folder/'PASS.txt').exists() and 'ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO' in (folder/'00-opening-ui.txt').read_text(encoding='utf-8')
+    files=sorted(folder.glob('*.png'));assert len(files)==17,(folder,len(files))
     for path in files:
         assert path.stat().st_mtime>=build_time,'Stale capture: '+str(path)
         assert Image.open(path).size==size
         captures.append({'file':path.relative_to(root).as_posix(),'size':list(size),'sha256':sha(path)})
 frames=json.loads((root/'Docs/character_action_validation.json').read_text());assert frames['all_passed'] and frames['frames_checked']==272
-animation=json.loads((root/'Docs/animation_capture_evidence.json').read_text());assert animation['passed'] and animation['frames']==108
+animation=json.loads((root/'Docs/animation_capture_evidence.json').read_text());assert animation['passed'] and animation['frames']==172
 for row in animation['files']:
     path=root/row['file'];assert path.stat().st_mtime>=build_time,'Stale native animation capture'
     assert sha(path)==row['sha256']
@@ -47,6 +47,6 @@ if not args.local_only:
                 assert len(names)==1 and hashlib.sha256(z.read(names[0])).hexdigest()==sha(path),'ZIP is older than current build: '+str(path)
     package['verified_current']=True
 (evidence/'captures.json').write_text(json.dumps(captures,indent=2),encoding='utf-8')
-summary={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'local_passed':True,'tests':tests,'rule_assertions':65,'resolutions':results,'native_ui_captures':len(captures),'native_animation_captures':108,'action_frame_checks':272,'audio_files':38,'package':package,'build_source':provenance['source']}
+summary={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'local_passed':True,'tests':tests,'rule_assertions':65,'resolutions':results,'native_ui_captures':len(captures),'native_animation_captures':172,'action_frame_checks':272,'audio_files':38,'package':package,'build_source':provenance['source']}
 (evidence/'final_summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
 print(json.dumps({k:v for k,v in summary.items() if k not in ['resolutions','package']},indent=2));print('Package:',package.get('status','verified current'))

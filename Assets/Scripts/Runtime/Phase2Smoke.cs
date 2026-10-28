@@ -60,7 +60,7 @@ namespace Hexbound
             game.Show(AcademyGame.ScreenState.Title);game.RequestExit();yield return Capture("09-exit-dialog");game.CancelExit();
             game.SetLanguage(1);game.Show(AcademyGame.ScreenState.Controls);yield return Capture("10-settings-english");game.SetLanguage(0);
             File.WriteAllText(Path.Combine(directory,"performance.json"),game.PerformanceJson());
-            File.WriteAllText(Path.Combine(directory,"PASS.txt"),"Portable smoke passed at "+Screen.width+"x"+Screen.height+". Tagalog/Pormal fresh defaults; readiness gate; three fixed-light maps; actual simulated gamepad movement/punches to manhole; dizzy and results; pause; controls; exit dialog; English settings. Physical input/listening remain manual.");
+            File.WriteAllText(Path.Combine(directory,"PASS.txt"),"Portable smoke passed at "+Screen.width+"x"+Screen.height+". Tagalog/Pormal fresh defaults; readiness gate; three fixed-light maps; actual simulated gamepad movement/punches to three drain wins; five-hit dizzy, automatic round banners and final results; validation popup; pause; controls; exit dialog; English settings. Physical input/listening remain manual.");
             Debug.Log("ILABAN PORTABLE SMOKE PASSED "+Screen.width+"x"+Screen.height);Application.Quit(0);
         }
         IEnumerator Capture(string name) {
@@ -71,6 +71,7 @@ namespace Hexbound
                 t.ForceMeshUpdate();textDump.AppendLine(t.text.Replace("\n"," | "));foreach(char c in t.text)if(!char.IsControl(c)&&!t.font.HasCharacter(c))Debug.LogError("MISSING GLYPH: "+(int)c+" / "+t.text);float height=t.preferredHeight;
                 if(t.isTextOverflowing)Debug.LogWarning("LAYOUT TEXT OVERFLOW: "+name+" / "+t.text+" / "+height+" > "+t.rectTransform.rect.height);
             }
+            foreach(var art in FindObjectsByType<RawImage>())if(art.isActiveAndEnabled&&art.texture!=null&&art.texture.name=="HeadingLogo")textDump.AppendLine("ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO");
             File.WriteAllText(Path.Combine(directory,name+"-ui.txt"),textDump.ToString());
             var image=ScreenCapture.CaptureScreenshotAsTexture();File.WriteAllBytes(Path.Combine(directory,name+".png"),image.EncodeToPNG());Destroy(image);LastCaptureAt=Time.realtimeSinceStartup;
         }

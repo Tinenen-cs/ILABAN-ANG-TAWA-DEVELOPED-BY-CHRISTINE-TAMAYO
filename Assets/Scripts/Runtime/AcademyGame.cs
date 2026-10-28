@@ -345,7 +345,7 @@ namespace Hexbound
         public void CancelExit(){exitOpen=false;if(exitPanel!=null)exitPanel.gameObject.SetActive(false);focus=exitReturnFocus;screenEnteredFrame=Time.frameCount;}
         public void QuitGame(){
 #if UNITY_EDITOR
-            var editor=Type.GetType("UnityEditor.EditorApplication, UnityEditor");editor?.GetProperty("isPlaying")?.SetValue(null,false,null);
+            UnityEditor.EditorApplication.isPlaying=false;
 #else
             Application.Quit();
 #endif

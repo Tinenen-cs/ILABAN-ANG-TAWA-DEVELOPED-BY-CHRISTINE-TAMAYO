@@ -6,691 +6,691 @@
   "files": [
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Hurt_00.png",
-      "sha256": "e58e8d0ba20cd6031e581366b32448b3372a5d1259f0977fc45cc99c5f1be5a1"
+      "sha256": "04ad4dd32093e5c808570baab2b9fa3540e0e4bed249d1ebb04d96143e3df7b0"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Hurt_01.png",
-      "sha256": "77709829ae1e6e02300c5844b4c9cccd03df05d60c6c9e8381caa542719ddf02"
+      "sha256": "6c59309252a9c39e6548d18958bc6b03ec0ee16ad55793893fd260397d663e65"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Hurt_02.png",
-      "sha256": "4e4adf271e4022c2a8af56557aab58df959c4d37e5ee21e034e0fcc47312bb9f"
+      "sha256": "b38916291f9b11d5e60c3c3f727c3c03e4366e5d2e270cdc97f9c6ce3e474e48"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Hurt_03.png",
-      "sha256": "8fa3cb38f45ed3bfd11ea1b77f1cacfe89c474ace7dfd4bc3e50d3f23356e1bb"
+      "sha256": "66d3b818cb8f91315ddb3c06716b15a98eb10b321ca7d9c2c873fcc0d820bd05"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Lose_00.png",
-      "sha256": "e34a354766025fb1bad5866c960d1f1d47d8e24be8dc8f186d0dd21639475cee"
+      "sha256": "232ed5f747bd057a842fe7e22d52ff9bba02f2028ce9ad78816ef931bba9141c"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Lose_01.png",
-      "sha256": "8e086903a2c28c7638fd35ba26494fa049399733bd9c7f2d3b0b65ef0c953b35"
+      "sha256": "571d881c5b56b8870ee196d1901e5774e791502fad4ca06f8bb3b501aa9eb5bc"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Lose_02.png",
-      "sha256": "4fec848aa7a1515120d7c5eea4104e28bfecfb76d5a4cd1310b3f6bdbdd72d8d"
+      "sha256": "4e67e1265aed2381377f5569f7a1210cb5ad87e88c3c408591a886a45bffa7da"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Lose_03.png",
-      "sha256": "28b1624adf07f79f14075dddc1ba0c290d0f0f9ff537e0f0f0695c880a824cbf"
+      "sha256": "1391f3a371c414d87b7fbee97db33b2fe59176cf946360a5db5e399bb2de42f4"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Strike_00.png",
-      "sha256": "d1d92e663a23df41274a85a4eeca2eac3e5bb38d916ec5339847562c75d16682"
+      "sha256": "1b00599a49c6c5e9835443fbebf0e6f20128f108c354ffdeb9b7913be1be7c0a"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Strike_01.png",
-      "sha256": "a832bebfed6f638cbe64f583e2e4a503b67d7a49c7ebdd4631449e267565bb25"
+      "sha256": "ebf4fa55eff0c3790b552955f213dfd9ac517e5080833dca90638de8eb71b66a"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Strike_02.png",
-      "sha256": "7737122e244646bb54b8403929b16a65bc904340c8cfffe7ec03f52d0091298d"
+      "sha256": "a53f4fd88d27c15fc0a5331bd6d266a1edb18adcf4aec89fd61769fd4ec4d57a"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Strike_03.png",
-      "sha256": "004c7e62932ac81144fe04e7346a6d3d879c68d813f8366e2fde01857379067f"
+      "sha256": "dbe30f5c165b5fdf15a3230f1bb28638d425017f13f3259168032971e2e9cf1f"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Strike_04.png",
-      "sha256": "c29a3b8cf6370607552c3ad81650183dbe70f7fbd506dbab5553a4ea6e473b7c"
+      "sha256": "fa087ccb9a22679e697d5ccc507e76e905a62cd1ab885f0bf09da28be7909e2b"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Strike_05.png",
-      "sha256": "4405bf70d7f3080a74a63b8c83175ebfadb10ea762ebdf9cea59fa377548915f"
+      "sha256": "7680c8aaae7dbbeac6e401959c0f39e0f00e17e39459a0aab2a283dbe7323353"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Win_00.png",
-      "sha256": "c80d28507ea168d18b5510868dc6417c1c310c34b601c8d7fc05dec0318b3275"
+      "sha256": "264614f6d4bdf3d6abd05fdd9c553c4ab5bffcc5c830869c7ff80093d25a25cf"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Win_01.png",
-      "sha256": "00e8fe7a9e9cd85894f07211cd72a09868dbc1d779ea64d75a65cd0c9bacfe11"
+      "sha256": "461e764a44ca2d3bb0d8ca1916cc01ecc29af434401c4ec923b4c0c864b53fdc"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Win_02.png",
-      "sha256": "2d22b75ea4fae9948888434d07421d1da8bfe226b472ecbea318b465bb1d6751"
+      "sha256": "61c49ead939f49fd4483339c97ebee105245f408e2c646312c4453afd9487cdb"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingBotengSuka\\Win_03.png",
-      "sha256": "40be4889fe323ca31b999ebd7116f1b5f2249b7540ab26a378cf52bfbfeb37bc"
+      "sha256": "b55de1867d710955e21a77ab15af65b444f0bf86cc4bf3af694ff8afc35315d1"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Hurt_00.png",
-      "sha256": "32f70ab530e2cfc818a221f5bf117b5351155d32d09df7ceda1dd0e0087e9469"
+      "sha256": "df1c218b365e2ac10e7d208d045e1b44b3627621dd020945709ead19d96e139f"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Hurt_01.png",
-      "sha256": "19ad0affa4064803aa52e11b9af7574e0cfe17cb90f88326c9cf3b66a0661e74"
+      "sha256": "83eb25334c7d15d6b76c5cc9f9a9ddc3fdd4415d43f1590a1973007ba72de058"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Hurt_02.png",
-      "sha256": "e8a8f7244b5fc3a0362eee6af1c7e0bd4ab33058defff850c22785fba8fb5520"
+      "sha256": "cebb1eb20e448d67a3517393eb9972b2839c91c98d6692b1c457ce7ff3cb7fca"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Hurt_03.png",
-      "sha256": "b7a5c6293ba124decf82548d150e48fca4b0d6387259ea7368f2d1634f7e31b6"
+      "sha256": "6c85403d53a9a4a0a31422a6bbded9bb8591de8b98ee2d6a42e021620215c38b"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Lose_00.png",
-      "sha256": "7d27472839c3a04bbac7bda38926d4d1a3abfba3b993d6e83265df73e8a89166"
+      "sha256": "9fc03b056165ffd6d4409a3b6e1fe0541b16f71990e2e1d7f902e699b04bfae5"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Lose_01.png",
-      "sha256": "f84defc5003d87c37b3a041db575cc1666255bb0628de4ad044b0d016991305d"
+      "sha256": "b77a2211859f6208ed8c8a5a917fb270e4a246f92f11b471c09b1e25db140c80"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Lose_02.png",
-      "sha256": "e216c6810a2c3c6452fd73091e058e4ef0976d7cc03f9d660af5baba2aba5e9a"
+      "sha256": "306e6ea12ffaacdb8983e1728001c40f4f4620ffbe55959cdb2e46fcc7850e63"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Lose_03.png",
-      "sha256": "85d4e5357cb6deea4d629bedd1a6118a9c1a8f71c91727039a3df77a27d1ebe3"
+      "sha256": "aa88fb1f863eaaf0000feded93e0c844c73254c08e98a62187e2c22702dd0d42"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Strike_00.png",
-      "sha256": "6e1810b6bda55ed83e6c53a1560104f1802938495de2980d172766ed9d0761a5"
+      "sha256": "80254b8dc1c3ef22bb34e434f1920fb2cd77a6ae507606b443ef9073bd6709fc"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Strike_01.png",
-      "sha256": "cec07f44311c2d071823da0f6e4f4d42d179b2ed3fc1eb256778f5344551ffac"
+      "sha256": "0f04d809ba3a4021215e2803b39417ef450d002fa87e88c12a56ff03e83f38d9"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Strike_02.png",
-      "sha256": "81aa316936531caf2300909b320b4fd3ba97825d0af27018f7f0806cd456cb50"
+      "sha256": "8837e63ecff2f32c1c7145c46768297b113863863145f0261738fc495748ee83"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Strike_03.png",
-      "sha256": "643cc7bae0adb4a2897c43a88972db1c2a32278f0fad65deecf41b8d31e2ce24"
+      "sha256": "c72863c43fb9ddf4cebdd282f54bc9e42f1c21c0a9a690b023e5dc53cef12492"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Strike_04.png",
-      "sha256": "ab8345f41efbaf1b749c451c380a39c55769040a95a762ed55aa65df7072769b"
+      "sha256": "c9ff91d4842dda795dbeca724a1cc317ec6ab7c9e4d2e45433c22e9fc43fb3a4"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Strike_05.png",
-      "sha256": "f76026ce712c3e7a1009c8337099aed5799c0734389b97745edb33deb114e215"
+      "sha256": "268f63371d43eb8eabe9405839b9409ff4dc35f6101f0e374a1c28707711dbdb"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Win_00.png",
-      "sha256": "c4940dc5d70204c97f2ae6109c43691a0e55bfe6d8ca16bd49442eac7bc08f9a"
+      "sha256": "d704985cb492166d1f997eb7f2274fb036327a63309c19c66ad2495ece5735eb"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Win_01.png",
-      "sha256": "cfcac00e8ce8e5565c3634ab706bea7b8d39a48295da34689e03eed504489005"
+      "sha256": "5db84052e6e96972d06dfe15be79c7a8071feb2a138ad35220dfb893a2411dcd"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Win_02.png",
-      "sha256": "4e72164ee7a26c12538e197a9aae7de3b9c4a6e88c327a4d0e72cc5d53470bb2"
+      "sha256": "1075dc438bb4e48d8088ad0eb45ac846ce413d4b2c8384b0ecb6445299f19e78"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AlingPamalo\\Win_03.png",
-      "sha256": "0429bcd15bddc31945ca2279ad3258929018dff61389b316d3eadbd2bfb399d9"
+      "sha256": "4d946af5f544bf29236620e71913bdd05a8fc685a2e6432acd85fe8df51f33e9"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Hurt_00.png",
-      "sha256": "b3c03c976cfee29792631e19c8d989dc37b6ec67b29346cac53360d9b81dcd7f"
+      "sha256": "3c33465337a4b1c0152c55f1cfed6285e8b4b40a3803fdcce8de00f47547e12d"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Hurt_01.png",
-      "sha256": "b9f0a4d6f9cb9ba72c20a8a0e2cb3134c38f3eed3de939907fc160de864da2f4"
+      "sha256": "f82702bfd1519cc26234870fa889c6655d4547a5e797817550929c5f1db2c1c5"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Hurt_02.png",
-      "sha256": "fd7fb05786b751cec43412ba6ae559c6ae708a8bdb2c264aaba21060f34bfd64"
+      "sha256": "7ccc9d9a576eef0e9c4eea282925962028fa6807c78f6b3b46dce4634c539197"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Hurt_03.png",
-      "sha256": "f804a0538cddfb3226a22bbe0d4a5f2513fab7b959f26f19a758e2968adefeb8"
+      "sha256": "48dcf1ae960c4c0f6afda6acfb8329bcb59ad6683f89bbc88f72756954ebdaa0"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Lose_00.png",
-      "sha256": "76c29777a17fc7dcc997206b1a4063af2d3ae8e28103382156c3ccc989bc2f31"
+      "sha256": "dd37fd6f30ebdb5939b90ce89e09e6c698859f1d1e05356f872fc9677c66ea72"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Lose_01.png",
-      "sha256": "5a6dec91c71c7db6d75da5f6299a3df7018c68b7cb3ba81799d3ba4da5942217"
+      "sha256": "3416681315cde1925d51c8cd9244a86f9442e49e159526f190e49b0bc105a2c9"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Lose_02.png",
-      "sha256": "456e1ef42bcfa814568a5d19511484d8a88aa0035634e43fe3dcca745cc3dc58"
+      "sha256": "b6e16dda8c032fa57fb21556e656a7b3b156204f68924faa19644162af9fedb4"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Lose_03.png",
-      "sha256": "b409bb993092fdaf67c462644baf5eb9ab7021df9e69508656ef9e23ade43dfa"
+      "sha256": "af29ee8c801554437d1098eeb0ccd21d168819d91775eff4dda677546081d143"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Strike_00.png",
-      "sha256": "bf2462cb479d53ce4e4da911fbb2fa853df007400b1b37ae1195f7dbd15f6d96"
+      "sha256": "5c932dc0b885010291dcd75809bedba4fa18b51fa510e2bcf7ea3b5d34c8d2c7"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Strike_01.png",
-      "sha256": "cd44fbeddccff1ce06288f3b7805abd4dbbfb7cf359699d31ddb8a0299afd201"
+      "sha256": "9fb1ee44aadbc9640967d7032ad8533f8f3cd675a966a897227e96cfd7ad3a51"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Strike_02.png",
-      "sha256": "d0a739783ff9d261242fdaf008f363eb59349c822ea656413e6d25dd7c67420c"
+      "sha256": "949ff55dfce2d6b35fd880c693991b1bd42e91b44985c3f2e48c900cd2a52d24"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Strike_03.png",
-      "sha256": "e98f046fd97fce4117d0bf948449a37f314ad49699bae9384f96158c6194be9d"
+      "sha256": "c7611c331dd2e0e4119da672eddc9d18225aebffbe8402b730a3cec3a7826799"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Strike_04.png",
-      "sha256": "d6e4cfde0c60bd11eaac8969f26f3762b8abbfa3809cad7d7336fbc65bdabe0e"
+      "sha256": "683f925c81abbca27477a73f18972b9070511865e7c9b2214c12f95f6322bbdc"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Strike_05.png",
-      "sha256": "3a8f71bd20d49e32bd4f4b9883ab67edc949abd810a8fe0798630a78bee6bb98"
+      "sha256": "61bc9cd5234d39a6132bad9387e621fecf049aadb2035658dbc6125556679b5b"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Win_00.png",
-      "sha256": "9c0656f24d61ac0a6c6a06098b9beeab279a46ea75dff3f2bb1e01e4b7d641d7"
+      "sha256": "ff2ba9e226b6f47f589651aeee438c2d1aaf4a46dbbb1b16da05af46209d3a06"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Win_01.png",
-      "sha256": "97a87637c5ace2932cd7f4f7ffae1525ab0b506d488ab9c569242ca7f130aec7"
+      "sha256": "26a95eb72e406d15c17951e878096cddbf3b0eb031e6396238e3ab15b6791e92"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Win_02.png",
-      "sha256": "8bcaf5b0919a4176c6a6a9585fd9c56e5cddb0128eef705e6b11fb05861699a4"
+      "sha256": "8006f53b7642151cafd7313543ed9e0914b260bb565efff735f6875e06076110"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\AteBatoBatoPik\\Win_03.png",
-      "sha256": "5bedfa33ec6a9ca1eea2eb61a99eedc639d28f18b372083394e68ffb4f5385cd"
+      "sha256": "263c86b4d764a8e6ac6a0679068227b1ec31f015d1246500393311157b580898"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AlingBotengSuka-vs-NanayTingting.png",
-      "sha256": "e773a61b35a71f8846ebb7a23ab429e205ddbbf3147e73962558d200d0e12557"
+      "sha256": "7d94392694ba3c665b450a2d559f86c9a4e90a3d6b815790456fd2607da6924e"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AlingPamalo-vs-AlingBotengSuka.png",
-      "sha256": "0c69c36c95fe27980cd8ce73600dc006dc181c7ec7fce62f92c7e347ad3f7b39"
+      "sha256": "9941a7cb635146051261d0fef079a2226cc62377bef7f96694182552374eb440"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AlingPamalo-vs-AteBatoBatoPik.png",
-      "sha256": "0fef2b5e03513536bf9029173e1e8c002fcdefecca7f6e4c8c8aa1c3eff35ec2"
+      "sha256": "87e483d4b86111e8d3085854fd60a195482074283369512ab3bdfc5a66bc71f2"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AlingPamalo-vs-KapBatuta.png",
-      "sha256": "479e1e115dd903b73aa2e2c624ac448f77cdd3a77f8db6830a32821f8b556deb"
+      "sha256": "2eaa90b61d123c6e94b89fd268818531da101b144058ecef3833f7fc8dfe975c"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AlingPamalo-vs-KuyaTsinelas.png",
-      "sha256": "da6fe2e32205e6f6598c5fa9dc2282e339158e8209486c0a7384074b88db5551"
+      "sha256": "a4d0830af451dd3e8cfcf271fdc0befc4c0440164924f71a82533da5637faf6c"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AlingPamalo-vs-ManongLatalata.png",
-      "sha256": "3334a4324dc8fa96fc3b89065c89b96299c8f765ca46274a58a25f8e7fe15cbb"
+      "sha256": "d02639660c6dcff6cff7303f47ce67ee6e193e7fefc1d03b0157e6e054953426"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AlingPamalo-vs-NanayTingting.png",
-      "sha256": "8459a95fb13a7d10bb2f1ca8e01aafbb36efbabb3bc4272dbe5d6c421b618a01"
+      "sha256": "db963a68c24e634c71980764842430b828b657a36278906c7c068ae6c5d365f3"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AlingPamalo-vs-TitoSilya.png",
-      "sha256": "0161e32620e1fe74deb7df5747d657aa11f4f4e919507d20eab08e4fb1582878"
+      "sha256": "7a94e780b5109a68ed60c1fe0de07caea17098472802bfcc8d2737f7961fc1af"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AteBatoBatoPik-vs-AlingBotengSuka.png",
-      "sha256": "452ac610d2bcd4b413ad3b0edb44080465c6aa248e021327e412c523616834c0"
+      "sha256": "ba276fb0c9e682e57c864f6efa644a9dbed6c6009e477dab5a02effd4c4dec0f"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AteBatoBatoPik-vs-KapBatuta.png",
-      "sha256": "d0723e2beea69d446c81dc83eb98b62967ded43f6893249ae09530d026626b33"
+      "sha256": "54f37f6e52985f4c88fa670feb30e7ad0da14dc18a7803814018087b59143397"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AteBatoBatoPik-vs-ManongLatalata.png",
-      "sha256": "84b319babfedbb96fe3d810f0a2cdb63f86a84d4d74a955cdb3eb77bcd3b8fe9"
+      "sha256": "281b7939205b318beb07b819cbf6724493c2048b87fed7e8da59bfa48af5caf2"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AteBatoBatoPik-vs-NanayTingting.png",
-      "sha256": "b09c41dacd130fcf9fb3ab4c15a81937971baf44036dd68db6f3be0619985e69"
+      "sha256": "2a132ceea513480c83965ea1e344bc9fa70477a2f57db0c44675995d766ad59c"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\AteBatoBatoPik-vs-TitoSilya.png",
-      "sha256": "c16dc9c8e3c1d2c4fefc4d92c8401bbb7707fb88a7a1773e1ee154e30210c74d"
+      "sha256": "a39c264c6fbf951d0825df2951ae301790d4cb8bf52b117f085bcc73cd0d403e"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\KapBatuta-vs-AlingBotengSuka.png",
-      "sha256": "68b939eb860870f3f901ac004fe74b6850adc74b70d3ce4dc48ff5282813f437"
+      "sha256": "cc2a1caf76412045cde4b09114a3ec7660d2ef79eafb7c1982cfe5587704b5da"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\KapBatuta-vs-ManongLatalata.png",
-      "sha256": "6df455265f8dfe96d93ee688c4b1377913d4c25dfce8bae4c9853a434308de52"
+      "sha256": "0b89b3f676df61c45a28cba96a99d9bf35a7914235707f0bc36e3e2e5c7fc265"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\KapBatuta-vs-NanayTingting.png",
-      "sha256": "42fea02fed5bcbd876e048279c3035d918f25fcc617bbee6b737924594209ed0"
+      "sha256": "1c8faa5bfcf0ceb280ed0007e12eaa0b45f490d7436058cf5bec48482738a07f"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\KapBatuta-vs-TitoSilya.png",
-      "sha256": "7c786604befc8a635a5a6bac537ebe887701c44e1f30385bf4c71be7e479a076"
+      "sha256": "f750ad7c334245a0a34245c8bf0684553fa1a3b26277dd117d3d588892b8fe3c"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\KuyaTsinelas-vs-AlingBotengSuka.png",
-      "sha256": "e6042c0fdb06c0920d231a3bf5c4b653475196370cd0d25a91b146b8808234c5"
+      "sha256": "be2897cacd4a790ed7c25a7abbbfa5f954f06146c2286f7940b06d15e4e28fd3"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\KuyaTsinelas-vs-AteBatoBatoPik.png",
-      "sha256": "2be09ee53713aa4711f21922ece7a899b203bf21ce9c88f012b73e07e2a01c98"
+      "sha256": "58f999839c4b57d1385f7e1df8ae336cacb410015f70b558f9f2df2d93a118dc"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\KuyaTsinelas-vs-KapBatuta.png",
-      "sha256": "e375177d2615a634448596cdbfe3007813cd18a87c400088bfdb9d544e05d286"
+      "sha256": "e8e3b11cc2cbac2fe32193efe90e370e2385aa234a37f6ddf246165f8708012d"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\KuyaTsinelas-vs-ManongLatalata.png",
-      "sha256": "2ad677bbe77e2a63073045b46a9ddfbaedd3b624bf2a7106a2a47c107ac1efc7"
+      "sha256": "f10c673bb0e3fc03cd246795e97f435c015a8a219c66fabd3faf7469b7aab082"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\KuyaTsinelas-vs-NanayTingting.png",
-      "sha256": "8722bd4263e24429eb1f92368c46bb14ed753d760c70aa05090a3f5312fdaacf"
+      "sha256": "412cf2650f37a5877590641ea6669cf1a8452bb9c91fec8e7cfa5283bfd88adc"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\KuyaTsinelas-vs-TitoSilya.png",
-      "sha256": "80e5cbe392d9b4b47d0fa0e568fe16de59c50d354847a16f00397b16a04bed4c"
+      "sha256": "0b06b6d58b795578faed5a01a4f4fc552b2338ba1e24ac3942b818026d84f0b9"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\ManongLatalata-vs-AlingBotengSuka.png",
-      "sha256": "af9f17d09f2cfcd1c9b0f57dfa145bbfce023b139d340573b0c312aabe5aea2c"
+      "sha256": "884bf05226675ceb9c0a86e375ac2c9146831fe60f997815d87c6c05f219b739"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\ManongLatalata-vs-NanayTingting.png",
-      "sha256": "3bf9a42a54c758a564ca0960b82d2b866110fe932c9b041d9f9682b02297a2cb"
+      "sha256": "a35e0be202a4ef32116e921cc2fde260cd052ea7d0421328c4c615aea6896522"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\ManongLatalata-vs-TitoSilya.png",
-      "sha256": "b0e3d837a258b3ce30c1670d11be7292e687dbdefd994313ac6d5d8be805a004"
+      "sha256": "384be14c18d56f9605775e80da3063b70b298434ce6bbeb8e29ef7d8541e03af"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\TitoSilya-vs-AlingBotengSuka.png",
-      "sha256": "1dbacc2a072d7f6d744b4612439c8ea874006f076365a382c03a2f911df2d0c1"
+      "sha256": "50977b290fb58f248b85f0a869f29d14d9280481de717095fe765ca70628ec73"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\FaceToFace\\TitoSilya-vs-NanayTingting.png",
-      "sha256": "30e73bbe98e1b9d339d019ef6c9cf60309f855764d94fb759cb5963d5ced0e84"
+      "sha256": "496f0be694f56bce0e43a22b86912b1fa33f0c8d182d9ec34247060ebecff94b"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Hurt_00.png",
-      "sha256": "794b041bce8b6cd98d297eb826a28048256f145689b5531b01ad729155a6ecdd"
+      "sha256": "179e643b568b46ad44b24e7c6e51f5d1e05f96d364cd569106503fce0fc8eef0"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Hurt_01.png",
-      "sha256": "fd2a28188c778c3004a7cc9519374765db1f41a6640d4a6cbdbef363de22b999"
+      "sha256": "cff51a1acd9add46e185eb015a7ddac55695f87c67c9f568d949da1615623927"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Hurt_02.png",
-      "sha256": "29c013786f5945ee3b276215101729ad9b83aed697fe9cd9cc221bf527644c5c"
+      "sha256": "af960072a5d3628913cd948cd82dc51c1f7808efe24071e7665cca512410389f"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Hurt_03.png",
-      "sha256": "762167240e7496fcf70b296d29b7e83262ec7e5563874643c65274f1a0c57189"
+      "sha256": "7d282aefa2e8fd59cf56f125a27f259570586c8beb368dd3f535882334fc6f94"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Lose_00.png",
-      "sha256": "1b57065a815bd8bac578dc5e5bb5b072030e8a8c700871a4cf9c3fa3ec5095fa"
+      "sha256": "01f4c51b56a063cd410531bdf124d886327a82b4d8692c89edd0585299644c4e"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Lose_01.png",
-      "sha256": "2106d98c632f906e12669ef6eb084efe453b8c3d646f55add4160b91bf1f1411"
+      "sha256": "6e98750daa874de84c99b4ca5e53d86e6183505d8fbb43b0e86cc62bf6a86266"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Lose_02.png",
-      "sha256": "ccb61a63b32c267815f46c9e312a2f5c4db65aa2bd6447dfdd5cb3a7e302c586"
+      "sha256": "f88d0df749125fc74e03711c53688b21c00a7347fb954e6e58c9f061f5fbba57"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Lose_03.png",
-      "sha256": "dde171676e5a042a696b56c979b12d6f5c13ae386d11c9de374a027c15881e4d"
+      "sha256": "09184c9861653c40d940c385f44fb6db6e4350223d51085dc03d9978f17ea21a"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Strike_00.png",
-      "sha256": "2c50754af45f61ba30cae52510762096ee05859cc399cc637ec0977b70cd534e"
+      "sha256": "42e341d6d0f9a4d458c0513bb2fddce552a798a7890a0834ada31c8a4e568129"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Strike_01.png",
-      "sha256": "2c8b425f87110d0ab9c3a8156d89c700488222ba993ad76b7c8349432579003b"
+      "sha256": "6b0cade0f73f43fb11b8cf5fef91c59dcfd8b270e50b7e09ebbdb40265c8c8c6"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Strike_02.png",
-      "sha256": "fcdeeb8eaa04baea234f58b2b64b22c7c454d21fc70d7bdcf2d9b1fe50d8311f"
+      "sha256": "beb9443379bcb65330ce202c5b732e0cfb58a5caf919cb12b67e3b9eecb33edd"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Strike_03.png",
-      "sha256": "fbdf9e3941f3dde65beebafa84ae7cd08b350c782d0865863bb8a4999c612aef"
+      "sha256": "460bc81fdbbe14b93f727afc6ce44e95c06624a96d7537eded24f43ec305ca68"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Strike_04.png",
-      "sha256": "69ff26f7a8ae048668b06b1b9a9578b00938e9728d33eb52264eef9125790b5b"
+      "sha256": "0517e1297abeddda97f050645a31d574094e861cf265d34c1855f55611d6dbfe"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Strike_05.png",
-      "sha256": "532826fe51c1b88e48052c8597483eff550965e7d063432193c27da42a824947"
+      "sha256": "daff804c722a71705961a5e71369f1ce5f7190906ef3ebb91deb227dab25bd6c"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Win_00.png",
-      "sha256": "bfd6891c1b6767eb40cc6313d4a200ef84dc7024f03bedcd38016d18947345b6"
+      "sha256": "4db21f6da4b0040d66d1d7e53ad57df8caf83b5911f1a16a7858d064b84a40c5"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Win_01.png",
-      "sha256": "2791be6a4af2938e59d25bd97fea360ced079a4974116851b83c10a2f6dc86c2"
+      "sha256": "55269adfb3ae9283ea4fd924a187f8ed7ea2fc0386fcea0fa48dce268a23ba28"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Win_02.png",
-      "sha256": "169a4d9d460e35f83eac65c601668cb7f97c0db0fa51dca25fc4b7b663b8cdfc"
+      "sha256": "ff388702459af183444f4e130d721373cdffee1fa6860a5753a46171fb5c806a"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KapBatuta\\Win_03.png",
-      "sha256": "5c29fe164d8969341327a8213286e7ecbc3f54159c9d7954aae9078a755bc425"
+      "sha256": "1e8f76a0ad040ceed52296d7ae068da55f4f58ce81a008c6b01854372976ca9e"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Hurt_00.png",
-      "sha256": "3940384eaab508423b358a930c53e22902e60364a5f27c029a40262f5a18268a"
+      "sha256": "514942a9fc67227183358963110ca8d5d8a75770ff3db0f135e93ac57fd0957c"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Hurt_01.png",
-      "sha256": "48f4c90790783135d3914120a2e64441db7ce07cc207d07581b10cc078dfa165"
+      "sha256": "513f68205ad28ec1f66a84e75c2fd52c18c11a1375a2efccc3f73d8d357d42a7"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Hurt_02.png",
-      "sha256": "2be4920b345af8bce221dba44fd46cd0c62d8cb062aa9c29a6508d55b52a1ad1"
+      "sha256": "80850060680ea83f6f4eaace10c7a912c035960a667b476e0696a41d7c134a20"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Hurt_03.png",
-      "sha256": "baa425e5f60be74db7b30cc9a59bcc8e6279cc9a6a5fc6fb9280268b2a141742"
+      "sha256": "908b345cbb83969856854970f51405f924ed5576503098bba8c0fd5f7b11ab2e"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Lose_00.png",
-      "sha256": "52678d98b3fb95a31bd6b6aa4c7dff55c971c3ec7102e114ea26000267e71280"
+      "sha256": "1c6c921338658908a9340c4bc4d5e04679d7e9fb8378aba3813eec29b8b59405"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Lose_01.png",
-      "sha256": "1d88260861f28fb1f868f760ec5ffa9eeb6057e24694b9b2cd716a4545b2bd61"
+      "sha256": "48ad544f897afe6b462eb54108962de385a3097cb1045543ad6162e12cc0e4d0"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Lose_02.png",
-      "sha256": "2bf012dd8196f7104c5ff336f0e0c4e81af2c2635456da51b1bec00373aa03f5"
+      "sha256": "971d912bb4903ccc19bc3dda255c605e303a97a9ac55f025b08c80ffb1d1343d"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Lose_03.png",
-      "sha256": "815b88bc5d9507e74d4d70b3bf60d47213c6bf49f05e6db10e7f7a3b9e84c4e2"
+      "sha256": "2210cd79970e236f156c6b882effc1a036ab930fd4617af85b02d1c7cef6f049"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Strike_00.png",
-      "sha256": "ee05087d280f473d73f7720343bda74b69217e90d93918092257d43c2825aa2b"
+      "sha256": "1f9f7968adc630de2f09e673f6cfe175ce97a4c8bdcd71231ebc7d361612585a"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Strike_01.png",
-      "sha256": "27716e844262bb471bb01fbc3507cf3183645526faf2531eb8e2ac6d0b11ec0d"
+      "sha256": "50c7ccd72f57b7343288c7259aab90c2faa587edd70f51d349a07699e95bb027"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Strike_02.png",
-      "sha256": "61360d266dd10ab740c71572b773238de7ec159d9ad91067de220a082d33d8b8"
+      "sha256": "b6d4bb90c9c8d14d2a651e0bb33a45932428753e354d30e316033dfc201b4a75"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Strike_03.png",
-      "sha256": "1225daf9c8ea059ff7a4e05b8d8dc78d815db808df716bb43d43c491af66364b"
+      "sha256": "59f88eeb4b8fd697852baa9043e84cd3614da30bfdba66dbcd6db987f65397dc"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Strike_04.png",
-      "sha256": "a4c597d527ff7223f68bcde7572db93850414c6fae21ef21c3eab3153ddba4c0"
+      "sha256": "baa9f03676113105484ae37eebd6b5ee9a54e4c0e7f88bb509b02473586d36d7"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Strike_05.png",
-      "sha256": "1fc1c78fc62ed6ac9e38df7ceb5ed1dc843bf5a623486be9f011a616e307951b"
+      "sha256": "13bc51a67c980d33594159d4d5baaa793cb9939cab3e24ba9702fcd0b5dd44d3"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Win_00.png",
-      "sha256": "b38d1b8cf07763669912b9be9adc5a981b12cfc5a4009f4b764d3c5e33559d7c"
+      "sha256": "2c696b9614c615be1d24b353ee37a6bce36439426a99918808b3a2ec4da7a80a"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Win_01.png",
-      "sha256": "d47df79b1b9f7ebd1453f2844f413e489887beec2f85e1d9d7844fb67c27b0d4"
+      "sha256": "741e10a819a32820badaab7cc402104ac45727be13c7add9db4031c1d3945bc2"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Win_02.png",
-      "sha256": "cc3863a95bdcbc21a67afa4fe87f6627f0d754d8ada3368b6f8bc7904dd4aa4b"
+      "sha256": "ae15ccaf4e9b56b057b0a7ee559703d2398d491fbce212a7811e1ecea3f3e846"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\KuyaTsinelas\\Win_03.png",
-      "sha256": "97854100d027af65088c305db87798f2990e50069904ac98e64e5f38c4b055e7"
+      "sha256": "864070a7beb054a1eb3a1b49a7b3e1a3cd0789730eb42dd9517cbde3f1741f75"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Hurt_00.png",
-      "sha256": "b3faacaea94848a93e66a3ed61971c37f35fbc1984bf739f6f564effdf22c10d"
+      "sha256": "c589b09ab59d9a50a057a7ef01984028ffa82e04af585169e4c3caab20b7304f"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Hurt_01.png",
-      "sha256": "b2e740b9cdc0b1348d6888fd7dc2e656b1479be05aae71c7ddca5ccab9add52a"
+      "sha256": "429dc3e1f7e23ffd38f727fe6d76daf22c42b9710542e5f43c40b0440570c683"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Hurt_02.png",
-      "sha256": "556f146182792ff726e18f4e0c449e4c6537fd4770703e88844cdf4ef46aa2e8"
+      "sha256": "d6f3fc3d778ca4156090c9afa7c52163d22cb2ce3d255ff01bb57fa8cf385423"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Hurt_03.png",
-      "sha256": "52aafff5d800f582c5f55c729527c4342b5f8683b7208c19c2c9ec64fc910ce5"
+      "sha256": "892d597c8e3cec5bdbfa035aa12410840ea1a4d38d775894e63d537789d85751"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Lose_00.png",
-      "sha256": "a87c9f90f4c11b1a362cd994bec62859ffd614de25f1069f628bc6ae381f9d77"
+      "sha256": "ecd9a3df153c7f02f6eeadd98e23079e3d2ea01c8be0f213e510e158f087849b"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Lose_01.png",
-      "sha256": "04c6058929c1d90fcc2885fed77e3db7cccfc6a3e408ef8cf2106d82e49d7b81"
+      "sha256": "07df8c19014c6b1a062d6a18af0b360660f29422ed2ee9e18725703dc12bb564"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Lose_02.png",
-      "sha256": "169e13ad975a4243220bc33b3884da42aa157831c1c00daf5d65ff088395c352"
+      "sha256": "6107af7589875d247be6477790d1248226411fc8a3d6e69da0e0826f7d3baf9d"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Lose_03.png",
-      "sha256": "5842c4436ecaaed0a84db3aacfe50b4e41c6280c0705d5093da76671947e48c0"
+      "sha256": "8af03b14f30a53325908e27d9b60fdcd5e737d5f8b9e0dc7b7571552fd40432b"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Strike_00.png",
-      "sha256": "087ebdac59baa6b2d57279874b31300c63e5dc1fd32667d0f946d748f59d2870"
+      "sha256": "eb1714891ea67ad5d7eea0d6114ff335d127bbde906969787b6c0c72892dff16"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Strike_01.png",
-      "sha256": "ce13afee490f082be0b1ad7a92ec3a5d0b6902e36693b14f7fcdee4afb706213"
+      "sha256": "487db9b222e1aa34ed1f6c7701c71a99de64c9e0d2e77360d772beefae06897e"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Strike_02.png",
-      "sha256": "3ef72aa8af895b6f78048326cbfead09ae62fd886f4e9d904a5661045b116129"
+      "sha256": "4e3583f39eb68a0e7883c0c90ddb97b6233e52a4255c7702603af285ef2f2bd5"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Strike_03.png",
-      "sha256": "3a23036a43f4846f8d4d5185f22e5977d05fc69989bd59760ec538f57d737085"
+      "sha256": "e2ba2cd526b686eeb2047204bb96504e10fbc31f45a738910cf884614e20add0"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Strike_04.png",
-      "sha256": "0d3abe84f421cf6d2e0fc3142eb6863f59cb542d12de3f72015d9d00f57b7695"
+      "sha256": "028d8fdea904e56a28514a59bd4daba8756af9f8f28da0de87f452898dba3061"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Strike_05.png",
-      "sha256": "a21c2e7608be6bc3558229302e7839342cdee791ec8f04938cb0fc85dc88675f"
+      "sha256": "9e793b8db85680f913bbb40c8e031081aa1dae88820470c9f28a3b3146b434e2"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Win_00.png",
-      "sha256": "ca218371fea17104b9284af2e74400fa6a9b7cded1a4ae7323f973a2c9ec9b85"
+      "sha256": "ba526f126845a7ee69d1971e96ccf724a03bd02ee7f7cc222dc1fbeb85b78e14"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Win_01.png",
-      "sha256": "dce09161bdfcbefc52a1cc2dea91c22c24c358dd02b3858f36f8eefb9bba5d1e"
+      "sha256": "9c7856c90c55a2995250c8e2d7e1fa0c0fa81fdfd7865d9bf4f9c15a9d4c1d05"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Win_02.png",
-      "sha256": "255ce05cf277456981050280397f3e72d27cb7ab89acd19ad49984956db4eb29"
+      "sha256": "ec32cc50258d6aad067e0cd5d5fe1e749df6bf2e60dda017b8d8dd7a610c58d8"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\ManongLatalata\\Win_03.png",
-      "sha256": "30161a2ccc58aa254c449b448983a0380b2366edbeeb0c67ad3a978dbfb7095d"
+      "sha256": "c742d60124cc2854a1a637a08cffd65c24a21b019e0fd763db38005654239ade"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Hurt_00.png",
-      "sha256": "cbdd4db27ca6cc3daed7396566bb1b9cd8ffaf5b989c14832daa2d6c1caa7d78"
+      "sha256": "7ef889efd638995c17dece4a78b255e469683070c658fb3a2c940cc98da307af"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Hurt_01.png",
-      "sha256": "a3a6456770e0d40376275b383d447be4571cdf7d372f03496d40319112fad9e4"
+      "sha256": "7b5fef87bd3c11d8e9bbc397c870ea2d613f2bd7cb8ccb99d56ecf59f30d3d28"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Hurt_02.png",
-      "sha256": "6cd93eb66fe37b8e911f991ec8599c9f38294dd2aa4361ce8817c58f5782b94c"
+      "sha256": "8c7400189c10cc4553474c4e7251106f109787ee69a99aa428c53fdd23960121"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Hurt_03.png",
-      "sha256": "92d8c1df869bf502417db561d935374d2f7e951e9c4735be4acfb65ddbefb50a"
+      "sha256": "696eee0cfbda9b7e6c7f7aa3f8223956a50309cc66da203750c0fb23f6098841"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Lose_00.png",
-      "sha256": "f1c278c4be10f8910d37a971497d44c39beff23e1ba0b36c1af8283671c51bc7"
+      "sha256": "5bb8b553e42ee5e38be56472d69135aa7f15486f68c019e6c450592a6576aa9e"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Lose_01.png",
-      "sha256": "c2f1e5c950497674af3e75948d0778ec49cba6bec201ebc7f4a5d32c664eccb3"
+      "sha256": "0ff0eff4a95e2c5d3554ff13ad5e0fe409145c32532982eaf7a1c0e122e78917"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Lose_02.png",
-      "sha256": "bfd683af198a233c96620d57e900036492f38d193dc8a49230ad8449b8eb2b5f"
+      "sha256": "3f4cb4c4e753d00571df533a6c4a0ecaef6af5dc0bd2a10016dbc5184455138a"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Lose_03.png",
-      "sha256": "3f5a4c237678b51e3c4dc10da2edf5508ec53e47c53c0c3475b840ef5a770faf"
+      "sha256": "c18307fa411e98c310619415612be73b989b39bb652498ed095a17aa2bdca4a5"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Strike_00.png",
-      "sha256": "b564b464af85805214e96068c490eb3833b9e1733b100302057afd17216858aa"
+      "sha256": "44a5d57981999e490c7ad50ca028238dbc07890f2e4236061cbc9a15ac986e02"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Strike_01.png",
-      "sha256": "f1e39963218328ebba2761e50640f562c16f56481ab1a5bf8ef222283933a82e"
+      "sha256": "861432b6115e7af213ac8491bc95d22777be41c4d7eebfa92a18fd40843d1567"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Strike_02.png",
-      "sha256": "83deea1d4f85993913ce8fff59d73a9c2c5619130443ab16ef26da9c3e4bf7a1"
+      "sha256": "1737ae601f0bbf5f1d649c7ac4c04d4065008aad8c99392524ab6d454a7e1e48"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Strike_03.png",
-      "sha256": "2cece77df32fc1e612bf837acd192f86f2f60185137f70a25e52f6aab86eecad"
+      "sha256": "4650f887f74cb4e14e1f2d1dc16a67ea4609e7ae606af7033cab827c78539243"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Strike_04.png",
-      "sha256": "a17e937676f186556b5fe6c91f0bfaff661d524e8f164119be51e61c2b1f9e64"
+      "sha256": "da9b77e8a0e3adf5eb10c54369fbf746769680d31ac2bf6deee849ce80a156d4"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Strike_05.png",
-      "sha256": "2919b8bf1428d29b814cecb7239f83c4fca6d620262f07b0f90682ada3fa8174"
+      "sha256": "224713c5f0222ebf5ce2e30ed33672f0828714be142fe05cf8d7535cfc3d88d3"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Win_00.png",
-      "sha256": "6a432eca6e119fe13ae76dc366f427db695dbfe39fa748a5b7149b10ad27e32b"
+      "sha256": "c7bc6940a17551641eea7a4902cfa512c20542262a7d9ffa4686386c2f1948ee"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Win_01.png",
-      "sha256": "29951ae65d7c5a23fd081cf432537037a8d268af2dd9e05bef86a14d2867239c"
+      "sha256": "9ad22f9559db5228947aab0a11abf83a69e980001e7fe1996a2922e6bd168f5b"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Win_02.png",
-      "sha256": "df3218ec1d81dd6aa81a4234701081441bfd19654fd42af0ccbd65f01631baf2"
+      "sha256": "c94901a19d97be9cb461dce56634da5b59cc9e79fbf4197aad902f4b5a06a7cb"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\NanayTingting\\Win_03.png",
-      "sha256": "224a1722d844825f837121730a7c45bd9ffec50400859427f24e0fdf835c69af"
+      "sha256": "c9ff28dd924feb895f6541726904e57f55cbe7039c8b0b93ceb175d791697dab"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Hurt_00.png",
-      "sha256": "87356e71425c03dc972e16e529eedebf2f8b3725413ac5e6e11c1d0a2499028a"
+      "sha256": "8e06279098d9d0488e748441a4b2e486127214e369f00f821bf5d0af0fe95e57"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Hurt_01.png",
-      "sha256": "194b415a5dd2cfc156d35ff16b679b41c6f2f0d03a79ce972c44debfe176d5be"
+      "sha256": "a2dac349e61d0a74c8612b961bfbce5375775a473681863bf898a62518020db7"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Hurt_02.png",
-      "sha256": "a3d252c4dc4f84221803b6409aa04241aaec22cc8b40656fa099d8a956aa5392"
+      "sha256": "591d04d57b15f3ac211eda81935fc0c7fd8667dd6dad6ba50571ceac86afde96"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Hurt_03.png",
-      "sha256": "2ca908b98f07a09a78da0db4b767ae8f51e624a51ee788bcf704adb9bb51af01"
+      "sha256": "768ae7324702c60d824e12b0810f51d35cba0491bfa0e3cc2b3f925aa4e288f6"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Lose_00.png",
-      "sha256": "e46f40e9f52e0ae1fb89d9624d50616685c2b3de3f92d7789467754b14a46095"
+      "sha256": "3249f920999bcf736b8f6b7a5fda8f9db540a28fd791ae8bdbdb7c01f6a4b13f"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Lose_01.png",
-      "sha256": "dfd70ff39b18cf4918d681500d68fc23b80a69bd6f0d7ee5a367525423437b59"
+      "sha256": "4ef802e6db6a209019640f31772fd2b5c7844bc81aa8a45befded269a9071c01"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Lose_02.png",
-      "sha256": "614bf57c76f2a6081ada1944e6c1d446af7309046572f798338e13b04bb28622"
+      "sha256": "72c08004fda046ad420f98732acb7c6348650a3fab44fc0ad00bee7b867d8793"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Lose_03.png",
-      "sha256": "deab850a8137ad5af8f9d7f25c644180f782f52a00d7eab84b4666f1219dba29"
+      "sha256": "960a57a4a2f6e450d1a0abab7560f8afcbe2fbf689396df553b711b0062c9b7a"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Strike_00.png",
-      "sha256": "b55d6c3f42998ce65cc83fc6e8f944a98d0c7da769a12ced1e991641ed8eb0a6"
+      "sha256": "84aad3ef3299367460b838ea72ed33981b653176bc68ebde22fa9fc5d4a34f25"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Strike_01.png",
-      "sha256": "5c1f32837a2b16bd0a4c8a9de1bdcc1acedce90e4283025074b1a7be6dcee6e9"
+      "sha256": "217573a86a76d848575ecd9fd5f22853348c9947d9793d85bc3956a020ce3875"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Strike_02.png",
-      "sha256": "23b23d5c7ebcbfb63ab0a63a7bc5f75b6e0b4e823a7a6254c0c481a37d49d0b5"
+      "sha256": "eac14bd5362206421d0dcdd65914d154f4fc5c55c6aeaf7507a71e202ae36f5a"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Strike_03.png",
-      "sha256": "0e38f927273f5f4bbce25138c055ff2045f8655efe3fa30f29d361d8efdbf816"
+      "sha256": "5cad8c05d70a07210cf848793dc1b69c2061efb27aa239ef2d2e1b80fbaa2893"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Strike_04.png",
-      "sha256": "b3ff77e45b43906d80b448574097766f2745a440a4357104d840d5c8cb0bae50"
+      "sha256": "94a91ad6e643dffa11520f49ac221229b551a2a2994bedb3771f9ba8fbb687cf"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Strike_05.png",
-      "sha256": "a8507559795d32e2e2c3ecdef0f03a0d59a133d651c960bc20e7d883a99a0ee7"
+      "sha256": "d6a419d1f440258a8853e756e331746c6fc6e560d011b42693d74bfcd85fec2c"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Win_00.png",
-      "sha256": "6cbd00b09ccecc00be4d5bd5e341d8f64950f1c599d34c80f89981b6adc6d5c6"
+      "sha256": "2f18508417f5f25f7d9fd388f66cc02d870139191c4fc1adb8e3d0f7d657fd64"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Win_01.png",
-      "sha256": "f11f1e1407df817aa3cb0900d3ff3d4593ab48d6c0d1753082a9eecd4e8aff0a"
+      "sha256": "a562b659438de4b895972b4fb45fa37db672c890b0d3595ed228b1ea883ee7b0"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Win_02.png",
-      "sha256": "13e3e2d54d89f4f8ace7914046a902b46c0ddefc7207663123bff83bd73c7b43"
+      "sha256": "c4d74d4ad97dca6a5606897a2d7bdd9c0e6d1f759a2288e030c63a01d2b34f21"
     },
     {
       "file": "QA_SCREENSHOTS\\ANIMATION\\Unity\\TitoSilya\\Win_03.png",
-      "sha256": "d9629177d96db475c3806fd43928a5b34cdaad6258d560436815bf9917e402b8"
+      "sha256": "9a0b44a00db4a4cfd5d7006aa56e3e578b818c25db85ebd8c640e7dd1e825a12"
     }
   ]
 }
