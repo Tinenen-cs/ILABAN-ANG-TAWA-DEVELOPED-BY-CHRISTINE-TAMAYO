@@ -1,3 +1,23 @@
+# UPDATE3 step 1 - 2026-10-28T21:22:03.562282+00:00
+
+Done: PASS: EditMode 14/14, PlayMode 13/13, 65 rules, real build and native 1280 smoke/full three-win match. Viewed round-banner screenshot. Drain water-edge geometry shared by three maps; exact knockback/timing retained.
+
+In progress / next: 2 painted banderitas, then 3 head ratios, 4 icons, 5 focus, 6 motion, 7 HUD medals
+
+Next five: follow remaining UPDATE3 tasks in Docs/UPDATE3_REQUEST.md in order; verify current screenshot; run required regression; checkpoint evidence; continue remaining task.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md, CHECKLIST.md and Docs/UPDATE3_REQUEST.md; run git status; finish UPDATE3 task 2 painted banderitas, then 3 head ratios, 4 icons, 5 focus, 6 motion, 7 HUD medals. No reference photos, no history rewrite."`
+
+---
+# UPDATE3 IN PROGRESS - 2026-10-29
+
+Step 1: drain edge fix under test. Shared drawn water boundaries x200/1080 replace the old hidden x112/1168 threshold. No knockback/timing changes. Tasks 2-7 pending. UPDATE2 artifacts below are historical. Request: Docs/UPDATE3_REQUEST.md (ends mid-sentence in task 7).
+
+Next five: verify drain/build/screenshot; painted banderitas; measured head ratios; uniform button icons; bounded focus states. Then map motion and name-plate medals.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md, CHECKLIST.md and Docs/UPDATE3_REQUEST.md; run git status; finish UPDATE3 in order. Never use reference photos."`
+
+---
 # UPDATE2 complete - 2026-10-29
 
 Steps 1-14 implemented and individually checkpointed on main. Final: EditMode 13/13, PlayMode 13/13, 65 rules, zero C# diagnostics, 85 UI captures across five sizes, 172 native animation captures, clean static/glyph/audio audit. Hilo keeps FIVE segments for the five-hit dizzy rule.

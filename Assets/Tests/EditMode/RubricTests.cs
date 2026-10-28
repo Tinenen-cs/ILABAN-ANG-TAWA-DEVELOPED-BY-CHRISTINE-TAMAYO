@@ -21,6 +21,21 @@ namespace Hexbound.Tests
                 for(int win=1;win<=3;win++){m.players[1-side].x=side==0?1200:80;m.Tick(.016f,default,default);Assert.IsTrue(m.Finished);Assert.AreEqual(win,m.players[side].wins);Assert.AreEqual(win==3,m.MatchFinished);Assert.AreEqual(win<3,m.BeginNextRound());if(win<3){Assert.IsFalse(m.Finished);Assert.AreEqual(win+1,m.round);}}
             }
         }
+        [Test] public void VisibleDrainEdgeEndsSameFrameOnEveryMap(){
+            for(int map=0;map<3;map++)for(int side=0;side<2;side++)for(int player=0;player<2;player++){
+                float edge=side==0?DuelModel.HoleInnerEdge:DuelModel.StageWidth-DuelModel.HoleInnerEdge;
+                float inward=side==0?1:-1;
+                var m=new DuelModel(0,7,map);m.players[player].x=edge+inward*DuelModel.StepBack;
+                m.Tick(.016f,default,default);Assert.IsFalse(m.Finished,"A full step short is safe");
+                m.players[player].x=edge+inward*.01f;m.Tick(.016f,default,default);Assert.IsFalse(m.Finished,"Inside stone rim is safe");
+                m.players[player].x=edge;m.Tick(.016f,default,default);
+                Assert.IsTrue(m.Finished);Assert.AreEqual(1-player,m.winner);Assert.AreEqual(Pose.Fall,m.players[player].pose);
+                Assert.IsTrue(m.players[player].fallen);Assert.AreEqual(1,m.players[1-player].wins);
+                m=new DuelModel(0,7,map);m.players[player].x=edge+inward;
+                var move=new DuelInput{move=-inward};m.Tick(.016f,player==0?move:default,player==1?move:default);
+                Assert.IsTrue(m.Finished,"Movement crossing water edge ends on the same Tick");
+            }
+        }
         [Test] public void SharedWeaponReachHasOneBoundaryForAllCharacters(){
             for(int id=0;id<8;id++)foreach(float delta in new[]{-.5f,.5f}){var m=new DuelModel(id,(id+1)%8);m.players[0].x=500;m.players[1].x=500+DuelModel.PunchReach+delta;float before=m.players[1].x;m.Tick(.016f,new DuelInput{punch=true},default);for(int f=0;f<12;f++)m.Tick(.016f,default,default);Assert.AreEqual(delta<0?DuelModel.StepBack:0,m.players[1].x-before,.001f);}
         }

@@ -416,7 +416,7 @@ namespace Hexbound
         {
             scenery.texture=stages[Model.ArenaIndex];
             // KanaL artwork is fixed at both stage edges and remains in the combat plane.
-            for(int side=0;side<2;side++){var canal=Raw(view,new Rect(side==0?0:1060,550,220,72),Fx("Kanal")??Fx("Imburnal"));if(side==1)canal.uvRect=new Rect(1,0,-1,1);}
+            for(int side=0;side<2;side++){var canal=Raw(view,new Rect(side==0?0:DuelModel.StageWidth-DuelModel.DrainArtWidth,DuelModel.DrainArtY,DuelModel.DrainArtWidth,DuelModel.DrainArtHeight),Fx("Kanal")??Fx("Imburnal"));if(side==1)canal.uvRect=new Rect(1,0,-1,1);}
             actors=new Actor[2];names=new TMP_Text[2];hiloPips=new Image[2][];winMarkers=new Image[2][];winSparkles=new TMP_Text[2];bubbles=new Bubble[2];
             for(int p=0;p<2;p++) {
                 actors[p]=ActorView(view,Model.players[p].character,new Rect(0,0,170,255));

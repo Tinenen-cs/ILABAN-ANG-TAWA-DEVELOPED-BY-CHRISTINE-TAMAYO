@@ -26,7 +26,10 @@ namespace Hexbound
     {
         public const float StepBack=52, PunchReach=190, BodyGap=112, MoveSpeed=210;
         public const float PunchDuration=.36f, PunchStartup=.12f, DizzyDuration=2, StreakWindow=3;
-        public const float LeftRiftX=80, RightRiftX=1200, HoleInnerEdge=112;
+        // One shared combat-plane geometry for all three paintings. The water opening
+        // ends 20px before the inner stone rim of the 220px artwork.
+        public const float StageWidth=1280, DrainArtWidth=220, DrainArtY=550, DrainArtHeight=72, DrainInnerRim=20;
+        public const float LeftRiftX=80, RightRiftX=1200, HoleInnerEdge=DrainArtWidth-DrainInnerRim;
         public const int KnockdownHits=5;
         public readonly Fighter[] players;
         public readonly List<Burst> bursts=new List<Burst>();
@@ -39,7 +42,7 @@ namespace Hexbound
         public int ArenaIndex => startingArena;
         public bool Finished => winner!=-2;
         public bool MatchFinished => Finished && winner>=0 && players[winner].wins>=3;
-        public static bool OverRift(float x,float unused=0) => x<=HoleInnerEdge || x>=1280-HoleInnerEdge;
+        public static bool OverRift(float x,float unused=0) => x<=HoleInnerEdge || x>=StageWidth-HoleInnerEdge;
         public DuelModel(int p1,int p2,int arena=0)
         {
             startingArena=Math.Max(0,Math.Min(2,arena));

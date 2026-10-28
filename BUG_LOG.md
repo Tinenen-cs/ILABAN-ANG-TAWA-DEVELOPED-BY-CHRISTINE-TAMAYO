@@ -105,3 +105,6 @@ UPDATE2 step 9: missing invalid-action feedback fixed with a universal raycast-b
 UPDATE2 step 12 regression check caught missing CanvasRenderer on the new masked cloud Graphic during PlayMode clipping. Added explicit required CanvasRenderer before the Graphic. Initial Step11 smoke completion/performance alone did not verify absence of logged exceptions; superseded by rerun and final log-scanned QA. Five-segment Hilo logic remains unchanged.
 
 UPDATE2 final audit: Editor exit now directly calls the editor API under UNITY_EDITOR, avoiding reflection against an assembly name that may differ between Unity versions. Standalone retains Application.Quit. Opening evidence checks the actual loaded painted HeadingLogo resource and full title rather than obsolete removed intro credit text.
+
+## UPDATE3 drain trigger
+Cause: artwork spanned 220px per edge but the model used an unrelated 112px threshold. A feet center could stand in the visible water. Fix: shared 220px artwork geometry with 20px inner stone rim; inclusive water-edge triggers at 200/1080, both before and after input/hits. All maps share geometry. Exact 52px knockback and attack timing unchanged. New boundary/movement tests cover all maps, sides and players.
