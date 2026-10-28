@@ -1,3 +1,2 @@
-# UPDATE2 network delivery complete
-
-No pending network work. Public v1.1-update2 EXE/backup/support assets have verified GitHub server size/digests. Drive has six current files at matching sizes; folder/EXE/backup Anyone-with-link Viewer verified. Already-authenticated owner School browser handled large files; connector updated guides/QA. No OAuth, new credentials, rclone sign-in or permission change was required. Never upload reference photos.
+# UPDATE3 delivery queue
+Network currently online; local proofs complete. Pending: normal main push and gh release create v1.2-update3 with the6 current SUBMISSION files; replace EXE/backupZIP through the already-authenticated School owner Chrome because connector100MB limit; update4 support files using connector; verify6 names/sizes/publicViewer metadata and GitHub SHA digests. Do not mark complete until read back. No auth changes, no credentials, no photos.

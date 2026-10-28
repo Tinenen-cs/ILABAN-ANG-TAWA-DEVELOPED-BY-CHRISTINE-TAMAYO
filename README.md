@@ -16,7 +16,7 @@ A two-player Filipino street brawler made by Christine Tamayo. Pick a character,
 
 The visible drain now triggers immediately on both sides of every map. Original painted festival pieces, measured43% head proportions, uniform button icons, bounded focus feedback, painted background motion and mirrored name-plate win medals are implemented. Exactly five Hilo segments remain for the five-hit dizzy rule; no health/timer/extra attacks.
 
-Verification/evidence: Docs/HEAD_RATIO.md, Docs/background_motion_check.json, Docs/QA_EVIDENCE and QA_SCREENSHOTS/UPDATE3. Windows standalone candidate is built from this real project. Updated single-EXE packaging/delivery is in progress; older UPDATE2 release hashes are historical and do not verify UPDATE3.
+Verification/evidence: Docs/HEAD_RATIO.md, Docs/background_motion_check.json, Docs/QA_EVIDENCE and QA_SCREENSHOTS/UPDATE3. Windows standalone candidate is built from this real project. Verified Canvas EXE: **213,747,712 bytes**, SHA-256 `4ec4b62c193724a5d2948681e1cf3a39924a27deb950f18bfe7b9c11bcc1b362`. Both EXE-only full-match tests and Defender scans passed. [UPDATE3 Release](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.2-update3) and [Drive EXE](https://drive.google.com/file/d/1ubFKaj6uhFB26cStVNLoqwrel4wL_pN3/view?usp=drivesdk) delivery refresh is pending verification; older UPDATE2 hashes are historical.
 
 [PUBLIC source repository](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO). [Drive folder](https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH).
 
