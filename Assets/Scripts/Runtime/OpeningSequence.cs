@@ -33,7 +33,7 @@ namespace Hexbound
             for(int i=0;i<5;i++)layers[i]=Art(content,new Rect(-200,0,1680,720),"Backgrounds/Pambungad/"+layerNames[i]);
             street=layers[4];
             var shade=R(content,new Rect(0,0,1280,720)).gameObject.AddComponent<Image>();shade.color=new Color(.02f,.06f,.1f,.35f);
-            flags=Art(content,new Rect(0,-160,1280,144),"UI/Banderitas").rectTransform;
+            flags=(RectTransform)FestivalBanderitas.Create(content,new Rect(0,-160,1280,144)).transform;
             jeepImage=Art(content,new Rect(-380,386,360,250),"UI/JeepneyFrames");jeep=jeepImage.rectTransform;jeepImage.uvRect=new Rect(0,.15f,.25f,.57f);
             logoPlate=R(content,new Rect(90,165,1100,174));logoPlate.name="Pintadong pambungad";
             logoPlate.pivot=new Vector2(.5f,.5f);logoPlate.anchoredPosition=new Vector2(640,-252);

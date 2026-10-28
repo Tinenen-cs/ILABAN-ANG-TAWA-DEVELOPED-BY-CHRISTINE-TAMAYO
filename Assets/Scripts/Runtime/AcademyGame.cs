@@ -315,7 +315,7 @@ namespace Hexbound
         void Heading(string title,string subtitle) {var plate=RoundedPanel(view,new Rect(335,20,610,78),new Color(.025f,.055f,.07f,.72f));string asset=title=="Mga Kontrol"?"Controls":title=="Pumili ng Tauhan"?"Characters":"Stages";PaintedText(view,new Rect(335,24,610,70),title,asset);Label(view,new Rect(100,101,1080,32),subtitle,20,gold);}
         void Title()
         {
-            Shade(.59f);Label(view,new Rect(0,82,1280,36),"L A R O   N G   B A R A N G A Y",23,gold);
+            Shade(.59f);FestivalBanderitas.Create(view,new Rect(18,0,1244,76));Label(view,new Rect(0,82,1280,36),"L A R O   N G   B A R A N G A Y",23,gold);
             PaintedText(view,new Rect(90,148,1100,174),"ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO","Logo",70,true);
             string[] labels={"Simulan ang Laro","Mga Kontrol","Umalis"};menuButtons=new Button[3];
             for(int i=0;i<3;i++) {int index=i;menuButtons[i]=Button(view,new Rect(440,366+i*67,400,55),labels[i],()=>ActivateTitle(index));}

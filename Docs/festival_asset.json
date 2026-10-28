@@ -1,0 +1,16 @@
+{
+  "source": "ArtSource/UI/FestivalBanderitas.png",
+  "tool": "built-in image_gen",
+  "original": true,
+  "photos_used": false,
+  "pieces": [
+    "Rope",
+    "Flag0",
+    "Flag1",
+    "Flag2",
+    "Flag3",
+    "Flag4",
+    "Flag5"
+  ],
+  "prompt": "Original transparent painterly sagging braided rope, capiz diamond ends, six separate stitched glossy triangular fabric pennants with golden tassels; warm Filipino barangay fiesta palette, no text."
+}

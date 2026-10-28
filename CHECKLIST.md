@@ -1,3 +1,14 @@
+# UPDATE3 step 2 - 2026-10-28T21:31:44.123955+00:00
+
+Done: PASS: new original painted transparent rope/six stitched pennants; offset top-pivot sway in opening/title. Build/65 checks and native smoke passed; opening/title viewed. Assets/provenance saved locally; no photos.
+
+In progress / next: 3 measure and normalize head ratios; then 4 icons, 5 bounded focus, 6 background motion, 7 HUD medals
+
+Next five: follow remaining UPDATE3 tasks in Docs/UPDATE3_REQUEST.md in order; verify current screenshot; run required regression; checkpoint evidence; continue remaining task.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md, CHECKLIST.md and Docs/UPDATE3_REQUEST.md; run git status; finish UPDATE3 task 3 measure and normalize head ratios; then 4 icons, 5 bounded focus, 6 background motion, 7 HUD medals. No reference photos, no history rewrite."`
+
+---
 # UPDATE3 step 1 - 2026-10-28T21:22:03.562282+00:00
 
 Done: PASS: EditMode 14/14, PlayMode 13/13, 65 rules, real build and native 1280 smoke/full three-win match. Viewed round-banner screenshot. Drain water-edge geometry shared by three maps; exact knockback/timing retained.

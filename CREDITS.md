@@ -43,3 +43,5 @@ UPDATE2 emotes: eight dedicated original whole-body Win and Lose source poses ea
 UPDATE2: padded rounded corners and softly feathered sky wisps are original code-native graphics. Reference photographs remain local and unused.
 
 UPDATE2 portable packaging: original free C# launcher, full ZIP/per-file SHA-256 validation and ordinary temporary extraction; compiled with installed Windows .NET Framework tools. No proprietary packer or reference photographs included.
+
+UPDATE3 festival rope and six pennants: original built-in image_gen illustration; prompt and source provenance in Docs/festival_asset.json. Transparent pieces sliced from generated art, independently animated with shared top pivots. No reference photographs used.
