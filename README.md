@@ -17,7 +17,7 @@ A two-player Filipino street brawler made by Christine Tamayo. Pick a character,
 **Upload `ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip` to Canvas.** It contains the tested Windows x64 EXE and every required companion file. Size: 200,010,588 bytes. SHA-256: `e4dbd4a302f20bca4c52c8bc8b4c66e9f55f6110e41dc16069c310c5ece905c3`.
 
 - [Google Drive folder](https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH): final delivery destination; check FILE_INFO.txt for verified upload status.
-- [GitHub Release v1.0](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.0): download the ZIP asset after publication. The source repository is PUBLIC.
+- [GitHub Release v1.0](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.0): download the verified ZIP asset. GitHub replaces spaces with dots in its download filename; its hash is identical to the Canvas ZIP. The source repository is PUBLIC.
 
 On a phone, download the ZIP then transfer it to a Windows computer, or download directly on a school PC. Right-click > Extract All, open the extracted folder and double-click **ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe**. Keep `_Data`, `UnityPlayer.dll`, `MonoBleedingEdge` and all other companions together. No Unity installation or game installer is needed.
 
