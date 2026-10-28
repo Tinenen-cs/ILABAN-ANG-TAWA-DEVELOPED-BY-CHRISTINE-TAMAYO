@@ -12,20 +12,22 @@ Branch: `phase3-polish`. Project: `C:\Users\chris\Documents\CSEL GAMEDEV FILES\I
 
 ## In progress
 
-- Final local docs/checkpoint commit and watchdog registration/launch.
+- Step 1: replace relaxed-carry strike placeholders with generated whole-body weapon poses. Six reviewed source sheets are checkpointed under `ArtSource/StrikeSheets`; Manong recovery (missing can) and Tito wind-up (extra hand) corrections are in progress. Inputs were fictional Body.png art only.
+- Import all eight sheets onto a shared canvas/feet pivot, then run RubricTests, InputAndCanvasTests and the 65 assertions. The latest attempted PlayMode rerun exited before producing a new XML; do not treat the earlier XML as fresh evidence for the pending art swap.
+- Watchdog file exists from the interrupted work but is not registered or running. Finish/test strikes, bubbles and HUD before completing watchdog setup, per the latest user order.
 - Latest distributable ZIP is intentionally not rebuilt here; final EXE/Drive work is queued separately.
 
 ## Next five steps
 
-1. Verify `Tools/autoresume.ps1` parses and its lock/complete gates work; record the test.
-2. Register and launch the watchdog at logon and every five minutes; current `Tools/codex-active.lock` prevents it from duplicating this foreground session.
-3. Set AC standby/display timeouts to never; both were already 0, so undo is `powercfg /change standby-timeout-ac 0` and `powercfg /change monitor-timeout-ac 0` (these restore current prior values).
-4. Commit this local UI/animation/watchdog checkpoint; update `RESUME_STATE.txt` and this handoff.
-5. Finish final evidence audit and source clean-tree check. Stop before queued final EXE/Drive task; do not publish while public history contains photos.
+1. Finish the two source-art corrections and import all six strike phases per character with weapon baked in.
+2. Validate full-body grounding, grip/tip anchors, facing and unchanged combat rules; commit step 1.
+3. Finish head-centered reaction bubbles and test/commit step 2.
+4. Finish wooden Hilo HUD, five-size captures and test/commit step 3.
+5. Complete/test the watchdog, record power settings and scheduled task, then continue final local evidence. Stop before queued final EXE/Drive work.
 
 ## Resume command
 
-`powershell -NoProfile -ExecutionPolicy Bypass -File Tools\autoresume.ps1`
+`codex exec --sandbox workspace-write -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read RESUME_STATE.txt and HANDOFF.md, run git status, finish step 1 whole-body strike import and tests, then continue the numbered steps. Do not ask questions or start the queued EXE/Drive task."`
 
 For the next Codex session: read `RESUME_STATE.txt`, `HANDOFF.md`, `PENDING_NETWORK.md`, `CHECKLIST.md`; run `git status`; continue from step 1 above. Do not ask questions. Do not start final EXE/Drive task in this continuation.
 
