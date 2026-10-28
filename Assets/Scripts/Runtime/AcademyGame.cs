@@ -37,7 +37,10 @@ namespace Hexbound
         readonly List<RawImage> lamps=new List<RawImage>();
         readonly List<RectTransform> leaves=new List<RectTransform>(),flags=new List<RectTransform>();
         readonly float[] readyAt={-10,-10},hoverUntil=new float[8];
-        RectTransform ambience;
+        RectTransform ambience,skyCloud;
+        readonly List<float>[] frameSamples={new List<float>(),new List<float>(),new List<float>()};
+        [Serializable] sealed class FrameReport {public FrameRow[] maps;}
+        [Serializable] sealed class FrameRow {public string map;public int samples;public float averageFps,p95Milliseconds,maxMilliseconds;}
         // Approved maps: normalized lamp/bulb centres (x, y from top).
         static readonly Vector2[][] MapLamps={
             new[]{new Vector2(.065f,.42f),new Vector2(.265f,.42f),new Vector2(.595f,.39f),new Vector2(.71f,.10f),new Vector2(.958f,.42f)},
@@ -277,14 +280,17 @@ namespace Hexbound
         // Only subtle lamp and banderita motion is layered over the fixed stage paintings.
         void Ambience(int arena,bool enabled)
         {
-            lamps.Clear();leaves.Clear();flags.Clear();
+            lamps.Clear();leaves.Clear();flags.Clear();skyCloud=null;
             if(ambience!=null)Destroy(ambience.gameObject);
             ambience=Rect(scenery.transform,"Buhay ng Kalye",new Rect(0,0,1,1));Stretch(ambience);
             if(!enabled)return;
+            // Clip drifting cloud wisps to the actual upper sky opening, behind the fighters.
+            var sky=Rect(ambience,"Langit lamang",new Rect(0,0,1,1));sky.anchorMin=new Vector2(.40f,.84f);sky.anchorMax=new Vector2(.65f,.98f);sky.offsetMin=sky.offsetMax=Vector2.zero;sky.gameObject.AddComponent<RectMask2D>();
+            skyCloud=Rect(sky,"Mabagal na ulap",new Rect(-180,12,180,48));var cloud=skyCloud.gameObject.AddComponent<SkyCloudGraphic>();cloud.raycastTarget=false;cloud.color=arena==0?new Color(1,.96f,.87f,.075f):new Color(.55f,.63f,.77f,.055f);
             if(arena>0)foreach(var p in MapLamps[arena]) {var l=Area(ambience,Fx("Glow"),new Rect(p.x-.035f,p.y-.055f,.07f,.11f));lamps.Add(l);}
             // Small isolated accents only; the painting, floor and parked scenery stay fixed.
             foreach(float x in new[]{.035f,.94f}){var leaf=Area(ambience,Fx("Leaves"),new Rect(x,.04f,.045f,.05f));leaf.rectTransform.pivot=new Vector2(.5f,1);leaves.Add(leaf.rectTransform);}
-            if(arena!=1)for(int i=0;i<9;i++){var flag=Area(ambience,Fx("Flag"),new Rect(.19f+i*.072f,.13f+Mathf.Sin(i*.4f)*.04f,.014f,.029f));flag.rectTransform.pivot=new Vector2(.5f,1);flag.color=new[]{new Color32(198,135,75,255),new Color32(204,171,82,255),new Color32(82,150,142,255)}[i%3];flags.Add(flag.rectTransform);}
+            for(int i=0;i<(arena==1?3:9);i++){var flag=Area(ambience,Fx("Flag"),new Rect(arena==1?.44f+i*.052f:.19f+i*.072f,arena==1?.08f:.13f+Mathf.Sin(i*.4f)*.04f,.014f,.029f));flag.rectTransform.pivot=new Vector2(.5f,1);flag.color=new[]{new Color32(198,135,75,255),new Color32(204,171,82,255),new Color32(82,150,142,255)}[i%3];flags.Add(flag.rectTransform);}
         }
         Texture2D Fx(string name)=>Tex("Maps/FX/"+name);
         RawImage Area(Transform parent,Texture2D texture,Rect normalized)
@@ -294,6 +300,7 @@ namespace Hexbound
         }
         void UpdateAmbience()
         {
+            if(skyCloud!=null)skyCloud.anchoredPosition=new Vector2(Mathf.Repeat(clock*2f,((RectTransform)skyCloud.parent).rect.width+220)-200,-12);
             for(int i=0;i<lamps.Count;i++) {float flicker=Mathf.PerlinNoise(clock*2,i*3.1f);lamps[i].color=new Color(1,1,1,.24f+flicker*.16f);}
             for(int i=0;i<leaves.Count;i++)leaves[i].localRotation=Quaternion.Euler(0,0,Mathf.Sin(clock*.8f+i)*1.4f);
             for(int i=0;i<flags.Count;i++)flags[i].localRotation=Quaternion.Euler(0,0,Mathf.Sin(clock*1.3f+i*.5f)*2);
@@ -549,6 +556,7 @@ namespace Hexbound
             // Cover unused aspect-ratio space with a proportion-preserving background.
             float cover=Mathf.Max(cr.rect.width/1280f,cr.rect.height/720f);scenery.rectTransform.sizeDelta=new Vector2(1280*cover,720*cover);scenery.rectTransform.anchorMin=scenery.rectTransform.anchorMax=new Vector2(.5f,.5f);scenery.rectTransform.pivot=new Vector2(.5f,.5f);scenery.rectTransform.anchoredPosition=ScreenNow==ScreenState.Fight?Vector2.zero:new Vector2(Mathf.Sin(clock*.2f)*2,Mathf.Sin(clock*.17f)*2);
             UpdateAmbience();
+            if(Phase2Smoke.Active&&ScreenNow==ScreenState.Fight&&Model!=null&&!Model.Finished&&!Paused&&clock-enteredAt>1&&Time.realtimeSinceStartup-Phase2Smoke.LastCaptureAt>.5f)frameSamples[Model.ArenaIndex].Add(Time.unscaledDeltaTime*1000);
             UpdateCharacterCue();
             // Screen changes and pointer callbacks consume the initiating press.
             if(Time.frameCount==screenEnteredFrame)return;
@@ -578,6 +586,11 @@ namespace Hexbound
             if(Time.frameCount==screenEnteredFrame)return;
             if(ScreenNow!=ScreenState.Fight && ScreenNow!=ScreenState.Controls && controls.Any("Help")){fromFight=false;Show(ScreenState.Controls);}
             if(menuButtons!=null && (ScreenNow==ScreenState.Title||ScreenNow==ScreenState.Controls||Paused)) for(int i=0;i<menuButtons.Length;i++){menuButtons[i].transform.localScale=Vector3.one*(i==focus?1.035f:1);var f=menuButtons[i].GetComponent<PlateButtonFeedback>();if(f!=null)f.SetFocused(i==focus);}
+        }
+        public string PerformanceJson(){
+            var report=new FrameReport{maps=new FrameRow[3]};
+            for(int i=0;i<3;i++){var samples=frameSamples[i];samples.Sort();float sum=0;foreach(float value in samples)sum+=value;report.maps[i]=new FrameRow{map=Roster.Stages[i],samples=samples.Count,averageFps=samples.Count>0?1000f*samples.Count/sum:0,p95Milliseconds=samples.Count>0?samples[Mathf.Min(samples.Count-1,(int)(samples.Count*.95f))]:0,maxMilliseconds=samples.Count>0?samples[samples.Count-1]:0};}
+            return JsonUtility.ToJson(report,true);
         }
         void NavMenu(int count) {var a=controls.Navigate(0);var b=controls.Navigate(1);int dir=a.y!=0?-a.y:b.y!=0?-b.y:a.x!=0?a.x:b.x;if(dir!=0){focus=(focus+dir+count)%count;Sound("menu_move");}}
         void RefreshDescriptions() {
@@ -677,6 +690,15 @@ namespace Hexbound
         public void CapturePreview(string path) {StartCoroutine(CaptureFrame(path));}
         System.Collections.IEnumerator CaptureFrame(string path) {yield return new WaitForEndOfFrame();var image=ScreenCapture.CaptureScreenshotAsTexture();System.IO.File.WriteAllBytes(path,image.EncodeToPNG());Destroy(image);}
 #endif
+    }
+    public sealed class SkyCloudGraphic : MaskableGraphic {
+        protected override void OnPopulateMesh(VertexHelper vh){
+            vh.Clear();var r=rectTransform.rect;
+            foreach(var ellipse in new[]{new Vector3(.25f,.42f,.24f),new Vector3(.50f,.55f,.31f),new Vector3(.75f,.40f,.23f)}){
+                int first=vh.currentVertCount;Vector2 centre=new Vector2(r.xMin+r.width*ellipse.x,r.yMin+r.height*ellipse.y);vh.AddVert(centre,color,Vector2.zero);
+                for(int i=0;i<=32;i++){float a=i*Mathf.PI/16;var edge=color;edge.a=0;vh.AddVert(centre+new Vector2(Mathf.Cos(a)*r.width*ellipse.z,Mathf.Sin(a)*r.height*.48f),edge,Vector2.zero);if(i>0)vh.AddTriangle(first,first+i,first+i+1);}
+            }
+        }
     }
     public sealed class PlateButtonFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {

@@ -101,3 +101,9 @@ Next: Step 10 verify and animate all win/lose poses; then 11 sky ambience/perfor
 DONE: explicit whole-body Lose rendering and character win/lose cue playback; dedicated original Win/Lose source poses for every fighter, four frames each, sparkle victory and slump/drain loss. Build/65 checks and 172 native strike/hurt/win/lose/pair screenshots passed; all-eight emote contact sheet personally viewed.
 
 Next: Step 11 subtle sky clouds and measured frame timings; then 12 five-segment Hilo verification, 13 full QA/docs/push, 14 portable single EXE.
+
+## UPDATE2 step 11 — 2026-10-28T16:51:25.388122+00:00
+
+DONE: faint feathered code-native sky wisps clipped above the street, all-map gentle flags plus existing restrained leaves/night lamps; no vehicles/floor motion. Build/65 checks and native match passed; three maps viewed. Measured 59.64/59.94/59.05 average fps, 16.70ms p95, occasional 33.4ms frame: near-60 observed, strict steady-60/hardware stress NEEDS MANUAL TEST.
+
+Next: Step 12 five-segment Hilo checks; then 13 all suites/five resolutions/English-glyph audit/docs/push; 14 standalone EXE and verified delivery.

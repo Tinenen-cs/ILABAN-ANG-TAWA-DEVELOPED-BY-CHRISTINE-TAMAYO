@@ -1,0 +1,25 @@
+{
+    "maps": [
+        {
+            "map": "Kalye sa Palengke",
+            "samples": 967,
+            "averageFps": 59.6376838684082,
+            "p95Milliseconds": 16.700050354003906,
+            "maxMilliseconds": 33.368099212646484
+        },
+        {
+            "map": "Looban",
+            "samples": 68,
+            "averageFps": 59.94094467163086,
+            "p95Milliseconds": 16.700050354003906,
+            "maxMilliseconds": 16.71649742126465
+        },
+        {
+            "map": "Plaza ng Barangay",
+            "samples": 67,
+            "averageFps": 59.04927444458008,
+            "p95Milliseconds": 16.700546264648438,
+            "maxMilliseconds": 33.40109634399414
+        }
+    ]
+}

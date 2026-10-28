@@ -11,6 +11,7 @@ namespace Hexbound
     {
         string directory;
         public static bool Active { get; private set; }
+        public static float LastCaptureAt {get;private set;}=-100;
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void SeedSmokeDefaults(){foreach(var arg in Environment.GetCommandLineArgs())if(arg=="-ilaban-smoke"){PlayerPrefs.SetInt("Ilaban.Language",0);PlayerPrefs.SetInt("Ilaban.ReactionStyle",0);PlayerPrefs.Save();break;}}
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -37,7 +38,7 @@ namespace Hexbound
             yield return Capture("11-validation-popup");game.CloseError();
             for(int map=0;map<3;map++) {
                 game.SelectArena(map);game.Show(AcademyGame.ScreenState.StageSelect);yield return Capture("03-stage-"+map);
-                game.Ready[1]=true;game.StartMatch();yield return Capture("04-match-"+map);
+                game.Ready[1]=true;game.StartMatch();yield return new WaitForSecondsRealtime(2);yield return Capture("04-match-"+map);
             }
             game.SelectArena(0);game.Ready[0]=game.Ready[1]=true;game.StartMatch();
             var pad=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Gamepad>();
@@ -58,11 +59,12 @@ namespace Hexbound
             game.Show(AcademyGame.ScreenState.Controls);yield return Capture("08-controls");
             game.Show(AcademyGame.ScreenState.Title);game.RequestExit();yield return Capture("09-exit-dialog");game.CancelExit();
             game.SetLanguage(1);game.Show(AcademyGame.ScreenState.Controls);yield return Capture("10-settings-english");game.SetLanguage(0);
+            File.WriteAllText(Path.Combine(directory,"performance.json"),game.PerformanceJson());
             File.WriteAllText(Path.Combine(directory,"PASS.txt"),"Portable smoke passed at "+Screen.width+"x"+Screen.height+". Tagalog/Pormal fresh defaults; readiness gate; three fixed-light maps; actual simulated gamepad movement/punches to manhole; dizzy and results; pause; controls; exit dialog; English settings. Physical input/listening remain manual.");
             Debug.Log("ILABAN PORTABLE SMOKE PASSED "+Screen.width+"x"+Screen.height);Application.Quit(0);
         }
         IEnumerator Capture(string name) {
-            yield return new WaitForSecondsRealtime(.22f);yield return new WaitForEndOfFrame();Canvas.ForceUpdateCanvases();
+            LastCaptureAt=Time.realtimeSinceStartup;yield return new WaitForSecondsRealtime(.22f);yield return new WaitForEndOfFrame();Canvas.ForceUpdateCanvases();
             var textDump=new System.Text.StringBuilder();
             // Every active user-facing Text must fit vertically and horizontally; report suspect labels for review.
             foreach(var t in FindObjectsByType<TMP_Text>())if(t.isActiveAndEnabled && !string.IsNullOrEmpty(t.text)) {
@@ -70,7 +72,7 @@ namespace Hexbound
                 if(t.isTextOverflowing)Debug.LogWarning("LAYOUT TEXT OVERFLOW: "+name+" / "+t.text+" / "+height+" > "+t.rectTransform.rect.height);
             }
             File.WriteAllText(Path.Combine(directory,name+"-ui.txt"),textDump.ToString());
-            var image=ScreenCapture.CaptureScreenshotAsTexture();File.WriteAllBytes(Path.Combine(directory,name+".png"),image.EncodeToPNG());Destroy(image);
+            var image=ScreenCapture.CaptureScreenshotAsTexture();File.WriteAllBytes(Path.Combine(directory,name+".png"),image.EncodeToPNG());Destroy(image);LastCaptureAt=Time.realtimeSinceStartup;
         }
     }
 }
