@@ -45,3 +45,5 @@ UPDATE2: padded rounded corners and softly feathered sky wisps are original code
 UPDATE2 portable packaging: original free C# launcher, full ZIP/per-file SHA-256 validation and ordinary temporary extraction; compiled with installed Windows .NET Framework tools. No proprietary packer or reference photographs included.
 
 UPDATE3 festival rope and six pennants: original built-in image_gen illustration; prompt and source provenance in Docs/festival_asset.json. Transparent pieces sliced from generated art, independently animated with shared top pivots. No reference photographs used.
+
+UPDATE3 head proportions: generated revised sheets had inconsistent crown-to-sole proportions (ready poses Tito 48.8%, Suka 55.8%, Nanay 56.5%). Repeatable whole-image continuous mesh normalization targets 43%, preserving original pixel sources, feet-center and baked weapons. Source/measurement conventions and actual per-character ranges: Docs/HEAD_RATIO.md. No separate head/body runtime objects. All 272 measured runtime images are hash-bound to the ratio test. All eight ready frames viewed side by side at the same pixel scale.

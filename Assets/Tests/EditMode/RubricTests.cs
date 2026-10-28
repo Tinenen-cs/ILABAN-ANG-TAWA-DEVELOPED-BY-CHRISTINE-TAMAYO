@@ -21,6 +21,18 @@ namespace Hexbound.Tests
                 for(int win=1;win<=3;win++){m.players[1-side].x=side==0?1200:80;m.Tick(.016f,default,default);Assert.IsTrue(m.Finished);Assert.AreEqual(win,m.players[side].wins);Assert.AreEqual(win==3,m.MatchFinished);Assert.AreEqual(win<3,m.BeginNextRound());if(win<3){Assert.IsFalse(m.Finished);Assert.AreEqual(win+1,m.round);}}
             }
         }
+        [System.Serializable] public class HeadFrame {public string resource,sha256;public float ratio;}
+        [System.Serializable] public class HeadReport {public float target;public HeadFrame[] frames;}
+        [Test] public void EveryActionHeadRatioMatchesMeasuredArt(){
+            var data=JsonUtility.FromJson<HeadReport>(Resources.Load<TextAsset>("Ilaban/Characters/HeadRatios").text);Assert.AreEqual(272,data.frames.Length);
+            foreach(var f in data.frames){Assert.LessOrEqual(Mathf.Abs(f.ratio-data.target),.03f,f.resource);
+                using(var sha=System.Security.Cryptography.SHA256.Create()){
+                    string path=System.IO.Path.Combine(Application.dataPath,"Resources",f.resource+".png");
+                    string hash=System.BitConverter.ToString(sha.ComputeHash(System.IO.File.ReadAllBytes(path))).Replace("-","").ToLowerInvariant();
+                    Assert.AreEqual(f.sha256,hash,"Art must be remeasured after changes: "+f.resource);
+                }
+            }
+        }
         [Test] public void VisibleDrainEdgeEndsSameFrameOnEveryMap(){
             for(int map=0;map<3;map++)for(int side=0;side<2;side++)for(int player=0;player<2;player++){
                 float edge=side==0?DuelModel.HoleInnerEdge:DuelModel.StageWidth-DuelModel.HoleInnerEdge;

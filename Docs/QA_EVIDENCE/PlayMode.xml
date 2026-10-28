@@ -1,103 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="13" result="Passed" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-28 21:19:01Z" end-time="2026-10-28 21:19:08Z" duration="6.9596338">
-  <test-suite type="TestSuite" id="1020" name="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" fullname="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-28 21:19:01Z" end-time="2026-10-28 21:19:08Z" duration="6.959634" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+<test-run id="2" testcasecount="13" result="Passed" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-28 21:40:53Z" end-time="2026-10-28 21:41:03Z" duration="10.036918">
+  <test-suite type="TestSuite" id="1020" name="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" fullname="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-28 21:40:53Z" end-time="2026-10-28 21:41:03Z" duration="10.036918" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
     <properties>
       <property name="platform" value="PlayMode" />
     </properties>
-    <test-suite type="Assembly" id="1015" name="Ilaban.PlayMode.Tests.dll" fullname="C:/Users/chris/Documents/CSEL GAMEDEV FILES/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO/Library/ScriptAssemblies/Ilaban.PlayMode.Tests.dll" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-28 21:19:01Z" end-time="2026-10-28 21:19:08Z" duration="6.949641" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1015" name="Ilaban.PlayMode.Tests.dll" fullname="C:/Users/chris/Documents/CSEL GAMEDEV FILES/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO/Library/ScriptAssemblies/Ilaban.PlayMode.Tests.dll" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-28 21:40:53Z" end-time="2026-10-28 21:41:03Z" duration="10.026963" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="19844" />
+        <property name="_PID" value="33592" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="PlayMode" />
         <property name="EditorOnly" value="False" />
       </properties>
-      <test-suite type="TestSuite" id="1016" name="Hexbound" fullname="Hexbound" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-28 21:19:01Z" end-time="2026-10-28 21:19:08Z" duration="6.939183" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="1016" name="Hexbound" fullname="Hexbound" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-28 21:40:53Z" end-time="2026-10-28 21:41:03Z" duration="10.016222" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-suite type="TestSuite" id="1017" name="Tests" fullname="Hexbound.Tests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-28 21:19:01Z" end-time="2026-10-28 21:19:08Z" duration="6.922397" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestSuite" id="1017" name="Tests" fullname="Hexbound.Tests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-28 21:40:53Z" end-time="2026-10-28 21:41:03Z" duration="9.999511" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
           <properties />
-          <test-suite type="TestFixture" id="1001" name="InputAndCanvasTests" fullname="Hexbound.Tests.InputAndCanvasTests" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-28 21:19:01Z" end-time="2026-10-28 21:19:08Z" duration="6.904512" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestFixture" id="1001" name="InputAndCanvasTests" fullname="Hexbound.Tests.InputAndCanvasTests" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-28 21:40:53Z" end-time="2026-10-28 21:41:03Z" duration="9.981511" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-case id="1013" name="CharacterReactionCuesWaitForMenuAudio" fullname="Hexbound.Tests.InputAndCanvasTests.CharacterReactionCuesWaitForMenuAudio" methodname="CharacterReactionCuesWaitForMenuAudio" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="2115689119" result="Passed" start-time="2026-10-28 21:19:01Z" end-time="2026-10-28 21:19:02Z" duration="0.383539" asserts="0">
+            <test-case id="1013" name="CharacterReactionCuesWaitForMenuAudio" fullname="Hexbound.Tests.InputAndCanvasTests.CharacterReactionCuesWaitForMenuAudio" methodname="CharacterReactionCuesWaitForMenuAudio" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="591984638" result="Passed" start-time="2026-10-28 21:40:53Z" end-time="2026-10-28 21:40:53Z" duration="0.165481" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1012" name="EveryCharacterUsesWholeBodyFramesOnOneSharedCanvas" fullname="Hexbound.Tests.InputAndCanvasTests.EveryCharacterUsesWholeBodyFramesOnOneSharedCanvas" methodname="EveryCharacterUsesWholeBodyFramesOnOneSharedCanvas" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1442780300" result="Passed" start-time="2026-10-28 21:19:02Z" end-time="2026-10-28 21:19:07Z" duration="5.659967" asserts="0">
+            <test-case id="1012" name="EveryCharacterUsesWholeBodyFramesOnOneSharedCanvas" fullname="Hexbound.Tests.InputAndCanvasTests.EveryCharacterUsesWholeBodyFramesOnOneSharedCanvas" methodname="EveryCharacterUsesWholeBodyFramesOnOneSharedCanvas" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="983313497" result="Passed" start-time="2026-10-28 21:40:53Z" end-time="2026-10-28 21:40:53Z" duration="0.069876" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1011" name="FightHudHasFiveHiloPipsAndNoSeparateItemSprites" fullname="Hexbound.Tests.InputAndCanvasTests.FightHudHasFiveHiloPipsAndNoSeparateItemSprites" methodname="FightHudHasFiveHiloPipsAndNoSeparateItemSprites" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1781827422" result="Passed" start-time="2026-10-28 21:19:07Z" end-time="2026-10-28 21:19:08Z" duration="0.150209" asserts="0">
+            <test-case id="1011" name="FightHudHasFiveHiloPipsAndNoSeparateItemSprites" fullname="Hexbound.Tests.InputAndCanvasTests.FightHudHasFiveHiloPipsAndNoSeparateItemSprites" methodname="FightHudHasFiveHiloPipsAndNoSeparateItemSprites" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="10650976" result="Passed" start-time="2026-10-28 21:40:53Z" end-time="2026-10-28 21:41:02Z" duration="9.038530" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1004" name="ForbiddenKeysNeverProduceExtraMoves" fullname="Hexbound.Tests.InputAndCanvasTests.ForbiddenKeysNeverProduceExtraMoves" methodname="ForbiddenKeysNeverProduceExtraMoves" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1963954001" result="Passed" start-time="2026-10-28 21:19:08Z" end-time="2026-10-28 21:19:08Z" duration="0.098720" asserts="0">
+            <test-case id="1004" name="ForbiddenKeysNeverProduceExtraMoves" fullname="Hexbound.Tests.InputAndCanvasTests.ForbiddenKeysNeverProduceExtraMoves" methodname="ForbiddenKeysNeverProduceExtraMoves" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1854088751" result="Passed" start-time="2026-10-28 21:41:02Z" end-time="2026-10-28 21:41:03Z" duration="0.101944" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1003" name="GamepadRemovalReplacementAndGenericJoystick" fullname="Hexbound.Tests.InputAndCanvasTests.GamepadRemovalReplacementAndGenericJoystick" methodname="GamepadRemovalReplacementAndGenericJoystick" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1907104405" result="Passed" start-time="2026-10-28 21:19:08Z" end-time="2026-10-28 21:19:08Z" duration="0.008959" asserts="0">
+            <test-case id="1003" name="GamepadRemovalReplacementAndGenericJoystick" fullname="Hexbound.Tests.InputAndCanvasTests.GamepadRemovalReplacementAndGenericJoystick" methodname="GamepadRemovalReplacementAndGenericJoystick" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1264422777" result="Passed" start-time="2026-10-28 21:41:03Z" end-time="2026-10-28 21:41:03Z" duration="0.009595" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1002" name="KeyboardIsolationAndSimultaneousPunches" fullname="Hexbound.Tests.InputAndCanvasTests.KeyboardIsolationAndSimultaneousPunches" methodname="KeyboardIsolationAndSimultaneousPunches" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1051557479" result="Passed" start-time="2026-10-28 21:19:08Z" end-time="2026-10-28 21:19:08Z" duration="0.004253" asserts="0">
+            <test-case id="1002" name="KeyboardIsolationAndSimultaneousPunches" fullname="Hexbound.Tests.InputAndCanvasTests.KeyboardIsolationAndSimultaneousPunches" methodname="KeyboardIsolationAndSimultaneousPunches" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1734783988" result="Passed" start-time="2026-10-28 21:41:03Z" end-time="2026-10-28 21:41:03Z" duration="0.005008" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1010" name="PauseAndSettingsOverlaysHaveNoOrphanFighterObjects" fullname="Hexbound.Tests.InputAndCanvasTests.PauseAndSettingsOverlaysHaveNoOrphanFighterObjects" methodname="PauseAndSettingsOverlaysHaveNoOrphanFighterObjects" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1508273554" result="Passed" start-time="2026-10-28 21:19:08Z" end-time="2026-10-28 21:19:08Z" duration="0.094697" asserts="0">
-              <properties>
-                <property name="_JOINTYPE" value="UnityCombinatorial" />
-                <property name="retryIteration" value="0" />
-                <property name="repeatIteration" value="0" />
-              </properties>
-            </test-case>
-            <test-case id="1009" name="PauseHasFiveOptionsAndExitNeverQuitsOnEscape" fullname="Hexbound.Tests.InputAndCanvasTests.PauseHasFiveOptionsAndExitNeverQuitsOnEscape" methodname="PauseHasFiveOptionsAndExitNeverQuitsOnEscape" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1182209585" result="Passed" start-time="2026-10-28 21:19:08Z" end-time="2026-10-28 21:19:08Z" duration="0.084905" asserts="0">
+            <test-case id="1010" name="PauseAndSettingsOverlaysHaveNoOrphanFighterObjects" fullname="Hexbound.Tests.InputAndCanvasTests.PauseAndSettingsOverlaysHaveNoOrphanFighterObjects" methodname="PauseAndSettingsOverlaysHaveNoOrphanFighterObjects" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="2053430236" result="Passed" start-time="2026-10-28 21:41:03Z" end-time="2026-10-28 21:41:03Z" duration="0.094360" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1014" name="ReactionBubblesTrackHeadAndStayInSeparateHudSafeLanes" fullname="Hexbound.Tests.InputAndCanvasTests.ReactionBubblesTrackHeadAndStayInSeparateHudSafeLanes" methodname="ReactionBubblesTrackHeadAndStayInSeparateHudSafeLanes" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1000223316" result="Passed" start-time="2026-10-28 21:19:08Z" end-time="2026-10-28 21:19:08Z" duration="0.091718" asserts="0">
+            <test-case id="1009" name="PauseHasFiveOptionsAndExitNeverQuitsOnEscape" fullname="Hexbound.Tests.InputAndCanvasTests.PauseHasFiveOptionsAndExitNeverQuitsOnEscape" methodname="PauseHasFiveOptionsAndExitNeverQuitsOnEscape" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="867441017" result="Passed" start-time="2026-10-28 21:41:03Z" end-time="2026-10-28 21:41:03Z" duration="0.086397" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1005" name="ScreensUseOnlyStaticPixelTMPAndReadinessGate" fullname="Hexbound.Tests.InputAndCanvasTests.ScreensUseOnlyStaticPixelTMPAndReadinessGate" methodname="ScreensUseOnlyStaticPixelTMPAndReadinessGate" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="2093273354" result="Passed" start-time="2026-10-28 21:19:08Z" end-time="2026-10-28 21:19:08Z" duration="0.109783" asserts="0">
+            <test-case id="1014" name="ReactionBubblesTrackHeadAndStayInSeparateHudSafeLanes" fullname="Hexbound.Tests.InputAndCanvasTests.ReactionBubblesTrackHeadAndStayInSeparateHudSafeLanes" methodname="ReactionBubblesTrackHeadAndStayInSeparateHudSafeLanes" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1120414530" result="Passed" start-time="2026-10-28 21:41:03Z" end-time="2026-10-28 21:41:03Z" duration="0.094890" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1008" name="SettingsAndExitUseTheirOwnScreenFlow" fullname="Hexbound.Tests.InputAndCanvasTests.SettingsAndExitUseTheirOwnScreenFlow" methodname="SettingsAndExitUseTheirOwnScreenFlow" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1071293680" result="Passed" start-time="2026-10-28 21:19:08Z" end-time="2026-10-28 21:19:08Z" duration="0.064758" asserts="0">
+            <test-case id="1005" name="ScreensUseOnlyStaticPixelTMPAndReadinessGate" fullname="Hexbound.Tests.InputAndCanvasTests.ScreensUseOnlyStaticPixelTMPAndReadinessGate" methodname="ScreensUseOnlyStaticPixelTMPAndReadinessGate" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="805928479" result="Passed" start-time="2026-10-28 21:41:03Z" end-time="2026-10-28 21:41:03Z" duration="0.093283" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1006" name="TitleRoutesKeyboardGamepadAndPointerWithoutAnyClickStart" fullname="Hexbound.Tests.InputAndCanvasTests.TitleRoutesKeyboardGamepadAndPointerWithoutAnyClickStart" methodname="TitleRoutesKeyboardGamepadAndPointerWithoutAnyClickStart" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="371064884" result="Passed" start-time="2026-10-28 21:19:08Z" end-time="2026-10-28 21:19:08Z" duration="0.094647" asserts="0">
+            <test-case id="1008" name="SettingsAndExitUseTheirOwnScreenFlow" fullname="Hexbound.Tests.InputAndCanvasTests.SettingsAndExitUseTheirOwnScreenFlow" methodname="SettingsAndExitUseTheirOwnScreenFlow" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="495589492" result="Passed" start-time="2026-10-28 21:41:03Z" end-time="2026-10-28 21:41:03Z" duration="0.063532" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1006" name="TitleRoutesKeyboardGamepadAndPointerWithoutAnyClickStart" fullname="Hexbound.Tests.InputAndCanvasTests.TitleRoutesKeyboardGamepadAndPointerWithoutAnyClickStart" methodname="TitleRoutesKeyboardGamepadAndPointerWithoutAnyClickStart" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1901017159" result="Passed" start-time="2026-10-28 21:41:03Z" end-time="2026-10-28 21:41:03Z" duration="0.101748" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1007" name="ValidationPopupsTrapKeyboardAndGamepadAndCoverInvalidActions" fullname="Hexbound.Tests.InputAndCanvasTests.ValidationPopupsTrapKeyboardAndGamepadAndCoverInvalidActions" methodname="ValidationPopupsTrapKeyboardAndGamepadAndCoverInvalidActions" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="1995043794" result="Passed" start-time="2026-10-28 21:19:08Z" end-time="2026-10-28 21:19:08Z" duration="0.034935" asserts="0">
+            <test-case id="1007" name="ValidationPopupsTrapKeyboardAndGamepadAndCoverInvalidActions" fullname="Hexbound.Tests.InputAndCanvasTests.ValidationPopupsTrapKeyboardAndGamepadAndCoverInvalidActions" methodname="ValidationPopupsTrapKeyboardAndGamepadAndCoverInvalidActions" classname="Hexbound.Tests.InputAndCanvasTests" runstate="Runnable" seed="410857643" result="Passed" start-time="2026-10-28 21:41:03Z" end-time="2026-10-28 21:41:03Z" duration="0.037982" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />

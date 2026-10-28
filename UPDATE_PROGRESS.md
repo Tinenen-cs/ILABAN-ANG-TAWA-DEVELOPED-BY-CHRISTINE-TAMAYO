@@ -1,3 +1,14 @@
+# UPDATE3 step 3 - 2026-10-28T21:46:14.140788+00:00
+
+Done: PASS: 96 source poses measured, target43pct/tolerance3pp; 272 frame ratio hash tests and connectivity/pivots/48 grip-tip checks passed. EditMode15/15, PlayMode13/13, build/65; 172 native animation captures passed. Viewed equal-scale lineup and native revised-character pair/strike. Docs/HEAD_RATIO.md records method and measurements.
+
+In progress / next: 4 uniform icon set; 5 bounded focus; 6 measured map/title/stage motion; 7 name-plate medals
+
+Next five: follow remaining UPDATE3 tasks in Docs/UPDATE3_REQUEST.md in order; verify current screenshot; run required regression; checkpoint evidence; continue remaining task.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md, CHECKLIST.md and Docs/UPDATE3_REQUEST.md; run git status; finish UPDATE3 task 4 uniform icon set; 5 bounded focus; 6 measured map/title/stage motion; 7 name-plate medals. No reference photos, no history rewrite."`
+
+---
 # UPDATE3 step 2 - 2026-10-28T21:31:44.123955+00:00
 
 Done: PASS: new original painted transparent rope/six stitched pennants; offset top-pivot sway in opening/title. Build/65 checks and native smoke passed; opening/title viewed. Assets/provenance saved locally; no photos.

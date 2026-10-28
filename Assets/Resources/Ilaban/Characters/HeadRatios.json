@@ -1,0 +1,1365 @@
+{
+  "target": 0.43,
+  "frames": [
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Idle_00",
+      "ratio": 0.4291497975708502,
+      "sha256": "ff603aa3cfd0b01bd2d467d46a88565712abfebd1b5b5f3eb0dab5d573a04db2"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Idle_01",
+      "ratio": 0.4291497975708502,
+      "sha256": "3c3e7bc1ac7519e9cca36186deb15f812ecc10ff3343de1518302e93363d3fb8"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Idle_02",
+      "ratio": 0.4291497975708502,
+      "sha256": "ff603aa3cfd0b01bd2d467d46a88565712abfebd1b5b5f3eb0dab5d573a04db2"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Idle_03",
+      "ratio": 0.4291497975708502,
+      "sha256": "3c3e7bc1ac7519e9cca36186deb15f812ecc10ff3343de1518302e93363d3fb8"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Walk_00",
+      "ratio": 0.42943548387096775,
+      "sha256": "e574e8c8ba8c7412903ff99a16bb3c57947531192224c8c1f648d2d2ad308650"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Walk_01",
+      "ratio": 0.42943548387096775,
+      "sha256": "e5143a30466d75e0ddf6428b28db43c004d7b016e99c527a4de7a7c67632766a"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Walk_02",
+      "ratio": 0.42943548387096775,
+      "sha256": "2c8a117cb255a4eac58f30b011d3e51904424b25e1fd5114d7bbfbeeebd34c87"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Walk_03",
+      "ratio": 0.42943548387096775,
+      "sha256": "e5143a30466d75e0ddf6428b28db43c004d7b016e99c527a4de7a7c67632766a"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Strike_00",
+      "ratio": 0.4291497975708502,
+      "sha256": "ff603aa3cfd0b01bd2d467d46a88565712abfebd1b5b5f3eb0dab5d573a04db2"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Strike_01",
+      "ratio": 0.41295546558704455,
+      "sha256": "f4f257d36c0ebf0e648024f6d38cf2dd88d7e9679623e451803e323741d009c4"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Strike_02",
+      "ratio": 0.42535787321063395,
+      "sha256": "60f6d1045ff1c8f272e7736eda6468f1b534164d08ca1f61056a5383b1710162"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Strike_03",
+      "ratio": 0.43037974683544306,
+      "sha256": "70739569b3e13066eb3f218bbf5e6e9f1a98247ced5a549f7c5d36b85d8f50bd"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Strike_04",
+      "ratio": 0.4309623430962343,
+      "sha256": "a235c5d5cec0ca7a5219f95261eda430c3a4790f65c16f470709aafe96b4dc80"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Strike_05",
+      "ratio": 0.4118895966029724,
+      "sha256": "c18439aeeea7d6852e4662180f5058a002bfaec1d848bde4e95b8cc1162ab596"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Hurt_00",
+      "ratio": 0.43089430894308944,
+      "sha256": "8ce2507327c60039d87f5d7d2c513f0330f1edfa9ffe0b95e8f4c15e97bc6c8e"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Hurt_01",
+      "ratio": 0.43089430894308944,
+      "sha256": "6a418054cadd1219f09b733432e4d80af26bbf97ba51652a0b7b4a6ea21066b3"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Hurt_02",
+      "ratio": 0.43089430894308944,
+      "sha256": "bc40d5522214bd8d663d7f051855a2a7b4938f3b16496d47601ea78b8dd55a51"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Hurt_03",
+      "ratio": 0.43089430894308944,
+      "sha256": "edda494ce15f5ad249b5df565bf979beaeb2a7a55669554c1ea0e478c81caad9"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Dizzy_00",
+      "ratio": 0.4294478527607362,
+      "sha256": "c40d3ccfee9e996ef114bc0fb79effe96f1003c4bc36a0018c6018c3553c05b6"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Dizzy_01",
+      "ratio": 0.4294478527607362,
+      "sha256": "c40d3ccfee9e996ef114bc0fb79effe96f1003c4bc36a0018c6018c3553c05b6"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Dizzy_02",
+      "ratio": 0.4294478527607362,
+      "sha256": "c40d3ccfee9e996ef114bc0fb79effe96f1003c4bc36a0018c6018c3553c05b6"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Dizzy_03",
+      "ratio": 0.4294478527607362,
+      "sha256": "c40d3ccfee9e996ef114bc0fb79effe96f1003c4bc36a0018c6018c3553c05b6"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Fall_00",
+      "ratio": 0.4297520661157025,
+      "sha256": "c1e5541735fbf4cd97fe288bd950f1f0c24ef122b9ea21b9e2204cb3b57acbc7"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Fall_01",
+      "ratio": 0.4297520661157025,
+      "sha256": "c1e5541735fbf4cd97fe288bd950f1f0c24ef122b9ea21b9e2204cb3b57acbc7"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Fall_02",
+      "ratio": 0.4297520661157025,
+      "sha256": "c1e5541735fbf4cd97fe288bd950f1f0c24ef122b9ea21b9e2204cb3b57acbc7"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Fall_03",
+      "ratio": 0.4297520661157025,
+      "sha256": "c1e5541735fbf4cd97fe288bd950f1f0c24ef122b9ea21b9e2204cb3b57acbc7"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Win_00",
+      "ratio": 0.42973523421588594,
+      "sha256": "35507e3ab5f23eaae79f1ad946101124134148f079c3f382266f16335dc16af4"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Win_01",
+      "ratio": 0.42973523421588594,
+      "sha256": "e9157e3999f31a65954ae8c4ee01117f58512b4f63795dc3a0a6df4b49ed0470"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Win_02",
+      "ratio": 0.42973523421588594,
+      "sha256": "09427e71a9011b6e104fc7872c12ad60c5a499d7f3ce374cf4ff1fc281c083eb"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Win_03",
+      "ratio": 0.42973523421588594,
+      "sha256": "28b6b12490343267eb78c28a20ab345225149d8c2b39eef75e4557743be0b90e"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Lose_00",
+      "ratio": 0.4297520661157025,
+      "sha256": "8b0c4ec26a87a6c6d5ce5d5ed3cc992fffb5c59a2b0f089a5a30d0d0cd115823"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Lose_01",
+      "ratio": 0.4297520661157025,
+      "sha256": "8b0c4ec26a87a6c6d5ce5d5ed3cc992fffb5c59a2b0f089a5a30d0d0cd115823"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Lose_02",
+      "ratio": 0.4297520661157025,
+      "sha256": "8b0c4ec26a87a6c6d5ce5d5ed3cc992fffb5c59a2b0f089a5a30d0d0cd115823"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingPamalo/Actions/Lose_03",
+      "ratio": 0.4297520661157025,
+      "sha256": "8b0c4ec26a87a6c6d5ce5d5ed3cc992fffb5c59a2b0f089a5a30d0d0cd115823"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Idle_00",
+      "ratio": 0.4092741935483871,
+      "sha256": "d0da11ecdc94dce07edb5ee7fd0e1a356f269ddce3896e6bf8787fb8af6ab121"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Idle_01",
+      "ratio": 0.4092741935483871,
+      "sha256": "fde16a24668d607f781670d33b079e5853f15d07b8c67571f67d3db8a411741d"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Idle_02",
+      "ratio": 0.4092741935483871,
+      "sha256": "d0da11ecdc94dce07edb5ee7fd0e1a356f269ddce3896e6bf8787fb8af6ab121"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Idle_03",
+      "ratio": 0.4092741935483871,
+      "sha256": "fde16a24668d607f781670d33b079e5853f15d07b8c67571f67d3db8a411741d"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Walk_00",
+      "ratio": 0.4314516129032258,
+      "sha256": "5b3d4c4961e1511c1e43c5221c28b8bb0208fd947811db3976d30447f64d8ed7"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Walk_01",
+      "ratio": 0.43380855397148677,
+      "sha256": "ffdc1b9cc5bb122f105841e07b603068c254663aa5e77e7de01fe7da80dda72d"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Walk_02",
+      "ratio": 0.4314516129032258,
+      "sha256": "4c18463f5e2df4786099f94c9d97166a572b8b860c2ae8fb6930b97c19d45d5a"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Walk_03",
+      "ratio": 0.43380855397148677,
+      "sha256": "ffdc1b9cc5bb122f105841e07b603068c254663aa5e77e7de01fe7da80dda72d"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Strike_00",
+      "ratio": 0.4092741935483871,
+      "sha256": "d0da11ecdc94dce07edb5ee7fd0e1a356f269ddce3896e6bf8787fb8af6ab121"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Strike_01",
+      "ratio": 0.432712215320911,
+      "sha256": "a26d924c2d4798fabd58b28fbd33ba2a8460e287d89f63cfb3bda4fc17e2a5c0"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Strike_02",
+      "ratio": 0.4054621848739496,
+      "sha256": "1dcb8beeeb64563045af2e443694d866451c988095a984cb38b28f15363148a9"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Strike_03",
+      "ratio": 0.4309978768577495,
+      "sha256": "46507b50905bd0d2943c37e8b0353ab94319237829bb0f7c80d169e59f3cc035"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Strike_04",
+      "ratio": 0.4291845493562232,
+      "sha256": "9f54ab11920578d806dbee31e32312d47d62b15401347130b901c87ae2293a66"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Strike_05",
+      "ratio": 0.4081196581196581,
+      "sha256": "20bd77863b1107a6bb5a4834ff6f24840c5e2df607cb6ef46dbefc782eefcb62"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Hurt_00",
+      "ratio": 0.4190283400809717,
+      "sha256": "9c69b04371b52f92e5fbf4932c3b5bd11061efb71408f161e2abc7bf4c08f910"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Hurt_01",
+      "ratio": 0.4190283400809717,
+      "sha256": "5e6d08fc80fad20fe574ec9d92fd1d1440171618e742aa825c5e3f44b5ef5416"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Hurt_02",
+      "ratio": 0.4190283400809717,
+      "sha256": "eebfe8a624e065842e717fd4c521d8d10b071e420d911c6d9b6580a3c1b1689f"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Hurt_03",
+      "ratio": 0.4190283400809717,
+      "sha256": "21cceee76d3f06a9d022148e569a3e5f38e763c44a96bea4ff435fd335152a35"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Dizzy_00",
+      "ratio": 0.4381338742393509,
+      "sha256": "8cc7dd084df47f62202e3e51fa1610f7f7d7391e65cc262d797f1434c96b5bb5"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Dizzy_01",
+      "ratio": 0.4381338742393509,
+      "sha256": "8cc7dd084df47f62202e3e51fa1610f7f7d7391e65cc262d797f1434c96b5bb5"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Dizzy_02",
+      "ratio": 0.4381338742393509,
+      "sha256": "8cc7dd084df47f62202e3e51fa1610f7f7d7391e65cc262d797f1434c96b5bb5"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Dizzy_03",
+      "ratio": 0.4381338742393509,
+      "sha256": "8cc7dd084df47f62202e3e51fa1610f7f7d7391e65cc262d797f1434c96b5bb5"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Fall_00",
+      "ratio": 0.43067226890756305,
+      "sha256": "6c5ae7e42cc7b142a99a7ef8d6411e98dad32852f068803aa34189c2b9b91649"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Fall_01",
+      "ratio": 0.43067226890756305,
+      "sha256": "6c5ae7e42cc7b142a99a7ef8d6411e98dad32852f068803aa34189c2b9b91649"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Fall_02",
+      "ratio": 0.43067226890756305,
+      "sha256": "6c5ae7e42cc7b142a99a7ef8d6411e98dad32852f068803aa34189c2b9b91649"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Fall_03",
+      "ratio": 0.43067226890756305,
+      "sha256": "6c5ae7e42cc7b142a99a7ef8d6411e98dad32852f068803aa34189c2b9b91649"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Win_00",
+      "ratio": 0.4311740890688259,
+      "sha256": "fa313375054730ef4a20bbd0256864084f5f36d6926c90c7a6f28cae3cf777c1"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Win_01",
+      "ratio": 0.4311740890688259,
+      "sha256": "4e3d9fca1abca915a029fd0b49644aaae78fb5c68773cf37bcecc94e5923f7dc"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Win_02",
+      "ratio": 0.4311740890688259,
+      "sha256": "dce4aa0577c01b3aeb1b24e938d725303403957490afff6cdacf8d5814cd4a56"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Win_03",
+      "ratio": 0.4311740890688259,
+      "sha256": "92b9618dbc449da0c5b8ea8e784b2c19aeeeec1a56667550283d239345d91aab"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Lose_00",
+      "ratio": 0.43067226890756305,
+      "sha256": "72872e2855a01654a55bf2ba9e6f2303c567746ee9ca342320a4d44a8cc39eaa"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Lose_01",
+      "ratio": 0.43067226890756305,
+      "sha256": "72872e2855a01654a55bf2ba9e6f2303c567746ee9ca342320a4d44a8cc39eaa"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Lose_02",
+      "ratio": 0.43067226890756305,
+      "sha256": "72872e2855a01654a55bf2ba9e6f2303c567746ee9ca342320a4d44a8cc39eaa"
+    },
+    {
+      "resource": "Ilaban/Characters/KuyaTsinelas/Actions/Lose_03",
+      "ratio": 0.43067226890756305,
+      "sha256": "72872e2855a01654a55bf2ba9e6f2303c567746ee9ca342320a4d44a8cc39eaa"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Idle_00",
+      "ratio": 0.4195519348268839,
+      "sha256": "0ea4b9918ee3a94a346dee451a3a855c04b453e86e50a6a15306af9274c53f4d"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Idle_01",
+      "ratio": 0.4195519348268839,
+      "sha256": "c0c6835b55e721dae0ad5bb262b96e0934b9d10f66ebf7e92ddc6219adeb130b"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Idle_02",
+      "ratio": 0.4195519348268839,
+      "sha256": "0ea4b9918ee3a94a346dee451a3a855c04b453e86e50a6a15306af9274c53f4d"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Idle_03",
+      "ratio": 0.4195519348268839,
+      "sha256": "c0c6835b55e721dae0ad5bb262b96e0934b9d10f66ebf7e92ddc6219adeb130b"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Walk_00",
+      "ratio": 0.4106776180698152,
+      "sha256": "4beb79c20c98d4ac71b930ef55caf10933e9bfe1bed532840b5d08f1ef185272"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Walk_01",
+      "ratio": 0.41683778234086244,
+      "sha256": "fc9c8a1fed8d9caa6d48acb36f33e4a24c1eb4633d124532c88bbe65e0715d41"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Walk_02",
+      "ratio": 0.4106776180698152,
+      "sha256": "1feaf09d49a3d16845e4af14300b572549796a2520286282d9e0b2092c12c3b0"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Walk_03",
+      "ratio": 0.41683778234086244,
+      "sha256": "fc9c8a1fed8d9caa6d48acb36f33e4a24c1eb4633d124532c88bbe65e0715d41"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Strike_00",
+      "ratio": 0.4195519348268839,
+      "sha256": "0ea4b9918ee3a94a346dee451a3a855c04b453e86e50a6a15306af9274c53f4d"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Strike_01",
+      "ratio": 0.4192872117400419,
+      "sha256": "c21a88d92597ee30d0059b21fd264269a474f553883356b7771386cdbc07acbe"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Strike_02",
+      "ratio": 0.42915811088295686,
+      "sha256": "02bb1e27e1539912b4580a0592716b7cf7f75153a473c87982deecb255c75d55"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Strike_03",
+      "ratio": 0.40638297872340423,
+      "sha256": "4eaa7b1c0258f232121a884a375438a7b5f30381cd3c64761d747ae86b83967e"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Strike_04",
+      "ratio": 0.40976645435244163,
+      "sha256": "87739637b5b3a841160fdb947208043d48e3c9f02a044fed3c57e17f859d0774"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Strike_05",
+      "ratio": 0.4188034188034188,
+      "sha256": "02ce19a1e4c9db56ddae3ad85c778d4f43c2e470f5039f14afc530db0ccb10e7"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Hurt_00",
+      "ratio": 0.43037974683544306,
+      "sha256": "9ad26ad189e054cf0c15522782f710c0eb0522665bd8883d1a2925151d39372b"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Hurt_01",
+      "ratio": 0.43037974683544306,
+      "sha256": "5eaa1cb6c4c7778a1e71738c4f46652b835fa3a39594328ce7f1ce187d050e1b"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Hurt_02",
+      "ratio": 0.43037974683544306,
+      "sha256": "faddfe4ee439cf453aea43aefd5b9c5de90b048ac0997ec0efb121e887e46dad"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Hurt_03",
+      "ratio": 0.43037974683544306,
+      "sha256": "64d9a712cfd10e1ea0458c345c632e99665027d153ac7e556f146098137274d5"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Dizzy_00",
+      "ratio": 0.4489795918367347,
+      "sha256": "c2cb3cddc097b32c2e5aa8c984a959506b2f79b62eca8fd756e6f3f5daaee05e"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Dizzy_01",
+      "ratio": 0.4489795918367347,
+      "sha256": "c2cb3cddc097b32c2e5aa8c984a959506b2f79b62eca8fd756e6f3f5daaee05e"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Dizzy_02",
+      "ratio": 0.4489795918367347,
+      "sha256": "c2cb3cddc097b32c2e5aa8c984a959506b2f79b62eca8fd756e6f3f5daaee05e"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Dizzy_03",
+      "ratio": 0.4489795918367347,
+      "sha256": "c2cb3cddc097b32c2e5aa8c984a959506b2f79b62eca8fd756e6f3f5daaee05e"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Fall_00",
+      "ratio": 0.4493927125506073,
+      "sha256": "91b26da1d647b5109e88ee98dcefc00a0ad4f8df42d502c96f53b4db4299647c"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Fall_01",
+      "ratio": 0.4493927125506073,
+      "sha256": "91b26da1d647b5109e88ee98dcefc00a0ad4f8df42d502c96f53b4db4299647c"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Fall_02",
+      "ratio": 0.4493927125506073,
+      "sha256": "91b26da1d647b5109e88ee98dcefc00a0ad4f8df42d502c96f53b4db4299647c"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Fall_03",
+      "ratio": 0.4493927125506073,
+      "sha256": "91b26da1d647b5109e88ee98dcefc00a0ad4f8df42d502c96f53b4db4299647c"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Win_00",
+      "ratio": 0.41935483870967744,
+      "sha256": "00fbc82fb582ffd9736cbd6b4fc3a7a4cb59a3b4854875e186a135440813b248"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Win_01",
+      "ratio": 0.41935483870967744,
+      "sha256": "f39bbc5e09a6edb2425e5c8c4028031f5bf28c9f16ef0397f0ff22b47e699fe3"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Win_02",
+      "ratio": 0.41935483870967744,
+      "sha256": "c60e7ea4871c7a202d5ba59421e6d784d7b228917843f9b462ca1ace17cb804f"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Win_03",
+      "ratio": 0.41935483870967744,
+      "sha256": "c501436c10ac9ab9ea2ce38b6833893e6ed3e355f0449b4d925dd4f74b277cb7"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Lose_00",
+      "ratio": 0.4493927125506073,
+      "sha256": "abc65724edb07ee727771353b6a51a61be7c35801c6635ccd6cbdeb338baa4b1"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Lose_01",
+      "ratio": 0.4493927125506073,
+      "sha256": "abc65724edb07ee727771353b6a51a61be7c35801c6635ccd6cbdeb338baa4b1"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Lose_02",
+      "ratio": 0.4493927125506073,
+      "sha256": "abc65724edb07ee727771353b6a51a61be7c35801c6635ccd6cbdeb338baa4b1"
+    },
+    {
+      "resource": "Ilaban/Characters/AteBatoBatoPik/Actions/Lose_03",
+      "ratio": 0.4493927125506073,
+      "sha256": "abc65724edb07ee727771353b6a51a61be7c35801c6635ccd6cbdeb338baa4b1"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Idle_00",
+      "ratio": 0.4403292181069959,
+      "sha256": "d1f0de75c7af6857a564524a2b686407181774359a6534992e52b156205da273"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Idle_01",
+      "ratio": 0.4403292181069959,
+      "sha256": "52e9cc4e734a90cdd4cd862c73757229a7fd2228a7dc8dc067b798375a839acb"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Idle_02",
+      "ratio": 0.4403292181069959,
+      "sha256": "d1f0de75c7af6857a564524a2b686407181774359a6534992e52b156205da273"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Idle_03",
+      "ratio": 0.4403292181069959,
+      "sha256": "52e9cc4e734a90cdd4cd862c73757229a7fd2228a7dc8dc067b798375a839acb"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Walk_00",
+      "ratio": 0.4484848484848485,
+      "sha256": "100e1581806e65646d5c1d98891939cb7899726f9220a9c5337b9c50953c4ae0"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Walk_01",
+      "ratio": 0.4493927125506073,
+      "sha256": "b965dabf890c6cf96855e8351d42af1020f7d352e288bed944ab6b4c153b07b6"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Walk_02",
+      "ratio": 0.4484848484848485,
+      "sha256": "6519706e864cd06eec928c6ca570b24dca367f0fa72d1515aaff9abc48189595"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Walk_03",
+      "ratio": 0.4493927125506073,
+      "sha256": "b965dabf890c6cf96855e8351d42af1020f7d352e288bed944ab6b4c153b07b6"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Strike_00",
+      "ratio": 0.4403292181069959,
+      "sha256": "d1f0de75c7af6857a564524a2b686407181774359a6534992e52b156205da273"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Strike_01",
+      "ratio": 0.43010752688172044,
+      "sha256": "033359fbbe7523376955580e5a6144cdcaef3882a75a8a620f27c47195a67fc3"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Strike_02",
+      "ratio": 0.42946058091286304,
+      "sha256": "a9ab37da6c0d218f0f22629b311ab8fe4bd5307148b83bd807049b253b3d6a59"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Strike_03",
+      "ratio": 0.42950108459869846,
+      "sha256": "790021826f2558271276f0838481a006d46bd714d6a0084a580dc58c33b79cca"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Strike_04",
+      "ratio": 0.4310722100656455,
+      "sha256": "4d182374622dde411b87e415e3550c055cd5786a3826310de76fd7739ee5db00"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Strike_05",
+      "ratio": 0.42733188720173537,
+      "sha256": "459f2b01d698a0c9617ebc09e48272a98ca91b65c8f8870f3df2abb3af0c4f06"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Hurt_00",
+      "ratio": 0.4460285132382892,
+      "sha256": "57115a6a1e2f5e08e3295876a7181e7f5fd7b517205113096f31d307acd59801"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Hurt_01",
+      "ratio": 0.4460285132382892,
+      "sha256": "21b6f45f4ae46b77b4e9f69915b81f6e30599835e743a2980b851142f1dd2f40"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Hurt_02",
+      "ratio": 0.4460285132382892,
+      "sha256": "d794e19a8903afacab3d6bbbf78124fc907a4e709952b2026c78c592ff1e7903"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Hurt_03",
+      "ratio": 0.4460285132382892,
+      "sha256": "994032cf2544071d1c794c15f89d2639819fca9e6975e9d5d7df3c5afdd19afd"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Dizzy_00",
+      "ratio": 0.44556451612903225,
+      "sha256": "d49d4c20451b02f9e029daaa1d1af13711336855ac6fa7c23dd248c013a091c0"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Dizzy_01",
+      "ratio": 0.44556451612903225,
+      "sha256": "d49d4c20451b02f9e029daaa1d1af13711336855ac6fa7c23dd248c013a091c0"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Dizzy_02",
+      "ratio": 0.44556451612903225,
+      "sha256": "d49d4c20451b02f9e029daaa1d1af13711336855ac6fa7c23dd248c013a091c0"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Dizzy_03",
+      "ratio": 0.44556451612903225,
+      "sha256": "d49d4c20451b02f9e029daaa1d1af13711336855ac6fa7c23dd248c013a091c0"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Fall_00",
+      "ratio": 0.4303030303030303,
+      "sha256": "3983dd2caca11562ad09e9ab4c5c2520f83fa8c46e80af0f536858075bf7cf33"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Fall_01",
+      "ratio": 0.4303030303030303,
+      "sha256": "3983dd2caca11562ad09e9ab4c5c2520f83fa8c46e80af0f536858075bf7cf33"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Fall_02",
+      "ratio": 0.4303030303030303,
+      "sha256": "3983dd2caca11562ad09e9ab4c5c2520f83fa8c46e80af0f536858075bf7cf33"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Fall_03",
+      "ratio": 0.4303030303030303,
+      "sha256": "3983dd2caca11562ad09e9ab4c5c2520f83fa8c46e80af0f536858075bf7cf33"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Win_00",
+      "ratio": 0.4473684210526316,
+      "sha256": "09c70d5519f7ec3ec065c65a28e23ae70c3118d7bab8fc93d4cd819ae763705b"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Win_01",
+      "ratio": 0.4473684210526316,
+      "sha256": "31df4f2df45a178fbce2d7379b7c2a3bef0b54dc9a3437d6fa272cf9c3c512ed"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Win_02",
+      "ratio": 0.4473684210526316,
+      "sha256": "6eb1ce8ba592614df179efb4669db3077dbd26fe6d669bebbbb3eae174c2dbfe"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Win_03",
+      "ratio": 0.4473684210526316,
+      "sha256": "febab355efe2ce6700c9a860ceec822fe02535f8fc53d0248764fd4fa078e7bf"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Lose_00",
+      "ratio": 0.4303030303030303,
+      "sha256": "08e6cc4accaeb09c42436bb8e4e0800eaaccd88589ac326aaa48810367f37d57"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Lose_01",
+      "ratio": 0.4303030303030303,
+      "sha256": "08e6cc4accaeb09c42436bb8e4e0800eaaccd88589ac326aaa48810367f37d57"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Lose_02",
+      "ratio": 0.4303030303030303,
+      "sha256": "08e6cc4accaeb09c42436bb8e4e0800eaaccd88589ac326aaa48810367f37d57"
+    },
+    {
+      "resource": "Ilaban/Characters/KapBatuta/Actions/Lose_03",
+      "ratio": 0.4303030303030303,
+      "sha256": "08e6cc4accaeb09c42436bb8e4e0800eaaccd88589ac326aaa48810367f37d57"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Idle_00",
+      "ratio": 0.43089430894308944,
+      "sha256": "29f62ce3093831a6a2c06f423c6be99640746ad8bb914da3f88ce6f1b6d2248f"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Idle_01",
+      "ratio": 0.43089430894308944,
+      "sha256": "b87565c4d8e8733cb6fd7ecde021a4959bc0f8f46895f5a05b4bbc009f0a7327"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Idle_02",
+      "ratio": 0.43089430894308944,
+      "sha256": "29f62ce3093831a6a2c06f423c6be99640746ad8bb914da3f88ce6f1b6d2248f"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Idle_03",
+      "ratio": 0.43089430894308944,
+      "sha256": "b87565c4d8e8733cb6fd7ecde021a4959bc0f8f46895f5a05b4bbc009f0a7327"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Walk_00",
+      "ratio": 0.4306122448979592,
+      "sha256": "2e263b407a69c1025f3126d0d17b9c413608972bb62552d4b4035dc3d1798ef4"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Walk_01",
+      "ratio": 0.430327868852459,
+      "sha256": "2243235c35bbe3c3782400e9f5b8fa591510c4addc8e4eea524c95106fb3c195"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Walk_02",
+      "ratio": 0.4306122448979592,
+      "sha256": "69168009e1dc908ddcfc1cf0942d8ed05630d183ed9dee90a26b5cd19018f1d2"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Walk_03",
+      "ratio": 0.430327868852459,
+      "sha256": "2243235c35bbe3c3782400e9f5b8fa591510c4addc8e4eea524c95106fb3c195"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Strike_00",
+      "ratio": 0.43089430894308944,
+      "sha256": "29f62ce3093831a6a2c06f423c6be99640746ad8bb914da3f88ce6f1b6d2248f"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Strike_01",
+      "ratio": 0.42973523421588594,
+      "sha256": "7b1e15c0127305557606d315476911f5126b22edc6c3661af1d1819fbc5cd0f6"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Strike_02",
+      "ratio": 0.4306122448979592,
+      "sha256": "5c5d40f6b6e8b27af16dc21be7080b45ec55ab2e566579defae596d41f46772b"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Strike_03",
+      "ratio": 0.4309978768577495,
+      "sha256": "65db8011ed0f3ff62e3f831006b929a2837bb5e074d97391a08bfaa3a2e97a86"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Strike_04",
+      "ratio": 0.4297872340425532,
+      "sha256": "07bc5f83165814e06a4da866223314af60f02ebe378d591ac2f2d5bcbbe391e8"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Strike_05",
+      "ratio": 0.4309978768577495,
+      "sha256": "b0ab4928abf1e6d926135b47fbedde6fa9cf54efa28ec68658b49a255cced075"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Hurt_00",
+      "ratio": 0.41200828157349895,
+      "sha256": "d269aeeaa63f09c6ea164b4950bbee63e49ed5672224075733e2d75842d53f0f"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Hurt_01",
+      "ratio": 0.41200828157349895,
+      "sha256": "989d3124401a15d7840522d4432baf99e7e4884cfbdbd0f943a430f84eed3119"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Hurt_02",
+      "ratio": 0.41200828157349895,
+      "sha256": "924e7fd9763613d3b2e9cb5c1080f6501b0dc454cc8075cdf701e451728341fd"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Hurt_03",
+      "ratio": 0.41200828157349895,
+      "sha256": "0e61c9980556ead894a5e0ad13177ba62d79a1f51269ac8bb28507d0cb47aa07"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Dizzy_00",
+      "ratio": 0.42946058091286304,
+      "sha256": "4fff2011c6c8b7b7311f38b482c01f7421e4d9ea10e949ff7e6f4e1155331890"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Dizzy_01",
+      "ratio": 0.42946058091286304,
+      "sha256": "4fff2011c6c8b7b7311f38b482c01f7421e4d9ea10e949ff7e6f4e1155331890"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Dizzy_02",
+      "ratio": 0.42946058091286304,
+      "sha256": "4fff2011c6c8b7b7311f38b482c01f7421e4d9ea10e949ff7e6f4e1155331890"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Dizzy_03",
+      "ratio": 0.42946058091286304,
+      "sha256": "4fff2011c6c8b7b7311f38b482c01f7421e4d9ea10e949ff7e6f4e1155331890"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Fall_00",
+      "ratio": 0.4306418219461698,
+      "sha256": "a10d145c9064a54a4f38d134d19b4071b15300b1491fae62bba6ab4344de7a04"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Fall_01",
+      "ratio": 0.4306418219461698,
+      "sha256": "a10d145c9064a54a4f38d134d19b4071b15300b1491fae62bba6ab4344de7a04"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Fall_02",
+      "ratio": 0.4306418219461698,
+      "sha256": "a10d145c9064a54a4f38d134d19b4071b15300b1491fae62bba6ab4344de7a04"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Fall_03",
+      "ratio": 0.4306418219461698,
+      "sha256": "a10d145c9064a54a4f38d134d19b4071b15300b1491fae62bba6ab4344de7a04"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Win_00",
+      "ratio": 0.42943548387096775,
+      "sha256": "5c895cd640cfa7bf2bc653e7d9abfc09b29b95fcc823ed3c9c91d5f63a61da8b"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Win_01",
+      "ratio": 0.42943548387096775,
+      "sha256": "f6e6ad0f0420fa5893e0376b7fe1cf5a969d6dd922455bf2daa0b80679bc71ab"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Win_02",
+      "ratio": 0.42943548387096775,
+      "sha256": "9e4be5ba49e9dd1496aa3777fea3967688810fdc4b5286d7dc9e6edf4ebef387"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Win_03",
+      "ratio": 0.42943548387096775,
+      "sha256": "acbf94cab5d532a02df3f8b6a2eeacbe04f19eb6c8cb746a7323a042c51d13a7"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Lose_00",
+      "ratio": 0.4306418219461698,
+      "sha256": "5130031cd8426ff559c84fa916c139bf9e91eb88728b8da1041d2e9f16fe6deb"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Lose_01",
+      "ratio": 0.4306418219461698,
+      "sha256": "5130031cd8426ff559c84fa916c139bf9e91eb88728b8da1041d2e9f16fe6deb"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Lose_02",
+      "ratio": 0.4306418219461698,
+      "sha256": "5130031cd8426ff559c84fa916c139bf9e91eb88728b8da1041d2e9f16fe6deb"
+    },
+    {
+      "resource": "Ilaban/Characters/ManongLatalata/Actions/Lose_03",
+      "ratio": 0.4306418219461698,
+      "sha256": "5130031cd8426ff559c84fa916c139bf9e91eb88728b8da1041d2e9f16fe6deb"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Idle_00",
+      "ratio": 0.42943548387096775,
+      "sha256": "57108d9305f96fa66834a4f900d5a218f5e13a70c91d2fad879ac26efe22f499"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Idle_01",
+      "ratio": 0.42943548387096775,
+      "sha256": "0eb5da9537240ad20c994f0528956f27ef3b0f5c91f022579f066580ca8db27f"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Idle_02",
+      "ratio": 0.42943548387096775,
+      "sha256": "57108d9305f96fa66834a4f900d5a218f5e13a70c91d2fad879ac26efe22f499"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Idle_03",
+      "ratio": 0.42943548387096775,
+      "sha256": "0eb5da9537240ad20c994f0528956f27ef3b0f5c91f022579f066580ca8db27f"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Walk_00",
+      "ratio": 0.4303030303030303,
+      "sha256": "a37dda08ef6f7c9f06f921660c5e61383b0dea435d609252c21f65bf77179e27"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Walk_01",
+      "ratio": 0.4303030303030303,
+      "sha256": "66be77cfa4bf0c6bf294ff6ca358801e769a2ab995591224bb78ed0a7a73dc13"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Walk_02",
+      "ratio": 0.4303030303030303,
+      "sha256": "c783b1364eb71ff6c8664972feda50ec845d286e6eef2f2a9a483675adf8bbdf"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Walk_03",
+      "ratio": 0.4303030303030303,
+      "sha256": "66be77cfa4bf0c6bf294ff6ca358801e769a2ab995591224bb78ed0a7a73dc13"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Strike_00",
+      "ratio": 0.42943548387096775,
+      "sha256": "57108d9305f96fa66834a4f900d5a218f5e13a70c91d2fad879ac26efe22f499"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Strike_01",
+      "ratio": 0.4291497975708502,
+      "sha256": "1b4972a9b6d17bb32bb0c7d223af39d1ba5912326809fb646a9462f89ecb96a3"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Strike_02",
+      "ratio": 0.4300202839756592,
+      "sha256": "37ac79909b7f53febec9c2327404b740dfe0e75f888f23930e08eed9c11c9444"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Strike_03",
+      "ratio": 0.430327868852459,
+      "sha256": "040094276b4b4481f8f2ba97a83ec2f01319dd07eedb9f6a87000de81b136e6f"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Strike_04",
+      "ratio": 0.4294478527607362,
+      "sha256": "f51f4faf2ddb755534aa003348b766d11402faf78915c858ea6ad72d69142176"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Strike_05",
+      "ratio": 0.4294478527607362,
+      "sha256": "22dd83a36f8af7f5e5bf198f1f7f7fc7648cae0d9a63f0d0b417a345f79cc752"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Hurt_00",
+      "ratio": 0.4303030303030303,
+      "sha256": "bef31e8b79e39ec4c35bd1aab00bafa0e72dee9722c4a04055c044994139b94c"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Hurt_01",
+      "ratio": 0.4303030303030303,
+      "sha256": "c75904e0418bb53b21823b7072769349904aee754e4c31a42b110b2e014040f2"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Hurt_02",
+      "ratio": 0.4303030303030303,
+      "sha256": "8d713292cd958c04dc1e73b7ac4fa194690a991839d943bf33d1dff6c491f1ac"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Hurt_03",
+      "ratio": 0.4303030303030303,
+      "sha256": "b326d935c251d4d1316baa415bfff8f106739c905cb2a2429a220c2357a58bca"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Dizzy_00",
+      "ratio": 0.42943548387096775,
+      "sha256": "aff9b5ce721688a9c89cdad0ae78cdca17bd7bb9f2c108bf6e6c02531235a0ff"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Dizzy_01",
+      "ratio": 0.42943548387096775,
+      "sha256": "aff9b5ce721688a9c89cdad0ae78cdca17bd7bb9f2c108bf6e6c02531235a0ff"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Dizzy_02",
+      "ratio": 0.42943548387096775,
+      "sha256": "aff9b5ce721688a9c89cdad0ae78cdca17bd7bb9f2c108bf6e6c02531235a0ff"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Dizzy_03",
+      "ratio": 0.42943548387096775,
+      "sha256": "aff9b5ce721688a9c89cdad0ae78cdca17bd7bb9f2c108bf6e6c02531235a0ff"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Fall_00",
+      "ratio": 0.4309278350515464,
+      "sha256": "12cf63d21f961035d31704f4baecf094351f17c11e666ff12ac7d489c32882ce"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Fall_01",
+      "ratio": 0.4309278350515464,
+      "sha256": "12cf63d21f961035d31704f4baecf094351f17c11e666ff12ac7d489c32882ce"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Fall_02",
+      "ratio": 0.4309278350515464,
+      "sha256": "12cf63d21f961035d31704f4baecf094351f17c11e666ff12ac7d489c32882ce"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Fall_03",
+      "ratio": 0.4309278350515464,
+      "sha256": "12cf63d21f961035d31704f4baecf094351f17c11e666ff12ac7d489c32882ce"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Win_00",
+      "ratio": 0.4306122448979592,
+      "sha256": "52783452eb3a600f70c96b05c346f9a061424e100929052f85903b38f60e4170"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Win_01",
+      "ratio": 0.4306122448979592,
+      "sha256": "f861c1bcbfff6173f5aade0b21e93d6dcd5756d13ce80ff5ae160bcb14866547"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Win_02",
+      "ratio": 0.4306122448979592,
+      "sha256": "2b0c57a30d57fbc5a50081839b42b118410d1c57637e815451f11bc4f8736c90"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Win_03",
+      "ratio": 0.4306122448979592,
+      "sha256": "6a25b410280d3cb7b164dee8c71258f11029bedfad148097331b1703b07c1239"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Lose_00",
+      "ratio": 0.4309278350515464,
+      "sha256": "889dd9612c6d229ea01f74b6be0546002c97ebc4ab687bbc73b81d0ded03314f"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Lose_01",
+      "ratio": 0.4309278350515464,
+      "sha256": "889dd9612c6d229ea01f74b6be0546002c97ebc4ab687bbc73b81d0ded03314f"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Lose_02",
+      "ratio": 0.4309278350515464,
+      "sha256": "889dd9612c6d229ea01f74b6be0546002c97ebc4ab687bbc73b81d0ded03314f"
+    },
+    {
+      "resource": "Ilaban/Characters/TitoSilya/Actions/Lose_03",
+      "ratio": 0.4309278350515464,
+      "sha256": "889dd9612c6d229ea01f74b6be0546002c97ebc4ab687bbc73b81d0ded03314f"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Idle_00",
+      "ratio": 0.42973523421588594,
+      "sha256": "dfb40718af3887a7a0285532bdf9e20492b3c177fc2a2f6e9219bcc929e082ce"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Idle_01",
+      "ratio": 0.42973523421588594,
+      "sha256": "5cf449ab9fe0afeae051536a43b9963c811a701339a0b42cf39a07f99f259053"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Idle_02",
+      "ratio": 0.42973523421588594,
+      "sha256": "dfb40718af3887a7a0285532bdf9e20492b3c177fc2a2f6e9219bcc929e082ce"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Idle_03",
+      "ratio": 0.42973523421588594,
+      "sha256": "5cf449ab9fe0afeae051536a43b9963c811a701339a0b42cf39a07f99f259053"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Walk_00",
+      "ratio": 0.42943548387096775,
+      "sha256": "b4ed463cbdf4f79ab7a3de65d1bad2af1f81d30f530049ad4fe2149615a5158d"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Walk_01",
+      "ratio": 0.42943548387096775,
+      "sha256": "2ed4d0e8ab0334d675c111e0d6914eea006711e35a8c9c0b40429b6b7c7a4594"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Walk_02",
+      "ratio": 0.42943548387096775,
+      "sha256": "35c22746fd6df1ffba75960e8d4deae024a701b6a695bd2b9f92cfb4d977e5a0"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Walk_03",
+      "ratio": 0.42943548387096775,
+      "sha256": "2ed4d0e8ab0334d675c111e0d6914eea006711e35a8c9c0b40429b6b7c7a4594"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Strike_00",
+      "ratio": 0.42973523421588594,
+      "sha256": "dfb40718af3887a7a0285532bdf9e20492b3c177fc2a2f6e9219bcc929e082ce"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Strike_01",
+      "ratio": 0.43089430894308944,
+      "sha256": "eb06fcf69b35e27fc3354cdc4cf2cbf917a95dfe19b50d887b95aaa09580213c"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Strike_02",
+      "ratio": 0.42915811088295686,
+      "sha256": "a36d4d9eca43d5d977b79f34df679f92b757a6ebe5dac2189171b485afb81452"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Strike_03",
+      "ratio": 0.4308390022675737,
+      "sha256": "3b6af660ad1dd9e146464c49b00ee3b91da16be38a8fccfcd5f0e9061e8137a1"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Strike_04",
+      "ratio": 0.4308390022675737,
+      "sha256": "113bb2ce57bc365e42a51db5718b942a54423d865c2e41a696d7c543d6d33ef1"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Strike_05",
+      "ratio": 0.4288939051918736,
+      "sha256": "b01be08d02d94f7a22a6fc36bea0516889ff3887acc226c9e452ce4cd053bfc6"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Hurt_00",
+      "ratio": 0.4303030303030303,
+      "sha256": "578ff9ba5716c781c4bb374c2a28ad8c4a435e1b5f41e0168e937e2fea21ae21"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Hurt_01",
+      "ratio": 0.4303030303030303,
+      "sha256": "6562c4c2faab7b686367277c38ea4b401cb5bffdd3eabfc75110bb57bbcb4ad5"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Hurt_02",
+      "ratio": 0.4303030303030303,
+      "sha256": "cc677f5afeb98a35d9974f3e206a25d00c8792dcae6863a9e077c6d370c43068"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Hurt_03",
+      "ratio": 0.4303030303030303,
+      "sha256": "005010b1832ecdad84ed50755fbb79ae09845c42ba5652efaff98c8ca33f8a73"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Dizzy_00",
+      "ratio": 0.42919389978213507,
+      "sha256": "7cced0005a7f01b1a511a76c052ce0321cfeedf61351ae0e18f4e675dc58a3af"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Dizzy_01",
+      "ratio": 0.42919389978213507,
+      "sha256": "7cced0005a7f01b1a511a76c052ce0321cfeedf61351ae0e18f4e675dc58a3af"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Dizzy_02",
+      "ratio": 0.42919389978213507,
+      "sha256": "7cced0005a7f01b1a511a76c052ce0321cfeedf61351ae0e18f4e675dc58a3af"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Dizzy_03",
+      "ratio": 0.42919389978213507,
+      "sha256": "7cced0005a7f01b1a511a76c052ce0321cfeedf61351ae0e18f4e675dc58a3af"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Fall_00",
+      "ratio": 0.42950108459869846,
+      "sha256": "3590d8658c9b876ddfddc8cfb1fc78697ee665de9164b5e1b90d223e24312fe1"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Fall_01",
+      "ratio": 0.42950108459869846,
+      "sha256": "3590d8658c9b876ddfddc8cfb1fc78697ee665de9164b5e1b90d223e24312fe1"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Fall_02",
+      "ratio": 0.42950108459869846,
+      "sha256": "3590d8658c9b876ddfddc8cfb1fc78697ee665de9164b5e1b90d223e24312fe1"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Fall_03",
+      "ratio": 0.42950108459869846,
+      "sha256": "3590d8658c9b876ddfddc8cfb1fc78697ee665de9164b5e1b90d223e24312fe1"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Win_00",
+      "ratio": 0.42950108459869846,
+      "sha256": "fab4e755d5aed140942288852bb57c58a68b7ea5bb57fcf9007681821f417042"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Win_01",
+      "ratio": 0.42950108459869846,
+      "sha256": "d001d1612d3c54d247d5b9eb5bda6d026653a5435bad29b1a2afa38d36a66be7"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Win_02",
+      "ratio": 0.42950108459869846,
+      "sha256": "db9f8b010cfdf75d74abe2668224d67bc162bdd428aff6cd3d620cd49007b1a9"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Win_03",
+      "ratio": 0.42950108459869846,
+      "sha256": "ea68777938f6c7e870db9495423b5ab783208b2be751537a9ff5f31645aa3f4b"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Lose_00",
+      "ratio": 0.42950108459869846,
+      "sha256": "c241b5a9cc695c75ed9ca53a6d0c35b1e208b6ddb458bc7d954ea528449011a5"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Lose_01",
+      "ratio": 0.42950108459869846,
+      "sha256": "c241b5a9cc695c75ed9ca53a6d0c35b1e208b6ddb458bc7d954ea528449011a5"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Lose_02",
+      "ratio": 0.42950108459869846,
+      "sha256": "c241b5a9cc695c75ed9ca53a6d0c35b1e208b6ddb458bc7d954ea528449011a5"
+    },
+    {
+      "resource": "Ilaban/Characters/AlingBotengSuka/Actions/Lose_03",
+      "ratio": 0.42950108459869846,
+      "sha256": "c241b5a9cc695c75ed9ca53a6d0c35b1e208b6ddb458bc7d954ea528449011a5"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Idle_00",
+      "ratio": 0.4291497975708502,
+      "sha256": "105bb040a8bbd77b4dbe34ba8af507a6a227471223ee87b4d7c7380b2cf7b818"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Idle_01",
+      "ratio": 0.4291497975708502,
+      "sha256": "5149e543c0aee11c2dadacdcbc7ebb6d96c64e8146ef7338165848ff1a91a531"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Idle_02",
+      "ratio": 0.4291497975708502,
+      "sha256": "105bb040a8bbd77b4dbe34ba8af507a6a227471223ee87b4d7c7380b2cf7b818"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Idle_03",
+      "ratio": 0.4291497975708502,
+      "sha256": "5149e543c0aee11c2dadacdcbc7ebb6d96c64e8146ef7338165848ff1a91a531"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Walk_00",
+      "ratio": 0.42943548387096775,
+      "sha256": "27b3772e66f91cdc1db35d754bbab9702312705b8a260a02b6bdb84ed0e1c187"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Walk_01",
+      "ratio": 0.4291497975708502,
+      "sha256": "95edb2e3c9644b2b230d27fedd3963377f1a8e7875dc6041150697957db590a0"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Walk_02",
+      "ratio": 0.42943548387096775,
+      "sha256": "3b422cf322a3991575f8fcd2fc447c88757e06806a8d147f94fc67427be187d8"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Walk_03",
+      "ratio": 0.4291497975708502,
+      "sha256": "95edb2e3c9644b2b230d27fedd3963377f1a8e7875dc6041150697957db590a0"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Strike_00",
+      "ratio": 0.4291497975708502,
+      "sha256": "105bb040a8bbd77b4dbe34ba8af507a6a227471223ee87b4d7c7380b2cf7b818"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Strike_01",
+      "ratio": 0.42973523421588594,
+      "sha256": "9c8bfcc58423e0b89c1b6132ef929d05a045b1bf8dc16e56ab98012de0b69099"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Strike_02",
+      "ratio": 0.4309278350515464,
+      "sha256": "3fd6fac68c4c8c6516ff4aa575d8717fe0c6fc3c76b5061333ae554990a22d74"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Strike_03",
+      "ratio": 0.4303534303534304,
+      "sha256": "465bac748da88301ca60e97ab24f856c4e59d64c6bfd2fe74506755ca5b5ef0b"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Strike_04",
+      "ratio": 0.4303534303534304,
+      "sha256": "8ac66e5f18fdc2153d1e107f5ddee1141cf76fea81a13c3866f9a2f9edcfaf09"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Strike_05",
+      "ratio": 0.4303534303534304,
+      "sha256": "34d5eb863a18a12a4e1c179e627117f6c211954c9426725067c0dc14b7e20650"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Hurt_00",
+      "ratio": 0.4291497975708502,
+      "sha256": "46b73a12bc97e608c1b19f6c1b501282be06bdc9d3363ce333f9260410f1c30e"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Hurt_01",
+      "ratio": 0.4291497975708502,
+      "sha256": "8009b7864c9659c5159f58e9ce1ae0c254ad42e905d3209213aad0e59dacda47"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Hurt_02",
+      "ratio": 0.4291497975708502,
+      "sha256": "1195a547fb580926203314c72b71e1c69be8ddd9db6ea0e337b31608566d95e0"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Hurt_03",
+      "ratio": 0.4291497975708502,
+      "sha256": "8f4b24b764416807d62991cfcf0439f95d8dd264c00ee4910754ce9dd92fe845"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Dizzy_00",
+      "ratio": 0.4300847457627119,
+      "sha256": "462717f3459d4696737eae03c9b99a08ac73b440cefef67e8d2324d67de0ba9d"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Dizzy_01",
+      "ratio": 0.4300847457627119,
+      "sha256": "462717f3459d4696737eae03c9b99a08ac73b440cefef67e8d2324d67de0ba9d"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Dizzy_02",
+      "ratio": 0.4300847457627119,
+      "sha256": "462717f3459d4696737eae03c9b99a08ac73b440cefef67e8d2324d67de0ba9d"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Dizzy_03",
+      "ratio": 0.4300847457627119,
+      "sha256": "462717f3459d4696737eae03c9b99a08ac73b440cefef67e8d2324d67de0ba9d"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Fall_00",
+      "ratio": 0.4309978768577495,
+      "sha256": "0d51fb17ce2dc8f72c7d54fe40a007c420ac9586c1203aa69c0967cc7eaf5b38"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Fall_01",
+      "ratio": 0.4309978768577495,
+      "sha256": "0d51fb17ce2dc8f72c7d54fe40a007c420ac9586c1203aa69c0967cc7eaf5b38"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Fall_02",
+      "ratio": 0.4309978768577495,
+      "sha256": "0d51fb17ce2dc8f72c7d54fe40a007c420ac9586c1203aa69c0967cc7eaf5b38"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Fall_03",
+      "ratio": 0.4309978768577495,
+      "sha256": "0d51fb17ce2dc8f72c7d54fe40a007c420ac9586c1203aa69c0967cc7eaf5b38"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Win_00",
+      "ratio": 0.43037974683544306,
+      "sha256": "9fa006df0cccf46e0d2eb5366c1fc3a2d859062e7a51757d492e91d97a5f3cb1"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Win_01",
+      "ratio": 0.43037974683544306,
+      "sha256": "5f8afb552be6353771ce524cb76e48ec3b32efb51addaa300f87069232f12768"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Win_02",
+      "ratio": 0.43037974683544306,
+      "sha256": "57a67169866c7032b11aa09e851059452d50af5eb6a8e297eee02121a00ec2e8"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Win_03",
+      "ratio": 0.43037974683544306,
+      "sha256": "f85927f469492e14d4376606b8d41719c845f458323d45742efc5578bd7417cc"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Lose_00",
+      "ratio": 0.4309978768577495,
+      "sha256": "20b6abeeef6498a907e4d59b2fcefcf3f95b76b51a12216f868d8c20d0d02ab3"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Lose_01",
+      "ratio": 0.4309978768577495,
+      "sha256": "20b6abeeef6498a907e4d59b2fcefcf3f95b76b51a12216f868d8c20d0d02ab3"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Lose_02",
+      "ratio": 0.4309978768577495,
+      "sha256": "20b6abeeef6498a907e4d59b2fcefcf3f95b76b51a12216f868d8c20d0d02ab3"
+    },
+    {
+      "resource": "Ilaban/Characters/NanayTingting/Actions/Lose_03",
+      "ratio": 0.4309978768577495,
+      "sha256": "20b6abeeef6498a907e4d59b2fcefcf3f95b76b51a12216f868d8c20d0d02ab3"
+    }
+  ]
+}

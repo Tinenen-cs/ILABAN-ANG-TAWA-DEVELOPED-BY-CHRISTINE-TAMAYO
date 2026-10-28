@@ -108,3 +108,5 @@ UPDATE2 final audit: Editor exit now directly calls the editor API under UNITY_E
 
 ## UPDATE3 drain trigger
 Cause: artwork spanned 220px per edge but the model used an unrelated 112px threshold. A feet center could stand in the visible water. Fix: shared 220px artwork geometry with 20px inner stone rim; inclusive water-edge triggers at 200/1080, both before and after input/hits. All maps share geometry. Exact 52px knockback and attack timing unchanged. New boundary/movement tests cover all maps, sides and players.
+
+UPDATE3 head proportions: generated revised sheets had inconsistent crown-to-sole proportions (ready poses Tito 48.8%, Suka 55.8%, Nanay 56.5%). Repeatable whole-image continuous mesh normalization targets 43%, preserving original pixel sources, feet-center and baked weapons. Source/measurement conventions and actual per-character ranges: Docs/HEAD_RATIO.md. No separate head/body runtime objects. All 272 measured runtime images are hash-bound to the ratio test. All eight ready frames viewed side by side at the same pixel scale.

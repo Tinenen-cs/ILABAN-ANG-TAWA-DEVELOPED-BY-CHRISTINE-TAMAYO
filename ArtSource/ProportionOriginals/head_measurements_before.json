@@ -1,0 +1,1634 @@
+[
+  {
+    "character": "AlingPamalo",
+    "pose": "Strike_00",
+    "head": [
+      445,
+      18
+    ],
+    "neck": 218,
+    "face_box": [
+      425,
+      69,
+      545,
+      212
+    ],
+    "ratio": 0.4048582995951417,
+    "file": "ArtSource/StrikeFrames/AlingPamalo/Strike_00.png"
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Strike_01",
+    "head": [
+      434,
+      18
+    ],
+    "neck": 222,
+    "face_box": [
+      425,
+      73,
+      546,
+      216
+    ],
+    "ratio": 0.41295546558704455,
+    "file": "ArtSource/StrikeFrames/AlingPamalo/Strike_01.png"
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Strike_02",
+    "head": [
+      491,
+      23
+    ],
+    "neck": 231,
+    "face_box": [
+      460,
+      87,
+      583,
+      225
+    ],
+    "ratio": 0.42535787321063395,
+    "file": "ArtSource/StrikeFrames/AlingPamalo/Strike_02.png"
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Strike_03",
+    "head": [
+      447,
+      38
+    ],
+    "neck": 227,
+    "face_box": [
+      435,
+      95,
+      547,
+      221
+    ],
+    "ratio": 0.3987341772151899,
+    "file": "ArtSource/StrikeFrames/AlingPamalo/Strike_03.png"
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Strike_04",
+    "head": [
+      447,
+      34
+    ],
+    "neck": 227,
+    "face_box": [
+      429,
+      94,
+      542,
+      221
+    ],
+    "ratio": 0.40376569037656906,
+    "file": "ArtSource/StrikeFrames/AlingPamalo/Strike_04.png"
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Strike_05",
+    "head": [
+      448,
+      41
+    ],
+    "neck": 235,
+    "face_box": [
+      416,
+      90,
+      533,
+      229
+    ],
+    "ratio": 0.4118895966029724,
+    "file": "ArtSource/StrikeFrames/AlingPamalo/Strike_05.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Strike_00",
+    "head": [
+      468,
+      16
+    ],
+    "neck": 219,
+    "face_box": [
+      393,
+      73,
+      561,
+      213
+    ],
+    "ratio": 0.4092741935483871,
+    "file": "ArtSource/StrikeFrames/KuyaTsinelas/Strike_00.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Strike_01",
+    "head": [
+      475,
+      29
+    ],
+    "neck": 238,
+    "face_box": [
+      392,
+      88,
+      559,
+      232
+    ],
+    "ratio": 0.432712215320911,
+    "file": "ArtSource/StrikeFrames/KuyaTsinelas/Strike_01.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Strike_02",
+    "head": [
+      524,
+      36
+    ],
+    "neck": 229,
+    "face_box": [
+      434,
+      93,
+      599,
+      223
+    ],
+    "ratio": 0.4054621848739496,
+    "file": "ArtSource/StrikeFrames/KuyaTsinelas/Strike_02.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Strike_03",
+    "head": [
+      488,
+      41
+    ],
+    "neck": 227,
+    "face_box": [
+      430,
+      93,
+      595,
+      221
+    ],
+    "ratio": 0.39490445859872614,
+    "file": "ArtSource/StrikeFrames/KuyaTsinelas/Strike_03.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Strike_04",
+    "head": [
+      482,
+      46
+    ],
+    "neck": 230,
+    "face_box": [
+      444,
+      101,
+      607,
+      224
+    ],
+    "ratio": 0.3948497854077253,
+    "file": "ArtSource/StrikeFrames/KuyaTsinelas/Strike_04.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Strike_05",
+    "head": [
+      487,
+      44
+    ],
+    "neck": 235,
+    "face_box": [
+      398,
+      94,
+      563,
+      229
+    ],
+    "ratio": 0.4081196581196581,
+    "file": "ArtSource/StrikeFrames/KuyaTsinelas/Strike_05.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Strike_00",
+    "head": [
+      473,
+      21
+    ],
+    "neck": 227,
+    "face_box": [
+      394,
+      86,
+      560,
+      221
+    ],
+    "ratio": 0.4195519348268839,
+    "file": "ArtSource/StrikeFrames/AteBatoBatoPik/Strike_00.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Strike_01",
+    "head": [
+      486,
+      35
+    ],
+    "neck": 235,
+    "face_box": [
+      389,
+      93,
+      559,
+      229
+    ],
+    "ratio": 0.4192872117400419,
+    "file": "ArtSource/StrikeFrames/AteBatoBatoPik/Strike_01.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Strike_02",
+    "head": [
+      501,
+      25
+    ],
+    "neck": 222,
+    "face_box": [
+      442,
+      94,
+      608,
+      216
+    ],
+    "ratio": 0.40451745379876797,
+    "file": "ArtSource/StrikeFrames/AteBatoBatoPik/Strike_02.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Strike_03",
+    "head": [
+      481,
+      42
+    ],
+    "neck": 233,
+    "face_box": [
+      448,
+      116,
+      606,
+      227
+    ],
+    "ratio": 0.40638297872340423,
+    "file": "ArtSource/StrikeFrames/AteBatoBatoPik/Strike_03.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Strike_04",
+    "head": [
+      475,
+      41
+    ],
+    "neck": 234,
+    "face_box": [
+      447,
+      115,
+      611,
+      228
+    ],
+    "ratio": 0.40976645435244163,
+    "file": "ArtSource/StrikeFrames/AteBatoBatoPik/Strike_04.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Strike_05",
+    "head": [
+      461,
+      44
+    ],
+    "neck": 240,
+    "face_box": [
+      395,
+      106,
+      560,
+      234
+    ],
+    "ratio": 0.4188034188034188,
+    "file": "ArtSource/StrikeFrames/AteBatoBatoPik/Strike_05.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Strike_00",
+    "head": [
+      476,
+      26
+    ],
+    "neck": 240,
+    "face_box": [
+      382,
+      103,
+      570,
+      234
+    ],
+    "ratio": 0.4403292181069959,
+    "file": "ArtSource/StrikeFrames/KapBatuta/Strike_00.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Strike_01",
+    "head": [
+      514,
+      47
+    ],
+    "neck": 264,
+    "face_box": [
+      435,
+      128,
+      605,
+      258
+    ],
+    "ratio": 0.4666666666666667,
+    "file": "ArtSource/StrikeFrames/KapBatuta/Strike_01.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Strike_02",
+    "head": [
+      544,
+      30
+    ],
+    "neck": 261,
+    "face_box": [
+      457,
+      131,
+      633,
+      255
+    ],
+    "ratio": 0.47925311203319504,
+    "file": "ArtSource/StrikeFrames/KapBatuta/Strike_02.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Strike_03",
+    "head": [
+      511,
+      51
+    ],
+    "neck": 231,
+    "face_box": [
+      421,
+      120,
+      601,
+      225
+    ],
+    "ratio": 0.39045553145336226,
+    "file": "ArtSource/StrikeFrames/KapBatuta/Strike_03.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Strike_04",
+    "head": [
+      515,
+      55
+    ],
+    "neck": 239,
+    "face_box": [
+      432,
+      137,
+      606,
+      233
+    ],
+    "ratio": 0.4026258205689278,
+    "file": "ArtSource/StrikeFrames/KapBatuta/Strike_04.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Strike_05",
+    "head": [
+      458,
+      51
+    ],
+    "neck": 248,
+    "face_box": [
+      389,
+      116,
+      571,
+      242
+    ],
+    "ratio": 0.42733188720173537,
+    "file": "ArtSource/StrikeFrames/KapBatuta/Strike_05.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Strike_00",
+    "head": [
+      486,
+      20
+    ],
+    "neck": 213,
+    "face_box": [
+      445,
+      87,
+      567,
+      207
+    ],
+    "ratio": 0.39227642276422764,
+    "file": "ArtSource/StrikeFrames/ManongLatalata/Strike_00.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Strike_01",
+    "head": [
+      459,
+      21
+    ],
+    "neck": 214,
+    "face_box": [
+      409,
+      90,
+      531,
+      208
+    ],
+    "ratio": 0.39307535641547864,
+    "file": "ArtSource/StrikeFrames/ManongLatalata/Strike_01.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Strike_02",
+    "head": [
+      493,
+      22
+    ],
+    "neck": 215,
+    "face_box": [
+      475,
+      94,
+      595,
+      209
+    ],
+    "ratio": 0.39387755102040817,
+    "file": "ArtSource/StrikeFrames/ManongLatalata/Strike_02.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Strike_03",
+    "head": [
+      499,
+      41
+    ],
+    "neck": 227,
+    "face_box": [
+      476,
+      107,
+      595,
+      221
+    ],
+    "ratio": 0.39490445859872614,
+    "file": "ArtSource/StrikeFrames/ManongLatalata/Strike_03.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Strike_04",
+    "head": [
+      501,
+      42
+    ],
+    "neck": 228,
+    "face_box": [
+      484,
+      108,
+      602,
+      222
+    ],
+    "ratio": 0.39574468085106385,
+    "file": "ArtSource/StrikeFrames/ManongLatalata/Strike_04.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Strike_05",
+    "head": [
+      479,
+      41
+    ],
+    "neck": 229,
+    "face_box": [
+      461,
+      106,
+      583,
+      223
+    ],
+    "ratio": 0.3991507430997877,
+    "file": "ArtSource/StrikeFrames/ManongLatalata/Strike_05.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Strike_00",
+    "head": [
+      451,
+      16
+    ],
+    "neck": 258,
+    "face_box": [
+      354,
+      92,
+      574,
+      252
+    ],
+    "ratio": 0.4879032258064516,
+    "file": "ArtSource/StrikeFrames/TitoSilya/Strike_00.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Strike_01",
+    "head": [
+      489,
+      18
+    ],
+    "neck": 256,
+    "face_box": [
+      400,
+      95,
+      595,
+      250
+    ],
+    "ratio": 0.4817813765182186,
+    "file": "ArtSource/StrikeFrames/TitoSilya/Strike_01.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Strike_02",
+    "head": [
+      494,
+      19
+    ],
+    "neck": 256,
+    "face_box": [
+      387,
+      94,
+      605,
+      250
+    ],
+    "ratio": 0.48073022312373226,
+    "file": "ArtSource/StrikeFrames/TitoSilya/Strike_02.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Strike_03",
+    "head": [
+      429,
+      24
+    ],
+    "neck": 252,
+    "face_box": [
+      352,
+      97,
+      568,
+      246
+    ],
+    "ratio": 0.4672131147540984,
+    "file": "ArtSource/StrikeFrames/TitoSilya/Strike_03.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Strike_04",
+    "head": [
+      427,
+      23
+    ],
+    "neck": 250,
+    "face_box": [
+      372,
+      96,
+      592,
+      244
+    ],
+    "ratio": 0.46421267893660534,
+    "file": "ArtSource/StrikeFrames/TitoSilya/Strike_04.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Strike_05",
+    "head": [
+      423,
+      23
+    ],
+    "neck": 253,
+    "face_box": [
+      343,
+      96,
+      554,
+      247
+    ],
+    "ratio": 0.4703476482617587,
+    "file": "ArtSource/StrikeFrames/TitoSilya/Strike_05.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Strike_00",
+    "head": [
+      457,
+      21
+    ],
+    "neck": 295,
+    "face_box": [
+      358,
+      76,
+      585,
+      289
+    ],
+    "ratio": 0.5580448065173116,
+    "file": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_00.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Strike_01",
+    "head": [
+      518,
+      20
+    ],
+    "neck": 290,
+    "face_box": [
+      374,
+      79,
+      602,
+      284
+    ],
+    "ratio": 0.5487804878048781,
+    "file": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_01.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Strike_02",
+    "head": [
+      520,
+      25
+    ],
+    "neck": 268,
+    "face_box": [
+      406,
+      80,
+      632,
+      262
+    ],
+    "ratio": 0.4989733059548255,
+    "file": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_02.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Strike_03",
+    "head": [
+      484,
+      71
+    ],
+    "neck": 282,
+    "face_box": [
+      423,
+      120,
+      636,
+      276
+    ],
+    "ratio": 0.47845804988662133,
+    "file": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_03.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Strike_04",
+    "head": [
+      451,
+      71
+    ],
+    "neck": 282,
+    "face_box": [
+      418,
+      121,
+      628,
+      276
+    ],
+    "ratio": 0.47845804988662133,
+    "file": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_04.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Strike_05",
+    "head": [
+      435,
+      69
+    ],
+    "neck": 314,
+    "face_box": [
+      371,
+      120,
+      584,
+      308
+    ],
+    "ratio": 0.5530474040632054,
+    "file": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_05.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Strike_00",
+    "head": [
+      476,
+      18
+    ],
+    "neck": 297,
+    "face_box": [
+      431,
+      109,
+      600,
+      291
+    ],
+    "ratio": 0.5647773279352226,
+    "file": "ArtSource/StrikeFrames/NanayTingting/Strike_00.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Strike_01",
+    "head": [
+      475,
+      21
+    ],
+    "neck": 293,
+    "face_box": [
+      417,
+      115,
+      577,
+      287
+    ],
+    "ratio": 0.5539714867617108,
+    "file": "ArtSource/StrikeFrames/NanayTingting/Strike_01.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Strike_02",
+    "head": [
+      461,
+      27
+    ],
+    "neck": 299,
+    "face_box": [
+      415,
+      118,
+      576,
+      293
+    ],
+    "ratio": 0.5608247422680412,
+    "file": "ArtSource/StrikeFrames/NanayTingting/Strike_02.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Strike_03",
+    "head": [
+      497,
+      31
+    ],
+    "neck": 294,
+    "face_box": [
+      427,
+      117,
+      588,
+      288
+    ],
+    "ratio": 0.5467775467775468,
+    "file": "ArtSource/StrikeFrames/NanayTingting/Strike_03.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Strike_04",
+    "head": [
+      465,
+      31
+    ],
+    "neck": 294,
+    "face_box": [
+      426,
+      120,
+      590,
+      288
+    ],
+    "ratio": 0.5467775467775468,
+    "file": "ArtSource/StrikeFrames/NanayTingting/Strike_04.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Strike_05",
+    "head": [
+      442,
+      31
+    ],
+    "neck": 298,
+    "face_box": [
+      411,
+      121,
+      572,
+      292
+    ],
+    "ratio": 0.5550935550935551,
+    "file": "ArtSource/StrikeFrames/NanayTingting/Strike_05.png"
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "WalkA",
+    "head": [
+      451,
+      16
+    ],
+    "neck": 213,
+    "face_box": [
+      418,
+      66,
+      537,
+      207
+    ],
+    "ratio": 0.3971774193548387,
+    "file": "ArtSource/ActionFrames/AlingPamalo/WalkA.png"
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "WalkB",
+    "head": [
+      427,
+      16
+    ],
+    "neck": 216,
+    "face_box": [
+      405,
+      70,
+      519,
+      210
+    ],
+    "ratio": 0.4032258064516129,
+    "file": "ArtSource/ActionFrames/AlingPamalo/WalkB.png"
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Hurt",
+    "head": [
+      303,
+      20
+    ],
+    "neck": 218,
+    "face_box": [
+      279,
+      57,
+      406,
+      212
+    ],
+    "ratio": 0.4024390243902439,
+    "file": "ArtSource/ActionFrames/AlingPamalo/Hurt.png"
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Dizzy",
+    "head": [
+      434,
+      23
+    ],
+    "neck": 211,
+    "face_box": [
+      406,
+      60,
+      533,
+      205
+    ],
+    "ratio": 0.38445807770961143,
+    "file": "ArtSource/ActionFrames/AlingPamalo/Dizzy.png"
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Win",
+    "head": [
+      424,
+      21
+    ],
+    "neck": 216,
+    "face_box": [
+      395,
+      67,
+      513,
+      210
+    ],
+    "ratio": 0.3971486761710794,
+    "file": "ArtSource/ActionFrames/AlingPamalo/Win.png"
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Lose",
+    "head": [
+      474,
+      28
+    ],
+    "neck": 236,
+    "face_box": [
+      440,
+      105,
+      568,
+      230
+    ],
+    "ratio": 0.4297520661157025,
+    "file": "ArtSource/ActionFrames/AlingPamalo/Lose.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "WalkA",
+    "head": [
+      460,
+      16
+    ],
+    "neck": 230,
+    "face_box": [
+      363,
+      78,
+      542,
+      224
+    ],
+    "ratio": 0.4314516129032258,
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/WalkA.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "WalkB",
+    "head": [
+      473,
+      21
+    ],
+    "neck": 234,
+    "face_box": [
+      373,
+      87,
+      556,
+      228
+    ],
+    "ratio": 0.43380855397148677,
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/WalkB.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Hurt",
+    "head": [
+      360,
+      18
+    ],
+    "neck": 225,
+    "face_box": [
+      273,
+      69,
+      449,
+      219
+    ],
+    "ratio": 0.4190283400809717,
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/Hurt.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Dizzy",
+    "head": [
+      474,
+      19
+    ],
+    "neck": 235,
+    "face_box": [
+      373,
+      84,
+      564,
+      229
+    ],
+    "ratio": 0.4381338742393509,
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/Dizzy.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Win",
+    "head": [
+      467,
+      18
+    ],
+    "neck": 231,
+    "face_box": [
+      367,
+      81,
+      550,
+      225
+    ],
+    "ratio": 0.4311740890688259,
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/Win.png"
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Lose",
+    "head": [
+      509,
+      36
+    ],
+    "neck": 255,
+    "face_box": [
+      412,
+      114,
+      598,
+      249
+    ],
+    "ratio": 0.46008403361344535,
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/Lose.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "WalkA",
+    "head": [
+      424,
+      25
+    ],
+    "neck": 225,
+    "face_box": [
+      386,
+      93,
+      543,
+      219
+    ],
+    "ratio": 0.4106776180698152,
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/WalkA.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "WalkB",
+    "head": [
+      423,
+      25
+    ],
+    "neck": 228,
+    "face_box": [
+      383,
+      95,
+      544,
+      222
+    ],
+    "ratio": 0.41683778234086244,
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/WalkB.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Hurt",
+    "head": [
+      374,
+      38
+    ],
+    "neck": 226,
+    "face_box": [
+      319,
+      94,
+      473,
+      220
+    ],
+    "ratio": 0.39662447257383965,
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/Hurt.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Dizzy",
+    "head": [
+      416,
+      22
+    ],
+    "neck": 242,
+    "face_box": [
+      392,
+      107,
+      565,
+      236
+    ],
+    "ratio": 0.4489795918367347,
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/Dizzy.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Win",
+    "head": [
+      384,
+      16
+    ],
+    "neck": 224,
+    "face_box": [
+      345,
+      91,
+      513,
+      218
+    ],
+    "ratio": 0.41935483870967744,
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/Win.png"
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Lose",
+    "head": [
+      410,
+      18
+    ],
+    "neck": 240,
+    "face_box": [
+      385,
+      124,
+      554,
+      234
+    ],
+    "ratio": 0.4493927125506073,
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/Lose.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "WalkA",
+    "head": [
+      471,
+      17
+    ],
+    "neck": 239,
+    "face_box": [
+      369,
+      89,
+      564,
+      233
+    ],
+    "ratio": 0.4484848484848485,
+    "file": "ArtSource/ActionFrames/KapBatuta/WalkA.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "WalkB",
+    "head": [
+      458,
+      18
+    ],
+    "neck": 240,
+    "face_box": [
+      355,
+      89,
+      552,
+      234
+    ],
+    "ratio": 0.4493927125506073,
+    "file": "ArtSource/ActionFrames/KapBatuta/WalkB.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Hurt",
+    "head": [
+      367,
+      21
+    ],
+    "neck": 240,
+    "face_box": [
+      279,
+      100,
+      474,
+      234
+    ],
+    "ratio": 0.4460285132382892,
+    "file": "ArtSource/ActionFrames/KapBatuta/Hurt.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Dizzy",
+    "head": [
+      430,
+      16
+    ],
+    "neck": 237,
+    "face_box": [
+      330,
+      92,
+      533,
+      231
+    ],
+    "ratio": 0.44556451612903225,
+    "file": "ArtSource/ActionFrames/KapBatuta/Dizzy.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Win",
+    "head": [
+      478,
+      18
+    ],
+    "neck": 239,
+    "face_box": [
+      373,
+      90,
+      571,
+      233
+    ],
+    "ratio": 0.4473684210526316,
+    "file": "ArtSource/ActionFrames/KapBatuta/Win.png"
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Lose",
+    "head": [
+      477,
+      17
+    ],
+    "neck": 249,
+    "face_box": [
+      375,
+      101,
+      568,
+      243
+    ],
+    "ratio": 0.4686868686868687,
+    "file": "ArtSource/ActionFrames/KapBatuta/Lose.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "WalkA",
+    "head": [
+      494,
+      22
+    ],
+    "neck": 216,
+    "face_box": [
+      440,
+      97,
+      565,
+      210
+    ],
+    "ratio": 0.39591836734693875,
+    "file": "ArtSource/ActionFrames/ManongLatalata/WalkA.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "WalkB",
+    "head": [
+      477,
+      24
+    ],
+    "neck": 218,
+    "face_box": [
+      426,
+      97,
+      548,
+      212
+    ],
+    "ratio": 0.3975409836065574,
+    "file": "ArtSource/ActionFrames/ManongLatalata/WalkB.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Hurt",
+    "head": [
+      336,
+      29
+    ],
+    "neck": 228,
+    "face_box": [
+      295,
+      100,
+      431,
+      222
+    ],
+    "ratio": 0.41200828157349895,
+    "file": "ArtSource/ActionFrames/ManongLatalata/Hurt.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Dizzy",
+    "head": [
+      494,
+      30
+    ],
+    "neck": 254,
+    "face_box": [
+      437,
+      104,
+      571,
+      248
+    ],
+    "ratio": 0.46473029045643155,
+    "file": "ArtSource/ActionFrames/ManongLatalata/Dizzy.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Win",
+    "head": [
+      461,
+      16
+    ],
+    "neck": 216,
+    "face_box": [
+      405,
+      90,
+      532,
+      210
+    ],
+    "ratio": 0.4032258064516129,
+    "file": "ArtSource/ActionFrames/ManongLatalata/Win.png"
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Lose",
+    "head": [
+      492,
+      29
+    ],
+    "neck": 261,
+    "face_box": [
+      442,
+      117,
+      580,
+      255
+    ],
+    "ratio": 0.4803312629399586,
+    "file": "ArtSource/ActionFrames/ManongLatalata/Lose.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "WalkA",
+    "head": [
+      441,
+      17
+    ],
+    "neck": 243,
+    "face_box": [
+      330,
+      83,
+      536,
+      237
+    ],
+    "ratio": 0.45656565656565656,
+    "file": "ArtSource/ActionFrames/TitoSilya/WalkA.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "WalkB",
+    "head": [
+      456,
+      17
+    ],
+    "neck": 241,
+    "face_box": [
+      347,
+      87,
+      548,
+      235
+    ],
+    "ratio": 0.45252525252525255,
+    "file": "ArtSource/ActionFrames/TitoSilya/WalkB.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Hurt",
+    "head": [
+      384,
+      17
+    ],
+    "neck": 239,
+    "face_box": [
+      288,
+      72,
+      485,
+      233
+    ],
+    "ratio": 0.4484848484848485,
+    "file": "ArtSource/ActionFrames/TitoSilya/Hurt.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Dizzy",
+    "head": [
+      432,
+      16
+    ],
+    "neck": 235,
+    "face_box": [
+      334,
+      69,
+      528,
+      229
+    ],
+    "ratio": 0.4415322580645161,
+    "file": "ArtSource/ActionFrames/TitoSilya/Dizzy.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Win",
+    "head": [
+      442,
+      22
+    ],
+    "neck": 239,
+    "face_box": [
+      336,
+      89,
+      534,
+      233
+    ],
+    "ratio": 0.44285714285714284,
+    "file": "ArtSource/ActionFrames/TitoSilya/Win.png"
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Lose",
+    "head": [
+      468,
+      27
+    ],
+    "neck": 244,
+    "face_box": [
+      367,
+      103,
+      565,
+      238
+    ],
+    "ratio": 0.44742268041237115,
+    "file": "ArtSource/ActionFrames/TitoSilya/Lose.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "WalkA",
+    "head": [
+      480,
+      16
+    ],
+    "neck": 272,
+    "face_box": [
+      372,
+      81,
+      602,
+      266
+    ],
+    "ratio": 0.5161290322580645,
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/WalkA.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "WalkB",
+    "head": [
+      465,
+      16
+    ],
+    "neck": 272,
+    "face_box": [
+      359,
+      82,
+      589,
+      266
+    ],
+    "ratio": 0.5161290322580645,
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/WalkB.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Hurt",
+    "head": [
+      385,
+      17
+    ],
+    "neck": 273,
+    "face_box": [
+      282,
+      81,
+      512,
+      267
+    ],
+    "ratio": 0.5171717171717172,
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/Hurt.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Dizzy",
+    "head": [
+      496,
+      53
+    ],
+    "neck": 309,
+    "face_box": [
+      389,
+      137,
+      618,
+      303
+    ],
+    "ratio": 0.5577342047930284,
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/Dizzy.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Win",
+    "head": [
+      439,
+      51
+    ],
+    "neck": 290,
+    "face_box": [
+      331,
+      106,
+      550,
+      284
+    ],
+    "ratio": 0.5184381778741866,
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/Win.png"
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Lose",
+    "head": [
+      483,
+      51
+    ],
+    "neck": 306,
+    "face_box": [
+      379,
+      150,
+      601,
+      300
+    ],
+    "ratio": 0.5531453362255966,
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/Lose.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "WalkA",
+    "head": [
+      481,
+      16
+    ],
+    "neck": 276,
+    "face_box": [
+      434,
+      105,
+      595,
+      270
+    ],
+    "ratio": 0.5241935483870968,
+    "file": "ArtSource/ActionFrames/NanayTingting/WalkA.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "WalkB",
+    "head": [
+      475,
+      18
+    ],
+    "neck": 278,
+    "face_box": [
+      430,
+      104,
+      590,
+      272
+    ],
+    "ratio": 0.5263157894736842,
+    "file": "ArtSource/ActionFrames/NanayTingting/WalkB.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Hurt",
+    "head": [
+      382,
+      18
+    ],
+    "neck": 272,
+    "face_box": [
+      355,
+      93,
+      503,
+      266
+    ],
+    "ratio": 0.5141700404858299,
+    "file": "ArtSource/ActionFrames/NanayTingting/Hurt.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Dizzy",
+    "head": [
+      472,
+      40
+    ],
+    "neck": 286,
+    "face_box": [
+      407,
+      140,
+      576,
+      280
+    ],
+    "ratio": 0.5211864406779662,
+    "file": "ArtSource/ActionFrames/NanayTingting/Dizzy.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Win",
+    "head": [
+      453,
+      38
+    ],
+    "neck": 283,
+    "face_box": [
+      408,
+      123,
+      563,
+      277
+    ],
+    "ratio": 0.5168776371308017,
+    "file": "ArtSource/ActionFrames/NanayTingting/Win.png"
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Lose",
+    "head": [
+      497,
+      41
+    ],
+    "neck": 289,
+    "face_box": [
+      449,
+      149,
+      605,
+      283
+    ],
+    "ratio": 0.5265392781316348,
+    "file": "ArtSource/ActionFrames/NanayTingting/Lose.png"
+  }
+]

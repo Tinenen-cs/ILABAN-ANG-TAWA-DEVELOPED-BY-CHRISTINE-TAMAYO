@@ -1,0 +1,962 @@
+[
+  {
+    "character": "AlingPamalo",
+    "pose": "WalkA",
+    "file": "ArtSource/ActionFrames/AlingPamalo/WalkA.png",
+    "head": [
+      451,
+      16
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0122448979591836,
+    "source_box": [
+      134,
+      15,
+      482,
+      511
+    ]
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "WalkB",
+    "file": "ArtSource/ActionFrames/AlingPamalo/WalkB.png",
+    "head": [
+      427,
+      16
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0122448979591836,
+    "source_box": [
+      608,
+      14,
+      958,
+      510
+    ]
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Hurt",
+    "file": "ArtSource/ActionFrames/AlingPamalo/Hurt.png",
+    "head": [
+      303,
+      20
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0122448979591836,
+    "source_box": [
+      1048,
+      20,
+      1467,
+      512
+    ]
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Dizzy",
+    "file": "ArtSource/ActionFrames/AlingPamalo/Dizzy.png",
+    "head": [
+      434,
+      23
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0122448979591836,
+    "source_box": [
+      135,
+      520,
+      500,
+      1009
+    ]
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Win",
+    "file": "ArtSource/ActionFrames/AlingPamalo/Win.png",
+    "head": [
+      424,
+      21
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0122448979591836,
+    "source_box": [
+      605,
+      517,
+      945,
+      1008
+    ]
+  },
+  {
+    "character": "AlingPamalo",
+    "pose": "Lose",
+    "file": "ArtSource/ActionFrames/AlingPamalo/Lose.png",
+    "head": [
+      474,
+      28
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0122448979591836,
+    "source_box": [
+      1135,
+      524,
+      1439,
+      1008
+    ]
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "WalkA",
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/WalkA.png",
+    "head": [
+      460,
+      16
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0040485829959513,
+    "source_box": [
+      165,
+      6,
+      476,
+      506
+    ]
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "WalkB",
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/WalkB.png",
+    "head": [
+      473,
+      21
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0040485829959513,
+    "source_box": [
+      620,
+      12,
+      946,
+      507
+    ]
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Hurt",
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/Hurt.png",
+    "head": [
+      360,
+      18
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0040485829959513,
+    "source_box": [
+      1102,
+      14,
+      1450,
+      512
+    ]
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Dizzy",
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/Dizzy.png",
+    "head": [
+      474,
+      19
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0040485829959513,
+    "source_box": [
+      135,
+      514,
+      452,
+      1011
+    ]
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Win",
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/Win.png",
+    "head": [
+      467,
+      18
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0040485829959513,
+    "source_box": [
+      594,
+      513,
+      974,
+      1011
+    ]
+  },
+  {
+    "character": "KuyaTsinelas",
+    "pose": "Lose",
+    "file": "ArtSource/ActionFrames/KuyaTsinelas/Lose.png",
+    "head": [
+      509,
+      36
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0040485829959513,
+    "source_box": [
+      1167,
+      531,
+      1433,
+      1011
+    ]
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "WalkA",
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/WalkA.png",
+    "head": [
+      424,
+      25
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9880478087649402,
+    "source_box": [
+      122,
+      6,
+      411,
+      505
+    ]
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "WalkB",
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/WalkB.png",
+    "head": [
+      423,
+      25
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9880478087649402,
+    "source_box": [
+      590,
+      6,
+      907,
+      505
+    ]
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Hurt",
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/Hurt.png",
+    "head": [
+      374,
+      38
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9880478087649402,
+    "source_box": [
+      1071,
+      19,
+      1420,
+      505
+    ]
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Dizzy",
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/Dizzy.png",
+    "head": [
+      416,
+      22
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9880478087649402,
+    "source_box": [
+      109,
+      512,
+      424,
+      1014
+    ]
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Win",
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/Win.png",
+    "head": [
+      384,
+      16
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9880478087649402,
+    "source_box": [
+      586,
+      509,
+      953,
+      1017
+    ]
+  },
+  {
+    "character": "AteBatoBatoPik",
+    "pose": "Lose",
+    "file": "ArtSource/ActionFrames/AteBatoBatoPik/Lose.png",
+    "head": [
+      410,
+      18
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9880478087649402,
+    "source_box": [
+      1109,
+      510,
+      1410,
+      1016
+    ]
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "WalkA",
+    "file": "ArtSource/ActionFrames/KapBatuta/WalkA.png",
+    "head": [
+      471,
+      17
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.022680412371134,
+    "source_box": [
+      134,
+      12,
+      470,
+      502
+    ]
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "WalkB",
+    "file": "ArtSource/ActionFrames/KapBatuta/WalkB.png",
+    "head": [
+      458,
+      18
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.022680412371134,
+    "source_box": [
+      625,
+      12,
+      945,
+      501
+    ]
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Hurt",
+    "file": "ArtSource/ActionFrames/KapBatuta/Hurt.png",
+    "head": [
+      367,
+      21
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.022680412371134,
+    "source_box": [
+      1111,
+      15,
+      1472,
+      501
+    ]
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Dizzy",
+    "file": "ArtSource/ActionFrames/KapBatuta/Dizzy.png",
+    "head": [
+      430,
+      16
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.022680412371134,
+    "source_box": [
+      138,
+      514,
+      469,
+      1005
+    ]
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Win",
+    "file": "ArtSource/ActionFrames/KapBatuta/Win.png",
+    "head": [
+      478,
+      18
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.022680412371134,
+    "source_box": [
+      596,
+      517,
+      938,
+      1006
+    ]
+  },
+  {
+    "character": "KapBatuta",
+    "pose": "Lose",
+    "file": "ArtSource/ActionFrames/KapBatuta/Lose.png",
+    "head": [
+      477,
+      17
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.022680412371134,
+    "source_box": [
+      1140,
+      518,
+      1416,
+      1008
+    ]
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "WalkA",
+    "file": "ArtSource/ActionFrames/ManongLatalata/WalkA.png",
+    "head": [
+      494,
+      22
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0143149284253579,
+    "source_box": [
+      153,
+      13,
+      465,
+      502
+    ]
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "WalkB",
+    "file": "ArtSource/ActionFrames/ManongLatalata/WalkB.png",
+    "head": [
+      477,
+      24
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0143149284253579,
+    "source_box": [
+      613,
+      14,
+      947,
+      501
+    ]
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Hurt",
+    "file": "ArtSource/ActionFrames/ManongLatalata/Hurt.png",
+    "head": [
+      336,
+      29
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0143149284253579,
+    "source_box": [
+      1067,
+      20,
+      1465,
+      502
+    ]
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Dizzy",
+    "file": "ArtSource/ActionFrames/ManongLatalata/Dizzy.png",
+    "head": [
+      494,
+      30
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0143149284253579,
+    "source_box": [
+      139,
+      520,
+      483,
+      1001
+    ]
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Win",
+    "file": "ArtSource/ActionFrames/ManongLatalata/Win.png",
+    "head": [
+      461,
+      16
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0143149284253579,
+    "source_box": [
+      614,
+      509,
+      962,
+      1004
+    ]
+  },
+  {
+    "character": "ManongLatalata",
+    "pose": "Lose",
+    "file": "ArtSource/ActionFrames/ManongLatalata/Lose.png",
+    "head": [
+      492,
+      29
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 1.0143149284253579,
+    "source_box": [
+      1140,
+      523,
+      1416,
+      1005
+    ]
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "WalkA",
+    "file": "ArtSource/ActionFrames/TitoSilya/WalkA.png",
+    "head": [
+      441,
+      17
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9802371541501976,
+    "source_box": [
+      94,
+      6,
+      497,
+      517
+    ]
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "WalkB",
+    "file": "ArtSource/ActionFrames/TitoSilya/WalkB.png",
+    "head": [
+      456,
+      17
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9802371541501976,
+    "source_box": [
+      625,
+      6,
+      1006,
+      517
+    ]
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Hurt",
+    "file": "ArtSource/ActionFrames/TitoSilya/Hurt.png",
+    "head": [
+      384,
+      17
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9802371541501976,
+    "source_box": [
+      1086,
+      5,
+      1489,
+      516
+    ]
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Dizzy",
+    "file": "ArtSource/ActionFrames/TitoSilya/Dizzy.png",
+    "head": [
+      432,
+      16
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9802371541501976,
+    "source_box": [
+      95,
+      504,
+      488,
+      1016
+    ]
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Win",
+    "file": "ArtSource/ActionFrames/TitoSilya/Win.png",
+    "head": [
+      442,
+      22
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9802371541501976,
+    "source_box": [
+      606,
+      509,
+      1004,
+      1015
+    ]
+  },
+  {
+    "character": "TitoSilya",
+    "pose": "Lose",
+    "file": "ArtSource/ActionFrames/TitoSilya/Lose.png",
+    "head": [
+      468,
+      27
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9802371541501976,
+    "source_box": [
+      1158,
+      514,
+      1477,
+      1015
+    ]
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "WalkA",
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/WalkA.png",
+    "head": [
+      480,
+      16
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9538461538461539,
+    "source_box": [
+      84,
+      5,
+      476,
+      531
+    ]
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "WalkB",
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/WalkB.png",
+    "head": [
+      465,
+      16
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9538461538461539,
+    "source_box": [
+      559,
+      5,
+      956,
+      531
+    ]
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Hurt",
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/Hurt.png",
+    "head": [
+      385,
+      17
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9538461538461539,
+    "source_box": [
+      1066,
+      6,
+      1475,
+      531
+    ]
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Dizzy",
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/Dizzy.png",
+    "head": [
+      496,
+      53
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9538461538461539,
+    "source_box": [
+      62,
+      529,
+      463,
+      1016
+    ]
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Win",
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/Win.png",
+    "head": [
+      439,
+      51
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9538461538461539,
+    "source_box": [
+      571,
+      527,
+      971,
+      1016
+    ]
+  },
+  {
+    "character": "AlingBotengSuka",
+    "pose": "Lose",
+    "file": "ArtSource/ActionFrames/AlingBotengSuka/Lose.png",
+    "head": [
+      483,
+      51
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9538461538461539,
+    "source_box": [
+      1092,
+      528,
+      1464,
+      1017
+    ]
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "WalkA",
+    "file": "ArtSource/ActionFrames/NanayTingting/WalkA.png",
+    "head": [
+      481,
+      16
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9744597249508841,
+    "source_box": [
+      70,
+      8,
+      510,
+      523
+    ]
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "WalkB",
+    "file": "ArtSource/ActionFrames/NanayTingting/WalkB.png",
+    "head": [
+      475,
+      18
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9744597249508841,
+    "source_box": [
+      586,
+      10,
+      1032,
+      523
+    ]
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Hurt",
+    "file": "ArtSource/ActionFrames/NanayTingting/Hurt.png",
+    "head": [
+      382,
+      18
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9744597249508841,
+    "source_box": [
+      1061,
+      14,
+      1521,
+      527
+    ]
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Dizzy",
+    "file": "ArtSource/ActionFrames/NanayTingting/Dizzy.png",
+    "head": [
+      472,
+      40
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9744597249508841,
+    "source_box": [
+      80,
+      525,
+      516,
+      1015
+    ]
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Win",
+    "file": "ArtSource/ActionFrames/NanayTingting/Win.png",
+    "head": [
+      453,
+      38
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9744597249508841,
+    "source_box": [
+      597,
+      523,
+      1055,
+      1015
+    ]
+  },
+  {
+    "character": "NanayTingting",
+    "pose": "Lose",
+    "file": "ArtSource/ActionFrames/NanayTingting/Lose.png",
+    "head": [
+      497,
+      41
+    ],
+    "foot_pivot": [
+      448,
+      512
+    ],
+    "scale": 0.9744597249508841,
+    "source_box": [
+      1104,
+      526,
+      1506,
+      1015
+    ]
+  }
+]
