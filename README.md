@@ -16,7 +16,7 @@ A two-player Filipino street brawler made by Christine Tamayo. Pick a character,
 
 The requested UI fixes, original chibi head revisions, first-to-three match, five-option pause, error notices and whole-body emotes are implemented. Final verification and one-file packaging are in progress. Published v1.0 files and their old hashes are historical; consult SUBMISSION/FILE_INFO.txt after UPDATE2 delivery verification.
 
-The requested Canvas file is **ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe**, one portable file. It must pass independent fresh-folder tests and Defender before recommendation. Keep the complete Windows folder/ZIP as backup; never submit its inner Unity EXE without companion files.
+**Verified Canvas file: ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe** (202,928,640 bytes). SHA-256: `4f794497062d201eb6129c2e574d1e706aadeca3bddfec67713bab2a62ac0fc5`. The current original GUI launcher passed EXE-only empty-Temp and space-path full three-win tests, default fullscreen/Alt+Enter and Defender. It embeds all dependencies and uses Windows built-in .NET Framework 4.x. Current release/Drive publication is pending. Keep the complete Windows folder/ZIP as backup.
 
 [PUBLIC source repository](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO).
 [Drive folder](https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH).
@@ -34,7 +34,7 @@ Movement is left and right only. Every player has the same straight punch. A lan
 
 ## Submit in Canvas
 
-UPDATE2 single-EXE verification is pending. Do not submit the older elevation-dependent SFX. Current exact size/hash and delivery links will be recorded in SUBMISSION/FILE_INFO.txt only after fresh-folder launch and full three-win match checks.
+Upload the verified outer single EXE in SUBMISSION. Exact hash/size and current delivery links are in SUBMISSION/FILE_INFO.txt. The earlier elevation-dependent SFX was replaced and remains archived; do not submit historical copies.
 
 ## Requirements and credits
 

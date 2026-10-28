@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-28T17:33:05.273587+00:00",
+  "exit": 0,
+  "result": "found no threats",
+  "scope": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION",
+  "exe": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe",
+  "exe_sha256": "4f794497062d201eb6129c2e574d1e706aadeca3bddfec67713bab2a62ac0fc5",
+  "real_time_protection_not_disabled": true,
+  "no_remediation_scan": true,
+  "log": "Logs/Defender-UPDATE2.txt"
+}

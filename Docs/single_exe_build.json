@@ -8,6 +8,7 @@
   "no_console": true,
   "requested_execution_level": "asInvoker",
   "requires": "Windows 10/11 x64 with built-in .NET Framework 4.x",
-  "tested": false,
-  "passed": false
+  "tested": true,
+  "passed": true,
+  "tests": "Docs/update2_single_exe_tests.json"
 }

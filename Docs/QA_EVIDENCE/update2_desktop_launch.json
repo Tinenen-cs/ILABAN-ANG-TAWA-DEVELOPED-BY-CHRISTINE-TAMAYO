@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-28T17:53:48.826412+00:00",
+  "double_click_exe_only": true,
+  "arguments": [],
+  "native_fullscreen": [
+    1920,
+    1080
+  ],
+  "alt_enter_windowed_and_back": true,
+  "pointer_controls_stayed_on_settings": true,
+  "pointer_exit_confirmation_no_default": true,
+  "pointer_yes_quit": true,
+  "issues": [],
+  "keyboard_navigation": "NEEDS MANUAL TEST: desktop-injected Escape remained inconclusive; simulated keyboard tests pass",
+  "physical_gamepad": "NEEDS MANUAL TEST",
+  "clean_pc": false
+}

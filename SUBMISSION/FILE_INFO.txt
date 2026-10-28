@@ -1,36 +1,22 @@
-ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO
-FINAL FILE INFORMATION - 2026-10-28T05:37:46.122975+00:00
+ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO - UPDATE2
 
-CANVAS: upload the ZIP. Extract All then open the EXE inside; keep every companion file. No install or Unity needed.
-B SINGLE EXE: REJECTED (WinError 740 elevation required); kept local, not uploaded. Do not submit it.
+CANVAS: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe
+Size: 202928640 bytes
+SHA-256: 4f794497062d201eb6129c2e574d1e706aadeca3bddfec67713bab2a62ac0fc5
+One file; embeds all 168 build/support files. No admin/console/Unity install. Windows 10/11 x64 with built-in .NET Framework 4.x.
 
-ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip
-Bytes: 200010588
-SHA-256: e4dbd4a302f20bca4c52c8bc8b4c66e9f55f6110e41dc16069c310c5ece905c3
+BACKUP ZIP: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip
+Size: 202885864 bytes
+SHA-256: 805d812e959a70e0deb9b0b1d4d9816b39ad1c3db88ddd484ff08dd52dca5060
+Backup folder: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO
+Keep every companion beside its small inner Unity EXE.
 
-ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe
-Bytes: 167677682
-SHA-256: 6d67e17dfcc17e9313829c91991c9cfb0a95834dc4b6a31904bd7708031675ea
+PASS: EditMode 13/13; graphics PlayMode 13/13; 65 rules; zero C# diagnostics; 85 UI captures at five resolutions; 172 native animation captures; 272 frame checks; English/glyph/audio audit clean.
+PASS: EXE alone in empty Temp and path with spaces, two full three-win matches, 34 1920x1080 captures, clean Player.log and exit 0. Defender found no threats in SUBMISSION. Normal desktop double-click/native fullscreen/Alt+Enter/Controls/Yes quit checked.
+Hilo keeps exactly FIVE segments because the fifth consecutive hit triggers dizzy.
 
-QA_SCREENSHOTS_FINAL.zip
-Bytes: 47618333
-SHA-256: fa2fbdc78ab53fed8437be75eb393f35dcbf6c5ea82864b622a1e8beeb5c0f5f
+NEEDS MANUAL TEST: actual keyboard navigation/rollover (desktop-injected Escape inconclusive), physical USB/controllers/hot-swap, human sound/Tagalog/art feel, strict steady-60 stress, clean-PC/.NET/SmartScreen and school Canvas EXE policy.
 
-Tests: EditMode 11/11; PlayMode 10/10; 65 assertions; five resolutions; fresh ZIP extraction/full simulated match; native/fullscreen 1920x1080; Alt+Enter; Defender custom scan exit 0, no threats in A and rejected B.
-Manual: clean PC without Unity, actual keyboard navigation/rollover, physical controllers/hot-swap, speaker/headphone balance, SmartScreen on another PC. Desktop-injected navigation keys were inconclusive; do not claim physical keyboard passed.
-
-Drive target: https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH
-Drive game ZIP/screenshot archive/BASAHIN_MUNA/README uploads verified by folder listing and matching sizes. The final FILE_INFO revision is included in the same five-file allowlist and is read back after upload. Folder permission independently verified: anyone role reader (Anyone with the link: Viewer).
-GitHub Release verified: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.0
-Game asset: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.0/ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.zip
-GitHub sanitizes spaces to dots; server SHA-256 and size match A. Repository PUBLIC; no new reference photos pushed.
-
-Verified Drive links:
-Game ZIP: https://drive.google.com/file/d/1wDqFNpaPGaU3QmxbVzE-fA0lP0VZ_1wr/view
-Screenshots: https://drive.google.com/file/d/1exPc45F06M08tWoMce4qm-i0fMr6tVpC/view
-Guide: https://drive.google.com/file/d/1eP8XA15jvofhJwF7ieRh_i7mnIhrj_fz/view
-README: https://drive.google.com/file/d/1y2x-IhdQBhOo3SC-oE60lJr_D1dBeE4y/view
-
-Backup for local play: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe (667136 bytes; keep the entire companion folder).
-
-FILE_INFO link: https://drive.google.com/file/d/1UfktzohMZ-_jmzjec9NpD-BAYxdgVvwr/view
+Release: pending UPDATE2 publication
+Drive: https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH (UPDATE2 file upload pending)
+Repository PUBLIC. Historical v1.0 SFX failed elevation; current original launcher passes without elevation.
