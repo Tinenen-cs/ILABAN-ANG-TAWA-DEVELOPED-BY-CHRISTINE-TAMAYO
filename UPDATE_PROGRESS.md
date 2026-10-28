@@ -1,6 +1,6 @@
-# Final delivery progress
+# Final release completed
 
-Finalization prompt authorized main/release/Drive. Pre-check passed; main fast-forward and rebuild complete.
+Main pushed, v1.0 published, safe ZIP/current build verified, Drive five-file size readback and public Viewer permission verified. B rejected/excluded.
 
 1. [x] Opening-only animated jeepney, skippable opening, no moving vehicle in fights. Evidence: 00-opening.png and three 04-match captures in each QA folder.
 2. [x] Original painted logo and four headings with live localized TMP underneath. Exact full developer title preserved. Assets/Resources/Ilaban/UI/Heading*.png.
@@ -25,7 +25,7 @@ Finalization prompt authorized main/release/Drive. Pre-check passed; main fast-f
 21. [~] Rubric behavior has real automated evidence; no Exceeds/grade guarantee. Physical feel and human theme/Tagalog review remain NEEDS MANUAL TEST.
 22. [x] Checklist covers 1-25; UPDATE_PROGRESS.md and handoff keep evidence and next commands.
 23. [~] Latest Unity EditMode 11/11, graphics-enabled PlayMode 10/10, 65 assertions and real-folder build passed. Final five-size/native animation confirmation passed; 75 UI and 108 animation captures verified. Final ZIP extraction and full match passed; hardware/clean-PC checks NEEDS MANUAL TEST.
-24. [~] Tested source fast-forwarded to main under the finalization prompt. PUBLIC repository; no reference-photo objects in outgoing commits. No force-push/history rewrite. Final push/release verification in progress; old public history still exists.
-25. [~] Current safe ZIP extraction/full-match and Defender checks passed. B single-file EXE rejected (elevation required), excluded from uploads. README/FILE_INFO and final screenshots prepared; verified Drive/release upload in progress.
+24. [x] Final tested work fast-forwarded to main, committed and normally pushed under finalization authorization. PUBLIC repo and v1.0 verified; zero outgoing reference-photo object paths, no rewrite/force-push. Historical photo privacy remains owner-controlled.
+25. [x] Current safe ZIP extraction/full-match/Defender passed; v1.0 server digest matches. Drive exactly five allowed files/sizes verified and Anyone-with-link Viewer. README/FILE_INFO links current. B elevation failure documented and excluded.
 
-Drive: desktop absent, connector 100 MB limit rejects 200 MB ZIP; official rclone installed and awaiting owner Google authorization. No credentials stored in repo. Watchdog remains stopped/Disabled.
+Physical/human checks remain as listed in CHECKLIST.md. Watchdog and rclone auth wait stopped.

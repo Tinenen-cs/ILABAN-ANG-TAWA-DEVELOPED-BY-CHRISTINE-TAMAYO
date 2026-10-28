@@ -1,13 +1,11 @@
-# Resume checkpoint
+# Final delivery completed
 
-The local Unity overhaul is complete on phase3-polish in C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.
+Branch main. Read the TOP final delivery section of HANDOFF.md; older phase3/queued holds below it are historical. The new finalization prompt authorized main fast-forward/push/release; no force push or reference-photo upload.
 
-Read RESUME_STATE.txt, HANDOFF.md, PENDING_NETWORK.md and CHECKLIST.md, then run git status and python Tools/verify_completion.py. Exact CLI resume command and next five steps are in HANDOFF.md.
+Safe Canvas file: SUBMISSION/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip, 200010588 bytes, SHA-256 e4dbd4a302f20bca4c52c8bc8b4c66e9f55f6110e41dc16069c310c5ece905c3. Optional B requires elevation and is rejected; never upload it.
 
-Current verification: EditMode 11/11, graphics-enabled PlayMode 10/10, 65 rule assertions, real-project Unity 6000.6.2f1 validation build, five exact resolutions, 75 native UI captures, 108 native action/pair captures, 272 structural frame checks, 38 non-clipping audio files. Current source/build fingerprint is in Docs/QA_EVIDENCE/build_provenance.json.
+GitHub v1.0 published and digest verified. Drive has exactly five allowed files with matching sizes and Anyone with the link: Viewer. Read Docs/github_release_verification.json and Docs/drive_delivery_verification.json. No source/Library/photos/credentials uploaded to Drive.
 
-No gameplay rules changed. Whole-body weapons/reactions, anchored bubbles, wooden Hilo HUD, painted headings, controls grid and night maps are integrated. Reference photos stay local/ignored and were never uploaded or newly committed. No push/merge/rewrite. Repository PUBLIC; publishing held for owner photo-history decision.
+Tests: EditMode 11/11, PlayMode 10/10, 65 assertions, five resolutions, 108 native animation captures, fresh ZIP full match, default native fullscreen/Alt+Enter and Defender no threats. Physical keyboard navigation/hot-swap/rollover, clean-PC, sound balance/SmartScreen remain manual. Injected desktop menu keys were inconclusive; no physical keyboard pass claimed.
 
-TASK_COMPLETE.flag is for the LOCAL OVERHAUL only. Watchdog is stopped and scheduled task Disabled; closure proof is Docs/QA_EVIDENCE/completion.json. Editing relaunch count 0; conservative active-Codex guard prevented duplicate agents. Manual hardware/human/reboot checks remain; see CHECKLIST.md and TEST_PLAN.md.
-
-Do not start final EXE/ZIP delivery or Drive upload unless its separately queued prompt is actually invoked and the pre-check passes. Existing ZIP/package JSON are older than this build. Do not treat them as current submission proof.
+Watchdog stopped, scheduled task Disabled, rclone OAuth wait stopped. No new questions or automatic duplicate uploads. Exact resume command is in HANDOFF.md.

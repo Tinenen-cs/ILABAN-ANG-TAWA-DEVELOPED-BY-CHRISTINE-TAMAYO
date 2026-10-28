@@ -1,6 +1,7 @@
-# Pending final delivery
+# Network delivery complete
 
-- Official rclone installed in user Temp/Ilaban-PackTools; remote IlabanFinalDrive config awaits owner Google OAuth approval in the open browser. Never automate sign-in/consent or log tokens. After approval: rclone copy only the six-file allowlist using --drive-root-folder-id 1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH, then lsjson/hash readback.
-- Drive connector upload A rejected before invocation: HTTP 413, 200010588 bytes exceeds 104857600-byte limit. No Drive Desktop mount. Smaller supporting files can use connector if needed.
-- GitHub final push/release now explicitly authorized by latest prompt. Outgoing photo-path audit zero. No force-push/rewrite; historical public reference photos remain an owner-controlled privacy concern.
-- B requires elevation and must never be uploaded.
+Drive folder and GitHub v1.0 are verified in Docs/drive_delivery_verification.json and Docs/github_release_verification.json. All five Drive filenames/sizes match; Anyone with the link: Viewer. No pending upload or rclone authentication is needed.
+
+The connector 100 MB limit and rclone OAuth were resolved by browser uploading A and connector uploading the supporting files. The waiting OAuth process was stopped without printing/storing tokens. No reference photos, source project, Library or credentials were uploaded to Drive.
+
+The PUBLIC repo retains its old history. This final prompt authorized ordinary main push/release; no new reference-photo objects were pushed and no rewrite/visibility change occurred. Owner-controlled historical photo cleanup is outside this delivery task.

@@ -25,8 +25,8 @@ Status: [x] verified automatically or visually; [~] NEEDS MANUAL TEST or explici
 21. [~] Rubric behavior has real automated evidence; no Exceeds/grade guarantee. Physical feel and human theme/Tagalog review remain NEEDS MANUAL TEST.
 22. [x] Checklist covers 1-25; UPDATE_PROGRESS.md and handoff keep evidence and next commands.
 23. [~] Latest Unity EditMode 11/11, graphics-enabled PlayMode 10/10, 65 assertions and real-folder build passed. Final five-size/native animation confirmation passed; 75 UI and 108 animation captures verified. Final ZIP extraction and full match passed; hardware/clean-PC checks NEEDS MANUAL TEST.
-24. [~] Tested source fast-forwarded to main under the finalization prompt. PUBLIC repository; no reference-photo objects in outgoing commits. No force-push/history rewrite. Final push/release verification in progress; old public history still exists.
-25. [~] Current safe ZIP extraction/full-match and Defender checks passed. B single-file EXE rejected (elevation required), excluded from uploads. README/FILE_INFO and final screenshots prepared; verified Drive/release upload in progress.
+24. [x] Final tested work fast-forwarded to main, committed and normally pushed under finalization authorization. PUBLIC repo and v1.0 verified; zero outgoing reference-photo object paths, no rewrite/force-push. Historical photo privacy remains owner-controlled.
+25. [x] Current safe ZIP extraction/full-match/Defender passed; v1.0 server digest matches. Drive exactly five allowed files/sizes verified and Anyone-with-link Viewer. README/FILE_INFO links current. B elevation failure documented and excluded.
 
 ## Rubric self-check
 
@@ -42,4 +42,4 @@ Status: [x] verified automatically or visually; [~] NEEDS MANUAL TEST or explici
 - Clean Windows PC without Unity and unsigned-app antivirus/SmartScreen behavior.
 - Actual reboot/usage-limit auto-resume with Codex App/IDE hosts closed. Lock/reset/CLI smoke/scheduler checks passed; editing relaunch count is zero because the active-process guard blocks duplicate agents.
 - Owner decision on PUBLIC reference-photo history before publishing. Photos were never uploaded or newly committed.
-- Current ZIP is verified; Drive/release verification is in progress. B failed and stays local.
+- Current ZIP and Drive/release verified. B failed and stays local.

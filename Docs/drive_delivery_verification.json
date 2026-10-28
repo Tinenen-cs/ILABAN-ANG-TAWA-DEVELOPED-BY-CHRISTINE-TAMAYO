@@ -1,0 +1,40 @@
+{
+  "verified": true,
+  "folder": "https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH",
+  "sharing": "Anyone with the link: Viewer",
+  "verified_role": "reader",
+  "method": "Game ZIP: signed-in browser; supporting files: connector. Rclone OAuth not completed and stopped.",
+  "files": [
+    {
+      "id": "1UfktzohMZ-_jmzjec9NpD-BAYxdgVvwr",
+      "name": "FILE_INFO.txt",
+      "bytes": 2717,
+      "url": "https://drive.google.com/file/d/1UfktzohMZ-_jmzjec9NpD-BAYxdgVvwr/view?usp=drivesdk"
+    },
+    {
+      "id": "1y2x-IhdQBhOo3SC-oE60lJr_D1dBeE4y",
+      "name": "README.md",
+      "bytes": 4300,
+      "url": "https://drive.google.com/file/d/1y2x-IhdQBhOo3SC-oE60lJr_D1dBeE4y/view?usp=drivesdk"
+    },
+    {
+      "id": "1eP8XA15jvofhJwF7ieRh_i7mnIhrj_fz",
+      "name": "BASAHIN_MUNA.txt",
+      "bytes": 1769,
+      "url": "https://drive.google.com/file/d/1eP8XA15jvofhJwF7ieRh_i7mnIhrj_fz/view?usp=drivesdk"
+    },
+    {
+      "id": "1exPc45F06M08tWoMce4qm-i0fMr6tVpC",
+      "name": "QA_SCREENSHOTS_FINAL.zip",
+      "bytes": 47618333,
+      "url": "https://drive.google.com/file/d/1exPc45F06M08tWoMce4qm-i0fMr6tVpC/view?usp=drivesdk"
+    },
+    {
+      "id": "1wDqFNpaPGaU3QmxbVzE-fA0lP0VZ_1wr",
+      "name": "ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip",
+      "bytes": 200010588,
+      "url": "https://drive.google.com/file/d/1wDqFNpaPGaU3QmxbVzE-fA0lP0VZ_1wr/view?usp=drivesdk"
+    }
+  ],
+  "excluded": "Rejected single-file EXE; source project; Library; reference photos; credentials"
+}

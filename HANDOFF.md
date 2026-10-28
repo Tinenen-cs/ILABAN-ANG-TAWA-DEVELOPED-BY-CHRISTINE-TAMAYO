@@ -1,3 +1,60 @@
+# Final delivery complete - 2026-10-28
+
+Current branch: main. Latest user finalization prompt explicitly authorized fast-forward main, normal push and GitHub release; no history was rewritten and no outgoing reference-photo object paths existed. The older hold/queued notes below are historical, superseded by this final delivery section.
+
+## Final deliverable
+
+Canvas: SUBMISSION/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip
+Size: 200010588 bytes. SHA-256: e4dbd4a302f20bca4c52c8bc8b4c66e9f55f6110e41dc16069c310c5ece905c3.
+
+Exact full local path: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip
+
+Local extracted play backup: SUBMISSION/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe (667136 bytes). Every build companion was byte-compared to this folder. The old extracted folder was preserved under Logs/ArchivedOlderPortable rather than deleted.
+
+B single-file EXE: rejected, WinError 740 requires elevation. No elevated launch or security bypass. It remains local and was NOT uploaded to Drive/GitHub. Do not submit it. Defender scanned both A and rejected B with exit 0/no threats; this does not change B's rejection.
+
+GitHub Release: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.0
+Verified ZIP download: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.0/ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.zip
+GitHub sanitizes spaces to dots; the server size and SHA-256 match local A. Repository PUBLIC. Source main push succeeded; final evidence/doc push follows this checkpoint.
+
+## Drive verified
+
+Folder: https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH
+Sharing: Anyone with the link: Viewer; folder and game-file anyone role reader verified through metadata after changing it in the browser.
+
+Only five allowed files exist, all read back with matching local sizes:
+- Game ZIP: 200010588 bytes, https://drive.google.com/file/d/1wDqFNpaPGaU3QmxbVzE-fA0lP0VZ_1wr/view
+- QA_SCREENSHOTS_FINAL.zip: 47618333 bytes, https://drive.google.com/file/d/1exPc45F06M08tWoMce4qm-i0fMr6tVpC/view
+- BASAHIN_MUNA.txt: 1769 bytes, https://drive.google.com/file/d/1eP8XA15jvofhJwF7ieRh_i7mnIhrj_fz/view
+- README.md: 4300 bytes, https://drive.google.com/file/d/1y2x-IhdQBhOo3SC-oE60lJr_D1dBeE4y/view
+- FILE_INFO.txt: 2717 bytes, https://drive.google.com/file/d/1UfktzohMZ-_jmzjec9NpD-BAYxdgVvwr/view
+
+Drive Desktop was absent; connector rejected the 200 MB file at its 100 MB materialization limit. Official rclone installed, but its OAuth required owner interaction and was not completed. Stopped only that waiting rclone process after signed-in browser upload succeeded. Small files used the connector; README and FILE_INFO were updated in place and read back at final sizes. No source, Library, reference photos or credentials uploaded. No OAuth token was printed or stored in the repo. Evidence: Docs/drive_delivery_verification.json.
+
+## Actual tests and limitations
+
+Final main: EditMode 11/11, graphics PlayMode 10/10, 65 assertions, build succeeded, no C# diagnostics. Five exact-size runs plus 108 native animation captures and 272 body-frame checks passed. Full verifier compared every current build file to the ZIP. Fresh temp extraction completed a real simulated-input match to five-hit dizzy and instant manhole result. 1920x1080 is also this PC native monitor; final captures are in QA_SCREENSHOTS/FINAL.
+
+Normal no-argument launch: double-clicked extracted A in File Explorer; observed native borderless title, exact developer wording, pointer entry to selection, Alt+Enter windowed and back. Physical keyboard navigation remains NEEDS MANUAL TEST: desktop-injected F/Enter/arrows did not advance it, while Alt+Enter did. InputSystem simulated keyboard/isolation tests passed; no physical-keyboard pass is claimed. No XInput gamepad connected. Physical hot-swap, rollover, sound balance, clean-PC and unsigned-file SmartScreen remain manual.
+
+All deliverable hashes and tests: SUBMISSION/FILE_INFO.txt. Video method and free SDK adaptation: Docs/PORTABLE_EXE_METHOD.md. B failure: Docs/single_exe_build.json. Defender proof: Docs/QA_EVIDENCE/defender_scan.json and Logs/Defender-Final.txt.
+
+## Next five steps (owner/manual)
+
+1. Extract A to a different folder and double-click the inner EXE.
+2. Check F and A/D for P1; right Ctrl/numpad 0 and arrows for P2. This physical input check is essential because injected desktop navigation was inconclusive.
+3. Play a two-person match, checking one-step hits, five-hit dizzy and the instant drain result.
+4. Test controllers/hot-swap if available, monitor/fullscreen, speakers/headphones and a clean Windows 10/11 PC.
+5. Upload the safe ZIP to Canvas. Do not upload rejected B or an inner Unity EXE by itself.
+
+Exact resume command:
+`codex exec --sandbox workspace-write -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md final delivery section, RESUME_STATE.txt, CHECKLIST.md and Docs/drive_delivery_verification.json. Run git status. Final ZIP and uploads are complete; do not duplicate them or upload rejected B. Continue only explicit new work or recorded manual-test follow-up."`
+
+Watchdog remains stopped and IlabanAutoResume Disabled. AC power settings unchanged from previous recorded zero timeouts. No background Codex/rclone continuation is running for this task.
+
+---
+## Historical handoff below
+
 # Handoff - local overhaul complete, 2026-10-28
 
 Project: `C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO`
