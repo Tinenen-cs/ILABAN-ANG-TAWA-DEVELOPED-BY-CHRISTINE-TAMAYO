@@ -95,3 +95,5 @@ Official public-domain LZMA SDK 26.05 7zSD.sfx wrapper was created from the exac
 
 ### Desktop-injected navigation remains inconclusive
 Normal double-click A launch, pointer selection and Alt+Enter worked. Sky-injected F/Enter/arrows did not advance action-map navigation. Root cause was not established from these injections; InputSystem simulated keyboard/isolation tests passed. Physical keyboard navigation must be checked by the owner; no physical-keyboard pass or guarantee is claimed. No gamepad was connected.
+
+UPDATE2 step 1: Jeepney source faces left but positive-x travel made it reverse. Reversed the path without changing art; reused painted title plate for the opening and separated tagline. Build/65 checks/native smoke passed; viewed opening and title.

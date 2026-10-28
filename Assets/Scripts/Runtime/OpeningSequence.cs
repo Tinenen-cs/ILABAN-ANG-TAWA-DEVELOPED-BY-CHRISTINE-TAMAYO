@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
@@ -10,7 +10,8 @@ namespace Hexbound
     {
         Canvas canvas;
         RectTransform content,flags,jeep;
-        TMP_Text logo,credit;
+        RawImage logo,logoGlow,logoShine;
+        RectTransform logoPlate;
         Image fade;
         RawImage street,jeepImage;
         RawImage[] layers;
@@ -34,8 +35,15 @@ namespace Hexbound
             var shade=R(content,new Rect(0,0,1280,720)).gameObject.AddComponent<Image>();shade.color=new Color(.02f,.06f,.1f,.35f);
             flags=Art(content,new Rect(0,-160,1280,144),"UI/Banderitas").rectTransform;
             jeepImage=Art(content,new Rect(-380,386,360,250),"UI/JeepneyFrames");jeep=jeepImage.rectTransform;jeepImage.uvRect=new Rect(0,.15f,.25f,.57f);
-            logo=Text(content,new Rect(80,210,1120,100),"ILABAN ANG TAWA",80);logo.gameObject.SetActive(false);
-            credit=Text(content,new Rect(130,330,1020,110),english?"A Game from the Philippines\nCreated by Christine Tamayo":"Isang laro mula sa Pilipinas\nHandog ni Christine Tamayo",30);credit.alpha=0;
+            logoPlate=R(content,new Rect(90,165,1100,174));logoPlate.name="Pintadong pambungad";
+            logoPlate.pivot=new Vector2(.5f,.5f);logoPlate.anchoredPosition=new Vector2(640,-252);
+            var texture=Resources.Load<Texture2D>("Ilaban/UI/HeadingLogo");
+            float logoWidth=Mathf.Min(1100,174f*texture.width/texture.height),logoHeight=logoWidth*texture.height/texture.width;
+            var area=new Rect((1100-logoWidth)/2,(174-logoHeight)/2,logoWidth,logoHeight);
+            logoGlow=Art(logoPlate,area,"UI/HeadingLogo");logoGlow.color=new Color(1,.75f,.3f,.18f);logoGlow.rectTransform.localScale=Vector3.one*1.015f;
+            logo=Art(logoPlate,area,"UI/HeadingLogo");logo.name="ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO";
+            logoShine=Art(logoPlate,area,"UI/HeadingLogo");logoShine.color=new Color(1,1,.8f,.4f);
+            logoPlate.gameObject.SetActive(false);
             Text(content,new Rect(200,666,880,29),english?"Press any button to skip":"Pindutin ang anumang pindutan upang laktawan",22);
             fade=R(content,new Rect(0,0,1280,720)).gameObject.AddComponent<Image>();fade.color=Color.black;
             Cue("opening_bell");Cue("banderitas");
@@ -50,11 +58,19 @@ namespace Hexbound
             elapsed+=Mathf.Min(Time.unscaledDeltaTime,.1f);
             var rect=(RectTransform)canvas.transform;float fit=Mathf.Min(rect.rect.width/1280,rect.rect.height/720);content.localScale=Vector3.one*fit;
             flags.anchoredPosition=new Vector2(0,Mathf.Lerp(160,-10,Mathf.SmoothStep(0,1,elapsed/.8f)));flags.localRotation=Quaternion.Euler(0,0,Mathf.Sin(elapsed*3)*Mathf.Max(0,1-elapsed/2)*4);
-            float progress=Mathf.Clamp01((elapsed-.6f)/4.5f);jeep.anchoredPosition=new Vector2(Mathf.Lerp(-380,1390,progress),-386+Mathf.Sin(elapsed*25)*1.5f);jeepImage.uvRect=new Rect((Mathf.FloorToInt(elapsed*8)%4)*.25f,.15f,.25f,.57f);
+            float progress=Mathf.Clamp01((elapsed-.6f)/4.5f);jeep.anchoredPosition=new Vector2(Mathf.Lerp(1390,-380,progress),-386+Mathf.Sin(elapsed*25)*1.5f);jeepImage.uvRect=new Rect((Mathf.FloorToInt(elapsed*8)%4)*.25f,.15f,.25f,.57f);
             for(int i=0;i<layers.Length;i++)layers[i].rectTransform.anchoredPosition=new Vector2(-200+Mathf.Sin(elapsed*.3f)*(i+1)*3,0);
             if(elapsed>.6f&&!enginePlayed){enginePlayed=true;Cue("jeepney_engine");}
-            if(elapsed>2.5f&&!stingerPlayed){stingerPlayed=true;Cue("opening_sting");logo.gameObject.SetActive(true);}
-            if(stingerPlayed){float t=elapsed-2.5f;logo.rectTransform.localScale=new Vector3(1+Mathf.Sin(t*12)*Mathf.Exp(-t*5)*.22f,1-Mathf.Sin(t*12)*Mathf.Exp(-t*5)*.18f,1);credit.alpha=Mathf.Clamp01((elapsed-3.1f)/.7f);}
+            if(elapsed>2.5f&&!stingerPlayed){stingerPlayed=true;Cue("opening_sting");logoPlate.gameObject.SetActive(true);}
+            if(stingerPlayed){
+                float t=elapsed-2.5f;float pop=1+Mathf.Sin(t*12)*Mathf.Exp(-t*5)*.16f;logoPlate.localScale=Vector3.one*pop;
+                logoGlow.color=new Color(1,.75f,.3f,.12f+Mathf.Sin(t*2)*.04f);
+                // A narrow crop of the SAME transparent lettering sweeps across it: no opaque rectangle.
+                float u=Mathf.Repeat(t*.55f,1.3f)-.15f,left=Mathf.Clamp01(u),right=Mathf.Clamp01(u+.10f);
+                var r=logo.rectTransform;logoShine.rectTransform.anchoredPosition=r.anchoredPosition+new Vector2(left*r.rect.width,0);
+                logoShine.rectTransform.sizeDelta=new Vector2((right-left)*r.rect.width,r.rect.height);
+                logoShine.uvRect=new Rect(left,0,right-left,1);
+            }
             float alpha=elapsed<.65f?1-elapsed/.65f:elapsed>5.7f?(elapsed-5.7f)/.6f:0;fade.color=new Color(0,0,0,Mathf.Clamp01(alpha));
             bool skip=false;if(Keyboard.current!=null)foreach(var key in Keyboard.current.allKeys)if(key.wasPressedThisFrame){skip=true;break;}
             foreach(var pad in Gamepad.all)foreach(var control in pad.allControls)if(control is UnityEngine.InputSystem.Controls.ButtonControl button&&button.wasPressedThisFrame)skip=true;

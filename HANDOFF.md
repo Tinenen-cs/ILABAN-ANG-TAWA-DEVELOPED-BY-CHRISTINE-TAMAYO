@@ -1,3 +1,12 @@
+# UPDATE2 in progress ? latest user attachment supersedes completed v1.0 below
+
+Step 1 DONE: left-facing jeepney now travels right-to-left; opening reuses exact painted HeadingLogo, with pop, transparent-letter shine and gentle glow; title tagline moved up with a 30px clear gap. Real-folder Unity build + 65 checks passed, native 1280 smoke passed; opening/title screenshots personally viewed in QA_SCREENSHOTS/UPDATE2/Step01. Existing published v1.0 is historical until UPDATE2 is built/released.
+
+In progress: Step 2 pointer/keyboard/gamepad screen routing. Next five: (2) consume title input and test routing; (3) smooth all shared rounded skins; (4) remove card item/check ornaments; (5) chibi proportions; (6) stage zones. Then continue tasks 7?14 from attachment b318c3fe-9326-4656-b283-1f4667bc7060.
+
+Exact resume command: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md UPDATE2 section and attachment C:/Users/chris/.codex/attachments/b318c3fe-9326-4656-b283-1f4667bc7060/Pasted text.txt, run git status, finish the current UPDATE2 step, and continue tasks in order. No questions. Never use reference photos; normal commits and push only."`
+
+---
 # Final delivery complete - 2026-10-28
 
 Current branch: main. Latest user finalization prompt explicitly authorized fast-forward main, normal push and GitHub release; no history was rewritten and no outgoing reference-photo object paths existed. The older hold/queued notes below are historical, superseded by this final delivery section.

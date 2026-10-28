@@ -43,3 +43,7 @@ Status: [x] verified automatically or visually; [~] NEEDS MANUAL TEST or explici
 - Actual reboot/usage-limit auto-resume with Codex App/IDE hosts closed. Lock/reset/CLI smoke/scheduler checks passed; editing relaunch count is zero because the active-process guard blocks duplicate agents.
 - Owner decision on PUBLIC reference-photo history before publishing. Photos were never uploaded or newly committed.
 - Current ZIP and Drive/release verified. B failed and stays local.
+
+## UPDATE2 (2026-10-28)
+- [x] Step 1: corrected opening direction/logo effects and title spacing; native screenshot/build/65 checks verified.
+- [ ] Steps 2?14: current new attachment; v1.0 evidence above does not verify these changes.
