@@ -1,3 +1,31 @@
+# FINAL UPDATE2 DELIVERY COMPLETE - 2026-10-29
+
+All 14 requested steps implemented and automated delivery verification completed. Earlier v1.0/pending notes below are historical. Main branch; normal source pushes only; no reference photographs used, uploaded or newly committed.
+
+Canvas: SUBMISSION/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe
+Full path: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe
+Size: 202928640 bytes. SHA-256: 4f794497062d201eb6129c2e574d1e706aadeca3bddfec67713bab2a62ac0fc5.
+Original free GUI launcher embeds all 168 build/support files, validates SHA-256, extracts into an owned unique Temp directory and launches the game without elevation/console. Windows built-in .NET Framework 4.x required. Old elevation-dependent SFX was archived, not reused.
+
+Backup: same-named ZIP beside the EXE, 202885864 bytes, SHA-256 805d812e959a70e0deb9b0b1d4d9816b39ad1c3db88ddd484ff08dd52dca5060. Current complete folder beside it was byte-compared with Builds/Windows; old backup safely archived. Never submit the small inner Unity EXE alone.
+
+Release: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.1-update2
+Repository PUBLIC. Six release assets have matching server sizes/SHA-256 digests. GitHub sanitizes spaces to dots; bytes are identical.
+Drive: https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH
+Exactly six current files read back with matching sizes: EXE, backup ZIP, QA sharing ZIP, BASAHIN_MUNA, README and FILE_INFO. Folder/EXE/backup Anyone with link: Viewer verified. Large files used the already-authenticated School owner Chrome profile; support files used connector. No sign-in, credential or sharing change required. Drive connector exposes sizes, not checksum proof; GitHub server digests verify artifact hashes. Evidence: Docs/drive_update2_delivery.json and Docs/github_update2_release.json.
+
+Verified: EditMode 13/13, graphics PlayMode 13/13, 65 assertions, real-folder build with zero C# diagnostics, 85 native UI captures at five resolutions, 172 native strike/hurt/win/lose/pair captures, 272 body checks and 48 anchor checks. English/glyph/mojibake/audio audit clean, all 38 WAVs present with zero clipped samples. Five Hilo segments intentionally retained for exactly five-hit dizzy.
+Single EXE alone in empty Temp and a space-containing path passed two full three-win matches, 34 native 1920x1080 captures, clean logs and exit 0. Defender found no threats in the candidate EXE/backup. Normal no-argument desktop double-click verified native fullscreen, Alt+Enter windowed/back, Controls pointer route, Hindi-default exit and actual Oo quit; wrapper exit 0/temp cleanup confirmed.
+
+NEEDS MANUAL TEST: physical keyboard navigation/rollover (desktop-injected Escape remains inconclusive), real controllers/USB/hot-swap, human sound/Tagalog/art feel, Editor stop, clean-PC/.NET/SmartScreen, presentation monitor and strict steady-60 stress. Development-PC average near 60 fps, occasional 33ms frame; no strict steady-60 guarantee. QA sharing ZIP contains native-dimension JPEG copies; original lossless PNGs remain local under QA_SCREENSHOTS/UPDATE2.
+
+Next five owner checks: double-click EXE from a different folder; verify fullscreen and physical keys; play a full two-person match to three wins; test gamepad/USB/hot-swap and sound; submit exact outer EXE subject to school Canvas policy (complete folder/ZIP backup available).
+
+Exact resume command: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md final UPDATE2 section, RESUME_STATE.txt, CHECKLIST.md and Docs/UPDATE2_REQUEST.md. Run git status. UPDATE2 delivery is complete; do not rebuild or duplicate uploads. Continue only explicitly requested follow-up or remaining manual tests. Never use reference photos or rewrite history."`
+
+Watchdog remains disabled; no editing watchdog relaunches in this task. Remaining manual checks are not claimed passed. The final commit/remote/clean-tree result is recorded in RESUME_STATE.txt after this checkpoint.
+
+---
 # CURRENT UPDATE2 - 2026-10-29
 
 Done: steps 1-12, individually committed; latest 6516807. Step 13 QA PASSED: 13/13 EditMode, 13/13 PlayMode, build/65 checks, five sizes/17 screens each (85), 172 native animation captures. Static English/glyph/audio audit clean; 38 WAVs, no clipping. Final screen contact sheet and key native sizes personally viewed. Source commit/push is next. New EXE/Drive delivery not yet done; v1.0 artifacts/hashes below are historical.
@@ -223,3 +251,9 @@ Next: Step 14 build/test one-file EXE, Defender, hashes, public Release/Drive ve
 ## UPDATE2 step 14a
 
 Current backup ZIP rebuilt, fresh extraction/full-three-win smoke passed. Original free GUI single-file launcher compiled (202928640 bytes, SHA-256 4f794497062d201eb6129c2e574d1e706aadeca3bddfec67713bab2a62ac0fc5), embeds 168 verified files. Candidate still UNTESTED; do not upload yet. Next: run Tools/test_single_exe_update2.py, Defender, normal desktop/no-argument launch, public release and Drive readback.
+
+## UPDATE2 14b - verified executable and public release
+
+Current EXE alone passed EmptyTemp and PathWithSpaces, 17 screens and a full three-win match each, clean logs/exit 0. Defender SUBMISSION scan found no threats. Normal double-click/native fullscreen/Alt+Enter/Controls pointer route and Oo quit verified; wrapper exit 0 and temp cleanup confirmed. Injected Escape remains inconclusive; physical keyboard/controller tests stay manual.
+
+Release published and server EXE/ZIP size/digests verified: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.1-update2. EXE 202928640 bytes SHA 4f794497062d201eb6129c2e574d1e706aadeca3bddfec67713bab2a62ac0fc5. Drive EXE uploaded via already-authenticated owner School browser; connector readback verified same size and anyone reader. Backup ZIP replacement pending. QA sharing ZIP and BASAHIN updated via connector. Finish guides/readback/clean-tree handoff.

@@ -14,9 +14,9 @@ A two-player Filipino street brawler made by Christine Tamayo. Pick a character,
 
 ## UPDATE2 release status
 
-The requested UI fixes, original chibi head revisions, first-to-three match, five-option pause, error notices and whole-body emotes are implemented. Final verification and one-file packaging are in progress. Published v1.0 files and their old hashes are historical; consult SUBMISSION/FILE_INFO.txt after UPDATE2 delivery verification.
+The requested UI fixes, original chibi head revisions, first-to-three match, five-option pause, error notices and whole-body emotes are implemented. Final verification and one-file packaging passed. Published v1.0 is historical. Use the UPDATE2 EXE and current hash in SUBMISSION/FILE_INFO.txt.
 
-**Verified Canvas file: ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe** (202,928,640 bytes). SHA-256: `4f794497062d201eb6129c2e574d1e706aadeca3bddfec67713bab2a62ac0fc5`. The current original GUI launcher passed EXE-only empty-Temp and space-path full three-win tests, default fullscreen/Alt+Enter and Defender. It embeds all dependencies and uses Windows built-in .NET Framework 4.x. Current release/Drive publication is pending. Keep the complete Windows folder/ZIP as backup.
+**Verified Canvas file: ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe** (202,928,640 bytes). SHA-256: `4f794497062d201eb6129c2e574d1e706aadeca3bddfec67713bab2a62ac0fc5`. The current original GUI launcher passed EXE-only empty-Temp and space-path full three-win tests, default fullscreen/Alt+Enter and Defender. It embeds all dependencies and uses Windows built-in .NET Framework 4.x. [Download the verified EXE from Drive](https://drive.google.com/file/d/1ubFKaj6uhFB26cStVNLoqwrel4wL_pN3/view?usp=drivesdk) or [GitHub UPDATE2](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.1-update2). GitHub replaces filename spaces with dots; the bytes/hash are identical. Keep the complete Windows folder/ZIP as backup.
 
 [PUBLIC source repository](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO).
 [Drive folder](https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH).

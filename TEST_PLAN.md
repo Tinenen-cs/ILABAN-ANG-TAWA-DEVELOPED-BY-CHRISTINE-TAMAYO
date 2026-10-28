@@ -1,4 +1,4 @@
-﻿# Test plan and current evidence
+# Test plan and current evidence
 
 Run from the real project folder with Unity 6000.6.2f1 installed:
 
@@ -24,3 +24,6 @@ Manual pass/fail sheet, after the final ZIP is ready:
 - Reboot/real limit reset auto-resume with App/IDE hosts closed: [ ] PASS [ ] FAIL.
 
 A development-PC extraction test never counts as a clean-PC or physical-device test. Do not publish until the owner resolves the public reference-photo history hold.
+
+## UPDATE2 final desktop evidence
+Normal single-EXE double-click, native 1920x1080 fullscreen, Alt+Enter toggle/back, Controls pointer route, Hindi-default dialog and actual Oo quit: verified. Desktop-injected Escape navigation inconclusive; physical keyboard/controllers/USB, listening, Editor stop and clean-PC/SmartScreen remain manual. Two independent EXE-only simulated matches to three wins passed.

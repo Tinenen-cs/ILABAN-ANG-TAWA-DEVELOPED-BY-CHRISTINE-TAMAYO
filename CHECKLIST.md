@@ -5,7 +5,7 @@
 1. [x] Opening jeepney faces/travels left; exact painted logo with pop/glow/shine.
 2. [x] Title tagline clear of painted logo.
 3. [x] Explicit controls/exit routing; keyboard/gamepad/pointer regressions passed.
-4. [~] No-default exit confirmation implemented; physical actual quit/Editor stop NEEDS MANUAL TEST.
+4. [~] No-default confirmation and actual desktop Oo quit verified; Editor stop NEEDS MANUAL TEST.
 5. [x] Padded antialiased nine-slice corners, bilinear UI, continuous rounded rims.
 6. [x] Duplicate card item icons and confirm checkmarks removed.
 7. [~] Three chibi head/action/portrait revisions checked; human art consistency NEEDS MANUAL TEST.
@@ -26,7 +26,7 @@
 22. [~] Physical keyboard/controller/USB/hot-swap/rollover, monitor and clean-PC manual.
 23. [~] Near-60 observed; strict steady-60/other hardware manual; occasional 33ms frame recorded.
 24. [x] Normal main push succeeded at 0396ab7; repository PUBLIC. No reference-photo paths staged; no force push/history rewrite.
-25. [~] New single EXE, independent tests/Defender/hash/release/Drive pending step 14; v1.0 historical.
+25. [x] Current single EXE passed two EXE-only full three-win runs, desktop/fullscreen/quit and Defender; public release digest and Drive EXE/backup sizes with Viewer access verified.
 
 ## UPDATE2 step 13 â€” 2026-10-28T17:15:35.092874+00:00
 
