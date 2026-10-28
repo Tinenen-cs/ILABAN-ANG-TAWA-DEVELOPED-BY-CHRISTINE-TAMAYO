@@ -438,8 +438,17 @@ namespace Hexbound
             Label(resultPanel,new Rect(30,427,580,26),"KALIWA / KANAN  PUMILI    SUNTOK  PILIIN",16,gold);resultPanel.gameObject.SetActive(false);
             Color[] paper={new Color32(243,185,96,255),new Color32(74,201,192,255),new Color32(231,119,99,255),new Color32(246,225,183,255)};
             for(int i=0;i<28;i++){float x=i%2==0?15+(i/2%5)*23:1140+(i/2%5)*23;var piece=Image(view,new Rect(x,0,7+i%3*2,12),paper[i%paper.Length]);confetti.Add(piece.rectTransform);piece.gameObject.SetActive(false);}
-            pausePanel=Rect(view,"Pahinga",new Rect(385,210,510,315));WoodPanel(pausePanel,new Rect(0,0,510,315));Label(pausePanel,new Rect(0,18,510,47),"Pansamantalang Ihinto",34);
-            menuButtons=new[]{Button(pausePanel,new Rect(75,82,360,52),"Magpatuloy",()=>{Paused=false;pausePanel.gameObject.SetActive(false);}),Button(pausePanel,new Rect(75,148,360,52),"Mga Kontrol",()=>{fromFight=true;Show(ScreenState.Controls);Paused=true;}),Button(pausePanel,new Rect(75,214,360,52),"Pangunahing Talaan",()=>{Paused=false;Show(ScreenState.Title);})};Label(pausePanel,new Rect(30,273,450,30),"KALIWA / KANAN  PUMILI    SUNTOK  PILIIN",18,gold);pausePanel.gameObject.SetActive(false);
+            pausePanel=Rect(view,"Pahinga",new Rect(385,150,510,450));WoodPanel(pausePanel,new Rect(0,0,510,450));Label(pausePanel,new Rect(0,16,510,47),"Pansamantalang Ihinto",34);
+            string[] pauseLabels={"Magpatuloy","Mga Kontrol","Pumili ng Ibang Tauhan","Pangunahing Talaan","Umalis"};menuButtons=new Button[5];
+            for(int i=0;i<5;i++){int index=i;menuButtons[i]=Button(pausePanel,new Rect(50,76+i*62,410,48),pauseLabels[i],()=>ActivatePause(index));}
+            Label(pausePanel,new Rect(30,398,450,36),"KALIWA / KANAN  PUMILI    SUNTOK  PILIIN",16,gold);pausePanel.gameObject.SetActive(false);
+        }
+        public void ActivatePause(int index){
+            if(index==0){Paused=false;pausePanel.gameObject.SetActive(false);}
+            else if(index==1){fromFight=true;Show(ScreenState.Controls);Paused=true;}
+            else if(index==2)OpenSelect();
+            else if(index==3){Paused=false;Show(ScreenState.Title);}
+            else RequestExit();
         }
         static string EnglishReaction(string line) {
             switch(line) {
@@ -563,7 +572,7 @@ namespace Hexbound
             if(controls.Any("Help")&&!Model.Finished){fromFight=true;Paused=true;Show(ScreenState.Controls);return;}
             if(controls.Any("Pause")&&!Model.Finished) {Paused=!Paused;focus=0;Sound("menu_back");}
             pausePanel.gameObject.SetActive(Paused);
-            if(Paused) {NavMenu(3);if(controls.Any("Confirm")){if(focus==0)Paused=false;else if(focus==1){fromFight=true;Show(ScreenState.Controls);Paused=true;}else{Paused=false;Show(ScreenState.Title);}}return;}
+            if(Paused) {NavMenu(5);if(controls.Any("Confirm"))ActivatePause(focus);return;}
             if(!Model.Finished) {
                 Model.Tick(Time.deltaTime,controls.Read(0),controls.Read(1));
                 foreach(var ev in Model.events)React(ev.player,ev.kind);

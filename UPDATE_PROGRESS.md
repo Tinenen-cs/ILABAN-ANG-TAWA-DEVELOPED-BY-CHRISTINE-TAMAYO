@@ -65,3 +65,9 @@ Next: Step 7 common visual reach, short approach, persistent first-to-three matc
 DONE: shared reach 190, body gap 112, start gap 230 (short 40-unit approach), unchanged 0.12/0.36 punch timing and 52 knockback. Persistent win tally; automatic 1.6s round banner; third win opens centered winner-pose panel with replay/select/exit. Universal safe No-default exit modal. EditMode 13/13, PlayMode 11/11, build/65 checks and complete native three-win simulated match passed; final screenshot viewed.
 
 Next: Step 8 five-option pause; then 9 modal errors, 10 emotes, 11 ambience/performance, 12 Hilo proof.
+
+## UPDATE2 step 8 — 2026-10-28T16:29:49.060232+00:00
+
+DONE: five-option rounded pause menu: resume, controls, choose other fighters, title, exit. Exit uses shared No-default modal and Esc cannot quit. PlayMode 12/12, build/65 checks and complete native smoke passed; pause screenshot viewed.
+
+Next: Step 9 trapped-focus validation popups; then 10 win/lose reactions, 11 subtle sky motion/performance, 12 Hilo, 13 final QA.

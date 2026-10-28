@@ -55,6 +55,15 @@ namespace Hexbound.Tests
             var sliders=(System.Array)typeof(AcademyGame).GetField("settingsSliders",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(game);
             foreach(Slider slider in sliders){Assert.AreEqual(290,slider.GetComponent<RectTransform>().sizeDelta.x,.01f,"Slider track stays within its row.");Assert.LessOrEqual(slider.fillRect.rect.width,290.01f,"Slider fill cannot overflow its track.");}
         }
+        [UnityTest] public IEnumerator PauseHasFiveOptionsAndExitNeverQuitsOnEscape(){
+            var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Pause test").AddComponent<AcademyGame>();game.Ready[0]=game.Ready[1]=true;game.StartMatch();
+            typeof(AcademyGame).GetProperty("Paused").GetSetMethod(true).Invoke(game,new object[]{true});yield return null;
+            const System.Reflection.BindingFlags flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+            var buttons=(Button[])typeof(AcademyGame).GetField("menuButtons",flags).GetValue(game);Assert.AreEqual(5,buttons.Length);
+            game.ActivatePause(4);Assert.IsTrue((bool)typeof(AcademyGame).GetField("exitOpen",flags).GetValue(game));Assert.AreEqual(1,typeof(AcademyGame).GetField("focus",flags).GetValue(game));game.CancelExit();Assert.IsTrue(game.Paused);
+            game.ActivatePause(1);Assert.AreEqual(AcademyGame.ScreenState.Controls,game.ScreenNow);Assert.IsTrue(game.Paused);
+            game.Ready[0]=game.Ready[1]=true;game.StartMatch();game.ActivatePause(2);Assert.AreEqual(AcademyGame.ScreenState.Select,game.ScreenNow);Assert.IsFalse(game.Ready[0]||game.Ready[1]);
+        }
         [UnityTest] public IEnumerator PauseAndSettingsOverlaysHaveNoOrphanFighterObjects(){
             var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();game.Ready[0]=game.Ready[1]=true;game.StartMatch();
             var setter=typeof(AcademyGame).GetProperty("Paused").GetSetMethod(true);setter.Invoke(game,new object[]{true});yield return null;
