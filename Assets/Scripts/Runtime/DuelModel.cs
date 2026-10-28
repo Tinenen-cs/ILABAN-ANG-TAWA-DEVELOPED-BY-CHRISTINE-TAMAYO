@@ -24,7 +24,7 @@ namespace Hexbound
     // Deterministic, presentation-independent rubric rules. No health, vertical movement or timeout.
     public sealed class DuelModel
     {
-        public const float StepBack=52, PunchReach=118, BodyGap=60, MoveSpeed=210;
+        public const float StepBack=52, PunchReach=190, BodyGap=112, MoveSpeed=210;
         public const float PunchDuration=.36f, PunchStartup=.12f, DizzyDuration=2, StreakWindow=3;
         public const float LeftRiftX=80, RightRiftX=1200, HoleInnerEdge=112;
         public const int KnockdownHits=5;
@@ -38,11 +38,17 @@ namespace Hexbound
         readonly int startingArena;
         public int ArenaIndex => startingArena;
         public bool Finished => winner!=-2;
+        public bool MatchFinished => Finished && winner>=0 && players[winner].wins>=3;
         public static bool OverRift(float x,float unused=0) => x<=HoleInnerEdge || x>=1280-HoleInnerEdge;
         public DuelModel(int p1,int p2,int arena=0)
         {
             startingArena=Math.Max(0,Math.Min(2,arena));
-            players=new[]{new Fighter(p1,430,1),new Fighter(p2,850,-1)};
+            players=new[]{new Fighter(p1,525,1),new Fighter(p2,755,-1)};
+        }
+        public bool BeginNextRound() {
+            if(!Finished||MatchFinished)return false;
+            for(int i=0;i<2;i++)players[i]=new Fighter(players[i].character,i==0?525:755,i==0?1:-1){wins=players[i].wins};
+            winner=-2;round++;elapsed=0;reason="";bursts.Clear();events.Clear();sounds.Clear();return true;
         }
         void Emit(int p,string kind) { events.Add(new CombatEvent(p,kind)); }
         public void Tick(float dt,DuelInput a,DuelInput b)
@@ -87,8 +93,8 @@ namespace Hexbound
             float movement=Math.Max(-1,Math.Min(1,input.move))*MoveSpeed*dt;
             float next=p.x+movement;
             // Body collision stops the mover; it never displaces the other fighter.
-            if(p.x<enemy.x) next=Math.Min(next,enemy.x-BodyGap);
-            else next=Math.Max(next,enemy.x+BodyGap);
+            if(p.x<enemy.x && movement>0) next=Math.Min(next,Math.Max(p.x,enemy.x-BodyGap));
+            else if(p.x>enemy.x && movement<0) next=Math.Max(next,Math.Min(p.x,enemy.x+BodyGap));
             if(Math.Abs(next-p.x)>.001f) {
                 p.pose=Pose.Walk; p.stepClock-=dt;
                 if(p.stepClock<=0) { p.stepClock=.26f; sounds.Add("step"); }

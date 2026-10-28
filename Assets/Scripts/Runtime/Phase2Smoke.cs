@@ -40,17 +40,18 @@ namespace Hexbound
             }
             game.SelectArena(0);game.Ready[0]=game.Ready[1]=true;game.StartMatch();
             var pad=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Gamepad>();
-            float deadline=Time.realtimeSinceStartup+45,nextPunch=0;bool dizzyCaptured=false;
-            while(!game.Model.Finished && Time.realtimeSinceStartup<deadline) {
+            float deadline=Time.realtimeSinceStartup+145,nextPunch=0;bool dizzyCaptured=false;
+            while(!game.Model.MatchFinished && Time.realtimeSinceStartup<deadline) {
+                if(game.Model.Finished){UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState());yield return null;continue;}
                 var a=game.Model.players[0];var rival=game.Model.players[1];
-                float move=rival.x-a.x>90?1:0;
+                float move=rival.x-a.x>DuelModel.PunchReach-12?1:0;
                 var state=new UnityEngine.InputSystem.LowLevel.GamepadState {leftStick=new Vector2(move,0)};
                 if(move==0 && Time.realtimeSinceStartup>=nextPunch){state=state.WithButton(UnityEngine.InputSystem.LowLevel.GamepadButton.West);nextPunch=Time.realtimeSinceStartup+.48f;}
                 UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,state);yield return null;
                 if(!dizzyCaptured&&rival.dizzyTime>0){dizzyCaptured=true;yield return Capture("05-dizzy");}
             }
             UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState());yield return null;
-            if(!game.Model.Finished||game.Model.winner!=0)throw new Exception("Simulated input match did not end with manhole win");
+            if(!game.Model.MatchFinished||game.Model.players[0].wins!=3||game.Model.winner!=0)throw new Exception("Simulated input match did not end with manhole win");
             yield return Capture("06-result");UnityEngine.InputSystem.InputSystem.RemoveDevice(pad);
             game.StartMatch();typeof(AcademyGame).GetProperty("Paused").GetSetMethod(true).Invoke(game,new object[]{true});yield return Capture("07-pause");
             game.Show(AcademyGame.ScreenState.Controls);yield return Capture("08-controls");

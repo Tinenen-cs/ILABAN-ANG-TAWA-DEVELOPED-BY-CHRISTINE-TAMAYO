@@ -77,3 +77,9 @@ Next: Step 6 fixed stage zones; then 7 reach and first-to-three, 8 pause, 9 moda
 DONE: centered stage card pivots, reduced fixed card height, separate name/description/hint zones, selected-card clear gap; subtitle Isang tuntunin. Build/65 checks and native smoke passed; highlighted Looban screenshot viewed.
 
 Next: Step 7 common visual reach, short approach, persistent first-to-three match; then 8 pause, 9 modal errors, 10 emotes, 11 ambience.
+
+## UPDATE2 step 7 — 2026-10-28T16:25:59.014105+00:00
+
+DONE: shared reach 190, body gap 112, start gap 230 (short 40-unit approach), unchanged 0.12/0.36 punch timing and 52 knockback. Persistent win tally; automatic 1.6s round banner; third win opens centered winner-pose panel with replay/select/exit. Universal safe No-default exit modal. EditMode 13/13, PlayMode 11/11, build/65 checks and complete native three-win simulated match passed; final screenshot viewed.
+
+Next: Step 8 five-option pause; then 9 modal errors, 10 emotes, 11 ambience/performance, 12 Hilo proof.

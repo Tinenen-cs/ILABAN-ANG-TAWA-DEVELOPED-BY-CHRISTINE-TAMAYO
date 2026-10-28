@@ -49,7 +49,9 @@ namespace Hexbound
         Image[][] hiloPips,winMarkers;
         TMP_Text[] winSparkles;
         Bubble[] bubbles;
-        RectTransform pausePanel,resultPanel;
+        RectTransform pausePanel,resultPanel,roundPanel;
+        Actor resultWinner;
+        TMP_Text roundTitle,roundReason;
         TMP_Text resultTitle,resultReason,focusLabel;
         Button[] menuButtons;
         RectTransform[] cards;
@@ -67,6 +69,7 @@ namespace Hexbound
         int selectedArena,focus,setting,language;
         int screenEnteredFrame=-1;
         bool exitOpen;
+        int exitReturnFocus;
         public int Language=>language;
         bool fromFight;
         float enteredAt;
@@ -200,7 +203,7 @@ namespace Hexbound
                 case "Simulan ang Laro":return "Start Game";case "Mga Kontrol":return "Settings";case "Lumabas":case "Umalis":return "Exit";case "Pumili ng Tauhan":return "Choose a Fighter";case "Pumili ng Entablado":return "Choose an Arena";
                 case "Pumili at kumpirmahin ang tauhan ng bawat manlalaro.":return "Choose and confirm a fighter for each player.";
                 case "Bumalik":return "Back";case "Simulan":return "Start";case "Kumpirmahin":return "Confirm";case "Handa na":return "Ready";case "Magpatuloy":return "Resume";case "Pangunahing Talaan":return "Main Menu";case "Pansamantalang Ihinto":return "Paused";
-                case "Maglaro Muli":return "Play Again";case "Pumili Muli":return "Choose Again";case "Sunod na Suntok":return "Next Hit";case "Hilo":return "Dizzy";case "Wika ng Reaksyon":return "Reaction Style";case "Wika ng Laro":return "Game Language";
+                case "Pumili ng Ibang Tauhan":return "Choose Other Fighters";case "Maglaro Muli":return "Play Again";case "Pumili Muli":return "Choose Again";case "Sunod na Suntok":return "Next Hit";case "Hilo":return "Dizzy";case "Wika ng Reaksyon":return "Reaction Style";case "Wika ng Laro":return "Game Language";
                 case "Pangunahing Lakas":return "Master Volume";case "Panalo":return "Wins";case "Musika":return "Music";case "Tunog":return "Sound";case "Umalis sa Laro?":return "Leave the Game?";case "Gusto mo na bang umalis sa laro?":return "Do you want to leave the game?";case "Oo":return "Yes";case "Hindi":return "No";
                 case "Manlalaro 1":return "Player 1";case "Manlalaro 2":return "Player 2";case "Kumpirmahin: F":return "Confirm: F";case "Kumpirmahin: Ctrl kanan / 0":return "Confirm: Right Ctrl / 0";
                 case "KALIWA / KANAN  PUMILI    ENTER / SUNTOK  KUMPIRMAHIN":return "LEFT / RIGHT  SELECT    ENTER / PUNCH  CONFIRM";case "KALIWA / KANAN  PUMILI    SUNTOK  PILIIN":return "LEFT / RIGHT  SELECT    PUNCH  CONFIRM";
@@ -262,6 +265,7 @@ namespace Hexbound
             if(state==ScreenState.StageSelect) {scenery.texture=Tex("Backgrounds/PumiliEntablado")??scenery.texture;Music("Selection");StageSelect();}
             if(state==ScreenState.Fight) {Music(Roster.StageFiles[Model.ArenaIndex]);Fight();}
             if(state==ScreenState.Controls) Controls();
+            BuildExitDialog();
             if(state==ScreenState.Select)QueueCharacterCue(Selected[0]);else if(state!=ScreenState.StageSelect){highlight.Stop();queuedCharacter=-1;}
         }
         // Only subtle lamp and banderita motion is layered over the fixed stage paintings.
@@ -304,15 +308,18 @@ namespace Hexbound
             for(int i=0;i<3;i++) {int index=i;menuButtons[i]=Button(view,new Rect(440,366+i*67,400,55),labels[i],()=>ActivateTitle(index));}
             Label(view,new Rect(220,619,840,35),language==0?"Pumili ng pindutan upang magpatuloy":"Choose a button to continue",23,gold);
             Label(view,new Rect(240,667,800,25),language==0?"DALAWANG MANLALARO  /  TATLONG ENTABLADO":"TWO PLAYERS  /  THREE ARENAS",18);
-            exitPanel=Rect(view,"Kumpirmasyon sa Pag-alis",new Rect(390,257,500,208));RoundedPanel(exitPanel,new Rect(0,0,500,208),new Color(.025f,.055f,.07f,.98f));
-            Label(exitPanel,new Rect(20,18,460,48),"Umalis sa Laro?",30,gold);Label(exitPanel,new Rect(24,70,452,42),"Gusto mo na bang umalis sa laro?",22);
-            exitButtons=new[]{Button(exitPanel,new Rect(38,130,200,52),"Oo",QuitGame),Button(exitPanel,new Rect(262,130,200,52),"Hindi",CancelExit)};exitPanel.gameObject.SetActive(false);
+        }
+        void BuildExitDialog(){
+            exitPanel=Rect(view,"Kumpirmasyon sa Pag-alis",new Rect(0,0,1280,720));var blocker=Image(exitPanel,new Rect(0,0,1280,720),new Color(0,0,0,.65f));blocker.raycastTarget=true;
+            var plate=Rect(exitPanel,"Tanong",new Rect(390,257,500,208));WoodPanel(plate,new Rect(0,0,500,208));
+            Label(plate,new Rect(20,18,460,48),"Umalis sa Laro?",30,gold);Label(plate,new Rect(24,70,452,42),"Gusto mo na bang umalis sa laro?",22);
+            exitButtons=new[]{Button(plate,new Rect(38,130,200,52),"Oo",QuitGame),Button(plate,new Rect(262,130,200,52),"Hindi",CancelExit)};exitPanel.gameObject.SetActive(false);
         }
         public void ActivateTitle(int index) {if(index==0) OpenSelect();else if(index==1){fromFight=false;setting=0;Show(ScreenState.Controls);}else RequestExit();}
-        public void RequestExit(){if(exitPanel==null)return;exitOpen=true;focus=1;exitPanel.gameObject.SetActive(true);}
+        public void RequestExit(){if(exitPanel==null||exitOpen)return;exitReturnFocus=focus;exitOpen=true;focus=1;screenEnteredFrame=Time.frameCount;exitPanel.gameObject.SetActive(true);exitPanel.SetAsLastSibling();}
         public void SetLanguage(int value){language=value==1?1:0;PlayerPrefs.SetInt("Ilaban.Language",language);PlayerPrefs.Save();if(ScreenNow==ScreenState.Controls)Show(ScreenState.Controls);}
         public void SetReactionStyle(int value){reactions.Mode=value==1?LanguageMode.GenZ:LanguageMode.Pormal;PlayerPrefs.SetInt("Ilaban.ReactionStyle",value==1?1:0);PlayerPrefs.Save();}
-        public void CancelExit(){exitOpen=false;if(exitPanel!=null)exitPanel.gameObject.SetActive(false);focus=0;}
+        public void CancelExit(){exitOpen=false;if(exitPanel!=null)exitPanel.gameObject.SetActive(false);focus=exitReturnFocus;screenEnteredFrame=Time.frameCount;}
         public void QuitGame(){
 #if UNITY_EDITOR
             var editor=Type.GetType("UnityEditor.EditorApplication, UnityEditor");editor?.GetProperty("isPlaying")?.SetValue(null,false,null);
@@ -422,10 +429,13 @@ namespace Hexbound
             Raw(view,new Rect(0,0,1280,720),Tex("UI/Vignette"));
             var hintPlate=Image(view,new Rect(288,652,704,48),new Color(.025f,.055f,.07f,.78f));hintPlate.sprite=PlateSprite();hintPlate.type=UnityEngine.UI.Image.Type.Sliced;hintPlate.name="Mga pindutan hint plate";
             KeyHint(hintPlate.transform,20,50,"ESC",language==0?"Ihinto":"Pause",100);KeyHint(hintPlate.transform,223,34,"H",language==0?"Mga Kontrol":"Controls",140);KeyHint(hintPlate.transform,448,88,"F / CTRL",language==0?"Suntok":"Punch",125);
-            resultPanel=Rect(view,"Bunga ng Laban",new Rect(320,146,640,230));WoodPanel(resultPanel,new Rect(0,0,640,230));
-            PaintedText(resultPanel,new Rect(180,7,280,43),language==0?"Panalo!":"Victory!","Win",30);
-            resultTitle=Label(resultPanel,new Rect(20,51,600,39),"",30,gold);resultReason=Label(resultPanel,new Rect(24,91,592,32),"",20);
-            resultButtons=new[]{Button(resultPanel,new Rect(28,135,280,50),"Maglaro Muli",StartMatch),Button(resultPanel,new Rect(332,135,280,50),"Pumili Muli",OpenSelect)};Label(resultPanel,new Rect(20,193,600,27),"SUNTOK: MAGLARO MULI     ESC: PUMILI MULI",16,gold);resultPanel.gameObject.SetActive(false);
+            roundPanel=Rect(view,"Bunga ng Yugto",new Rect(370,192,540,130));WoodPanel(roundPanel,new Rect(0,0,540,130));
+            roundTitle=Label(roundPanel,new Rect(20,18,500,42),"",30,gold);roundReason=Label(roundPanel,new Rect(20,66,500,48),"",20);roundPanel.gameObject.SetActive(false);
+            resultPanel=Rect(view,"Bunga ng Laban",new Rect(320,145,640,465));WoodPanel(resultPanel,new Rect(0,0,640,465));
+            resultTitle=Label(resultPanel,new Rect(20,16,600,40),"",30,gold);resultReason=Label(resultPanel,new Rect(24,58,592,32),"",20);
+            resultWinner=ActorView(resultPanel,Selected[0],new Rect(245,94,150,145));
+            resultButtons=new[]{Button(resultPanel,new Rect(105,252,430,48),"Maglaro Muli",StartMatch),Button(resultPanel,new Rect(105,312,430,48),"Pumili ng Ibang Tauhan",OpenSelect),Button(resultPanel,new Rect(105,372,430,48),"Umalis",RequestExit)};
+            Label(resultPanel,new Rect(30,427,580,26),"KALIWA / KANAN  PUMILI    SUNTOK  PILIIN",16,gold);resultPanel.gameObject.SetActive(false);
             Color[] paper={new Color32(243,185,96,255),new Color32(74,201,192,255),new Color32(231,119,99,255),new Color32(246,225,183,255)};
             for(int i=0;i<28;i++){float x=i%2==0?15+(i/2%5)*23:1140+(i/2%5)*23;var piece=Image(view,new Rect(x,0,7+i%3*2,12),paper[i%paper.Length]);confetti.Add(piece.rectTransform);piece.gameObject.SetActive(false);}
             pausePanel=Rect(view,"Pahinga",new Rect(385,210,510,315));WoodPanel(pausePanel,new Rect(0,0,510,315));Label(pausePanel,new Rect(0,18,510,47),"Pansamantalang Ihinto",34);
@@ -517,10 +527,11 @@ namespace Hexbound
             UpdateCharacterCue();
             // Screen changes and pointer callbacks consume the initiating press.
             if(Time.frameCount==screenEnteredFrame)return;
-            if(ScreenNow==ScreenState.Title) {
-                if(exitOpen){NavMenu(2);if(controls.Any("Cancel"))CancelExit();else if(controls.Any("Confirm")){if(focus==0)QuitGame();else CancelExit();}if(exitButtons!=null)for(int i=0;i<2;i++){var f=exitButtons[i].GetComponent<PlateButtonFeedback>();if(f!=null)f.SetFocused(i==focus);}}
-                else {NavMenu(3);if(controls.Any("Confirm"))ActivateTitle(focus);}
+            if(exitOpen){
+                NavMenu(2);if(controls.Any("Cancel"))CancelExit();else if(controls.Any("Confirm")){if(focus==0)QuitGame();else CancelExit();}
+                for(int i=0;i<2;i++)exitButtons[i].GetComponent<PlateButtonFeedback>().SetFocused(i==focus);return;
             }
+            if(ScreenNow==ScreenState.Title) {NavMenu(3);if(controls.Any("Confirm"))ActivateTitle(focus);}
             else if(ScreenNow==ScreenState.Select) {
                 for(int p=0;p<2;p++) {if(!Ready[p]) {int dir=controls.Navigate(p).x;if(dir!=0) {Selected[p]=(Selected[p]+dir+8)%8;Sound("carousel_slide");RefreshDescriptions();QueueCharacterCue(Selected[p]);}if(controls.Press(p,"Confirm")) {Confirm(p);if(ScreenNow!=ScreenState.Select)return;}}
                     if(controls.Press(p,"Cancel")) {if(Ready[p])Ready[p]=false;else{Show(ScreenState.Title);return;}}}
@@ -558,17 +569,22 @@ namespace Hexbound
                 foreach(var ev in Model.events)React(ev.player,ev.kind);
                 foreach(var sound in Model.sounds)Sound(sound);if(Model.Finished)Sound("crowd");
                 if(Model.Finished) {
-                    resultTime=0;resultPanel.gameObject.SetActive(true);resultTitle.text=Model.winner<0?Tr("Kapwa Nahulog!"):Tr("Panalo si "+Roster.Names[Model.players[Model.winner].character]+"!");
+                    resultTime=0;resultPanel.gameObject.SetActive(Model.MatchFinished);roundPanel.gameObject.SetActive(!Model.MatchFinished);resultTitle.text=Model.winner<0?Tr("Kapwa Nahulog!"):Tr("Panalo si "+Roster.Names[Model.players[Model.winner].character]+"!");
+                    if(Model.winner>=0)resultWinner.id=Model.players[Model.winner].character;
+                    roundTitle.text=Model.winner<0?Tr("Kapwa Nahulog!"):Tr("Panalo si "+Roster.Names[Model.players[Model.winner].character]+"!");roundReason.text=language==0?"Susunod na yugto...":"Next round...";
                     resultReason.text=Model.winner<0?Tr("Kapwa nahulog sa imburnal!"):Tr("Nahulog sa imburnal si "+Roster.Names[Model.players[1-Model.winner].character]+"!");
                 }
-            } else {resultTime+=Time.deltaTime;NavMenu(2);if(controls.Any("Cancel")){OpenSelect();return;}if(controls.Any("Confirm")){if(focus==0)StartMatch();else OpenSelect();return;}}
+            } else {resultTime+=Time.deltaTime;
+                if(!Model.MatchFinished){if(resultTime>=1.6f&&Model.BeginNextRound()){resultTime=0;Show(ScreenState.Fight);for(int p=0;p<2;p++)React(p,"ready");return;}}
+                else {NavMenu(3);if(controls.Any("Cancel")){OpenSelect();return;}if(controls.Any("Confirm")){if(focus==0)StartMatch();else if(focus==1)OpenSelect();else RequestExit();return;}}
+            }
             for(int i=0;i<confetti.Count;i++){var piece=confetti[i];piece.gameObject.SetActive(Model.Finished);if(Model.Finished){float y=Mathf.Repeat(resultTime*100+i*27,210);piece.anchoredPosition=new Vector2(piece.anchoredPosition.x,-y);piece.localRotation=Quaternion.Euler(0,0,Mathf.Sin(clock*4+i)*35);}}
             for(int p=0;p<2;p++) {
                 var f=Model.players[p];var actor=actors[p];float fall=f.fallen?Mathf.Clamp01(resultTime/.20f):0;
                 bool celebration=Model.Finished&&!f.fallen&&p==Model.winner;
                 actor.root.anchoredPosition=celebration?new Vector2(640,-655):new Vector2(f.x,-(598+fall*170));actor.root.localScale=Vector3.one*(celebration?1.06f:1-fall*.75f);
                 actor.root.localRotation=Quaternion.Euler(0,0,f.dizzyTime>0?Mathf.Sin(clock*12)*6:f.fallen?fall*80:0);
-                actor.root.gameObject.SetActive(!f.fallen||resultTime<.20f);
+                actor.root.gameObject.SetActive((!f.fallen||resultTime<.20f)&&!(Model.MatchFinished&&p==Model.winner));
                 int actionFrame=f.pose==Pose.Punch?StrikeFrame(f.actionLength-f.actionTime):(int)(clock*8)%4;
                 if(AnimationCapture.Active&&AnimationCapture.Frame>=0)actionFrame=AnimationCapture.Frame;
                 actor.body.uvRect=f.facing<0?new Rect(1,0,-1,1):new Rect(0,0,1,1);Animate(actor,celebration?Pose.Win:f.pose,actionFrame);
@@ -576,6 +592,7 @@ namespace Hexbound
                 for(int i=0;i<winMarkers[p].Length;i++){bool won=i<f.wins;winMarkers[p][i].color=won?Color.white:new Color(.43f,.34f,.25f,.88f);float pop=won&&Model.Finished&&p==Model.winner&&i==f.wins-1?1+.18f*Mathf.Sin(Mathf.Clamp01(resultTime/.45f)*Mathf.PI):1;winMarkers[p][i].rectTransform.localScale=Vector3.one*pop;}
                 bool sparkle=Model.Finished&&p==Model.winner&&resultTime<.65f;winSparkles[p].gameObject.SetActive(sparkle);if(sparkle){winSparkles[p].color=new Color(gold.r,gold.g,gold.b,1-resultTime/.65f);winSparkles[p].rectTransform.localScale=Vector3.one*(.8f+resultTime);winSparkles[p].transform.SetAsLastSibling();}
             }
+            if(Model.MatchFinished)Animate(resultWinner,Pose.Win,(int)(clock*6)%4);
             UpdateReactionBubbles();
             // A five-star orbit is separate from the streak dots and persists for the victim's recovery.
             UpdateDizzyStars();
