@@ -83,3 +83,6 @@ Character cues now share a dedicated non-looping source, wait for menu audio to 
 
 ### Fixed-light maps and evidence finalizer
 The previous night labels pointed to dusk art and Looban retained a parked vehicle. Replaced with reviewed full-night relights and an empty alley; archived unused dusk textures outside Assets. Morning lamp overlays are now disabled. The old evidence finalizer contained hardcoded obsolete test totals and rewrote checklists; replaced it with verification of real XML, current source/build hashes, native captures and audits. --local-only explicitly preserves the separately queued packaging task.
+
+### Frozen last-hit sparkle on result
+Native result review found the final impact star persisted because combat burst lifetimes stop ticking once the manhole ends the round. Rendering now hides combat bursts immediately when Finished; result confetti/medal sparkle still plays. Gameplay end timing is unchanged. Added a result-screen regression to InputAndCanvasTests.

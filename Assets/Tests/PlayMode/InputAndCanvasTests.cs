@@ -24,6 +24,7 @@ namespace Hexbound.Tests
             foreach(var t in Object.FindObjectsByType<UnityEngine.UI.Text>())Assert.Fail("Legacy text: "+t.name);
             foreach(var g in Object.FindObjectsByType<Transform>()){string name=g.name.ToLowerInvariant();Assert.IsFalse(name.Contains("health")||name.Contains("stamina")||name.Contains("timer")||name.Contains("knockout"));}
             game.Model.players[1].x=DuelModel.RightRiftX;yield return null;Assert.IsTrue(game.Model.Finished);Assert.AreEqual(0,game.Model.winner);
+            var impacts=(TMP_Text[])typeof(AcademyGame).GetField("impactLabels",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(game);foreach(var impact in impacts)Assert.IsFalse(impact.gameObject.activeSelf,"Combat impact sparkles must not remain frozen over the result screen.");
         }
 
         [UnityTest] public IEnumerator SettingsAndExitUseTheirOwnScreenFlow(){

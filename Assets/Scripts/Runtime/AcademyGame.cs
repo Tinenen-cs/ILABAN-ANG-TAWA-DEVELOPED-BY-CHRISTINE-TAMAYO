@@ -573,7 +573,7 @@ namespace Hexbound
             // A five-star orbit is separate from the streak dots and persists for the victim's recovery.
             UpdateDizzyStars();
             if(impactLabels==null || impactLabels[0]==null) {impactLabels=new TMP_Text[2];for(int i=0;i<2;i++)impactLabels[i]=Label(view,new Rect(0,0,110,80),"*",72,gold);}
-            for(int i=0;i<2;i++) {bool visible=false;foreach(var burst in Model.bursts)if(Mathf.Abs(burst.x-Model.players[i].x)<5){visible=true;impactLabels[i].rectTransform.anchoredPosition=new Vector2(burst.x-55,-430);impactLabels[i].color=new Color(1,.88f,.58f,Mathf.Clamp01(burst.life/.35f));}impactLabels[i].gameObject.SetActive(visible);}
+            for(int i=0;i<2;i++) {bool visible=false;foreach(var burst in Model.bursts)if(!Model.Finished&&Mathf.Abs(burst.x-Model.players[i].x)<5){visible=true;impactLabels[i].rectTransform.anchoredPosition=new Vector2(burst.x-55,-430);impactLabels[i].color=new Color(1,.88f,.58f,Mathf.Clamp01(burst.life/.35f));}impactLabels[i].gameObject.SetActive(visible);}
             if(resultButtons!=null)for(int i=0;i<resultButtons.Length;i++){resultButtons[i].transform.localScale=Vector3.one*(i==focus?1.045f:1);var f=resultButtons[i].GetComponent<PlateButtonFeedback>();if(f!=null)f.SetFocused(i==focus);}
 
             for(int i=0;i<flames.Count;i++)flames[i].localScale=Vector3.one*(1+.06f*Mathf.Sin(clock*3+i));
