@@ -6,7 +6,7 @@ import ctypes, subprocess, os, time, json, shutil
 from pathlib import Path
 from PIL import Image
 root=Path(__file__).resolve().parents[1]
-exe=Path(os.environ.get('ILABAN_PROJECT',os.path.join(os.environ['TEMP'],'Ilaban-Phase2-Validation')))/'Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe'
+exe=Path(os.environ.get('ILABAN_PROJECT',root))/'Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe'
 width=int(os.environ.get('ILABAN_CAPTURE_WIDTH','2560'));height=int(os.environ.get('ILABAN_CAPTURE_HEIGHT','1440'))
 folder=root/'QA_SCREENSHOTS'/f'Exact_{width}x{height}';log=root/'Logs'/f'Exact_{width}x{height}.log'
 assert root.resolve() in folder.resolve().parents,'Capture cleanup must stay within the project'

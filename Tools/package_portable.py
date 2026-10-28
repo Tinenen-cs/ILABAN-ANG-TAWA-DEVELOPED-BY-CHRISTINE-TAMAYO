@@ -3,7 +3,7 @@ import os, shutil, zipfile, hashlib, json, subprocess, time, tempfile
 
 root=Path(__file__).resolve().parents[1]
 title='ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO'
-source=Path(os.environ.get('ILABAN_PROJECT',os.path.join(os.environ['TEMP'],'Ilaban-Phase2-Validation')))/'Builds/Windows'
+source=Path(os.environ.get('ILABAN_PROJECT',root))/'Builds/Windows'
 submission=root/'SUBMISSION'; package=Path(tempfile.mkdtemp(prefix='Ilaban-Package-'))/title
 if source.resolve()!=(root/'Builds/Windows').resolve():shutil.copytree(source,root/'Builds/Windows',dirs_exist_ok=True)
 shutil.copytree(source,package,dirs_exist_ok=True)
@@ -45,7 +45,9 @@ with zipfile.ZipFile(archive) as z:
     assert z.testzip() is None
     z.extractall(extract)
 exe=extract/title/(title+'.exe')
-captures=root/'QA_SCREENSHOTS/Extracted_Portable';shutil.rmtree(captures,ignore_errors=True);captures.mkdir(parents=True);log=root/'Logs/Extracted-Portable.log'
+captures=root/'QA_SCREENSHOTS/Extracted_Portable'
+assert root.resolve() in captures.resolve().parents
+shutil.rmtree(captures,ignore_errors=True);captures.mkdir(parents=True);log=root/'Logs/Extracted-Portable.log'
 print('Extracted to',extract,flush=True)
 proc=subprocess.Popen([str(exe),'-screen-fullscreen','0','-screen-width','1280','-screen-height','720','-ilaban-smoke',str(captures),'-logFile',str(log)])
 try:code=proc.wait(timeout=180)

@@ -1,5 +1,6 @@
 from pathlib import Path
-import subprocess, os, sys, time, shutil, xml.etree.ElementTree as ET
+import subprocess, os, sys, time, shutil, json, datetime, xml.etree.ElementTree as ET
+from evidence_fingerprint import source_fingerprint,sha
 root=Path(__file__).resolve().parents[1]
 project=Path(os.environ.get('ILABAN_PROJECT',root))
 unity=Path(r'C:\Program Files\Unity\Hub\Editor\6000.6.2f1\Editor\Unity.exe')
@@ -25,4 +26,7 @@ for mode in modes:
   report=ET.parse(xml).getroot();assert report.get('result')=='Passed' and report.get('failed')=='0'
  else:
   assert 'ILABAN VALIDATION PASSED: 65 rubric assertions' in (logs/('UIRelease-'+mode+'.log')).read_text(encoding='utf-8',errors='replace')
+ if mode=='Build':
+  exe=project/'Builds/Windows/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe'
+  (evidence/'build_provenance.json').write_text(json.dumps({'project':str(project.resolve()),'head':subprocess.check_output(['git','rev-parse','HEAD'],cwd=project,text=True).strip(),'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'source':source_fingerprint(project),'exe_sha256':sha(exe),'unity':'6000.6.2f1','rules':65},indent=2),encoding='utf-8')
  time.sleep(3) # Let Unity's native data-store/graphics helpers exit before the next editor invocation.

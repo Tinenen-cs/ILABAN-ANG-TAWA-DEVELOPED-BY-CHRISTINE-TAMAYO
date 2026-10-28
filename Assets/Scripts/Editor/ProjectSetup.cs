@@ -82,7 +82,7 @@ namespace Hexbound.Editor
             }
             for(int i=0;i<3;i++) {Require(Resources.Load<Texture2D>("Ilaban/Stages/"+Roster.StageFiles[i])!=null,"map "+i);Require(Resources.Load<AudioClip>("Ilaban/Audio/Music/"+Roster.StageFiles[i])!=null,"map music "+i);}
             Require(Resources.Load<Texture2D>("Ilaban/Maps/Palengke/Palengke_Umaga")!=null,"fixed morning market map");
-            foreach(var n in new[]{"Looban","Plaza"})Require(Resources.Load<Texture2D>("Ilaban/Maps/"+n+"/"+n+"_Takipsilim")!=null,"fixed night map "+n);
+            foreach(var n in new[]{"Looban","Plaza"})Require(Resources.Load<Texture2D>("Ilaban/Maps/"+n+"/"+n+"_Gabi")!=null,"fixed night map "+n);
             Require(Resources.Load<Texture2D>("Ilaban/Maps/FX/Kanal")!=null,"open canal art");Require(Resources.Load<Texture2D>("Ilaban/UI/JeepneyFrames")!=null,"animated opening jeepney sheet");
             foreach(var n in new[]{"Palengke_Hapon","Palengke_Takipsilim","Looban_Hapon","Looban_Umaga","Plaza_Hapon","Plaza_Umaga"})Require(Resources.Load<Texture2D>("Ilaban/Maps/"+n.Substring(0,n.IndexOf('_'))+"/"+n)==null,"inactive map variant archived: "+n);
             Require(Resources.LoadAll<AudioClip>("Ilaban/Audio").Length==38,"38 original clips including eight character reactions");

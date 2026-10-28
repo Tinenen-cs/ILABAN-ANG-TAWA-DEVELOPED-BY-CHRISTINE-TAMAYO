@@ -35,6 +35,7 @@ namespace Hexbound
         readonly List<RectTransform> flames=new List<RectTransform>();
         readonly List<RectTransform> confetti=new List<RectTransform>();
         readonly List<RawImage> lamps=new List<RawImage>();
+        readonly List<RectTransform> leaves=new List<RectTransform>(),flags=new List<RectTransform>();
         readonly float[] readyAt={-10,-10},hoverUntil=new float[8];
         RectTransform ambience;
         // Approved maps: normalized lamp/bulb centres (x, y from top).
@@ -42,7 +43,7 @@ namespace Hexbound
             new[]{new Vector2(.065f,.42f),new Vector2(.265f,.42f),new Vector2(.595f,.39f),new Vector2(.71f,.10f),new Vector2(.958f,.42f)},
             new[]{new Vector2(.229f,.29f),new Vector2(.700f,.33f),new Vector2(.836f,.29f)},
             new[]{new Vector2(.146f,.165f),new Vector2(.428f,.23f),new Vector2(.858f,.26f),new Vector2(.944f,.165f)}};
-        Texture2D MapTex(int arena) {var n=Roster.StageFiles[arena];var light=arena==0?"Umaga":"Takipsilim";return Tex("Maps/"+n+"/"+n+"_"+light)??Tex("Maps/"+n+"/"+n+"_Takipsilim")??Tex("Stages/"+n);}
+        Texture2D MapTex(int arena) {var n=Roster.StageFiles[arena];var light=arena==0?"Umaga":"Gabi";return Tex("Maps/"+n+"/"+n+"_"+light)??Tex("Maps/"+n+"/"+n+"_Gabi")??Tex("Stages/"+n);}
         Actor[] actors;
         TMP_Text[] names;
         Image[][] hiloPips,winMarkers;
@@ -167,13 +168,18 @@ namespace Hexbound
         }
         Button Button(Transform parent,Rect rect,string text,Action action,bool enabled=true)
         {
+            bool roundBack=text=="Bumalik"&&parent==view&&(ScreenNow==ScreenState.Select||ScreenNow==ScreenState.StageSelect);
+            if(roundBack){Label(parent,new Rect(rect.x+63,rect.y+4,135,rect.height-8),text,22,cream,TextAnchor.MiddleLeft);rect.width=rect.height;}
             var image=Image(parent,rect,Color.white);image.sprite=PlateSprite();image.type=UnityEngine.UI.Image.Type.Sliced;image.pixelsPerUnitMultiplier=1;image.color=new Color32(129,87,57,255);image.raycastTarget=true;
+            if(roundBack){image.sprite=Skin("PortraitMask");image.type=UnityEngine.UI.Image.Type.Simple;image.name="Bumalik";}
             image.rectTransform.pivot=new Vector2(.5f,.5f);image.rectTransform.anchoredPosition=new Vector2(rect.x+rect.width/2,-rect.y-rect.height/2);
             var b=image.gameObject.AddComponent<Button>();b.targetGraphic=image;b.interactable=enabled;b.navigation=new Navigation {mode=Navigation.Mode.None};
             var colors=b.colors;colors.normalColor=Color.white;colors.highlightedColor=new Color(1f,.84f,.48f);colors.pressedColor=new Color(.75f,.9f,.83f);colors.selectedColor=new Color(1f,.88f,.62f);colors.disabledColor=new Color(.48f,.48f,.46f);colors.colorMultiplier=1;colors.fadeDuration=.08f;b.colors=colors;
             var outline=image.gameObject.AddComponent<Outline>();outline.effectColor=new Color32(239,196,119,180);outline.effectDistance=new Vector2(1.5f,-1.5f);outline.enabled=false;
             var feedback=image.gameObject.AddComponent<PlateButtonFeedback>();feedback.image=image;feedback.outline=outline;feedback.onHover=()=>Sound("menu_move");
-            b.onClick.AddListener(()=>{Sound("menu_confirm");action();});Label(image.transform,new Rect(8,4,rect.width-16,rect.height-8),Tr(text),25,cream);return b;
+            int icon=text=="Bumalik"?0:text=="Kumpirmahin"||text=="Handa na"?1:text=="Mga Kontrol"?3:text=="Umalis"?4:text=="Simulan"||text=="Simulan ang Laro"||text=="Magpatuloy"||text=="Maglaro Muli"?2:-1;
+            if(icon>=0){var ir=Rect(image.transform,"Sagisag",new Rect(13,rect.height/2-10,20,20));var graphic=ir.gameObject.AddComponent<PlateIcon>();graphic.kind=icon;graphic.color=cream;graphic.raycastTarget=false;feedback.icon=ir;}
+            b.onClick.AddListener(()=>{Sound("menu_confirm");action();});Label(image.transform,new Rect(icon>=0?39:8,4,Mathf.Max(1,rect.width-(icon>=0?51:16)),rect.height-8),roundBack?"":Tr(text),25,cream);return b;
         }
         static Sprite plateSprite;
         static Sprite PlateSprite() {
@@ -255,11 +261,14 @@ namespace Hexbound
         // Only subtle lamp and banderita motion is layered over the fixed stage paintings.
         void Ambience(int arena,bool enabled)
         {
-            lamps.Clear();
+            lamps.Clear();leaves.Clear();flags.Clear();
             if(ambience!=null)Destroy(ambience.gameObject);
             ambience=Rect(scenery.transform,"Buhay ng Kalye",new Rect(0,0,1,1));Stretch(ambience);
             if(!enabled)return;
-            foreach(var p in MapLamps[arena]) {var l=Area(ambience,Fx("Glow"),new Rect(p.x-.035f,p.y-.055f,.07f,.11f));lamps.Add(l);}
+            if(arena>0)foreach(var p in MapLamps[arena]) {var l=Area(ambience,Fx("Glow"),new Rect(p.x-.035f,p.y-.055f,.07f,.11f));lamps.Add(l);}
+            // Small isolated accents only; the painting, floor and parked scenery stay fixed.
+            foreach(float x in new[]{.035f,.94f}){var leaf=Area(ambience,Fx("Leaves"),new Rect(x,.04f,.045f,.05f));leaf.rectTransform.pivot=new Vector2(.5f,1);leaves.Add(leaf.rectTransform);}
+            if(arena!=1)for(int i=0;i<9;i++){var flag=Area(ambience,Fx("Flag"),new Rect(.19f+i*.072f,.13f+Mathf.Sin(i*.4f)*.04f,.014f,.029f));flag.rectTransform.pivot=new Vector2(.5f,1);flag.color=new[]{new Color32(198,135,75,255),new Color32(204,171,82,255),new Color32(82,150,142,255)}[i%3];flags.Add(flag.rectTransform);}
         }
         Texture2D Fx(string name)=>Tex("Maps/FX/"+name);
         RawImage Area(Transform parent,Texture2D texture,Rect normalized)
@@ -270,14 +279,21 @@ namespace Hexbound
         void UpdateAmbience()
         {
             for(int i=0;i<lamps.Count;i++) {float flicker=Mathf.PerlinNoise(clock*2,i*3.1f);lamps[i].color=new Color(1,1,1,.24f+flicker*.16f);}
+            for(int i=0;i<leaves.Count;i++)leaves[i].localRotation=Quaternion.Euler(0,0,Mathf.Sin(clock*.8f+i)*1.4f);
+            for(int i=0;i<flags.Count;i++)flags[i].localRotation=Quaternion.Euler(0,0,Mathf.Sin(clock*1.3f+i*.5f)*2);
         }
         void Shade(float alpha=.72f)=>Image(view,new Rect(0,0,1280,720),new Color(.025f,.06f,.09f,alpha));
-        void Heading(string title,string subtitle) {var plate=Image(view,new Rect(365,24,550,74),new Color(.025f,.055f,.07f,.72f));plate.sprite=PlateSprite();plate.type=UnityEngine.UI.Image.Type.Sliced;Label(view,new Rect(30,28,1220,62),title,48);Label(view,new Rect(100,98,1080,32),subtitle,20,gold);}
+        void PaintedText(Transform parent,Rect area,string title,string asset,int size=48,bool always=false){
+            var live=Label(parent,area,title,size);var tex=Tex("UI/Heading"+asset);
+            if(tex==null||(!always&&language!=0))return;
+            live.color=new Color(cream.r,cream.g,cream.b,0);float fit=Mathf.Min(area.width/tex.width,area.height/tex.height);float w=tex.width*fit,h=tex.height*fit;
+            var art=Raw(parent,new Rect(area.x+(area.width-w)/2,area.y+(area.height-h)/2,w,h),tex);art.name="Pintadong pamagat: "+title;
+        }
+        void Heading(string title,string subtitle) {var plate=RoundedPanel(view,new Rect(335,20,610,78),new Color(.025f,.055f,.07f,.72f));string asset=title=="Mga Kontrol"?"Controls":title=="Pumili ng Tauhan"?"Characters":"Stages";PaintedText(view,new Rect(335,24,610,70),title,asset);Label(view,new Rect(100,101,1080,32),subtitle,20,gold);}
         void Title()
         {
             Shade(.59f);Label(view,new Rect(0,102,1280,36),"L A R O   N G   B A R A N G A Y",23,gold);
-            Label(view,new Rect(90,166,1100,91),"ILABAN ANG TAWA",82).overflowMode=TextOverflowModes.Overflow;
-            Label(view,new Rect(90,264,1100,42),"DEVELOPED BY CHRISTINE TAMAYO",31,gold);
+            PaintedText(view,new Rect(90,148,1100,174),"ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO","Logo",70,true);
             string[] labels={"Simulan ang Laro","Mga Kontrol","Umalis"};menuButtons=new Button[3];
             for(int i=0;i<3;i++) {int index=i;menuButtons[i]=Button(view,new Rect(440,366+i*67,400,55),labels[i],()=>ActivateTitle(index));}
             Label(view,new Rect(220,619,840,35),language==0?"Pumili ng pindutan upang magpatuloy":"Choose a button to continue",23,gold);
@@ -401,9 +417,10 @@ namespace Hexbound
             Raw(view,new Rect(0,0,1280,720),Tex("UI/Vignette"));
             var hintPlate=Image(view,new Rect(288,652,704,48),new Color(.025f,.055f,.07f,.78f));hintPlate.sprite=PlateSprite();hintPlate.type=UnityEngine.UI.Image.Type.Sliced;hintPlate.name="Mga pindutan hint plate";
             KeyHint(hintPlate.transform,20,50,"ESC",language==0?"Ihinto":"Pause",100);KeyHint(hintPlate.transform,223,34,"H",language==0?"Mga Kontrol":"Controls",140);KeyHint(hintPlate.transform,448,88,"F / CTRL",language==0?"Suntok":"Punch",125);
-            resultPanel=Rect(view,"Bunga ng Laban",new Rect(320,48,640,220));WoodPanel(resultPanel,new Rect(0,0,640,220));
-            resultTitle=Label(resultPanel,new Rect(20,16,600,48),"",36,gold);resultReason=Label(resultPanel,new Rect(24,65,592,35),"",22);
-            resultButtons=new[]{Button(resultPanel,new Rect(28,120,280,54),"Maglaro Muli",StartMatch),Button(resultPanel,new Rect(332,120,280,54),"Pumili Muli",OpenSelect)};Label(resultPanel,new Rect(20,179,600,27),"SUNTOK: MAGLARO MULI     ESC: PUMILI MULI",16,gold);resultPanel.gameObject.SetActive(false);
+            resultPanel=Rect(view,"Bunga ng Laban",new Rect(320,146,640,230));WoodPanel(resultPanel,new Rect(0,0,640,230));
+            PaintedText(resultPanel,new Rect(180,7,280,43),language==0?"Panalo!":"Victory!","Win",30);
+            resultTitle=Label(resultPanel,new Rect(20,51,600,39),"",30,gold);resultReason=Label(resultPanel,new Rect(24,91,592,32),"",20);
+            resultButtons=new[]{Button(resultPanel,new Rect(28,135,280,50),"Maglaro Muli",StartMatch),Button(resultPanel,new Rect(332,135,280,50),"Pumili Muli",OpenSelect)};Label(resultPanel,new Rect(20,193,600,27),"SUNTOK: MAGLARO MULI     ESC: PUMILI MULI",16,gold);resultPanel.gameObject.SetActive(false);
             Color[] paper={new Color32(243,185,96,255),new Color32(74,201,192,255),new Color32(231,119,99,255),new Color32(246,225,183,255)};
             for(int i=0;i<28;i++){float x=i%2==0?15+(i/2%5)*23:1140+(i/2%5)*23;var piece=Image(view,new Rect(x,0,7+i%3*2,12),paper[i%paper.Length]);confetti.Add(piece.rectTransform);piece.gameObject.SetActive(false);}
             pausePanel=Rect(view,"Pahinga",new Rect(385,210,510,315));WoodPanel(pausePanel,new Rect(0,0,510,315));Label(pausePanel,new Rect(0,18,510,47),"Pansamantalang Ihinto",34);
@@ -437,13 +454,15 @@ namespace Hexbound
         void Controls()
         {
             Shade(.87f);Heading("Mga Kontrol","Mga galaw at tunog ng laro.");
-            WoodPanel(view,new Rect(90,135,1100,196));
-            Label(view,new Rect(112,145,1056,34),language==0?"MGA PINDUTAN":"KEYS",21,gold);
-            string p1="MANLALARO 1    A / D: LAKAD    F: SUNTOK";
-            string p2="MANLALARO 2    KALIWA / KANAN: LAKAD    CTRL KANAN / 0: SUNTOK";
-            string pad="KONTROLER    PALANCA: LAKAD    A / X: SUNTOK   B: BALIK";
-            if(language==1){p1="PLAYER 1    A / D: MOVE    F: PUNCH";p2="PLAYER 2    LEFT / RIGHT: MOVE    RIGHT CTRL / 0: PUNCH";pad="GAMEPAD    STICK: MOVE    A / X: PUNCH   B: BACK";}
-            Label(view,new Rect(116,183,1048,39),p1,21,cream,TextAnchor.MiddleLeft);Label(view,new Rect(116,226,1048,39),p2,21,cream,TextAnchor.MiddleLeft);Label(view,new Rect(116,269,1048,39),pad,21,cream,TextAnchor.MiddleLeft);
+            for(int p=0;p<3;p++){
+                float x=90+p*371;var card=WoodPanel(view,new Rect(x,141,358,185));
+                Label(card.transform,new Rect(12,8,334,32),p==2?(language==0?"Mando":"Gamepad"):Tr("Manlalaro "+(p+1)),23,gold);
+                string move=p==0?"A / D":p==1?(language==0?"Kaliwa / Kanan":"Left / Right"):(language==0?"Palanca":"Stick");
+                string punch=p==0?"F":p==1?(language==0?"Ctrl kanan / 0":"Right Ctrl / 0"):"A / X";
+                var walk=Rect(card.transform,"Lakad",new Rect(14,47,328,40));KeyHint(walk,0,174,move,language==0?"Lakad":"Move",115);
+                var attack=Rect(card.transform,"Suntok",new Rect(14,100,328,40));KeyHint(attack,0,174,punch,language==0?"Suntok":"Punch",115);
+                Label(card.transform,new Rect(12,151,334,23),p==2?(language==0?"B: Bumalik":"B: Back"):(language==0?"H: Mga Kontrol   ESC: Ihinto":"H: Controls   ESC: Pause"),15,cream);
+            }
             Label(view,new Rect(120,338,1040,48),"Isang suntok, isang hakbang paatras. Limang sunod na tama: hilo.\nItulak ang katunggali sa imburnal upang manalo.",21,gold);
             WoodPanel(view,new Rect(170,390,940,210));menuButtons=new Button[6];
             settingsSliders=new Slider[3];settingValues=new TMP_Text[3];
@@ -499,7 +518,7 @@ namespace Hexbound
                 for(int p=0;p<2;p++) {if(!Ready[p]) {int dir=controls.Navigate(p).x;if(dir!=0) {Selected[p]=(Selected[p]+dir+8)%8;Sound("carousel_slide");RefreshDescriptions();QueueCharacterCue(Selected[p]);}if(controls.Press(p,"Confirm")) {Confirm(p);if(ScreenNow!=ScreenState.Select)return;}}
                     if(controls.Press(p,"Cancel")) {if(Ready[p])Ready[p]=false;else{Show(ScreenState.Title);return;}}}
                 for(int p=0;p<2;p++){bool react=Ready[p]?(clock-readyAt[p]<.6f||Mathf.Repeat(clock-readyAt[p],3.2f)<.24f):clock-enteredAt<.35f;Animate(selectionShowcase[p],react?Pose.Win:Pose.Idle,(int)(clock*4)%4);}
-                for(int p=0;p<2;p++){readiness[p].text=Tr("Manlalaro "+(p+1))+"\n"+(Ready[p]?Tr("Handa na"):Tr("Kumpirmahin: "+controls.Prompt(p,"Confirm")));if(confirmButtons[p]!=null){confirmButtons[p].interactable=!Ready[p];confirmButtons[p].GetComponentInChildren<TMP_Text>().text=Tr(Ready[p]?"Handa na":"Kumpirmahin");confirmButtons[p].transform.localScale=Vector3.one*(Ready[p]?1.035f:1);}}
+                for(int p=0;p<2;p++){readiness[p].text=Tr("Manlalaro "+(p+1))+"\n"+(Ready[p]?Tr("Handa na"):Tr("Kumpirmahin: "+controls.Prompt(p,"Confirm")));if(confirmButtons[p]!=null){confirmButtons[p].interactable=!Ready[p];confirmButtons[p].GetComponentInChildren<TMP_Text>().text=Tr(Ready[p]?"Handa na":"Kumpirmahin");confirmButtons[p].transform.localScale=Vector3.one*(Ready[p]?1.02f+.012f*Mathf.Sin(clock*3):1);}}
                 for(int i=0;i<8;i++) {int owner=Selected[0]==i?0:Selected[1]==i?1:-1;bool active=owner>=0;cards[i].localScale=Vector3.one*(active?1.025f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null){feedback.allowScale=false;feedback.SetFocused(active);}Animate(previews[i],clock<hoverUntil[i]||(owner>=0&&Ready[owner]&&clock-readyAt[owner]<.6f)?Pose.Win:Pose.Idle,(int)(clock*(active?5:3))%4);}
             }
             else if(ScreenNow==ScreenState.StageSelect) {
@@ -540,7 +559,7 @@ namespace Hexbound
             for(int p=0;p<2;p++) {
                 var f=Model.players[p];var actor=actors[p];float fall=f.fallen?Mathf.Clamp01(resultTime/.20f):0;
                 bool celebration=Model.Finished&&!f.fallen&&p==Model.winner;
-                actor.root.anchoredPosition=celebration?new Vector2(640,-640):new Vector2(f.x,-(598+fall*170));actor.root.localScale=Vector3.one*(celebration?1.18f:1-fall*.75f);
+                actor.root.anchoredPosition=celebration?new Vector2(640,-655):new Vector2(f.x,-(598+fall*170));actor.root.localScale=Vector3.one*(celebration?1.06f:1-fall*.75f);
                 actor.root.localRotation=Quaternion.Euler(0,0,f.dizzyTime>0?Mathf.Sin(clock*12)*6:f.fallen?fall*80:0);
                 actor.root.gameObject.SetActive(!f.fallen||resultTime<.20f);
                 int actionFrame=f.pose==Pose.Punch?StrikeFrame(f.actionLength-f.actionTime):(int)(clock*8)%4;
@@ -611,11 +630,26 @@ namespace Hexbound
     }
     public sealed class PlateButtonFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        public Image image;public Outline outline;public bool allowScale=true;public Action onHover;bool focused,hovered;
+        public Image image;public Outline outline;public RectTransform icon;public bool allowScale=true;public Action onHover;bool focused,hovered;
         public void SetFocused(bool value){focused=value;Apply();}
         public void OnPointerEnter(PointerEventData eventData){hovered=true;onHover?.Invoke();Apply();}
         public void OnPointerExit(PointerEventData eventData){hovered=false;Apply();}
-        void Apply(){bool active=focused||hovered;if(image!=null)image.color=active?new Color32(163,114,67,255):new Color32(129,87,57,255);if(outline!=null)outline.enabled=active;transform.localScale=Vector3.one*(active&&allowScale?1.04f:1);}
+        void Apply(){bool active=focused||hovered;if(image!=null)image.color=active?new Color32(163,114,67,255):new Color32(129,87,57,255);if(outline!=null)outline.enabled=active;transform.localScale=Vector3.one*(active&&allowScale?1.04f:1);if(icon!=null)icon.anchoredPosition=new Vector2(active?17:13,icon.anchoredPosition.y);}
+    }
+    public sealed class PlateIcon : MaskableGraphic
+    {
+        public int kind;
+        protected override void OnPopulateMesh(VertexHelper vh){
+            vh.Clear();var r=rectTransform.rect;
+            Vector3 P(float x,float y)=>new Vector3(r.xMin+x*r.width,r.yMin+y*r.height);
+            void Tri(float ax,float ay,float bx,float by,float cx,float cy){int n=vh.currentVertCount;vh.AddVert(P(ax,ay),color,Vector2.zero);vh.AddVert(P(bx,by),color,Vector2.zero);vh.AddVert(P(cx,cy),color,Vector2.zero);vh.AddTriangle(n,n+1,n+2);}
+            void Line(float ax,float ay,float bx,float by){Vector2 a=P(ax,ay),b=P(bx,by),d=(b-a).normalized;Vector2 q=new Vector2(-d.y,d.x)*r.width*.065f;int n=vh.currentVertCount;vh.AddVert(a+q,color,Vector2.zero);vh.AddVert(b+q,color,Vector2.zero);vh.AddVert(b-q,color,Vector2.zero);vh.AddVert(a-q,color,Vector2.zero);vh.AddTriangle(n,n+1,n+2);vh.AddTriangle(n,n+2,n+3);}
+            if(kind==0){Line(.15f,.5f,.9f,.5f);Line(.15f,.5f,.48f,.82f);Line(.15f,.5f,.48f,.18f);}
+            else if(kind==1){Line(.08f,.48f,.38f,.18f);Line(.38f,.18f,.91f,.84f);}
+            else if(kind==2)Tri(.2f,.08f,.9f,.5f,.2f,.92f);
+            else if(kind==3){for(int i=0;i<8;i++){float a=i*Mathf.PI/4,b=a+.55f;Line(.5f+Mathf.Cos(a)*.34f,.5f+Mathf.Sin(a)*.34f,.5f+Mathf.Cos(b)*.34f,.5f+Mathf.Sin(b)*.34f);Line(.5f+Mathf.Cos(a)*.32f,.5f+Mathf.Sin(a)*.32f,.5f+Mathf.Cos(a)*.46f,.5f+Mathf.Sin(a)*.46f);}}
+            else{Line(.2f,.12f,.2f,.88f);Line(.2f,.88f,.68f,.88f);Line(.2f,.12f,.68f,.12f);Line(.45f,.5f,.96f,.5f);Line(.96f,.5f,.72f,.73f);Line(.96f,.5f,.72f,.27f);}
+        }
     }
     public sealed class SlantGraphic : MaskableGraphic
     {

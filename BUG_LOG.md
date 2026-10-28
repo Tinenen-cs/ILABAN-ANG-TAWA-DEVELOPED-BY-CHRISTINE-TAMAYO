@@ -80,3 +80,6 @@ The old bubble code used fighter foot X plus a fixed offset, then pushed nearby 
 
 ### Selection reaction audio overlaps
 Character cues now share a dedicated non-looping source, wait for menu audio to finish, and coalesce repeated highlights. Menu actions take priority and stop an active reaction blip. Combat impacts keep their existing separate one-shot playback and throttling. Added a PlayMode regression.
+
+### Fixed-light maps and evidence finalizer
+The previous night labels pointed to dusk art and Looban retained a parked vehicle. Replaced with reviewed full-night relights and an empty alley; archived unused dusk textures outside Assets. Morning lamp overlays are now disabled. The old evidence finalizer contained hardcoded obsolete test totals and rewrote checklists; replaced it with verification of real XML, current source/build hashes, native captures and audits. --local-only explicitly preserves the separately queued packaging task.

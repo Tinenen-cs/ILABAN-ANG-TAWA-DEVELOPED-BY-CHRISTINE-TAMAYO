@@ -36,3 +36,6 @@ Resume safeguards are installed and tested: hidden watchdog, exclusive lock, con
 - Integrated 48 fictional walk/reaction poses using whole-body crops, common 896x512 canvas and feet pivot. No body-part rig or item overlay.
 - Added eight original quiet reaction WAVs, delayed behind menu sounds, plus select intro/hover/ready/wait emotion loops.
 - Structural frame audit: 272/272 passed. Fresh Unity verification pending.
+
+### Painted UI and fixed-night maps
+Original logo/heading signs, keycap controls grid, common button icons/focus motion, round back buttons and centered result composition added. Looban and Plaza relit to night, inactive dusk paintings archived outside Assets, parked tricycle removed. Subtle isolated flags/leaves and night lamp glow only; morning glow off. Full final validation pending.
