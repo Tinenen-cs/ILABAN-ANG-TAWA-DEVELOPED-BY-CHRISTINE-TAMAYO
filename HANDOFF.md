@@ -15,7 +15,7 @@ B single-file EXE: rejected, WinError 740 requires elevation. No elevated launch
 
 GitHub Release: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.0
 Verified ZIP download: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.0/ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.zip
-GitHub sanitizes spaces to dots; the server size and SHA-256 match local A. Repository PUBLIC. Source main push succeeded; final evidence/doc push follows this checkpoint.
+GitHub sanitizes spaces to dots; the server size and SHA-256 match local A. Repository PUBLIC. Source and final evidence/docs were committed and normally pushed to main.
 
 ## Drive verified
 

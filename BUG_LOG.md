@@ -92,3 +92,6 @@ Full-resolution review exposed bright hairlines in the wood bar. The procedural 
 
 ### Optional single-file SFX rejected
 Official public-domain LZMA SDK 26.05 7zSD.sfx wrapper was created from the exact tested build. Windows refused its normal launch with WinError 740 (elevation required). No elevation, manifest workaround, security setting or antivirus exclusion was attempted. B fails the no-setup requirement and is not recommended or uploaded. A ZIP passes and is the final Canvas deliverable.
+
+### Desktop-injected navigation remains inconclusive
+Normal double-click A launch, pointer selection and Alt+Enter worked. Sky-injected F/Enter/arrows did not advance action-map navigation. Root cause was not established from these injections; InputSystem simulated keyboard/isolation tests passed. Physical keyboard navigation must be checked by the owner; no physical-keyboard pass or guarantee is claimed. No gamepad was connected.
