@@ -5000,12 +5000,12 @@
     "pose_source": "ArtSource/StrikeFrames/TitoSilya/Strike_00.png",
     "phase": "Ready",
     "grip": [
-      492,
-      303
+      501,
+      333
     ],
     "tip": [
-      592,
-      386
+      655,
+      318
     ],
     "pivot": [
       0.5,
@@ -5033,12 +5033,12 @@
     "pose_source": "ArtSource/StrikeFrames/TitoSilya/Strike_01.png",
     "phase": "WindUp",
     "grip": [
-      363,
-      226
+      339,
+      243
     ],
     "tip": [
-      290,
-      41
+      260,
+      34
     ],
     "pivot": [
       0.5,
@@ -5066,12 +5066,12 @@
     "pose_source": "ArtSource/StrikeFrames/TitoSilya/Strike_02.png",
     "phase": "Swing",
     "grip": [
-      606,
-      261
+      604,
+      299
     ],
     "tip": [
-      692,
-      346
+      741,
+      233
     ],
     "pivot": [
       0.5,
@@ -5099,12 +5099,12 @@
     "pose_source": "ArtSource/StrikeFrames/TitoSilya/Strike_03.png",
     "phase": "Strike",
     "grip": [
-      667,
-      217
+      671,
+      283
     ],
     "tip": [
-      813,
-      257
+      793,
+      313
     ],
     "pivot": [
       0.5,
@@ -5132,12 +5132,12 @@
     "pose_source": "ArtSource/StrikeFrames/TitoSilya/Strike_04.png",
     "phase": "Impact",
     "grip": [
-      686,
-      222
+      661,
+      282
     ],
     "tip": [
-      839,
-      259
+      786,
+      312
     ],
     "pivot": [
       0.5,
@@ -5165,12 +5165,12 @@
     "pose_source": "ArtSource/StrikeFrames/TitoSilya/Strike_05.png",
     "phase": "Recovery",
     "grip": [
-      483,
-      282
+      493,
+      318
     ],
     "tip": [
-      592,
-      359
+      662,
+      237
     ],
     "pivot": [
       0.5,
@@ -5954,12 +5954,12 @@
     "pose_source": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_00.png",
     "phase": "Ready",
     "grip": [
-      408,
-      258
+      401,
+      300
     ],
     "tip": [
-      383,
-      210
+      380,
+      232
     ],
     "pivot": [
       0.5,
@@ -5987,12 +5987,12 @@
     "pose_source": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_01.png",
     "phase": "WindUp",
     "grip": [
-      294,
-      173
+      298,
+      187
     ],
     "tip": [
-      332,
-      127
+      331,
+      131
     ],
     "pivot": [
       0.5,
@@ -6020,12 +6020,12 @@
     "pose_source": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_02.png",
     "phase": "Swing",
     "grip": [
-      606,
-      262
+      590,
+      279
     ],
     "tip": [
-      714,
-      257
+      705,
+      271
     ],
     "pivot": [
       0.5,
@@ -6053,12 +6053,12 @@
     "pose_source": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_03.png",
     "phase": "Strike",
     "grip": [
-      663,
-      248
+      638,
+      286
     ],
     "tip": [
-      778,
-      228
+      758,
+      269
     ],
     "pivot": [
       0.5,
@@ -6086,12 +6086,12 @@
     "pose_source": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_04.png",
     "phase": "Impact",
     "grip": [
-      656,
-      249
+      631,
+      295
     ],
     "tip": [
-      765,
-      235
+      764,
+      274
     ],
     "pivot": [
       0.5,
@@ -6119,12 +6119,12 @@
     "pose_source": "ArtSource/StrikeFrames/AlingBotengSuka/Strike_05.png",
     "phase": "Recovery",
     "grip": [
-      415,
-      267
+      388,
+      312
     ],
     "tip": [
-      376,
-      210
+      371,
+      270
     ],
     "pivot": [
       0.5,
@@ -6908,12 +6908,12 @@
     "pose_source": "ArtSource/StrikeFrames/NanayTingting/Strike_00.png",
     "phase": "Ready",
     "grip": [
-      512,
-      311
+      416,
+      366
     ],
     "tip": [
-      707,
-      278
+      701,
+      314
     ],
     "pivot": [
       0.5,
@@ -6941,12 +6941,12 @@
     "pose_source": "ArtSource/StrikeFrames/NanayTingting/Strike_01.png",
     "phase": "WindUp",
     "grip": [
-      363,
-      204
+      340,
+      196
     ],
     "tip": [
-      213,
-      57
+      225,
+      86
     ],
     "pivot": [
       0.5,
@@ -6974,12 +6974,12 @@
     "pose_source": "ArtSource/StrikeFrames/NanayTingting/Strike_02.png",
     "phase": "Swing",
     "grip": [
-      545,
-      277
+      546,
+      327
     ],
     "tip": [
-      774,
-      259
+      761,
+      327
     ],
     "pivot": [
       0.5,
@@ -7007,12 +7007,12 @@
     "pose_source": "ArtSource/StrikeFrames/NanayTingting/Strike_03.png",
     "phase": "Strike",
     "grip": [
-      626,
-      243
+      587,
+      311
     ],
     "tip": [
-      824,
-      232
+      761,
+      293
     ],
     "pivot": [
       0.5,
@@ -7040,12 +7040,12 @@
     "pose_source": "ArtSource/StrikeFrames/NanayTingting/Strike_04.png",
     "phase": "Impact",
     "grip": [
-      617,
-      253
+      553,
+      312
     ],
     "tip": [
-      832,
-      241
+      755,
+      271
     ],
     "pivot": [
       0.5,
@@ -7073,12 +7073,12 @@
     "pose_source": "ArtSource/StrikeFrames/NanayTingting/Strike_05.png",
     "phase": "Recovery",
     "grip": [
-      532,
-      287
+      485,
+      354
     ],
     "tip": [
-      737,
-      262
+      736,
+      323
     ],
     "pivot": [
       0.5,

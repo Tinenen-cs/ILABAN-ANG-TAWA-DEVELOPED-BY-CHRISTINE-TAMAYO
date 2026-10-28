@@ -3923,12 +3923,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        287,
+        284,
         14,
-        662,
+        675,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -3946,12 +3946,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        287,
+        284,
         14,
-        662,
+        675,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -3969,12 +3969,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        287,
+        284,
         14,
-        662,
+        675,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -3992,12 +3992,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        287,
+        284,
         14,
-        662,
+        675,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -4015,12 +4015,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        283,
-        27,
-        647,
+        273,
+        15,
+        665,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 447.5,
       "pivot": [
         0.5,
         0
@@ -4038,12 +4038,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        289,
-        27,
-        641,
+        283,
+        15,
+        654,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 447.5,
       "pivot": [
         0.5,
         0
@@ -4061,12 +4061,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        284,
-        27,
-        652,
+        274,
+        15,
+        670,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -4084,12 +4084,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        289,
-        27,
-        641,
+        283,
+        15,
+        654,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 447.5,
       "pivot": [
         0.5,
         0
@@ -4107,12 +4107,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        287,
+        284,
         14,
-        662,
+        675,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -4130,12 +4130,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        246,
+        213,
         15,
-        626,
+        631,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 447.5,
       "pivot": [
         0.5,
         0
@@ -4153,8 +4153,836 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
+        266,
+        16,
+        767,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Strike",
+      "frame": "Strike_03.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        269,
+        16,
+        822,
+        512
+      ],
+      "feet_center_x": 448.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Strike",
+      "frame": "Strike_04.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
         263,
-        18,
+        15,
+        818,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Strike",
+      "frame": "Strike_05.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        273,
+        15,
+        682,
+        512
+      ],
+      "feet_center_x": 448.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Hurt",
+      "frame": "Hurt_00.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        216,
+        15,
+        614,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Hurt",
+      "frame": "Hurt_01.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        208,
+        15,
+        609,
+        512
+      ],
+      "feet_center_x": 447.0,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Hurt",
+      "frame": "Hurt_02.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        220,
+        15,
+        617,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Hurt",
+      "frame": "Hurt_03.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        234,
+        15,
+        627,
+        512
+      ],
+      "feet_center_x": 448.0,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Dizzy",
+      "frame": "Dizzy_00.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        282,
+        14,
+        665,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Dizzy",
+      "frame": "Dizzy_01.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        282,
+        14,
+        665,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Dizzy",
+      "frame": "Dizzy_02.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        282,
+        14,
+        665,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Dizzy",
+      "frame": "Dizzy_03.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        282,
+        14,
+        665,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Fall",
+      "frame": "Fall_00.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        329,
+        25,
+        640,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Fall",
+      "frame": "Fall_01.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        329,
+        25,
+        640,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Fall",
+      "frame": "Fall_02.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        329,
+        25,
+        640,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Fall",
+      "frame": "Fall_03.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        329,
+        25,
+        640,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Win",
+      "frame": "Win_00.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        275,
+        20,
+        663,
+        512
+      ],
+      "feet_center_x": 448.0,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Win",
+      "frame": "Win_01.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        275,
+        20,
+        663,
+        512
+      ],
+      "feet_center_x": 448.0,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Win",
+      "frame": "Win_02.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        275,
+        20,
+        663,
+        512
+      ],
+      "feet_center_x": 448.0,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Win",
+      "frame": "Win_03.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        275,
+        20,
+        663,
+        512
+      ],
+      "feet_center_x": 448.0,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Lose",
+      "frame": "Lose_00.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        329,
+        25,
+        640,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Lose",
+      "frame": "Lose_01.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        329,
+        25,
+        640,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Lose",
+      "frame": "Lose_02.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        329,
+        25,
+        640,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "TitoSilya",
+      "action": "Lose",
+      "frame": "Lose_03.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        329,
+        25,
+        640,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Idle",
+      "frame": "Idle_00.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        251,
+        13,
+        629,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Idle",
+      "frame": "Idle_01.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        251,
+        13,
+        629,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Idle",
+      "frame": "Idle_02.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        251,
+        13,
+        629,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Idle",
+      "frame": "Idle_03.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        251,
+        13,
+        629,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Walk",
+      "frame": "Walk_00.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        258,
+        14,
+        628,
+        512
+      ],
+      "feet_center_x": 448.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Walk",
+      "frame": "Walk_01.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        242,
+        14,
+        620,
+        512
+      ],
+      "feet_center_x": 448.0,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Walk",
+      "frame": "Walk_02.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        260,
+        14,
+        635,
+        512
+      ],
+      "feet_center_x": 449.0,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Walk",
+      "frame": "Walk_03.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        242,
+        14,
+        620,
+        512
+      ],
+      "feet_center_x": 448.0,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Strike",
+      "frame": "Strike_00.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        251,
+        13,
+        629,
+        512
+      ],
+      "feet_center_x": 447.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Strike",
+      "frame": "Strike_01.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        243,
+        13,
+        680,
+        512
+      ],
+      "feet_center_x": 448.5,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Strike",
+      "frame": "Strike_02.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        259,
+        14,
+        715,
+        512
+      ],
+      "feet_center_x": 448.0,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Strike",
+      "frame": "Strike_03.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        275,
+        60,
+        766,
+        512
+      ],
+      "feet_center_x": 448.0,
+      "pivot": [
+        0.5,
+        0
+      ],
+      "ground_line": 512,
+      "both_facings_passed": true
+    },
+    {
+      "character": "AlingBotengSuka",
+      "action": "Strike",
+      "frame": "Strike_04.png",
+      "canvas": [
+        896,
+        512
+      ],
+      "connected_body_components": 1,
+      "body_bounds": [
+        274,
+        61,
         763,
         512
       ],
@@ -4167,53 +4995,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
-      "action": "Strike",
-      "frame": "Strike_03.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        264,
-        22,
-        829,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "TitoSilya",
-      "action": "Strike",
-      "frame": "Strike_04.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        258,
-        24,
-        851,
-        512
-      ],
-      "feet_center_x": 447.5,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Strike",
       "frame": "Strike_05.png",
       "canvas": [
@@ -4222,9 +5004,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        269,
-        22,
-        662,
+        262,
+        57,
+        652,
         512
       ],
       "feet_center_x": 448.0,
@@ -4236,7 +5018,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Hurt",
       "frame": "Hurt_00.png",
       "canvas": [
@@ -4245,9 +5027,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        245,
-        27,
-        606,
+        180,
+        15,
+        566,
         512
       ],
       "feet_center_x": 447.5,
@@ -4259,7 +5041,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Hurt",
       "frame": "Hurt_01.png",
       "canvas": [
@@ -4268,12 +5050,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        237,
-        27,
-        606,
+        176,
+        15,
+        561,
         512
       ],
-      "feet_center_x": 446.5,
+      "feet_center_x": 447.0,
       "pivot": [
         0.5,
         0
@@ -4282,7 +5064,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Hurt",
       "frame": "Hurt_02.png",
       "canvas": [
@@ -4291,9 +5073,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        249,
-        27,
-        605,
+        182,
+        15,
+        568,
         512
       ],
       "feet_center_x": 447.5,
@@ -4305,7 +5087,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Hurt",
       "frame": "Hurt_03.png",
       "canvas": [
@@ -4314,9 +5096,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        264,
-        27,
-        610,
+        189,
+        15,
+        578,
         512
       ],
       "feet_center_x": 447.5,
@@ -4328,7 +5110,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Dizzy",
       "frame": "Dizzy_00.png",
       "canvas": [
@@ -4337,12 +5119,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        322,
-        14,
-        660,
+        271,
+        51,
+        652,
         512
       ],
-      "feet_center_x": 447.5,
+      "feet_center_x": 448.0,
       "pivot": [
         0.5,
         0
@@ -4351,7 +5133,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Dizzy",
       "frame": "Dizzy_01.png",
       "canvas": [
@@ -4360,12 +5142,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        322,
-        14,
-        660,
+        271,
+        51,
+        652,
         512
       ],
-      "feet_center_x": 447.5,
+      "feet_center_x": 448.0,
       "pivot": [
         0.5,
         0
@@ -4374,7 +5156,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Dizzy",
       "frame": "Dizzy_02.png",
       "canvas": [
@@ -4383,12 +5165,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        322,
-        14,
-        660,
+        271,
+        51,
+        652,
         512
       ],
-      "feet_center_x": 447.5,
+      "feet_center_x": 448.0,
       "pivot": [
         0.5,
         0
@@ -4397,7 +5179,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Dizzy",
       "frame": "Dizzy_03.png",
       "canvas": [
@@ -4406,12 +5188,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        322,
-        14,
-        660,
+        271,
+        51,
+        652,
         512
       ],
-      "feet_center_x": 447.5,
+      "feet_center_x": 448.0,
       "pivot": [
         0.5,
         0
@@ -4420,7 +5202,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Fall",
       "frame": "Fall_00.png",
       "canvas": [
@@ -4429,9 +5211,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        335,
-        26,
-        622,
+        282,
+        49,
+        636,
         512
       ],
       "feet_center_x": 448.0,
@@ -4443,7 +5225,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Fall",
       "frame": "Fall_01.png",
       "canvas": [
@@ -4452,9 +5234,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        335,
-        26,
-        622,
+        282,
+        49,
+        636,
         512
       ],
       "feet_center_x": 448.0,
@@ -4466,7 +5248,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Fall",
       "frame": "Fall_02.png",
       "canvas": [
@@ -4475,9 +5257,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        335,
-        26,
-        622,
+        282,
+        49,
+        636,
         512
       ],
       "feet_center_x": 448.0,
@@ -4489,7 +5271,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Fall",
       "frame": "Fall_03.png",
       "canvas": [
@@ -4498,9 +5280,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        335,
-        26,
-        622,
+        282,
+        49,
+        636,
         512
       ],
       "feet_center_x": 448.0,
@@ -4512,7 +5294,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Win",
       "frame": "Win_00.png",
       "canvas": [
@@ -4521,12 +5303,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        279,
-        17,
-        645,
+        232,
+        48,
+        613,
         512
       ],
-      "feet_center_x": 447.5,
+      "feet_center_x": 449.0,
       "pivot": [
         0.5,
         0
@@ -4535,7 +5317,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Win",
       "frame": "Win_01.png",
       "canvas": [
@@ -4544,12 +5326,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        279,
-        17,
-        645,
+        232,
+        48,
+        613,
         512
       ],
-      "feet_center_x": 447.5,
+      "feet_center_x": 449.0,
       "pivot": [
         0.5,
         0
@@ -4558,7 +5340,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Win",
       "frame": "Win_02.png",
       "canvas": [
@@ -4567,12 +5349,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        279,
-        17,
-        645,
+        232,
+        48,
+        613,
         512
       ],
-      "feet_center_x": 447.5,
+      "feet_center_x": 449.0,
       "pivot": [
         0.5,
         0
@@ -4581,7 +5363,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Win",
       "frame": "Win_03.png",
       "canvas": [
@@ -4590,12 +5372,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        279,
-        17,
-        645,
+        232,
+        48,
+        613,
         512
       ],
-      "feet_center_x": 447.5,
+      "feet_center_x": 449.0,
       "pivot": [
         0.5,
         0
@@ -4604,7 +5386,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Lose",
       "frame": "Lose_00.png",
       "canvas": [
@@ -4613,9 +5395,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        335,
-        26,
-        622,
+        282,
+        49,
+        636,
         512
       ],
       "feet_center_x": 448.0,
@@ -4627,7 +5409,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Lose",
       "frame": "Lose_01.png",
       "canvas": [
@@ -4636,9 +5418,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        335,
-        26,
-        622,
+        282,
+        49,
+        636,
         512
       ],
       "feet_center_x": 448.0,
@@ -4650,7 +5432,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Lose",
       "frame": "Lose_02.png",
       "canvas": [
@@ -4659,9 +5441,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        335,
-        26,
-        622,
+        282,
+        49,
+        636,
         512
       ],
       "feet_center_x": 448.0,
@@ -4673,7 +5455,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "TitoSilya",
+      "character": "AlingBotengSuka",
       "action": "Lose",
       "frame": "Lose_03.png",
       "canvas": [
@@ -4682,9 +5464,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        335,
-        26,
-        622,
+        282,
+        49,
+        636,
         512
       ],
       "feet_center_x": 448.0,
@@ -4696,7 +5478,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "AlingBotengSuka",
+      "character": "NanayTingting",
       "action": "Idle",
       "frame": "Idle_00.png",
       "canvas": [
@@ -4705,12 +5487,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        284,
+        287,
         14,
-        618,
+        709,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -4719,7 +5501,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "AlingBotengSuka",
+      "character": "NanayTingting",
       "action": "Idle",
       "frame": "Idle_01.png",
       "canvas": [
@@ -4728,12 +5510,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        284,
+        287,
         14,
-        618,
+        709,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -4742,7 +5524,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "AlingBotengSuka",
+      "character": "NanayTingting",
       "action": "Idle",
       "frame": "Idle_02.png",
       "canvas": [
@@ -4751,12 +5533,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        284,
+        287,
         14,
-        618,
+        709,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -4765,7 +5547,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "AlingBotengSuka",
+      "character": "NanayTingting",
       "action": "Idle",
       "frame": "Idle_03.png",
       "canvas": [
@@ -4774,12 +5556,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        284,
+        287,
         14,
-        618,
+        709,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -4788,7 +5570,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "AlingBotengSuka",
+      "character": "NanayTingting",
       "action": "Walk",
       "frame": "Walk_00.png",
       "canvas": [
@@ -4797,9 +5579,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        283,
+        296,
         14,
-        602,
+        723,
         512
       ],
       "feet_center_x": 447.5,
@@ -4811,7 +5593,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "AlingBotengSuka",
+      "character": "NanayTingting",
       "action": "Walk",
       "frame": "Walk_01.png",
       "canvas": [
@@ -4820,12 +5602,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        282,
+        294,
         16,
-        589,
+        726,
         512
       ],
-      "feet_center_x": 447.5,
+      "feet_center_x": 449.0,
       "pivot": [
         0.5,
         0
@@ -4834,7 +5616,7 @@
       "both_facings_passed": true
     },
     {
-      "character": "AlingBotengSuka",
+      "character": "NanayTingting",
       "action": "Walk",
       "frame": "Walk_02.png",
       "canvas": [
@@ -4843,100 +5625,8 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        287,
+        303,
         14,
-        606,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Walk",
-      "frame": "Walk_03.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        282,
-        16,
-        589,
-        512
-      ],
-      "feet_center_x": 447.5,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Strike",
-      "frame": "Strike_00.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        284,
-        14,
-        618,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Strike",
-      "frame": "Strike_01.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        251,
-        14,
-        669,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Strike",
-      "frame": "Strike_02.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        283,
-        15,
         727,
         512
       ],
@@ -4949,696 +5639,6 @@
       "both_facings_passed": true
     },
     {
-      "character": "AlingBotengSuka",
-      "action": "Strike",
-      "frame": "Strike_03.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        269,
-        27,
-        791,
-        512
-      ],
-      "feet_center_x": 448.5,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Strike",
-      "frame": "Strike_04.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        270,
-        27,
-        777,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Strike",
-      "frame": "Strike_05.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        281,
-        24,
-        644,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Hurt",
-      "frame": "Hurt_00.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        205,
-        19,
-        554,
-        512
-      ],
-      "feet_center_x": 447.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Hurt",
-      "frame": "Hurt_01.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        201,
-        19,
-        554,
-        512
-      ],
-      "feet_center_x": 447.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Hurt",
-      "frame": "Hurt_02.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        207,
-        19,
-        554,
-        512
-      ],
-      "feet_center_x": 447.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Hurt",
-      "frame": "Hurt_03.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        215,
-        19,
-        555,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Dizzy",
-      "frame": "Dizzy_00.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        303,
-        28,
-        646,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Dizzy",
-      "frame": "Dizzy_01.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        303,
-        28,
-        646,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Dizzy",
-      "frame": "Dizzy_02.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        303,
-        28,
-        646,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Dizzy",
-      "frame": "Dizzy_03.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        303,
-        28,
-        646,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Fall",
-      "frame": "Fall_00.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        307,
-        31,
-        616,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Fall",
-      "frame": "Fall_01.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        307,
-        31,
-        616,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Fall",
-      "frame": "Fall_02.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        307,
-        31,
-        616,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Fall",
-      "frame": "Fall_03.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        307,
-        31,
-        616,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Win",
-      "frame": "Win_00.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        261,
-        24,
-        614,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Win",
-      "frame": "Win_01.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        261,
-        24,
-        614,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Win",
-      "frame": "Win_02.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        261,
-        24,
-        614,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Win",
-      "frame": "Win_03.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        261,
-        24,
-        614,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Lose",
-      "frame": "Lose_00.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        307,
-        31,
-        616,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Lose",
-      "frame": "Lose_01.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        307,
-        31,
-        616,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Lose",
-      "frame": "Lose_02.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        307,
-        31,
-        616,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "AlingBotengSuka",
-      "action": "Lose",
-      "frame": "Lose_03.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        307,
-        31,
-        616,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "NanayTingting",
-      "action": "Idle",
-      "frame": "Idle_00.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        302,
-        24,
-        725,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "NanayTingting",
-      "action": "Idle",
-      "frame": "Idle_01.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        302,
-        24,
-        725,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "NanayTingting",
-      "action": "Idle",
-      "frame": "Idle_02.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        302,
-        24,
-        725,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "NanayTingting",
-      "action": "Idle",
-      "frame": "Idle_03.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        302,
-        24,
-        725,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "NanayTingting",
-      "action": "Walk",
-      "frame": "Walk_00.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        311,
-        21,
-        739,
-        512
-      ],
-      "feet_center_x": 448.0,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "NanayTingting",
-      "action": "Walk",
-      "frame": "Walk_01.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        306,
-        19,
-        736,
-        512
-      ],
-      "feet_center_x": 448.5,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
-      "character": "NanayTingting",
-      "action": "Walk",
-      "frame": "Walk_02.png",
-      "canvas": [
-        896,
-        512
-      ],
-      "connected_body_components": 1,
-      "body_bounds": [
-        312,
-        21,
-        743,
-        512
-      ],
-      "feet_center_x": 448.5,
-      "pivot": [
-        0.5,
-        0
-      ],
-      "ground_line": 512,
-      "both_facings_passed": true
-    },
-    {
       "character": "NanayTingting",
       "action": "Walk",
       "frame": "Walk_03.png",
@@ -5648,12 +5648,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        306,
-        19,
-        736,
+        294,
+        16,
+        726,
         512
       ],
-      "feet_center_x": 448.5,
+      "feet_center_x": 449.0,
       "pivot": [
         0.5,
         0
@@ -5671,12 +5671,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        302,
-        24,
-        725,
+        287,
+        14,
+        709,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -5694,12 +5694,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        175,
-        14,
-        609,
+        165,
+        22,
+        618,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 447.5,
       "pivot": [
         0.5,
         0
@@ -5717,12 +5717,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        293,
-        36,
-        792,
+        275,
+        23,
+        778,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 447.5,
       "pivot": [
         0.5,
         0
@@ -5740,12 +5740,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        286,
-        42,
-        838,
+        289,
+        26,
+        805,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -5763,12 +5763,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        274,
-        53,
-        844,
+        275,
+        28,
+        789,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 448.5,
       "pivot": [
         0.5,
         0
@@ -5786,12 +5786,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        286,
-        42,
-        761,
+        275,
+        28,
+        744,
         512
       ],
-      "feet_center_x": 448.5,
+      "feet_center_x": 447.5,
       "pivot": [
         0.5,
         0
@@ -5810,11 +5810,11 @@
       "connected_body_components": 1,
       "body_bounds": [
         191,
-        32,
-        654,
+        16,
+        642,
         512
       ],
-      "feet_center_x": 447.5,
+      "feet_center_x": 446.5,
       "pivot": [
         0.5,
         0
@@ -5832,12 +5832,12 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        184,
-        32,
-        649,
+        185,
+        16,
+        639,
         512
       ],
-      "feet_center_x": 447.0,
+      "feet_center_x": 446.0,
       "pivot": [
         0.5,
         0
@@ -5856,11 +5856,11 @@
       "connected_body_components": 1,
       "body_bounds": [
         194,
-        32,
-        656,
+        16,
+        645,
         512
       ],
-      "feet_center_x": 447.5,
+      "feet_center_x": 447.0,
       "pivot": [
         0.5,
         0
@@ -5879,11 +5879,11 @@
       "connected_body_components": 1,
       "body_bounds": [
         206,
-        32,
-        664,
+        16,
+        651,
         512
       ],
-      "feet_center_x": 448.0,
+      "feet_center_x": 447.0,
       "pivot": [
         0.5,
         0
@@ -5901,9 +5901,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        300,
-        14,
-        730,
+        301,
+        38,
+        723,
         512
       ],
       "feet_center_x": 448.0,
@@ -5924,9 +5924,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        300,
-        14,
-        730,
+        301,
+        38,
+        723,
         512
       ],
       "feet_center_x": 448.0,
@@ -5947,9 +5947,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        300,
-        14,
-        730,
+        301,
+        38,
+        723,
         512
       ],
       "feet_center_x": 448.0,
@@ -5970,9 +5970,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        300,
-        14,
-        730,
+        301,
+        38,
+        723,
         512
       ],
       "feet_center_x": 448.0,
@@ -5993,9 +5993,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        342,
-        17,
-        734,
+        328,
+        39,
+        717,
         512
       ],
       "feet_center_x": 447.5,
@@ -6016,9 +6016,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        342,
-        17,
-        734,
+        328,
+        39,
+        717,
         512
       ],
       "feet_center_x": 447.5,
@@ -6039,9 +6039,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        342,
-        17,
-        734,
+        328,
+        39,
+        717,
         512
       ],
       "feet_center_x": 447.5,
@@ -6062,9 +6062,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        342,
-        17,
-        734,
+        328,
+        39,
+        717,
         512
       ],
       "feet_center_x": 447.5,
@@ -6085,9 +6085,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        297,
-        14,
-        733,
+        287,
+        36,
+        730,
         512
       ],
       "feet_center_x": 448.0,
@@ -6108,9 +6108,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        297,
-        14,
-        733,
+        287,
+        36,
+        730,
         512
       ],
       "feet_center_x": 448.0,
@@ -6131,9 +6131,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        297,
-        14,
-        733,
+        287,
+        36,
+        730,
         512
       ],
       "feet_center_x": 448.0,
@@ -6154,9 +6154,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        297,
-        14,
-        733,
+        287,
+        36,
+        730,
         512
       ],
       "feet_center_x": 448.0,
@@ -6177,9 +6177,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        342,
-        17,
-        734,
+        328,
+        39,
+        717,
         512
       ],
       "feet_center_x": 447.5,
@@ -6200,9 +6200,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        342,
-        17,
-        734,
+        328,
+        39,
+        717,
         512
       ],
       "feet_center_x": 447.5,
@@ -6223,9 +6223,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        342,
-        17,
-        734,
+        328,
+        39,
+        717,
         512
       ],
       "feet_center_x": 447.5,
@@ -6246,9 +6246,9 @@
       ],
       "connected_body_components": 1,
       "body_bounds": [
-        342,
-        17,
-        734,
+        328,
+        39,
+        717,
         512
       ],
       "feet_center_x": 447.5,

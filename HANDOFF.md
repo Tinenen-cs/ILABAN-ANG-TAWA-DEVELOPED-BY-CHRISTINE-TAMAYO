@@ -156,3 +156,9 @@ Next: Step 4 remove card item ornaments and confirm icons; next 5 heads, 6 stage
 DONE: removed eight standalone card item images and confirm checkmark decorations; retained baked-in weapons, names and P1/P2 markers. Build/65 checks/native selection smoke passed; clean selection screenshot viewed.
 
 Next: Step 5 chibi head consistency; then 6 stage zones, 7 reach/first-to-three, 8 pause, 9 modal errors.
+
+## UPDATE2 step 5 — 2026-10-28T16:15:11.829446+00:00
+
+DONE: six original-fictional chibi source sheets regenerated with built-in imagegen; three portraits/body previews and all action frames updated. Sources saved ArtSource/StrikeSheets and ActionSheets. No photos used. 272 structural/48 weapon-anchor checks and build/65 checks passed; 108 native Unity animation captures passed; three changed characters personally viewed.
+
+Next: Step 6 fixed stage zones; then 7 reach and first-to-three, 8 pause, 9 modal errors, 10 emotes.
