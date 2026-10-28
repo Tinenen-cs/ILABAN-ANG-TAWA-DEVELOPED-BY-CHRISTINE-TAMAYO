@@ -1,3 +1,12 @@
+# CURRENT HILO FIX - DISPLAY VERIFIED, PACKAGING NEXT
+
+Done: previous update implementation1-10 checked complete; HUD now reads opponent streak (hits taken). DuelModel unchanged. EditMode15/15, graphics PlayMode17/17,65 rules, build exit0/zero C# diagnostics.48 native screenshots across all3 maps/both attackers verified and viewed: victim-only1-5 fill, same victim dizzy on5, resets. See RUBRIC_CHECKLIST.md and Docs/QA_EVIDENCE/hilo_victim_capture.json.
+
+Next five: preserve previous candidates; repack completeZIP/GUI singleEXE by Docs/PORTABLE_EXE_METHOD.md; isolated EXE-only tests; write FILE_INFO and rubric; normal-push main/new verified GitHub Release. Existing Drive pending work is outside this request.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md current Hilo section and RUBRIC_CHECKLIST.md. Display/tests/screenshots are verified; finish portable repack, isolated tests, FILE_INFO, main push and GitHub Release. Do not change combat logic or use reference photos."`
+
+---
 # UPDATE3 GAME COMPLETE; DRIVE LARGE-FILE REPLACEMENTS PENDING - 2026-10-28T23:12:12.143773+00:00
 
 All seven tasks in Docs/UPDATE3_REQUEST.md implemented and individually committed in order. Attachment ends mid-sentence in task7; all visible requirements handled. Main branch. Public source and UPDATE3 Release published normally; no history rewrite, reference photos, build binaries or large ZIPs added to source commits.

@@ -37,6 +37,6 @@ for case,folder in cases:
     (root/'Docs'/(label.lower()+'_single_exe_tests.json')).write_text(json.dumps(results,indent=2),encoding='utf-8')
     print(json.dumps(row),flush=True)
     assert passed,row
-report.update(tested=True,passed=all(row['passed'] for row in results),tests='Docs/update2_single_exe_tests.json')
+report.update(tested=True,passed=all(row['passed'] for row in results),tests='Docs/'+label.lower()+'_single_exe_tests.json')
 (root/'Docs/single_exe_build.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
 print('PASS: single EXE alone, both independent folders, 34 native captures and two complete three-win matches.')

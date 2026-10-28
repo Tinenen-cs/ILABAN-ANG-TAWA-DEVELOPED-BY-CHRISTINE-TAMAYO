@@ -635,7 +635,8 @@ namespace Hexbound
                 int actionFrame=f.pose==Pose.Punch?StrikeFrame(f.actionLength-f.actionTime):(int)(clock*8)%4;
                 if(AnimationCapture.Active&&AnimationCapture.Frame>=0)actionFrame=AnimationCapture.Frame;
                 actor.body.uvRect=f.facing<0?new Rect(1,0,-1,1):new Rect(0,0,1,1);Animate(actor,celebration?Pose.Win:f.pose,actionFrame);
-                for(int i=0;i<5;i++)hiloPips[p][i].color=i<f.streak?HiloColors[i]:new Color(.30f,.23f,.17f,.95f);
+                // Incoming hits belong to the victim HUD; streak ownership stays in DuelModel.
+                for(int i=0;i<5;i++)hiloPips[p][i].color=i<Model.players[1-p].streak?HiloColors[i]:new Color(.30f,.23f,.17f,.95f);
                 for(int i=0;i<winMarkers[p].Length;i++){bool won=i<f.wins;winMarkers[p][i].color=won?Color.white:new Color(.43f,.34f,.25f,.88f);float pop=won&&Model.Finished&&p==Model.winner&&i==f.wins-1?1+.18f*Mathf.Sin(Mathf.Clamp01(resultTime/.45f)*Mathf.PI):1;winMarkers[p][i].rectTransform.localScale=Vector3.one*pop;}
                 bool sparkle=Model.Finished&&p==Model.winner&&resultTime<.65f;winSparkles[p].gameObject.SetActive(sparkle);if(sparkle){winSparkles[p].color=new Color(gold.r,gold.g,gold.b,1-resultTime/.65f);winSparkles[p].rectTransform.localScale=Vector3.one*(.8f+resultTime);winSparkles[p].transform.SetAsLastSibling();}
             }

@@ -135,8 +135,26 @@ namespace Hexbound.Tests
                 foreach(var pip in pips[p]){Assert.IsFalse(localBox(label.rectTransform).Overlaps(localBox(pip.rectTransform)),"A Hilo segment must not cover its label.");Assert.Less(pip.color.r,.5f,"Both meters start empty.");}
             }
             var actors=(System.Array)typeof(AcademyGame).GetField("actors",flags).GetValue(game);foreach(var item in actors){var actorRoot=(RectTransform)item.GetType().GetField("root").GetValue(item);Assert.AreEqual(new Vector2(.5f,0),actorRoot.pivot,"The complete fighter rotates and scales around its fixed feet-center pivot.");Assert.AreEqual(2,actorRoot.GetComponentsInChildren<RawImage>(true).Length,"Each fighter is a single whole-body image plus ground dust; no separate weapon child.");foreach(Transform child in actorRoot.GetComponentsInChildren<Transform>(true))Assert.IsFalse(child.name.ToLowerInvariant().Contains("item"),"No independent weapon/item object is allowed.");}
-            var update=typeof(AcademyGame).GetMethod("Update",flags);for(int count=1;count<=5;count++){for(int p=0;p<2;p++){game.Model.players[p].streak=count;game.Model.players[p].streakTime=2;}update.Invoke(game,null);for(int p=0;p<2;p++)for(int i=0;i<5;i++)Assert.AreEqual(i<count,pips[p][i].color.r>.5f,"Both Hilo meters fill in order from one through five.");}
+            var update=typeof(AcademyGame).GetMethod("Update",flags);for(int attacker=0;attacker<2;attacker++)for(int count=1;count<=5;count++){game.Model.players[attacker].streak=count;game.Model.players[attacker].streakTime=2;game.Model.players[1-attacker].streak=0;game.Model.players[1-attacker].streakTime=0;update.Invoke(game,null);for(int p=0;p<2;p++)for(int i=0;i<5;i++)Assert.AreEqual(p==1-attacker&&i<count,pips[p][i].color.r>.5f,"Only the victim meter fills one through five.");}
             for(int p=0;p<2;p++){game.Model.players[p].streak=0;game.Model.players[p].streakTime=0;}update.Invoke(game,null);foreach(var playerPips in pips)foreach(var pip in playerPips)Assert.Less(pip.color.r,.5f,"The meter resets when the streak breaks.");
+        }
+        [Test] public void IncomingHiloFollowsRealHitsDizzyBreaksAndRecoveryOnBothSides(){
+            var previous=Object.FindAnyObjectByType<AcademyGame>();if(previous!=null)Object.DestroyImmediate(previous.gameObject);
+            var game=new GameObject("Victim Hilo integration").AddComponent<AcademyGame>();game.enabled=false;game.SetLanguage(0);
+            const System.Reflection.BindingFlags flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+            var draw=typeof(AcademyGame).GetMethod("UpdateFight",flags);float scale=Time.timeScale;Time.timeScale=0;
+            void Tick(int count,DuelInput a=default,DuelInput b=default){for(int f=0;f<count;f++)game.Model.Tick(1f/60,a,b);}
+            void Hit(int attacker){Tick(26);var m=game.Model;int safety=0;while(Mathf.Abs(m.players[0].x-m.players[1].x)>DuelModel.PunchReach-8&&safety++<120){var input=new DuelInput{move=attacker==0?1:-1};Tick(1,attacker==0?input:default,attacker==1?input:default);}Tick(1,attacker==0?new DuelInput{punch=true}:default,attacker==1?new DuelInput{punch=true}:default);Tick(8);}
+            void Hud(int p1,int p2){draw.Invoke(game,null);var pips=(Image[][])typeof(AcademyGame).GetField("hiloPips",flags).GetValue(game);for(int p=0;p<2;p++)for(int i=0;i<5;i++)Assert.AreEqual(i<(p==0?p1:p2),pips[p][i].color.r>.5f,"Victim side="+p+", segment="+i);}
+            void Fresh(int attacker){game.Ready[0]=game.Ready[1]=true;game.StartMatch();game.Model.players[0].x=attacker==0?440:620;game.Model.players[1].x=attacker==0?620:800;Hud(0,0);}
+            try{for(int attacker=0;attacker<2;attacker++){
+                Fresh(attacker);for(int hits=1;hits<=5;hits++){Hit(attacker);Assert.AreEqual(hits,game.Model.players[attacker].streak);Hud(attacker==0?0:hits,attacker==0?hits:0);Assert.AreEqual(hits==5,game.Model.players[1-attacker].dizzyTime>0);Assert.AreEqual(0,game.Model.players[attacker].dizzyTime);}
+                Tick(150);Hud(0,0);Assert.AreEqual(0,game.Model.players[1-attacker].dizzyTime);
+                Fresh(attacker);Hit(attacker);Tick(190);Hud(0,0); // Existing streak timeout.
+                Fresh(attacker);Hit(attacker);Tick(26);game.Model.players[1-attacker].x=attacker==0?950:300;
+                Tick(1,attacker==0?new DuelInput{punch=true}:default,attacker==1?new DuelInput{punch=true}:default);Tick(8);Hud(0,0); // Miss breaks streak.
+                Fresh(attacker);Hit(attacker);Hit(1-attacker);Hud(attacker==0?1:0,attacker==0?0:1); // Counter-hit clears former victim bar.
+            }}finally{Time.timeScale=scale;Object.DestroyImmediate(game.gameObject);}
         }
         [UnityTest] public IEnumerator EveryCharacterUsesWholeBodyFramesOnOneSharedCanvas(){
             var game=Object.FindAnyObjectByType<AcademyGame>();if(game==null)game=new GameObject("Test game").AddComponent<AcademyGame>();
