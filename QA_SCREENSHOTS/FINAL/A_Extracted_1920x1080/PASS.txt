@@ -1,0 +1,1 @@
+Portable smoke passed at 1920x1080. Tagalog/Pormal fresh defaults; readiness gate; three fixed-light maps; actual simulated gamepad movement/punches to manhole; dizzy and results; pause; controls; exit dialog; English settings. Physical input/listening remain manual.

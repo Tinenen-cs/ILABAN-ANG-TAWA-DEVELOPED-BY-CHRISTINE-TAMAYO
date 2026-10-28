@@ -1,6 +1,6 @@
-# Update progress
+# Final delivery progress
 
-Local overhaul and all automated verification complete on phase3-polish. Final ZIP/Drive delivery is separately queued; public publishing is held for the owner photo-history decision.
+Finalization prompt authorized main/release/Drive. Pre-check passed; main fast-forward and rebuild complete.
 
 1. [x] Opening-only animated jeepney, skippable opening, no moving vehicle in fights. Evidence: 00-opening.png and three 04-match captures in each QA folder.
 2. [x] Original painted logo and four headings with live localized TMP underneath. Exact full developer title preserved. Assets/Resources/Ilaban/UI/Heading*.png.
@@ -24,10 +24,8 @@ Local overhaul and all automated verification complete on phase3-polish. Final Z
 20. [~] Fresh build configured borderless native desktop resolution; Alt+Enter toggle implemented; five exact-size native window tests passed in final confirmation. NEEDS MANUAL TEST for actual presentation monitor/fullscreen and 16:10 hardware.
 21. [~] Rubric behavior has real automated evidence; no Exceeds/grade guarantee. Physical feel and human theme/Tagalog review remain NEEDS MANUAL TEST.
 22. [x] Checklist covers 1-25; UPDATE_PROGRESS.md and handoff keep evidence and next commands.
-23. [~] Latest Unity EditMode 11/11, graphics-enabled PlayMode 10/10, 65 assertions and real-folder build passed. Final five-size/native animation confirmation passed; 75 UI and 108 animation captures verified. Final ZIP extraction is QUEUED SEPARATELY; hardware/clean-PC checks NEEDS MANUAL TEST.
-24. [~] All source work stays on phase3-polish. PUBLIC repo visibility rechecked with gh repo view. No push/merge/rewrite; publishing held for owner decision on reference-photo history.
-25. [~] README download/unzip/controls/submission guide and credits prepared. Latest final ZIP, verified public release link and Drive upload are QUEUED SEPARATELY; current ZIP is older than source.
+23. [~] Latest Unity EditMode 11/11, graphics-enabled PlayMode 10/10, 65 assertions and real-folder build passed. Final five-size/native animation confirmation passed; 75 UI and 108 animation captures verified. Final ZIP extraction and full match passed; hardware/clean-PC checks NEEDS MANUAL TEST.
+24. [~] Tested source fast-forwarded to main under the finalization prompt. PUBLIC repository; no reference-photo objects in outgoing commits. No force-push/history rewrite. Final push/release verification in progress; old public history still exists.
+25. [~] Current safe ZIP extraction/full-match and Defender checks passed. B single-file EXE rejected (elevation required), excluded from uploads. README/FILE_INFO and final screenshots prepared; verified Drive/release upload in progress.
 
-Evidence: Docs/QA_EVIDENCE/final_summary.json. Editing watchdog relaunches: 0; active Codex guard blocked duplicate agents. Physical/human tests remain manual.
-
-Closure: TASK_COMPLETE.flag written after clean pre-check; watchdog stopped and IlabanAutoResume Disabled. Editing relaunch count 0. Final EXE/Drive not started.
+Drive: desktop absent, connector 100 MB limit rejects 200 MB ZIP; official rclone installed and awaiting owner Google authorization. No credentials stored in repo. Watchdog remains stopped/Disabled.

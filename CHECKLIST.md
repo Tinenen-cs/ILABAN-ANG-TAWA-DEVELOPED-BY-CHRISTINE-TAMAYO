@@ -24,9 +24,9 @@ Status: [x] verified automatically or visually; [~] NEEDS MANUAL TEST or explici
 20. [~] Fresh build configured borderless native desktop resolution; Alt+Enter toggle implemented; five exact-size native window tests passed in final confirmation. NEEDS MANUAL TEST for actual presentation monitor/fullscreen and 16:10 hardware.
 21. [~] Rubric behavior has real automated evidence; no Exceeds/grade guarantee. Physical feel and human theme/Tagalog review remain NEEDS MANUAL TEST.
 22. [x] Checklist covers 1-25; UPDATE_PROGRESS.md and handoff keep evidence and next commands.
-23. [~] Latest Unity EditMode 11/11, graphics-enabled PlayMode 10/10, 65 assertions and real-folder build passed. Final five-size/native animation confirmation passed; 75 UI and 108 animation captures verified. Final ZIP extraction is QUEUED SEPARATELY; hardware/clean-PC checks NEEDS MANUAL TEST.
-24. [~] All source work stays on phase3-polish. PUBLIC repo visibility rechecked with gh repo view. No push/merge/rewrite; publishing held for owner decision on reference-photo history.
-25. [~] README download/unzip/controls/submission guide and credits prepared. Latest final ZIP, verified public release link and Drive upload are QUEUED SEPARATELY; current ZIP is older than source.
+23. [~] Latest Unity EditMode 11/11, graphics-enabled PlayMode 10/10, 65 assertions and real-folder build passed. Final five-size/native animation confirmation passed; 75 UI and 108 animation captures verified. Final ZIP extraction and full match passed; hardware/clean-PC checks NEEDS MANUAL TEST.
+24. [~] Tested source fast-forwarded to main under the finalization prompt. PUBLIC repository; no reference-photo objects in outgoing commits. No force-push/history rewrite. Final push/release verification in progress; old public history still exists.
+25. [~] Current safe ZIP extraction/full-match and Defender checks passed. B single-file EXE rejected (elevation required), excluded from uploads. README/FILE_INFO and final screenshots prepared; verified Drive/release upload in progress.
 
 ## Rubric self-check
 
@@ -42,4 +42,4 @@ Status: [x] verified automatically or visually; [~] NEEDS MANUAL TEST or explici
 - Clean Windows PC without Unity and unsigned-app antivirus/SmartScreen behavior.
 - Actual reboot/usage-limit auto-resume with Codex App/IDE hosts closed. Lock/reset/CLI smoke/scheduler checks passed; editing relaunch count is zero because the active-process guard blocks duplicate agents.
 - Owner decision on PUBLIC reference-photo history before publishing. Photos were never uploaded or newly committed.
-- Final ZIP rebuild/extraction and EXE/Drive delivery are deliberately queued separately.
+- Current ZIP is verified; Drive/release verification is in progress. B failed and stays local.

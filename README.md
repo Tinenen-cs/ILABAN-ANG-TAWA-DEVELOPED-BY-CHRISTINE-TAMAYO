@@ -12,13 +12,18 @@ A two-player Filipino street brawler made by Christine Tamayo. Pick a character,
 
 ![Laban sa palengke](Docs/ReleasePreview/match.png)
 
-## Download and open the portable game
+## Which file to download and upload
 
-The release page is [GitHub Releases](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/latest). A new release is not published yet: final packaging/Drive is queued separately, and publishing is held for the owner decision about reference photos in public Git history. When version 1.0 is published, open the latest release and download **ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip**. On a phone, download the ZIP and transfer it to the Windows computer using a cable, cloud drive or school file service. You can also download the same ZIP directly on a school computer.
+**Upload `ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip` to Canvas.** It contains the tested Windows x64 EXE and every required companion file. Size: 200,010,588 bytes. SHA-256: `e4dbd4a302f20bca4c52c8bc8b4c66e9f55f6110e41dc16069c310c5ece905c3`.
 
-On Windows 10 or 11, right-click the ZIP and choose **Extract All**. Save it in a folder you can find, such as Documents. Open the extracted folder and double-click **ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe**. Keep the `_Data` folder, `UnityPlayer.dll` and all other included files beside the EXE. No Unity installation or game installer is needed.
+- [Google Drive folder](https://drive.google.com/drive/folders/1g1_TxVdJFwQab1QGKS9eUD65fRjbtfbH): final delivery destination; check FILE_INFO.txt for verified upload status.
+- [GitHub Release v1.0](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.0): download the ZIP asset after publication. The source repository is PUBLIC.
 
-If Windows SmartScreen shows a warning, choose **More info**, then **Run anyway**, only if you downloaded the game from the release page above. An antivirus may also ask about an unsigned student build. If it blocks the game, follow your school's device policy or ask the instructor rather than disabling protection.
+On a phone, download the ZIP then transfer it to a Windows computer, or download directly on a school PC. Right-click > Extract All, open the extracted folder and double-click **ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe**. Keep `_Data`, `UnityPlayer.dll`, `MonoBleedingEdge` and all other companions together. No Unity installation or game installer is needed.
+
+The optional single-file SFX EXE was rejected: Windows requested administrator elevation (WinError 740). It is not recommended or uploaded. Use the safe ZIP. If Canvas rejects a raw EXE, upload the ZIP; rename a ZIP only if the professor explicitly instructs you to do so.
+
+Defender scanned both candidate deliverables and found no threats on this PC. A clean-PC and unsigned-file SmartScreen check remain manual. If SmartScreen warns, verify the official download/hash and follow school policy; only choose More info > Run anyway when you trust that verified file. Never disable antivirus.
 
 ## Controls
 
@@ -43,4 +48,4 @@ Upload this exact file: **SUBMISSION/ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMA
 
 ## Project verification
 
-The source is developed with Unity 6000.6.2f1. Automated test, build, screenshot and package evidence is recorded under `Docs/QA_EVIDENCE/`, `Docs/portable_qa_results.json` and `Docs/QA_EVIDENCE/final_summary.json`. The existing `Docs/package_verification.json` describes an older ZIP; current final packaging is queued separately. See [CHECKLIST.md](CHECKLIST.md) for verified and manual items.
+The source is developed with Unity 6000.6.2f1. Automated test, build, screenshot and package evidence is recorded under `Docs/QA_EVIDENCE/`, `Docs/portable_qa_results.json` and `Docs/QA_EVIDENCE/final_summary.json`. `Docs/package_verification.json` verifies the current ZIP, fresh extraction and complete simulated match. Optional SFX rejection and desktop/Defender results are recorded under Docs. Physical keyboard/controller/clean-PC/audio tests remain manual. See [CHECKLIST.md](CHECKLIST.md) for verified and manual items.
