@@ -162,3 +162,9 @@ Next: Step 5 chibi head consistency; then 6 stage zones, 7 reach/first-to-three,
 DONE: six original-fictional chibi source sheets regenerated with built-in imagegen; three portraits/body previews and all action frames updated. Sources saved ArtSource/StrikeSheets and ActionSheets. No photos used. 272 structural/48 weapon-anchor checks and build/65 checks passed; 108 native Unity animation captures passed; three changed characters personally viewed.
 
 Next: Step 6 fixed stage zones; then 7 reach and first-to-three, 8 pause, 9 modal errors, 10 emotes.
+
+## UPDATE2 step 6 — 2026-10-28T16:18:58.485125+00:00
+
+DONE: centered stage card pivots, reduced fixed card height, separate name/description/hint zones, selected-card clear gap; subtitle Isang tuntunin. Build/65 checks and native smoke passed; highlighted Looban screenshot viewed.
+
+Next: Step 7 common visual reach, short approach, persistent first-to-three match; then 8 pause, 9 modal errors, 10 emotes, 11 ambience.

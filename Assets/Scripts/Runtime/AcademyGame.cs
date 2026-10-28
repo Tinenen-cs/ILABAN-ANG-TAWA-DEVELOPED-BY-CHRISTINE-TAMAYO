@@ -205,7 +205,7 @@ namespace Hexbound
                 case "Manlalaro 1":return "Player 1";case "Manlalaro 2":return "Player 2";case "Kumpirmahin: F":return "Confirm: F";case "Kumpirmahin: Ctrl kanan / 0":return "Confirm: Right Ctrl / 0";
                 case "KALIWA / KANAN  PUMILI    ENTER / SUNTOK  KUMPIRMAHIN":return "LEFT / RIGHT  SELECT    ENTER / PUNCH  CONFIRM";case "KALIWA / KANAN  PUMILI    SUNTOK  PILIIN":return "LEFT / RIGHT  SELECT    PUNCH  CONFIRM";
                 case "Isang suntok, isang hakbang paatras. Limang sunod na tama: hilo.\nItulak ang katunggali sa imburnal upang manalo.":return "One punch, one step back. Five hits in a row cause dizziness.\nPush your rival into the drain to win.";
-                case "LARO NG BARANGAY":return "BARANGAY BRAWL";case "Pormal":return "Formal";case "Kabataan":return "Youth";
+                case "L A R O   N G   B A R A N G A Y":return "B A R A N G A Y   B R A W L";case "Tatlong lugar. Isang tuntunin: iwasan ang imburnal.":return "Three places. One rule: avoid the drain.";case "LARO NG BARANGAY":return "BARANGAY BRAWL";case "Pormal":return "Formal";case "Kabataan":return "Youth";
                 case "MGA PINDUTAN":return "CONTROLS";case "Mga galaw at tunog ng laro.":return "Movement and sound settings.";case "Looban":return "Neighborhood Lane";
                 case "Kalye sa Palengke":return "Market Street";case "Plaza ng Barangay":return "Barangay Plaza";
                 case "Sa pagitan ng mga puwesto, tawa ang pinakamabentang paninda.":return "Between the stalls, laughter is the best seller.";
@@ -353,19 +353,19 @@ namespace Hexbound
         void Confirm(int side) {if(Ready[side])return;Ready[side]=true;readyAt[side]=clock;Sound("confirm_sting");QueueCharacterCue(Selected[side]);if(Ready[0]&&Ready[1]) Show(ScreenState.StageSelect);}
         void StageSelect()
         {
-            Shade(.68f);Heading("Pumili ng Entablado","Tatlong lugar. Iisang tuntunin: iwasan ang imburnal.");
+            Shade(.68f);Heading("Pumili ng Entablado","Tatlong lugar. Isang tuntunin: iwasan ang imburnal.");
             cards=new RectTransform[3];stageBars=new Image[3];
             for(int i=0;i<3;i++) {
                 int index=i;float x=93+i*371;
-                var r=Rect(view,"Entablado "+i,new Rect(x,160,350,390));cards[i]=r;
-                var stageSurface=RoundedPanel(r,new Rect(0,0,350,390),new Color(.05f,.10f,.14f));stageSurface.raycastTarget=true;var stageButton=stageSurface.gameObject.AddComponent<Button>();stageButton.targetGraphic=stageSurface;stageButton.navigation=new Navigation{mode=Navigation.Mode.None};var stageFeedback=stageSurface.gameObject.AddComponent<PlateButtonFeedback>();stageFeedback.image=stageSurface;var stageOutline=stageSurface.gameObject.AddComponent<Outline>();stageOutline.enabled=false;stageFeedback.outline=stageOutline;stageButton.onClick.AddListener(()=>ChooseStage(index));stageBars[i]=Image(r,new Rect(5,382,340,6),gold);
-                var crop=Rect(r,"Rounded preview",new Rect(10,8,330,300));var mask=crop.gameObject.AddComponent<Image>();mask.sprite=PlateSprite();mask.type=UnityEngine.UI.Image.Type.Sliced;mask.color=Color.white;crop.gameObject.AddComponent<Mask>().showMaskGraphic=false;
+                var r=Rect(view,"Entablado "+i,new Rect(x,157,350,365));r.pivot=new Vector2(.5f,.5f);r.anchoredPosition=new Vector2(x+175,-339.5f);cards[i]=r;
+                var stageSurface=RoundedPanel(r,new Rect(0,0,350,365),new Color(.05f,.10f,.14f));stageSurface.raycastTarget=true;var stageButton=stageSurface.gameObject.AddComponent<Button>();stageButton.targetGraphic=stageSurface;stageButton.navigation=new Navigation{mode=Navigation.Mode.None};var stageFeedback=stageSurface.gameObject.AddComponent<PlateButtonFeedback>();stageFeedback.image=stageSurface;var stageOutline=stageSurface.gameObject.AddComponent<Outline>();stageOutline.enabled=false;stageFeedback.outline=stageOutline;stageButton.onClick.AddListener(()=>ChooseStage(index));stageBars[i]=Image(r,new Rect(12,352,326,5),gold);
+                var crop=Rect(r,"Rounded preview",new Rect(10,8,330,280));var mask=crop.gameObject.AddComponent<Image>();mask.sprite=PlateSprite();mask.type=UnityEngine.UI.Image.Type.Sliced;mask.color=Color.white;crop.gameObject.AddComponent<Mask>().showMaskGraphic=false;
                 stageFeedback.onHover=()=>Sound("menu_move");
                 Raw(crop,new Rect(-120,-10,580,326),stages[i]);
-                Image(r,new Rect(10,309,330,71),new Color(.025f,.05f,.07f,.97f));Label(r,new Rect(15,319,320,50),Roster.Stages[i],30);
+                RoundedPanel(r,new Rect(10,290,330,57),new Color(.025f,.05f,.07f,.97f));Label(r,new Rect(15,294,320,45),Roster.Stages[i],30);
 
             }
-            focusLabel=Label(view,new Rect(150,550,980,45),Tr(Roster.StageDescriptions[selectedArena]),25,gold);
+            focusLabel=Label(view,new Rect(150,558,980,44),Tr(Roster.StageDescriptions[selectedArena]),25,gold);
             Button(view,new Rect(35,646,205,52),"Bumalik",OpenSelect);Button(view,new Rect(1040,646,205,52),"Simulan",StartMatch);
             Label(view,new Rect(260,645,760,53),"KALIWA / KANAN  PUMILI    ENTER / SUNTOK  KUMPIRMAHIN",20,gold);
         }
