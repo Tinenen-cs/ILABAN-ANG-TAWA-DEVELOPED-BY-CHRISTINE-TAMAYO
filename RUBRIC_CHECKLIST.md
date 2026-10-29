@@ -22,7 +22,7 @@ Current evidence supersedes historical release reports. Windows x64, Unity6000.6
 | English/glyph/audio audit | MET | FINAL_STATIC_AUDIT.json:0 English candidates,0 missing refs/glyphs/clip samples;38clips |
 | Fullscreen/Alt+Enter, no console; EXE alone in2emptyfolders | MET |44 native1920captures, two full3-win matches, clean logs/exit0; packaged screenshots viewed; Docs/update4_single_exe_tests.json |
 | Current Defender/hash | MET | Windows Defender exit0/found no threats; SHA/size in SUBMISSION/FILE_INFO.txt and defender_update4.json |
-| GitHub current release readback | NOT MET | Publishing next; do not treat old release as current |
+| GitHub current release readback | MET | v1.3-update4 PUBLIC release; all7 server SHA256 digests/sizes match local assets; update4_release_verification.json |
 | Actual keyboard rollover, physical gamepads/USB/hot-swap | NEEDS MANUAL TEST | Automated virtual-device tests cannot verify physical devices |
 | Sound quality, Tagalog phrasing and art consistency | NEEDS MANUAL TEST | Human listening/review required; automated routing/layout passed |
 | Clean school PC/.NET/unsigned SmartScreen; steady60fps | NEEDS MANUAL TEST | Same-machine isolated tests are not clean-PC/hardware proof |
@@ -36,3 +36,7 @@ Final Canvas EXE: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DE
 Size: 213752320 bytes. SHA-256: `b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f`.
 
 UPDATE4 report: Docs/QA_EVIDENCE/update4_final_summary.json.
+
+Release: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.3-update4
+
+Direct EXE: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.3-update4/ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.exe

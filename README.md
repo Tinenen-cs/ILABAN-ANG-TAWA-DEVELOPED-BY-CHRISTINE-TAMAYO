@@ -20,7 +20,7 @@ Settings now contain language, master, Music (background) and Sound effects. Tag
 
 Current release verification is recorded in RUBRIC_CHECKLIST.md and Docs/QA_EVIDENCE/update4_final_summary.json. Older release reports below are historical. No Google Drive is used for UPDATE4. Physical input, listening and clean-PC checks remain manual.
 
-Canvas file: **213,752,320 bytes**, SHA-256 `b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f`. Single EXE verified alone in two empty folders,44 captures/two complete matches; Defender clean. EditMode15/15, PlayMode23/23,65 rule checks,80 current four-resolution screens and48 fresh Hilo states. Release publication next: [UPDATE4](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.3-update4).
+Canvas file: **213,752,320 bytes**, SHA-256 `b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f`. Single EXE verified alone in two empty folders,44 captures/two complete matches; Defender clean. EditMode15/15, PlayMode23/23,65 rule checks,80 current four-resolution screens and48 fresh Hilo states. Published and all seven server hashes/sizes verified: [UPDATE4](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.3-update4).
 
 ## Controls
 
@@ -45,4 +45,4 @@ Upload the verified outer single EXE in SUBMISSION. Exact hash/size and current 
 
 ## Project verification
 
-The source is developed with Unity 6000.6.2f1. Automated test, build, screenshot and package evidence is recorded under `Docs/QA_EVIDENCE/`, `Docs/portable_qa_results.json` and `Docs/QA_EVIDENCE/final_summary.json`. `Docs/package_verification.json` verifies the current ZIP, fresh extraction and complete simulated match. Optional SFX rejection and desktop/Defender results are recorded under Docs. Physical keyboard/controller/clean-PC/audio tests remain manual. See [CHECKLIST.md](CHECKLIST.md) for verified and manual items.
+The source is developed with Unity 6000.6.2f1. Automated test, build, screenshot and package evidence is recorded under `Docs/QA_EVIDENCE/`, `Docs/update4_final_qa.json` and `Docs/QA_EVIDENCE/update4_final_summary.json`. `Docs/package_verification.json` verifies the current ZIP, fresh extraction and complete simulated match. Current release SHA256/size readback is recorded in `Docs/QA_EVIDENCE/update4_release_verification.json`. Older SFX rejection reports are historical. Physical keyboard/controller/clean-PC/audio tests remain manual. See [CHECKLIST.md](CHECKLIST.md) for verified and manual items.

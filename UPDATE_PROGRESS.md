@@ -1,3 +1,27 @@
+# UPDATE4 COMPLETE - 2026-10-29
+
+This is the authoritative current state. Earlier sections below are history, not queued instructions. No Google Drive work is authorized for UPDATE4.
+
+Done: task1 confirm-only Handa na, separate Simulan/readiness pulse/hint, isolated cancel, no same-frame/held press bleed, stage-choice/start separation; keyboard/two-gamepad/mouse tests. Task2 four settings rows/no gear icons, locked Pormal/deleted old save, native music/effects mixer separation and independent slider tests. Task3 real Windowsx64 rebuild, all suites, four-resolution screenshots/viewing, current portable/release verification and Explorer selection. No code/task implementation remains.
+
+Verification: EditMode15/15, graphics PlayMode23/23 including RubricTests/InputAndCanvasTests,65 rule assertions, zero compiler errors or warnings.80 fresh native screenshots at1280x720,1366x768,1920x1080,2560x1440, all20-screen contact sheets viewed.48 fresh actual incoming-Hilo states on both sides/all3maps, fill1-5/same victim dizzy/break/recovery reset; DuelModel blob unchanged. English/glyph/audio audit clean,38clips. Fresh extractedZIP/full3-win match passed. Outer EXE alone passed emptyTemp and space-path folders,44native1920 screenshots/two full3-drain-win matches; Alt+Enter FullScreenWindow/Windowed/FullScreenWindow without title activation; logs contain no error/warning/exception/failed lines. Windows Defender custom scan found no threats. Complete backup folder byte-matches Builds/Windows. Current packaged screenshots personally viewed.
+
+Canvas EXE: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe
+Size213752320bytes; SHA256 b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f.
+Release: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.3-update4
+Direct EXE: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.3-update4/ILABAN.ANG.TAWA.DEVELOPED.BY.CHRISTINE.TAMAYO.exe
+Repository PUBLIC; normal main pushes, no history rewrite. Seven release assets verified by server SHA256 and size; final guide/checklist edits are reuploaded and rechecked before stopping. No reference photos used/tracked/uploaded. Source/package checkpoint0f2af6d; final documentation commits follow. Current final HEAD/UTC stored in ignored RESUME_STATE.txt.
+
+Explorer launched with /select on this exact EXE. Selected Type Application,203MB and expected SUBMISSION location confirmed through accessibility; Explorer screenshot personally viewed. Current summaries: Docs/QA_EVIDENCE/update4_final_summary.json and update4_release_verification.json; FILE_INFO.txt; RUBRIC_CHECKLIST.md. Historical animation reports are explicitly historical; this update does not alter art.
+
+In progress: none after final guide readback/clean-tree check. NEEDS MANUAL TEST: physical keyboard rollover, actual gamepad/USB/hot-swap; human sound/Tagalog/art; clean presentationPC/.NET/unsigned SmartScreen and steady60fps on other hardware. Watchdog remains disabled,0 editing relaunches. Existing plugged-in never-sleep setting is unchanged from earlier work; restore desired values with powercfg /change standby-timeout-ac <minutes> and monitor-timeout-ac <minutes>.
+
+Next five owner checks: launch this outerEXE on presentationPC; ready both players and use separateSimulan; test actual keyboard/gamepads; check music/effects/Alt+Enter; play5hits then drain fall through3wins. These are human checks, not unfinished automated work.
+
+Exact resume command: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md UPDATE4 COMPLETE, RUBRIC_CHECKLIST.md and RESUME_STATE.txt; run git status. UPDATE4 implementation/tests/portableEXE/GitHub delivery are complete. Do not rebuild or redo completed work. Continue only a new explicit owner request or documented manual checks. No historical Drive tasks, no reference photos, no history rewrite."`
+
+---
+
 # UPDATE4 LOCAL RELEASE VERIFIED; GITHUB PUBLICATION NEXT
 
 Done: steps1/2 and finalQA complete. EditMode15/15, graphics PlayMode23/23,65 rule checks, zero errors/warnings.80 current four-resolution screens plus48 fresh both-side/all-map Hilo states viewed. Fresh ZIP extraction/full3-win match passed. Outer EXE alone passed emptyTemp and path-with-spaces,44 native captures and2full3-win matches, Alt+Enter toggles/title consumption, clean logs/exit0. Windows Defender found no threats. Backup matches currentBuilds. FILE_INFO and RUBRIC updated; no Drive. Current EXE213752320bytes SHA b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f.
