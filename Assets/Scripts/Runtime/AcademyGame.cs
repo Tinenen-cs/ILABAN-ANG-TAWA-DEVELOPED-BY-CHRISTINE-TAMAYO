@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
@@ -113,7 +114,10 @@ namespace Hexbound
             foreach(var clip in Resources.LoadAll<AudioClip>("Ilaban/Audio")) clips[clip.name]=clip;
             music=gameObject.AddComponent<AudioSource>();sfx=gameObject.AddComponent<AudioSource>();highlight=gameObject.AddComponent<AudioSource>();
             music.loop=true;highlight.loop=false;
-            reactions.Mode=PlayerPrefs.GetInt("Ilaban.ReactionStyle",0)==1?LanguageMode.GenZ:LanguageMode.Pormal;
+            var mixer=Resources.Load<AudioMixer>("Ilaban/Audio/IlabanAudio");
+            music.outputAudioMixerGroup=mixer.FindMatchingGroups("Musika")[0];
+            sfx.outputAudioMixerGroup=highlight.outputAudioMixerGroup=mixer.FindMatchingGroups("Tunog")[0];
+            PlayerPrefs.DeleteKey("Ilaban.ReactionStyle");PlayerPrefs.Save(); // Migrate old preferences; plain Pormal is locked.
             master=PlayerPrefs.GetFloat("Ilaban.Master",.8f);musicLevel=PlayerPrefs.GetFloat("Ilaban.Music",.55f);soundLevel=PlayerPrefs.GetFloat("Ilaban.Sound",.7f);ApplyAudio();
             language=PlayerPrefs.GetInt("Ilaban.Language",0)==1?1:0;
             if(FindAnyObjectByType<AudioListener>()==null) gameObject.AddComponent<AudioListener>();
@@ -177,7 +181,7 @@ namespace Hexbound
             text=Tr(text);
             var r=Rect(parent,"Teksto",rect);var t=r.gameObject.AddComponent<TextMeshProUGUI>();t.font=size>=27?font:bodyFont;t.text=text;t.fontSize=size;t.enableAutoSizing=true;t.fontSizeMax=size;t.fontSizeMin=Mathf.Max(10,size*.6f);t.color=color??cream;t.alignment=alignment==TextAnchor.MiddleLeft?TextAlignmentOptions.MidlineLeft:alignment==TextAnchor.MiddleRight?TextAlignmentOptions.MidlineRight:TextAlignmentOptions.Midline;t.raycastTarget=false;t.textWrappingMode=TextWrappingModes.Normal;t.overflowMode=TextOverflowModes.Truncate;return t;
         }
-        Button Button(Transform parent,Rect rect,string text,Action action,bool enabled=true)
+        Button Button(Transform parent,Rect rect,string text,Action action,bool enabled=true,bool showIcon=true)
         {
             bool roundBack=false; // Shared full button geometry and centered labels on every screen.
             if(roundBack){Label(parent,new Rect(rect.x+63,rect.y+4,135,rect.height-8),text,22,cream,TextAnchor.MiddleLeft);rect.width=rect.height;}
@@ -188,9 +192,9 @@ namespace Hexbound
             var colors=b.colors;colors.normalColor=Color.white;colors.highlightedColor=new Color(1f,.84f,.48f);colors.pressedColor=new Color(.75f,.9f,.83f);colors.selectedColor=new Color(1f,.88f,.62f);colors.disabledColor=new Color(.48f,.48f,.46f);colors.colorMultiplier=1;colors.fadeDuration=.08f;b.colors=colors;
             var outline=image.gameObject.AddComponent<Outline>();outline.effectColor=new Color32(239,196,119,180);outline.effectDistance=new Vector2(1.5f,-1.5f);outline.enabled=false;
             var feedback=image.gameObject.AddComponent<PlateButtonFeedback>();feedback.image=image;feedback.outline=outline;feedback.onHover=()=>Sound("menu_move");
-            int icon=ButtonIcon(text);
+            int icon=showIcon?ButtonIcon(text):-1;
             if(icon>=0){var ir=Rect(image.transform,"Sagisag",new Rect(13,rect.height/2-10,20,20));var graphic=ir.gameObject.AddComponent<PlateIcon>();graphic.kind=icon;graphic.color=cream;graphic.raycastTarget=false;feedback.icon=ir;}
-            b.onClick.AddListener(()=>{Sound("menu_confirm");action();});Label(image.transform,new Rect(40,4,Mathf.Max(1,rect.width-80),rect.height-8),roundBack?"":Tr(text),25,cream);return b;
+            b.onClick.AddListener(()=>{Sound("menu_confirm");action();});Label(image.transform,new Rect(showIcon?40:16,4,Mathf.Max(1,rect.width-(showIcon?80:32)),rect.height-8),roundBack?"":Tr(text),25,cream);return b;
         }
         static int ButtonIcon(string text) {
             if(text=="Bumalik")return 0;
@@ -221,7 +225,7 @@ namespace Hexbound
             switch(value) {
                 case "Simulan ang Laro":return "Start Game";case "Mga Kontrol":return "Settings";case "Lumabas":case "Umalis":return "Exit";case "Pumili ng Tauhan":return "Choose a Fighter";case "Pumili ng Entablado":return "Choose an Arena";
                 case "Pumili at kumpirmahin ang tauhan ng bawat manlalaro.":return "Choose and confirm a fighter for each player.";
-                case "Pindutin ang Simulan para magpatuloy.":return "Press Start to continue.";case "Bumalik":return "Back";case "Simulan":return "Start";case "Kumpirmahin":return "Confirm";case "Handa na":return "Ready";case "Magpatuloy":return "Resume";case "Pangunahing Talaan":return "Main Menu";case "Pansamantalang Ihinto":return "Paused";
+                case "Pindutin ang Simulan para magpatuloy.":return "Press Start to continue.";case "Musika (tugtog sa likod)":return "Music (background)";case "Tunog (suntok at epekto)":return "Sound effects";case "Bumalik":return "Back";case "Simulan":return "Start";case "Kumpirmahin":return "Confirm";case "Handa na":return "Ready";case "Magpatuloy":return "Resume";case "Pangunahing Talaan":return "Main Menu";case "Pansamantalang Ihinto":return "Paused";
                 case "Paunawa":return "Notice";case "Sige":return "OK";
                 case "Pumili at kumpirmahin muna ang tauhan ng bawat manlalaro.":return "Choose and confirm each player's fighter first.";
                 case "Pumili muna ng isang entablado.":return "Choose an arena first.";case "Hindi wasto ang napiling ayos.":return "That setting is not valid.";case "Hindi pa maaaring piliin ang kilos na ito.":return "That action is not available yet.";
@@ -230,7 +234,7 @@ namespace Hexbound
                 case "Manlalaro 1":return "Player 1";case "Manlalaro 2":return "Player 2";case "Kumpirmahin: F":return "Confirm: F";case "Kumpirmahin: Ctrl kanan / 0":return "Confirm: Right Ctrl / 0";
                 case "KALIWA / KANAN  PUMILI    ENTER / SUNTOK  KUMPIRMAHIN":return "LEFT / RIGHT  SELECT    ENTER / PUNCH  CONFIRM";case "KALIWA / KANAN  PUMILI    SUNTOK  PILIIN":return "LEFT / RIGHT  SELECT    PUNCH  CONFIRM";
                 case "Isang suntok, isang hakbang paatras. Limang sunod na tama: hilo.\nItulak ang katunggali sa imburnal upang manalo.":return "One punch, one step back. Five hits in a row cause dizziness.\nPush your rival into the drain to win.";
-                case "L A R O   N G   B A R A N G A Y":return "B A R A N G A Y   B R A W L";case "Tatlong lugar. Isang tuntunin: iwasan ang imburnal.":return "Three places. One rule: avoid the drain.";case "LARO NG BARANGAY":return "BARANGAY BRAWL";case "Pormal":return "Formal";case "Kabataan":return "Youth";
+                case "L A R O   N G   B A R A N G A Y":return "B A R A N G A Y   B R A W L";case "Tatlong lugar. Isang tuntunin: iwasan ang imburnal.":return "Three places. One rule: avoid the drain.";case "LARO NG BARANGAY":return "BARANGAY BRAWL";case "Pormal":return "Formal";
                 case "MGA PINDUTAN":return "CONTROLS";case "Mga galaw at tunog ng laro.":return "Movement and sound settings.";case "Looban":return "Neighborhood Lane";
                 case "Kalye sa Palengke":return "Market Street";case "Plaza ng Barangay":return "Barangay Plaza";
                 case "Sa pagitan ng mga puwesto, tawa ang pinakamabentang paninda.":return "Between the stalls, laughter is the best seller.";
@@ -347,7 +351,8 @@ namespace Hexbound
         public void ActivateTitle(int index) {if(index==0) OpenSelect();else if(index==1){fromFight=false;setting=0;Show(ScreenState.Controls);}else RequestExit();}
         public void RequestExit(){if(exitPanel==null||exitOpen)return;exitReturnFocus=focus;exitOpen=true;focus=1;screenEnteredFrame=Time.frameCount;exitPanel.gameObject.SetActive(true);exitPanel.SetAsLastSibling();}
         public void SetLanguage(int value){if(value<0||value>1){ShowError("Hindi wasto ang napiling ayos.");return;}language=value==1?1:0;PlayerPrefs.SetInt("Ilaban.Language",language);PlayerPrefs.Save();if(ScreenNow==ScreenState.Controls)Show(ScreenState.Controls);}
-        public void SetReactionStyle(int value){if(value<0||value>1){ShowError("Hindi wasto ang napiling ayos.");return;}reactions.Mode=value==1?LanguageMode.GenZ:LanguageMode.Pormal;PlayerPrefs.SetInt("Ilaban.ReactionStyle",value==1?1:0);PlayerPrefs.Save();}
+        public void SetReactionStyle(int value){if(value<0||value>1){ShowError("Hindi wasto ang napiling ayos.");return;}PlayerPrefs.DeleteKey("Ilaban.ReactionStyle");PlayerPrefs.Save();}
+        // Legacy SetReactionStyle callers cannot restore the removed option.
         public void CancelExit(){exitOpen=false;if(exitPanel!=null)exitPanel.gameObject.SetActive(false);focus=exitReturnFocus;screenEnteredFrame=Time.frameCount;}
         public void QuitGame(){
 #if UNITY_EDITOR
@@ -536,16 +541,17 @@ namespace Hexbound
                 Label(card.transform,new Rect(12,151,334,23),p==2?(language==0?"B: Bumalik":"B: Back"):(language==0?"H: Mga Kontrol   ESC: Ihinto":"H: Controls   ESC: Pause"),15,cream);
             }
             Label(view,new Rect(120,338,1040,48),"Isang suntok, isang hakbang paatras. Limang sunod na tama: hilo.\nItulak ang katunggali sa imburnal upang manalo.",21,gold);
-            WoodPanel(view,new Rect(170,390,940,210));menuButtons=new Button[6];
+            WoodPanel(view,new Rect(170,390,940,212));menuButtons=new Button[5];
             settingsSliders=new Slider[3];settingValues=new TMP_Text[3];
-            for(int i=0;i<5;i++){
-                int index=i;var row=Button(view,new Rect(196,400+i*37,888,34),SettingText(i),()=>{if(index<2){setting=focus=index;AdjustSetting(1);}});menuButtons[i]=row;
-                if(i<2)continue;
-                var texts=row.GetComponentsInChildren<TMP_Text>();var label=texts[0];string[] title={"Pangunahing Lakas","Musika","Tunog"};label.text=Tr(title[i-2]);label.alignment=TextAlignmentOptions.MidlineLeft;label.rectTransform.sizeDelta=new Vector2(465,26);
-                settingValues[i-2]=Label(row.transform,new Rect(485,6,72,22),Mathf.RoundToInt((i==2?master:i==3?musicLevel:soundLevel)*100)+"%",17,gold,TextAnchor.MiddleRight);
-                settingsSliders[i-2]=VolumeSlider(row.transform,new Rect(568,10,290,14),i-2);
+            string[] titles={"Pangunahing Lakas","Musika (tugtog sa likod)","Tunog (suntok at epekto)"};
+            for(int i=0;i<4;i++){
+                int index=i;var row=Button(view,new Rect(196,401+i*48,888,42),SettingText(i),()=>{setting=focus=index;if(index==0)AdjustSetting(1);},true,false);menuButtons[i]=row;
+                if(i==0)continue;
+                int audio=i-1;var label=row.GetComponentInChildren<TMP_Text>();label.text=Tr(titles[audio]);label.alignment=TextAlignmentOptions.MidlineLeft;label.rectTransform.sizeDelta=new Vector2(450,34);
+                settingValues[audio]=Label(row.transform,new Rect(485,10,72,22),Mathf.RoundToInt((i==1?master:i==2?musicLevel:soundLevel)*100)+"%",17,gold,TextAnchor.MiddleRight);
+                settingsSliders[audio]=VolumeSlider(row.transform,new Rect(568,14,290,14),audio);
             }
-            menuButtons[5]=Button(view,new Rect(510,618,260,52),fromFight?"Magpatuloy":"Bumalik",CloseControls);
+            menuButtons[4]=Button(view,new Rect(510,618,260,52),fromFight?"Magpatuloy":"Bumalik",CloseControls);
             Label(view,new Rect(270,681,740,25),language==0?"PATAAS / PABABA: PUMILI    KALIWA / KANAN: BAGUHIN":"UP / DOWN: SELECT    LEFT / RIGHT: CHANGE",17,gold);
         }
         Slider VolumeSlider(Transform parent,Rect area,int index) {
@@ -561,16 +567,15 @@ namespace Hexbound
         }
         string SettingText(int i) {
             if(i==0)return (language==0?"Wika ng Laro":"Game Language")+": "+(language==0?"Tagalog":"English");
-            if(i==1)return Tr("Wika ng Reaksyon")+": "+(reactions.Mode==LanguageMode.Pormal?Tr("Pormal"):Tr("Kabataan"));
-            string[] labels={"Pangunahing Lakas","Musika","Tunog"};int n=i-2;float value=n==0?master:n==1?musicLevel:soundLevel;return Tr(labels[n])+": "+Mathf.RoundToInt(value*100)+"%";
+            string[] labels={"Pangunahing Lakas","Musika (tugtog sa likod)","Tunog (suntok at epekto)"};int n=i-1;float value=n==0?master:n==1?musicLevel:soundLevel;return Tr(labels[n])+": "+Mathf.RoundToInt(value*100)+"%";
         }
         void AdjustSetting(int direction) {
-            if(focus==5) return;
-            int i=setting;
+            if(focus==4)return;
+            int i=setting;if(i<0||i>3){ShowError("Hindi wasto ang napiling ayos.");return;}
             if(i==0){SetLanguage(1-language);return;}
-            if(i==1)SetReactionStyle(reactions.Mode==LanguageMode.Pormal?1:0);
-            if(i==2) master=Mathf.Clamp01(master+direction*.1f);if(i==3) musicLevel=Mathf.Clamp01(musicLevel+direction*.1f);if(i==4) soundLevel=Mathf.Clamp01(soundLevel+direction*.1f);
-            if(i>=2){SaveAudio();if(settingsSliders!=null)settingsSliders[i-2].SetValueWithoutNotify(i==2?master:i==3?musicLevel:soundLevel);if(settingValues!=null)settingValues[i-2].text=Mathf.RoundToInt((i==2?master:i==3?musicLevel:soundLevel)*100)+"%";}Sound("menu_move");
+            if(i==1)master=Mathf.Clamp01(master+direction*.1f);if(i==2)musicLevel=Mathf.Clamp01(musicLevel+direction*.1f);if(i==3)soundLevel=Mathf.Clamp01(soundLevel+direction*.1f);
+            SaveAudio();settingsSliders?[i-1].SetValueWithoutNotify(i==1?master:i==2?musicLevel:soundLevel);
+            if(settingValues!=null)settingValues[i-1].text=Mathf.RoundToInt((i==1?master:i==2?musicLevel:soundLevel)*100)+"%";Sound("menu_move");
         }
         void CloseControls() {Show(fromFight?ScreenState.Fight:ScreenState.Title);Paused=fromFight;}
         void Update()
@@ -617,8 +622,10 @@ namespace Hexbound
                 if(controls.Any("Cancel"))OpenSelect();else if(dir==0&&(controls.Any("Confirm")||controls.Any("Proceed")))TryStartStage();
             }
             else if(ScreenNow==ScreenState.Controls) {
-                NavMenu(6);setting=focus;if(controls.Navigate(0).x!=0||controls.Navigate(1).x!=0)AdjustSetting(controls.Navigate(0).x!=0?controls.Navigate(0).x:controls.Navigate(1).x);
-                if(controls.Any("Cancel")||controls.Any("Help"))CloseControls();else if(controls.Any("Confirm")) {if(focus==5)CloseControls();else AdjustSetting(1);}
+                int vertical=controls.Navigate(0).y!=0?-controls.Navigate(0).y:-controls.Navigate(1).y;
+                if(vertical!=0){focus=(focus+vertical+5)%5;Sound("menu_move");}
+                setting=focus;if(controls.Navigate(0).x!=0||controls.Navigate(1).x!=0)AdjustSetting(controls.Navigate(0).x!=0?controls.Navigate(0).x:controls.Navigate(1).x);
+                if(controls.Any("Cancel")||controls.Any("Help"))CloseControls();else if(controls.Any("Confirm")) {if(focus==4)CloseControls();else AdjustSetting(1);}
             }
             else if(ScreenNow==ScreenState.Fight) UpdateFight();
             if(Time.frameCount==screenEnteredFrame)return;

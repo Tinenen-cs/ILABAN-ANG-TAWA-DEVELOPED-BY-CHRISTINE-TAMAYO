@@ -1,3 +1,13 @@
+# UPDATE4 STEP2 VERIFIED - 2026-10-29
+
+Done: settings now have language/master/music/effects only, no row icons; exact explanatory music/effects labels, keyboard/gamepad navigation and clean four-resolution layouts. Reaction bank locked to Pormal; old saved preference deleted and cannot restore Kabataan. Native Master/Musika/Tunog mixer groups separate music from opening/menu/hit/action cues. Category/master slider isolation and migration tests passed. EditMode15/15, graphics PlayMode22/22,65 rule assertions and real Windows build exit0/zero C# diagnostics. Twelve fresh settings/opening captures at four resolutions; all eight Tagalog/English settings screenshots viewed in contact sheet. Docs/update4_step2_qa.json.
+
+In progress: step3 final regression/release. Next five: consume Alt+Enter display shortcut; all suites/65 and native four-resolution full-screen capture set; English/audio audit and rubric/docs; portable EXE-only two-folder tests/Defender/hash; normal main push/release digest verification/Explorer selection. No Drive; no reference photos. Watchdog disabled,0 relaunches.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md UPDATE4 STEP2 and CHECKLIST.md; finish step3 final regression, portable EXE and GitHub release. No Drive, no photos, no history rewrite."`
+
+---
+
 # UPDATE4 STEP1 VERIFIED - 2026-10-29
 
 Done: confirms only set Handa na; disabled Simulan has invalid-click notice, enabled state has gentle fill pulse and exact hint; dedicated ENTER/controllerStart or fresh confirm activates Simulan. Last-ready frame/held input consumed. SharedESC and isolated controllerB cancel readiness. Character/stage cards never start automatically. EditMode15/15, PlayMode19/19,65 checks/build exit0;20native1280 screenshots/full3-win match passed; one-ready/both-ready/cancel/map screens personally viewed.

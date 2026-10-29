@@ -1,0 +1,86 @@
+[
+  {
+    "resolution": "1280x720",
+    "passed": true,
+    "exit": 0,
+    "issues": [],
+    "captures": 3,
+    "files": [
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/1280x720/00-opening.png",
+        "sha256": "0be606b21321a05be88d26fa0a0dddcfecb306a500f4be7d7d44caae26952267"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/1280x720/08-controls.png",
+        "sha256": "588b04abdc84f56b73170a44ddacebef322026b76f6e1a42988eaeadaa6b5f61"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/1280x720/10-settings-english.png",
+        "sha256": "06235b5224eedc9d3f9a74c96c54c4db65fd1640145bd6bc07a06312f3a724a0"
+      }
+    ]
+  },
+  {
+    "resolution": "1366x768",
+    "passed": true,
+    "exit": 0,
+    "issues": [],
+    "captures": 3,
+    "files": [
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/1366x768/00-opening.png",
+        "sha256": "a70e175a722dc48f14f4f779ac8de33eb70153d65d85eccda5b5e25a7f92f6e3"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/1366x768/08-controls.png",
+        "sha256": "eaf7a8c31cf67688a1b60494b20bfce752f540c41cf3ff8e0cc222ecb89d629d"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/1366x768/10-settings-english.png",
+        "sha256": "2764b12267d4912381e734ed4757ef6f5448c0fff44375ed4bb4643fd64464cb"
+      }
+    ]
+  },
+  {
+    "resolution": "1920x1080",
+    "passed": true,
+    "exit": 0,
+    "issues": [],
+    "captures": 3,
+    "files": [
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/1920x1080/00-opening.png",
+        "sha256": "452b247fd9417fec14023e73a1be888b5764dd0fcdcdb15553a80c86dd8efbd0"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/1920x1080/08-controls.png",
+        "sha256": "feff1012ff576679ddfc7e12acaf043986fec807a6a6d38c7503864c1222aca5"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/1920x1080/10-settings-english.png",
+        "sha256": "911c1b4fa77097a576f57e7638e40dcaf1895b44d2c5f86c8273ecf51c67a75d"
+      }
+    ]
+  },
+  {
+    "resolution": "2560x1440",
+    "passed": true,
+    "exit": 0,
+    "issues": [],
+    "captures": 3,
+    "files": [
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/2560x1440/00-opening.png",
+        "sha256": "86f138b22de59856fb8438d6567ae795a258eba1459b75612e5be6df01faad04"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/2560x1440/08-controls.png",
+        "sha256": "533807dbe4961f7c7e46243c9361a6bbd3dd619cc0759ddf6f811d4a8ac3d85d"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step2/2560x1440/10-settings-english.png",
+        "sha256": "27add1ed2282513eb18a73372e6efb2379f637b7f7efbf4f4318e6ac3086280e"
+      }
+    ]
+  }
+]

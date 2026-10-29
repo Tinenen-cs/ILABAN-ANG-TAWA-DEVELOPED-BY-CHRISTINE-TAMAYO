@@ -13,7 +13,7 @@ namespace Hexbound
         public static bool Active { get; private set; }
         public static float LastCaptureAt {get;private set;}=-100;
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        static void SeedSmokeDefaults(){foreach(var arg in Environment.GetCommandLineArgs())if(arg=="-ilaban-smoke"){PlayerPrefs.SetInt("Ilaban.Language",0);PlayerPrefs.SetInt("Ilaban.ReactionStyle",0);PlayerPrefs.Save();break;}}
+        static void SeedSmokeDefaults(){foreach(var arg in Environment.GetCommandLineArgs())if(arg=="-ilaban-smoke"){PlayerPrefs.SetInt("Ilaban.Language",0);PlayerPrefs.DeleteKey("Ilaban.ReactionStyle");PlayerPrefs.Save();break;}}
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Boot() {
             var args=Environment.GetCommandLineArgs();
@@ -31,6 +31,10 @@ namespace Hexbound
             while(FindAnyObjectByType<AcademyGame>()==null)yield return null;
             var game=FindAnyObjectByType<AcademyGame>();yield return new WaitForSecondsRealtime(.5f);game.SetLanguage(0);game.SetReactionStyle(0);
             if(game.ReactionLanguage!=LanguageMode.Pormal||game.Language!=0)throw new Exception("Wrong fresh default language/reaction style");
+            if(Array.IndexOf(Environment.GetCommandLineArgs(),"-ilaban-settings-only")>=0){
+                game.Show(AcademyGame.ScreenState.Controls);yield return Capture("08-controls");game.SetLanguage(1);yield return Capture("10-settings-english");game.SetLanguage(0);
+                File.WriteAllText(Path.Combine(directory,"PASS.txt"),"UPDATE4 settings-only capture: Tagalog/English, no reaction-style row, no row icons; separate music/effects groups verified by PlayMode tests.");Application.Quit(0);yield break;
+            }
             yield return Capture("01-title");
             game.Show(AcademyGame.ScreenState.Select);yield return Capture("02-characters");
             game.Ready[0]=game.Ready[1]=false;game.TryStartSelection();

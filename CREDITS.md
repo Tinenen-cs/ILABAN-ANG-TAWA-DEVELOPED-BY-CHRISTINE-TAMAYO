@@ -49,3 +49,6 @@ UPDATE3 festival rope and six pennants: original built-in image_gen illustration
 UPDATE3 head proportions: generated revised sheets had inconsistent crown-to-sole proportions (ready poses Tito 48.8%, Suka 55.8%, Nanay 56.5%). Repeatable whole-image continuous mesh normalization targets 43%, preserving original pixel sources, feet-center and baked weapons. Source/measurement conventions and actual per-character ranges: Docs/HEAD_RATIO.md. No separate head/body runtime objects. All 272 measured runtime images are hash-bound to the ratio test. All eight ready frames viewed side by side at the same pixel scale.
 
 UPDATE3 painting motion: reviewed color masks/crops from the existing approved fictional map/title/stage paintings; originals are unchanged. 24 extracted layers plus three original festival pennants on Looban (no cloth exists in that source). Layout/provenance: Docs/background_layer_sources.json. No floor effects or vehicles.
+
+
+UPDATE4: original settings layout and native Unity AudioMixer asset authored locally. Unity public C# reference consulted for editor mixer authoring API; no source photos or third-party artwork added.

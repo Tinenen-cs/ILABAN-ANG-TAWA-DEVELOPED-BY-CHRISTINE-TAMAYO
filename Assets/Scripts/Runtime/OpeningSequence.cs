@@ -25,7 +25,7 @@ namespace Hexbound
             english=false;foreach(var arg in Environment.GetCommandLineArgs())if(arg=="-ilaban-smoke"){english=false;break;}else english=PlayerPrefs.GetInt("Ilaban.Language",0)==1;
             Application.targetFrameRate=60;
             if(FindAnyObjectByType<AudioListener>()==null)gameObject.AddComponent<AudioListener>();
-            AudioListener.volume=PlayerPrefs.GetFloat("Ilaban.Master",.8f);sound=gameObject.AddComponent<AudioSource>();sound.volume=PlayerPrefs.GetFloat("Ilaban.Sound",.7f);
+            AudioListener.volume=PlayerPrefs.GetFloat("Ilaban.Master",.8f);sound=gameObject.AddComponent<AudioSource>();sound.volume=PlayerPrefs.GetFloat("Ilaban.Sound",.7f);sound.outputAudioMixerGroup=Resources.Load<UnityEngine.Audio.AudioMixer>("Ilaban/Audio/IlabanAudio").FindMatchingGroups("Tunog")[0];
             var g=new GameObject("Pambungad Canvas",typeof(RectTransform),typeof(Canvas),typeof(CanvasScaler));g.transform.SetParent(transform,false);canvas=g.GetComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;
             var scale=g.GetComponent<CanvasScaler>();scale.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;scale.referenceResolution=new Vector2(1280,720);scale.matchWidthOrHeight=.5f;
             content=R(g.transform,new Rect(0,0,1280,720));content.anchorMin=content.anchorMax=new Vector2(.5f,.5f);content.pivot=new Vector2(.5f,.5f);content.anchoredPosition=Vector2.zero;

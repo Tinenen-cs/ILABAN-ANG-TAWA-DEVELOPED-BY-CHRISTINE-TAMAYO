@@ -86,3 +86,6 @@ UPDATE2 emotes: eight dedicated original whole-body Win and Lose source poses ea
 UPDATE2 final audit: all 38 active WAVs present, no missing runtime references and zero clipped samples. Human speaker/headphone mix remains NEEDS MANUAL TEST.
 
 UPDATE3: existing banderitas/opening and shared menu/confirm cues retained. Painted background movement is silent; uniform icons add no extra overlapping cue. No audio files replaced; all38 WAVs still require the final clipping/reference audit.
+
+
+UPDATE4: native Master/Musika/Tunog mixer added. Music source routes only to Musika; menu, punch, hit, action, select cues and opening effects route to Tunog. Master uses AudioListener. Three independent slider paths verified in PlayMode; no new clips.
