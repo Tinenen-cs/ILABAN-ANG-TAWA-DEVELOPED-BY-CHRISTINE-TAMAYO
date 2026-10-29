@@ -17,7 +17,12 @@ namespace Hexbound
         public bool ControllerDisconnected {get;private set;}
         public AcademyInputManager() {
             asset=UnityEngine.Object.Instantiate(Resources.Load<InputActionAsset>("Input/AcademyControls"));
-            for(int p=0;p<2;p++) maps[p]=asset.FindActionMap("Player"+(p+1),true);
+            for(int p=0;p<2;p++) {
+                maps[p]=asset.FindActionMap("Player"+(p+1),true);
+                var proceed=maps[p].AddAction("Proceed",InputActionType.Button);
+                if(p==0)proceed.AddBinding("<Keyboard>/enter");
+                proceed.AddBinding("<Gamepad>/start");
+            }
             Refresh(); asset.Enable();InputSystem.onDeviceChange+=DeviceChanged;
         }
         void DeviceChanged(InputDevice device,InputDeviceChange change){if(change==InputDeviceChange.Added||change==InputDeviceChange.Removed||change==InputDeviceChange.Disconnected||change==InputDeviceChange.Reconnected)Refresh();}
@@ -48,6 +53,7 @@ namespace Hexbound
         public Vector2Int Navigate(int p)=>navigation[p];
         public bool Press(int p,string action)=>maps[p].FindAction(action)?.WasPressedThisFrame()??false;
         public bool Any(string action)=>Press(0,action)||Press(1,action);
+        public bool AnyHeld(string action)=>(maps[0].FindAction(action)?.IsPressed()??false)||(maps[1].FindAction(action)?.IsPressed()??false);
         public bool StartPressed {
             get {
                 if(Keyboard.current!=null) foreach(var key in Keyboard.current.allKeys) if(key.wasPressedThisFrame) return true;

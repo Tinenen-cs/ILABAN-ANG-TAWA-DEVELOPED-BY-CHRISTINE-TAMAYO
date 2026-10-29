@@ -63,6 +63,8 @@ namespace Hexbound
         TMP_Text[] readiness;
         Actor[] selectionShowcase;
         Button[] confirmButtons,resultButtons;
+        Button selectionStartButton; TMP_Text selectionHint;
+        int selectionConsumedFrame=-1,stageChosenFrame=-1; bool selectionAwaitingRelease;
         Slider[] settingsSliders;
         TMP_Text[] settingValues;
         RectTransform exitPanel,errorPanel;
@@ -219,7 +221,7 @@ namespace Hexbound
             switch(value) {
                 case "Simulan ang Laro":return "Start Game";case "Mga Kontrol":return "Settings";case "Lumabas":case "Umalis":return "Exit";case "Pumili ng Tauhan":return "Choose a Fighter";case "Pumili ng Entablado":return "Choose an Arena";
                 case "Pumili at kumpirmahin ang tauhan ng bawat manlalaro.":return "Choose and confirm a fighter for each player.";
-                case "Bumalik":return "Back";case "Simulan":return "Start";case "Kumpirmahin":return "Confirm";case "Handa na":return "Ready";case "Magpatuloy":return "Resume";case "Pangunahing Talaan":return "Main Menu";case "Pansamantalang Ihinto":return "Paused";
+                case "Pindutin ang Simulan para magpatuloy.":return "Press Start to continue.";case "Bumalik":return "Back";case "Simulan":return "Start";case "Kumpirmahin":return "Confirm";case "Handa na":return "Ready";case "Magpatuloy":return "Resume";case "Pangunahing Talaan":return "Main Menu";case "Pansamantalang Ihinto":return "Paused";
                 case "Paunawa":return "Notice";case "Sige":return "OK";
                 case "Pumili at kumpirmahin muna ang tauhan ng bawat manlalaro.":return "Choose and confirm each player's fighter first.";
                 case "Pumili muna ng isang entablado.":return "Choose an arena first.";case "Hindi wasto ang napiling ayos.":return "That setting is not valid.";case "Hindi pa maaaring piliin ang kilos na ito.":return "That action is not available yet.";
@@ -274,7 +276,7 @@ namespace Hexbound
         void SaveAudio() {ApplyAudio();PlayerPrefs.SetFloat("Ilaban.Master",master);PlayerPrefs.SetFloat("Ilaban.Music",musicLevel);PlayerPrefs.SetFloat("Ilaban.Sound",soundLevel);}
         public void Show(ScreenState state)
         {
-            ScreenNow=state;screenEnteredFrame=Time.frameCount;enteredAt=clock;focus=0;exitOpen=false;errorOpen=false;previews.Clear();flames.Clear();confetti.Clear();cards=null;cardMarkers=null;menuButtons=null;confirmButtons=null;resultButtons=null;pausePanel=null;resultPanel=null;exitPanel=null;exitButtons=null;
+            ScreenNow=state;screenEnteredFrame=Time.frameCount;enteredAt=clock;focus=0;exitOpen=false;errorOpen=false;previews.Clear();flames.Clear();confetti.Clear();cards=null;cardMarkers=null;menuButtons=null;confirmButtons=null;selectionStartButton=null;selectionHint=null;resultButtons=null;pausePanel=null;resultPanel=null;exitPanel=null;exitButtons=null;
             if(view!=null) {view.gameObject.SetActive(false);Destroy(view.gameObject);}
             view=Rect(safe,"Screen "+state,new Rect(0,0,1280,720));view.gameObject.AddComponent<CanvasGroup>();
             for(int i=0;i<3;i++)stages[i]=MapTex(i);
@@ -336,7 +338,11 @@ namespace Hexbound
         }
         public void ShowError(string message){if(errorPanel==null)return;errorMessage.text=Tr(message);errorOpen=true;screenEnteredFrame=Time.frameCount;errorPanel.gameObject.SetActive(true);errorPanel.SetAsLastSibling();errorButton.GetComponent<PlateButtonFeedback>().SetFocused(true);Sound("menu_back");}
         public void CloseError(){errorOpen=false;if(errorPanel!=null)errorPanel.gameObject.SetActive(false);screenEnteredFrame=Time.frameCount;}
-        public void TryStartSelection(){if(!Ready[0]||!Ready[1])ShowError("Pumili at kumpirmahin muna ang tauhan ng bawat manlalaro.");else Show(ScreenState.StageSelect);}
+        public void TryStartSelection(){
+            if(ScreenNow!=ScreenState.Select||Time.frameCount==selectionConsumedFrame)return;
+            if(!Ready[0]||!Ready[1])ShowError("Pumili at kumpirmahin muna ang tauhan ng bawat manlalaro.");else Show(ScreenState.StageSelect);
+        }
+        void TryStartStage(){if(Time.frameCount!=stageChosenFrame)StartMatch();}
         public void ActivateResult(int index){if(Model==null||!Model.MatchFinished||index<0||index>2){ShowError("Hindi pa maaaring piliin ang kilos na ito.");return;}if(index==0)StartMatch();else if(index==1)OpenSelect();else RequestExit();}
         public void ActivateTitle(int index) {if(index==0) OpenSelect();else if(index==1){fromFight=false;setting=0;Show(ScreenState.Controls);}else RequestExit();}
         public void RequestExit(){if(exitPanel==null||exitOpen)return;exitReturnFocus=focus;exitOpen=true;focus=1;screenEnteredFrame=Time.frameCount;exitPanel.gameObject.SetActive(true);exitPanel.SetAsLastSibling();}
@@ -376,11 +382,22 @@ namespace Hexbound
             Label(view,new Rect(605,553,620,42),Roster.Descriptions[Selected[0]],20,playerColors[0]);
             Label(view,new Rect(605,596,620,42),Roster.Descriptions[Selected[1]],20,playerColors[1]);
             Button(view,new Rect(35,646,205,52),"Bumalik",()=>Show(ScreenState.Title));
-            Button(view,new Rect(1040,646,205,52),"Simulan",TryStartSelection);
-            Label(view,new Rect(260,642,760,58),"KALIWA / KANAN  PUMILI    F / CTRL KANAN  KUMPIRMAHIN",20,gold);
+            selectionStartButton=Button(view,new Rect(1040,646,205,52),"Simulan",TryStartSelection,Ready[0]&&Ready[1]);
+            var unavailable=selectionStartButton.gameObject.AddComponent<UnavailableButtonNotice>();unavailable.button=selectionStartButton;unavailable.onUnavailable=TryStartSelection;
+            selectionHint=Label(view,new Rect(260,642,760,58),"KALIWA / KANAN  PUMILI    F / CTRL KANAN  KUMPIRMAHIN",20,gold);
+            RefreshSelectionReadiness();
         }
         void Slant(Transform parent,Rect rect,Color color) {var r=Rect(parent,"Slanted card",rect);var g=r.gameObject.AddComponent<SlantGraphic>();g.color=color;g.raycastTarget=false;}
-        void Confirm(int side) {if(Ready[side])return;Ready[side]=true;readyAt[side]=clock;Sound("confirm_sting");QueueCharacterCue(Selected[side]);if(Ready[0]&&Ready[1]) Show(ScreenState.StageSelect);}
+        void Confirm(int side) {if(Ready[side])return;Ready[side]=true;readyAt[side]=clock;selectionConsumedFrame=Time.frameCount;selectionAwaitingRelease=true;Sound("confirm_sting");QueueCharacterCue(Selected[side]);RefreshSelectionReadiness();}
+        void RefreshSelectionReadiness(){
+            bool both=Ready[0]&&Ready[1];
+            for(int p=0;p<2;p++)if(confirmButtons!=null&&confirmButtons[p]!=null){
+                confirmButtons[p].interactable=!Ready[p];confirmButtons[p].GetComponentInChildren<TMP_Text>().text=Tr(Ready[p]?"Handa na":"Kumpirmahin");
+                if(readiness!=null)readiness[p].text=Tr("Manlalaro "+(p+1))+"\n"+(Ready[p]?Tr("Handa na"):Tr("Kumpirmahin: "+controls.Prompt(p,"Confirm")));
+            }
+            if(selectionStartButton!=null){selectionStartButton.interactable=both;var feedback=selectionStartButton.GetComponent<PlateButtonFeedback>();feedback.SetFocused(both);if(both)feedback.image.color=Color.Lerp(new Color32(151,101,59,255),new Color32(179,128,77,255),.5f+.5f*Mathf.Sin(clock*2.4f));}
+            if(selectionHint!=null)selectionHint.text=Tr(both?"Pindutin ang Simulan para magpatuloy.":"KALIWA / KANAN  PUMILI    F / CTRL KANAN  KUMPIRMAHIN");
+        }
         void StageSelect()
         {
             Shade(.68f);Heading("Pumili ng Entablado","Tatlong lugar. Isang tuntunin: iwasan ang imburnal.");
@@ -396,11 +413,11 @@ namespace Hexbound
 
             }
             focusLabel=Label(view,new Rect(150,558,980,44),Tr(Roster.StageDescriptions[selectedArena]),25,gold);
-            Button(view,new Rect(35,646,205,52),"Bumalik",OpenSelect);Button(view,new Rect(1040,646,205,52),"Simulan",StartMatch);
+            Button(view,new Rect(35,646,205,52),"Bumalik",OpenSelect);Button(view,new Rect(1040,646,205,52),"Simulan",TryStartStage);
             Label(view,new Rect(260,645,760,53),"KALIWA / KANAN  PUMILI    ENTER / SUNTOK  KUMPIRMAHIN",20,gold);
         }
         public void SelectArena(int index){if(index<0||index>=3){ShowError("Pumili muna ng isang entablado.");return;}selectedArena=index;}
-        void ChooseStage(int index) {selectedArena=index;scenery.texture=stages[index];Ambience(index,true);ambience.SetAsFirstSibling();if(focusLabel!=null)focusLabel.text=Tr(Roster.StageDescriptions[index]);Sound("carousel_slide");}
+        void ChooseStage(int index) {stageChosenFrame=Time.frameCount;selectedArena=index;scenery.texture=stages[index];Ambience(index,true);ambience.SetAsFirstSibling();if(focusLabel!=null)focusLabel.text=Tr(Roster.StageDescriptions[index]);Sound("carousel_slide");}
         public void StartMatch() {if(!Ready[0]||!Ready[1]){ShowError("Pumili at kumpirmahin muna ang tauhan ng bawat manlalaro.");return;}if(selectedArena<0||selectedArena>=3){ShowError("Pumili muna ng isang entablado.");return;}Model=new DuelModel(Selected[0],Selected[1],selectedArena);Paused=false;resultTime=0;Show(ScreenState.Fight);for(int p=0;p<2;p++)React(p,"ready");}
         Actor ActorView(Transform parent,int id,Rect area)
         {
@@ -575,16 +592,29 @@ namespace Hexbound
             }
             if(ScreenNow==ScreenState.Title) {NavMenu(3);if(controls.Any("Confirm"))ActivateTitle(focus);}
             else if(ScreenNow==ScreenState.Select) {
-                for(int p=0;p<2;p++) {if(!Ready[p]) {int dir=controls.Navigate(p).x;if(dir!=0) {Selected[p]=(Selected[p]+dir+8)%8;Sound("carousel_slide");RefreshDescriptions();QueueCharacterCue(Selected[p]);}if(controls.Press(p,"Confirm")) {Confirm(p);if(ScreenNow!=ScreenState.Select)return;}}
-                    if(controls.Press(p,"Cancel")) {if(Ready[p])Ready[p]=false;else{Show(ScreenState.Title);return;}}}
+                bool bothBefore=Ready[0]&&Ready[1];
+                if(controls.Any("Proceed")){TryStartSelection();if(ScreenNow!=ScreenState.Select||errorOpen)return;}
+                else {
+                    bool cancel0=controls.Press(0,"Cancel"),cancel1=controls.Press(1,"Cancel");
+                    if(cancel0||cancel1){
+                        bool hadReady=Ready[0]||Ready[1];
+                        for(int p=0;p<2;p++)if((p==0?cancel0:cancel1)&&Ready[p])Ready[p]=false;
+                        selectionConsumedFrame=Time.frameCount;selectionAwaitingRelease=true;
+                        if(!hadReady){Show(ScreenState.Title);return;}
+                    } else {
+                        for(int p=0;p<2;p++)if(!Ready[p]){int dir=controls.Navigate(p).x;if(dir!=0){Selected[p]=(Selected[p]+dir+8)%8;Sound("carousel_slide");RefreshDescriptions();QueueCharacterCue(Selected[p]);}if(controls.Press(p,"Confirm"))Confirm(p);}
+                        if(bothBefore&&Ready[0]&&Ready[1]&&!selectionAwaitingRelease&&controls.Any("Confirm")) {TryStartSelection();if(ScreenNow!=ScreenState.Select)return;}
+                    }
+                }
+                if(!controls.AnyHeld("Confirm")&&!controls.AnyHeld("Proceed"))selectionAwaitingRelease=false;
+                RefreshSelectionReadiness();
                 for(int p=0;p<2;p++){bool react=Ready[p]?(clock-readyAt[p]<.6f||Mathf.Repeat(clock-readyAt[p],3.2f)<.24f):clock-enteredAt<.35f;Animate(selectionShowcase[p],react?Pose.Win:Pose.Idle,(int)(clock*4)%4);}
-                for(int p=0;p<2;p++){readiness[p].text=Tr("Manlalaro "+(p+1))+"\n"+(Ready[p]?Tr("Handa na"):Tr("Kumpirmahin: "+controls.Prompt(p,"Confirm")));if(confirmButtons[p]!=null){confirmButtons[p].interactable=!Ready[p];confirmButtons[p].GetComponentInChildren<TMP_Text>().text=Tr(Ready[p]?"Handa na":"Kumpirmahin");confirmButtons[p].transform.localScale=Vector3.one;}}
                 for(int i=0;i<8;i++) {int owner=Selected[0]==i?0:Selected[1]==i?1:-1;bool active=owner>=0;cards[i].localScale=Vector3.one*(active?1.025f:1);for(int p=0;p<2;p++)cardMarkers[i][p].gameObject.SetActive(Selected[p]==i);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null){feedback.allowScale=false;feedback.SetFocused(active);}Animate(previews[i],clock<hoverUntil[i]||(owner>=0&&Ready[owner]&&clock-readyAt[owner]<.6f)?Pose.Win:Pose.Idle,(int)(clock*(active?5:3))%4);}
             }
             else if(ScreenNow==ScreenState.StageSelect) {
                 int dir=controls.Navigate(0).x!=0?controls.Navigate(0).x:controls.Navigate(1).x;if(dir!=0)ChooseStage((selectedArena+dir+3)%3);
                 for(int i=0;i<3;i++){cards[i].localScale=Vector3.one*(i==selectedArena?1.025f:.97f);stageBars[i].color=i==selectedArena?gold:new Color(.22f,.31f,.34f);var feedback=cards[i].GetComponentInChildren<PlateButtonFeedback>();if(feedback!=null){feedback.allowScale=false;feedback.SetFocused(i==selectedArena);}}
-                if(controls.Any("Cancel"))OpenSelect();else if(controls.Any("Confirm"))StartMatch();
+                if(controls.Any("Cancel"))OpenSelect();else if(dir==0&&(controls.Any("Confirm")||controls.Any("Proceed")))TryStartStage();
             }
             else if(ScreenNow==ScreenState.Controls) {
                 NavMenu(6);setting=focus;if(controls.Navigate(0).x!=0||controls.Navigate(1).x!=0)AdjustSetting(controls.Navigate(0).x!=0?controls.Navigate(0).x:controls.Navigate(1).x);
@@ -709,6 +739,10 @@ namespace Hexbound
                 for(int i=0;i<=32;i++){float a=i*Mathf.PI/16;var edge=color;edge.a=0;vh.AddVert(centre+new Vector2(Mathf.Cos(a)*r.width*ellipse.z,Mathf.Sin(a)*r.height*.48f),edge,Vector2.zero);if(i>0)vh.AddTriangle(first,first+i,first+i+1);}
             }
         }
+    }
+    public sealed class UnavailableButtonNotice : MonoBehaviour, IPointerClickHandler {
+        public Button button;public Action onUnavailable;
+        public void OnPointerClick(PointerEventData e){if(!button.interactable&&e.button==PointerEventData.InputButton.Left)onUnavailable?.Invoke();}
     }
     public sealed class PlateButtonFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
     {

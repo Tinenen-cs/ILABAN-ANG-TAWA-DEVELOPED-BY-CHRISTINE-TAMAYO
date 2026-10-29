@@ -1,0 +1,91 @@
+[
+  {
+    "resolution": "1280x720",
+    "passed": true,
+    "exit": 0,
+    "issues": [],
+    "captures": 20,
+    "files": [
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/00-opening.png",
+        "sha256": "8fa500ad69106d6dfc842c6af16f11b22b7de6e621c04b7a7875b481e4c62802"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/01-title.png",
+        "sha256": "5c3f6b0d0effd2dc7c78f87fdf7f92283373eebcdb6508256eb12ffd25794ec3"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/02-characters.png",
+        "sha256": "94527a0fb84ed1cc4025e625dca1ffdb32cff56ab5f64ee999c9ca908fbc6fdb"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/02a-one-ready.png",
+        "sha256": "9dc6933f4fab4c8b0885a368eab3c085c0443536c124756929e0f99f62dbaf96"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/02b-both-ready.png",
+        "sha256": "4a88fa41347091bb93a59ece81e4d34dfce90b6595409f569ec8e70cbd25c713"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/02c-ready-cancelled.png",
+        "sha256": "f48aca7c8792dbdf01ab00347bdfbbd6985d61b8854acf36b9e912e5943648e3"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/03-stage-0.png",
+        "sha256": "2009e4aa504791ff03cc25d34ee8b98b71b31369b342c8645c60504eb0e45548"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/03-stage-1.png",
+        "sha256": "930b71173c795303f2d1d1b776ad30ba9db82e096eccac4c5670b2afb4d50fd8"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/03-stage-2.png",
+        "sha256": "b50f4046a09068ac82fab4acffa7006712778ab5f1be05f0ea7939a6a7c7e0c5"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/04-match-0.png",
+        "sha256": "8aff0fef52002cb11ed3ed554aff44f404a3a5b6913c2f2b99ba2fead171e3a6"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/04-match-1.png",
+        "sha256": "1bd076fff8bc66defd829ece18f67e167bd66f04e06df500351633c625b162a6"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/04-match-2.png",
+        "sha256": "5cee01802a77f58b81c5982c575f5f71ce578d17f52fe201e9f8a5a42ffef62b"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/05-dizzy.png",
+        "sha256": "85570433437b436f898bd33b91698326e10cc4135f5c8d405174bce16b935341"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/06-result.png",
+        "sha256": "9d3ac0a89d0a18b0c9e1b0d334c9bdc111472de625551de2c2515762bd95da88"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/07-pause.png",
+        "sha256": "7f4a54c0c06bd0de4eff2bf16e60a0afa789ded7ab75c4596e6aab4a3fb1cd8d"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/08-controls.png",
+        "sha256": "6822ad1df3e7d1beb45fd6360488befabd89f3f608cc64ac822509c3803e26bf"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/09-exit-dialog.png",
+        "sha256": "f1b189f34d5db3278b98f97870647b877be0434f8053591630bc90f4a36ecc6a"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/10-settings-english.png",
+        "sha256": "e9603e864787a9e72fe198fe73c2f21bf69571111500d18395d62844baae1bd7"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/11-validation-popup.png",
+        "sha256": "2486297edfecacd2157890a61fbc12f7393a7a64f8d79328d37970902e64be3f"
+      },
+      {
+        "file": "QA_SCREENSHOTS/UPDATE4/Step1/1280x720/12-round-banner.png",
+        "sha256": "883e191d4c13670c0ad64e626daf507a31781654638d35312dbdc9f5b0f83616"
+      }
+    ]
+  }
+]

@@ -33,12 +33,30 @@ namespace Hexbound
             if(game.ReactionLanguage!=LanguageMode.Pormal||game.Language!=0)throw new Exception("Wrong fresh default language/reaction style");
             yield return Capture("01-title");
             game.Show(AcademyGame.ScreenState.Select);yield return Capture("02-characters");
-            game.Ready[0]=true;game.Ready[1]=false;game.Show(AcademyGame.ScreenState.StageSelect);game.StartMatch();
-            if(game.ScreenNow==AcademyGame.ScreenState.Fight)throw new Exception("Started without both confirmations");
+            game.Ready[0]=game.Ready[1]=false;game.TryStartSelection();
+            if(game.ScreenNow!=AcademyGame.ScreenState.Select)throw new Exception("Unready Simulan changed screen");
             yield return Capture("11-validation-popup");game.CloseError();
+            var readyA=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Gamepad>();var readyB=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Gamepad>();
+            UnityEngine.InputSystem.InputSystem.QueueStateEvent(readyA,new UnityEngine.InputSystem.LowLevel.GamepadState().WithButton(UnityEngine.InputSystem.LowLevel.GamepadButton.South));yield return null;yield return null;
+            if(!game.Ready[0]||game.Ready[1]||game.ScreenNow!=AcademyGame.ScreenState.Select)throw new Exception("First confirmation routing");
+            UnityEngine.InputSystem.InputSystem.QueueStateEvent(readyA,new UnityEngine.InputSystem.LowLevel.GamepadState());yield return Capture("02a-one-ready");
+            UnityEngine.InputSystem.InputSystem.QueueStateEvent(readyB,new UnityEngine.InputSystem.LowLevel.GamepadState().WithButton(UnityEngine.InputSystem.LowLevel.GamepadButton.South));yield return null;yield return null;
+            if(!game.Ready[0]||!game.Ready[1]||game.ScreenNow!=AcademyGame.ScreenState.Select)throw new Exception("Second confirmation must only ready, never change screen");
+            yield return Capture("02b-both-ready");
+            UnityEngine.InputSystem.InputSystem.QueueStateEvent(readyB,new UnityEngine.InputSystem.LowLevel.GamepadState().WithButton(UnityEngine.InputSystem.LowLevel.GamepadButton.East));yield return null;yield return null;
+            if(!game.Ready[0]||game.Ready[1]||game.ScreenNow!=AcademyGame.ScreenState.Select)throw new Exception("Ready cancel must be isolated");
+            yield return Capture("02c-ready-cancelled");
+            UnityEngine.InputSystem.InputSystem.QueueStateEvent(readyB,new UnityEngine.InputSystem.LowLevel.GamepadState());yield return null;
+            UnityEngine.InputSystem.InputSystem.QueueStateEvent(readyB,new UnityEngine.InputSystem.LowLevel.GamepadState().WithButton(UnityEngine.InputSystem.LowLevel.GamepadButton.South));yield return null;yield return null;
+            UnityEngine.InputSystem.InputSystem.QueueStateEvent(readyB,new UnityEngine.InputSystem.LowLevel.GamepadState());yield return null;
+            UnityEngine.InputSystem.InputSystem.QueueStateEvent(readyA,new UnityEngine.InputSystem.LowLevel.GamepadState().WithButton(UnityEngine.InputSystem.LowLevel.GamepadButton.Start));yield return null;yield return null;
+            if(game.ScreenNow!=AcademyGame.ScreenState.StageSelect||game.Model!=null)throw new Exception("Fresh Simulan must only open stage selection");
+            UnityEngine.InputSystem.InputSystem.RemoveDevice(readyA);UnityEngine.InputSystem.InputSystem.RemoveDevice(readyB);
             for(int map=0;map<3;map++) {
                 game.SelectArena(map);game.Show(AcademyGame.ScreenState.StageSelect);yield return Capture("03-stage-"+map);
-                game.Ready[1]=true;game.StartMatch();yield return new WaitForSecondsRealtime(2);yield return Capture("04-match-"+map);
+                typeof(AcademyGame).GetMethod("ChooseStage",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).Invoke(game,new object[]{map});
+                if(game.ScreenNow!=AcademyGame.ScreenState.StageSelect)throw new Exception("Stage choice started match");yield return null;
+                typeof(AcademyGame).GetMethod("TryStartStage",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).Invoke(game,null);yield return new WaitForSecondsRealtime(2);yield return Capture("04-match-"+map);
             }
             game.SelectArena(0);game.Ready[0]=game.Ready[1]=true;game.StartMatch();
             var pad=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Gamepad>();

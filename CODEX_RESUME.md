@@ -1,3 +1,17 @@
+# UPDATE4 STEP1 VERIFIED - 2026-10-29
+
+Done: confirms only set Handa na; disabled Simulan has invalid-click notice, enabled state has gentle fill pulse and exact hint; dedicated ENTER/controllerStart or fresh confirm activates Simulan. Last-ready frame/held input consumed. SharedESC and isolated controllerB cancel readiness. Character/stage cards never start automatically. EditMode15/15, PlayMode19/19,65 checks/build exit0;20native1280 screenshots/full3-win match passed; one-ready/both-ready/cancel/map screens personally viewed.
+
+Next: step2 lock Formal reactions/delete oldpref, remove settings rowicons, separate audio mixer groups/slider tests and layout; step3 four-resolution QA, docs, singleEXE/release/Explorer. No Google Drive.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md UPDATE4 step1 and CHECKLIST.md; finish step2 settings, then step3 verified release. No Drive, no photos, no history rewrite."`
+
+---
+# UPDATE4 IN PROGRESS - 2026-10-29
+
+Earlier game work/Hilo fix complete; tree was clean. User explicitly excludes Google Drive. Current step1: explicit confirm-then-Simulan with consumed input and cancel-ready; step2 settings cleanup; step3 full QA/release/portableEXE/Explorer. Preserve DuelModel/graded rules and reference-photo exclusion.
+
+---
 # HILO VICTIM DISPLAY FIX COMPLETE - 2026-10-28T23:59:53.406127+00:00
 
 Requested task complete. Previous update implementation tasks1-10 checked first and complete; old manual checks remain labelled. Display-only change at b79f525: each player's Hilo Meter reads Model.players[1-p].streak, the consecutive hits TAKEN. Exactly5segments, Hilo/Dizzy labels, victim dizzy on fifth, reset on existing streak breaks/recovery. DuelModel unchanged (git blob equality recorded); no range, timing, knockback, inputs or grading-rule changes.

@@ -125,3 +125,6 @@ Second final PlayMode attempt also passed16/16 XML but exited3221225477 after sh
 
 ## Incoming Hilo display correction
 Cause: HUD indexed Model.players[p].streak, the hits LANDED by its owner. Display now reads Model.players[1-p].streak: consecutive hits TAKEN by the HUD owner. DuelModel is byte-for-byte unchanged: shared timing/range/52px step, fifth-hit victim dizzy and existing streak breaks/recovery all retained. Old symmetric tests set both streaks equal, hiding the side inversion; replaced with asymmetric assertions and real-hit integration on both sides.
+
+## UPDATE4 step1 confirm/start flow
+Root cause: Confirm directly openedStageSelect on second readiness; generic stageConfirm also mixed choose/start in one frame. Removed automatic transition, added an explicit guarded Simulan action, ready-only pulse/hint and disabled-click notice, consumed confirmation frame/held release, and isolated ready cancellation. Fixed sharedESC previously unreadying P1 then returning toTitle through unreadyP2. Stage choices consume their frame; only a separate start activates the match. Keyboard/two-gamepad and actual mouse-callback regressions passed;20 native screenshots exercise the new route and a full3-win match.
