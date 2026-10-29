@@ -1,5 +1,5 @@
 {
-  "utc": "2026-10-29T01:49:12.354811+00:00",
+  "utc": "2026-10-29T01:52:55.728951+00:00",
   "release": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.3-update4",
   "tag": "v1.3-update4",
   "public": true,
@@ -13,8 +13,8 @@
     },
     {
       "name": "FILE_INFO.txt",
-      "bytes": 1954,
-      "sha256": "3e9b62835b69d25faa7d84eab89392496769ca8584f759fd0805ba2722cab983",
+      "bytes": 2172,
+      "sha256": "1cc8ee5bf3d45ecf63e34fa2dcd2ff51c723443207beacd84ab0220d82f4da9b",
       "download": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.3-update4/FILE_INFO.txt",
       "verified": true
     },
@@ -41,17 +41,18 @@
     },
     {
       "name": "README.md",
-      "bytes": 4126,
-      "sha256": "823fad88fdcb291bddef159df13509b277bf7900f0326a349545fe5a5d5cf403",
+      "bytes": 4232,
+      "sha256": "a730980cfe78dab5b085a025fc24fb6c1f5a5a686904c66fe24b3b2977189c12",
       "download": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.3-update4/README.md",
       "verified": true
     },
     {
       "name": "RUBRIC_CHECKLIST.md",
-      "bytes": 4054,
-      "sha256": "a08d0791d7a2584c49b2f453c607ac22714b1ccd90e3d07df62b2bf6eef83d82",
+      "bytes": 4399,
+      "sha256": "714e4a65c63ef07f748d182eb5c84e7e11a9056409c4e3ee21c32a6a0b26c806",
       "download": "https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/download/v1.3-update4/RUBRIC_CHECKLIST.md",
       "verified": true
     }
-  ]
+  ],
+  "final_guides_reuploaded_and_verified": true
 }

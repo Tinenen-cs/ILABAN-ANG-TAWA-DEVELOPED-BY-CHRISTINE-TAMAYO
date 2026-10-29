@@ -1,5 +1,7 @@
 # UPDATE4 COMPLETE - 2026-10-29
 
+Final readback: final README/rubric/FILE_INFO replacements uploaded and all7 asset sizes/serverSHA256 digests reverified. Explorer selection viewed. Exact final commit/UTC is in ignored RESUME_STATE.txt; manual checks below remain honest.
+
 This is the authoritative current state. Earlier sections below are history, not queued instructions. No Google Drive work is authorized for UPDATE4.
 
 Done: task1 confirm-only Handa na, separate Simulan/readiness pulse/hint, isolated cancel, no same-frame/held press bleed, stage-choice/start separation; keyboard/two-gamepad/mouse tests. Task2 four settings rows/no gear icons, locked Pormal/deleted old save, native music/effects mixer separation and independent slider tests. Task3 real Windowsx64 rebuild, all suites, four-resolution screenshots/viewing, current portable/release verification and Explorer selection. No code/task implementation remains.
