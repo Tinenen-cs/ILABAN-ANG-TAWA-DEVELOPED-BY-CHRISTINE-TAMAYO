@@ -581,7 +581,7 @@ namespace Hexbound
         void Update()
         {
             clock+=Time.unscaledDeltaTime;controls.Poll(clock);if(view!=null)view.GetComponent<CanvasGroup>().alpha=Mathf.Clamp01((clock-enteredAt)/.16f);
-            if(Keyboard.current!=null&&Keyboard.current.enterKey.wasPressedThisFrame&&(Keyboard.current.leftAltKey.isPressed||Keyboard.current.rightAltKey.isPressed))Screen.fullScreenMode=Screen.fullScreenMode==FullScreenMode.Windowed?FullScreenMode.FullScreenWindow:FullScreenMode.Windowed;
+            if(Keyboard.current!=null&&Keyboard.current.enterKey.wasPressedThisFrame&&(Keyboard.current.leftAltKey.isPressed||Keyboard.current.rightAltKey.isPressed)){Screen.fullScreenMode=Screen.fullScreenMode==FullScreenMode.Windowed?FullScreenMode.FullScreenWindow:FullScreenMode.Windowed;screenEnteredFrame=Time.frameCount;return;}
             var cr=(RectTransform)canvas.transform;float fit=Mathf.Min(cr.rect.width/1280f,cr.rect.height/720f);safe.localScale=new Vector3(fit,fit,1);
             // Cover unused aspect-ratio space with a proportion-preserving background.
             float cover=Mathf.Max(cr.rect.width/1280f,cr.rect.height/720f);scenery.rectTransform.sizeDelta=new Vector2(1280*cover,720*cover);scenery.rectTransform.anchorMin=scenery.rectTransform.anchorMax=new Vector2(.5f,.5f);scenery.rectTransform.pivot=new Vector2(.5f,.5f);scenery.rectTransform.anchoredPosition=ScreenNow==ScreenState.Fight?Vector2.zero:new Vector2(Mathf.Sin(clock*.2f)*2,Mathf.Sin(clock*.17f)*2);

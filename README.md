@@ -12,15 +12,13 @@ A two-player Filipino street brawler made by Christine Tamayo. Pick a character,
 
 ![Laban sa palengke](Docs/ReleasePreview/match.png)
 
-## Hilo display fix - v1.2.1
+## UPDATE4 - confirm first, then Simulan
 
-Each Hilo Meter now shows consecutive hits taken by its owner: the opponent current streak. Only the victim bar fills; the fifth hit makes that same character dizzy. Streak breaks and recovery clear the display. Exactly five segments and Tagalog Hilo / English Dizzy remain. Combat rules, range, timing and one-step knockback are unchanged.
+Both players confirm their fighter and stay on selection with Handa na. Once both are ready, a separate Simulan action opens stage selection: Enter, controller Start, mouse, or a fresh confirm after releasing the ready-making press. Esc/controller B cancels readiness. Stage cards only choose; Simulan starts the match.
 
-Verified: EditMode15/15, graphics PlayMode17/17,65 rule assertions,48 native fill/reset/dizzy captures across both sides/all3 maps, two EXE-only full3-win matches from emptyTemp/space-path folders, and clean Defender scans. See RUBRIC_CHECKLIST.md and Docs/QA_EVIDENCE/hilo_final_summary.json. Older broad UPDATE3 resolution/animation reports are historical; this focused change does not alter HUD geometry.
+Settings now contain language, master, Music (background) and Sound effects. Tagalog labels explain each sound category. Music and effects use separate native mixer groups; Pormal reactions are locked and old saved Kabataan preferences are deleted. Alt+Enter changes display mode without activating menu buttons. Victim-side five-segment Hilo remains unchanged.
 
-Canvas EXE: **213,749,248 bytes**, SHA-256 `721e4593dffc456f0cfab5c2819c1c99648cc042b457889442f2b1e4dfe8aec3`. [Hilo fix release](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.2.1-hilo-victim) is published; all seven download sizes/serverSHA256 digests are verified. The original GUI launcher embeds all dependencies and uses Windows built-in.NET Framework4.x; keep the complete folder/ZIP backup.
-
-Repository PUBLIC. Drive binaries remain older and are outside this task; use the current GitHub release after verification. Physical keyboard/controller/USB, human audio/art and clean-PC checks remain manual.
+Current release verification is recorded in RUBRIC_CHECKLIST.md and Docs/QA_EVIDENCE/update4_final_summary.json. Older release reports below are historical. No Google Drive is used for UPDATE4. Physical input, listening and clean-PC checks remain manual.
 
 ## Controls
 
@@ -31,7 +29,7 @@ Repository PUBLIC. Drive binaries remain older and are outside this task; use th
 
 ## Game rules
 
-Movement is left and right only. Every player has the same straight punch. A landed hit moves the target back exactly one step. Five consecutive hits make the target dizzy for two seconds; a miss, a three-second gap or being hit resets the streak. The round ends immediately when a player falls into the kanal. First to three round wins takes the match; earlier rounds advance automatically. All eight use 190-unit reach, .12-second startup, .36-second cycle and one 52-unit step per hit. The five-segment Hilo meter tracks landed-hit streak, never health. There are no health bars, knockout system, jump, kick, extra move or match timer.
+Movement is left and right only. Every player has the same straight punch. A landed hit moves the target back exactly one step. Five consecutive hits make the target dizzy for two seconds; a miss, a three-second gap or being hit resets the streak. The round ends immediately when a player falls into the kanal. First to three round wins takes the match; earlier rounds advance automatically. All eight use 190-unit reach, .12-second startup, .36-second cycle and one 52-unit step per hit. The five-segment Hilo meter tracks consecutive hits taken (the opponent streak), never health. There are no health bars, knockout system, jump, kick, extra move or match timer.
 
 ## Submit in Canvas
 

@@ -1,3 +1,13 @@
+# UPDATE4 STEP3 QA VERIFIED; PORTABLE DELIVERY NEXT
+
+Done: Alt+Enter now consumes Enter before menu handling; regression passed. Final EditMode15/15, graphics PlayMode23/23 (RubricTests/InputAndCanvasTests included),65 rule assertions; real Windowsx64 build exit0 with zero compiler errors or warnings. Eighty native screenshots at1280x720,1366x768,1920x1080,2560x1440; all four complete20-screen contact sheets viewed, no clipping/overflow/glyph errors. Full simulated3-drain-win match at each size. English-default scan clean;38 audio clips present, no missing references/clipped samples. Docs/update4_final_qa.json and FINAL_STATIC_AUDIT.json. Combat model unchanged.
+
+In progress: portable EXE and release. Next five: fresh ZIP extraction/full match; embed verified payload in GUI EXE; two isolated EXE-only runs with fullscreen/Alt+Enter and new confirm flow; Defender/SHA/size and final rubric/docs; normal main push/new Release/digest verification/Explorer selected EXE. No Drive. Physical input/listening/cleanPC remain NEEDS MANUAL TEST. No current code work pending beyond delivery verification fixes if needed.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md UPDATE4 STEP3 QA and CHECKLIST.md. Final source/tests/four-resolution QA passed. Finish portable package, EXE-only tests, Defender, docs, main push, GitHub release verification and Explorer selection. No Drive/photos/history rewrite."`
+
+---
+
 # UPDATE4 STEP2 VERIFIED - 2026-10-29
 
 Done: settings now have language/master/music/effects only, no row icons; exact explanatory music/effects labels, keyboard/gamepad navigation and clean four-resolution layouts. Reaction bank locked to Pormal; old saved preference deleted and cannot restore Kabataan. Native Master/Musika/Tunog mixer groups separate music from opening/menu/hit/action cues. Category/master slider isolation and migration tests passed. EditMode15/15, graphics PlayMode22/22,65 rule assertions and real Windows build exit0/zero C# diagnostics. Twelve fresh settings/opening captures at four resolutions; all eight Tagalog/English settings screenshots viewed in contact sheet. Docs/update4_step2_qa.json.

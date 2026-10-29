@@ -1,8 +1,9 @@
 ﻿from pathlib import Path
-import json,re,wave,hashlib,numpy as np
+import os,json,re,wave,hashlib,numpy as np
 root=Path(__file__).resolve().parents[1]
 # Scan visible default-Tagalog strings from fresh native captures, not English fallback translations in source.
-findings=[];folder=root/'QA_SCREENSHOTS/Final_1280x720'
+findings=[];folder=root/os.environ.get('ILABAN_AUDIT_CAPTURE_FOLDER','QA_SCREENSHOTS/Final_1280x720')
+assert len(list(folder.glob('*-ui.txt')))>=20,'Fresh full UPDATE4 capture evidence required'
 english=re.compile(r'\b(settings?|back|player|players|choose|movement|keys|game language|reaction style|master volume|music|sound|up|down|select|left|right|change|start|ready|quit|continue|confirm|punch|move)\b',re.I)
 for p in sorted(folder.glob('*-ui.txt')):
  if 'english' in p.name.lower():continue
@@ -11,7 +12,7 @@ for p in sorted(folder.glob('*-ui.txt')):
  for match in english.finditer(text):findings.append({'file':p.relative_to(root).as_posix(),'word':match.group(0)})
 # Mojibake glyph guard over authored text, source, and text captures.
 mojibake=[]
-for base in (root/'Assets/Scripts',root/'Docs',root/'Tools',root/'QA_SCREENSHOTS/Final_1280x720'):
+for base in (root/'Assets/Scripts',root/'Docs',root/'Tools',folder):
  for p in base.rglob('*'):
   if not p.is_file() or p.suffix.lower() not in {'.cs','.md','.txt','.json','.py'}:continue
   try:text=p.read_text(encoding='utf-8-sig')

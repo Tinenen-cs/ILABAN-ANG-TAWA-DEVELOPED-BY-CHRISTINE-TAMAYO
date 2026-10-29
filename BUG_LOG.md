@@ -131,3 +131,6 @@ Root cause: Confirm directly openedStageSelect on second readiness; generic stag
 
 ## UPDATE4 step2 settings
 Removed reaction-style row and all row icons. Pormal is read-only in ReactionBank and Choose uses only its formal category pools; old Ilaban.ReactionStyle is deleted at startup and by compatibility setter. The unused legacy data schema remains for existing resource validation, with no UI/saved route to it. Music/effects already had separate source volumes; now distinct native Master/Musika and Master/Tunog mixer groups also route music versus hits/menu/actions/opening. Sliders retain isolated source controls and master uses AudioListener. Corrected horizontal settings navigation changing the focused row before adjusting its slider. Four42px rows48px apart replace five34px rows; labels distinguish background music/effects. During authoring, a comment swallowed a closing brace; fixed before verification, no failing build is counted.
+
+
+UPDATE4 final QA: Alt+Enter toggled display mode then fell through to Enter/Confirm menu handling. Consumed that frame immediately after toggling; added PlayMode menu-state regression and packaged standalone fullscreen/windowed/fullscreen proof. Combat model unchanged.

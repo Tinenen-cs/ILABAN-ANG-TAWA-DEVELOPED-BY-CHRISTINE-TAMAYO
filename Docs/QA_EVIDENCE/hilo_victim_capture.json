@@ -28,7 +28,7 @@
       "rightFilled": 1,
       "victimDizzy": 0.0,
       "file": "Map0-Attacker1-hit1.png",
-      "sha256": "83e6d6feed18ca11239700164848e6b1f8e54a9bbe9814fc083beb71b7500761"
+      "sha256": "f08b8b6865c309379926b3b0c38bd93baa56b9f73a07a72b270abbaac7859539"
     },
     {
       "map": 0,
@@ -39,7 +39,7 @@
       "rightFilled": 2,
       "victimDizzy": 0.0,
       "file": "Map0-Attacker1-hit2.png",
-      "sha256": "4a5feba5356493f8e49b9b275d7d97c47ac8bd3a8a0d4aa709d5e550db106321"
+      "sha256": "add9047351cf93822b409135451307ec0779f5c430d4956ec45872d66c7ac382"
     },
     {
       "map": 0,
@@ -50,7 +50,7 @@
       "rightFilled": 3,
       "victimDizzy": 0.0,
       "file": "Map0-Attacker1-hit3.png",
-      "sha256": "970a414831dea179965f6a6fb5f31cbd0cc20a1ebbfcabf553a64cfe5b7de81b"
+      "sha256": "564242a7bba3c04f0d690d24c0a8b36be2875a1d730eff68c45d5dc0f7db1fb8"
     },
     {
       "map": 0,
@@ -61,7 +61,7 @@
       "rightFilled": 4,
       "victimDizzy": 0.0,
       "file": "Map0-Attacker1-hit4.png",
-      "sha256": "d03321da30c2f5586dc34c81366ce7c70af71959f462528bcb7e790b2f2380ee"
+      "sha256": "717ae3d6c54bdbc0816fab44f2f69c2372a704797923b81d1f04fa747b067d32"
     },
     {
       "map": 0,
@@ -72,7 +72,7 @@
       "rightFilled": 5,
       "victimDizzy": 2.0,
       "file": "Map0-Attacker1-hit5.png",
-      "sha256": "44dc27b03ed20f5767a5d41e03d81933b0a40bfc485f7f4eb3903786316db9e2"
+      "sha256": "df0e919f19c478999b9f051611a8b7af874dd1bb6c640b9ab77d750cdb5d0efe"
     },
     {
       "map": 0,
@@ -83,7 +83,7 @@
       "rightFilled": 0,
       "victimDizzy": 0.0,
       "file": "Map0-Attacker1-recovered.png",
-      "sha256": "61e2cc374bde3ca76700385968ca0c3dcbfb2ed3f2b22e90ba506cf4af58976f"
+      "sha256": "b7142f12a74017b59ab01a603e4fe06abdcb5e2ccd21ca3d6e3f35d3c73b392a"
     },
     {
       "map": 0,
@@ -94,7 +94,7 @@
       "rightFilled": 0,
       "victimDizzy": 0.0,
       "file": "Map0-Attacker1-streak-broken.png",
-      "sha256": "b006b99f4f235c3c7f7ae344a62207f8599431fc81386611535a53b5387f3e2e"
+      "sha256": "98de253c569d15bd9d1c795e9943c998a94b93b200ff36c63af412414c895d1d"
     },
     {
       "map": 0,
@@ -105,7 +105,7 @@
       "rightFilled": 0,
       "victimDizzy": 0.0,
       "file": "Map0-Attacker2-empty.png",
-      "sha256": "a9d0d62af80458ac4c80db89bd6921442776c44a60b4c568a10d79905c596049"
+      "sha256": "b559fedfa82371d9b005a165e89174c6b09501536cb197741d3892c65d60ac83"
     },
     {
       "map": 0,
@@ -149,7 +149,7 @@
       "rightFilled": 0,
       "victimDizzy": 0.0,
       "file": "Map0-Attacker2-hit4.png",
-      "sha256": "235d87fb8f7b69a6d58f34fd041b1de11502af1fca962950b7179e89ca5173ed"
+      "sha256": "f44977abc79daf6c67d7bfdc38daf55ec2ca77d70bbd6578ed67316a9ba12f9b"
     },
     {
       "map": 0,
@@ -160,7 +160,7 @@
       "rightFilled": 0,
       "victimDizzy": 2.0,
       "file": "Map0-Attacker2-hit5.png",
-      "sha256": "74068b262cdb2486f2b64e29805bd3a390bb9eaf5b9b06b7c4ba9ca05dbdd51b"
+      "sha256": "10a2998f15e24394d97176112105df6b7cb200598670d642795a91a9e0c041da"
     },
     {
       "map": 0,
@@ -204,7 +204,7 @@
       "rightFilled": 1,
       "victimDizzy": 0.0,
       "file": "Map1-Attacker1-hit1.png",
-      "sha256": "054af21e5484f06583d797c387c02f37d76062d4f04e9e9b138e5dad5c9744b2"
+      "sha256": "406bcb23595d601b0827bd72f145dfbf48c0f90d8d1f0b26648007a919a6adc8"
     },
     {
       "map": 1,
@@ -215,7 +215,7 @@
       "rightFilled": 2,
       "victimDizzy": 0.0,
       "file": "Map1-Attacker1-hit2.png",
-      "sha256": "c52776b67576876bda8f4c751d0d979776c0749d3c7a6e0e237ea80614410cc1"
+      "sha256": "8eec305c337cf8427e57db2d5c0b338e99ffbe0fd92b6b91b37b06b45d9009de"
     },
     {
       "map": 1,
@@ -226,7 +226,7 @@
       "rightFilled": 3,
       "victimDizzy": 0.0,
       "file": "Map1-Attacker1-hit3.png",
-      "sha256": "83df0adade240279089ea9a87b29873d5aa165c06d8fb7d6c39721da432c928d"
+      "sha256": "41321ac5be706eb76e97f89668be24b4af09a4bcfe133c5b4372d7dbb54524be"
     },
     {
       "map": 1,
@@ -237,7 +237,7 @@
       "rightFilled": 4,
       "victimDizzy": 0.0,
       "file": "Map1-Attacker1-hit4.png",
-      "sha256": "85043855739f07af8e5b8759ab687be86e202edf802f0f3af45438fef2bd446b"
+      "sha256": "f4674452df3ecc68c74c4ca44a0d5bd283ae14f5617cd0379e9bb73fb98eabee"
     },
     {
       "map": 1,
@@ -248,7 +248,7 @@
       "rightFilled": 5,
       "victimDizzy": 2.0,
       "file": "Map1-Attacker1-hit5.png",
-      "sha256": "3d723e1660d0c764fa9a58cb7d9c7628685987fe52dbc61ddc2b28df667224a0"
+      "sha256": "687f42a88461610484888098a6382d941ebe35868149346462c5e2f02c60ef00"
     },
     {
       "map": 1,
@@ -325,7 +325,7 @@
       "rightFilled": 0,
       "victimDizzy": 0.0,
       "file": "Map1-Attacker2-hit4.png",
-      "sha256": "e079db1650123c6d14ee815364800728bb59f8955964e96be662a7cc32c41477"
+      "sha256": "9f16ac4e82441b741de896c48011f71f82d5918fc3921427b20c4b328823c281"
     },
     {
       "map": 1,
@@ -336,7 +336,7 @@
       "rightFilled": 0,
       "victimDizzy": 2.0,
       "file": "Map1-Attacker2-hit5.png",
-      "sha256": "12a6de6b7eba2c19e229f4f2b3a6000ed1f53141d1f4ced9522a41a8b91affc9"
+      "sha256": "1046d4c36cebf91c1cd09f5605edfc25f9c893805bb3c83d3d58e259791f4869"
     },
     {
       "map": 1,
@@ -380,7 +380,7 @@
       "rightFilled": 1,
       "victimDizzy": 0.0,
       "file": "Map2-Attacker1-hit1.png",
-      "sha256": "85bb6e804c5f83c15855aa27511e1a1ec7a084c774ae4b4e8c7549c302436dae"
+      "sha256": "9f9352c5bf5d04ba424a470fb3b55baa518c3211953492f135f517994ae4db56"
     },
     {
       "map": 2,
@@ -391,7 +391,7 @@
       "rightFilled": 2,
       "victimDizzy": 0.0,
       "file": "Map2-Attacker1-hit2.png",
-      "sha256": "2644c2b4f86290492605326c5d9b9ebbcc6710797fe44b4c3e73b1a9b917b996"
+      "sha256": "b7575e2110ee77df2da5e69ba209cb05de41a95770c1b86d5fe595e338b7f514"
     },
     {
       "map": 2,
@@ -402,7 +402,7 @@
       "rightFilled": 3,
       "victimDizzy": 0.0,
       "file": "Map2-Attacker1-hit3.png",
-      "sha256": "2d4438650d1d1836e07ff82417db7cd8fea7a81c9580c9d330701a3fdb315edd"
+      "sha256": "6c749f092b8495a8a493b0a8089fa747139e33f24f4c55c9e1e6e64de39785e7"
     },
     {
       "map": 2,
@@ -413,7 +413,7 @@
       "rightFilled": 4,
       "victimDizzy": 0.0,
       "file": "Map2-Attacker1-hit4.png",
-      "sha256": "a4e0823ae18c5deae48ceecaa1953564710705455b5446925a2f59702553a898"
+      "sha256": "5542e4e09d4745c82eff603a1474ec0e630d2baf871413648d288681ad72c5c3"
     },
     {
       "map": 2,
@@ -424,7 +424,7 @@
       "rightFilled": 5,
       "victimDizzy": 2.0,
       "file": "Map2-Attacker1-hit5.png",
-      "sha256": "087cdb1763ca9cf127096b7866afe222b8a96f446b407a5841b3581549c54cd3"
+      "sha256": "161db66bceb727708941f8c6210d675061161f00db26eb7eeac1dc9d58553cd5"
     },
     {
       "map": 2,
@@ -435,7 +435,7 @@
       "rightFilled": 0,
       "victimDizzy": 0.0,
       "file": "Map2-Attacker1-recovered.png",
-      "sha256": "38778c58e98160f2ed2ee592427965aaef974b64ef139ab7c4137e021d8d62fb"
+      "sha256": "f7a9fd67323c5a71befa3c09ead24c9dc0c79c9d37933a29f70754c6846a88ba"
     },
     {
       "map": 2,
@@ -446,7 +446,7 @@
       "rightFilled": 0,
       "victimDizzy": 0.0,
       "file": "Map2-Attacker1-streak-broken.png",
-      "sha256": "8b9657ea630eb9b7f9d01fe1f1503103ab7f61f181b48d0d1d5f043a663fb938"
+      "sha256": "c0368720d2ff87270355014d6ac5b630ecc5a76321e03f5a07ad370407964451"
     },
     {
       "map": 2,
@@ -501,7 +501,7 @@
       "rightFilled": 0,
       "victimDizzy": 0.0,
       "file": "Map2-Attacker2-hit4.png",
-      "sha256": "8e27545158468ae4f3e97cb85f507f6f139094fb31185967a7b67fbcefb91679"
+      "sha256": "abb0c1ca25f8c94530625f8cc6b4a88dd1145f6d5f6ce6157c56f785d38f5abf"
     },
     {
       "map": 2,
@@ -512,7 +512,7 @@
       "rightFilled": 0,
       "victimDizzy": 2.0,
       "file": "Map2-Attacker2-hit5.png",
-      "sha256": "190816871a3c341e431b656c80314f8a4f2bff32c6d9523ecc67d5b3a7a57c70"
+      "sha256": "fcd02be045bdf240f5cfe92090f99ee247069aa0077873aaffc0ec1a45e55633"
     },
     {
       "map": 2,
@@ -523,7 +523,7 @@
       "rightFilled": 0,
       "victimDizzy": 0.0,
       "file": "Map2-Attacker2-recovered.png",
-      "sha256": "052fcfb5f81f911352d266951a6274f2f62df70695fef28e58a46e70ae34eabf"
+      "sha256": "457ec194fee5adae287341b9681cb7b498942746cb688ab0e71c6a4f1d5ddde9"
     },
     {
       "map": 2,
@@ -534,7 +534,7 @@
       "rightFilled": 0,
       "victimDizzy": 0.0,
       "file": "Map2-Attacker2-streak-broken.png",
-      "sha256": "96559cda876739ac5e61271b501101c5383dd18cfa19267950cf86a69d04deca"
+      "sha256": "d37c639532fed3ac32b577f90fa4b723640ab508d7f3a5c61b4bfc7c4b6c3cf1"
     }
   ]
 }

@@ -36,6 +36,16 @@ namespace Hexbound
                 File.WriteAllText(Path.Combine(directory,"PASS.txt"),"UPDATE4 settings-only capture: Tagalog/English, no reaction-style row, no row icons; separate music/effects groups verified by PlayMode tests.");Application.Quit(0);yield break;
             }
             yield return Capture("01-title");
+            if(Array.IndexOf(Environment.GetCommandLineArgs(),"-ilaban-display-check")>=0){
+                if(Screen.fullScreenMode!=FullScreenMode.FullScreenWindow)throw new Exception("Expected native borderless fullscreen default");
+                var keys=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Keyboard>();
+                UnityEngine.InputSystem.InputSystem.QueueStateEvent(keys,new UnityEngine.InputSystem.LowLevel.KeyboardState(UnityEngine.InputSystem.Key.LeftAlt,UnityEngine.InputSystem.Key.Enter));yield return new WaitForSecondsRealtime(.7f);
+                if(Screen.fullScreenMode!=FullScreenMode.Windowed||game.ScreenNow!=AcademyGame.ScreenState.Title)throw new Exception("Alt+Enter did not switch to windowed without activating menu");
+                yield return Capture("13-windowed");UnityEngine.InputSystem.InputSystem.QueueStateEvent(keys,new UnityEngine.InputSystem.LowLevel.KeyboardState());yield return null;
+                UnityEngine.InputSystem.InputSystem.QueueStateEvent(keys,new UnityEngine.InputSystem.LowLevel.KeyboardState(UnityEngine.InputSystem.Key.LeftAlt,UnityEngine.InputSystem.Key.Enter));yield return new WaitForSecondsRealtime(.7f);
+                if(Screen.fullScreenMode!=FullScreenMode.FullScreenWindow||game.ScreenNow!=AcademyGame.ScreenState.Title)throw new Exception("Alt+Enter did not restore fullscreen without activating menu");
+                yield return Capture("14-fullscreen");UnityEngine.InputSystem.InputSystem.RemoveDevice(keys);Debug.Log("UPDATE4 DISPLAY TOGGLE PASSED: FullScreenWindow / Windowed / FullScreenWindow; title unchanged");
+            }
             game.Show(AcademyGame.ScreenState.Select);yield return Capture("02-characters");
             game.Ready[0]=game.Ready[1]=false;game.TryStartSelection();
             if(game.ScreenNow!=AcademyGame.ScreenState.Select)throw new Exception("Unready Simulan changed screen");

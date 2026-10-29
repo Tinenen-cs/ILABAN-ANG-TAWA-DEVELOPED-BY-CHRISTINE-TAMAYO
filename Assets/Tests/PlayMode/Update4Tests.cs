@@ -68,6 +68,11 @@ namespace Hexbound.Tests {
                 if(mode==0)Release(keys.fKey);else Release(pad.buttonSouth);Object.DestroyImmediate(g.gameObject);
             }
         }
+        [Test] public void AltEnterIsConsumedBeforeMenuConfirm(){
+            var keys=InputSystem.AddDevice<Keyboard>();var g=Game();g.Show(AcademyGame.ScreenState.Title);var previous=Screen.fullScreenMode;
+            Press(keys.leftAltKey);Press(keys.enterKey);Pump(g);Assert.AreEqual(AcademyGame.ScreenState.Title,g.ScreenNow,"Display shortcut must never activate Simulan.");
+            Assert.AreEqual(Time.frameCount,typeof(AcademyGame).GetField("screenEnteredFrame",Flags).GetValue(g));Release(keys.enterKey);Release(keys.leftAltKey);Screen.fullScreenMode=previous;Object.DestroyImmediate(g.gameObject);
+        }
         [Test] public void MouseConfirmAndStageCardsNeverAutomaticallyStart(){
             var g=Game();var start=StartButton(g);start.GetComponent<UnavailableButtonNotice>().OnPointerClick(new PointerEventData(EventSystem.current){button=PointerEventData.InputButton.Left});Assert.IsTrue((bool)typeof(AcademyGame).GetField("errorOpen",Flags).GetValue(g));g.CloseError();
             var buttons=(Button[])typeof(AcademyGame).GetField("confirmButtons",Flags).GetValue(g);buttons[0].onClick.Invoke();buttons[1].onClick.Invoke();Assert.IsTrue(g.Ready[0]&&g.Ready[1]);Assert.AreEqual(AcademyGame.ScreenState.Select,g.ScreenNow);

@@ -21,6 +21,7 @@ Mga pindutan:
 Manlalaro 1: A / D para maglakad; F para sumuntok at magkumpirma.
 Manlalaro 2: kaliwa / kanan para maglakad; Ctrl kanan o 0 sa numerong pad para sumuntok at magkumpirma.
 Mando: kaliwang palanca o mga palaso para maglakad; A / X para sumuntok at magkumpirma; B para bumalik.
+Sa pagpili ng tauhan: magkumpirma muna ang dalawa. Kapag parehong Handa na, pindutin ang Simulan gamit ang Enter, Start sa mando o mouse. Maaaring bawiin ang kahandaan gamit ang ESC o B. Sa pagpili ng entablado, pumili muna at saka pindutin ang Simulan.
 ESC: ihinto o ituloy ang laro. H: buksan ang mga kontrol. Alt+Enter: palitan ang buong tabing at bintana.
 
 Mga tuntunin:
