@@ -1,0 +1,44 @@
+[
+  {
+    "case": "EmptyTemp",
+    "folder": "C:\\Users\\chris\\AppData\\Local\\Temp\\IlabanExeOnly-ffrsh97s",
+    "launch_directory_files": [
+      "ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe"
+    ],
+    "exe_sha256": "b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f",
+    "exit": 0,
+    "passed": true,
+    "issues": [],
+    "captures": 22,
+    "image_sizes": [
+      [
+        1920,
+        1080
+      ]
+    ],
+    "seconds": 70.16,
+    "full_three_win_match": true,
+    "clean_pc": false
+  },
+  {
+    "case": "PathWithSpaces",
+    "folder": "C:\\Users\\chris\\AppData\\Local\\Temp\\Ilaban Test With Spaces a001vsqe\\Laro Para Sa Paaralan",
+    "launch_directory_files": [
+      "ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe"
+    ],
+    "exe_sha256": "b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f",
+    "exit": 0,
+    "passed": true,
+    "issues": [],
+    "captures": 22,
+    "image_sizes": [
+      [
+        1920,
+        1080
+      ]
+    ],
+    "seconds": 58.83,
+    "full_three_win_match": true,
+    "clean_pc": false
+  }
+]

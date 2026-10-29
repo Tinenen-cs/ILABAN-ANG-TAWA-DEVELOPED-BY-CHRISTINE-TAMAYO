@@ -1,0 +1,111 @@
+{
+  "utc": "2026-10-29T01:36:41.563814+00:00",
+  "tests": {
+    "EditMode": {
+      "passed": 15,
+      "total": 15,
+      "ended": "2026-10-29 01:21:35Z"
+    },
+    "PlayMode": {
+      "passed": 23,
+      "total": 23,
+      "ended": "2026-10-29 01:22:10Z"
+    }
+  },
+  "rules": 65,
+  "source": {
+    "sha256": "d0a478e6da2846a6eb44d97089b7e7aa808c72cdae0e5352ee1674a3322f2b7b",
+    "files": 1071
+  },
+  "model_unchanged": true,
+  "resolution_captures": 80,
+  "resolutions": [
+    "1280x720",
+    "1366x768",
+    "1920x1080",
+    "2560x1440"
+  ],
+  "exe_only": [
+    {
+      "case": "EmptyTemp",
+      "folder": "C:\\Users\\chris\\AppData\\Local\\Temp\\IlabanExeOnly-ffrsh97s",
+      "launch_directory_files": [
+        "ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe"
+      ],
+      "exe_sha256": "b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f",
+      "exit": 0,
+      "passed": true,
+      "issues": [],
+      "captures": 22,
+      "image_sizes": [
+        [
+          1920,
+          1080
+        ]
+      ],
+      "seconds": 70.16,
+      "full_three_win_match": true,
+      "clean_pc": false
+    },
+    {
+      "case": "PathWithSpaces",
+      "folder": "C:\\Users\\chris\\AppData\\Local\\Temp\\Ilaban Test With Spaces a001vsqe\\Laro Para Sa Paaralan",
+      "launch_directory_files": [
+        "ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe"
+      ],
+      "exe_sha256": "b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f",
+      "exit": 0,
+      "passed": true,
+      "issues": [],
+      "captures": 22,
+      "image_sizes": [
+        [
+          1920,
+          1080
+        ]
+      ],
+      "seconds": 58.83,
+      "full_three_win_match": true,
+      "clean_pc": false
+    }
+  ],
+  "exe": {
+    "file": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe",
+    "bytes": 213752320,
+    "sha256": "b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f",
+    "method": "Original C# GUI launcher with complete verified ZIP resource, temp extraction and per-file SHA verification",
+    "payload_sha256": "3fe1e325c382b9bcd72e1efea46d1df9d9e15e9d962d374db9edd57a4c227198",
+    "payload_files": 168,
+    "no_console": true,
+    "requested_execution_level": "asInvoker",
+    "requires": "Windows 10/11 x64 with built-in .NET Framework 4.x",
+    "tested": true,
+    "passed": true,
+    "tests": "Docs/update4_single_exe_tests.json"
+  },
+  "package": {
+    "zip": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip",
+    "bytes": 213709110,
+    "sha256": "3fe1e325c382b9bcd72e1efea46d1df9d9e15e9d962d374db9edd57a4c227198",
+    "extracted_to": "C:\\Users\\chris\\AppData\\Local\\Temp\\Ilaban-Extracted-pre63kb6",
+    "exit": 0,
+    "passed": true,
+    "issues": [],
+    "clean_pc_test": false
+  },
+  "defender": [
+    {
+      "file": "C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe",
+      "exit": 0,
+      "output": "Scan starting...\nScan finished.\nScanning C:\\Users\\chris\\Documents\\CSEL GAMEDEV FILES\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\\SUBMISSION\\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe found no threats.\n",
+      "sha256": "b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f"
+    }
+  ],
+  "no_google_drive": true,
+  "manual": [
+    "physical keyboard/gamepad/USB/hot-swap",
+    "human sound/Tagalog/art review",
+    "clean-PC/SmartScreen/.NET",
+    "strict steady60fps on other hardware"
+  ]
+}

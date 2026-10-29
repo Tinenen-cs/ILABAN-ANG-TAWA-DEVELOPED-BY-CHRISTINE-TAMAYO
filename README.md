@@ -20,6 +20,8 @@ Settings now contain language, master, Music (background) and Sound effects. Tag
 
 Current release verification is recorded in RUBRIC_CHECKLIST.md and Docs/QA_EVIDENCE/update4_final_summary.json. Older release reports below are historical. No Google Drive is used for UPDATE4. Physical input, listening and clean-PC checks remain manual.
 
+Canvas file: **213,752,320 bytes**, SHA-256 `b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f`. Single EXE verified alone in two empty folders,44 captures/two complete matches; Defender clean. EditMode15/15, PlayMode23/23,65 rule checks,80 current four-resolution screens and48 fresh Hilo states. Release publication next: [UPDATE4](https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.3-update4).
+
 ## Controls
 
 - **Manlalaro 1:** A / D to move; F to punch and confirm.

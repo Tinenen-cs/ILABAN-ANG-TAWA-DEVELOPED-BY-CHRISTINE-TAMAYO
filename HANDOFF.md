@@ -1,3 +1,13 @@
+# UPDATE4 LOCAL RELEASE VERIFIED; GITHUB PUBLICATION NEXT
+
+Done: steps1/2 and finalQA complete. EditMode15/15, graphics PlayMode23/23,65 rule checks, zero errors/warnings.80 current four-resolution screens plus48 fresh both-side/all-map Hilo states viewed. Fresh ZIP extraction/full3-win match passed. Outer EXE alone passed emptyTemp and path-with-spaces,44 native captures and2full3-win matches, Alt+Enter toggles/title consumption, clean logs/exit0. Windows Defender found no threats. Backup matches currentBuilds. FILE_INFO and RUBRIC updated; no Drive. Current EXE213752320bytes SHA b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f.
+
+In progress: GitHub publication and Explorer selection. Next five: commit/push current delivery evidence; create v1.3-update4 with current EXE/ZIP/proof/guides; verify server sizes/SHA256; mark release completed and normal-push final docs; open Explorer with final EXE selected and report manual tests. Physical input/listening/cleanPC remain NEEDS MANUAL TEST. Watchdog disabled,0 relaunches.
+
+Resume: `codex exec -C "C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO" "Read HANDOFF.md UPDATE4 LOCAL RELEASE VERIFIED and CHECKLIST.md. Do not rebuild the verified EXE. Finish main push, v1.3-update4 Release upload/server digest verification, final docs and Explorer EXE selection. No Drive/photos/history rewrite."`
+
+---
+
 # UPDATE4 STEP3 QA VERIFIED; PORTABLE DELIVERY NEXT
 
 Done: Alt+Enter now consumes Enter before menu handling; regression passed. Final EditMode15/15, graphics PlayMode23/23 (RubricTests/InputAndCanvasTests included),65 rule assertions; real Windowsx64 build exit0 with zero compiler errors or warnings. Eighty native screenshots at1280x720,1366x768,1920x1080,2560x1440; all four complete20-screen contact sheets viewed, no clipping/overflow/glyph errors. Full simulated3-drain-win match at each size. English-default scan clean;38 audio clips present, no missing references/clipped samples. Docs/update4_final_qa.json and FINAL_STATIC_AUDIT.json. Combat model unchanged.

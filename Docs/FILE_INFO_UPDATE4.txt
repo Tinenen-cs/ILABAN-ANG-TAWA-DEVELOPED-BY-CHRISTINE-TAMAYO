@@ -1,0 +1,18 @@
+ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO - UPDATE4
+
+FINAL CANVAS FILE: upload this OUTER single EXE, not the small EXE inside the backup folder.
+Full path: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.exe
+Size: 213752320 bytes
+SHA-256: b45faf27a87160fe62ce4612532fc6fb5078d0e7f7ded0eeb0ed5b3b919e849f
+
+COMPLETE BACKUP ZIP
+Full path: C:\Users\chris\Documents\CSEL GAMEDEV FILES\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO\SUBMISSION\ILABAN ANG TAWA DEVELOPED BY CHRISTINE TAMAYO.zip
+Size: 213709110 bytes
+SHA-256: 3fe1e325c382b9bcd72e1efea46d1df9d9e15e9d962d374db9edd57a4c227198
+
+PASS: EditMode15/15, graphics PlayMode23/23,65 rule assertions, zero build errors or warnings.80 native screens at all4 requested resolutions viewed.48 fresh incoming-Hilo states across both sides/all3maps; DuelModel unchanged. English/glyph/audio scan clean.
+PASS: ZIP fresh extraction/full3-win match. EXE alone in emptyTemp and path-with-spaces folders;44native1920 captures, both new ready-then-Simulan flows and stage choice, two full3-drain-win matches, clean logs/exit0. FullScreenWindow/Windowed/FullScreenWindow Alt+Enter switches preserve title screen. GUI/no console/asInvoker;168 verified payload files. Defender found no threats; complete backup byte-matches Builds/Windows.
+Method: Docs/PORTABLE_EXE_METHOD.md original free GUI launcher, unique temporary extraction. Windows10/11x64 with built-in.NET Framework4.x. No Unity Editor/installer needed.
+Release publication pending: https://github.com/Tinenen-cs/ILABAN-ANG-TAWA-DEVELOPED-BY-CHRISTINE-TAMAYO/releases/tag/v1.3-update4
+Repository PUBLIC; normal main push; no force push/history rewrite. No Google Drive used.
+NEEDS MANUAL TEST: physical keyboard/controller/USB/hot-swap and rollover, human listening/Tagalog/art, cleanPC/SmartScreen/.NET and steady60fps on other hardware.
